@@ -25,8 +25,6 @@ body {
 
 .projects-heading {
     margin-top: 20px;
-    display: flex;
-    flex-direction: column;
     text-align: center;
 }
 
@@ -42,6 +40,18 @@ body {
 
 .projects-heading p {
     color: #4b5563;
+}
+
+.btn-container {
+    margin-top: 2rem;
+}
+
+.projects-heading .source-code-btn {
+    background-color: #f43f5e;
+    border-radius: 0.5rem;
+    /* height: 2.5rem; */
+    color: #fff;
+    padding: 0.8rem 1rem;
 }
 
 .projects-container {
