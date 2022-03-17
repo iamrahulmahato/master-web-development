@@ -88,11 +88,7 @@ body {
 }
 
 .counter-cover-color {
-    background: rgba(25, 90, 216, 0.2);
-}
-
-.card-cover-color {
-    background: rgba(216, 111, 25, 0.2);
+    background: rgba(255, 206, 0, 0.2);
 }
 
 .card-cover img {
@@ -112,4 +108,30 @@ body {
     color: #475569;
     font-size: 0.9rem;
     margin-top: 0.2rem;
+}
+
+.icon {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+}
+
+.icon2 {
+    display: inline-flex;
+    appearance: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    align-items: center;
+    background-color: #f43f5e;
+    color: #ffffff;
+}
+
+.icon2 img {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    line-height: 1em;
+    flex-shrink: 0;
+    color: currentColor;
 }
