@@ -20,11 +20,7 @@ body {
 }
 
 #projects {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 50px 0px;
+    margin: 5rem 0;
 }
 
 .projects-heading {
