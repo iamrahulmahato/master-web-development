@@ -5,6 +5,15 @@
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+html {
+    --bg: #f8fafc;
+    --primary: #f43f5e;
+}
+
+html[data-theme="dark"] {
+    --bg: black;
+}
+
 a {
     text-decoration: none;
 }
@@ -16,7 +25,7 @@ ul {
 body {
     margin: 0;
     padding: 0;
-    background-color: #f8fafc;
+    background-color: var(--bg);
 }
 
 #projects {
@@ -29,7 +38,7 @@ body {
 }
 
 .projects-heading h3 span {
-    color: #f43f5e;
+    color: var(--primary);
 }
 
 .projects-heading h3 {
@@ -47,7 +56,7 @@ body {
 }
 
 .projects-heading .source-code-btn {
-    background-color: #f43f5e;
+    background-color: var(--primary);
     border-radius: 0.5rem;
     /* height: 2.5rem; */
     color: #fff;
@@ -91,6 +100,10 @@ body {
     background: rgba(255, 206, 0, 0.2);
 }
 
+.counter-cover-colour {
+    background-color: rgba(249, 89, 95, 0.2);
+}
+
 .card-cover img {
     height: 80%;
 }
@@ -116,22 +129,19 @@ body {
     right: 1rem;
 }
 
-.icon2 {
+#toggle-mode-btn {
+    border: none;
     display: inline-flex;
     appearance: none;
     align-items: center;
     justify-content: center;
-    padding: 0px;
+    border-radius: 9999px;
+    padding: 10px;
     align-items: center;
     background-color: #f43f5e;
     color: #ffffff;
 }
 
-.icon2 img {
-    width: 1.5rem;
-    height: 1.5rem;
-    display: inline-block;
-    line-height: 1em;
-    flex-shrink: 0;
-    color: currentColor;
+#toggle-mode-btn svg {
+    fill: #fff;
 }

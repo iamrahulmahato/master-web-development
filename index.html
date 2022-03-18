@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8" />
@@ -13,8 +13,21 @@
 </head>
 
 <body>
+    <div class="icon">
+        <div class="icon2">
+            <!-- <img src="./assets/image/110831_moon_icon.svg" alt="" srcset=""> -->
+            <button id="toggle-mode-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                  </svg>
+            </button>
+
+        </div>
+
+    </div>
 
     <section id="projects">
+
 
         <div class="projects-heading">
             <p>Master web development</p>
@@ -47,20 +60,21 @@
                     </p>
                 </div>
             </a>
-            <a href="" class="card">
-                <div class="card-cover">
-                    <img src="./assets/image/coming-soon.png" alt="">
+            <a href="./projects/Love Calculator/index.html" class="card">
+                <div class="card-cover counter-cover-colour">
+                    <img src="./assets/image/heart.png" alt="">
                 </div>
                 <div class="card-content">
-                    <h3 class="card-heading">Unknow</h3>
+                    <h3 class="card-heading">Love Calculator</h3>
                     <p class="card-description">
-                        Working on it
+                        Check the percentage of crush loves.
                     </p>
                 </div>
             </a>
 
         </div>
     </section>
+    <script src="./js/app.js"></script>
 </body>
 
 </html>

@@ -82,3 +82,20 @@ img {
     white-space: nowrap;
     font-size: 36px;
 }
+
+@media only screen and (max-width: 720px) {
+    .text {
+        font-size: 21px;
+    }
+    img {
+        height: 40px;
+        width: 40px;
+    }
+    .rating:hover label {
+        width: 60px;
+    }
+    .rating input:hover+label,
+    .rating input:checked+label {
+        width: 60px;
+    }
+}
