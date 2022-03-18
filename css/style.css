@@ -8,10 +8,19 @@
 html {
     --bg: #f8fafc;
     --primary: #f43f5e;
+    --btn-color: #f43f5e;
+    --btn-text: #fff;
+    --head: #334155;
+    --card: #fff;
+    --p: #4b5563;
 }
 
 html[data-theme="dark"] {
-    --bg: black;
+    --bg: #1e293b;
+    --btn-color: #fecdd3;
+    --btn-text: #1e293b;
+    --head: #fff;
+    --p: #94A3B8;
 }
 
 a {
@@ -44,11 +53,11 @@ body {
 .projects-heading h3 {
     font-size: 2.7rem;
     font-weight: 600;
-    color: #334155;
+    color: var(--head);
 }
 
 .projects-heading p {
-    color: #4b5563;
+    color: var(--p);
 }
 
 .btn-container {
@@ -56,10 +65,11 @@ body {
 }
 
 .projects-heading .source-code-btn {
-    background-color: var(--primary);
+    background-color: var(--btn-color);
+    font-weight: 500;
     border-radius: 0.5rem;
     /* height: 2.5rem; */
-    color: #fff;
+    color: var(--btn-text);
     padding: 0.8rem 1rem;
 }
 
@@ -73,7 +83,7 @@ body {
 }
 
 .card {
-    background: #FFF;
+    background: var(--card);
     border-radius: 8px;
     color: #0f172a;
     transition: all 0.2s ease-in-out 0s;
@@ -136,7 +146,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 9999px;
-    padding: 10px;
+    padding: 8px;
     align-items: center;
     background-color: #f43f5e;
     color: #ffffff;
