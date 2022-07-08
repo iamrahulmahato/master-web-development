@@ -33,7 +33,10 @@ The goal is to be well versed with HTML, CSS, JavaScript and Browser APIs such a
 ## 🎯 All Projects
 The list of projects are given below -
 
-* 01 - Counter
+- [01 - Counter](https://master-web-development.netlify.app/projects/counter/index.html)
+- [02 - Rating System](https://master-web-development.netlify.app/projects/rating%20system/)
+- [03 - Love Calculator](https://master-web-development.netlify.app/projects/love%20calculator/)
+- [04 - Planets](https://master-web-development.netlify.app/projects/plants/)
 
 
 
