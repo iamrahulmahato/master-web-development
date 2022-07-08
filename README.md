@@ -19,11 +19,10 @@
   </a>
   
   [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
   <img src="https://img.shields.io/github/languages/code-size/iamrahulmahato/master-web-development?style=flat-square" alt="Code size" />
   <img src="https://img.shields.io/github/license/iamrahulmahato/master-web-development?style=flat-square" alt="License" />
-
   <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/iamrahulmahato/master-web-development?style=flat-square">
-
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/iamrahulmahato/master-web-development?style=social">
 </div>
 
