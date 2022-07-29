@@ -107,10 +107,6 @@ git push
 Please note that Open Source Design has a [Contributor Code of Conduct](./CODE_OF_CONDUCT.md). By participating in this project online or at events you agree to abide by its terms.
 
 
-## ⚠️ License
-
-MIT License Copyright (c) 2022 [Rahul Mahato](https://github.com/iamrahulmahato). 
-
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <br>
