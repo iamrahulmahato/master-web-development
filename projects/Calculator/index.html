@@ -1,0 +1,58 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="title">
+      <a href="#">JavaScript Calculator</a>
+    </div>
+    <div class="content">
+        <table border="3">
+            <tr>
+                <td><input type="button" value="c" onclick="clear_textval()"/> </td>
+                <td colspan="3"><input type="text" id="textval"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="+" onclick="display('+')"/> </td>
+                <td><input type="button" value="1" onclick="display('1')"/> </td>
+                <td><input type="button" value="2" onclick="display('2')"/> </td>
+                <td><input type="button" value="3" onclick="display('3')"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="-" onclick="display('-')"/> </td>
+                <td><input type="button" value="4" onclick="display('4')"/> </td>
+                <td><input type="button" value="5" onclick="display('5')"/> </td>
+                <td><input type="button" value="6" onclick="display('6')"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="*" onclick="display('*')"/> </td>
+                <td><input type="button" value="7" onclick="display('7')"/> </td>
+                <td><input type="button" value="8" onclick="display('8')"/> </td>
+                <td><input type="button" value="9" onclick="display('9')"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="/" onclick="display('/')"/> </td>
+                <td><input type="button" value="." onclick="display('.')"/> </td>
+                <td><input type="button" value="0" onclick="display('0')"/> </td>
+                <td><input type="button" value="=" onclick="evaluate_exp()"/> </td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+function display(val)
+{
+    document.getElementById("textval").value += val
+}
+function evaluate_exp()
+{
+    let x = document.getElementById("textval").value
+    let y = eval(x)
+    document.getElementById("textval").value = y
+}
+function clear_textval()
+{
+    document.getElementById("textval").value = ""
+}
+</script>
+</html>
