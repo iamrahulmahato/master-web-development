@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #88bbfa;
+}
+
+.container {
+    margin: auto;
+    width: 60%;
+    background-color: #3d72b4;
+}
+
+.section-todo {
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.section-todo h1 {
+    font-size: 2rem;
+    padding-top: 1.5rem;
+    color: whitesmoke;
+}
+
+.form-todo {
+    min-height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.form-todo input {
+    min-height: 100%;
+}
+.form-todo input[type="text"] {
+    width: 78%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 1rem;
+}
+.form-todo input[type="submit"] {
+    width: 20%;
+    background: rgb(44,55,63);
+    color: whitesmoke;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+.todo-list {
+    text-align: left;
+    font-size: 1.2rem;
+    list-style-type: none;
+    padding-bottom: 1.5rem;
+}
+.todo-list li {
+    padding: 0.7rem;
+    background: #444;
+    color: white;
+    margin: 1rem 1rem;
+    text-transform: capitalize;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+.todo-btn {
+    min-height: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
