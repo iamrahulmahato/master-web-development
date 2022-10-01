@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine;
+    min-height: 100vh;
+}
+
+#score{
+    position: absolute;
+    top: 180px;
+    right: 50px;
+    font-size: 39px;
+    font-weight: bold;
+}
+
+#board{
+  background: linear-gradient(blue,rgb(3, 151, 201));
+  width: 60vw;
+  height: 70vh;
+  border: 2px solid black;
+  display: grid;
+  grid-template-rows: repeat(18,1fr);
+  grid-template-columns: repeat(18,1fr);
+
+}
+
+/* Snake represented With ) Symbol */
+.snake{
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+}
+
+.food{
+    background-color: red;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+}
+
