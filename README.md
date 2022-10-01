@@ -113,10 +113,5 @@ Please note that Open Source Design has a [Contributor Code of Conduct](./CODE_O
   
 <br>
 
-<div align="center">
 
-### Give a star ⭐️ if this project helped you!
-
-
-</div>
 
