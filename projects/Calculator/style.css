@@ -14,16 +14,15 @@ body{
     background-color: #333;
 }
 .title a {
-    float: left;
     display: block;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-weight: bold;
 }
 .title a:hover {
-    background-color: #ddd;
-    color: black;
+    color: #d8bfd8;
 }
 .content {
     background-color: #d8bfd8;
@@ -41,10 +40,10 @@ tr,td,input{
 }
 input[type="button"]
 {
-    border-radius: 10px;
+    border-radius: 50%;
     background-color:blue;
     color: white;
-    border-color:#black ;
+    border: none;
     width:100%;
 }
 input[type="button"]:hover
