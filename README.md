@@ -106,6 +106,17 @@ git push
 - Add Screenshots to help us know what this Script is all about.
 - Congratulations! 🎉 Sit and relax, you've made your contribution to [master-web-development](https://github.com/iamrahulmahato/master-web-development) project.
 
+### Tip : Complete this process in GitHub (in your browser)
+
+flowchart LR
+    Fork[Fork the project]-->branch[Create a New Branch]
+    branch-->Edit[Edit file]
+    Edit-->commit[Commit the changes]
+    commit -->|Finally|creatpr((Create a Pull Request))
+    
+
+
+
 
   
 ## ❤️ Code of Conduct
