@@ -1,4 +1,12 @@
 const toggleModeBtn = document.getElementById("toggle-mode-btn");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+if (prefersDarkScheme.matches) {
+  document.documentElement.setAttribute("data-theme", "dark");
+} else {
+  document.documentElement.setAttribute("data-theme", "light");
+}
+
 toggleModeBtn.onclick = () => {
     if (document.documentElement.getAttribute("data-theme") === "light") {
         document.documentElement.setAttribute("data-theme", "dark");

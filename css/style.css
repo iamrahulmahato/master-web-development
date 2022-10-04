@@ -150,6 +150,7 @@ body {
     align-items: center;
     background-color: #f43f5e;
     color: #ffffff;
+    cursor: pointer;
 }
 
 #toggle-mode-btn svg {
