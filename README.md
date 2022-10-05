@@ -40,10 +40,20 @@ The goal is to be well versed with HTML, CSS, JavaScript and Browser APIs such a
 ## 🎯 All Projects
 The list of projects are given below -
 
-- [01 - Counter](https://master-web-development.netlify.app/projects/counter/index.html)
-- [02 - Rating System](https://master-web-development.netlify.app/projects/rating%20system/)
-- [03 - Love Calculator](https://master-web-development.netlify.app/projects/love%20calculator/)
-- [04 - Planets](https://master-web-development.netlify.app/projects/plants/)
+- [01 - Calculator](https://master-web-development.netlify.app/projects/calculator/index.html)
+- [02 - Counter](https://master-web-development.netlify.app/projects/counter/index.html)
+- [03 - LinkTree Clone](https://master-web-development.netlify.app/projects/linktree%20clone/index.html)
+- [04 - Rating System](https://master-web-development.netlify.app/projects/rating%20system/)
+- [05 - Love Calculator](https://master-web-development.netlify.app/projects/love%20calculator/)
+- [06 - Planets](https://master-web-development.netlify.app/projects/plants/)
+- [07 - Memory Tiles](https://master-web-development.netlify.app/projects/memory%20tiles/index.html)
+- [08 - Password Generator](https://master-web-development.netlify.app/projects/password%20generator/index.html)
+- [09 - Ping Pong Game](https://master-web-development.netlify.app/projects/ping%20pong%20game/index.html)
+- [10 - Random User Generator](https://master-web-development.netlify.app/projects/random%20user%20generator/index.html)
+- [11 - Snake Game](https://master-web-development.netlify.app/projects/snake%20game/index.html)
+- [12 - Storybazzi](https://master-web-development.netlify.app/projects/storybazzi/index.html)
+- [13 - Tic Tac Toe](https://master-web-development.netlify.app/projects/tic-tac-toe/index.html)
+- [14 - Todo List](https://master-web-development.netlify.app/projects/todo%20list/index.html)
 
 
 
