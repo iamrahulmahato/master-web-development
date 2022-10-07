@@ -1191,6 +1191,7 @@ a:hover {
 .footer .footer-info p {
   font-size: 14px;
   font-family:white;
+  font-family: "Open Sans", sans-serif;
   color: #fff;
 }
 
@@ -1227,8 +1228,8 @@ a:hover {
 
 .footer .footer-links ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin:auto;
 }
 
 .footer .footer-links ul i {
@@ -1241,7 +1242,7 @@ a:hover {
 .footer .footer-links ul li {
   padding: 10px 0;
   display: flex;
-  align-items: center;
+  align-items:center;
 }
 
 .footer .footer-links ul li:first-child {
