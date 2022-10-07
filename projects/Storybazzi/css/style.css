@@ -22,7 +22,11 @@ body {
   color: #696c6d;
   font-size: 14px;
 }
-
+:root {
+  
+  --color-primary: #0f0f0f;
+  --color-secondary: #f85a40;
+}
 p, .paragraph {
   font-weight: 400;
   color: #696c6d;
@@ -1158,3 +1162,121 @@ a:hover {
   display: block;
 }
 /*# sourceMappingURL=style.css.map */
+.footer {
+  font-size: 14px;
+  background-color: var(--color-primary);
+  padding: 50px 0;
+  color: white;
+}
+
+.footer .footer-info .logo {
+  line-height: 0;
+  margin-bottom: 25px;
+  text-decoration: none;
+}
+
+.footer .footer-info .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.footer .footer-info .logo span {
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+  font-family: var(--font-primary);
+  
+}
+
+.footer .footer-info p {
+  font-size: 14px;
+  font-family:white;
+  color: #fff;
+}
+
+.footer .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  margin-right: 10px;
+  transition: 0.3s;
+  color: #fff;
+}
+
+.footer .social-links a:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+.footer h4 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 12px;
+  color: #fff;
+}
+
+.footer .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-links ul i {
+  padding-right: 2px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  line-height: 0;
+}
+
+.footer .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-links ul a {
+  color: #fff;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.footer .footer-links ul a:hover {
+  color: #fff;
+}
+
+.footer .footer-contact p {
+  line-height: 26px;
+  color: #fff;
+}
+
+.footer .copyright {
+  text-align: center;
+}
+
+.footer .credits {
+  padding-top: 4px;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+  
+}
+
+.footer .credits a {
+  color: #fff;
+}
