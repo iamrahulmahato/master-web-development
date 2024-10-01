@@ -12,3 +12,33 @@ body {
     align-items: center;
     height: 100vh;
 }
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#add-note {
+    background-color: #4CAF50;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+#add-note:hover {
+    background-color: #45a049;
+}
