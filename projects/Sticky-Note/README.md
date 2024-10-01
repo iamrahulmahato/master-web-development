@@ -7,7 +7,6 @@ Sticky Notes is a simple web application that allows users to create, edit, and 
 - **Create Notes**: Easily add new sticky notes to your workspace.
 - **Edit Notes**: Modify your notes at any time, with changes automatically saved.
 - **Delete Notes**: Remove notes you no longer need with a simple click.
-- **Persistent Storage**: Notes are saved in local storage, preserving them across sessions.
 
 ## Technologies Used
 - **HTML**: For structuring the web application.

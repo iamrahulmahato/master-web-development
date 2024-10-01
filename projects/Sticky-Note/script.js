@@ -12,8 +12,8 @@ function addNote() {
     editButton.classList.add('edit-note');
     editButton.addEventListener('click', () => {
         if (textarea.disabled) {
-            textarea.disabled = false; // Enable editing
-            editButton.textContent = 'Save'; // Change button text to Save
+            textarea.disabled = false; 
+            editButton.textContent = 'Save'; 
         } else {
             textarea.disabled = true; 
             editButton.textContent = 'Edit'; 
