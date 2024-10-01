@@ -1,54 +1,84 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container{
+body {
+    background-color: #121212; /* Deep black background for minimal look */
+    color: #d3d3d3; /* Lighter grey text color */
+    font-family: 'Poppins', sans-serif; /* A cleaner modern font */
+}
+
+.container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: aquamarine;
     min-height: 100vh;
 }
 
-#score{
+.heading {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #f5f5f5; /* Brighter text for better contrast */
+    letter-spacing: 1px; /* A slight spacing for aesthetic */
+}
+
+.start-button {
+    padding: 12px 25px;
+    font-size: 22px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background-color: #1e90ff; /* Cool blue for button */
+    color: white;
+    border: none;
+    border-radius: 50px; /* Rounded edges for a modern feel */
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+}
+
+.start-button:hover {
+    background-color: #00bfff; /* Slightly lighter on hover */
+}
+
+#score {
     position: absolute;
-    top: 180px;
+    top: 20px;
     right: 50px;
-    font-size: 39px;
+    font-size: 24px;
     font-weight: bold;
+    color: #00ff7f; /* Neon green for score */
 }
 
-#board{
-  background: linear-gradient(blue,rgb(3, 151, 201));
-  width: 60vw;
-  height: 70vh;
-  border: 2px solid black;
-  display: grid;
-  grid-template-rows: repeat(18,1fr);
-  grid-template-columns: repeat(18,1fr);
-
+#board {
+    background: #222; /* Darker shade for the board */
+    width: 60vw;
+    height: 70vh;
+    border: 2px solid #f5f5f5; /* Lighter border for contrast */
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Depth effect */
+    border-radius: 10px; /* Slight rounding of the board edges */
 }
 
-/* Snake represented With ) Symbol */
-.snake{
-    background-color: black;
-    color: white;
+.snake {
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid white;
+    font-size: 24px; /* Snake size for visibility */
+    background-color: #4be34b; /* Bright green for snake */
+    border-radius: 5px; /* Rounded for smooth appearance */
 }
 
-.food{
-    background-color: red;
-    color: white;
+.food {
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid white;
+    font-size: 24px;
+    background-color: #ff6347; /* Tomato red for food */
+    border-radius: 50%; /* Circular food shape */
 }
-
