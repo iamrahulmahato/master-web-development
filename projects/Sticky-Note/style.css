@@ -105,3 +105,15 @@ textarea:focus {
 .delete-note:hover {
     background-color: #d32f2f; 
 }
+
+
+.edit-note {
+    right: 10px;
+    background-color: #2196F3; /* Blue */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.edit-note:hover {
+    background-color: #1976D2; /* Darker blue */
+}
