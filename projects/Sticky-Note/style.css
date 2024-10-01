@@ -81,7 +81,7 @@ textarea {
 
 textarea:focus {
     outline: none;
-    border: 1px solid #4CAF50; /* Green outline */
+    border: 1px solid #4CAF50; 
 }
 
 .delete-note,
