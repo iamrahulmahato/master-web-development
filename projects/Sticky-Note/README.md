@@ -23,8 +23,8 @@ To run the Sticky Notes application locally in Visual Studio Code, follow these 
    ```
 
 2.Open the Project in VS Code:
-    - Launch Visual Studio Code.
-    - Click on `File` > `Open Folder...` and select the cloned project directory.
+- Launch Visual Studio Code.
+- Click on 'File' > 'Open Folder...' and select the cloned project directory.
 3.Open index.html:
 
 - In the Explorer pane, find and open the index.html file.
