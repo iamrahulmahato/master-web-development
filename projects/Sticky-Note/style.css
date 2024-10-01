@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f4f8; /* Light grayish blue */
+    background-color: #f0f4f8; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,17 +19,17 @@ body {
     max-width: 800px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff; /* White */
+    background-color: #ffffff;
     padding: 20px;
 }
 
 h1 {
     margin-bottom: 20px;
-    color: #333; /* Dark gray */
+    color: #333;
 }
 
 #add-note {
-    background-color: #6c63ff; /* Soft purple */
+    background-color: #6c63ff;
     border: none;
     padding: 10px 20px;
     font-size: 18px;
@@ -40,7 +40,7 @@ h1 {
 }
 
 #add-note:hover {
-    background-color: #5a54d8; /* Darker purple */
+    background-color: #5a54d8;
 }
 
 #notes-container {
@@ -52,7 +52,7 @@ h1 {
 
 .note {
     width: 250px;
-    background-color: #fffbcc; /* Soft yellow */
+    background-color: #fffbcc;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -61,8 +61,8 @@ h1 {
 }
 
 .note:hover {
-    transform: translateY(-5px); /* Lift note on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
 }
 
 textarea {
