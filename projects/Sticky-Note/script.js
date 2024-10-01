@@ -15,8 +15,8 @@ function addNote() {
             textarea.disabled = false; // Enable editing
             editButton.textContent = 'Save'; // Change button text to Save
         } else {
-            textarea.disabled = true; // Disable editing
-            editButton.textContent = 'Edit'; // Change button text back to Edit
+            textarea.disabled = true; 
+            editButton.textContent = 'Edit'; 
         }
     });
 
@@ -24,7 +24,7 @@ function addNote() {
     deleteButton.textContent = 'X';
     deleteButton.classList.add('delete-note');
     deleteButton.addEventListener('click', () => {
-        note.remove(); // Remove the note from the container
+        note.remove(); 
     });
 
     note.appendChild(textarea);
