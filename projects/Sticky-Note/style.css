@@ -53,7 +53,7 @@ h1 {
 
 .note {
     width: 250px;
-    background-color: #ffeb3b; /* Bright yellow */
+    background-color: #ffeb3b;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
