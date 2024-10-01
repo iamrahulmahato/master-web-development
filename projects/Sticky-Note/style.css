@@ -97,11 +97,11 @@ textarea:focus {
 
 .delete-note {
     right: 50px;
-    background-color: #f44336; /* Red */
+    background-color: #f44336;
     color: white;
     transition: background-color 0.3s;
 }
 
 .delete-note:hover {
-    background-color: #d32f2f; /* Darker red */
+    background-color: #d32f2f; 
 }
