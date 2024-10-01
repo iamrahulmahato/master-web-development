@@ -109,11 +109,11 @@ textarea:focus {
 
 .edit-note {
     right: 10px;
-    background-color: #2196F3; /* Blue */
+    background-color: #2196F3;
     color: white;
     transition: background-color 0.3s;
 }
 
 .edit-note:hover {
-    background-color: #1976D2; /* Darker blue */
+    background-color: #1976D2;
 }
