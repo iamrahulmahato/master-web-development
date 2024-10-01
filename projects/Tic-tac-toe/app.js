@@ -1,17 +1,16 @@
 let currPlayer = 'X';
 let GameStatus = '';
-
 const boxes = document.querySelectorAll('.box');
 
 const selectBox = (element) => {
     if (element.target.innerText === '') {
         element.target.innerText = currPlayer;
-        switchPlayer();
-    } 
-    else {
+        if (!checkWinner()) { // Only switch player if no winner
+            switchPlayer();
+        }
+    } else {
         alert('Already filled');
     }
-    checkWinner();
 }
 
 const switchPlayer = () => {
@@ -20,93 +19,53 @@ const switchPlayer = () => {
 }
 
 const checkWinner = () => {
-    const box1 = document.querySelector('#box1');
-    const box2 = document.querySelector('#box2');
-    const box3 = document.querySelector('#box3');
-    const box4 = document.querySelector('#box4');
-    const box5 = document.querySelector('#box5');
-    const box6 = document.querySelector('#box6');
-    const box7 = document.querySelector('#box7');
-    const box8 = document.querySelector('#box8');
-    const box9 = document.querySelector('#box9');
+    const winningCombinations = [
+        ['box1', 'box2', 'box3'],
+        ['box4', 'box5', 'box6'],
+        ['box7', 'box8', 'box9'],
+        ['box1', 'box4', 'box7'],
+        ['box2', 'box5', 'box8'],
+        ['box3', 'box6', 'box9'],
+        ['box1', 'box5', 'box9'],
+        ['box3', 'box5', 'box7']
+    ];
 
-    if (box1.innerText !== '' && box1.innerText === box2.innerText && box1.innerText === box3.innerText) {
-        GameStatus = `${box1.innerText} won`;
-        setTimeout(() => {
-            alert(GameStatus);
-            resetGame();
-        }, 100);
-        return;
-    }
-    if (box4.innerText !== '' && box4.innerText === box5.innerText && box4.innerText === box6.innerText) {
-        GameStatus = `${box4.innerText} won`;
-        setTimeout(() => {
-            alert(GameStatus);
-            resetGame();
-        }, 100);
-        return;
-    }
-    if (box7.innerText !== '' && box7.innerText === box8.innerText && box7.innerText === box9.innerText) {
-        GameStatus = `${box7.innerText} won`;
-        setTimeout(() => {
-            alert(GameStatus);
-            resetGame();
-        }, 100);
-        return;
-    }
-    if (box1.innerText !== '' && box1.innerText === box4.innerText && box1.innerText === box7.innerText) {
-        GameStatus = `${box1.innerText} won`;
-        setTimeout(() => {
-            alert(GameStatus);
-            resetGame();
-        }, 100);
-        return;
-    }
-    if (box2.innerText !== '' && box2.innerText === box5.innerText && box2.innerText === box8.innerText) {
-        GameStatus = `${box2.innerText} won`;
-        setTimeout(() => {
-            alert(GameStatus);
-            resetGame();
-        }, 100);
-        return;
-    }
-    if (box3.innerText !== '' && box3.innerText === box6.innerText && box3.innerText === box9.innerText) {
-        GameStatus = `${box3.innerText} won`;
-        setTimeout(() => {
-            alert(GameStatus);
-            resetGame();
-        }, 100);
-        return;
-    }
-    if (box1.innerText !== '' && box1.innerText === box5.innerText && box1.innerText === box9.innerText) {
-        GameStatus = `${box1.innerText} won`;
-        setTimeout(() => {
-            alert(GameStatus);
-            resetGame();
-        }, 100);
-        return;
+    for (const combination of winningCombinations) {
+        const [a, b, c] = combination.map(id => document.querySelector(`#${id}`).innerText);
+        if (a !== '' && a === b && a === c) {
+            GameStatus = `${a} won`;
+            setTimeout(() => {
+                alert(GameStatus);
+                resetGame();
+            }, 100);
+            return true; // Indicate that a winner was found
+        }
     }
 
-    if (box3.innerText !== '' && box3.innerText === box5.innerText && box3.innerText === box7.innerText) {
-        GameStatus = `${box3.innerText} won`;
+    // Check for tie condition
+    if (Array.from(boxes).every(box => box.innerText !== '')) {
         setTimeout(() => {
-            alert(GameStatus);
+            alert("It's a tie!");
             resetGame();
         }, 100);
-        return;
+        return true; // Indicate a tie
     }
+
+    return false; // No winner or tie
 }
 
 const resetGame = () => {
     boxes.forEach(box => {
         box.innerText = '';
-    })
+    });
+    currPlayer = 'X'; // Reset to player X
+    document.querySelector('#player').innerText = `${currPlayer}'s`; // Update player display
 }
 
+// Event listeners for boxes and reset button
 boxes.forEach(box => {
     box.addEventListener('click', selectBox);
-}
-)
+});
 
 const reset = document.querySelector('#reset');
 reset.addEventListener('click', resetGame);
