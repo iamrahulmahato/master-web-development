@@ -35,6 +35,6 @@ To run the Sticky Notes application locally in Visual Studio Code, follow these 
 
 
 ## Usage
---Click the "Add Note" button to create a new sticky note.
---Type your note in the text area. Changes will be saved automatically as you type.
---Click the 'X' button on a note to delete it.
+- Click the "Add Note" button to create a new sticky note.
+- Type your note in the text area. Changes will be saved automatically as you type.
+- Click the 'X' button on a note to delete it.
