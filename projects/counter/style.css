@@ -36,7 +36,7 @@ button {
     height: 60px;
     border-radius: 50%;
     background: white;
-    border: none;
+    border: 1px solid black;
     position: absolute;
 }
 
