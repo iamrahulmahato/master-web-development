@@ -73,14 +73,14 @@ textarea {
     resize: none;
     font-size: 16px;
     font-family: inherit;
-    color: #333; /* Dark gray */
+    color: #333;
     padding: 5px;
     border-radius: 5px;
 }
 
 textarea:focus {
     outline: none;
-    border: 1px solid #6c63ff; /* Purple outline */
+    border: 1px solid #6c63ff; 
 }
 
 .delete-note,
@@ -96,18 +96,18 @@ textarea:focus {
 
 .delete-note {
     right: 50px;
-    background-color: #ff6b6b; /* Soft red */
+    background-color: #ff6b6b;
     color: white;
     transition: background-color 0.3s;
 }
 
 .delete-note:hover {
-    background-color: #ff3d3d; /* Darker red */
+    background-color: #ff3d3d;
 }
 
 .edit-note {
     right: 10px;
-    background-color: #4db8ff; /* Soft blue */
+    background-color: #4db8ff;
     color: white;
     transition: background-color 0.3s;
 }
