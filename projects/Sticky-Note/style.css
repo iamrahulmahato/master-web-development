@@ -64,3 +64,44 @@ h1 {
 .note:hover {
     transform: scale(1.05); 
 }
+
+
+textarea {
+    width: 100%;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+    resize: none;
+    font-size: 16px;
+    font-family: inherit;
+    color: #333;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+textarea:focus {
+    outline: none;
+    border: 1px solid #4CAF50; /* Green outline */
+}
+
+.delete-note,
+.edit-note {
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.delete-note {
+    right: 50px;
+    background-color: #f44336; /* Red */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.delete-note:hover {
+    background-color: #d32f2f; /* Darker red */
+}
