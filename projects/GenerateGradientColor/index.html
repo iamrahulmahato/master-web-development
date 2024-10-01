@@ -5,15 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="gradient.css" />
-    <title>ColorGenerator</title>
-    <!-- created by danish Date: 06-OCT-2022 -->
+    <title>Color Generator</title>
+    <!-- created by Danish Date: 06-OCT-2022 -->
   </head>
   <body>
     <div class="container">
       <p id="colorName">#ffffff</p>
+      <div class="gradient-preview" id="gradientPreview"></div>
       <button id="btn" onclick="generate()">Generate Gradient</button>
-      <h4>Made by 💗 <a href="https://github.com/danishzayan">Danish Zayan</a></h4>
+      <button id="copyBtn" onclick="copyGradient()">Copy CSS</button>
+      
     </div>
-    <script src="gradient.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
