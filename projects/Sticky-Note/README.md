@@ -24,15 +24,15 @@ To run the Sticky Notes application locally in Visual Studio Code, follow these 
    ```
 
 2.Open the Project in VS Code:
-    #Launch Visual Studio Code.
-    #Click on File > Open Folder... and select the cloned project directory.
+    --Launch Visual Studio Code.
+    --Click on File > Open Folder... and select the cloned project directory.
 3.Open index.html:
 
-#In the Explorer pane, find and open the index.html file.
+--In the Explorer pane, find and open the index.html file.
 4.Live Server Extension (Optional but recommended):
 
-#Install the Live Server extension from the VS Code Marketplace.
-#After installation, right-click on the index.html file and select Open with Live Server to launch the application in your default browser.
+--Install the Live Server extension from the VS Code Marketplace.
+--After installation, right-click on the index.html file and select Open with Live Server to launch the application in your default browser.
 
 
 ## Usage
