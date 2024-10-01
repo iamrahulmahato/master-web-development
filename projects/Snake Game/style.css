@@ -63,6 +63,7 @@ body {
     border-radius: 10px; /* Slight rounding of the board edges */
 }
 
+/* Snake Styling */
 .snake {
     text-align: center;
     display: flex;
@@ -73,6 +74,7 @@ body {
     border-radius: 5px; /* Rounded for smooth appearance */
 }
 
+/* Food Styling */
 .food {
     text-align: center;
     display: flex;
@@ -81,4 +83,41 @@ body {
     font-size: 24px;
     background-color: #ff6347; /* Tomato red for food */
     border-radius: 50%; /* Circular food shape */
+}
+
+/* Media Queries for Smaller Devices */
+
+/* For tablets and medium-sized devices */
+@media (max-width: 768px) {
+    #board {
+        width: 80vw; /* Increase width for tablets */
+    }
+
+    .heading {
+        font-size: 36px; /* Adjust heading size */
+    }
+
+    .start-button {
+        font-size: 20px; /* Adjust button font size */
+    }
+}
+
+/* For small devices like smartphones */
+@media (max-width: 480px) {
+    #board {
+        width: 90vw; /* Further increase width for smaller screens */
+    }
+
+    .heading {
+        font-size: 28px; /* Adjust heading size for small devices */
+    }
+
+    .start-button {
+        font-size: 18px; /* Smaller button font size */
+        padding: 10px 20px; /* Adjust padding */
+    }
+
+    #score {
+        font-size: 20px; /* Adjust score font size */
+    }
 }
