@@ -38,12 +38,13 @@ body {
 }
 
 #projects {
-    margin: 5rem 0;
+    margin: 6rem 0;
 }
 
 .projects-heading {
-    margin-top: 20px;
+    margin-top: 30px;
     text-align: center;
+    text-emphasis-color: solid black;
 }
 
 .projects-heading h3 span {
@@ -76,10 +77,10 @@ body {
 .projects-container {
     max-width: 1080px;
     display: grid;
-    margin: 3rem auto;
+    margin: 2rem auto;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-gap: 1rem;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 .card {
