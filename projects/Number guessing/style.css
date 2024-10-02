@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: linear-gradient(to bottom, #ff69b4, #ffc0cb);
+    background-image: linear-gradient(to bottom, #2c2528, #2c2528);
     background-size: 100% 300px;
     background-position: 0% 100%;
     height: 100vh;
@@ -12,7 +12,7 @@ body {
     position: relative;
 }
 
-/* Background with Random Numbers */
+
 body::before {
     content: '';
     position: absolute;
@@ -20,8 +20,8 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: repeating-linear-gradient(
-        45deg,
+    background-image: linear-gradient(to bottom, rgba(255, 105, 180, 0.5), rgba(255, 192, 203, 0.5)); /* Add image and gradient */
+    
         rgba(255, 255, 255, 0.1),
         rgba(255, 255, 255, 0.1) 30px,
         transparent 30px,
@@ -37,22 +37,22 @@ body::before {
     z-index: -1;
 }
 
-/* Adding a transparent container body */
+/* Added a transparent container body */
 .container {
     width: 80%;
     margin: 40px auto;
-    background-color: rgba(139, 10, 26, 0.7); /* Transparent background */
+    background-color: rgba(27, 23, 23, 0.7);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    background-image: linear-gradient(to bottom, rgba(139, 10, 26, 0.7), rgba(255, 0, 51, 0.7));
+    background-image: linear-gradient(to bottom, rgba(100, 32, 42, 0.7), rgba(53, 73, 128, 0.7));
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-/* Other CSS remains the same */
+
 .container_wrapper {
     display: flex;
     justify-content: space-between;
@@ -61,7 +61,7 @@ body::before {
 }
 
 .btn_again {
-    background-color: #ff69b4;
+    background-color: #241212;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -72,7 +72,7 @@ body::before {
 }
 
 .btn_again:hover {
-    background-color: #ff0033;
+    background-color: #000000;
 }
 
 .number_data {
@@ -86,12 +86,12 @@ body::before {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    background-color: #ffc0cb;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    background-color: #aaa7a7;
 }
 
 .btn_check {
-    background-color: #ff69b4;
+    background-color: #19162b;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -102,7 +102,7 @@ body::before {
 }
 
 .btn_check:hover {
-    background-color: #ff0033;
+    background-color: #000000;
 }
 
 .content {
@@ -117,17 +117,17 @@ body::before {
 }
 
 .hide_num {
-    font-size: 48px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #ff69b4;
+    color: hsl(330, 4%, 60%);
 }
 
 .message {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #ff69b4;
+    color: #9372e2;
 }
 
 /* Celebration styles */
@@ -224,7 +224,7 @@ body::before {
     height: 150px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(156, 71, 71, 0.5);
 }
 
 .rocket-flames {
@@ -242,7 +242,7 @@ body::before {
     position: relative;
     width: 20px;
     height: 20px;
-    background-color: #ff69b4;
+    background-color: #946b7f;
     border-radius: 50%;
     animation: flame 2s infinite;
 }
