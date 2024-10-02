@@ -13,6 +13,11 @@ just need  to know how to start live server and vs code
 ### Installation
 To install this project, follow these steps:
 
+### contact
+Looking forwards for good contributers
+ Reach me through email - [toshankanwar2003@gmail.com](mailto:toshankanwar2003@gmail.com)
+Linkdin [Url] (https://www.linkedin.com/in/toshankanwar2005/)
+
 ```bash
 # Clone the repository
 git clone https://github.com/iamrahulmahato/master-web-development.git
@@ -23,8 +28,5 @@ cd project-name
 # Install dependencies
 npm install
 
-### contact
-Looking forwards for good contributers
-Reach me through email - toshankanwar2003@gmail.com
-Linkdin https://www.linkedin.com/in/toshankanwar2005/
+
 
