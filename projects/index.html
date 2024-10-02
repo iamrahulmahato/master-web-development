@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="simon.css"/>
+    <title>Simon</title>
+    
+</head>
+<body>
+    <button class="replay">Start</button>
+    <div class="dropdown">
+        <button class="instruct">Instructions
+            <li class="up">Press 'Start'</li>
+            <li class="up">After the computer plays a sequence repeat it in the same order by pressing on the corresponding colors</li>
+            <li class="up">If you lose, you can play again by pressing on 'Restart'</li>
+        </button>
+    </div>
+    
+    <h1 id="title">⨳ SIMON ⨳</h1>
+    <h2 class="levels">✨Focus & Win!✨</h2>
+    <div class="container">
+        <button id="red" class="box one"></button>
+        <button id="green" class="box two"></button>
+        <button id="yellow" class="box three"></button>
+        <button id="blue" class="box four"></button>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="simon.js" charset="UTF-8"></script>
+</body>
+</html>
