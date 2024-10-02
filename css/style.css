@@ -156,18 +156,3 @@ body {
 #toggle-mode-btn svg {
     fill: #fff;
 }
-#weather-section {
-    position: fixed;
-    top: 1rem;
-    right: 4rem; /* Adjust this to avoid overlap with your toggle button */
-    background-color: #1e293b;
-    color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    z-index: 100; /* Ensures it stays on top of other elements */
-}
-
-#weather-info {
-    margin: 0;
-}

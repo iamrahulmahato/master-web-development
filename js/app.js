@@ -23,20 +23,3 @@ toggleModeBtn.onclick = () => {
       </svg>`;
     }
 }
-document.addEventListener("DOMContentLoaded", () => {
-  const apiKey = "YOUR_API_KEY";
-  const city = "London"; // Replace with your desired city
-  const weatherSection = document.getElementById('weather-info');
-
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
-      .then(response => response.json())
-      .then(data => {
-          const temperature = data.main.temp;
-          const weather = data.weather[0].description;
-          weatherSection.textContent = `${city}: ${temperature}°C, ${weather}`;
-      })
-      .catch(error => {
-          weatherSection.textContent = "Unable to fetch weather data";
-          console.error('Error fetching weather data:', error);
-      });
-});
