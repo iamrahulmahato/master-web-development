@@ -11,7 +11,6 @@ const apiPaths = {
 }
 
 
-// Boots up the app
 function init() {
     fetchTrendingMovies();
     fetchAndBuildAllSections();
@@ -62,7 +61,6 @@ function fetchAndBuildAllSections(){
                 );
             });
         }
-        // console.table(movies);
     })
     .catch(err=>console.error(err));
 }
