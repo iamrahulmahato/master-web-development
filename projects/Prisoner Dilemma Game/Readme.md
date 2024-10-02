@@ -16,7 +16,7 @@ To install this project, follow these steps:
 ### contact
 Looking forwards for good contributers
  Reach me through email - [toshankanwar2003@gmail.com](mailto:toshankanwar2003@gmail.com)
-Linkdin [Url] (https://www.linkedin.com/in/toshankanwar2005/)
+Linkdin (https://www.linkedin.com/in/toshankanwar2005/)
 
 ```bash
 # Clone the repository
