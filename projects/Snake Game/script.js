@@ -1,138 +1,115 @@
-let board = document.getElementById('board');
-let scoreEl = document.getElementById('score');
-// object
-let inputDirection = {x:0,y:0};
-let snakeArray = [
-   {x:13,y:15}
-];
+let gameArea = document.getElementById('game-area');
+let scoreBox = document.getElementById('score-box');
+let highscoreBox = document.getElementById('highscore-box');
+let gameOverDiv = document.getElementById('game-over');
+let gameOverMessage = document.getElementById('game-over-message');
+let scoreMessage = document.createElement('p');
+scoreMessage.id = 'score-message';
+gameOverDiv.appendChild(scoreMessage); // Add score message to the game over div
 
-let score=0;
+const tileSize = 20;
+const rows = 20;  // 400px height divided by 20px tiles
+const cols = 30;  // 600px width divided by 20px tiles
+let snake = [{ x: 14, y: 9 }]; // Start in the center of the new grid
+let direction = { x: 0, y: 0 };
+let apple = { x: Math.floor(Math.random() * cols), y: Math.floor(Math.random() * rows) };
+let score = 0;
+let highScore = 0;
+let gameInterval;
 
-// Food is not array because food is only one particle
-let food = {x:6,y:7}
-
-function main(){
-    // console.log('Game Engine Called');
-    gameEngine();
+function drawSnake() {
+  gameArea.innerHTML = '';
+  snake.forEach((part, index) => {
+    let snakePart = document.createElement('div');
+    if (index === 0) {
+      snakePart.classList.add('snake-head'); // Use the head image for the first part
+    } else {
+      snakePart.classList.add('snake-body'); // Use the body image for the rest
+    }
+    snakePart.style.left = part.x * tileSize + 'px';
+    snakePart.style.top = part.y * tileSize + 'px';
+    gameArea.appendChild(snakePart);
+  });
 }
 
-function isCollide(snake){
-    
-    // if snake bumps into itself
-    for(let i = 1; i < snakeArray.length;i++){
-        
-        if(snake[i].x === snake[0].x && snake[i].y === snake[0].y){
-            return true
-        }
-    }
-    
-    // if collide into wall
-    if(snake[0].x >= 18 || snake[0].y >= 18 || snake[0].x <= 0 || snake[0].y <= 0){
-        return true;
-    }
-
-    return false;
+function drawApple() {
+  let appleElement = document.createElement('img');
+  appleElement.src = 'apple.png'; // Replace with your actual apple image path
+  appleElement.id = 'apple';
+  appleElement.style.left = apple.x * tileSize + 'px';
+  appleElement.style.top = apple.y * tileSize + 'px';
+  gameArea.appendChild(appleElement);
 }
 
-function gameEngine(){
+function update() {
+  let head = { x: snake[0].x + direction.x, y: snake[0].y + direction.y };
 
-    // Updating Snake array which has location of snake body parts
-    // If snake collides with wall then game over
-       if(isCollide(snakeArray)){
-            inputDirection = {x:0,y:0};
-            alert("Game Over ! Press OK to play again");
-            //  After OK Game starts again when we press a key
-            snakeArray = [
-                {x:13,y:15}
-            ];
-            score = 0;
-        scoreEl.innerHTML = "SCORE : " + score;
-        }
+  // Check collision with walls
+  if (head.x < 0 || head.x >= cols || head.y < 0 || head.y >= rows || checkCollision(head)) {
+    gameOver();
+    return;
+  }
 
+  snake.unshift(head);
 
-    // If food Eaten increment score and Regenarate food
-    if(snakeArray[0].y === food.y && snakeArray[0].x === food.x){
-        score+=10;
-        scoreEl.innerHTML = "SCORE : " + score;
-        // unshift adds element in the starting of the array
-        snakeArray.unshift({x: snakeArray[0].x + inputDirection.x , y: snakeArray[0].y + inputDirection.y});
-        let a =2 , b =16;
-        food = {x :Math.round(a+(b-a)*Math.random()) , y :Math.round(a+(b-a)*Math.random())};
-
+  // Check if snake eats the apple
+  if (head.x === apple.x && head.y === apple.y) {
+    score += 10;
+    if (score > highScore) {
+      highScore = score;
     }
+    apple = { x: Math.floor(Math.random() * cols), y: Math.floor(Math.random() * rows) };
+  } else {
+    snake.pop();
+  }
 
-        // Moving the snake
-        for (let i = snakeArray.length - 2; i>=0; i--) { 
-            // we use destructuring so new object is created 
-            //we start from the second last array element and keep moving each array element one step ahead
-            snakeArray[i+1] = {...snakeArray[i]};
-        }
-        // For the zeroth array element we move it like this
-        snakeArray[0].x += inputDirection.x;
-        snakeArray[0].y += inputDirection.y;
-    
-
-    // Then render the snake and food(display)
-    // We want the board to be empty initially
-    board.innerHTML= '';
-    snakeArray.forEach((e,index)=>{
-        snakeElement = document.createElement('div');
-        // Add style to the div element we have created
-        snakeElement.style.gridRowStart = e.y;
-        snakeElement.style.gridColumnStart = e.x;
-        snakeElement.innerHTML = '0'
-        snakeElement.classList.add('snake');
-        board.appendChild(snakeElement);
-    });
- 
-    // Display food
-    foodElement = document.createElement('div');
-    foodElement.style.gridRowStart = food.y;
-    foodElement.style.gridColumnStart = food.x
-    foodElement.innerHTML = '*'
-    foodElement.classList.add('food');
-    board.appendChild(foodElement);
-
-   
+  drawSnake();
+  drawApple();
+  scoreBox.innerText = 'Score: ' + score;
+  highscoreBox.innerText = 'High Score: ' + highScore;
 }
 
-// If any key is clicked ,start the game
-window.addEventListener("keydown",e =>{
-            inputDirection = {x:0,y:1};//start game
+function checkCollision(head) {
+  for (let i = 1; i < snake.length; i++) {
+    if (head.x === snake[i].x && head.y === snake[i].y) {
+      return true;
+    }
+  }
+  return false;
+}
 
-            // Which key pressed
-            switch(e.key){
+function gameOver() {
+  clearInterval(gameInterval);
+  gameOverMessage.innerText = 'Game Over!';
+  scoreMessage.innerText = 'Your Score was: ' + score;
+  gameOverDiv.style.display = 'block';
+}
 
-                case 'w' :
-                inputDirection.x = 0;
-                inputDirection.y = -1;
-                console.log('Up Key');
-                break;
+function startGame() {
+  gameOverDiv.style.display = 'none';
+  score = 0;
+  direction = { x: 0, y: 0 };
+  snake = [{ x: 14, y: 9 }]; // Start snake in the middle of new grid
+  apple = { x: Math.floor(Math.random() * cols), y: Math.floor(Math.random() * rows) };
+  gameInterval = setInterval(update, 200);
+}
 
-                case 's' :
-                inputDirection.x = 0;
-                inputDirection.y = 1;
-                console.log('Down Key');
-                break;
-                
-                case 'a' :
-                inputDirection.x = -1;
-                inputDirection.y = 0;
-                console.log('Left Key');
-                break;
+// Control the snake
+window.addEventListener('keydown', (e) => {
+  switch (e.key) {
+    case 'w':
+      if (direction.y === 0) direction = { x: 0, y: -1 };
+      break;
+    case 's':
+      if (direction.y === 0) direction = { x: 0, y: 1 };
+      break;
+    case 'a':
+      if (direction.x === 0) direction = { x: -1, y: 0 };
+      break;
+    case 'd':
+      if (direction.x === 0) direction = { x: 1, y: 0 };
+      break;
+  }
+});
 
-                case 'd' :
-                inputDirection.x = 1;
-                inputDirection.y = 0;
-                console.log('Right Key');
-                break;
-
-                default:break;
-            }
-
-        });
-
-
-setInterval(main,200);
-
- 
+startGame();

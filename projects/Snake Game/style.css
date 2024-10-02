@@ -1,54 +1,116 @@
-*{
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.container{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: aquamarine;
-    min-height: 100vh;
-}
-
-#score{
+    height: 100vh;
+    background: linear-gradient(135deg, white, purple);
+  }
+  
+  h1 {
+    font-size: 3rem;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(90deg, red, green, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  #rules {
+    font-size: 1.2rem;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333;
+  }
+  
+  #game-area {
+    width: 600px;
+    height: 400px;
+    background-color: #191970; /* Dark purple background */
+    border: 5px solid black;
+    position: relative;
+  }
+  
+  .snake-head, .snake-body {
     position: absolute;
-    top: 180px;
-    right: 50px;
-    font-size: 39px;
-    font-weight: bold;
-}
-
-#board{
-  background: linear-gradient(blue,rgb(3, 151, 201));
-  width: 60vw;
-  height: 70vh;
-  border: 2px solid black;
-  display: grid;
-  grid-template-rows: repeat(18,1fr);
-  grid-template-columns: repeat(18,1fr);
-
-}
-
-/* Snake represented With ) Symbol */
-.snake{
-    background-color: black;
-    color: white;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .snake-head {
+    background-image: url('red-head.png'); /* The red circle for the head */
+    background-size: cover;
+  }
+  
+  .snake-body {
+    background-image: url('green-body.png'); /* The green circle for the body */
+    background-size: cover;
+  }
+  
+  #apple {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+  }
+  
+  #score-box, #highscore-box {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid white;
-}
-
-.food{
-    background-color: red;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+  }
+  
+  #score-box {
+    color: green;
+  }
+  
+  #highscore-box {
+    color: red;
+  }
+  
+  #game-over {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
+    padding: 30px 50px;
+    border-radius: 20px;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid white;
-}
-
+    width: 300px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  #game-over-message {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  #score-message {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  #game-over button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #game-over button:hover {
+    background-color: darkblue;
+  }
+  
