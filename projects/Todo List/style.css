@@ -4,21 +4,20 @@
     box-sizing: border-box;
 }
 
-
-
 body {
     font-family: "Montserrat", sans-serif;
     font-weight: 300;
     background-color: #e5e5f7;
     opacity: 0.9;
-    background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px),
-      radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    transition: background-color 0.3s;
+}
+
+body.dark-theme {
+    background-color: #1a1a2e;
 }
 
 .container {
@@ -26,42 +25,49 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     width: 500px; 
-    padding: 1rem;
+    padding: 20px;
     overflow: hidden;
-    transition: transform 0.3s;
-}
-
-.container:hover {
-    transform: scale(1.05);
 }
 
 .todo-header {
     text-align: center;
     margin-bottom: 20px;
-    background-color: #444cf7 ;
+    background-color: #444cf7;
     padding: 15px;
     color: white;
     border-radius: 10px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.todo-header h1 {
+.todo-header h2 {
     font-size: 1.5rem; 
-    color: #ffffff; 
-    font-family: "Arial Black", sans-serif; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
-    letter-spacing: 2px; 
-    margin: 0;
+}
+
+.todo-header button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #fff;
+    color: #444cf7;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.todo-header button:hover {
+    background-color: #f0f0f0;
 }
 
 .form-todo {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
     margin-bottom: 20px;
 }
 
-.form-todo input[type="text"] {
-    width: 75%;
+.form-todo input[type="text"], 
+.form-todo input[type="date"],
+.form-todo select {
+    width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: 2px solid #ccc;
@@ -69,9 +75,8 @@ body {
 }
 
 .form-todo input[type="submit"] {
-    width: 22%;
     padding: 10px;
-    background-color: #444cf7 ;
+    background-color: #444cf7;
     color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -81,7 +86,7 @@ body {
 }
 
 .form-todo input[type="submit"]:hover {
-    background-color: #444cf7 ;
+    background-color: #3339b1;
 }
 
 .todo-list {
@@ -92,8 +97,16 @@ body {
 .todo-list li {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 15px;
-    border-bottom: 1px solid #ccc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: grab;
+}
+
+.todo-list li.dragging {
+    opacity: 0.5;
 }
 
 .todo-buttons {
@@ -107,7 +120,7 @@ body {
     border: none;
     font-size: 1.2rem;
     cursor: pointer;
-    color: #444cf7 ;
+    color: #444cf7;
 }
 
 .tick-btn:hover {
@@ -123,22 +136,25 @@ body {
     opacity: 0.6;
 }
 
+.priority-high {
+    background-color: #ffcccc; /* Red for high priority */
+}
+
+.priority-medium {
+    background-color: #fff3cd; /* Yellow for medium priority */
+}
+
+.priority-low {
+    background-color: #d4edda; /* Green for low priority */
+}
+
 @media screen and (max-width: 600px) {
     .container {
         width: 90%;
     }
+}
 
-    .todo-header h1 {
-        font-size: 1.2rem;
-    }
-
-    .form-todo input[type="text"] {
-        width: 68%;
-        font-size: 0.9rem;
-    }
-
- .form-todo input[type="submit"] {
-        width: 28%;
-        font-size: 0.9rem;
-    }
+.todo-list li.dragging {
+    opacity: 0.5;
+    border: 2px dashed #444cf7; /* Add a dashed border to the dragging item */
 }
