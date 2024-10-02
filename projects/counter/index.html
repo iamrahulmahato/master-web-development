@@ -1,55 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Counter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
 </head>
-
 <body>
     <div class="container">
-        <h2>COUNTER</h2>
-        <p class="counter">0</p>
-        <button class="incr"><i class="fa fa-plus"></i></button>
-        <button class="decr"><i class="fa fa-minus"></i></button>
+        <h1>Counter</h1>
+        <p>Count anything here!</p>
+        <div class="counter-box">
+            <!-- <div class="counter-label">COUNTER</div> -->
+            <span id="counter">0</span>
+        </div>
+        <div class="button-container">
+            <button id="decrement">-</button>
+            <button id="increment">+</button>
+        </div>
+        <button class="save-btn" id="save">Save & Reset</button>
+        <div class="saved-counts">
+            <h3>Saved Counts</h3>
+            <ul class="saved-list" id="savedList"></ul>
+        </div>
     </div>
+
     <script>
-        const counter = document.querySelector('.counter')
-        const incr = document.querySelector('.incr')
-        const decr = document.querySelector('.decr')
         let count = 0;
+        let savedCounts = JSON.parse(localStorage.getItem('savedCounts')) || [];
 
-        // Function to update the counter display
-        const updateCounter = () => {
-            counter.innerHTML = count;
-        };
+        const counter = document.getElementById('counter');
+        const incrementBtn = document.getElementById('increment');
+        const decrementBtn = document.getElementById('decrement');
+        const saveBtn = document.getElementById('save');
+        const savedList = document.getElementById('savedList');
 
-        // Button click events
-        incr.addEventListener("click", () => {
-            count += 1;
-            updateCounter();
-        });
+        function updateCounter() {
+            counter.textContent = count;
+        }
 
-        decr.addEventListener("click", () => {
-            count -= 1;
-            updateCounter();
-        });
-
-        // Keyboard event listener
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "+") {
-                count += 1;
-                updateCounter();
-            } else if (event.key === "-") {
-                count -= 1;
+        function saveAndReset() {
+            if (count !== 0) {
+                savedCounts.push(count);
+                localStorage.setItem('savedCounts', JSON.stringify(savedCounts));
+                updateSavedList();
+                count = 0;
                 updateCounter();
             }
+        }
+
+        function updateSavedList() {
+            savedList.innerHTML = '';
+            savedCounts.slice(-5).forEach(savedCount => {
+                const li = document.createElement('li');
+                li.textContent = savedCount;
+                savedList.prepend(li);
+            });
+        }
+
+        incrementBtn.addEventListener('click', () => {
+            count++;
+            updateCounter();
         });
+
+        decrementBtn.addEventListener('click', () => {
+            count--;
+            updateCounter();
+        });
+
+        saveBtn.addEventListener('click', saveAndReset);
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === '+' || event.key === 'ArrowUp') {
+                count++;
+                updateCounter();
+            } else if (event.key === '-' || event.key === 'ArrowDown') {
+                count--;
+                updateCounter();
+            } else if (event.key === 'Enter') {
+                saveAndReset();
+            }
+        });
+
+        updateSavedList();
     </script>
 </body>
-
 </html>
