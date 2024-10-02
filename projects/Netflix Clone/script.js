@@ -70,7 +70,6 @@ function fetchAndbuildMovieSection(fetchUrl, categoryName){
     return fetch(fetchUrl)
     .then(res => res.json())
     .then(res => {
-        // console.table(res.results);
         const movies = res.results;
         if (Array.isArray(movies) && movies.length) {
             buildMoviesSection(movies.slice(0,6), categoryName);
