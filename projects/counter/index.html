@@ -23,14 +23,32 @@
         const decr = document.querySelector('.decr')
         let count = 0;
 
+        // Function to update the counter display
+        const updateCounter = () => {
+            counter.innerHTML = count;
+        };
+
+        // Button click events
         incr.addEventListener("click", () => {
-            count = count + 1;
-            counter.innerHTML = count;
-        })
+            count += 1;
+            updateCounter();
+        });
+
         decr.addEventListener("click", () => {
-            count = count - 1;
-            counter.innerHTML = count;
-        })
+            count -= 1;
+            updateCounter();
+        });
+
+        // Keyboard event listener
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "+") {
+                count += 1;
+                updateCounter();
+            } else if (event.key === "-") {
+                count -= 1;
+                updateCounter();
+            }
+        });
     </script>
 </body>
 
