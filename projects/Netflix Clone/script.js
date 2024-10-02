@@ -102,8 +102,6 @@ function buildMoviesSection(list, categoryName){
     const div = document.createElement('div');
     div.className = "movies-section"
     div.innerHTML = moviesSectionHTML;
-
-    // append html into movies container
     moviesCont.append(div);
 }
 
