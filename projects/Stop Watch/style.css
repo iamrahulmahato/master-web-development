@@ -23,3 +23,10 @@ body{
 #display{
     font-size: 5rem;
 }
+
+button{
+    border-radius: 10px;
+    font-size: 25px;
+    padding: 5px;
+    box-shadow: 1px 1px 1px black;
+}
