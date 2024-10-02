@@ -73,6 +73,13 @@ body {
     padding: 0.8rem 1rem;
 }
 
+/* github icon added here */
+.github-icon{
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+}
+
 .projects-container {
     max-width: 1080px;
     display: grid;
