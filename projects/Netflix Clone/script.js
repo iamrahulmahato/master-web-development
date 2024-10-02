@@ -124,7 +124,6 @@ function searchMovieTrailer(movieName, iframId) {
 
         const div = document.createElement('div');
         div.innerHTML = `<iframe width="245px" height="150px" src="https://www.youtube.com/embed/${bestResult.id.videoId}?autoplay=1&controls=0"></iframe>`
-// window.open(youtubeUrl,'_blank');
         elements.append(div);
         
     })
