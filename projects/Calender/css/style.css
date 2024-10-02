@@ -1,0 +1,321 @@
+:root {
+    --blue: (#0000ff);
+    --v1: #3bf4fb;
+    --v2: #72ddf7;
+    --v3: #00a6fb;
+    --v4: #0063cc;
+    --v5: #47a0ff;
+    --v6: #0075f2;
+    --v7: #1a8bdb;
+    --v8: #77c9f8;
+    --v9: #0c98e9;
+    --v10: #39a0ed;
+    --v11: #006494;
+    --v12: #0582ca;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  .main-1{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+
+  }
+  main {
+    
+    background-color: #72ddf723;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+  }
+  .cont {
+    height: 80%;
+    width: 80%;
+    margin: auto;
+    background-color: #99ddef;
+    border-radius: 10px;
+  }
+  .left {
+    width: 30vw;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    background-color: #0063cc;
+    color: white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: relative;
+  }
+  .right {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .date {
+    font-size: 80px;
+  }
+  .day {
+    font-size: 20px;
+  }
+  .today1 {
+    position: absolute;
+    bottom: 10px;
+    font-size: medium;
+    font-weight: 300;
+  }
+  .right {
+    width: 70vw;
+  }
+  .calen {
+    width: 450px;
+    height: 500px;
+    margin: auto;
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 5px;
+    background: white;
+  }
+  .nav-calen {
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0px 5px;
+    position: relative;
+  }
+  .left-ico,
+  .right-ico {
+    border-radius: 10px;
+    width: 25px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .month-year {
+    gap: 5px;
+  }
+  .month-down {
+    width: 130px;
+    justify-content: space-between;
+  }
+  .month-down,
+  .year-down {
+    padding: 0 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    gap: 5px;
+  }
+  
+  /* .week-days-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    font-weight: 700;
+  } */
+  .week-days-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: space-between;
+    padding: 5px;
+    font-weight: 700;
+  }
+  
+  .week-days-list li {
+    padding: 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 40px;
+    text-align: center;
+  }
+  
+  /* .days {
+    flex-direction: column;
+    padding: 5px;
+    justify-content: space-around;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  } */
+  .days {
+    padding: 5px;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .days ul {
+    display: grid;
+    height: 80%;
+  
+    grid-template-columns: repeat(7, 1fr);
+  
+    justify-content: center;
+    align-items: center;
+  }
+  .days li {
+    list-style: none;
+    padding: 3px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+  }
+  .today {
+    border: 2px solid blue;
+  }
+  .diff {
+    color: rgb(154, 152, 152);
+  }
+  
+  .month-list {
+    position: absolute;
+    top: 30px;
+    left: 25%;
+    height: 100px;
+    overflow-y: scroll;
+  }
+  .year-list {
+    position: absolute;
+    top: 30px;
+    right: 25%;
+    height: 100px;
+    overflow-y: scroll;
+  }
+  .month-list li,
+  .year-list li {
+    list-style-type: none;
+    border-radius: 10px;
+    padding: 0px 5px;
+  }
+  .month-list,
+  .year-list {
+    background-color: aliceblue;
+    padding: 0px 2.5px;
+    border-radius: 10px;
+    box-shadow: 4px 3px 7px #9a9898, -4px 0px 7px #9a9898;
+    display: none;
+  }
+  .visible {
+    display: block;
+  }
+  .curr {
+    background-color: #0000ff;
+    color: white;
+  }
+  
+  .left-ico:hover,
+  .right-ico:hover,
+  .month-down:hover,
+  .year-down:hover,
+  .week-days-list li:hover,
+  .days li:hover,
+  .month-list li:hover,
+  .year-list li:hover {
+    color: white;
+    background-color: #39a0ed;
+  }
+  
+  @media (max-width:930px) {
+    .cont{
+      flex-direction: column;
+    }
+    .left{
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .right{
+      height: auto;
+      width: 100%;
+    }
+    .calen{
+      width: 100%;
+      border-radius: 10px;
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+    main{
+      height: 1000px;
+    }
+     
+  }
+  @media (max-width:500px) {
+    main{
+      width: 100%;
+    }
+      .right{
+        width: 100%;
+      }
+      .calen{
+        width: 100%;
+      }
+      .nav-calen{
+        width: 100%;
+      }
+      .week-days-list li {
+        width: auto;
+        gap: auto;
+        padding: 0;
+      }
+      .days li { 
+        width: auto;
+        padding: 0;
+        gap: auto;
+      }
+      
+  }
+  @media (max-width:350px) {
+    .nav-calen{
+      width: 100%;
+    }
+    .nav-calen {
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      /* padding: 0px 5px; */
+      position: relative;
+      margin: auto;
+    }
+    .left-ico,
+    .right-ico {
+      border-radius: 10px;
+      /* width: 10px;
+      height: 10px; */
+      text-align: center;
+      cursor: pointer;
+    }
+    
+    .month-year {
+      gap: 1px;
+    }
+    .month-down {
+      width: auto;
+      justify-content:space-between ;
+    }
+    .month-down,
+    .year-down {
+      /* padding: 0 5px; */
+      border-radius: 10px;
+      cursor: pointer;
+      /* gap: 5px; */
+    }
+  }
