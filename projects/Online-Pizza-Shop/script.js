@@ -45,7 +45,6 @@ function addCustomizedPizza() {
     displayCart();
 }
 
-// Form validation
 function validateOrderForm() {
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
