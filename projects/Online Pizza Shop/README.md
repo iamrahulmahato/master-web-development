@@ -58,7 +58,7 @@ Welcome to **Pizza Delight**, an aesthetically designed and user-friendly pizza 
 ### 4. **Interact with the Cart**
 - Add pizzas or customize your pizza and see your cart update in real time.
 - Remove any items from the cart if needed.
-5. Submit a Review
+### 5. **Submit a Review**
 Leave feedback about the pizza and rate it!
 Technologies Used
 HTML5: For structuring the webpage.
