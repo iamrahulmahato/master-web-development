@@ -52,7 +52,6 @@ Welcome to **Pizza Delight**, an aesthetically designed and user-friendly pizza 
     cd pizza-shop
     open index.html
     ```
-
 ### 3. **Browse the Website**
 - Visit different sections using the navigation bar.
 - Browse through the menu, customize your pizza, add items to the cart, and place your order!
