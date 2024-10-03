@@ -20,6 +20,7 @@ html[data-theme="dark"] {
     --btn-color: #fecdd3;
     --btn-text: #1e293b;
     --head: #fff;
+    --card: #192333;
     --p: #94A3B8;
 }
 
@@ -123,12 +124,12 @@ body {
 }
 
 .card-heading {
-    color: #1e293b;
+    color: var(--head);
     font-weight: 600;
 }
 
 .card-description {
-    color: #475569;
+    color: var(--p);
     font-size: 0.9rem;
     margin-top: 0.2rem;
 }
