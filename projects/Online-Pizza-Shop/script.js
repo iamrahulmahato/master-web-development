@@ -84,7 +84,5 @@ function addReview(event) {
     reviewContainer.innerHTML = `<p>${reviewText}</p><p>Rating: ${rating} Stars</p>`;
 
     document.getElementById('reviews-container').appendChild(reviewContainer);
-
-    // Clear form
     document.getElementById('review-form').reset();
 }
