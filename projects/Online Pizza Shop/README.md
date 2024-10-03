@@ -55,6 +55,7 @@ Welcome to **Pizza Delight**, an aesthetically designed and user-friendly pizza 
 ### 3. **Browse the Website**
 - Visit different sections using the navigation bar.
 - Browse through the menu, customize your pizza, add items to the cart, and place your order!
+
 ### 4. **Interact with the Cart**
 - Add pizzas or customize your pizza and see your cart update in real time.
 - Remove any items from the cart if needed.
