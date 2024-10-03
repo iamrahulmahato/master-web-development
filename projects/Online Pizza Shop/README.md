@@ -70,7 +70,7 @@ Welcome to **Pizza Delight**, an aesthetically designed and user-friendly pizza 
 ## Folder Structure
 
 ```bash
-pizza-shop/
+Online-Pizza-Shop/
 │
 ├── index.html          # Main HTML file
 ├── styles.css          # CSS file for styling the webpage
