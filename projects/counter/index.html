@@ -34,7 +34,7 @@
             interval = setInterval(() => {
                 count += 1;
                 updateCounter();
-            }, 100); 
+            }, 150); 
         };
 
         // Function to start decrementing
@@ -42,7 +42,7 @@
             interval = setInterval(() => {
                 count -= 1;
                 updateCounter();
-            }, 100); 
+            }, 150); 
         };
 
         // Stop the increment or decrement when the button is released
@@ -69,10 +69,10 @@
 
         // Keyboard event listener
         document.addEventListener("keydown", (event) => {
-            if (event.key === "+") {
+            if (event.key === "+" || event.key === 'ArrowUp' || event.key === 'ArrowRight') {
                 count += 1;
                 updateCounter();
-            } else if (event.key === "-") {
+            } else if (event.key === "-" || event.key === 'ArrowDown' || event.key === 'ArrowLeft') {
                 count -= 1;
                 updateCounter();
             }
