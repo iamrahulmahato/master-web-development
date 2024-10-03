@@ -38,4 +38,27 @@
         </div>
     </section>
 
+    <section class="pizza-customization">
+        <h2>Customize Your Pizza</h2>
+        <form id="customize-form">
+            <label for="size">Size:</label>
+            <select id="size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <label for="toppings">Toppings:</label>
+            <input type="checkbox" id="cheese" value="Cheese"> Cheese
+            <input type="checkbox" id="pepperoni" value="Pepperoni"> Pepperoni
+            <input type="checkbox" id="mushrooms" value="Mushrooms"> Mushrooms
+            <button type="button" onclick="addCustomizedPizza()">Add to Cart</button>
+        </form>
+    </section>
+
+    <section id="cart" class="cart-section">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p id="cart-total">Total: $0.00</p>
+    </section>
+
     
