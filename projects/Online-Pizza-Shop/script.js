@@ -1,5 +1,3 @@
-
-// Cart functionality
 const cart = [];
 
 document.querySelectorAll('.add-to-cart').forEach(item => {
