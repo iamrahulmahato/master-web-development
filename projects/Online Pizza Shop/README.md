@@ -77,4 +77,6 @@ pizza-shop/
 └── script.js           # JavaScript file for interactive elements
 ```
 
+## Project Demo
+To see a live demo, open the `index.html` file in your browser.
 
