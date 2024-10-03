@@ -129,7 +129,7 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px; /* Adds space between form elements */
+    gap: 20px; 
 }
 
 .pizza-customization label {
@@ -185,7 +185,7 @@ nav a:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Media Queries for Responsive Design */
+
 @media (max-width: 768px) {
     .pizza-customization {
         padding: 30px 20px;
@@ -303,7 +303,7 @@ section:hover {
     transform: translateY(-3px);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     #menu-container {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
