@@ -12,3 +12,19 @@ header {
     padding: 20px;
     text-align: center;
 }
+
+.hero {
+    background: url('pizza-hero.jpg') center/cover no-repeat;
+    padding: 100px 0;
+    text-align: center;
+    color: grey;
+}
+
+.hero h2 {
+    font-size: 48px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 10px 0 30px;
+}
