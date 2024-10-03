@@ -74,7 +74,6 @@ function searchPizzas() {
     });
 }
 
-// Reviews functionality
 function addReview(event) {
     event.preventDefault();
     const reviewText = document.getElementById('review').value;
