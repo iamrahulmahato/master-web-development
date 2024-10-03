@@ -59,8 +59,9 @@ Welcome to **Pizza Delight**, an aesthetically designed and user-friendly pizza 
 - Add pizzas or customize your pizza and see your cart update in real time.
 - Remove any items from the cart if needed.
 ### 5. **Submit a Review**
-Leave feedback about the pizza and rate it!
-Technologies Used
+- Leave feedback about the pizza and rate it!
+
+## Technologies Used
 HTML5: For structuring the webpage.
 CSS3: For styling and layout, ensuring a modern and aesthetically pleasing UI.
 JavaScript: For all interactive elements including:
