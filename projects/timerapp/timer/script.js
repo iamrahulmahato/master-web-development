@@ -1,26 +1,56 @@
 let timerInterval;
-let seconds = 0;
+let totalSeconds = 0;
 
 const timerDisplay = document.getElementById("timer");
 const startBtn = document.getElementById("startBtn");
 const stopBtn = document.getElementById("stopBtn");
 const resetBtn = document.getElementById("resetBtn");
+const setTimerBtn = document.getElementById("setTimerBtn");
+const setHours = document.getElementById("setHours");
+const setMinutes = document.getElementById("setMinutes");
+const setSeconds = document.getElementById("setSeconds");
 
 function updateTimerDisplay() {
-  const hours = String(Math.floor(seconds / 3600)).padStart(2, "0");
-  const minutes = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
-  const secs = String(seconds % 60).padStart(2, "0");
+  const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
+  const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(
+    2,
+    "0"
+  );
+  const secs = String(totalSeconds % 60).padStart(2, "0");
   timerDisplay.textContent = `${hours}:${minutes}:${secs}`;
 }
 
-startBtn.addEventListener("click", () => {
-  startBtn.disabled = true;
-  stopBtn.disabled = false;
+function checkTime() {
+  if (totalSeconds <= 0) {
+    clearInterval(timerInterval);
+    alert("Time's up!");
+    startBtn.disabled = false;
+    stopBtn.disabled = true;
+  }
+}
 
-  timerInterval = setInterval(() => {
-    seconds++;
-    updateTimerDisplay();
-  }, 1000);
+setTimerBtn.addEventListener("click", () => {
+  const hours = parseInt(setHours.value) || 0;
+  const minutes = parseInt(setMinutes.value) || 0;
+  const seconds = parseInt(setSeconds.value) || 0;
+
+  totalSeconds = hours * 3600 + minutes * 60 + seconds;
+  updateTimerDisplay();
+  startBtn.disabled = false;
+  stopBtn.disabled = true;
+});
+
+startBtn.addEventListener("click", () => {
+  if (totalSeconds > 0) {
+    startBtn.disabled = true;
+    stopBtn.disabled = false;
+
+    timerInterval = setInterval(() => {
+      totalSeconds--;
+      updateTimerDisplay();
+      checkTime();
+    }, 1000);
+  }
 });
 
 stopBtn.addEventListener("click", () => {
@@ -31,7 +61,7 @@ stopBtn.addEventListener("click", () => {
 
 resetBtn.addEventListener("click", () => {
   clearInterval(timerInterval);
-  seconds = 0;
+  totalSeconds = 0;
   updateTimerDisplay();
   startBtn.disabled = false;
   stopBtn.disabled = true;
