@@ -34,7 +34,6 @@ function removeItem(index) {
 }
 
 
-// Pizza customization
 function addCustomizedPizza() {
     const size = document.getElementById('size').value;
     const toppings = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(el => el.value).join(', ');
