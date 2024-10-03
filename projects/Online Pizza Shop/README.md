@@ -68,6 +68,7 @@ Welcome to **Pizza Delight**, an aesthetically designed and user-friendly pizza 
 - **JavaScript**: For all interactive elements including:
 
 ## Folder Structure
+
 ```bash
 pizza-shop/
 │
