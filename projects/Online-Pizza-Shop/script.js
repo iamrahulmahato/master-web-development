@@ -64,7 +64,6 @@ function validateOrderForm() {
     return true;
 }
 
-// Pizza search
 function searchPizzas() {
     const search = document.getElementById('search-bar').value.toLowerCase();
     const menuItems = document.querySelectorAll('.menu-item');
