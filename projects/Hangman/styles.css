@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #fff;
+    width: 300px;
+}
+
+.word-container {
+    font-size: 24px;
+    letter-spacing: 5px;
+    margin: 20px 0;
+}
+
+.button {
+    margin: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.letter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
