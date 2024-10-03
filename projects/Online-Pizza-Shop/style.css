@@ -1,28 +1,29 @@
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
 header {
     background-color: #e63946;
     color: white;
-    padding: 20px 0;
+    padding: 15px 0;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: sticky; 
+    position: sticky;
     top: 0;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin: 0;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 nav {
@@ -111,112 +112,168 @@ section {
     padding: 20px;
 }
 
-
-.menu-section, .cart-section, .order-section, .review-section, .pizza-customization {
-    background-color: #fff;
+.menu-section, 
+.cart-section, 
+.order-section, 
+.review-section, 
+.pizza-customization, 
+.pizza-of-the-day {
+    background-color: #ffffff;
     margin: 20px auto;
-    max-width: 800px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 850px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-.menu-item, .cart-item, .pizza-day-item {
-    background-color: #f4f4f4;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
+.menu-section:hover, 
+.cart-section:hover, 
+.order-section:hover, 
+.review-section:hover, 
+.pizza-customization:hover, 
+.pizza-of-the-day:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* More shadow on hover */
+}
+
+/* Menu Items */
+.menu-item, 
+.cart-item, 
+.pizza-day-item {
+    background-color: #fafafa;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
 }
 
-.menu-item h3 {
+.menu-item:hover, 
+.cart-item:hover, 
+.pizza-day-item:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.menu-item h3, 
+.pizza-day-item h3 {
     margin: 0;
+    font-size: 1.5rem;
+    color: #e63946; /* Bold red for pizza names */
 }
 
-
+/* Buttons */
+button, 
 .add-to-cart {
     background-color: #ff6b6b;
     border: none;
     color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 10px 15px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+button:hover, 
 .add-to-cart:hover {
     background-color: #ff4949;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.add-to-cart {
+    padding: 8px 20px;
+    font-weight: 600;
+}
+
+/* Forms, Inputs, and Selects */
+input[type="text"], 
+input[type="tel"], 
+textarea, 
+select, 
+#search-bar {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+input:focus, 
+textarea:focus, 
+select:focus, 
+#search-bar:focus {
+    border-color: #ff6b6b;
+    outline: none;
+}
+
+/* Cart Section */
 #cart-items {
     margin-bottom: 15px;
 }
 
 .cart-item p {
     margin: 0;
+    font-size: 1.2rem;
 }
 
-button {
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
+/* Pizza of the Day */
+.pizza-of-the-day h3 {
+    font-size: 1.8rem;
+    color: #264653;
+    font-weight: bold;
 }
 
-button:hover {
-    background-color: #ff4949;
+.pizza-of-the-day p {
+    font-size: 1.2rem;
+    color: #555;
 }
 
-textarea, input, select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-#search-bar {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.review-section textarea, #review-form select {
-    width: 100%;
-}
+/* Footer */
 footer {
-    background-color: #2a9d8f;
+    background-color: #264653;
     color: white;
-    padding: 15px 0;
+    padding: 20px;
     text-align: center;
+    margin-top: 30px;
 }
 
 footer p {
-    font-size: 16px;
-    color: #fff;
+    margin: 0;
+    font-size: 1rem;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-    .menu-items {
+    .menu-item, 
+    .cart-item, 
+    .pizza-day-item {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
-    .hero h2 {
-        font-size: 38px;
+    .menu-item h3, 
+    .pizza-day-item h3 {
+        font-size: 1.3rem;
     }
 
-    .hero p {
-        font-size: 18px;
+    button, 
+    .add-to-cart {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
     }
 
-    .order-section form {
-        max-width: 100%;
-        padding: 0 20px;
+    .menu-section, 
+    .cart-section, 
+    .order-section, 
+    .review-section, 
+    .pizza-customization, 
+    .pizza-of-the-day {
+        padding: 20px;
     }
 }
