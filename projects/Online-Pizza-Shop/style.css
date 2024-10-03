@@ -77,6 +77,7 @@ nav a:hover {
     color: white;
     position: relative;
     margin-top: 10px;
+    max-width: 1050px;
 
 }
 
