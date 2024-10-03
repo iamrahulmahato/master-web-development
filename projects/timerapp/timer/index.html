@@ -8,8 +8,26 @@
   </head>
   <body>
     <div class="container">
-      <h1>Start timer!</h1>
+      <h1>Timer Application</h1>
       <div class="timer" id="timer">00:00:00</div>
+      <div class="set-time">
+        <input type="number" id="setHours" placeholder="Hours" min="0" />
+        <input
+          type="number"
+          id="setMinutes"
+          placeholder="Minutes"
+          min="0"
+          max="59"
+        />
+        <input
+          type="number"
+          id="setSeconds"
+          placeholder="Seconds"
+          min="0"
+          max="59"
+        />
+        <button id="setTimerBtn">Set Timer</button>
+      </div>
       <div class="buttons">
         <button id="startBtn">Start</button>
         <button id="stopBtn" disabled>Stop</button>
