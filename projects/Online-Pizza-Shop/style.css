@@ -5,23 +5,23 @@ body {
     margin: 0;
     padding: 0;
 }
-/* Header Styling */
+
 header {
-    background-color: #e63946; /* Soft Red for header background */
+    background-color: #e63946;
     color: white;
     padding: 20px 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
-    position: sticky; /* Header will stay on top when scrolling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky; 
     top: 0;
-    z-index: 1000; /* Ensures the header stays above other content */
+    z-index: 1000; 
 }
 
 header h1 {
     font-size: 2.5rem;
     margin: 0;
     font-weight: 700;
-    text-transform: uppercase; /* Makes the title uppercase for a bold look */
+    text-transform: uppercase;
     letter-spacing: 2px;
 }
 
@@ -35,16 +35,15 @@ nav a {
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 500;
-    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for hover effects */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
     border-bottom: 2px solid transparent;
 }
 
 nav a:hover {
-    color: #ffdd59; /* Highlight color on hover (yellow shade) */
-    border-bottom: 2px solid #ffdd59; /* Underline effect on hover */
+    color: #ffdd59; 
+    border-bottom: 2px solid #ffdd59; 
 }
 
-/* Responsive header for smaller screens */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
