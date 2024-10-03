@@ -54,3 +54,27 @@ nav a {
 section {
     padding: 20px;
 }
+
+
+.menu-section, .cart-section, .order-section, .review-section, .pizza-customization {
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item, .cart-item, .pizza-day-item {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item h3 {
+    margin: 0;
+}
