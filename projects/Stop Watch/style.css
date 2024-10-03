@@ -1,0 +1,32 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   background-image:url(rip.jpeg);
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+
+}
+#myh1{
+    font-size: 4rem;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px solid;
+    border-radius:50px;
+    padding: 30px;
+    backdrop-filter: blur(3px);
+}
+#display{
+    font-size: 5rem;
+}
+
+button{
+    border-radius: 10px;
+    font-size: 25px;
+    padding: 5px;
+    box-shadow: 1px 1px 1px black;
+}

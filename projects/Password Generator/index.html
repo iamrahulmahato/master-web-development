@@ -12,8 +12,11 @@
     <main>
         <h1>Click to generate a random password!</h1>
         <input type="text" id="password">
+        <input type="range" id="passwordLength" min="1" max="50" value="8" oninput="updateLengthDisplay()">
+        <label for="passwordLength">Password length: <span id="lengthDisplay">8</span></label>
         <div>
             <button id="create">Create</button>
+            <button id="copy">Copy</button>
             <button id="clear">Clear</button>
         </div>
     </main>

@@ -22,15 +22,61 @@
         const incr = document.querySelector('.incr')
         const decr = document.querySelector('.decr')
         let count = 0;
+        let interval;
 
-        incr.addEventListener("click", () => {
-            count = count + 1;
+        // Function to update the counter display
+        const updateCounter = () => {
             counter.innerHTML = count;
-        })
-        decr.addEventListener("click", () => {
-            count = count - 1;
-            counter.innerHTML = count;
-        })
+        };
+
+        // Function to start incrementing
+        const startIncrement = () => {
+            interval = setInterval(() => {
+                count += 1;
+                updateCounter();
+            }, 100); 
+        };
+
+        // Function to start decrementing
+        const startDecrement = () => {
+            interval = setInterval(() => {
+                count -= 1;
+                updateCounter();
+            }, 100); 
+        };
+
+        // Stop the increment or decrement when the button is released
+        const stop = () => {
+            clearInterval(interval);
+        };
+
+        // Button events for increment
+        incr.addEventListener("mousedown", startIncrement);
+        incr.addEventListener("mouseup", stop);
+        incr.addEventListener("mouseleave", stop);
+
+        // Button events for decrement
+        decr.addEventListener("mousedown", startDecrement);
+        decr.addEventListener("mouseup", stop);
+        decr.addEventListener("mouseleave", stop);
+
+        // For mobile/touch devices
+        incr.addEventListener("touchstart", startIncrement);
+        incr.addEventListener("touchend", stop);
+
+        decr.addEventListener("touchstart", startDecrement);
+        decr.addEventListener("touchend", stop);
+
+        // Keyboard event listener
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "+") {
+                count += 1;
+                updateCounter();
+            } else if (event.key === "-") {
+                count -= 1;
+                updateCounter();
+            }
+        });
     </script>
 </body>
 

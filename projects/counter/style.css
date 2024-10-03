@@ -36,7 +36,7 @@ button {
     height: 60px;
     border-radius: 50%;
     background: white;
-    border: none;
+    border: 1px solid black;
     position: absolute;
 }
 
@@ -48,4 +48,17 @@ button {
 .decr {
     left: -10%;
     box-shadow: -1px 2px 3px rgba(0, 0, 0, .2);
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #b2fbff;
+}
+
+button:active .fa-plus, button:active .fa-minus{
+    font-size: 1.3rem;
+    transition: all 0.2s ease;
 }
