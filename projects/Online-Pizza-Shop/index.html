@@ -16,4 +16,26 @@
             <a href="#reviews">Reviews</a>
         </nav>
     </header>
- 
+    <section class="hero">
+        <h2>Delicious Pizzas, Delivered Hot!</h2>
+        <p>Your favorite pizza is just a click away.</p>
+        <a href="#menu" class="btn">Order Now</a>
+    </section>
+    <section id="menu" class="menu-section">
+        <h2>Our Menu</h2>
+        <input type="text" id="search-bar" placeholder="Search for pizzas..." onkeyup="searchPizzas()">
+        <div id="menu-container">
+            <div class="menu-item" data-name="Margherita" data-price="10">
+                <h3>Margherita Pizza</h3>
+                <p>$10</p>
+                <button class="add-to-cart" data-name="Margherita" data-price="10">Add to Cart</button>
+            </div>
+            <div class="menu-item" data-name="Pepperoni" data-price="12">
+                <h3>Pepperoni Pizza</h3>
+                <p>$12</p>
+                <button class="add-to-cart" data-name="Pepperoni" data-price="12">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    
