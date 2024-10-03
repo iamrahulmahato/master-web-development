@@ -146,7 +146,8 @@ footer p {
     color: #fff;
 }
 
-/* Responsive Design */
+
+
 @media (max-width: 768px) {
     .menu-items {
         flex-direction: column;
