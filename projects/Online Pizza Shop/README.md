@@ -1,4 +1,4 @@
-#🍕 Pizza Delight - Online Pizza Shop #[#278](https://github.com/iamrahulmahato/master-web-development/issues/278)
+# 🍕 Pizza Delight - Online Pizza Shop 
 
 Welcome to **Pizza Delight**, an aesthetically designed and user-friendly pizza shop website. This project was built using **HTML**, **CSS**, and **JavaScript**, showcasing a modern UI and interactive functionalities like a customizable pizza ordering system, cart functionality, customer reviews, and form validations for placing orders.
 
