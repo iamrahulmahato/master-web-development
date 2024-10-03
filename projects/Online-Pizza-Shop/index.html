@@ -61,4 +61,49 @@
         <p id="cart-total">Total: $0.00</p>
     </section>
 
-    
+    <section id="order" class="order-section">
+        <h2>Place Your Order</h2>
+        <form id="order-form" onsubmit="return validateOrderForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" pattern="[0-9]{10}" required>
+            <label for="address">Address:</label>
+            <textarea id="address" required></textarea>
+            <button type="submit">Submit Order</button>
+        </form>
+    </section>
+
+    <section id="reviews" class="review-section">
+        <h2>Customer Reviews</h2>
+        <form id="review-form" onsubmit="addReview(event)">
+            <label for="review">Leave a Review:</label>
+            <textarea id="review" required></textarea>
+            <label for="rating">Rating:</label>
+            <select id="rating">
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="2">2 Stars</option>
+                <option value="1">1 Star</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="reviews-container"></div>
+    </section>
+
+    <section class="pizza-of-the-day">
+        <h2>Pizza of the Day</h2>
+        <div class="pizza-day-item">
+            <h3>Special Margherita Pizza</h3>
+            <p>Our classic pizza with fresh mozzarella, tomatoes, and basil. Only $12 today!</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mamma Mia Pizza | All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
