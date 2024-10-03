@@ -14,20 +14,34 @@ header {
 }
 
 .hero {
-    background: url('pizza-hero.jpg') center/cover no-repeat;
-    padding: 100px 0;
+    height: 100vh;
+    background-image: url('https://i.pinimg.com/736x/a4/20/ca/a420ca5cabb4357cd6c112aff0330e81.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    color: grey;
+    color: white;
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background behind text */
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .hero h2 {
-    font-size: 48px;
+    font-size: 3rem;
+    margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 20px;
-    margin: 10px 0 30px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
+
 
 .btn {
     background-color: #ffd700;

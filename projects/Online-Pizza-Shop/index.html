@@ -16,11 +16,17 @@
             <a href="#reviews">Reviews</a>
         </nav>
     </header>
+
+    <!-- Hero Section with a background image -->
     <section class="hero">
-        <h2>Delicious Pizzas, Delivered Hot!</h2>
-        <p>Your favorite pizza is just a click away.</p>
-        <a href="#menu" class="btn">Order Now</a>
+        <div class="hero-content">
+            <h2>Delicious Pizzas, Delivered Hot!</h2>
+            <p>Your favorite pizza is just a click away.</p>
+            <a href="#menu" class="btn">Order Now</a>
+        </div>
     </section>
+
+    <!-- Menu Section -->
     <section id="menu" class="menu-section">
         <h2>Our Menu</h2>
         <input type="text" id="search-bar" placeholder="Search for pizzas..." onkeyup="searchPizzas()">
@@ -38,6 +44,7 @@
         </div>
     </section>
 
+    <!-- Pizza Customization Section -->
     <section class="pizza-customization">
         <h2>Customize Your Pizza</h2>
         <form id="customize-form">
@@ -55,12 +62,14 @@
         </form>
     </section>
 
+    <!-- Cart Section -->
     <section id="cart" class="cart-section">
         <h2>Your Cart</h2>
         <div id="cart-items"></div>
         <p id="cart-total">Total: $0.00</p>
     </section>
 
+    <!-- Order Section -->
     <section id="order" class="order-section">
         <h2>Place Your Order</h2>
         <form id="order-form" onsubmit="return validateOrderForm()">
@@ -74,6 +83,7 @@
         </form>
     </section>
 
+    <!-- Reviews Section -->
     <section id="reviews" class="review-section">
         <h2>Customer Reviews</h2>
         <form id="review-form" onsubmit="addReview(event)">
@@ -91,7 +101,6 @@
         </form>
         <div id="reviews-container"></div>
     </section>
-
     <section class="pizza-of-the-day">
         <h2>Pizza of the Day</h2>
         <div class="pizza-day-item">
@@ -100,10 +109,12 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Mamma Mia Pizza | All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript for interaction -->
     <script src="script.js"></script>
 </body>
 </html>
