@@ -62,10 +62,18 @@ Welcome to **Pizza Delight**, an aesthetically designed and user-friendly pizza 
 - Leave feedback about the pizza and rate it!
 
 ## Technologies Used
-HTML5: For structuring the webpage.
-CSS3: For styling and layout, ensuring a modern and aesthetically pleasing UI.
-JavaScript: For all interactive elements including:
-Cart functionality.
-Customization of pizzas.
-Form validation and handling customer reviews.
+
+- **HTML5**: For structuring the webpage.
+- **CSS3**: For styling and layout, ensuring a modern and aesthetically pleasing UI.
+- **JavaScript**: For all interactive elements including:
+
+## Folder Structure
+```bash
+pizza-shop/
+│
+├── index.html          # Main HTML file
+├── styles.css          # CSS file for styling the webpage
+└── script.js           # JavaScript file for interactive elements
+```
+
 
