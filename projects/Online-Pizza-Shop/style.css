@@ -72,12 +72,13 @@ nav a:hover {
     background-image: url('https://i.pinimg.com/736x/a4/20/ca/a420ca5cabb4357cd6c112aff0330e81.jpg');
     background-size: cover;
     background-position: center;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
+    position: relative;
+
 }
 
 .hero-content {
