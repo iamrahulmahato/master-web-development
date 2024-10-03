@@ -122,7 +122,6 @@ textarea, input, select {
     border: 1px solid #ccc;
 }
 
-
 #search-bar {
     width: 100%;
     padding: 10px;
@@ -145,8 +144,6 @@ footer p {
     font-size: 16px;
     color: #fff;
 }
-
-
 
 @media (max-width: 768px) {
     .menu-items {
