@@ -14,9 +14,9 @@ body {
 .container {
     text-align: center;
     background: rgba(255, 255, 255, 0.8);
-    
-    backdrop-filter: blur(30px); /* Glassy effect */
-    
+    /* Glassy feel */
+    backdrop-filter: blur(10px);
+    /* Glassy effect */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -25,14 +25,34 @@ body {
 h1 {
     margin-bottom: 20px;
     font-size: 24px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     color: #d81b60;
+    /* Dark pink color */
 }
 
 .timer {
     font-size: 48px;
     color: #2c3e50;
     margin-bottom: 20px;
+}
+
+.set-time {
+    margin: 20px 0;
+}
+
+input {
+    width: 60px;
+    padding: 5px;
+    font-size: 16px;
+    margin: 0 5px;
+    border: 2px solid #d81b60;
+    /* Dark pink border */
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #d81b60;
+    /* Dark pink border on focus */
 }
 
 .buttons {
