@@ -70,20 +70,18 @@ nav a:hover {
     position: relative; */
     height: 90vh;
     background-image: url('https://i.pinimg.com/736x/a4/20/ca/a420ca5cabb4357cd6c112aff0330e81.jpg');
-    background-size: cover;
     background-position: center;
     display: flex;
-    align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     position: relative;
+    margin-top: 10px;
 
 }
 
 .hero-content {
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 30px;
     border-radius: 15px;
 }
 
