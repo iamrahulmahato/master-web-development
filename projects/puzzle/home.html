@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="Refresh" onclick="location.reload()"><svg width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M463.5 224H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5z"/></svg></button>
+<div class="conatiner">
+    <div class="tile" onclick="MoveMe(0)">1</div>
+    <div class="tile" onclick="MoveMe(1)">2</div>
+    <div class="tile" onclick="MoveMe(2)">3</div>
+    <div class="tile" onclick="MoveMe(3)">4</div>
+    <div class="tile" onclick="MoveMe(4)">5</div>
+    <div class="tile" onclick="MoveMe(5)">6</div>
+    <div class="tile" onclick="MoveMe(6)">7</div>
+    <div class="tile" onclick="MoveMe(7)">8</div>
+    <div class="emtile"></div>
+</div>
+<div class="blscreen">
+    <div class="winScreen">
+        <img src="https://images.unsplash.com/photo-1679931974847-bbb01236fe88?crop=entropy&cs=srgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODIwNDg5Mzc&ixlib=rb-4.0.3&q=85" alt="">
+        <div class="WinMessage">
+            <h2>You Won The Match</h2>
+            <div class="StarGroup"><svg viewBox="0 0 576 512" width="90" title="star">
+                <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+                
+              </svg>
+              <svg viewBox="0 0 576 512" width="90" title="star">
+                <path  d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+              </svg>
+              <svg  viewBox="0 0 576 512" width="90" title="star">
+                <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" />
+              </svg></div>
+            Moves: <i class="MovesCount"></i>
+            <div class="buttonGroup"><button onclick="location.reload()">Play Again!</button></div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

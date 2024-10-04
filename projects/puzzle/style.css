@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    height:100vh;
+    background-color: #212529;
+    display:flex;
+
+}
+.Refresh{
+    position: absolute;
+    padding:10px;
+    border-radius: 50%;
+    cursor:pointer;
+    margin:20px;
+}
+.conatiner{
+width:450px;
+margin:auto;
+height:450px;
+
+background-size:cover;
+display:grid;
+grid-template-columns: 150px 150px 150px;
+grid-template-rows: 150px 150px 150px;
+
+
+}
+.tile{
+background: url(https://images.unsplash.com/photo-1573152565405-f24a2b508023?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80);
+font-weight:900;
+font-family: 'Bruno Ace', cursive;
+font-size:2em;
+background-size:450px 450px;
+margin:3px;
+padding:15px;
+border-radius: 5px;
+transition-duration: 0.5s;
+-webkit-text-stroke:0.001px white;
+}
+.tile:nth-child(1){background-position: 0px 0px}
+.tile:nth-child(2){background-position: -150px 0px}
+.tile:nth-child(3){background-position: -300px -0px}
+.tile:nth-child(4){background-position: 0px -150px}
+.tile:nth-child(5){background-position: -150px -150px}
+.tile:nth-child(6){background-position: -300px -150px}
+.tile:nth-child(7){background-position: 0px -300px}
+.tile:nth-child(8){background-position: -150px -300px}
+.blscreen{
+    position: fixed;
+    width:100vw;
+    height:100vh;
+    display:none;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    
+}
+.winScreen{
+width:600px;
+height:300px;
+margin:auto;
+background-color: #ced4da;
+border-radius:10px;
+display:flex;
+font-family: sans-serif;
+box-shadow: 1px 1px 10px 5px rgba(0, 0, 0,0.5);
+
+
+}
+.winScreen>img{
+width:300px;
+height:300px;
+border-radius: 10px;
+
+}
+.WinMessage{
+    width:300px;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    font-size: 1.1em;
+
+}
+h2{
+    text-align:center;
+    padding:5px;
+}
+.buttonGroup{
+ 
+    margin:auto;
+}
+.buttonGroup>button{
+    padding:5px 20px;
+    border-radius:20px;
+    margin:10px;
+    font-size: 1.1em;
+    background-color: #40916c;
+    font-weight: bolder;
+    color:white;
+    font-family: 'Bruno Ace';
+
+    cursor:pointer;
+}
