@@ -17,7 +17,7 @@ export default function Game(){
             </div>
             <div className="item3">
                 <h3>Animal Name</h3>
-                <h5 className="animal-name"></h5>
+                <h5 className="animal-name">{getRandomName}</h5>
             </div>
             <div className="item4">
                 <h3>Select the Animal</h3>
