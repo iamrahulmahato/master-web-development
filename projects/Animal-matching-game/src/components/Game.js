@@ -1,4 +1,6 @@
+import {animals} from "./AnimalsDb";
 import '../assets/css/game.css'
+import {useState} from "react";
 
 export default function Game(){
     const getRandomName=animals[Math.floor(Math.random() * 16) + 1].name;
