@@ -3,6 +3,9 @@ import '../assets/css/game.css'
 export default function Game(){
     const getRandomName=animals[Math.floor(Math.random() * 16) + 1].name;
     const [status,setStatus]=useState('');
+    function onGameClick(e){
+        ( e.target.name === getRandomName)? setStatus('WIN'):setStatus('LOSE')
+     }
     return(
         <>
             <div className="item1">
@@ -10,7 +13,7 @@ export default function Game(){
             </div>
             <div className="item2">
                 <h3>Result</h3>
-                <h5 className="animal-name"></h5>
+                <h5 className="animal-name">{status}</h5>
             </div>
             <div className="item3">
                 <h3>Animal Name</h3>
