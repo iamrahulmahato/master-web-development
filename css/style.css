@@ -71,7 +71,15 @@ body {
     border-radius: 0.5rem;
     /* height: 2.5rem; */
     color: var(--btn-text);
+    transition: all .2s ease;
     padding: 0.8rem 1rem;
+    border: 2px solid transparent;
+}
+
+.projects-heading .source-code-btn:hover {
+    transform: scale(1.02);
+    background: var(--head);
+    border: 2px solid var(--primary);
 }
 
 .projects-container {
@@ -89,12 +97,13 @@ body {
     color: #0f172a;
     transition: all 0.2s ease-in-out 0s;
     transition-property: all;
-    transition-duration: 0.2s;
+    transition-duration: 0.15s;
     transition-timing-function: ease-in-out;
     transition-delay: 0s;
 }
 
 .card:hover {
+    transform: scale(1.06);
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 
