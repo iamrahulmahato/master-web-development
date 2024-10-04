@@ -1,7 +1,8 @@
 import '../assets/css/game.css'
 
 export default function Game(){
-   
+    const getRandomName=animals[Math.floor(Math.random() * 16) + 1].name;
+    const [status,setStatus]=useState('');
     return(
         <>
             <div className="item1">
