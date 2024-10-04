@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Pizza Delight</h1>
+        <nav>
+            <a href="#menu">Menu</a>
+            <a href="#cart">Cart</a>
+            <a href="#order">Order</a>
+            <a href="#reviews">Reviews</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section with a background image -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Delicious Pizzas, Delivered Hot!</h2>
+            <p>Your favorite pizza is just a click away.</p>
+            <a href="#menu" class="btn">Order Now</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <h2>Our Menu</h2>
+        <input type="text" id="search-bar" placeholder="Search for pizzas..." onkeyup="searchPizzas()">
+        <div id="menu-container">
+            <div class="menu-item" data-name="Margherita" data-price="10">
+                <h3>Margherita Pizza</h3>
+                <p>$10</p>
+                <button class="add-to-cart" data-name="Margherita" data-price="10">Add to Cart</button>
+            </div>
+            <div class="menu-item" data-name="Pepperoni" data-price="12">
+                <h3>Pepperoni Pizza</h3>
+                <p>$12</p>
+                <button class="add-to-cart" data-name="Pepperoni" data-price="12">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pizza Customization Section -->
+    <section class="pizza-customization">
+        <h2>Customize Your Pizza</h2>
+        <form id="customize-form">
+            <label for="size">Size:</label>
+            <select id="size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <label for="toppings">Toppings:</label>
+            <input type="checkbox" id="cheese" value="Cheese"> Cheese
+            <input type="checkbox" id="pepperoni" value="Pepperoni"> Pepperoni
+            <input type="checkbox" id="mushrooms" value="Mushrooms"> Mushrooms
+            <button type="button" onclick="addCustomizedPizza()">Add to Cart</button>
+        </form>
+    </section>
+
+    <!-- Cart Section -->
+    <section id="cart" class="cart-section">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p id="cart-total">Total: $0.00</p>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="order-section">
+        <h2>Place Your Order</h2>
+        <form id="order-form" onsubmit="return validateOrderForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" pattern="[0-9]{10}" required>
+            <label for="address">Address:</label>
+            <textarea id="address" required></textarea>
+            <button type="submit">Submit Order</button>
+        </form>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="review-section">
+        <h2>Customer Reviews</h2>
+        <form id="review-form" onsubmit="addReview(event)">
+            <label for="review">Leave a Review:</label>
+            <textarea id="review" required></textarea>
+            <label for="rating">Rating:</label>
+            <select id="rating">
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="2">2 Stars</option>
+                <option value="1">1 Star</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="reviews-container"></div>
+    </section>
+    <section class="pizza-of-the-day">
+        <h2>Pizza of the Day</h2>
+        <div class="pizza-day-item">
+            <h3>Special Margherita Pizza</h3>
+            <p>Our classic pizza with fresh mozzarella, tomatoes, and basil. Only $12 today!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mamma Mia Pizza | All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for interaction -->
+    <script src="script.js"></script>
+</body>
+</html>
