@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -13,11 +14,12 @@ body {
     align-items: center;
     color: white;
     font-family: 'Poppins', sans-serif;
+    background-color: #2c3e50; /* Dark background for contrast */
 }
 
 .container {
     width: 300px;
-    height: 300px;
+    height: 350px; /* Increased height for the reset button */
     background: #185AD8;
     display: flex;
     justify-content: center;
@@ -25,10 +27,12 @@ body {
     flex-direction: column;
     border-radius: 30px;
     position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .counter {
     font-size: 6rem;
+    margin-bottom: 20px; /* Spacing between counter and buttons */
 }
 
 button {
@@ -38,19 +42,28 @@ button {
     background: white;
     border: 1px solid black;
     position: absolute;
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 .incr {
     right: -10%;
-    box-shadow: 1px 2px 3px rgba(0, 0, 0, .2);
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .decr {
     left: -10%;
-    box-shadow: -1px 2px 3px rgba(0, 0, 0, .2);
+    box-shadow: -1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
-button:hover{
+.reset {
+    bottom: -10%;
+    background: #f39c12; /* Reset button color */
+    color: black;
+    border: 1px solid #e67e22; /* Border for reset button */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
     cursor: pointer;
 }
 
@@ -58,7 +71,13 @@ button:active {
     background-color: #b2fbff;
 }
 
-button:active .fa-plus, button:active .fa-minus{
+button:active .fa-plus,
+button:active .fa-minus,
+button:active .fa-refresh {
     font-size: 1.3rem;
     transition: all 0.2s ease;
+}
+
+button:focus {
+    outline: none; /* Remove default focus outline */
 }
