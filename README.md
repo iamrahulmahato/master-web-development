@@ -54,7 +54,7 @@ The list of projects are given below -
 - [12 - Storybazzi](https://master-web-development.netlify.app/projects/storybazzi/index.html)
 - [13 - Tic Tac Toe](https://master-web-development.netlify.app/projects/tic-tac-toe/index.html)
 - [14 - Todo List](https://master-web-development.netlify.app/projects/todo%20list/index.html)
-- [15 - Pokedex](https://master-web-development.netlify.app/projects/pokemonsearchapp/index.html)
+
 
 
 
