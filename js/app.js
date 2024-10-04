@@ -23,3 +23,29 @@ toggleModeBtn.onclick = () => {
       </svg>`;
     }
 }
+
+// ====================== Scroll to top ======================== 
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+window.onscroll = function() {
+    scrollFunction();
+};
+
+function scrollFunction() {
+
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "block"; 
+        scrollToTopBtn.style.opacity = "1"; 
+    } else {
+        scrollToTopBtn.style.opacity = "0"; 
+
+        setTimeout(() => {
+            scrollToTopBtn.style.display = "none";
+        }, 500); 
+
+    }
+}
+
+scrollToTopBtn.onclick = function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+};
