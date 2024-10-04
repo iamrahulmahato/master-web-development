@@ -1,0 +1,28 @@
+.grid-container {
+    display: grid;
+    row-gap: 10px;
+    column-gap: 2px;
+    grid-template-columns: auto auto auto auto;
+    background-color: #abbfe1;
+    padding: 10px;
+}
+
+.grid-item {
+    text-align: center;
+}
+.animal-name{
+    font-size: 40px;
+    font-family: "Arial Black";
+    color: darkorange;
+    font-variant-caps: all-petite-caps;
+}
+.animal-img{
+    width: 60%;
+}
+.animal-img:checked{
+    border: 5px solid chocolate;
+}
+h3{
+    font-size: 40px;
+    font-family: "Arial Black";
+}
