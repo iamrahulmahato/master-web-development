@@ -37,15 +37,7 @@ p {
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 20px;
-    position: relative;
     box-shadow: 0 5px 15px rgba(59, 130, 246, 0.5);
-}
-
-.counter-label {
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .button-container {
@@ -78,18 +70,28 @@ button:active {
 
 .save-btn {
     background-color: #f59e0b;
-    border-radius: 25px;
+    color: white;
+    border: none;
+    border-radius: 8px;
     padding: 10px 20px;
     font-family: 'Fredoka One', cursive;
-    font-size: 18px;
-    width: auto;
-    height: auto;
+    font-size: 16px;
+    cursor: pointer;
     margin-top: 20px;
+    transition: background-color 0.3s, box-shadow 0.2s;
     box-shadow: 0 4px 6px rgba(245, 158, 11, 0.3);
+    width: auto;
+    min-width: 120px;
+    white-space: nowrap;
 }
 
 .save-btn:hover {
+    background-color: #d97706;
     box-shadow: 0 6px 8px rgba(245, 158, 11, 0.4);
+}
+
+.save-btn:active {
+    transform: translateY(1px);
 }
 
 .saved-counts {
