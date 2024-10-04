@@ -18,10 +18,14 @@ export default function Game(){
             </div>
             <div className="item4">
                 <h3>Select the Animal</h3>
-                <div className="grid-container">                
-					<div className="grid-item">
-						<img className="animal-img" src=""/>
-					</div> 
+                <div className="grid-container">
+                    {
+                        animals.map(animal=>
+                            <div className="grid-item">
+                                <img className="animal-img" src={require('../assets/img/'+animal.img)} alt={animal.name} name={animal.name} onClick={onGameClick}/>
+                            </div>
+                        )
+                    }
                 </div>
             </div>
         </>
