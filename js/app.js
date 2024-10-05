@@ -49,9 +49,3 @@ function scrollFunction() {
 scrollToTopBtn.onclick = function() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 };
-
-// function for the contact button to redirect
-function redirectToContact() {
-  window.location.href = '/community/frontend/contact.html';
-}
-

@@ -200,34 +200,6 @@ img.weather-img{
     transform: translateY(-10px); 
 }
 
-/*cotact us button styling*/
-.icon {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.icon button{
-    background-color: transparent;
-    padding: 5px;
-    margin: 5px;
-    color: #ffffff;
-    border-radius: 5px;
-    font-size: 15px;
-    font-weight: 500;
-    transition:cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor:pointer;
-}
-
-.icon button:hover{
-    border: 1px solid whitesmoke;
-    color: #f43f5e;
-}
-
-
 @keyframes float {
     0%, 100% {
         transform: translateY(0); 

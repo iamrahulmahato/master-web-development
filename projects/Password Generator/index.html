@@ -1,83 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/projects/Password Generator/style.css">
-    <script src="/projects/Password Generator/script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Password Generator</title>
 </head>
-
 <body>
-    <div class="heading">
-        <p class="tag"><span>SecurePass:</span> The Ultimate Password Generator</p>
-        <h3>Generate strong, random passwords to protect your digital world in just one click</h3>
-    </div>
-
-    <div class="home">
-
-        <main>
-            <h1>Password Generator</h1>
-
-            <div class="password-controls">
-                <label for="password-length">Password Length: </label>
-                <input type="number" id="password-length" min="8" max="" value="12">
-            </div>
-
-            <input type="text" id="password" placeholder="Generated password" readonly>
-
-            <div class="buttons">
-                <button id="create">Generate</button><br>
-                <button id="copy">Copy</button><br>
-                <button id="clear">Clear</button><br>
-            </div>
-        </main>
-
-        <div class="image">
-            <img src="/assets/image/password generator main.svg" alt="Password Generator Image">
+    <main>
+        <h1>Click to generate a random password!</h1>
+        <input type="text" id="password">
+        <input type="range" id="passwordLength" min="1" max="50" value="8" oninput="updateLengthDisplay()">
+        <label for="passwordLength">Password length: <span id="lengthDisplay">8</span></label>
+        <div>
+            <button id="create">Create</button>
+            <button id="copy">Copy</button>
+            <button id="clear">Clear</button>
         </div>
-    </div>
-
-    <!-- Section: What Makes a Strong Password -->
-    <section class="strong-password-section">
-        <!-- Title -->
-        <h1 class="section-title">What makes a password strong?</h1>
-
-        <!-- Subtext -->
-        <p class="section-subtext">Learn the characteristics of a strong and secure password to protect your online accounts.</p>
-
-        <!-- Flex Container for Boxes -->
-        <div class="box-container">
-            <!-- Box 1: Long -->
-            <div class="box">
-                <div class="icon-container">
-                    <img src="https://img.icons8.com/ios-filled/50/ff6a00/key.png" alt="Long Password Icon">
-                </div>
-                <h3 class="box-title">Long</h3>
-                <p class="box-description">The longer a password, the more secure it is. A strong password should be at least 10 characters long.</p>
-            </div>
-
-            <!-- Box 2: Complex -->
-            <div class="box">
-                <div class="icon-container" id="mid">
-                    <img src="https://img.icons8.com/ios-filled/50/ff6a00/security-configuration.png" alt="Complex Password Icon">
-                </div>
-                <h3 class="box-title">Complex</h3>
-                <p class="box-description">Strong passwords use a combination of letters, numbers, cases, and symbols to form an unpredictable string.</p>
-            </div>
-
-            <!-- Box 3: Unique -->
-            <div class="box">
-                <div class="icon-container">
-                    <img src="https://img.icons8.com/ios-filled/50/ff6a00/fingerprint-scan.png" alt="Unique Password Icon">
-                </div>
-                <h3 class="box-title">Unique</h3>
-                <p class="box-description">A strong password should be unique to each account to reduce vulnerability in the event of a hack.</p>
-            </div>
-        </div>
-    </section>
+    </main>
 </body>
-
 </html>
