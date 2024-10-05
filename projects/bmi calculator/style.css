@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #f472b6;
+    background: #72f4a8;
 }
 
 .contentbox {
@@ -26,14 +26,14 @@ body {
 }
 
 .contentbox h1 span {
-    color: #ec4899;
+    color: #207c46;
 }
 
 #calculate {
     margin-top: 2rem;
     width: 150px;
     height: 50px;
-    background-color: #ec4899;
+    background-color: #207c46;
     color: white;
     font-size: 20px;
     border: none;
@@ -83,7 +83,7 @@ input:focus~label,
 input:valid~label {
     top: -20px;
     font-size: 14px;
-    color: #ec4899;
+    color: #00ff6a;
 }
 
 .bar {
@@ -99,7 +99,7 @@ input:valid~label {
     width: 0;
     bottom: 1px;
     position: absolute;
-    background: #ec4899;
+    background: #00ff6a;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
