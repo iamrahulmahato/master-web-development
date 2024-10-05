@@ -15,6 +15,9 @@
 ## Project Overview
 The Dynamic To-Do List application is designed to help users manage their tasks efficiently. This project implements drag-and-drop functionality for reordering task cards, allowing users to prioritize tasks intuitively. The application also persists the task order using localStorage, ensuring that users’ preferences are retained even after a page refresh.
 
+## Project Demonstration
+- For a visual demonstration, you can watch the [video tutorial](./media/drag-and-drop.mp4) that walks through the drag-and-drop functionality.
+
 ## Features
 - **Drag-and-Drop Functionality**: Users can click and drag task cards to reorder them within the same column.
 - **Visual Feedback**: Provides immediate visual feedback during drag-and-drop actions, including highlighting the target position.
