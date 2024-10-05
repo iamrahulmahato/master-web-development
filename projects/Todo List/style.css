@@ -158,3 +158,72 @@ body.dark-theme {
     opacity: 0.5;
     border: 2px dashed #444cf7; /* Add a dashed border to the dragging item */
 }
+
+/* Styling for the Pomodoro section */
+.pomodoro-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 250px;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pomodoro-section {
+    text-align: center;
+}
+
+.timer {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #444cf7;
+    margin-bottom: 10px;
+}
+
+.timer-controls button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 1rem;
+    background-color: #444cf7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.timer-controls button:hover {
+    background-color: #3330e3;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+
+    .pomodoro-container {
+        width: 90%;
+        top: auto;
+        bottom: 20px;
+        right: auto;
+        left: 20px;
+    }
+}
+
+.custom-alert {
+    position: fixed;
+    top: 30px; /* Creates space from the top of the screen */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the alert horizontally */
+    background-color: #444cf7;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    z-index: 1000;
+    opacity: 0.9;
+    transition: opacity 0.3s ease-in-out;
+    display: none;
+}
