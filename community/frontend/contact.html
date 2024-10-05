@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Contact Form</title>
+    <link rel="stylesheet" href="/community/frontend/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="contact-container">
+        <div class="contact-left">
+            <h2>Let's Get In Touch</h2>
+            <img src="/assets/image/contact form image.svg" alt="Contact Image">
+            <p>Connect with us:</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="contact-right">
+            <h3>Contact Us</h3>
+            <form action="#" method="POST" class="contact-form">
+                <div class="input-container">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="name" placeholder="Name" required>
+                </div>
+                <div class="input-container">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-container">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" name="phone" placeholder="Phone" required>
+                </div>
+                <div class="input-container textarea-container">
+                    <i class="fas fa-comment"></i>
+                    <textarea name="message" rows="5" placeholder="Message" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <script src="/community/frontend/contact.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
