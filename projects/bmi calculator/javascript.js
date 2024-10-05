@@ -14,7 +14,7 @@ window.onload = function () {
             document.getElementById("result-message").innerHTML = `Enter a valid height`;
         }
         else {
-                const bmi = (weight / ((height * height) / 10000)).toFixed(2)
+                const bmi = (weight / (height * height)).toFixed(2)
                 document.getElementById("result-message").innerText = "BMI: " + bmi;
         }
 
