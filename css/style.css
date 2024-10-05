@@ -20,6 +20,7 @@ html[data-theme="dark"] {
     --btn-color: #fecdd3;
     --btn-text: #1e293b;
     --head: #fff;
+    --card: #192333;
     --p: #94A3B8;
 }
 
@@ -123,12 +124,12 @@ body {
 }
 
 .card-heading {
-    color: #1e293b;
+    color: var(--head);
     font-weight: 600;
 }
 
 .card-description {
-    color: #475569;
+    color: var(--p);
     font-size: 0.9rem;
     margin-top: 0.2rem;
 }
@@ -155,4 +156,50 @@ body {
 
 #toggle-mode-btn svg {
     fill: #fff;
+}
+
+/* ====================== Scroll to top ========================  */
+#scrollToTopBtn i {
+    font-size: 24px; 
+}
+
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--btn-color); 
+    color: var(--btn-text); 
+    padding: 12px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0; 
+    transition: opacity 0.5s, transform 0.3s ease-in-out; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#scrollToTopBtn:hover {
+    background-color: var(--primary);
+}
+
+#scrollToTopBtn.show {
+    display: block;
+    opacity: 1; 
+    transform: translateY(-10px); 
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0); 
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+#scrollToTopBtn {
+    animation: float 3s infinite ease-in-out; 
 }
