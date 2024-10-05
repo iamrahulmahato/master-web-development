@@ -16,8 +16,28 @@ body{
 .users{
   font-family: 'Oswald', sans-serif;
   font-size: 30px;
-
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: center;
+  justify-content: center;
 }
+
+.random-user-div{
+  height: 150px;
+  width: 150px;
+  background: transparent;
+  overflow: hidden;
+  border: 2px solid black;
+  border-radius: 100%;
+}
+
+.random-user-img{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
 .btn {
   border: 5em;
   cursor: pointer;
@@ -33,6 +53,7 @@ body{
   transition: box-shadow 0.25s;
   color: white;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .btn .text {
