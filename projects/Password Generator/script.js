@@ -1,52 +1,57 @@
-const field = document.querySelector('#password');
-const create = document.querySelector('#create');
-const clear = document.querySelector('#clear');
-const copy = document.querySelector('#copy');
-const passwordLength = document.querySelector('#passwordLength');
-const lengthDisplay = document.querySelector('#lengthDisplay');
+const passwordField = document.querySelector('#password');
+const createButton = document.querySelector('#create');
+const clearButton = document.querySelector('#clear');
+const copyButton = document.querySelector('#copy');
+const lengthInput = document.querySelector('#password-length');
 
-const uppercase = 'QWERTYUIOPASDFGHJKLZXCVBNM';
-const numbers = '1234567890';
-const lowercase = 'qwertyuiopasdfghjklzxcvbnm';
-const symbols = '!£$%&@#?';
+const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const numbers = '0123456789';
+const lowercase = 'abcdefghijklmnopqrstuvwxyz';
+const symbols = '!@#$%^&*()_+[]{}<>?/';
 
 String.prototype.shuffle = function () {
-    var a = this.split(""),
-        n = a.length;
-
-    for (var i = n - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var tmp = a[i];
-        a[i] = a[j];
-        a[j] = tmp;
+    const array = this.split("");
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
-    return a.join("");
+    return array.join("");
 }
 
-function randomPassword(length) {
-    let characters = uppercase + lowercase + numbers + symbols;
+function generateRandomPassword(length) {
     let password = '';
-    
+    const allCharacters = uppercase + lowercase + numbers + symbols;
+
     for (let i = 0; i < length; i++) {
-        password += characters.charAt(Math.floor(Math.random() * characters.length));
+        const randomChar = allCharacters.charAt(Math.floor(Math.random() * allCharacters.length));
+        password += randomChar;
     }
-    
+
     return password.shuffle();
 }
 
-clear.addEventListener('click', () => {
-    field.value = '';
-})
+createButton.addEventListener('click', () => {
+    const length = parseInt(lengthInput.value);
+    if (length < 1 || length > 50) {
+        alert('Password length must be between 8 and 50 characters');
+    } else {
+        passwordField.value = generateRandomPassword(length);
+    }
+});
 
-create.addEventListener('click', () => {
-    const length = parseInt(passwordLength.value);
-    field.value = randomPassword(length);
-})
+clearButton.addEventListener('click', () => {
+    passwordField.value = '';
+    lengthInput.value = 12;
+});
 
-copy.addEventListener('click', () => {
-    navigator.clipboard.writeText(field.value);  
-})
-
-function updateLengthDisplay() {
-    lengthDisplay.textContent = passwordLength.value;
-}
+copyButton.addEventListener('click', () => {
+    if (passwordField.value) {
+        navigator.clipboard.writeText(passwordField.value).then(() => {
+            alert('Password copied to clipboard');
+        }).catch(err => {
+            alert('Failed to copy password');
+        });
+    } else {
+        alert('No password to copy!');
+    }
+});
