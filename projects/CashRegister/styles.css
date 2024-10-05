@@ -1,0 +1,152 @@
+.heading {
+    text-decoration: double;
+    color: black;
+    font-size: xx-large;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 1.5rem;
+}
+
+body {
+    background-color: cornflowerblue;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.input-label, .input-label2 {
+    font-size: x-large;
+    font-weight: 500;
+    display: block;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 1rem 0;
+}
+
+.para {
+    font-size: x-large;
+    color: yellow;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.input {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    height: 1.5rem;
+    margin: 1rem auto;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+#error-message {
+    font-size: x-large;
+    text-align: center;
+    color: rgb(25, 24, 24);
+}
+
+.button {
+    height: 2rem;
+    padding: 0.5rem 0.5rem;
+    margin: 1rem auto;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    font-weight: bold;
+    background-color: whitesmoke;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: lightgray;
+}
+
+.change-table {
+    width: 80%; /* Set a responsive width */
+    max-width: 700px; /* Optional max width for larger screens */
+    margin: 0 auto; /* Center the div horizontally */
+    text-align: center; /* Center the text inside the table */
+}
+
+table {
+    width: 100%; /* Make the table fill the container */
+    border-collapse: collapse; /* Merge table borders */
+ 
+}
+
+table caption {
+    font-size: x-large;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .heading {
+        font-size: large;
+        margin: 1rem;
+    }
+
+    .input-label, .input-label2, .para {
+        font-size: large;
+    }
+
+    .change-table {
+        width: 100%;
+        padding-left: 0;
+        margin: 1rem auto;
+    }
+
+    table caption {
+        font-size: large;
+    }
+
+    th, td {
+        padding: 0.3rem;
+    }
+
+    .button, .input {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: medium;
+        margin: 0.5rem;
+    }
+
+    .input-label, .input-label2, .para {
+        font-size: medium;
+    }
+
+    .button, .input {
+        max-width: 100%;
+        font-size: small;
+    }
+
+    th, td {
+        padding: 0.2rem;
+        font-size: small;
+    }
+}
