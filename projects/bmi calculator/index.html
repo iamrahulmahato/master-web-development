@@ -41,20 +41,6 @@
 
     </div>
 </body>
-<script>
-    window.onload = function () {
-        let button = document.getElementById("calculate");
-        button.addEventListener("click", calculateBMI)
-    }
-
-    function calculateBMI() {
-        let  weight= document.getElementById("weight").value;
-        let height= document.getElementById("height").value;
-        let result= weight/(height*height);
-
-        document.getElementById("result-message").innerText = "BMI: "+ result;
-
-    }
-</script>
+<script src="javascript.js"></script>
 
 </html>
