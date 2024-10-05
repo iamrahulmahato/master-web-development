@@ -24,6 +24,7 @@ html[data-theme="dark"] {
     --p: #94A3B8;
 }
 
+
 a {
     text-decoration: none;
 }
@@ -36,6 +37,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--bg);
+    
 }
 
 #projects {
@@ -44,11 +46,18 @@ body {
 
 .projects-heading {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     text-align: center;
 }
 
 .projects-heading h3 span {
     color: var(--primary);
+}
+.githublogo{
+    width: 20px;
 }
 
 .projects-heading h3 {
@@ -62,8 +71,16 @@ body {
 }
 
 .btn-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
     margin-top: 2rem;
+    background-color: var(--btn-color);
+    width: 15%;
+    border-radius: 30px;
 }
+
 
 .projects-heading .source-code-btn {
     background-color: var(--btn-color);
