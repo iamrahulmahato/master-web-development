@@ -3,6 +3,7 @@ let name = document.getElementById('name');
 let email = document.getElementById('email');
 let num = document.getElementById('Phnum');
 let btn = document.getElementById('btn');
+let img = document.getElementById('random-user-img');
 
 btn.addEventListener("click", function(){
 	fetch(url)
@@ -25,7 +26,8 @@ function pJSON (res){
 }
 
 function update (profile){
-  
+  img.innerHTML = `<img src="${profile.results[0].picture.large}" class="random-user-img" alt="user-img"/>`;
+  // img.innerHTML = '<h1>heyyyy</h1>';
   name.innerHTML = profile.results[0].name.first; 
   email.innerHTML = profile.results[0].email;
   num.innerHTML = profile.results[0].phone;
