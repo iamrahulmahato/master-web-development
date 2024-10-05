@@ -1,0 +1,110 @@
+.game-container {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.pet-status {
+    margin-bottom: 20px;
+}
+
+.pet-status p {
+    margin-bottom: 10px;
+}
+
+.game-actions {
+    margin-top: 20px;
+}
+
+.game-actions button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+}
+
+.game-actions button:hover {
+    background-color: #3e8e41;
+}
+
+.pet-image {
+    margin-top: 20px;
+}
+
+.pet-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: transform 0.5s;
+}
+
+.pet-image img:hover {
+    transform: scale(1.1);
+}
+
+.hungry {
+    animation: hungry 2s infinite;
+}
+
+.bored {
+    animation: bored 2s infinite;
+}
+
+.sick {
+    animation: sick 2s infinite;
+}
+
+.tired {
+    animation: tired 2s infinite;
+}
+
+@keyframes hungry {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bored {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes sick {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes tired {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
