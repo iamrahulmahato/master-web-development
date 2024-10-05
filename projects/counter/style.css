@@ -1,64 +1,122 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    width: 100%;
-    height: 100vh;
+    font-family: 'Nunito', sans-serif;
+    background-color: #1e293b;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    margin: 0;
 }
 
 .container {
-    width: 300px;
-    height: 300px;
-    background: #185AD8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 30px;
-    position: relative;
+    background-color: #f1f5f9;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
 }
 
-.counter {
-    font-size: 6rem;
+h1 {
+    font-family: 'Fredoka One', cursive;
+    color: #334155;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.counter-box {
+    background-color: #3b82f6;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 48px;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.5);
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
 button {
-    width: 60px;
-    height: 60px;
+    background-color: #10b981;
+    color: white;
+    border: none;
     border-radius: 50%;
-    background: white;
-    border: 1px solid black;
-    position: absolute;
-}
-
-.incr {
-    right: -10%;
-    box-shadow: 1px 2px 3px rgba(0, 0, 0, .2);
-}
-
-.decr {
-    left: -10%;
-    box-shadow: -1px 2px 3px rgba(0, 0, 0, .2);
-}
-
-button:hover{
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
     cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(16, 185, 129, 0.3);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(16, 185, 129, 0.4);
 }
 
 button:active {
-    background-color: #b2fbff;
+    transform: translateY(1px);
 }
 
-button:active .fa-plus, button:active .fa-minus{
-    font-size: 1.3rem;
-    transition: all 0.2s ease;
+.save-btn {
+    background-color: #f59e0b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(245, 158, 11, 0.3);
+    width: auto;
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+.save-btn:hover {
+    background-color: #d97706;
+    box-shadow: 0 6px 8px rgba(245, 158, 11, 0.4);
+}
+
+.save-btn:active {
+    transform: translateY(1px);
+}
+
+.saved-counts {
+    margin-top: 30px;
+}
+
+.saved-counts h3 {
+    font-family: 'Fredoka One', cursive;
+    color: #334155;
+    margin-bottom: 15px;
+}
+
+.saved-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.saved-list li {
+    background-color: #e2e8f0;
+    color: #334155;
+    padding: 8px 15px;
+    border-radius: 15px;
+    font-weight: bold;
 }

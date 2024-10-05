@@ -1,37 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo List</title>
-    <script src="./script.js" defer></script>
-    <link rel="stylesheet" href="./style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    
     <div class="container">
-        <div class="todo-header">
-            <h2>Todo List</h2>
-            <button id="theme-toggle">Change Theme</button>
-        </div>
-        
-        <input type="text" id="search" placeholder="Search tasks..." />
-        <form class="form-todo">
-            <input type="text" id="todo-input" placeholder="Add Todo" required />
-            <select id="priority">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-            </select>
-            <input type="date" id="due-date" />
-            <input type="submit" value="New Task" />
-        </form>
-        <ul class="todo-list" id="todo-list" draggable="true">
-            <!-- List will remain empty initially -->
-        </ul>
+        <h1>ToDo App</h1>
+    
+        <h2>Add Task</h2>
+        <input type="text" id="taskInput" placeholder="Enter task">
+        <button id="addTaskButton">Add Task</button>
+
+        <h2>Pending Tasks</h2>
+        <ul id="pendingTasks"></ul>
+
+        <h2>Completed Tasks</h2>
+        <ul id="completedTasks"></ul>
     </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
