@@ -38,6 +38,14 @@ body {
     font-size: 20px;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+#calculate:hover {
+    background-color: #ec4899;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
 }
 
 .gap {

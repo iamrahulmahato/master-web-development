@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../styles.css" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator</title>
-  </head>
-  <body style="background-color: rgb(248, 190, 190);">
+    <link rel="stylesheet" href="style.css">
     
-    
-  <div class="background-image-container">
-    <div class="container">
-      <h1 class="text">BMI Calculator</h1>
-      <form>
-        <h3><label class="text">Height in CM: </label><input type="text" id="height" /></h3>
-        <h3><label class="text">Weight in KG: </label><input type="text" id="weight" /></h3>
-        <button >Calculate</button>
-        <div id="results"></div>
-        <div id="weight-guide">
-          <h2 class="text">BMI Weight Guide</h2>
-          <h3 class="text">Under Weight = Less than 18.6</h3>
-          <h3 class="text">Normal Range = 18.6 and 24.9</h3>
-          <h3 class="text">Overweight = Greater than 24.9</h3>
+
+</head>
+
+<body>
+    <div class="contentbox">
+        <h1><span>BMI</span> Calculator</h1><br>
+        <p>Underweight: <18.5 <br>Normal: 18.5-24.9<br>Overweight: >25
+        </p>
+
+        <div class="input-group">
+            <input type="text" required id="weight">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Weight(kg)</label>
         </div>
-      </form>
+
+        <div class="input-group">
+            <input type="text" required id="height">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Height(m)</label>
+        </div>
+        <button id="calculate">Calculate</button>
+
+        <div class="footer">
+            <h2 id="result-message"></h2>
+            <p id="result-percentage"></p>
+
+        </div>
+
+
     </div>
-  </div>
-  </body>
-  <script src="javascript.js"></script>
+</body>
+<script src="javascript.js"></script>
+
 </html>
