@@ -33,5 +33,22 @@
             <!-- List will remain empty initially -->
         </ul>
     </div>
+
+    <!--Pomodoro Timer-->
+    <div class="pomodoro-container">
+        <div class="pomodoro-section">
+            <h2>Pomodoro Timer</h2>
+            <div class="timer">
+                <span class="minutes">25</span>:<span class="seconds">00</span>
+            </div>
+            <div class="timer-controls">
+                <button class="start-timer">Start</button>
+                <button class="pause-timer">Pause</button>
+                <button class="reset-timer">Reset</button>
+            </div>
+            <audio id="alert-audio" src="./mixkit-software-interface-start-2574.wav" preload="auto"></audio>
+        </div>
+    </div>
+    <div id="custom-alert" class="custom-alert" style="display: none;"></div>
 </body>
 </html>
