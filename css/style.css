@@ -7,7 +7,7 @@
 
 html {
     --bg: #f8fafc;
-    --primary: #f43f5e;
+    --primary: #dc3ff4;
     --btn-color: #f43f5e;
     --btn-text: #fff;
     --head: #334155;
@@ -158,9 +158,11 @@ body {
     fill: #fff;
 }
 
+
 /* ====================== Scroll to top ========================  */
+
 #scrollToTopBtn i {
-    font-size: 24px; 
+    font-size: 24px;
 }
 
 #scrollToTopBtn {
@@ -171,13 +173,13 @@ body {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: var(--btn-color); 
-    color: var(--btn-text); 
+    background-color: var(--btn-color);
+    color: var(--btn-text);
     padding: 12px 16px;
     border-radius: 50%;
     cursor: pointer;
-    opacity: 0; 
-    transition: opacity 0.5s, transform 0.3s ease-in-out; 
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.3s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -187,13 +189,14 @@ body {
 
 #scrollToTopBtn.show {
     display: block;
-    opacity: 1; 
-    transform: translateY(-10px); 
+    opacity: 1;
+    transform: translateY(-10px);
 }
 
 @keyframes float {
-    0%, 100% {
-        transform: translateY(0); 
+    0%,
+    100% {
+        transform: translateY(0);
     }
     50% {
         transform: translateY(-8px);
@@ -201,5 +204,5 @@ body {
 }
 
 #scrollToTopBtn {
-    animation: float 3s infinite ease-in-out; 
+    animation: float 3s infinite ease-in-out;
 }
