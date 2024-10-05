@@ -1,62 +1,168 @@
-.background-image-container{
-    width: 100%;
-    height: 100%;
-    background-image: url('https://wallpaperaccess.com/full/12721046.jpg');
-    background-size: cover;    
-    background-position: center;
-    background-repeat: no-repeat; 
-
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
 }
-.container {
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #72f4a8;
+}
+
+.contentbox {
+    text-align: center;
     width: 400px;
     height: 600px;
-    text-align: center;   
-  }
-  #height,
-  #weight {
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background: #FFF;
+    color: #0f172a;
+}
+
+.contentbox h1 span {
+    color: #207c46;
+}
+
+#calculate {
+    margin-top: 2rem;
     width: 150px;
-    height: 25px;
-    margin-top: 30px;
-  }
-  
-  #weight-guide {
-    margin-left: 75px;
-    margin-top: 25px;
-  }
-  
-  #results {
-    font-size: 35px;
-    margin-left: 90px;
-    margin-top: 20px;
-    color: rgb(241, 241, 241);
-  }
-  
-  button {
-    width: 150px;
-    height: 35px;
-    margin-left: 90px;
-    margin-top: 25px;
-    background-color: #fff;
-    padding: 1px 30px;
-    border-radius: 8px;
-    background-color: #7b7777;
-    color: #fff;
-    text-decoration: none;
-    border: 2px solid #c2c0c0;
-    text-align: center;
-    font-size: 25px;
-  }
-  
-  h1 {
-    padding-left: 15px;
-    padding-top: 25px;
-    
-  }
-  .text{
-    color: #fff;
-  }
-  button:hover{
-    width: 170px;
-    height: 45px;
-  }
+    height: 50px;
+    background-color: #207c46;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.gap {
+    margin-bottom: 0.5rem;
+}
+
+.footer {
+    margin-top: 2rem;
+}
+
+.input-group {
+    position: relative;
+    margin: 40px 0 20px;
+}
+
+input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #757575;
+}
+
+input:focus {
+    outline: none;
+}
+
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+input:focus~label,
+input:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: #00ff6a;
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 315px;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #00ff6a;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+input:focus~.bar:before,
+input:focus~.bar:after {
+    width: 50%;
+}
+
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+input:focus~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+
+/* animations */
+
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #ec4899;
+    }
+    to {
+        width: 0;
+        background: #ec4899;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #ec4899;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #ec4899;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
