@@ -79,7 +79,7 @@ body {
 .projects-heading .source-code-btn:hover {
     transform: scale(1.02);
     background: var(--head);
-    border: 2px solid var(--primary);
+    border: 2px solid var(--btn-color);
 }
 
 .projects-container {
@@ -107,6 +107,9 @@ body {
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 
+.card-img-border{
+    border-radius: 10px;
+}
 .card-cover {
     background: rgba(25, 90, 216, 0.2);
     border-radius: 8px 8px 0 0;
