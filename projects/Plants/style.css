@@ -225,7 +225,7 @@ section {
 
 .slide-detail {
   position: absolute;
-  top: 75px;
+  top: 130px;
   left: 30%;
   z-index: 10;
   width: 50%;
@@ -247,7 +247,7 @@ section {
 
 .slide-detail-facts {
   position: absolute;
-  top: 190px;
+  top: 240px;
   left: 30%;
   z-index: 10;
   width: 50%;
@@ -273,12 +273,79 @@ section {
   overflow: hidden;
   opacity: 0.1 !important;
 }
-
-.slide-text h4 {
-  color: #fff;
-  font-size: 100px;
-  position: relative;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.slide-text h4 span {
-  position: absolute;
+
+.element {
+  width: 80vw; /* Adjust as needed */
+  margin: 20px;
+}
+#read-more {
+  display: none; /* Hidden by default */
+}
+
+/* Show 'Read More' only on mobile screens */
+@media (max-width: 768px) {
+  #read-more {
+    display: inline-block; /* Display link in mobile view */
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  #more-text {
+    display: none; /* Keep extended text hidden initially */
+  }
+}
+    .hero-image {
+      width: 250%; /* Adjust the width as needed */
+      height: auto; /* Maintain aspect ratio */
+    }
+  
+  .slide-detail-facts h5 {
+    display: block;
+    margin-top: 1000px; /* Adjust the margin value as needed */
+  }
+  .element {
+    width: 120vw;
+
+}
+  .swiper-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .swiper-slide {
+    width: 80vw; /* Adjust as needed */
+    height: auto;
+  }
+  
+  .slide-number, .slide-text{
+    font-size: calc(20px + 2vw); /* Responsive font size */
+  }
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .text h1 {
+    font-size: 8vw; /* Larger text for smaller screens */
+    left: 20vw;
+  }
+
+  .earth img {
+    left: 20vw;
+  }
+
+
+  .slide-text h4 {
+    font-size: 50px;
+  }
 }
