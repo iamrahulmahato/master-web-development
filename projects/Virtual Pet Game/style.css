@@ -1,9 +1,13 @@
+/* Main game container */
 .game-container {
     width: 80%;
     margin: 40px auto;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Status of the pet */
 .pet-status {
     margin-bottom: 20px;
 }
@@ -12,6 +16,7 @@
     margin-bottom: 10px;
 }
 
+/* Button styles */
 .game-actions {
     margin-top: 20px;
 }
@@ -30,21 +35,71 @@
     background-color: #3e8e41;
 }
 
+/* Pet image container */
 .pet-image {
     margin-top: 20px;
+    position: relative;
+    width: 100%;
+    height: 200px; /* Define height for the container */
 }
 
+/* Style for the turtle image */
 .pet-image img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     transition: transform 0.5s;
+    position: absolute; /* Allows movement */
+    top: 0; /* Align the turtle vertically in the middle */
+    left: 0;
+    right: 0;
+    margin: auto; /* Center the turtle horizontally */
 }
 
 .pet-image img:hover {
     transform: scale(1.1);
 }
 
+/* Linear movement animation for turtle */
+@keyframes movePet {
+    0% {
+        left: calc(100% - 700px); /* Start from the right edge */
+    }
+    100% {
+        left: 0; /* Move to the left edge */
+    }
+}
+
+
+.moving {
+    animation: movePet 15s linear infinite; /* Slower, linear movement */
+}
+
+/* Cat mouse image positioned at bottom-right */
+.cat-mouse {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.cat-mouse img {
+    width: 300px; /* Adjust the size as necessary */
+    height: auto;
+}
+
+/* Dog image positioned at bottom-left */
+.dog {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+}
+
+.dog img {
+    width: 300px; /* Adjust the size as necessary */
+    height: auto;
+}
+
+/* Animations for pet states */
 .hungry {
     animation: hungry 2s infinite;
 }

@@ -13,6 +13,7 @@ function updatePetStatus() {
 
     // Add animations based on pet status
     const petImage = document.getElementById('pet');
+    
     if (hunger > 80) {
         petImage.classList.add('hungry');
     } else {
@@ -35,6 +36,13 @@ function updatePetStatus() {
         petImage.classList.add('tired');
     } else {
         petImage.classList.remove('tired');
+    }
+
+    // Control pet movement: stop moving if the pet is bored
+    if (boredom < 80) {
+        petImage.classList.add('moving');
+    } else {
+        petImage.classList.remove('moving');
     }
 }
 
