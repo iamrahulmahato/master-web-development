@@ -13,7 +13,7 @@ buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const result = playRound(button.id, computerPlay());
     resultEl.textContent = result;
-    
+
   });
 });
 
@@ -27,9 +27,9 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return "It's a tie!";
   } else if (
-    (playerSelection === "rock" && computerSelection === "scissors") ||
-    (playerSelection === "paper" && computerSelection === "rock") ||
-    (playerSelection === "scissors" && computerSelection === "paper")
+      (playerSelection === "rock" && computerSelection === "scissors") ||
+      (playerSelection === "paper" && computerSelection === "rock") ||
+      (playerSelection === "scissors" && computerSelection === "paper")
   ) {
     playerScore++;
     playerScoreEl.textContent = playerScore;
