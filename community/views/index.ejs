@@ -1,0 +1,10 @@
+<%- include('layout') %>
+
+<h2>Recent Questions</h2>
+<ul>
+    <% questions.forEach(question => { %>
+        <li>
+            <a href="/question/<%= question._id %>"><%= question.title %></a>
+        </li>
+    <% }) %>
+</ul>
