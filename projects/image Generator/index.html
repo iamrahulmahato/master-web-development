@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Image Generator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <button id="scrollTopBtn" class="scroll-top-btn">↑ Scroll to Top</button>
+        <h1> IMAGE SEARCH</h1>
+        <form id="search-form">
+            <input type="text" id="search-box" placeholder="search anything here...">
+            <button> Search</button>
+        </form>
+        <div id="search-result"></div>
+        <button id="show-more-btn">Show More</button>
+
+        <script src="script.js"></script>
+        <script>
+            // script.js
+window.onscroll = function() {
+    toggleScrollTopButton();
+};
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+function toggleScrollTopButton() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollTopBtn.style.display = "block"; // Show button after scrolling down
+    } else {
+        scrollTopBtn.style.display = "none"; // Hide button when at the top
+    }
+}
+
+scrollTopBtn.onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+};
+
+        </script>
+
+
+    </body>
+</html>

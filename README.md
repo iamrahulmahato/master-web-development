@@ -126,10 +126,19 @@ flowchart LR
     commit -->|Finally|creatpr((Create a Pull Request))
     
  ```
-    
+<br>
 
 
+<div align="center">
+  <h1><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" width="35" height="35"> Contributors</h1>
 
+  Big thanks to all the contributors! 🎉
+
+  <a href="https://github.com/iamrahulmahato/master-web-development/pulse"> <img align="center" src="https://contrib.rocks/image?max=100&repo=iamrahulmahato/master-web-development" /> </a> 
+  
+</div>
+
+<br>
 
   
 ## ❤️ Code of Conduct
@@ -140,6 +149,7 @@ Please note that Open Source Design has a [Contributor Code of Conduct](./CODE_O
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <br>
+
   
 <br>
 
