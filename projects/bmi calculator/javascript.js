@@ -14,10 +14,8 @@ window.onload = function () {
             results.innerHTML = `please give a valid  weight ${weight}`;
         }
         else {
-            const bmi = (weight / ((height * height) / 10000)).toFixed(2)
-
-            // show the result
-            document.getElementById("result-message").innerText = "BMI: " + bmi;
+                const bmi = (weight / ((height * height) / 10000)).toFixed(2)
+                document.getElementById("result-message").innerText = "BMI: " + bmi;
         }
 
     }
