@@ -73,3 +73,21 @@ mini-social-network/
    Navigate to the project directory and open the `index.html` file in any modern web browser.
 
 
+## Usage
+
+
+1. Upon opening the website, users are greeted with a login/registration form.
+2. After logging in, users are taken to the main feed where they can:
+   - Create posts.
+   - Like and comment on posts.
+3. All actions (posting, liking, commenting) are managed and displayed dynamically using JavaScript.
+
+
+## File Breakdown
+
+
+- **`index.html`**: The HTML structure, including login form and main feed.
+- **`styles.css`**: Styling for the UI, ensuring a responsive and clean layout.
+- **`script.js`**: Contains all the JavaScript functionality, such as form handling, post creation, and interactive elements like likes and comments.
+
+
