@@ -17,6 +17,9 @@
 - User Registration & Login (Simulated)
     - Allows users to register and log in without backend authentication.
 - User Profiles
+
+
+
     - Each user can create a profile that includes their username.
 - Create, Read, Update, and Delete (CRUD) Posts
 
