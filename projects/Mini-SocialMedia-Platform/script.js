@@ -66,3 +66,8 @@ function renderPosts() {
     });
 }
 
+function likePost(index) {
+    posts[index].likes++;
+    renderPosts();
+}
+
