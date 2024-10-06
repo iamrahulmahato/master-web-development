@@ -14,4 +14,11 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h
+h1, h2 {
+    color: #333;
+}
+
+#auth-section, #feed {
+    margin: 20px 0;
+}
+
