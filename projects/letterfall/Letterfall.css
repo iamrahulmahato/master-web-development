@@ -1,0 +1,25 @@
+body {
+  overflow: hidden;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+#info {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  max-width: 300px;
+}

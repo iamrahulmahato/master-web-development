@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letterfall - An Interactive 3D Typography Experience</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="info">
+    <h1>Letterfall</h1>
+    <p>Use your mouse or touch to interact with the falling letters.</p>
+  </div>
+  
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.163.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.163.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script src="Letterfall.js" type="module"></script>
+</body>
+</html>
