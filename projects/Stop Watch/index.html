@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="style.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+</head>
+ <body>
+  <form class="container">
+    <input type="radio" id="init" name="control" checked="checked">
+    <input type="radio" id="stop" name="control">
+    <input type="radio" id="start" name="control">
+    <input type="reset" id="reset" name="control">
+    <input type="checkbox" id="lap_1" name="lap">
+    <input type="checkbox" id="lap_2" name="lap">
+    <input type="checkbox" id="lap_3" name="lap">
+    <input type="checkbox" id="lap_4" name="lap">
+  
+    <time><i></i><b></b><i></i><b></b><i></i></time>
+  
+    <div class="controls">
+      <label for="stop">Stop</label>
+      <label for="start">Start</label>
+      <label for="reset">Reset</label>
+      <label for="lap_1">Lap</label>
+      <label for="lap_2">Lap</label>
+      <label for="lap_3">Lap</label>
+      <label for="lap_4">Lap</label>
+    </div>
+  
+    <ul class="laps">
+      <li>
+        <time><i></i><b></b><i></i><b></b><i></i></time>
+      </li>
+      <li>
+        <time><i></i><b></b><i></i><b></b><i></i></time>
+      </li>
+      <li>
+        <time><i></i><b></b><i></i><b></b><i></i></time>
+      </li>
+      <li>
+        <time><i></i><b></b><i></i><b></b><i></i></time>
+      </li>
+    </ul>
+  </form>
+  <script src="script.js"></script>
+</body>
+
+</html>

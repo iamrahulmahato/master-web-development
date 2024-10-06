@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 32px;
+}
+
+.puzzle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.puzzle-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 120px); /* 4 columns for 12 pieces */
+    grid-gap: 10px;
+    margin-right: 40px;
+}
+
+.dropzone {
+    width: 120px;
+    height: 120px;
+    border: 2px dashed #999;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dropzone.active {
+    background-color: #cce7ff; /* Light blue highlight when active */
+    border-color: #3399ff;
+}
+
+.pieces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.puzzle-piece {
+    width: 120px;
+    height: 120px;
+    cursor: grab;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease; /* Smooth piece movement */
+}
+
+.puzzle-piece:active {
+    cursor: grabbing;
+    transform: scale(1.05); /* Slight scaling effect for better drag feedback */
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#doneButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#doneButton:hover {
+    background-color: #45a049;
+}
+
+#resultMessage {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s ease;
+}
