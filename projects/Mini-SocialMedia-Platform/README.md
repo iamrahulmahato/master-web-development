@@ -4,16 +4,15 @@
     This project is a simple social networking platform that allows users to register, log in, create posts, and interact through likes and comments. Built using HTML, CSS, and JavaScript, the application simulates a mini social media site running entirely on the client-side. It provides a practical demonstration of how to implement front-end web development concepts such as user interactions, event handling, and dynamic DOM updates.
 
 ## Table of Contents
+- [Features](#Features)
+- [Technology Stack](#TechnologyStack)
+- [Project Structure](#ProjectStructure)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [File Breakdown](#FileBreakdown)
+- [Future Enhancements](#FutureEnhancements)
+- [Contributing](#Contributing)
 
-Features
-Technology Stack
-Project Structure
-Installation
-Usage
-File Breakdown
-Future Enhancements
-Contributing
-License
 Features
 User Registration & Login (Simulated)
 
