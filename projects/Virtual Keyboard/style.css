@@ -1,0 +1,73 @@
+body
+{
+     background:url(bg.jpg) ;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    font-size: 1.5rem;
+}
+
+.textContainer{
+    height: 15vh;
+    width: 90vw;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px 1px grey;
+    outline: none;
+    padding: 2rem;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.keyboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50vh;
+    width: 70vw;
+    background-color: darkgrey;
+    border-radius: 1rem;
+}
+
+.row{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;   
+}
+
+.last{
+    width: 65%;
+    margin: 0 auto ;
+}
+
+.space{
+    background:grey;
+    width: 50%;
+    height: 2rem;   
+}
+
+.key{
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 3px;
+
+}
+
+.key:active{
+    background: lightgrey;
+}
+
+.active{
+    background-color: whitesmoke;
+}

@@ -6,6 +6,7 @@ let snakeArray = [{x:9,y:0}, {x:8,y:0}]; // Initial snake at the top
 let score = 0;
 let food = {x:6,y:7};
 let gameInterval;
+let countdownInterval;
 
 function main() {
     gameEngine();
@@ -29,15 +30,15 @@ function gameEngine() {
     if(isCollide(snakeArray)) {
         clearInterval(gameInterval);
         inputDirection = {x:0,y:0};
-        board.style.backgroundColor = 'red'; // Change board color to red
+        board.style.backgroundColor = 'rgba(255, 0, 0, 0.5)'; // Semi-transparent red
 
-        // Change the button text to "Game Over Play Again"
-        startButton.innerHTML = "Game Over Play Again";
-        startButton.style.display = "block"; // Show the button
+        // Change the button text to "Play Again"
+        startButton.innerHTML = "Play Again";
+        startButton.style.display = "block";
 
         setTimeout(() => {
-            resetGame(); // Reset the game after 2 seconds
-            board.style.backgroundColor = '#222'; // Reset board color
+            resetGame();
+            board.style.backgroundColor = '#222';
         }, 2000);
         return;
     }
@@ -64,12 +65,25 @@ function gameEngine() {
 
 function renderBoard() {
     board.innerHTML = '';
-    snakeArray.forEach((e) => {
+    
+    // Add subtle grid lines
+    for (let i = 0; i < 18; i++) {
+        for (let j = 0; j < 18; j++) {
+            let gridCell = document.createElement('div');
+            gridCell.style.gridRowStart = i + 1;
+            gridCell.style.gridColumnStart = j + 1;
+            gridCell.classList.add('grid-cell');
+            board.appendChild(gridCell);
+        }
+    }
+    
+    snakeArray.forEach((e, index) => {
         let snakeElement = document.createElement('div');
-        snakeElement.style.gridRowStart = e.y + 1; // Adjust for grid system
-        snakeElement.style.gridColumnStart = e.x + 1; // Adjust for grid system
+        snakeElement.style.gridRowStart = e.y + 1;
+        snakeElement.style.gridColumnStart = e.x + 1;
         snakeElement.classList.add('snake');
-        snakeElement.innerHTML = '☠️'; // Snake segment
+        if (index === 0) snakeElement.classList.add('snake-head');
+        snakeElement.style.transform = `scale(${0.95 + index * 0.01})`;
         board.appendChild(snakeElement);
     });
 
@@ -77,7 +91,6 @@ function renderBoard() {
     foodElement.style.gridRowStart = food.y + 1;
     foodElement.style.gridColumnStart = food.x + 1;
     foodElement.classList.add('food');
-    foodElement.innerHTML = '🍔'; // Food
     board.appendChild(foodElement);
 }
 
@@ -91,21 +104,45 @@ function placeFood() {
 }
 
 function resetGame() {
+    clearInterval(gameInterval);
+    clearInterval(countdownInterval);
     snakeArray = [{x:9,y:0}, {x:8,y:0}]; // Reset snake to the top
     score = 0;
     scoreEl.innerHTML = "SCORE : " + score;
     inputDirection = {x: 0, y: 0};
     startButton.innerHTML = "Start Game"; // Reset button text
+    board.style.backgroundColor = '#222';
+    placeFood(); // Place food for the new game
 }
 
-// Slow down the snake by setting the interval to 300ms
+// Increase speed (decrease interval) for smoother movement
 startButton.addEventListener("click", () => {
-    if (startButton.innerHTML === "Start Game") {
-        inputDirection = {x: 1, y: 0}; // Start game moving to the right
+    if (startButton.innerHTML === "Start Game" || startButton.innerHTML === "Play Again") {
+        startButton.style.display = "none";
+        resetGame();
+        startCountdown();
     }
-    startButton.style.display = "none"; // Hide the button during gameplay
-    gameInterval = setInterval(main, 300); // Game runs at this interval
 });
+
+function startCountdown() {
+    let countdown = 3;
+    board.innerHTML = `<div class="countdown-container"><div class="countdown">${countdown}</div></div>`;
+    countdownInterval = setInterval(() => {
+        countdown--;
+        if (countdown > 0) {
+            board.querySelector('.countdown').textContent = countdown;
+        } else {
+            clearInterval(countdownInterval);
+            board.innerHTML = '';
+            startGame();
+        }
+    }, 1000);
+}
+
+function startGame() {
+    inputDirection = {x: 1, y: 0};
+    gameInterval = setInterval(main, 100); // Faster interval for smoother movement
+}
 
 // Keyboard controls with arrow keys and 'wasd'
 window.addEventListener("keydown", e => {
@@ -182,4 +219,17 @@ window.addEventListener("touchmove", e => {
 
     touchStartX = null;
     touchStartY = null;
+});
+
+// Add instruction popup
+const instructionButton = document.getElementById('instructionButton');
+const instructionPopup = document.getElementById('instructionPopup');
+const closePopup = document.getElementById('closePopup');
+
+instructionButton.addEventListener('click', () => {
+    instructionPopup.style.display = 'flex';
+});
+
+closePopup.addEventListener('click', () => {
+    instructionPopup.style.display = 'none';
 });
