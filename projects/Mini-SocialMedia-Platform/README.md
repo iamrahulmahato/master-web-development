@@ -20,3 +20,20 @@ This project is a basic social networking platform that allows users to register
 - [Contributing](#contributing)
 - [License](#license)
 
+
+## Features
+
+
+1. **User Registration & Login (Simulated)**
+   - Users can register and log in (simulated on the client-side, no backend authentication).
+   
+2. **Post Creation**
+   - Users can create posts, which will appear in their feed.
+   
+3. **Likes and Comments**
+   - Users can interact with posts by liking them and adding comments.
+   
+4. **Feed Display**
+   - All users' posts are displayed in a scrollable feed.
+
+
