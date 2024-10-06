@@ -8,6 +8,7 @@ assignees: ''
 ---
 
 🔴 Issue Title :
+🔴 Tech stack :
 🔴 Objective :
 🔴 Summary :
 📸 Screenshots
@@ -15,7 +16,7 @@ assignees: ''
 
 ✅ Details to Include When Taking the Issue:
 Full Name :
-Participant Role (Specify the Open Source Program name, e.g., GSOC, GSSOC, SSOC, JWOC, etc.) :
+Participant Role (Specify the Open Source Program name, e.g., GSSOC, Hacktoberfest, etc.):
 Happy Contributing! 🚀
 
 Wishing you all the best on your open source journey. Enjoy! 😎
