@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.game-container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #4a752c;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: #4a752c;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.difficulty select {
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: none;
+    font-size: 14px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.info span {
+    margin: 0 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#mine-count::before {
+    content: '🚩';
+    margin-right: 5px;
+}
+
+#timer::before {
+    content: '⏱️';
+    margin-right: 5px;
+}
+
+#game-board {
+    display: inline-grid;
+    gap: 1px;
+    background-color: #a7d948;
+    border: 2px solid #4a752c;
+    padding: 2px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    background-color: #a7d948;
+    border: 1px solid #8bcc28;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.2s ease;
+}
+
+.cell:hover {
+    background-color: #b8e85a;
+}
+
+.cell.revealed {
+    background-color: #e5c29f;
+    animation: reveal 0.3s ease-out;
+}
+
+@keyframes reveal {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.cell.mine {
+    background-color: #ff6b6b;
+    animation: explode 0.5s ease-out;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cell.flagged::after {
+    content: '🚩';
+    animation: flag 0.3s ease-out;
+}
+
+@keyframes flag {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#start-game, #new-game {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4a752c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#start-game:hover, #new-game:hover {
+    background-color: #5c9137;
+}
+
+.cell[data-mines="1"] {
+    color: blue;
+}
+
+.cell[data-mines="2"] {
+    color: green;
+}
+
+.cell[data-mines="3"] {
+    color: red;
+}
+
+.cell[data-mines="4"] {
+    color: darkblue;
+}
+
+.cell[data-mines="5"] {
+    color: darkred;
+}
+
+.cell[data-mines="6"] {
+    color: teal;
+}
+
+.cell[data-mines="7"] {
+    color: black;
+}
+
+.cell[data-mines="8"] {
+    color: gray;
+}
+
+.game-over-message, .win-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 10;
+}
+
+.game-over-message {
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+}
+
+.win-message {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #4a752c;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.game-over-message.show, .win-message.show {
+    opacity: 1;
+}
