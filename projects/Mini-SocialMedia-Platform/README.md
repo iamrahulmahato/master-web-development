@@ -13,7 +13,7 @@
 - [Future Enhancements](#FutureEnhancements)
 - [Contributing](#Contributing)
 
-Features
+## Features
 User Registration & Login (Simulated)
 
 Allows users to register and log in without backend authentication.
