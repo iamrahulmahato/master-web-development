@@ -15,3 +15,16 @@ document.getElementById("auth-form").addEventListener("submit", function(event) 
     }
 });
 
+document.getElementById("toggle-text").addEventListener("click", function() {
+    const authTitle = document.getElementById("auth-title");
+    if (authTitle.innerText === "Login") {
+        authTitle.innerText = "Register";
+        document.getElementById("toggle-text").innerText = "Login";
+        document.getElementById("auth-form").reset();
+    } else {
+        authTitle.innerText = "Login";
+        document.getElementById("toggle-text").innerText = "Register";
+        document.getElementById("auth-form").reset();
+    }
+});
+
