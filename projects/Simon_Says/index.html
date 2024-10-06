@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Says Advanced</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-container">
+            <div id="game-board">
+                <div class="color-btn" id="red"></div>
+                <div class="color-btn" id="blue"></div>
+                <div class="color-btn" id="green"></div>
+                <div class="color-btn" id="yellow"></div>
+            </div>
+            <div id="info">
+                <p id="message">Press Start to Play</p>
+                <p id="level">Level: 1</p>
+                <p id="score">Score: 0</p>
+                <button id="start-btn">Start Game</button>
+            </div>
+        </div>
+        <div class="instructions">
+            <h2>How to Play</h2>
+            <p>
+                Simon Says is a memory game where you have to follow the pattern of colors that the game shows you.
+                <ul>
+                    <li>The game will display a sequence of colors, starting with one and increasing as you progress through levels.</li>
+                    <li>Watch the sequence carefully, and when it's your turn, click the buttons in the exact order of the colors shown.</li>
+                    <li>If you get the sequence correct, you will move to the next level, and a new color will be added to the sequence.</li>
+                    <li>If you make a mistake, the game is over and you can start again by pressing the start button.</li>
+                    <li>Your score increases based on your level progression.</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

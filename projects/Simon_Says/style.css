@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.color-btn {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+#red {
+    background-color: red;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#green {
+    background-color: green;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+.color-btn:active {
+    opacity: 0.7;
+}
+
+#info {
+    margin-bottom: 20px;
+}
+
+#message {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.instructions {
+    max-width: 300px;
+    padding: 10px;
+}
+
+.instructions h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.instructions p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.instructions ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 5px;
+}
