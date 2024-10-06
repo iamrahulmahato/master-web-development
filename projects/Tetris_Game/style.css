@@ -1,0 +1,39 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  canvas {
+    background-color: #333;
+    display: block;
+    margin: 20px auto;
+    border: 2px solid #000;
+  }
+  
+  h1 {
+    color: #444;
+  }
+  
+  #gameInfo {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #score {
+    font-size: 1.5em;
+  }
+  
