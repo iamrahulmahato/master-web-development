@@ -1,19 +1,22 @@
 ---
-name: "\U0001F4DD Issue: Code Enhancement Request"
-about: Requesting for the new project to contribute in this repository.
+name: "\U0001F4DD Issue : Code enhancement"
+about: Improving any styling or function of the existing project
 title: ''
 labels: ''
 assignees: ''
 
 ---
 
-🔴 Issue Title :
-🔴 Tech stack :
-🔴 Objective :
-🔴 Summary :
-📸 Screenshots
-<!-- Write N/A if not available -->
+:red_circle: **Title** :
+:red_circle: **Enhancement Aim** :
+:red_circle: **Changes** : <!-- Enlist those changes you want to do. -->
 
+
+### Screenshots 📷
+<!-- Write N/A if not available-->
+
+
+***********************************************************************
 ***********************************************************************
 
 ✅ Details to Include When Taking the Issue:
