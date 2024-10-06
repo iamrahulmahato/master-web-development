@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mini Social Network</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Mini Social Network</h1>
+        <div id="auth-section">
+            <h2 id="auth-title">Login</h2>
+            <form id="auth-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p id="toggle-auth">Don't have an account? <span id="toggle-text">Register</span></p>
+        </div>
+
+        <div id="feed" class="hidden">
+            <h2>Feed</h2>
+            <form id="post-form">
+                <textarea id="post-content" placeholder="What's on your mind?" required></textarea>
+                <button type="submit">Post</button>
+            </form>
+            <div id="posts"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+ 
