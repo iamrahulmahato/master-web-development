@@ -28,3 +28,20 @@ document.getElementById("toggle-text").addEventListener("click", function() {
     }
 });
 
+document.getElementById("post-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const content = document.getElementById("post-content").value;
+
+    if (content) {
+        const post = {
+            user: loggedInUser,
+            content: content,
+            likes: 0,
+            comments: []
+        };
+        posts.push(post);
+        document.getElementById("post-content").value = '';
+        renderPosts();
+    }
+});
+
