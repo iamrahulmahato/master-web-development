@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Todo List</title>
-        <script src="./script.js" defer></script>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <section class="section-todo container">
-            <h1>Todo List</h1>
-            <form class="form-todo">
-                <input type="text" name="" id="" placeholder="Add Todo" />
-                <input type="submit" value="Add Todo" class="btn" />
-            </form>
-            <ul class="todo-list"></ul>
-        </section>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1>ToDo App</h1>
+    
+        <h2>Add Task</h2>
+        <input type="text" id="taskInput" placeholder="Enter task">
+        <button id="addTaskButton">Add Task</button>
+
+        <h2>Pending Tasks</h2>
+        <ul id="pendingTasks"></ul>
+
+        <h2>Completed Tasks</h2>
+        <ul id="completedTasks"></ul>
+    </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
