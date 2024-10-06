@@ -61,3 +61,13 @@ button:hover {
     margin: 5px 0;
 }
 
+.hidden {
+    display: none;
+}
+
+#toggle-auth {
+    cursor: pointer;
+    color: #007bff;
+}
+
+
