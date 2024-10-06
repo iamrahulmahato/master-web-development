@@ -91,3 +91,22 @@ mini-social-network/
 - **`script.js`**: Contains all the JavaScript functionality, such as form handling, post creation, and interactive elements like likes and comments.
 
 
+## Future Enhancements
+
+
+- **Persistent Storage**: Implement localStorage to store user data (posts, comments, likes) even after the browser is refreshed.
+- **User Profiles**: Extend the project to include individual user profiles.
+- **Authentication**: Add real user authentication with backend support.
+- **Media Sharing**: Allow users to upload and share images in posts.
+
+
+## Contributing
+
+
+Contributions are welcome! Feel free to fork the repository and submit a pull request with improvements or new features.
+
+
+## License
+
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
