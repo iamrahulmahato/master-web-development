@@ -45,3 +45,24 @@ document.getElementById("post-form").addEventListener("submit", function(event) 
     }
 });
 
+function renderPosts() {
+    const postsContainer = document.getElementById("posts");
+    postsContainer.innerHTML = '';
+
+    posts.forEach((post, index) => {
+        const postDiv = document.createElement("div");
+        postDiv.classList.add("post");
+        postDiv.innerHTML = `
+            <strong>${post.user}</strong>
+            <p>${post.content}</p>
+            <button onclick="likePost(${index})">Like (${post.likes})</button>
+            <div class="comment-section">
+                <input type="text" id="comment-input-${index}" placeholder="Add a comment">
+                <button onclick="addComment(${index})">Comment</button>
+                <div id="comments-${index}"></div>
+            </div>
+        `;
+        postsContainer.appendChild(postDiv);
+    });
+}
+
