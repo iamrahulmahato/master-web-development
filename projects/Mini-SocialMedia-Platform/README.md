@@ -37,3 +37,21 @@ This project is a basic social networking platform that allows users to register
    - All users' posts are displayed in a scrollable feed.
 
 
+## Technology Stack
+
+
+- **HTML5**: Structure and layout of the application.
+- **CSS3**: Styling and responsive design.
+- **JavaScript**: Logic for user interactions and dynamic behavior.
+
+
+## Project Structure
+
+
+```
+mini-social-network/
+├── index.html      # Main HTML file
+├── styles.css      # Styling for the project
+└── script.js       # JavaScript for functionality
+```
+
