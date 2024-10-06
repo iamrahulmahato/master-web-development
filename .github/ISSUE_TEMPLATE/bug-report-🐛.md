@@ -1,20 +1,22 @@
 ---
-name: " :books: Issue: Add New Project"
-about: Requesting for the new project to contribute in this repository.
+name: "Bug Report \U0001F41B"
+about: Reporting for any bug in the project
 title: ''
 labels: ''
 assignees: ''
 
 ---
 
-🔴 Issue Title :
-🔴 Tech stack :
-🔴 Objective :
-🔴 Summary :
-📸 Screenshots
-<!-- Write N/A if not available -->
+:red_circle: **Title** :
+:red_circle: **Bug** :
+:red_circle: **Changes** :  <!-- Explain the approach to handle this bug. -->
 
-***********************************************************************
+
+### Screenshots 📷
+<!-- Write N/A if not available-->
+
+
+************************************************************
 
 ✅ Details to Include When Taking the Issue:
 Full Name :
