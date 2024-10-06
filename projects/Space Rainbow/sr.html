@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Rainbow</title>
+  <link rel="stylesheet" href="sr.css">
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <div id="controls">
+    <label for="speed">Speed: <span id="speedValue">1</span></label>
+    <input type="range" id="speed" min="0.1" max="5" step="0.1" value="1">
+    <label for="intensity">Intensity: <span id="intensityValue">1</span></label>
+    <input type="range" id="intensity" min="0.1" max="5" step="0.1" value="1">
+    <button id="colorMode">Toggle Color Mode</button>
+  </div>
+  <div id="info">
+    <h1>Space Rainbow</h1>
+    <p>Move your mouse or touch the screen to interact!</p>
+  </div>
+  <script src="sr.js"></script>
+</body>
+</html>

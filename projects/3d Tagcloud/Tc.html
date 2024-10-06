@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3d Tagcloud</title>
+    <link rel="stylesheet" href="Tc.css" />
+  </head>
+  <body>
+    <div class="tagcloud-wrapper">
+      <div class="tagcloud-controls" style="--num-elements: 20">
+        <div class="tagcloud-control-button" style="--index: 1">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 2">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 3">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 4">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 5">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 6">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 7">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 8">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 9">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 10">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 11">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 12">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 13">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 14">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 15">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 16">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 17">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 18">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 19">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+        <div class="tagcloud-control-button" style="--index: 20">
+          <input type="radio" name="tagcloud-control-input" />
+        </div>
+
+        <div class="tagcloud-rotation">
+          <ul class="tagcloud-tags" style="--num-elements: 93">
+            <li class="tagcloud-tag" style="--index: 1">
+              <div><a href="https://vuejs.org/" target="_blank">Vue.js</a></div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 2">
+              <div><a href="https://nuxt.com/" target="_blank">Nuxt.js</a></div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 3">
+              <div>
+                <a href="https://github.com/CesiumGS/cesium" target="_blank"
+                  >Cesium</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 4">
+              <div><a href="https://zzz.dog/" target="_blank">Zdog</a></div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 5">
+              <div>
+                <a href="https://www.vantajs.com/" target="_blank">Vanta.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 6">
+              <div>
+                <a
+                  href="https://github.com/micku7zu/vanilla-tilt.js"
+                  target="_blank"
+                  >Tilt.js</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 7">
+              <div>
+                <a href="https://threejs.org/" target="_blank">Three.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 8">
+              <div>
+                <a href="https://angularjs.org/" target="_blank">Angular</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 9">
+              <div>
+                <a href="https://reactjs.org/" target="_blank">React</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 10">
+              <div>
+                <a href="https://svelte.dev/" target="_blank">Svelte</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 11">
+              <div>
+                <a href="https://nextjs.org/" target="_blank">Next.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 12">
+              <div>
+                <a href="https://www.gatsbyjs.com/" target="_blank">Gatsby</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 13">
+              <div>
+                <a href="https://expressjs.com/" target="_blank">Express.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 14">
+              <div>
+                <a href="https://www.sencha.com/products/extjs/" target="_blank"
+                  >ExtJS</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 15">
+              <div>
+                <a href="https://mithril.js.org/" target="_blank">Mithril</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 16">
+              <div>
+                <a href="https://backbonejs.org/" target="_blank"
+                  >Backbone.js</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 17">
+              <div>
+                <a href="https://jquery.com/" target="_blank">jQuery</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 18">
+              <div>
+                <a href="https://playcanvas.com/" target="_blank">PlayCanvas</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 19">
+              <div>
+                <a
+                  href="https://polymer-library.polymer-project.org/"
+                  target="_blank"
+                  >Polymer</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 20">
+              <div>
+                <a href="http://aurelia.io/" target="_blank">Aurelia</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 21">
+              <div>
+                <a href="https://emberjs.com/" target="_blank">Ember.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 22">
+              <div>
+                <a href="https://alpinejs.dev/" target="_blank">Alpine.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 23">
+              <div>
+                <a href="https://nodejs.org/en/" target="_blank">Node.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 24">
+              <div><a href="https://d3js.org/" target="_blank">D3.js</a></div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 25">
+              <div>
+                <a href="https://underscorejs.org/" target="_blank"
+                  >Underscore.js</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 26">
+              <div>
+                <a href="https://lodash.com/" target="_blank">Lodash</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 27">
+              <div>
+                <a href="https://pixijs.com/" target="_blank">PixiJS</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 28">
+              <div>
+                <a href="https://animejs.com/" target="_blank">Anime.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 29">
+              <div>
+                <a href="https://rishabhp.github.io/bideo.js/" target="_blank"
+                  >Bideo.js</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 30">
+              <div>
+                <a href="https://www.chartjs.org/" target="_blank">Chart.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 31">
+              <div>
+                <a href="https://nosir.github.io/cleave.js/" target="_blank"
+                  >Cleave.js</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 32">
+              <div>
+                <a href="https://glimmerjs.com/" target="_blank">Glimmer</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 33">
+              <div>
+                <a href="https://sarcadass.github.io/granim.js/" target="_blank"
+                  >Granim.js</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 34">
+              <div>
+                <a
+                  href="https://github.com/alvarotrigo/fullPage.js/"
+                  target="_blank"
+                  >fullPage.js</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 35">
+              <div>
+                <a href="https://leafletjs.com/" target="_blank">Leaflet</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 36">
+              <div>
+                <a href="https://multiple.js.org/" target="_blank"
+                  >Multiple.js</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 37">
+              <div>
+                <a href="https://momentjs.com/" target="_blank">Moment.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 38">
+              <div>
+                <a href="https://masonry.desandro.com/" target="_blank"
+                  >Masonry</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 39">
+              <div>
+                <a href="http://omniscientjs.github.io/" target="_blank"
+                  >Omniscient</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 40">
+              <div>
+                <a href="http://parsleyjs.org/" target="_blank">Parsley</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 41">
+              <div>
+                <a href="https://popper.js.org/" target="_blank">Popper.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 42">
+              <div>
+                <a
+                  href="https://github.com/sindresorhus/screenfull.js/"
+                  target="_blank"
+                  >Screenfull.js</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 43">
+              <div><a href="https://vocajs.com/" target="_blank">Voca</a></div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 44">
+              <div>
+                <a href="https://getbootstrap.com/" target="_blank"
+                  >Bootstrap</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 45">
+              <div>
+                <a href="https://mochajs.org/" target="_blank">Mocha</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 46">
+              <div>
+                <a href="https://ionicframework.com/" target="_blank">Ionic</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 47">
+              <div><a href="https://webix.com/" target="_blank">Webix</a></div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 48">
+              <div>
+                <a href="https://www.meteor.com/" target="_blank">Meteor.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 49">
+              <div><a href="https://p5js.org/" target="_blank">p5</a></div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 50">
+              <div>
+                <a href="https://www.babylonjs.com/" target="_blank"
+                  >Babylon.js</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 51">
+              <div>
+                <a href="https://github.com/aframevr/aframe" target="_blank"
+                  >Aframe</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 52">
+              <div>
+                <a href="https://zeptojs.com/" target="_blank">Zepto</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 53">
+              <div>
+                <a href="https://createjs.com/" target="_blank">CreateJS</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 54">
+              <div>
+                <a href="https://nightwatchjs.org/" target="_blank"
+                  >Nightwatch.js</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 55">
+              <div>
+                <a href="https://stimulus.hotwired.dev/" target="_blank"
+                  >Stimulus</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 56">
+              <div>
+                <a href="https://nativescript.org/" target="_blank"
+                  >NativeScript</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 57">
+              <div><a href="https://relay.dev/" target="_blank">Relay</a></div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 58">
+              <div>
+                <a href="https://cycle.js.org/" target="_blank">Cycle.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 59">
+              <div>
+                <a href="https://flightjs.github.io/" target="_blank">Flight</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 60">
+              <div>
+                <a href="http://trykickoff.com/" target="_blank">Kickoff</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 61">
+              <div>
+                <a href="https://cylonjs.com/" target="_blank">Cylon.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 62">
+              <div><a href="https://jestjs.io/" target="_blank">Jest</a></div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 63">
+              <div>
+                <a href="https://feathersjs.com/" target="_blank">Feathers</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 64">
+              <div>
+                <a href="http://bootboxjs.com/" target="_blank">Bootbox.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 65">
+              <div>
+                <a href="https://modernizr.com/" target="_blank">Modernizr</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 66">
+              <div><a href="https://cube.dev/" target="_blank">Cube.js</a></div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 67">
+              <div>
+                <a href="https://requirejs.org/" target="_blank">RequireJS</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 68">
+              <div>
+                <a href="https://jasmine.github.io/" target="_blank">Jasmine</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 69">
+              <div>
+                <a href="https://qunitjs.com/" target="_blank">QUnit</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 70">
+              <div>
+                <a href="https://github.com/soulwire/sketch.js" target="_blank"
+                  >sketch.js</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 71">
+              <div>
+                <a href="https://github.com/wso2/jaggery" target="_blank"
+                  >Jaggery</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 72">
+              <div>
+                <a href="https://kangoextensions.com/" target="_blank">Kango</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 73">
+              <div>
+                <a href="https://www.cappuccino.dev/" target="_blank"
+                  >Cappuccino</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 74">
+              <div>
+                <a href="https://konvajs.org/" target="_blank">Konva</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 75">
+              <div>
+                <a href="https://sproutcore.com/" target="_blank">SproutCore</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 76">
+              <div><a href="https://webix.com/" target="_blank">Webix</a></div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 77">
+              <div>
+                <a href="https://github.com/quirkey/sammy" target="_blank"
+                  >Sammy</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 78">
+              <div>
+                <a href="https://seemple.js.org/#!home" target="_blank"
+                  >Seemple.js</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 79">
+              <div>
+                <a href="https://socket.io/" target="_blank">Socket.IO</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 80">
+              <div>
+                <a href="https://xstyled.dev/" target="_blank">xstyled</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 81">
+              <div>
+                <a href="http://vanilla-js.com/" target="_blank">VanillaJS</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 82">
+              <div>
+                <a href="https://github.com/linnovate/mean" target="_blank"
+                  >MEAN</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 83">
+              <div>
+                <a href="https://github.com/flatiron/flatiron" target="_blank"
+                  >Flatiron</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 84">
+              <div>
+                <a href="https://ripplejs.github.io/" target="_blank"
+                  >ripple.js</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 85">
+              <div>
+                <a href="https://sailsjs.com/" target="_blank">Sails.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 86">
+              <div>
+                <a href="https://mochi.github.io/mochikit/" target="_blank"
+                  >MochiKit</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 87">
+              <div>
+                <a
+                  href="https://optimizely.github.io/nuclear-js/"
+                  target="_blank"
+                  >NuclearJS</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 88">
+              <div>
+                <a href="https://ampersandjs.com/" target="_blank"
+                  >Ampersand.js</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 89">
+              <div>
+                <a
+                  href="https://heisenbergjs.github.io/heisenberg/"
+                  target="_blank"
+                  >Heisenberg.js</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 90">
+              <div>
+                <a href="https://marionettejs.com/" target="_blank"
+                  >Marionette</a
+                >
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 91">
+              <div>
+                <a href="https://pagerjs.com/" target="_blank">pager.js</a>
+              </div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 92">
+              <div><a href="https://canjs.com/" target="_blank">CanJS</a></div>
+            </li>
+            <li class="tagcloud-tag" style="--index: 93">
+              <div>
+                <a href="http://rivetsjs.com/" target="_blank">Rivets.js</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
