@@ -82,3 +82,14 @@ function addComment(index) {
     }
 }
 
+function renderComments(index) {
+    const commentsContainer = document.getElementById(`comments-${index}`);
+    commentsContainer.innerHTML = '';
+
+    posts[index].comments.forEach(comment => {
+        const commentDiv = document.createElement("div");
+        commentDiv.classList.add("comment");
+        commentDiv.innerText = comment;
+        commentsContainer.appendChild(commentDiv);
+    });
+}
