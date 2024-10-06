@@ -71,3 +71,14 @@ function likePost(index) {
     renderPosts();
 }
 
+function addComment(index) {
+    const commentInput = document.getElementById(`comment-input-${index}`);
+    const comment = commentInput.value;
+
+    if (comment) {
+        posts[index].comments.push(comment);
+        commentInput.value = '';
+        renderComments(index);
+    }
+}
+
