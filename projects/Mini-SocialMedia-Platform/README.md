@@ -14,13 +14,11 @@
 - [Contributing](#Contributing)
 
 ## Features
-User Registration & Login (Simulated)
-
-Allows users to register and log in without backend authentication.
-User Profiles
-
-Each user can create a profile that includes their username.
-Create, Read, Update, and Delete (CRUD) Posts
+- User Registration & Login (Simulated)
+    - Allows users to register and log in without backend authentication.
+- User Profiles
+    - Each user can create a profile that includes their username.
+- Create, Read, Update, and Delete (CRUD) Posts
 
 Users can create posts that are displayed on the main feed, with options to update or delete them.
 Like and Comment System
