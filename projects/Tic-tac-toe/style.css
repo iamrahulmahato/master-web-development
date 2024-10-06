@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  background-color: #f19cbb;
+  color: #333;
+}
+h1 {
+  font-size: 3rem;
+  height: 5vh;
+}
+p {
+  font-size: 1.5rem;
+  height: 5vh;
+  font-weight: 700;
+}
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  border-color: black;
+  border-style: solid;
+  border-left: 0;
+  border-top: 0;
+  font-size: 50px;
+  cursor: pointer;
+}
+.row3 > div {
+  border-bottom: 0;
+}
+#box3 {
+  border-right: 0;
+}
+#box6 {
+  border-right: 0;
+}
+#box9 {
+  border-right: 0;
+}
+#reset {
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  color: #444;
+  text-transform: uppercase;
+  background: none;
+  font-size: 1.1rem;
+  font-family: inherit;
+  padding: 0.5rem 1.5rem;
+  font-weight: 400;
+  transition: all 0.2s;
+  cursor: pointer;
+  border-radius: 50rem;
+  font-weight: 700;
+  margin-top: 9rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+#reset:hover {
+  background-color: rgb(179, 182, 179);
+}

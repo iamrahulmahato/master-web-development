@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Atlas Game: Indian Cities Version",
+    "version": "1.0",
+    "description": "A fun game to test your knowledge of Indian cities!",
+    "permissions": [
+      "activeTab"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }
+  
