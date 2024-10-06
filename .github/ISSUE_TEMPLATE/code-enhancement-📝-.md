@@ -1,7 +1,7 @@
 ---
 name: "Code enhancement \U0001F4DD "
 about: Improving any styling or function of the existing project
-title: ''
+title: "\U0001F9D1‍\U0001F4BB : "
 labels: ''
 assignees: ''
 
@@ -18,7 +18,7 @@ assignees: ''
 
 **********************************************************************
 ✅ Details to Include When Taking the Issue:
-Full Name :
+Name :
 Participant Role (Specify the Open Source Program name, e.g., GSSOC, Hacktoberfest, etc.):
 
 ***********************************************************************

@@ -1,7 +1,7 @@
 ---
 name: "Bug Report \U0001F41B"
 about: Reporting for any bug in the project
-title: ''
+title: "\U0001F41E : "
 labels: ''
 assignees: ''
 
@@ -19,7 +19,7 @@ assignees: ''
 ************************************************************
 
 ✅ Details to Include When Taking the Issue:
-Full Name :
+Name :
 Participant Role (Specify the Open Source Program name, e.g., GSSOC, Hacktoberfest, etc.):
 
 ***********************************************************************
