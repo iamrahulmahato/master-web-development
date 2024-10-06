@@ -55,3 +55,21 @@ mini-social-network/
 └── script.js       # JavaScript for functionality
 ```
 
+
+## Installation
+
+
+1. **Clone the Repository:**
+
+
+   ```bash
+   git clone https://github.com/yourusername/mini-social-network.git
+   ```
+
+
+2. **Open the Project:**
+
+
+   Navigate to the project directory and open the `index.html` file in any modern web browser.
+
+
