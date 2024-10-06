@@ -1,0 +1,159 @@
+@import url('/assets/style/reset.css');
+@import url('/assets/style/animations.css');
+
+body {
+  height: 100vh;
+  width: 100wv;
+  padding-top: 5vh;
+  background-color: black;
+}
+
+/* Loader */
+#loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*  */
+
+#section {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+  background: url('/assets/images/bgimg.jpg') center center/cover no-repeat;
+}
+.logo {
+  width: 40vw;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  color: white;
+  box-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+    -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black,
+    0px -2px 0 black;
+}
+.buttons i {
+  font-size: 5vmin;
+  text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+    -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black,
+    0px -2px 0 black;
+  transition: 1s;
+}
+.buttons i:hover {
+  color: #ffffff;
+  text-shadow: 2px 2px 0 rgba(233, 217, 0, 0.5),
+    2px -2px 0 rgba(233, 217, 0, 0.5), -2px 2px 0 rgba(233, 217, 0, 0.5),
+    -2px -2px 0 rgba(233, 217, 0, 0.5), 2px 0px 0 rgba(233, 217, 0, 0.5),
+    0px 2px 0 rgba(233, 217, 0, 0.5), -2px 0px 0 rgba(233, 217, 0, 0.5),
+    0px -2px 0 rgba(233, 217, 0, 0.5);
+}
+.buttons h1 {
+  margin: 0 3vmin;
+  font-size: 7vmin;
+  text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+    -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black,
+    0px -2px 0 black;
+}
+#widthcontainer,
+#heightcontainer {
+  display: flex;
+  align-items: center;
+
+  padding: 0 4vmin;
+}
+#startBtn,
+#sandboxBtn {
+  transition: 1s;
+  display: flex;
+  color: black;
+  align-items: center;
+  cursor: pointer;
+  height: fit-content;
+  font-size: 2.5vmin;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  /* text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.5),
+    2px -2px 0 rgba(255, 255, 255, 0.5), -2px 2px 0 rgba(255, 255, 255, 0.5),
+    -2px -2px 0 rgba(255, 255, 255, 0.5), 2px 0px 0 rgba(255, 255, 255, 0.5),
+    0px 2px 0 rgba(255, 255, 255, 0.5), -2px 0px 0 rgba(255, 255, 255, 0.5),
+    0px -2px 0 rgba(255, 255, 255, 0.5); */
+}
+#startBtn:hover,
+#sandboxBtn:hover {
+  box-shadow: 2px 2px 0 rgba(233, 217, 0, 0.5),
+    2px -2px 0 rgba(233, 217, 0, 0.5), -2px 2px 0 rgba(233, 217, 0, 0.5),
+    -2px -2px 0 rgba(233, 217, 0, 0.5), 2px 0px 0 rgba(233, 217, 0, 0.5),
+    0px 2px 0 rgba(233, 217, 0, 0.5), -2px 0px 0 rgba(233, 217, 0, 0.5),
+    0px -2px 0 rgba(233, 217, 0, 0.5);
+  text-shadow: 2px 2px 0 rgba(233, 217, 0, 0.5),
+    2px -2px 0 rgba(233, 217, 0, 0.5), -2px 2px 0 rgba(233, 217, 0, 0.5),
+    -2px -2px 0 rgba(233, 217, 0, 0.5), 2px 0px 0 rgba(233, 217, 0, 0.5),
+    0px 2px 0 rgba(233, 217, 0, 0.5), -2px 0px 0 rgba(233, 217, 0, 0.5),
+    0px -2px 0 rgba(233, 217, 0, 0.5);
+}
+.jello {
+  animation: jello 1s ease 0s 1 normal forwards;
+}
+.selectionBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.selectionBox > h1 {
+  color: white;
+  font-size: 2vmin;
+  text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+    -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black,
+    0px -2px 0 black;
+}
+.gameintro {
+  flex-direction: column;
+}
+.toolname {
+  color: yellow !important;
+  font-weight: bold;
+}
+.skybluetxt {
+  color: skyblue;
+}
+#selbox1 {
+  margin-bottom: 5vh;
+}
