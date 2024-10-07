@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -17,152 +18,55 @@ body {
 .contentbox {
     text-align: center;
     width: 400px;
-    height: 600px;
     padding: 20px;
-    margin: 0 auto;
-    border-radius: 10px;
     background: #FFF;
-    color: #0f172a;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contentbox h1 span {
     color: #207c46;
 }
 
-#calculate {
-    margin-top: 2rem;
-    width: 150px;
-    height: 50px;
-    background-color: #207c46;
-    color: white;
-    font-size: 20px;
-    border: none;
-    border-radius: 10px;
-}
-
-.gap {
-    margin-bottom: 0.5rem;
-}
-
-.footer {
-    margin-top: 2rem;
-}
-
 .input-group {
     position: relative;
-    margin: 40px 0 20px;
+    margin: 20px 0;
 }
 
 input {
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
-    display: block;
     width: 100%;
+    padding: 10px;
     border: none;
-    border-bottom: 1px solid #757575;
+    border-bottom: 2px solid #ccc;
+    font-size: 18px;
+    transition: 0.3s ease-in-out;
 }
 
 input:focus {
     outline: none;
+    border-bottom: 2px solid #207c46;
 }
 
-label {
-    color: #999;
+#calculate {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #207c46;
+    color: white;
     font-size: 18px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: 5px;
-    top: 10px;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-input:focus~label,
-input:valid~label {
-    top: -20px;
-    font-size: 14px;
-    color: #00ff6a;
+#calculate:hover {
+    background-color: #145c30;
 }
 
-.bar {
-    position: relative;
-    display: block;
-    width: 315px;
+.footer {
+    margin-top: 20px;
 }
 
-.bar:before,
-.bar:after {
-    content: '';
-    height: 2px;
-    width: 0;
-    bottom: 1px;
-    position: absolute;
-    background: #00ff6a;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
-}
-
-.bar:before {
-    left: 50%;
-}
-
-.bar:after {
-    right: 50%;
-}
-
-input:focus~.bar:before,
-input:focus~.bar:after {
-    width: 50%;
-}
-
-.highlight {
-    position: absolute;
-    height: 60%;
-    width: 100px;
-    top: 25%;
-    left: 0;
-    pointer-events: none;
-    opacity: 0.5;
-}
-
-input:focus~.highlight {
-    -webkit-animation: inputHighlighter 0.3s ease;
-    -moz-animation: inputHighlighter 0.3s ease;
-    animation: inputHighlighter 0.3s ease;
-}
-
-
-/* animations */
-
-@-webkit-keyframes inputHighlighter {
-    from {
-        background: #ec4899;
-    }
-    to {
-        width: 0;
-        background: #ec4899;
-    }
-}
-
-@-moz-keyframes inputHighlighter {
-    from {
-        background: #ec4899;
-    }
-    to {
-        width: 0;
-        background: transparent;
-    }
-}
-
-@keyframes inputHighlighter {
-    from {
-        background: #ec4899;
-    }
-    to {
-        width: 0;
-        background: transparent;
-    }
+#error-message {
+    color: red;
 }
