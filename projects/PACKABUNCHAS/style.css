@@ -1,0 +1,451 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth;
+}
+.navbar{
+    background-color: #ffea7e;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px 15px 10px 15px;
+}
+.navdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo a{
+    font-size: 35px;
+    color: white;
+}
+li{
+    list-style: none;
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+li a{
+    margin-right: 20px;
+    font-size: 18px;
+}
+li a:hover{
+    color: #94dec3;
+}
+
+.head1{
+    background-image: url("https://img.freepik.com/free-photo/beige-abstract-wallpaper-background-image_53876-102527.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.head1 h1{
+    text-align: center;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.head1 p{
+    transform: translateY(200px);
+    font-size: 25px;
+    font-weight: 500;
+    color: darkblue;
+    text-align: start;
+    padding-left: 20px;
+}
+.head1 > .video1{
+    text-align: end;
+    padding-right: 100px;
+}
+video{
+    max-width: 400px;
+    max-height: 400px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+button{
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #fed1e6;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #94dec3;
+}
+
+button a{
+    font-weight: bold;
+    font-size: 10px;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+.head1{
+    height: 80vh;
+}
+.game-info{
+    margin: 0;
+    padding: 0;
+    
+}
+.game-info > .image1{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffea7e;
+    padding-left: 20px;
+}
+
+.game-info > .content1{
+    margin-left: 0;
+}
+.content1 h1{
+    text-align: end;
+    align-items: center;
+    padding-right: 20px;
+    transform: translateY(-150px);
+}
+.content1 p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    text-align: start;
+    padding-left: 20px;
+    justify-content: space-evenly;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+}
+.content1 h1:hover{
+    color: #94dec3;
+    cursor: default;
+}
+.card {
+    position: relative;
+    width: 220px;
+    height: 320px;
+    background: #94dec3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .card::before,
+  .card::after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #fed1e6;
+    transition: all 0.5s;
+  }
+  
+  
+  .card::before {
+    top: 0;
+    right: 0;
+    border-radius: 0 15px 0 100%;
+  }
+  
+  .card::after {
+    bottom: 0;
+    left: 0;
+    border-radius: 0 100%  0 15px;
+  }
+  
+  .card:hover::before,
+  .card:hover:after {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transition: all 0.2s;
+  }
+  
+  .card:hover:after {
+    content: "Timeless cosmic journey, strategically align your blocky chums to conquer stars";
+  }
+  .card:nth-child(2):hover:after {
+    content: "Dive into space's depths, navigate cosmic challenges, arrange blocky chums harmoniously";
+  }
+  .card:nth-child(3):hover:after {
+    content: "Navigate cosmic kaleidoscope, adapt to shifting challenges, conquer ever-changing cosmos";
+  }
+  .card:nth-child(4):hover:after {
+    content: "Fun-filled cosmic escapades for young space explorers, arrange blocky chums to form constellations";
+  }
+  .card:nth-child(5):hover:after {
+    content: "Casual cosmic adventure, laid-back gameplay, arrange blocky chums at your own pace";
+  }
+
+  
+  .cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+.modes{
+    background-color: beige;
+    height: 90vh;
+}
+.modes h2{
+    text-align: center;
+    padding: 30px 0 60px 0;
+}
+.leaderboard{
+    height: 90vh;
+    background-color: #ffea7e;
+}
+.leaderboard h2{
+    text-align: center;
+    padding: 20px;
+    margin: 0px 5px;
+    border: 2px dashed #94dec3;
+    border-radius: 5px;
+}
+.leaderboard > .image2{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 5px 20px;
+}
+.leaderboard p{
+    font-size: 20px;
+    text-align: start;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    justify-content: space-evenly;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    line-height: 50px;
+}
+.leaderboard a{
+    line-height: 250px;
+    color: black;
+    cursor: default;
+}
+.leaderboard a:hover{
+    color: #94dec3;
+}
+.social-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer{
+    background-color: #111111;
+    height: 30vh;
+}
+footer li{
+    color: whitesmoke;
+    font-size: 25px;
+    padding-top: 10px;
+}
+footer h2{
+    text-align: center;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 5px;
+    padding-top: 30px;
+}
+footer h3{
+    text-align: center;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 5px;
+    padding-top: 50px;
+}
+footer a:hover{
+    color: #94dec3;
+}
+.line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #292929;
+    button {
+        position: relative;
+        padding: 12px 35px;
+        background: #fec195;
+        font-size: 17px;
+        font-weight: 500;
+        color: #181818;
+        border: 3px solid #fec195;
+        border-radius: 8px;
+        box-shadow: 0 0 0 #fec1958c;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+      }
+      
+      .star-1 {
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        width: 25px;
+        height: auto;
+        filter: drop-shadow(0 0 0 #fffdef);
+        z-index: -5;
+        transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+      }
+      
+      .star-2 {
+        position: absolute;
+        top: 45%;
+        left: 45%;
+        width: 15px;
+        height: auto;
+        filter: drop-shadow(0 0 0 #fffdef);
+        z-index: -5;
+        transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+      }
+      
+      .star-3 {
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        width: 5px;
+        height: auto;
+        filter: drop-shadow(0 0 0 #fffdef);
+        z-index: -5;
+        transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+      }
+      
+      .star-4 {
+        position: absolute;
+        top: 20%;
+        left: 40%;
+        width: 8px;
+        height: auto;
+        filter: drop-shadow(0 0 0 #fffdef);
+        z-index: -5;
+        transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+      }
+      
+      .star-5 {
+        position: absolute;
+        top: 25%;
+        left: 45%;
+        width: 15px;
+        height: auto;
+        filter: drop-shadow(0 0 0 #fffdef);
+        z-index: -5;
+        transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
+      }
+      
+      .star-6 {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        width: 5px;
+        height: auto;
+        filter: drop-shadow(0 0 0 #fffdef);
+        z-index: -5;
+        transition: all 0.8s ease;
+      }
+      
+      button:hover {
+        background: transparent;
+        color: #fec195;
+        box-shadow: 0 0 25px #fec1958c;
+      }
+      
+      button:hover .star-1 {
+        position: absolute;
+        top: -80%;
+        left: -30%;
+        width: 25px;
+        height: auto;
+        filter: drop-shadow(0 0 10px #fffdef);
+        z-index: 2;
+      }
+      
+      button:hover .star-2 {
+        position: absolute;
+        top: -25%;
+        left: 10%;
+        width: 15px;
+        height: auto;
+        filter: drop-shadow(0 0 10px #fffdef);
+        z-index: 2;
+      }
+      
+      button:hover .star-3 {
+        position: absolute;
+        top: 55%;
+        left: 25%;
+        width: 5px;
+        height: auto;
+        filter: drop-shadow(0 0 10px #fffdef);
+        z-index: 2;
+      }
+      
+      button:hover .star-4 {
+        position: absolute;
+        top: 30%;
+        left: 80%;
+        width: 8px;
+        height: auto;
+        filter: drop-shadow(0 0 10px #fffdef);
+        z-index: 2;
+      }
+      
+      button:hover .star-5 {
+        position: absolute;
+        top: 25%;
+        left: 115%;
+        width: 15px;
+        height: auto;
+        filter: drop-shadow(0 0 10px #fffdef);
+        z-index: 2;
+      }
+      
+      button:hover .star-6 {
+        position: absolute;
+        top: 5%;
+        left: 60%;
+        width: 5px;
+        height: auto;
+        filter: drop-shadow(0 0 10px #fffdef);
+        z-index: 2;
+      }
+      
+      .fil0 {
+        fill: #fffdef;
+      }
+      
+}
+
+
+.buton {
+    font-family: cursive;
+    font-size: large;
+    font-weight: bold;
+    color: aqua;
+    text-shadow: 2px 2px 4px rgb(255, 0, 238),-2px -2px 4px rgb(254, 0, 216);
+    background-color: #303134;
+    border-radius: 50%;
+  }
+  .buton:hover{
+    color: #00e7ff;
+  text-shadow: 0 0 10px #00e7ff,
+               0 0 20px #00e7ff,
+               0 0 30px #00e7ff,
+               0 0 40px #00e7ff,
+               0 0 70px #00e7ff,
+               0 0 80px #00e7ff,
+               0 0 100px #00e7ff,
+               0 0 150px #00e7ff;
+    background-color: black;
+  }
+  .buton:active{
+    transform: scale(0.8);
+  }
