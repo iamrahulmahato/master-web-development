@@ -1,21 +1,33 @@
 window.onload = function () {
-        let button = document.getElementById("calculate");
-        button.addEventListener("click", calculateBMI)
+    let button = document.getElementById("calculate");
+    button.addEventListener("click", calculateBMI);
+}
+
+function calculateBMI() {
+    let weight = parseFloat(document.getElementById("weight").value);
+    let height = parseFloat(document.getElementById("height").value);
+    let resultMessage = document.getElementById("result-message");
+
+    if (isNaN(weight) || weight <= 0) {
+        resultMessage.innerHTML = 'Enter a valid weight (kg)';
+        return;
     }
 
-    function calculateBMI() {
-        let weight = document.getElementById("weight").value;
-        let height = document.getElementById("height").value;
-
-        if (weight === '' || weight < 0 || isNaN(weight)) {
-            document.getElementById("result-message").innerHTML = `Enter a valid weight`;
-        }
-        else if (height === '' || height < 0 || isNaN(height)) {
-            document.getElementById("result-message").innerHTML = `Enter a valid height`;
-        }
-        else {
-                const bmi = (weight / ((height * height) / 10000)).toFixed(2)
-                document.getElementById("result-message").innerText = "BMI: " + bmi;
-        }
-
+    if (isNaN(height) || height <= 0) {
+        resultMessage.innerHTML = 'Enter a valid height (m)';
+        return;
     }
+
+    // Calculate BMI
+    let bmi = (weight / (height * height)).toFixed(2);
+    resultMessage.innerHTML = `Your BMI is ${bmi}`;
+
+    // Optionally, add categories
+    if (bmi < 18.5) {
+        resultMessage.innerHTML += '<br>Category: Underweight';
+    } else if (bmi >= 18.5 && bmi <= 24.9) {
+        resultMessage.innerHTML += '<br>Category: Normal';
+    } else {
+        resultMessage.innerHTML += '<br>Category: Overweight';
+    }
+}
