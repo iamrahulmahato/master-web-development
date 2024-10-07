@@ -7,40 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator</title>
     <link rel="stylesheet" href="style.css">
-    
-
 </head>
 
 <body>
     <div class="contentbox">
         <h1><span>BMI</span> Calculator</h1><br>
-        <p>Underweight: <18.5 <br>Normal: 18.5-24.9<br>Overweight: >25
-        </p>
+        <p>Underweight: <18.5 <br>Normal: 18.5-24.9<br>Overweight: >25</p>
 
         <div class="input-group">
-            <input type="text" required id="weight">
+            <input type="text" required id="weight" placeholder="Weight in kg">
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label>Weight(kg)</label>
         </div>
 
         <div class="input-group">
-            <input type="text" required id="height">
+            <input type="text" required id="height" placeholder="Height in meters">
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label>Height(cm)</label>
         </div>
         <button id="calculate">Calculate</button>
 
         <div class="footer">
             <h2 id="result-message"></h2>
-            <p id="result-percentage"></p>
-
         </div>
-
-
     </div>
+
+    <script src="javascript.js"></script>
 </body>
-<script src="javascript.js"></script>
 
 </html>
