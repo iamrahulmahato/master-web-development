@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Personal Finance Dashboard</h1>
+        <div class="input-section">
+            <h2>Add Income / Expense</h2>
+            <input type="text" id="description" placeholder="Description">
+            <input type="number" id="amount" placeholder="Amount">
+            <select id="type">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <button id="addBtn">Add</button>
+        </div>
+        <div class="summary">
+            <h2>Summary</h2>
+            <div id="incomeTotal">Total Income: ₹0</div>
+            <div id="expenseTotal">Total Expenses: ₹0</div>
+            <div id="balance">Balance: ₹0</div>
+        </div>
+        <h2>Transaction History</h2>
+        <ul id="transactionList"></ul>
+        
+        <h2>Graphs</h2>
+        <div class="chart-container">
+            <canvas id="pieChart"></canvas>
+            <div class="watermark">Add your transactions to see the pie chart</div> <!-- Watermark -->
+        </div>
+        <canvas id="barChart"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

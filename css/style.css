@@ -69,7 +69,6 @@ body {
     background-color: var(--btn-color);
     font-weight: 500;
     border-radius: 0.5rem;
-    /* height: 2.5rem; */
     color: var(--btn-text);
     padding: 0.8rem 1rem;
 }
@@ -78,20 +77,26 @@ body {
     max-width: 1080px;
     display: grid;
     margin: 3rem auto;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1.5rem;
     padding: 1rem;
 }
+
+/* Hover Effects for Project */
+.projects-container a:hover {
+    background-color: #f9cbd3;
+    transform: translateY(-6px);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
 
 .card {
     background: var(--card);
     border-radius: 8px;
-    color: #0f172a;
-    transition: all 0.2s ease-in-out 0s;
-    transition-property: all;
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0s;
+    color: var(--head);
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .card:hover {
@@ -99,21 +104,36 @@ body {
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 
-.card-cover img{
-    border-radius: 9px;
-}
-
-img.weather-img{
-    border-radius: 22.5px;
-}
-
 .card-cover {
     background: rgba(25, 90, 216, 0.2);
-    border-radius: 8px 8px 0 0;
-    height: 8rem;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.card-cover img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.card-content {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-heading {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: var(--p);
+    flex-grow: 1;
 }
 
 .counter-cover-color {
@@ -122,25 +142,6 @@ img.weather-img{
 
 .counter-cover-colour {
     background-color: rgba(249, 89, 95, 0.2);
-}
-
-.card-cover img {
-    height: 80%;
-}
-
-.card-content {
-    padding: 1rem;
-}
-
-.card-heading {
-    color: var(--head);
-    font-weight: 600;
-}
-
-.card-description {
-    color: var(--p);
-    font-size: 0.9rem;
-    margin-top: 0.2rem;
 }
 
 .icon {
@@ -169,7 +170,7 @@ img.weather-img{
 
 /* ====================== Scroll to top ========================  */
 #scrollToTopBtn i {
-    font-size: 24px; 
+    font-size: 24px;
 }
 
 #scrollToTopBtn {
@@ -180,13 +181,13 @@ img.weather-img{
     z-index: 99;
     border: none;
     outline: none;
-    background-color: var(--btn-color); 
-    color: var(--btn-text); 
+    background-color: var(--btn-color);
+    color: var(--btn-text);
     padding: 12px 16px;
     border-radius: 50%;
     cursor: pointer;
-    opacity: 0; 
-    transition: opacity 0.5s, transform 0.3s ease-in-out; 
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.3s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -196,19 +197,22 @@ img.weather-img{
 
 #scrollToTopBtn.show {
     display: block;
-    opacity: 1; 
-    transform: translateY(-10px); 
+    opacity: 1;
+    transform: translateY(-10px);
 }
 
 @keyframes float {
-    0%, 100% {
-        transform: translateY(0); 
+
+    0%,
+    100% {
+        transform: translateY(0);
     }
+
     50% {
         transform: translateY(-8px);
     }
 }
 
 #scrollToTopBtn {
-    animation: float 3s infinite ease-in-out; 
+    animation: float 3s infinite ease-in-out;
 }
