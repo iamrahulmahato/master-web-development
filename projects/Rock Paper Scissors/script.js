@@ -11,7 +11,8 @@ let computerScore = 0;
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    const result = playRound(button.id, computerPlay());
+    const computerSelection = computerPlay();
+    const result = playRound(button.id, computerSelection);
     resultEl.textContent = result;
 
   });
@@ -20,7 +21,16 @@ buttons.forEach((button) => {
 function computerPlay() {
   const choices = ["rock", "paper", "scissors"];
   const randomChoice = Math.floor(Math.random() * choices.length);
-  return choices[randomChoice];
+  const computerChoice = choices[randomChoice];
+  const computerbuttons = document.querySelector('.computer-buttons');
+  const selectedButton = computerbuttons.querySelector(`#${choices[randomChoice]}`);
+  const allChildren = computerbuttons.querySelectorAll(':scope > *');
+  const otherButtons = Array.from(allChildren).filter(child => child.id !== `${choices[randomChoice]}`);
+  selectedButton.style.border = '3px solid black';
+  otherButtons.map((button)=>{
+    button.style.border = '0px';
+  })
+  return computerChoice;
 }
 
 function playRound(playerSelection, computerSelection) {
