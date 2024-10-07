@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  box-shadow: 3px 5px 0px 0px rgba(0, 0, 0, 0.75);
+}
+
+a,
+a:visited {
+  color: inherit;
+}
+
+#score {
+  position: absolute;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.9em;
+  color: white;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  max-width: 100px;
+  text-align: center;
+  line-height: 1.6em;
+}
+
+#controls {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  display: none;
+}
+
+#controls #buttons {
+  width: 80px;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+#controls #instructions {
+  margin-left: 20px;
+  max-width: 300px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+#controls button {
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+
+#results {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(20, 20, 20, 0.75);
+  display: none;
+  z-index: 51;
+}
+
+#results .content {
+  max-width: 350px;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+@media (min-height: 425px) {
+  #score {
+    font-size: 1.5em;
+    max-width: 150px;
+  }
+
+  #controls {
+    display: flex;
+  }
+}
