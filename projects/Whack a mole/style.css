@@ -1,0 +1,36 @@
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    text-align: center;
+    background-color: bisque;
+}
+
+#board{
+    width: 450px;
+    height: 450px;
+    background-color: green;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    background: url(soil.png);
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 25px;
+}
+
+#board div {
+    width: 150px;
+    height: 150px;
+    background-image: url(pipe.png);
+    background-size: cover;
+}
+
+#board div img{
+    width: 80px;
+    height: 80px;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+}
