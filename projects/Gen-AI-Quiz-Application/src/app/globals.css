@@ -1,0 +1,327 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Fira Sans", sans-serif;
+	font-family: "Poppins", sans-serif;
+}
+
+:root {
+	--textColor: #6b4c4c;
+	--primaryColor: #e19f9f;
+}
+/* Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: #6b4c4c #ffffff;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+	height: 7px;
+	width: 0px;
+}
+*::-webkit-scrollbar-track {
+	border-radius: 7px;
+	background-color: #e19f9f;
+}
+
+*::-webkit-scrollbar-track:hover {
+	background-color: #ff7676;
+}
+
+*::-webkit-scrollbar-track:active {
+	background-color: #e19f9f;
+}
+
+*::-webkit-scrollbar-thumb {
+	border-radius: 6px;
+	background-color: #6b4c4c;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	background-color: #6b4c4c;
+}
+
+*::-webkit-scrollbar-thumb:active {
+	background-color: #6b4c4c;
+}
+
+body {
+	width: 100%;
+	display: flex;
+	height: 100vh;
+	align-items: center;
+	background: var(--primaryColor);
+	justify-content: center;
+}
+
+.quizAppWrapper {
+	width: 100%;
+	height: 80vh;
+	background: #fff;
+	border-radius: 2rem;
+  @apply max-w-[90vw] md:max-w-[70vw] overflow-y-auto overflow-x-hidden relative
+}
+
+.title {
+	margin-top: 2rem;
+	color: var(--textColor);
+	text-align: center;
+  font-weight: 700;
+	font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+.categories {
+	margin-left: 1.3rem;
+	margin-top: 0.5rem;
+	color: var(--textColor);
+	font-size: clamp(1rem, 5vw, 1.5rem);
+}
+
+.searchWraper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.search-box {
+	width: fit-content;
+	height: fit-content;
+	position: relative;
+	margin-right: 1.3rem;
+}
+.input-search {
+	height: 50px;
+	width: 50px;
+	border-style: none;
+	padding: 10px;
+	font-size: 18px;
+	letter-spacing: 2px;
+	outline: none;
+	border-radius: 25px;
+	transition: all 0.5s ease-in-out;
+	background-color: var(--primaryColor);
+	padding-right: 40px;
+	color: var(--textColor);
+}
+.input-search::placeholder {
+	color: var(--textColor);
+	font-size: 18px;
+	letter-spacing: 1px;
+	font-weight: 400;
+}
+.btn-search {
+	width: 50px;
+	height: 50px;
+	border-style: none;
+	font-size: 20px;
+	font-weight: bold;
+	outline: none;
+	cursor: pointer;
+	border-radius: 50%;
+	position: absolute;
+	right: 0px;
+	color: var(--textColor);
+	background-color: transparent;
+	pointer-events: painted;
+  @apply flex items-center justify-center
+}
+.btn-search:focus ~ .input-search {
+	width: 300px;
+	border-radius: 0px;
+	background-color: transparent;
+	border-bottom: 1px solid var(--primaryColor);
+	transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+.input-search:focus {
+	width: 300px;
+	border-radius: 0px;
+	background-color: transparent;
+	border-bottom: 1px solid var(--primaryColor);
+	transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+
+.quizCategories {
+	margin-top: 2rem;
+	place-items: center;
+	height: auto;
+	overflow-y: auto;
+  @apply mb-8
+}
+
+figure {
+	display: grid;
+	border-radius: 1rem;
+	overflow: hidden;
+	cursor: pointer;
+	height: 10rem !important;
+  @apply md:w-[16rem] w-full
+}
+figure > * {
+	grid-area: 1/1;
+	transition: 0.4s;
+	height: 10rem !important;
+	object-fit: cover;
+  @apply md:w-[16rem] w-full
+}
+figure figcaption {
+	display: grid;
+	align-items: end;
+	font-family: sans-serif;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #fff;
+	padding: 0.75rem;
+	background: rgba(0, 0, 0, 90%);
+	clip-path: inset(0 var(--_i, 100%) 0 0);
+	-webkit-mask: linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+	-webkit-mask-composite: xor;
+	-webkit-mask-clip: text, padding-box;
+	margin: -1px;
+}
+figure:hover figcaption {
+	--_i: 0%;
+}
+figure:hover img {
+	transform: scale(1.2);
+}
+@supports not (-webkit-mask-clip: text) {
+	figure figcaption {
+		-webkit-mask: none;
+		color: #fff;
+	}
+}
+
+.notFound{
+  @apply w-full text-center flex justify-center items-center flex-col
+}
+
+.quizDailog{
+  @apply h-full w-full left-0 top-0 bg-white fixed
+}
+
+.quizDailog header{
+  @apply py-4 shadow-md flex justify-between items-center px-5 flex-wrap
+}
+
+.quizDailog header h5{
+  @apply text-[2rem] tracking-wider font-semibold text-[#ff7676]
+}
+
+.quizDailog footer{
+  @apply absolute bottom-0 left-0 flex justify-between items-center h-[5rem] border-t w-full px-4
+}
+
+.quizDailog footer .left{
+  @apply text-[#ff7676]
+}
+
+.quizDailog footer .left span{
+  @apply font-bold text-[##ff7676]
+}
+
+.quizDailog main{
+  @apply px-6
+}
+.quizDailog main h1{
+  @apply text-[1.5rem] md:text-[1.8rem] mt-3 text-[#49286c]
+}
+
+.optionsBox{
+  @apply h-full w-full mt-4
+}
+
+.optionsBox .option{
+  @apply w-full bg-[#ff7676]/30 border-[#ff7676] border-2 cursor-pointer flex items-center mb-4 rounded-md py-2.5 px-4 text-[1.2rem]
+}
+
+.correct{
+  @apply !bg-emerald-400/50 !border-emerald-600
+}
+
+.wrong{
+  @apply !bg-red-400/50 !border-red-600
+}
+
+.result{
+	@apply fixed h-full w-full top-0 left-0 bg-white justify-center items-center flex-col text-[1.5rem] font-semibold text-[#ff7676]
+}

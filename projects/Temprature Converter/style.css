@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #dbdada;
+    font-family: 'Poppins' , sans-serif;
+  }
+  
+  .container {
+    
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: inset 5px 5px 22px #ffffff, 
+    5px 5px 22px rgba(0, 0, 0, 0.3); 
+    width: 500px;
+  }
+
+  .title {
+    text-align: center;
+  }
+  
+  .input-row-unit {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 10px;
+    
+  }
+  
+  .input-group-unit1 {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .input-group-unit2 {
+    flex: 1;
+    margin-right: 10px;
+    
+  }
+  
+  .input-group1 {
+    position: relative;
+    margin-top: 20px;
+    flex: 1;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .input-group2 {
+    position: relative;
+    margin-top: 20px;
+    flex: 1;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .input-row{
+        margin-right: 20px;
+  }
+
+  input[type="number"],
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset -1px -1px 8px #ffffff, inset 1px 1px 8px rgba(0,0,0,.16);
+
+  }
+  
+  .button-row {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 300px;
+    margin-left: 10px;
+  }
+  
+  button {
+    background-color: rgb(51, 172, 174);
+    font-weight: 700;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  button:hover{
+    background-color: rgba(51, 172, 174,70%);
+    color: #1f242d;
+    box-shadow: 2px 2px 2px #0ef;
+    scale: 110%;
+  }
