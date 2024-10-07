@@ -82,6 +82,13 @@ body {
     padding: 1rem;
 }
 
+/* Hover Effects for Project */
+.projects-container a:hover {
+    background-color: #f9cbd3;
+    transform: translateY(-6px);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
 .card {
     background: var(--card);
     border-radius: 8px;
