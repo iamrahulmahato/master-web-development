@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Check if the tile clicked is adjacent to the empty tile
             if (isAdjacent(tileIndex, emptyIndex)) {
                 swapTiles(tile, emptyTile);
+                checkWinCondition(); // Check if the player has won after every move
             }
         });
     });
@@ -55,5 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
             tile.id = tileNumbers[index] === 0 ? 'empty' : `tile${tileNumbers[index]}`;
             tile.innerHTML = tileNumbers[index] === 0 ? '' : tileNumbers[index];
         });
+    }
+
+    // Function to check if the player has won
+    function checkWinCondition() {
+        const currentOrder = tiles.map(tile => tile.innerHTML); // Get the current order of the tiles
+        const correctOrder = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '']; // Correct order with empty tile at the end
+
+        if (JSON.stringify(currentOrder) === JSON.stringify(correctOrder)) {
+            alert('Congratulations, You Win!'); // Display a success message
+        }
     }
 });
