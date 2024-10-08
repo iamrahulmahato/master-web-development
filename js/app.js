@@ -52,10 +52,9 @@ scrollToTopBtn.onclick = function() {
 function filterCards() {
     // Get the input value
     let searchTerm = document.getElementById('search-input').value.toLowerCase();
-    // console.log(searchTerm);
     // Get all the cards in the container
     let cards = document.querySelectorAll('.card');
-    // console.log(cards);
+    
     // Loop through the cards and filter based on the input
     cards.forEach(function (card) {
         let cardHeading = card.querySelector('.card-heading').innerText.toLowerCase();
@@ -64,11 +63,29 @@ function filterCards() {
         
         // Check if the search term is in the card heading or description
         if (cardHeading.includes(searchTerm) || cardDescription.includes(searchTerm)) {
-          // console.log(cardHeading,cardDescription);
             card.style.display = "block"; // Show the card
         } else {
             card.style.display = "none"; // Hide the card
         }
     });
 }
+document.addEventListener('DOMContentLoaded', function() {
+  const cardContainer = document.getElementsByClassName('projects-container')[0];
+  const cards = Array.from(cardContainer.getElementsByClassName('card'));
+  console.log(cards);
+
+  // Sort cards alphabetically based on the card title
+  cards.sort((a, b) => {
+      const titleA = a.querySelector('.card-heading').innerText.toUpperCase();
+      const titleB = b.querySelector('.card-heading').innerText.toUpperCase();
+      return titleA.localeCompare(titleB);
+  });
+
+  // Remove current cards and append them in the new order
+  cardContainer.innerHTML = '';
+  cards.forEach(card => {
+      cardContainer.appendChild(card);
+  });
+});
+
 
