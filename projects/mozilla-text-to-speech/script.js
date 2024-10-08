@@ -34,3 +34,8 @@ function getVoices() {
     voices = speechSynthesis.getVoices();
     voiceSelect.innerHTML = voices.map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`).join('');
 }
+
+// Set the text for speech synthesis
+function setTextMessage(text) {
+    message.text = text;
+}
