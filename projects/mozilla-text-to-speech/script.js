@@ -28,3 +28,9 @@ data.forEach(createBox);
 // Create a speech synthesis instance
 const message = new SpeechSynthesisUtterance();
 let voices = [];
+
+// Get and populate available voices
+function getVoices() {
+    voices = speechSynthesis.getVoices();
+    voiceSelect.innerHTML = voices.map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`).join('');
+}
