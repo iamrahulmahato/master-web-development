@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    background-color: #c9daea;
+  }
+  
+  a,
+  a:visited {
+    color: inherit;
+  }
+  
+  p {
+    margin: 10px 0 16px 0;
+    color: inherit;
+    color: white;
+  }
+  
+  b {
+    font-weight: normal;
+  }
+  
+  svg {
+    animation-name: appear;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+  }
+  
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    background-color: #626c66;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    margin: 20px 20px 20px 0;
+  }
+  
+  button {
+    padding: 15px;
+    font-size: 1em;
+    background-color: #ef5169;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .score {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  
+  .grid {
+    margin: 20px;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto, 120px));
+    grid-template-rows: repeat(3, minmax(auto, 120px));
+    gap: 10px;
+    background-color: white;
+    border-radius: 10px;
+    height: 80vh;
+  }
+  
+  .bauble {
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .less-important {
+    display: none;
+  }
+  
+  @media (min-width: 980px) and (min-height: 480px) {
+    .grid {
+      height: auto;
+    }
+    
+    .bauble {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .sidebar {
+      font-size: 1em;
+    }
+    
+    .less-important {
+      display: block;
+    }
+  }
+  
+  .grid.game .bauble:hover {
+    background-color: #f0f6ff;
+    cursor: pointer;
+  }
+  
+  .bauble.selected {
+    background-color: #f0f6ff;
+    border: 3px solid #c3d9fa;
+  }
+  
+  .grid.time-up .bauble.selected {
+    background-color: #fffccf;
+    border: 3px solid #ede105;
+  }
+  
+  .grid.failed .bauble.selected {
+    background-color: #ffe6e6;
+    border: 3px solid #ff0d0d;
+  }
+  
+  .result {
+    text-align: center;
+  }
