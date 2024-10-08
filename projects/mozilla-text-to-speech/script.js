@@ -66,3 +66,17 @@ function createBox(item) {
     });
     main.appendChild(box);
 }
+
+
+// Event listeners
+speechSynthesis.addEventListener('voiceschanged', getVoices);
+toggleBtn.addEventListener('click', () => document.getElementById('text-box').classList.toggle('show'));
+closeBtn.addEventListener('click', () => document.getElementById('text-box').classList.remove('show'));
+voiceSelect.addEventListener('change', setVoice);
+readBtn.addEventListener('click', () => {
+    setTextMessage(textarea.value);
+    speakText();
+});
+
+// Initialize voices
+getVoices();
