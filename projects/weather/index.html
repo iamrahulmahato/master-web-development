@@ -9,31 +9,29 @@
 <body>
     <div class="card">
         <div class="search">
-            <input type="text" placeholder="enter city name" spellcheck="false">
-            <button><img src="images/search.png"></button>
+            <input type="text" placeholder="Enter city name" spellcheck="false">
+            <b><button><img src="images/search.png" alt="Search"></button></b>
+            
         </div>
-        <div class="error">
-            <p>Invalid city name</p>
-        </div>
-        <div class="weather">
-            <img src="images/rain.png" class="weather_icon">
-            <h1 class="temp">22°c</h1>
-            <h2 class="city">Dehradun</h2>
-            <div class="details">
-                <div class="col">
-                    <img src="images/humidity.png" alt="">
-                    <div>
-                        <p class="humidity">50%</p>
-                        <p>Humidity</p>
+        <div class="weather-content">
+            <div class="weather-details">
+                <img src="images/mist.png" class="weather_icon" alt="Weather Icon">
+                <h1 class="temp"></h1>
+                <h2 class="city"></h2>
+                
+                <p class="weather-description">Patchy light rain</p>
+                <div class="details">
+                    <div class="detail-item">
+                        <img src="images/humidity.png" width="40px" height="30px" alt="Humidity Icon" class="detail-icon">
+                        <span>Humidity: <span class="humidity"></span></span>
+                    </div>
+                    <div class="detail-item">
+                        <img src="images/wind.png" width="40px" height="35px" alt="Wind Speed Icon" class="detail-icon">
+                        <span>Wind Speed: <span class="wind"></span></span>
                     </div>
                 </div>
-                <div class="col">
-                    <img src="images/wind.png" alt="">
-                    <div>
-                        <p class="wind">15 km/h</p>
-                        <p>Wind Speed</p>
-                    </div>
-                </div>
+                
+                
             </div>
         </div>
     </div>
