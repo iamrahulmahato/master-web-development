@@ -1,0 +1,25 @@
+name: Issue Open Greetings
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: |
+          🎉 **Welcome to CodeCache!** 🎉
+
+          Thank you for opening this issue! We're excited to have you contributing to the project.
+
+          Before you get started, please make sure to check out our **contributing guidelines** and **coding standards** to ensure that everything is aligned with the project's workflow. If you have any questions or need help along the way, don't hesitate to ask.
+
+          We appreciate your input and look forward to collaborating with you. 🚀
+
+          Happy coding!
