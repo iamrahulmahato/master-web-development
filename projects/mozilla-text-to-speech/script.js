@@ -49,3 +49,20 @@ function speakText() {
 function setVoice(e) {
     message.voice = voices.find(voice => voice.name === e.target.value);
 }
+
+// Create a speech box for each item in the data
+function createBox(item) {
+    const box = document.createElement('div');
+    box.classList.add('box');
+    box.innerHTML = `
+        <img src="${item.image}" alt="${item.text}" />
+        <p class="info">${item.text}</p>
+    `;
+    box.addEventListener('click', () => {
+        setTextMessage(item.text);
+        speakText();
+        box.classList.add('active');
+        setTimeout(() => box.classList.remove('active'), 800);
+    });
+    main.appendChild(box);
+}
