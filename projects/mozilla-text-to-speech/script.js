@@ -21,3 +21,10 @@ const data = [
     { image: './img/school.jpg', text: "I want to go to school. I want to study." },
     { image: './img/grandma.jpg', text: "I want to go to grandma's house. I want to visit." }
 ];
+
+// Create boxes for each image-text pair
+data.forEach(createBox);
+
+// Create a speech synthesis instance
+const message = new SpeechSynthesisUtterance();
+let voices = [];
