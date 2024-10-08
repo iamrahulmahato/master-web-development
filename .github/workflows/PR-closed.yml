@@ -1,0 +1,23 @@
+name: PR Closed Acknowledgment
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  acknowledge:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        pr-message: |
+          🏁 **Pull Request Closed** 🏁
+
+          Thanks for submitting your pull request! Whether it was merged or closed, we appreciate your efforts in contributing to our project.
+
+          Feel free to contribute more in the future if you're interested in helping the project further.
+
+          Thanks again! 🚀
