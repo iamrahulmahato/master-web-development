@@ -1,23 +1,37 @@
-name: PR Open Greetings
+name: Auto Comment on PR
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened]
 
+permissions:
+  issues: write
+  pull-requests: write
+
 jobs:
-  greeting:
+  comment:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
     steps:
-    - uses: actions/first-interaction@v1
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        pr-message: |
-          🎉 **Thank you for raising pull request!** 🎉
-
-          We're thrilled to see your contribution to Master Web Development. Make sure your code follows the **project guidelines** and has passed all the tests. 
-
-          If you need any assistance or clarification, feel free to ask. We’ll review your PR shortly and provide feedback if needed. Thanks again for helping improve the project!
-
-          Keep up the awesome work! 🚀
+    - name: Add Comment to Pull Request
+      run: |
+        COMMENT=$(cat <<EOF
+        {
+          "body": "Thank you for submitting your pull request! 🙌 We'll review it as soon as possible. In the meantime, please ensure that your changes align with our [CONTRIBUTING.md](https://github.com/iamrahulmahato/master-web-development/blob/main/CONTRIBUTING.md). If there are any specific instructions or feedback regarding your PR, we'll provide them here. Thanks again for your contribution! 😊"
+        }
+        EOF
+        )
+        RESPONSE=$(curl -s -o response.json -w "%{http_code}" \
+          -X POST \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments \
+          -d "$COMMENT")
+        cat response.json
+        if [ "$RESPONSE" -ne 201 ]; then
+          echo "Failed to add comment"
+          exit 1
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
