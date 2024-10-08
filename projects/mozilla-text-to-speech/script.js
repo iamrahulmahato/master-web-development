@@ -44,3 +44,8 @@ function setTextMessage(text) {
 function speakText() {
     speechSynthesis.speak(message);
 }
+
+// Set the selected voice for speech synthesis
+function setVoice(e) {
+    message.voice = voices.find(voice => voice.name === e.target.value);
+}
