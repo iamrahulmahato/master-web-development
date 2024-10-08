@@ -1,0 +1,23 @@
+name: Issue Closed Acknowledgment
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  acknowledge:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: |
+          🏁 **Issue Closed** 🏁
+
+          Thanks for helping improve Master Web Development! We're happy to see that the issue has been resolved or handled appropriately.
+
+          If you need further assistance or want to contribute more, feel free to open another issue or pull request.
+
+          We appreciate your involvement! 🚀
