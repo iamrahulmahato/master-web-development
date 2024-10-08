@@ -1,0 +1,23 @@
+name: PR Open Greetings
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        pr-message: |
+          🎉 **Thank you for raising pull request!** 🎉
+
+          We're thrilled to see your contribution to Master Web Development. Make sure your code follows the **project guidelines** and has passed all the tests. 
+
+          If you need any assistance or clarification, feel free to ask. We’ll review your PR shortly and provide feedback if needed. Thanks again for helping improve the project!
+
+          Keep up the awesome work! 🚀
