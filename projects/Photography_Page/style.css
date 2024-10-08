@@ -1,162 +1,366 @@
-*{
-    margin:0;
-    padding:0;
-    font-family: "Poppins", sans-serif;
-}
+/* style.css */
 
-.main_box{
-    background-image:url("photo.jpg");
-    height:100vh;
-    background-size: cover;
-}
-
-.btn_one i{
-    color: white;
-    font-size: 30px;
-    font-weight:700;
-    position:absolute;
-    left:16px;
-    cursor: pointer;
-    transition: all 0.3s linear;
-    
-}
-
-.sidebar_menu .btn_two i {
-    color:grey;
-    font-size: 25px;
-    line-height: 60px;
-    position:absolute;
-    left:295px;
-    opacity:0;
-    cursor:pointer;
-    transition: all 0.3s linear;
-    
-   
-}
-
-.sidebar_menu{
-    position:fixed;
-    left:-330px;
-    height:100vh;
-    width:320px;
-    background-color: rgba(255,255,255,0.1);
-    box-shadow: 0 0 6px rgba(255,255,255,0.5);
-    transition: all 0.3s linear;
-}
-
-.sidebar_menu .logo{
-    position:absolute;
-    width:100%;
-    line-height:60px;
-    box-shadow: 0 2px 4px rgba(255,255,255,0.5);
-    height:60px;
-}
-
-.sidebar_menu .logo a{
-    position:absolute;
-    left:50px;
-    color:white;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.sidebar_menu .menu{
-    color:white;
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  /* Main Box */
+  .main_box {
+    position: relative;
+  }
+  
+  /* Hide the checkbox */
+  #check {
+    display: none;
+  }
+  
+  /* Sidebar Menu */
+  .sidebar_menu {
+    position: fixed;
+    left: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background-image: url('orng.jpg');
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    z-index: 1000;
+  }
+  
+  /* When checkbox is checked, show the sidebar */
+  #check:checked ~ .sidebar_menu {
+    left: 0;
+  }
+  
+  /* Logo */
+  .sidebar_menu .logo {
     position: absolute;
-    width:100%;
-    top:80px;
-}
-
-.sidebar_menu .menu li{
-    margin-top:6px;
-    padding:10px 20px;
-}
-
-.sidebar_menu .menu i,a{
-    color:white;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5em;
+    color: #fff;
+  }
+  
+  .sidebar_menu .logo a {
+    color: #fff;
     text-decoration: none;
-    font-size: 20px;
-}
-
-.sidebar_menu .menu i{
-    padding-right: 8px;
-}
-
-.sidebar_menu .social_media{
-    color:white;
-    opacity: 0.8;
-    position:absolute;
-    left:25%;
-    bottom:50px;
-
-}
-
-.sidebar_menu .social_media  i{
-    color:white;
-    opacity: 0.5;
-    padding:0 5px;
+  }
+  
+  /* Menu */
+  .sidebar_menu .menu ul {
+    list-style: none;
+    margin-top: 60px;
+  }
+  
+  .sidebar_menu .menu ul li {
+    padding: 15px 20px;
+  }
+  
+  .sidebar_menu .menu ul li a {
+    color: #121111;
+    text-decoration: none;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+  }
+  
+  .sidebar_menu .menu ul li a:hover {
+    color: #fff;
+  }
+  
+  .sidebar_menu .menu ul li i {
+    margin-right: 10px;
+  }
+  
+  /* Social Media */
+  .sidebar_menu .social_media {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  .sidebar_menu .social_media ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .sidebar_menu .social_media ul li {
+    /* No specific styles needed */
+  }
+  
+  .sidebar_menu .social_media ul a {
+    color: #171616;
+    font-size: 1.2em;
+    text-decoration: none;
+  }
+  
+  .sidebar_menu .social_media ul a:hover {
+    color: #fff;
+  }
+  
+  /* Toggle Buttons */
+  .btn_one, .btn_two {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5em;
+    color: #fff;
+    background-color: #111;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  
+  .btn_two {
+    display: none;
+  }
+  
+  /* When sidebar is open, hide btn_one and show btn_two */
+  #check:checked ~ .btn_one {
+    display: none;
+  }
+  
+  #check:checked ~ .btn_two {
+    display: block;
+  }
+  
+  /* Main Content */
+  .content {
+    margin-left: 0;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  /* Shift content when sidebar is open */
+  #check:checked ~ .content {
+    margin-left: 250px;
+  }
+  
+  /* Header Section */
+  header {
     text-align: center;
+    padding: 100px 20px;
+    background: url('camera.png') no-repeat center center/cover;
+    color: #fff;
+  }
+  
+  header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+  
+  header p {
+    font-size: 1.2em;
+  }
+  
+  /* Gallery Section */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    background-color:rgb(19, 17, 17)
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* About Section */
+  /*.about {
+    padding: 50px 20px;
+    background-color: #4beefa;
+    text-align: center;
+  }
+  
+  .about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .about p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }*/
+  .about {
+    display: flex; /* To align image and text side by side */
+    align-items: center; /* Vertically align image and text */
+    padding: 20px;
+    background-color: #fdc23b; /* Optional background color */
+  }
+  
+  .about::before {
+    content: "";
+    width: 150px; /* Define the size of the circular image */
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    background-image: url('man.png'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the circle */
+    background-position: center; /* Centers the image */
+    margin-right: 20px; /* Space between the image and the text */
+    flex-shrink: 0; /* Prevents the image from shrinking */
+  }
+  
+  /* Services Section */
+.services {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  background-image:url('sunset.jpeg')
 }
 
-#check{
-    display:none;
+.services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
 }
 
-.sidebar_menu .menu li:hover{
-    box-shadow:0 0 4px rgba(255,255,255,0.5);
-     transform: scale(1.02); /* Slightly increase the size to create a pop-up effect */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Space between cards */
 }
 
-.btn_one:hover i{
-    font-size: 40px;
+.service-card {
+  background-color: rgb(247, 219, 37);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(240, 229, 229, 0.829);
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn_two:hover i{
-    font-size: 30px;
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
 }
 
-.sidebar_menu .social_media i:hover{
-    opacity: 1;
-    transform:scale(1.1);
+.service-card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
 }
 
-#check:checked ~ .sidebar_menu{
-    left:0;
+.service-card .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff6347; /* Pricing color */
 }
 
-#check:checked ~ .btn_one{
-    opacity: 0;
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-#check:checked ~ .sidebar_menu .btn_two i{
-    opacity:1;
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-/* hover effect on social icons */
-.sidebar_menu .social_media .fa-facebook:hover{
-    color:#4267B2;
-    opacity: 1;
-    transform:scale(1.5);
-}
-
-.sidebar_menu .social_media .fa-twitter:hover{
-    color:#1DA1F2;
-    opacity: 1;
-    transform:scale(1.5);
-}
-
-
-.sidebar_menu .social_media .fa-instagram:hover{
-    color:#C13584;
-    opacity: 1;
-    transform:scale(1.5);
-}
-
-
-.sidebar_menu .social_media .fa-youtube:hover{
-    color:#FF0000;
-    opacity: 1;
-    transform:scale(1.5);
-}
+  /* Contact Section */
+  .contact {
+    padding: 50px 20px;
+    text-align: center;
+    background-image:url('lap.jpg')
+  }
+  
+  .contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact label {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .contact input, .contact textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  .contact button {
+    padding: 10px;
+    border: none;
+    background-color: #111;
+    color: #fff;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact button:hover {
+    background-color: #444;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    color: #fff;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .sidebar_menu {
+      width: 200px;
+      left: -200px;
+    }
+  
+    #check:checked ~ .content {
+      margin-left: 200px;
+    }
+  
+    .btn_one, .btn_two {
+      left: 15px;
+      top: 15px;
+    }
+  
+    header {
+      padding: 80px 20px;
+    }
+  
+    header h1 {
+      font-size: 2.5em;
+    }
+  
+    .about h2, .contact h2 {
+      font-size: 2em;
+    }
+  }
+  
