@@ -39,3 +39,8 @@ function getVoices() {
 function setTextMessage(text) {
     message.text = text;
 }
+
+// Speak the text using the selected voice
+function speakText() {
+    speechSynthesis.speak(message);
+}
