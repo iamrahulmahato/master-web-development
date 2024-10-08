@@ -49,3 +49,26 @@ function scrollFunction() {
 scrollToTopBtn.onclick = function() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 };
+function filterCards() {
+    // Get the input value
+    let searchTerm = document.getElementById('search-input').value.toLowerCase();
+    // console.log(searchTerm);
+    // Get all the cards in the container
+    let cards = document.querySelectorAll('.card');
+    // console.log(cards);
+    // Loop through the cards and filter based on the input
+    cards.forEach(function (card) {
+        let cardHeading = card.querySelector('.card-heading').innerText.toLowerCase();
+        
+        let cardDescription = card.querySelector('.card-description').innerText.toLowerCase();
+        
+        // Check if the search term is in the card heading or description
+        if (cardHeading.includes(searchTerm) || cardDescription.includes(searchTerm)) {
+          // console.log(cardHeading,cardDescription);
+            card.style.display = "block"; // Show the card
+        } else {
+            card.style.display = "none"; // Hide the card
+        }
+    });
+}
+
