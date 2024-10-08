@@ -1,0 +1,96 @@
+/* Reset and General Styles */
+* {
+  margin: 0;
+  text-align: center;
+}
+
+/* Main Layout */
+main {
+  height: 100vh;
+  margin: auto;
+  background-color: black;
+}
+
+/* Button Container */
+.btn-container {
+  height: 350px;
+  width: 400px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+/* Button Styling */
+.btn {
+  height: 120px;
+  width: 120px;
+  border: 5px solid;
+  border-radius: 20%;
+  margin: 20px;
+  cursor: pointer;
+}
+
+/* Highlighting Text */
+b {
+  color: red;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+/* Header and Highscore Styling */
+#head,
+#highscore {
+  color: white;
+}
+
+/* Header Styling */
+h1 {
+  font-size: 40px;
+  line-height: 100px;
+  padding-top: 40px;
+}
+
+/* Button Colors */
+.green {
+  background-color: rgb(37, 216, 37);
+}
+
+.red {
+  background-color: rgb(246, 16, 16);
+}
+
+.yellow {
+  background-color: rgb(181, 132, 25);
+}
+
+.blue {
+  background-color: rgb(59, 59, 239);
+}
+
+/* Button Flash Effect */
+.flash,
+.userflash {
+  background-color: white;
+}
+
+/* Button Glow Effect on Active */
+.green:active {
+  border: 2px solid white;
+  box-shadow: 0 0 20px 20px rgba(132, 242, 132, 0.5);
+}
+
+.red:active {
+  border: 2px solid white;
+  box-shadow: 0 0 20px 20px rgba(242, 132, 141, 0.5);
+}
+
+.yellow:active {
+  border: 2px solid white;
+  box-shadow: 0 0 20px 20px rgba(242, 240, 132, 0.5);
+}
+
+.blue:active {
+  border: 2px solid white;
+  box-shadow: 0 0 20px 20px rgba(132, 209, 242, 0.5);
+}
