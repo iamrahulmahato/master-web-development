@@ -51,7 +51,8 @@
             }
         }
 
-        function cancel() {
+        function cancel(event) {
+            event.preventDefault(); // Prevent any default button behavior
             window.location.href = 'main/index.html'; // Redirect to home page
         }
 
