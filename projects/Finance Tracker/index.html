@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tracker</title>
+    <link rel="icon" href="budget.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Finance Tracker</h1>
+
+
+
+        <!-- Budget Limit Section -->
+        <div class="budget-section">
+            <h2>Set Budget Limits</h2>
+            <form id="budget-form">
+                <label for="budget-food">Food Budget:</label>
+                <input type="number" id="budget-food" placeholder="Enter limit" required>
+                <label for="budget-rent">Rent Budget:</label>
+                <input type="number" id="budget-rent" placeholder="Enter limit" required>
+                <label for="budget-entertainment">Entertainment Budget:</label>
+                <input type="number" id="budget-entertainment" placeholder="Enter limit" required>
+                <label for="budget-utilities">Utilities Budget:</label>
+                <input type="number" id="budget-utilities" placeholder="Enter limit" required>
+                <button type="submit">Freeze </button>
+            </form>
+        </div>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <h2>Add Transaction</h2>
+            <form id="transaction-form">
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="Food">Food</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Utilities">Utilities</option>
+                </select>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" placeholder="Enter amount" required>
+                <button type="submit">Add Transaction</button>
+            </form>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <h2>Spending Breakdown</h2>
+            <canvas id="expenseChart"></canvas>
+            <h2>Monthly Expense Trend</h2>
+            <canvas id="monthlyChart"></canvas>
+        </div>
+
+        <!-- Add the animated cursor element -->
+     <div class="cursor" id="custom-cursor"></div>
+
+        <!-- Notification Section -->
+        <div class="notification" id="notification">
+            <p>You have exceeded your budget in a category!</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
