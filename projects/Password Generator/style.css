@@ -18,11 +18,13 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: var(--background-color);
+    background-image:url('bgblue.jpg');
     color: var(--text-color);
 }
 
 main {
-    background-color: #fff;
+    
+    background-image:url('gradientblue.jpg');
     padding: 2em;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -39,13 +41,14 @@ h1 {
 .password-container {
     display: flex;
     margin-bottom: 1em;
+    
 }
 
 #password {
     flex-grow: 1;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; 
     border-radius: 4px 0 0 4px;
 }
 

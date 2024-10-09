@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inconsolata", monospace;
+  font-size: 14px;
+  color: white;
+  user-select: none;
+  -webkit-user-select: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  color: white;
+  background: transparent;
+  font-family: "Inconsolata", monospace;
+  padding: 10px;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#info-left,
+#info-right {
+  position: absolute;
+  top: 20px;
+}
+
+#info-left {
+  left: 25px;
+}
+
+#info-right {
+  right: 25px;
+  text-align: right;
+}
+
+#bomb-grab-area {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: grab;
+}
+
+#instructions,
+#congratulations {
+  position: absolute;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+@media (min-height: 535px) {
+  #instructions {
+    min-height: 200px;
+  }
+}
+
+#congratulations {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 50px 80px;
+  opacity: 0;
+  visibility: hidden;
+  max-width: 300px;
+  backdrop-filter: blur(5px);
+}
+
+#congratulations p a {
+  color: inherit;
+}
+
+#congratulations button {
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  color: inherit;
+}
+
+#settings {
+  position: absolute;
+  top: calc(20px + 16.385px - 10px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  right: 11em;
+}
+
+#settings,
+#info-left,
+#info-right {
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+@media (max-width: 450px) {
+  #settings,
+  #info-left,
+  #info-right {
+    opacity: 0;
+  }
+  #instructions {
+    visibility: hidden;
+  }
+}
+
+/* Basic CSS for the dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn:after {
+  content: "▼";
+  margin-left: 7px;
+  font-size: 0.8em;
+  vertical-align: text-top;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show dropdown content when hovering over the button */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#windmill {
+  position: absolute;
+  right: 0;
+  fill: rgba(255, 255, 255, 0.5);
+  transform-origin: bottom;
+}
+
+#windmill-head {
+  animation-name: rotate;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#wind-info {
+  position: absolute;
+  width: 100px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/** Youtube logo by https://codepen.io/alvaromontoro */
+#youtube {
+  z-index: 2;
+  display: block;
+  width: 30px;
+  height: 21px;
+  background: red;
+  position: relative;
+  border-radius: 50% / 11%;
+  transition: transform 0.5s;
+  color: black;
+}
+
+#youtube:hover,
+#youtube:focus {
+  transform: scale(1.2);
+}
+
+#youtube::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 7.5%;
+  left: -6%;
+  width: 112%;
+  height: 85%;
+  background: red;
+  border-radius: 9% / 50%;
+}
+
+#youtube::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 11px;
+  width: 15px;
+  height: 10px;
+  border: 5px solid transparent;
+  box-sizing: border-box;
+  border-left: 10px solid white;
+}
+
+#youtube span {
+  font-size: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+#youtube-card {
+  display: none;
+}
+
+#youtube:hover + #youtube-card {
+  color: black;
+  display: block;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  padding: 25px 60px 25px 25px;
+  width: 200px;
+  background-color: white;
+}
+
+#fullscreen {
+  all: unset;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
