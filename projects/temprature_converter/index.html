@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celsius to Fahrenheit Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="text">Temperature Converter</div>
+    
+        <!-- Background -->
+        <svg class="background" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100%" height="100%" fill="#FFE9CE"></rect>
+        </svg>
+    
+        <svg class="blue-rect" width="74" height="103" viewBox="0 0 74 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="73.1067" y="15.2435" width="98.0367" height="31.5112" transform="rotate(117.044 73.1067 15.2435)" fill="#3E45E9"></rect>
+        </svg>
+
+        <svg class="blue-rect2" width="74" height="103" viewBox="0 0 74 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="73.1067" y="15.2435" width="98.0367" height="31.5112" transform="rotate(117.044 73.1067 15.2435)" fill="#3E45E9"></rect>
+        </svg>
+    
+        <svg class="orange-circle" width="51" height="53" viewBox="0 0 51 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="25.5" cy="26.5" rx="25.5" ry="26.5" fill="#FD754A"></ellipse>
+        </svg>
+
+        <svg class="orange-circle2" width="51" height="53" viewBox="0 0 51 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="25.5" cy="26.5" rx="25.5" ry="26.5" fill="#FD754A"></ellipse>
+          </svg>
+    
+        <svg class="yellow-shape" width="56" height="49" viewBox="0 0 56 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M27.5 0L51.3157 36H3.6843L27.5 0Z" fill="#FFF27F"></path>
+          <path d="M28.3257 48.4683L3.89121 12.8854L51.5155 12.0619L28.3257 48.4683Z" fill="#FFF27F"></path>
+        </svg>
+    
+        <!-- Input fields -->
+         <div class="temp-inputs">
+            <div class="input-container">
+                <input type="number" id="celsiusInput" placeholder="Celsius" />
+                <button onclick="convertTempToCelcius()">Convert</button>
+              </div>
+              <div class="temp-value" id="result1"></div>
+              <br/>
+              <div class="input-container">
+                  <input type="number" id="fahrenheitInput" placeholder="Fahrenheit" />
+                  <button onclick="convertTempToFar()">Convert</button>
+              </div>
+              <div class="temp-value" id="result2"></div>
+         </div>
+        
+
+        <!-- Result display -->
+        
+
+      </div>
+
+  <!-- JavaScript for Conversion Logic -->
+  <script>
+    function convertTempToCelcius() {
+      let celsius = document.getElementById("celsiusInput").value;
+      let fahrenheit = (celsius * 9/5) + 32;
+      document.getElementById("result1").textContent = ` => ${celsius}°C is ${fahrenheit.toFixed(2)}°F`;
+    }
+
+    function convertTempToFar() {
+        let fahrenheit = document.getElementById("fahrenheitInput").value;
+        let celsius = (fahrenheit - 32) * 5/9;
+        document.getElementById("result2").textContent = ` => ${fahrenheit}°F is ${celsius.toFixed(2)}°C`;
+    }
+  </script>
+
+</body>
+</html>
