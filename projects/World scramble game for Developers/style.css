@@ -1,0 +1,61 @@
+/* style.css */
+body { 
+	display: flex; 
+	flex-direction: column; 
+	justify-content: center; 
+    color: black;
+	align-items: center; 
+	min-height: 50vh; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(background.png);
+} 
+
+.root { 
+	font-size: x-large; 
+	color: rgb(0, 0, 0); 
+	background-color: rgb(238, 244, 154); 
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	padding: 0% 5% 1% 5%; 
+    align-items: center;
+	text-align: center; 
+    margin-top: 100px;
+	border-radius: 5px 0; 
+    transition: all 0.5s ease-in-out;
+} 
+.root:hover{
+    background-color: rgb(240, 245, 174); 
+    transform: scale(1.09);
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.title { 
+	border-bottom: 4px dotted; 
+	border-color: chocolate
+} 
+
+input { 
+	font-size: 20px; 
+	padding-left: 10px; 
+	outline: 2px grey; 
+} 
+::placeholder{
+    text-align: center;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: chocolate;
+}
+
+.foot { 
+	margin-bottom: 0%; 
+	display: flex; 
+	width: 100%; 
+} 
+
+.foot>button { 
+	width: 48%; 
+	padding: 1%; 
+	margin: 1%; 
+	 
+	border-radius: 5px; 
+	background-color: chocolate;
+	font-size: large; 
+}
