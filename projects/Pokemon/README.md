@@ -1,12 +1,13 @@
-<<<<<<< HEAD
-# React + Vite
+## Memory Card (Pokemon)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Screenshot 2024-10-01 160323](https://github.com/user-attachments/assets/ba412236-23f3-4d82-ace6-8c9ffa9e576a)
 
-Currently, two official plugins are available:
+This game challenges your memory skills with Pokémon cards, where you must remember which cards you've clicked. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-=======
-# Memory-Card
->>>>>>> fdb4d6f57ae25b3c163d604f6a83f70188f56737
+The game resets your score if you click the same card twice, and your best score is tracked!
+
+How to Play:
+The game displays a grid of Pokémon cards.
+Click on a card that you haven't clicked before to score points.
+But be careful! If you click the same card twice, your score resets to 0.
+Try to score as high as possible before making a mistake. Your highest score will be tracked!
