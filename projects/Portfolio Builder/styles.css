@@ -1,0 +1,163 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #efc8df, #a0a5d0);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  background: linear-gradient(to left, #dcaeb8, #c7c9e0);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeInContainer 1s ease-in-out;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2b2d42;
+}
+
+.animated-header {
+  animation: slideIn 1.5s ease-in-out;
+}
+
+/* Keyframes for animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInContainer {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.portfolio-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea, button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+button {
+  background-color: #2b2d42;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #6a6a92;
+  transform: scale(1.05);
+}
+
+.download-btn {
+  margin-top: 20px;
+  background-color: #007bff;
+}
+
+#profilePic {
+  padding: 5px;
+}
+
+.portfolio-output {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#portfolioOutput img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+}
+
+/* Button Styles */
+button:active {
+  transform: scale(0.98);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(43, 45, 66, 0.2);
+}
+
+/* Custom file input */
+input[type="file"] {
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: #2b2d42;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #6a6a92;
+}

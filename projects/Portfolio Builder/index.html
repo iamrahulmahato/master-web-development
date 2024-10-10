@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Builder</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="animated-header">Portfolio Builder</h1>
+    
+    <form id="portfolioForm" class="portfolio-form">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="bio">Bio:</label>
+      <textarea id="bio" name="bio" required></textarea>
+
+      <label for="skills">Skills:</label>
+      <input type="text" id="skills" name="skills" required>
+
+      <label for="experience">Experience:</label>
+      <textarea id="experience" name="experience" required></textarea>
+
+      <label for="awards">Awards:</label>
+      <input type="text" id="awards" name="awards">
+
+      <label for="profilePic">Upload Profile Picture:</label>
+      <input type="file" id="profilePic" accept="image/*">
+
+      <button type="submit">Generate Portfolio</button>
+    </form>
+
+    <div id="portfolioOutput" class="portfolio-output"></div>
+    
+    <button id="downloadBtn" class="download-btn" style="display:none;">Download Portfolio as HTML</button>
+    <button id="downloadPdfBtn" class="download-btn" style="display:none;">Download Portfolio as PDF</button>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
