@@ -216,3 +216,26 @@ body {
 #scrollToTopBtn {
     animation: float 3s infinite ease-in-out;
 }
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.search-bar {
+    background-color:#fff;
+    width: 300px;
+    height: 44px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+}
+.search-bar input[type="text"] {
+    all: unset;
+    font: 16px system-ui;
+    width: 510px;
+    text-align: left;
+}
+
