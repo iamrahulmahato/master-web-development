@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Martel Sans', 'Arial';
+    /* color: white; */
+}
+
+.main{
+    background-image: url("assets/images/bg.jpg");
+    height: 95vh;
+    position: relative;
+}
+
+.box{
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.69;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.maincontainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 24px 32px;
+    margin: auto;
+}
+
+.logo img{
+    width: 150px;
+}
+
+.button{
+    font-family: "Poppins", "Arial";
+    font-weight: 500;
+    border: 1px solid red;
+    margin-left: 24px;
+    padding: 2px 13px;
+    border-radius: 5px;
+    background-color: #e50913;
+    font-size: 15px;
+    color: white;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+.languages{
+    border: 1px solid rgba(244, 238, 238, 0.3);
+    background-color: #141615;
+    color: white;
+}
+
+.headercontent{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.context{
+    color: white;
+    position: absolute;
+    text-align: center;
+    transform: translateY(80%);
+}
+
+h1{
+    font-family: 'Poppins', 'Arial';
+    font-weight: bolder;
+    font-size: 48px;
+}
+
+.context h3:nth-of-type(1){
+    font-size: 24px;
+    margin: 16px 0;
+    font-weight: 100;
+}
+
+.context h3:nth-of-type(2){
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.form{
+    background-color: rgba(24,24,24,0.2);
+    border: 1px solid rgba(244, 238, 238, 0.3);
+    border-radius: 4px;
+    padding: 15px 140px 10px 15px;
+    font-size: 16px;
+    color: white;
+    margin-right: 5px;
+}
+
+.submit{
+    font-size: 22px;    
+    padding: 6px 30px;
+    margin-left: 3px;
+    margin-top: 10px;
+}
+
+.border{
+    border: 1px solid black;
+    background-color: rgb(53, 52, 52);
+    padding: 4px;
+}
+
+.content{
+    width: 80vw;
+    margin: auto;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 72px;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+}
+
+.heading{
+    font-family: "Poppins", "Arial";
+    font-size: 48px;
+    font-weight: 700;
+    
+}
+
+.para{
+    font-size: 24px;
+}
+
+.animation{
+    display: flex;
+    position: relative;
+}
+
+.animation video{
+    position: absolute;
+    left: 12%;
+    top: 20%;
+}
+
+.animation img{
+    z-index: 1;
+}
+
+.blackbox{
+    background-color: black;
+}
+
+.faq p{
+    padding-top: 50px;
+    padding-bottom: 30px;
+    color: white;
+    font-size: 48px;
+    font-family: "Poppins", "Arial";
+    font-weight: 900;
+    text-align: center;
+    /* margin-top: 60px; */
+}
+
+.questions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.questions .ques{
+    width: 75vw;
+    margin: auto;
+    color: white;
+    padding: 22px;
+    background-color: #2d2d2d;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.faq{
+    width: 80vw;
+    margin: auto;
+    position: relative;
+
+}
+
+.quesflex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quesflex span:hover{
+    cursor: pointer;
+}
+
+.lastform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin-bottom: 80px;
+}
+
+.forminputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lastform p{
+    font-size: 20px;
+}
+
+.getstarted{
+    font-family: "Poppins", "Arial";
+    font-weight: 500;
+    border: 1px solid red;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #e50913;
+    font-size: 25px;
+    color: white;
+    margin: 3px;
+}
+
+.getstarted:hover{
+    cursor: pointer;
+}
+
+.footer{
+    padding: 70px 0;
+    max-width: 75vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #FFFFFFB3;
+    /* color: #868585; */
+    /* color: grey; */
+}
+    
+.footer p, .footer .grid, .footer span{
+    margin-bottom: 15px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 75vw;
+}
+
+.subgrid{
+    display: flex;
+    flex-direction: column;
+}
+
+.subgrid a{
+    color: #FFFFFFB3;
+}
+
+.footer span .languages{
+    margin: 0;
+}
+
+@media (max-width: 1280px){
+    .button{
+        font-size: 14px;
+    }
+
+    h1{
+        font-size: 40px;
+    }
+
+    .context h3:nth-of-type(1){
+        font-size: 16px;
+    }
+
+    .context h3:nth-of-type(2){
+        font-size: 16px;
+    }
+
+    .form{
+        font-size: 13px;
+    }
+
+    .submit{
+        font-size: 18px;
+    }
+
+    .heading{
+        font-size: 40px;
+    }
+
+    .para{
+        font-size: 20px;
+    }
+
+    .faq p{
+        font-size: 40px;
+    }
+
+    .questions .ques{
+        font-size: 18px;
+    }
+
+    .lastform p{
+        font-size: 18px;
+    }
+
+    .getstarted{
+        font-size: 22px;
+    }
+
+    .footer{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 960px){
+    .navbar{
+        width: 100%;
+    }
+
+    .logo img{
+        width: 85px;
+    }
+
+    .button{
+        margin-left: 8px;
+    }
+
+    h1{
+        font-size: 32px;
+    }
+
+    .heading{
+        font-size: 32px;
+    }
+
+    .para{
+        font-size: 18px;
+    }
+
+    .faq p{
+        font-size: 18px;
+    }
+
+    .content{
+        width: 90vw;
+    }
+
+    .questions .ques{
+        width: 90vw;
+    }
+
+    .faq{
+        width: 90vw;
+    }
+
+    .faq p{
+        text-align: left;
+    }
+
+    .questions{
+        justify-content: left;
+    }
+
+    .grid{
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .footer p, .footer .grid, .footer span{
+        margin-bottom: 25px;
+    }
+
+    .footer{
+        padding: 40px 0;
+    }
+/* 
+    @media (max-width: 850px){
+        body{
+            overflow-x: hidden;
+        }
+
+        .maincontainer,
+        .content,
+        .questions .ques,
+        .faq {
+            width: 95%;
+            max-width: none;
+        }
+
+    } */
+
+    @media (max-width: 850px){
+        .content{
+            flex-direction: column;
+            padding: 70px 0; 
+        }
+    }
+
+    @media (max-width: 655px){
+        .forminputs{
+            flex-direction: column;
+        }
+
+        .lastform p{
+            text-align: center;
+            padding: 0px 10px 10px 10px;
+        }
+        
+        img{
+            width: 300px;
+        }
+
+        video{
+            width: 222px;
+        }
+
+        .description .heading{
+            font-size: 25px;
+        }
+
+        .description .para{
+            font-size: 14px;
+        }
+    }
+}
