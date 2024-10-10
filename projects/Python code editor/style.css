@@ -1,0 +1,55 @@
+body {
+           font-family: Arial, sans-serif;
+           text-align: center;
+           background-color: #f4f4f4;
+           margin: 0;
+           padding: 20px;
+       }
+       
+       h1 {
+           color: #333;
+       }
+       
+       .editor-container {
+           margin-top: 20px;
+       }
+       
+       textarea {
+           width: 80%;
+           height: 300px;
+           font-size: 16px;
+           padding: 10px;
+           border: 2px solid #333;
+           border-radius: 5px;
+           margin-bottom: 20px;
+       }
+       
+       button {
+           padding: 10px 20px;
+           background-color: #28a745;
+           color: white;
+           border: none;
+           border-radius: 5px;
+           font-size: 16px;
+           cursor: pointer;
+       }
+       
+       button:hover {
+           background-color: #218838;
+       }
+       
+       #output-container {
+           margin-top: 20px;
+           text-align: left;
+       }
+       
+       #output {
+           background-color: #222;
+           color: #fff;
+           padding: 10px;
+           border-radius: 5px;
+           width: 80%;
+           margin: 0 auto;
+           white-space: pre-wrap;
+       }
+       

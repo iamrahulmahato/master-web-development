@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Code Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Python Code Editor</h1>
+    <div class="editor-container">
+        <textarea id="code" placeholder="Write your Python code here..."></textarea>
+        <button onclick="runCode()">Run Code</button>
+    </div>
+    <div id="output-container">
+        <h2>Output:</h2>
+        <pre id="output"></pre>
+    </div>
+
+    <!-- Include Skulpt Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/skulpt/dist/skulpt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/skulpt/dist/skulpt-stdlib.js"></script>
+    <!-- Your Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+
