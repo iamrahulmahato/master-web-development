@@ -76,11 +76,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Sort cards alphabetically based on the card title
   cards.sort((a, b) => {
-      const titleA = a.querySelector('.card-heading').innerText.toUpperCase();
-      const titleB = b.querySelector('.card-heading').innerText.toUpperCase();
-      return titleA.localeCompare(titleB);
-  });
-
+    const headingA = a.querySelector('.card-heading');
+    const headingB = b.querySelector('.card-heading');
+    
+    // Check if both headings exist before sorting
+    if (headingA && headingB) {
+        const titleA = headingA.innerText.toUpperCase();
+        const titleB = headingB.innerText.toUpperCase();
+        return titleA.localeCompare(titleB);
+    } else {
+        // Handle cases where card headings are missing
+        console.warn('One or both cards are missing headings.');
+        return 0;
+    }
+});
   // Remove current cards and append them in the new order
   cardContainer.innerHTML = '';
   cards.forEach(card => {
