@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Simple To-Do App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="task-form">
+            <h2>Add a Task</h2>
+            <input type="text" id="taskTitle" placeholder="Title">
+            <textarea id="taskDescription" placeholder="Description"></textarea>
+            <button onclick="addTask()">Add</button>
+        </div>
+        <div class="taskcontainer">
+            <div class="task-list">
+                <h2>Task List</h2>
+                <div id="tasks"></div>
+            </div>
+        </div>
+        
+    </div>
+    <footer>
+        Developed by Abhijit Motekar || <a href="mailto:motekarabhijit@gmail.com">@motekarabhijit@gmail.com</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
