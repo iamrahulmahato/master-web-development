@@ -1,0 +1,126 @@
+/*--------------------------------------------------------------
+# Whiteboard
+--------------------------------------------------------------*/
+
+#whiteboard {
+    z-index: 11;
+    position: fixed;
+    margin: auto;
+    padding: 10px;
+    width: var(--wb-width);
+    height: var(--wb-height);
+    background: var(--wb-bg);
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    /* center */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* fade in */
+    -webkit-animation: fadeIn ease-in 1;
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+    overflow: hidden;
+}
+
+.whiteboard-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    cursor: move;
+}
+
+.whiteboard-header-title {
+    display: flex;
+    align-items: center;
+}
+
+#whiteboardLockBtn {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.whiteboard-header-title button,
+.whiteboard-header-options button {
+    padding: 10px;
+    font-size: 1.2rem;
+    margin: 1px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border: var(--border);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    transition: background 0.23s;
+}
+
+.whiteboard-header-title button:hover,
+.whiteboard-header-options button:hover {
+    color: var(--hover-color);
+    transform: var(--btns-hover-scale);
+    transition: all 0.3s ease-in-out;
+}
+
+.whiteboardColorPicker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+    border-radius: 50px;
+    border: solid 0.5px #afadad38;
+    cursor: pointer;
+}
+.whiteboardColorPicker:hover {
+    transform: var(--btns-hover-scale);
+    transition: all 0.3s ease-in-out;
+}
+.whiteboardColorPicker::-webkit-color-swatch {
+    border: none;
+    border-radius: 20px;
+    padding: 0;
+}
+.whiteboardColorPicker::-webkit-color-swatch-wrapper {
+    border: none;
+    border-radius: 20px;
+    padding: 0;
+}
+.whiteboardColorPicker::-moz-color-swatch {
+    border: none;
+    border-radius: 20px;
+    padding: 0;
+}
+.whiteboardColorPicker::-moz-color-swatch-wrapper {
+    border: none;
+    border-radius: 20px;
+    padding: 0;
+}
+.whiteboardColorPicker::color-swatch {
+    border: none;
+    border-radius: 20px;
+    padding: 0;
+}
+.whiteboardColorPicker::color-swatch-wrapper {
+    border: none;
+    border-radius: 20px;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}

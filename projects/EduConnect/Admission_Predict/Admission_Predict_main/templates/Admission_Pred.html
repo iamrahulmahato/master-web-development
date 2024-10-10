@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">EduConnect</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Way to Success</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Check How Close you are to your Goal?</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Predict the probability of being admitted at Top Institutions
+        <br>
+        </h5>
+      </div>
+
+    <div class="row">
+    <form action='/predict' method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <label for="first_name"><b>GRE Score</b></label>
+            <br>
+          <input placeholder="Enter GRE Score out of 340" name="GRE Score" id="first_name" type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+
+          <label for="last_name"><b>TOEFL Score </b></label>
+            <br>
+          <input id="Enter TOEFL Score out of 120" name="TOEFL Score" placeholder="Oxygen content in ppm"  type="text" class="validate">
+
+        </div>
+
+        <div class="input-field col s4">
+            <label for="_name"><b>University Class</b></label>
+            <br>
+          <input id="_name" name="University Rating" placeholder="Enter University Class (1 - 5)" type="text" class="validate">
+
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="input-field col s4">
+            <label for="first_name"><b>Statement of Purpose Rating</b></label>
+            <br>
+          <input placeholder="Enter SOP Rating (scale 5) " name="SOP" id="first_name" type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+
+          <label for="last_name"><b>LOC Rating</b></label>
+            <br>
+          <input id="last_name" name="LOC" placeholder="Enter LOC Rating (scale 5)"  type="text" class="validate">
+
+        </div>
+
+        <div class="input-field col s4">
+            <label for="_name"><b>CGPA</b></label>
+            <br>
+          <input id="_name" name="CGPA" placeholder="Enter CGPA (scale 10)" type="text" class="validate">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4">
+          <label for="_name"><b>Researcher ?</b></label>
+          <br>
+        <input id="_name" name="Research" placeholder="Enter 0 or 1" type="text" class="validate">
+      </div>
+      </div>
+
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+      </div>
+    </form>
+      </div>
+
+      <br>{{pred}}<br>
+      
+    </div>
+  </div>
+
+
+    <br><br>
+  </div>
+  </div>>
+
+  <footer class="page-footer orange">
+
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">EduConnect</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
+

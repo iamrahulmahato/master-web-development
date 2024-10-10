@@ -1,0 +1,223 @@
+{
+    "pathways": [
+        {
+            "name": "NEET",
+            "description": "The National Eligibility cum Entrance Test (NEET) is an entrance examination in India for students who wish to study undergraduate medical courses (MBBS) and dental courses (BDS) in government or private medical colleges and dental colleges in India.",
+            "courses": ["Physics", "Chemistry", "Biology"]
+        },
+        {
+            "name": "JEE",
+            "description": "Joint Entrance Examination (JEE) is an all India common engineering entrance examination conducted for admission to various engineering colleges and courses all over the country. It is conducted in two phases - JEE Main and JEE Advanced.",
+            "courses": ["Physics", "Chemistry", "Mathematics"]
+        },
+        {
+            "name": "Civil Service Examination",
+            "description": "The Civil Services Examination (CSE) is a nationwide competitive examination in India conducted by the Union Public Service Commission for recruitment to various Civil Services of the Government of India, including the Indian Administrative Service (IAS), Indian Foreign Service (IFS), and Indian Police Service (IPS).",
+            "courses": ["General Studies", "Aptitude Test", "Optional Subjects"]
+        }
+    ],
+    "courses": [
+        {
+            "course_name": "Physics",
+            "course_ins": "John Doe",
+            "course_dur": 25,
+            "stud_en": 1500,
+            "url": "https://eps.leeds.ac.uk/images/resized/600x300-0-0-1-80-Molecular_and_Nanoscale_research_university_of_leeds_school_of_physics_and_astronomy_800x400.jpg",
+            "teach": "https://leadschool.in/wp-content/uploads/2022/04/Blog%20Featured%20Images%20(30).png",
+            "modules": [
+                {
+                    "module_name": "Mechanics",
+                    "description": "Mechanics is the branch of physics concerned with the behavior of physical bodies when subjected to forces or displacements, and the subsequent effects of the bodies on their environment."
+                },
+                {
+                    "module_name": "Thermodynamics",
+                    "description": "Thermodynamics is the branch of physics that deals with heat, work, and temperature, and their relation to energy, radiation, and physical properties of matter."
+                },
+                {
+                    "module_name": "Electromagnetism",
+                    "description": "Electromagnetism is a branch of physics that deals with the interaction between electrically charged particles and their electromagnetic fields in the universe that involves interaction"
+                },
+                {
+                    "module_name": "Optics",
+                    "description": "Optics is the branch of physics that deals with the behavior and properties of light, including its interactions with matter and the construction of instruments that use or detect it."
+                },
+                {
+                    "module_name": "Modern Physics",
+                    "description": "Modern physics is the branch of physics that deals with the behavior of matter and energy on the atomic and subatomic scales to keep track of atomic sizes and shapes."
+                }
+            ]
+        },
+        {
+            "course_name": "Chemistry",
+            "course_ins": "Martin",
+            "course_dur": 35,
+            "stud_en": 1800,
+            "url": "https://i.pinimg.com/1200x/92/13/12/921312a0a759d2380782b846c9d6747c.jpg",
+            "teach": "https://environment.leeds.ac.uk/images/resized/600x300-0-0-1-80-1_19.jpg",
+            "modules": [
+                {
+                    "module_name": "Physical Chemistry",
+                    "description": "Physical chemistry is the branch of chemistry that deals with the study of the physical properties of matter and the changes it undergoes in chemical reactions."
+                },
+                {
+                    "module_name": "Inorganic Chemistry",
+                    "description": "Inorganic chemistry is the branch of chemistry that deals with the study of inorganic compounds, which do not contain carbon-hydrogen bonds."
+                },
+                {
+                    "module_name": "Organic Chemistry",
+                    "description": "Organic chemistry is the branch of chemistry that deals with the study of the structure, properties, composition, reactions, and preparation of carbon-containing compounds."
+                }
+            ]
+        },
+        {
+            "course_name": "Biology",
+            "course_ins": "Kishore Ji",
+            "course_dur": 50,
+            "stud_en": 8000,
+            "teach": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW_aksqgQhlC7Pw7P59XVwlzKIgH44Z3uGvLeqgtbkiw&s",
+            "url": "https://djgeqya1wekbj.cloudfront.net/product-images/600-600/Biology-1200x600.jpg.webp",
+            "modules": [
+                {
+                    "module_name": "Botany",
+                    "description": "Botany is the branch of biology that deals with the study of plants, including their structure, growth, reproduction, metabolism, development, diseases, and chemical properties."
+                },
+                {
+                    "module_name": "Zoology",
+                    "description": "Zoology is the branch of biology that deals with the study of animals, including their structure, classification, behavior, ecology, evolution, and distribution."
+                },
+                {
+                    "module_name": "Human Physiology",
+                    "description": "Human physiology is the branch of biology that deals with the study of the functioning of the human body and its organs and systems."
+                },
+                {
+                    "module_name": "Genetics",
+                    "description": "Genetics is the branch of biology that deals with the study of genes, heredity, and genetic variation in organisms."
+                },
+                {
+                    "module_name": "Ecology",
+                    "description": "Ecology is the branch of biology that deals with the study of the relationships between living organisms and their environment."
+                }
+            ]
+        },
+        {
+            "course_name": "Mathematics",
+            "course_dur": 60,
+            "stud_en": 5000,
+            "teach": "https://djgeqya1wekbj.cloudfront.net/product-images/600-600/Mathematics-A-Level-1200x600-1.jpg.webp",
+            "url": "https://st3.depositphotos.com/18803028/35022/i/450/depositphotos_350224832-stock-photo-mathematics-background-formulas-seamless-illustration.jpg",
+            "course_ins": "Kamal Kiran",
+            "modules": [
+                {
+                    "module_name": "Algebra",
+                    "description": "Algebra is the branch of mathematics that deals with symbols and the rules for manipulating those symbols to solve equations and analyze mathematical structures."
+                },
+                {
+                    "module_name": "Calculus",
+                    "description": "Calculus is the branch of mathematics that deals with the study of rates of change and accumulation of quantities, and the analysis of infinite processes using limits, derivatives, and integrals."
+                },
+                {
+                    "module_name": "Trigonometry",
+                    "description": "Trigonometry is the branch of mathematics that deals with the study of relationships between the angles and sides of triangles, and the trigonometric functions and their properties."
+                },
+                {
+                    "module_name": "Coordinate Geometry",
+                    "description": "Coordinate geometry is the branch of mathematics that deals with the study of geometry using coordinate systems, where points are defined by their positions relative to axes."
+                }
+            ]
+        },
+        {
+            "course_name": "General Studies",
+            "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHyRuSfXBQhzSQrG4sSBfUZhRCdajsRdTnCc3lXBRM2FqtDIhTJf5ThtdAZ3zIlGvdDGBkC3dg-mDF7xTWxfzQDjaKbJMU8o5WTmlpIyf_YeNaLelXGDIuYBkpG76YuByEE4yA97tguOw9aaYH8vwIyvbo3ZrD4PdpJTayvFVjrEaDlw0wCrcsbeoX4Q/w600-h300-p-k-no-nu/GS-1_WritiyIAS.jpg",
+            "teach": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQqkjHChEvxDkG2vxgoaWHw0Qhwv7KRFTxbtz5B_9N7w&s",
+            "course_ins": "Bala Raj",
+            "course_dur": 140,
+            "stud_en": 3000,
+            "modules": [
+                {
+                    "module_name": "History",
+                    "description": "History is the study of past events, particularly human events, and their significance, as well as the methods used to interpret and analyze historical sources and evidence."
+                },
+                {
+                    "module_name": "Geography",
+                    "description": "Geography is the study of the Earth's landscapes, environments, and the relationships between people and their environments, including the distribution of resources and human activities."
+                },
+                {
+                    "module_name": "Indian Polity",
+                    "description": "Indian polity is the study of the political system and governance structures of India, including the Constitution, political institutions, and the functioning of government."
+                },
+                {
+                    "module_name": "Economy",
+                    "description": "Economy is the study of the production, distribution, and consumption of goods and services, as well as the factors influencing economic behavior and outcomes."
+                },
+                {
+                    "module_name": "Environment & Ecology",
+                    "description": "Environment and ecology are the study of the relationships between living organisms and their environment, including the impact of human activities on ecosystems and biodiversity."
+                }
+            ]
+        },
+        {
+            "course_name": "Aptitude Test",
+            "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbeYGJR0nJXmcBQn8l2kgPupG3vHuAWsK2Z1A_TiamPg&s",
+            "teach": "https://miro.medium.com/v2/resize:fit:600/1*ra8XL5YFQn1wf4PS8bNvuA.png",
+            "course_ins": "Ramanujan",
+            "course_dur": 90,
+            "stud_en": 6000,
+            "modules": [
+                {
+                    "module_name": "Logical Reasoning",
+                    "description": "Logical reasoning is the ability to analyze and evaluate arguments and draw conclusions based on evidence and logical principles."
+                },
+                {
+                    "module_name": "Quantitative Aptitude",
+                    "description": "Quantitative aptitude is the ability to understand and apply mathematical concepts and solve numerical problems efficiently."
+                }
+            ]
+        },
+        {
+            "course_name": "Optional Subjects",
+            "course_dur": 150,
+            "stud_en": 4000,
+            "url": "https://www.upscprep.com/content/images/size/w600/2022/06/optional.jpg",
+            "teach": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0aP6xZFNSk2gif1S5glXNIDOUDtBpKwgM_L4_zkZVDw&s",
+            "course_ins": "Vishwa",
+            "modules": [
+                {
+                    "module_name": "Literature",
+                    "description": "Literature is the study of written works, including novels, poetry, drama, and essays, as well as the analysis of literary techniques and themes."
+                },
+                {
+                    "module_name": "Political Science",
+                    "description": "Political science is the study of government, political processes, political behavior, and political institutions, as well as the analysis of political systems and ideologies."
+                },
+                {
+                    "module_name": "Public Administration",
+                    "description": "Public administration is the study of the implementation of government policies and the management of public programs and services, as well as the analysis of administrative structures and processes."
+                },
+                {
+                    "module_name": "Sociology",
+                    "description": "Sociology is the study of society, social institutions, and social relationships, as well as the analysis of social patterns and processes."
+                },
+                {
+                    "module_name": "Geography",
+                    "description": "Geography is the study of the Earth's landscapes, environments, and the relationships between people and their environments, including the distribution of resources and human activities."
+                },
+                {
+                    "module_name": "History",
+                    "description": "History is the study of past events, particularly human events, and their significance, as well as the methods used to interpret and analyze historical sources and evidence."
+                },
+                {
+                    "module_name": "Economics",
+                    "description": "Economics is the study of the production, distribution, and consumption of goods and services, as well as the factors influencing economic behavior and outcomes."
+                },
+                {
+                    "module_name": "Philosophy",
+                    "description": "Philosophy is the study of fundamental questions about existence, knowledge, values, reason, mind, and language, as well as the analysis of philosophical arguments and theories."
+                },
+                {
+                    "module_name": "Psychology",
+                    "description": "Psychology is the study of behavior and mental processes, including perception, cognition, emotion, motivation, and social interactions, as well as the analysis of psychological theories and research."
+                }
+            ]
+        }
+    ]
+}

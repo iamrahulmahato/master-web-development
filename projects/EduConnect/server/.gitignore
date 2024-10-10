@@ -1,0 +1,7 @@
+venv/
+.env
+
+# test files
+*.rest
+
+__pycache__/
