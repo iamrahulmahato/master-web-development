@@ -229,8 +229,8 @@ body {
 }
 #search-input {
     width: 100%;
-    max-width: 80%;
-    min-width: 70%;
+    max-width: 50%;
+    min-width: 40%;
     padding: 12px 20px;
     margin: 20px 0;
     font-size: 16px;
