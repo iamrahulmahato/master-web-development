@@ -1,0 +1,46 @@
+html{
+    font-family:'Nova Round', cursive;
+
+}
+header{
+    size: 2rem;
+   
+}
+#navbar #media{
+    justify-content: right;
+    display:flex;
+    height:0.1px;
+    /* width: 1px; */
+    background-color: rgb(215, 145, 99);
+    
+}
+#navbar ul{
+    display:flex;
+    justify-content: center;
+    /* background-color: rgb(215, 145, 99); */
+    
+}
+#navbar ul li{
+    font-size: 1rem;
+    list-style: none;
+    text-align: center;
+}
+#navbar ul li a{
+    display:block;
+    padding: 3px 20px;
+    text-decoration: none;
+    color:black;
+    border-radius: 20px;
+    
+    
+}
+#navbar ul li a:hover{
+    color:white;
+    background-color:  rgb(250, 166, 58);}
+    footer{
+        background: black;
+        color: white;
+        text-align: center;
+        padding: 2px;
+    }
+    
