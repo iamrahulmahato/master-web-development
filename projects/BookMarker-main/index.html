@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Keeper</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Open Modal -->
+    <h1 id="show-modal">Add Bookmark </h1>
+    <!-- Bookmarks Container -->
+    <div class="container" id="bookmarks-container1" name="bookmarks-container1"> </div>
+    <div class="container" id="bookmarks-container2" name="bookmarks-container2"></div>
+    <div class="container" id="bookmarks-container3" name="bookmarks-container3"></div>
+    <div class="container" id="bookmarks-container4" name="bookmarks-container4"></div>
+    <div class="container" id="bookmarks-container5" name="bookmarks-container5"></div>
+    <div class="container" id="bookmarks-container6" name="bookmarks-container6"></div>
+    <div class="container" id="bookmarks-container7" name="bookmarks-container7"></div>
+
+    <!-- Modal -->
+    <div class="modal-container" id="modal">
+        <div class="modal">
+            <i class="fas fa-times close-icon" id="close-modal"></i>
+            <div class="modal-header">
+                <h3>Add Bookmark</h3>
+            </div>
+            <div class="modal-content">
+                <form id="bookmark-form">
+                    <!-- Website Name -->
+                    <div class="form-group">
+                        <label class="form-label" for="website-name">Website Name</label>
+                        <input class="form-input" type="text" id="website-name">
+                    </div>
+                    <!-- Website URL -->
+                    <div class="form-group">
+                        <label class="form-label" for="website-url">Website URL</label>
+                        <input class="form-input" type="text" id="website-url">
+                    </div>
+                    <!-- Website Folder Structure -->
+                    <div class="form-group">
+                        <label class="form-label" for="website-folder">Website Folder-Structure</label>
+                        <select name="website-folder" id="folder" class="classic">
+                            <option value="social">Social</option>
+                            <option value="blog">Blog</option>
+                            <option value="dev">Dev</option>
+                            <option value="tool">Tool</option>
+                            <option value="course">Course</option>
+                            <option value="githubCode">Github Code</option>
+                            <option value="githubLive">Gitub Live</option>
+                        </select>
+                    </div>
+
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <section class="footer">
+        <div class="social">
+            <a href="https://www.linkedin.com/in/desh-deepak-kushwaha-b65929254/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/DeshDeepakKushwaha"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/deepu4477/"><i class="fab fa-twitter"></i></a>
+
+            <a href="https://www.instagram.com/deepu_4477/"><i class="fab fa-instagram"></i></a>
+
+        </div>
+
+        <p class="copyright">Desh Deepak Kushwaha @2023</p>
+    </section>
+
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

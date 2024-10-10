@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Yatra+One&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: whitesmoke;
+  font-family: "Yatra One", cursive;
+}
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  letter-spacing: 5px;
+}
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 1px solid red;
+}
+.loader img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image-container {
+  margin: 10px 15%;
+  columns: 3;
+  column-gap: 0.7rem;
+  overflow: hidden;
+}
+
+.image-container img {
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 5px;
+  transition: transform 0.7s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.1);
+}
+/* Large phone */
+@media screen and (max-width: 1000px) {
+  .image-container {
+    columns: 2;
+    margin: 10px 2%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .image-container {
+    margin: 10px;
+    columns: 1;
+  }
+}
