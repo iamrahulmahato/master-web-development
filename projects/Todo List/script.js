@@ -110,3 +110,37 @@ function findListItem(task, listId) {
 HTMLElement.prototype.containsText = function (text) {
     return this.innerText.toLowerCase().includes(text.toLowerCase());
 };
+
+
+
+// Search Funtion 
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('addTaskButton').addEventListener('click', addTask);
+
+    // Add event listener for search input
+    document.getElementById('searchInput').addEventListener('input', searchTasks);
+});
+
+function searchTasks() {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+    filterTaskList('pendingTasks', searchTerm);
+    filterTaskList('completedTasks', searchTerm);
+}
+
+function filterTaskList(listId, searchTerm) {
+    const list = document.getElementById(listId);
+    const listItems = list.getElementsByTagName('li');
+
+    for (let i = 0; i < listItems.length; i++) {
+        const listItem = listItems[i];
+        const taskText = listItem.innerText.toLowerCase();
+
+        // Show or hide the task based on search term match
+        if (taskText.includes(searchTerm)) {
+            listItem.style.display = '';
+        } else {
+            listItem.style.display = 'none';
+        }
+    }
+}
