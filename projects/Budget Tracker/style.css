@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 1000px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: rgb(236, 240, 14); */
+  background-image: url(./tracker.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+  color: black;
+}
+
+.headerBar {
+  /* background-color: rgb(10, 229, 61); */
+  color: rgb(16, 16, 15);
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+  color: rgb(215, 21, 21);
+}
+
+.topbar {
+  margin-bottom: 10px;
+}
+
+.currency {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.balance {
+  font-size: 30px;
+  font-weight: 700;
+  color: #8B0000;
+  animation: blink 1s infinite;
+}
+
+.balance:hover {
+  color: #FF0000;
+}
+
+/* Blink animation */
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.content {
+  width: 580px;
+  margin: 0 auto;
+  padding: 3%;
+  padding-left: 6%;
+}
+
+.secondTitle {
+  background-color: rgba(0, 255, 238, 0.46);
+  color: rgb(19, 9, 208);
+  text-align: center;
+  margin-top: 100px;
+  padding: 20px;
+  font-size: 25px;
+}
+
+.form {
+  padding: 5px;
+  padding-top: 20px;
+  padding-left: 10%;
+  justify-content: center;
+  background-color: rgba(12, 210, 108, 0.337);
+}
+
+.formLine {
+  display: inline-flex;
+  padding: 5px 0px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+  margin-right: 100px;
+}
+
+input,
+select {
+  width: 130px;
+  margin-left: 10px;
+}
+
+/* table style */
+table {
+  width: 100%;
+}
+
+thead {
+  background-color: rgba(251, 0, 255, 0.414);
+  color: white;
+  line-height: 30px;
+}
+
+tbody {
+  background-color: rgba(14, 197, 229, 0.329);
+  line-height: 30px;
+  text-align: center;
+}
+
+/* Button */
+
+button {
+  width: 200px;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 20px;
+  background-color: rgb(235, 14, 128);
+  border-radius: 5px;
+  margin: 14px 25%;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0 0 0 2px rgb(239, 5, 142);
+  transition: 0.5s;
+}
+
+a {
+  text-decoration: underline;
+  cursor: pointer;
+}
