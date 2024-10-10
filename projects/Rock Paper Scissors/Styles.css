@@ -18,11 +18,14 @@ p {
   margin-bottom: 0.5rem;
 }
 
-.buttons {
+.buttons{
   display: flex;
   justify-content: center;
 }
-
+.computer-buttons{
+  display: flex;
+  justify-content: center;
+}
 button {
   border: none;
   font-size: 3rem;
@@ -34,7 +37,8 @@ button {
 }
 
 button:hover {
-  opacity: 0.7;
+  /* opacity: 0.7; */
+  border: 3px solid black;
 }
 
 #rock {
