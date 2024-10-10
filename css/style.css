@@ -216,6 +216,7 @@ body {
 #scrollToTopBtn {
     animation: float 3s infinite ease-in-out;
 }
+
 /* mouse cursor trail effect */
 .circle {
     position: absolute;
