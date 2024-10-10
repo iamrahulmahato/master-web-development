@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: aquamarine;
+  width: 100%;
+  height: 100vh;
+}
+.container {
+  width: 100%;
+  background-color: darkslateblue;
+  height: 85%;
+  color: rgb(249, 247, 247);
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  border: 2px solid black;
+}
+.title {
+  display: flex;
+  column-gap: 50px;
+  padding: 10px 0;
+  background-color: rgb(11, 11, 11);
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  text-align: center;
+  color: rgb(249, 247, 247);
+}
+#small {
+  font-size: 30px;
+}
+.music-container {
+  padding: 10px;
+  width: 20%;
+  height: 100%;
+  font-size: 14px;
+  background-color: rgb(34, 34, 72);
+  border: 2px solid black;
+}
+h3 {
+  background-color: black;
+  margin-bottom: 6px;
+}
+#logo {
+  width: 85px;
+  height: 70px;
+  float: left;
+  padding: 10px;
+}
+.main-container {
+  width: 59%;
+  height: 70%;
+  border: 1px solid rgb(254, 253, 253);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#file_upload {
+  margin: 10px 0;
+}
+#canvas1 {
+  max-width: 100%;
+  max-height: 100%;
+}
+.controls-container {
+  width: 20%;
+  height: 100%;
+  background-color: rgb(34, 34, 72);
+  border: 2px solid black;
+}
+#gui {
+  max-width: 19%;
+}
+
+.button {
+  margin-top: 10px;
+}
+.btn {
+  margin: 5px;
+  width: 30px;
+  font-size: 20px;
+}
+.control-buttons {
+  border: 1px solid white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.record-buttons {
+  border: 1px solid white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.record-btn {
+  width: 80%;
+  background-color: #aaa;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+}
+#recordBtn {
+  background-color: antiquewhite;
+  border: 4px solid red;
+  margin: 5px auto;
+}
+#stopRecordBtn {
+  background-color: antiquewhite;
+  border: 4px solid blue;
+}
+.dg {
+  margin-top: 15px;
+}
