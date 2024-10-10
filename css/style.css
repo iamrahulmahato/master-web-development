@@ -216,3 +216,22 @@ body {
 #scrollToTopBtn {
     animation: float 3s infinite ease-in-out;
 }
+/* mouse cursor trail effect */
+.circle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(220, 20, 60, 0.7));;
+    transition: transform 0.1s, left 0.1s, top 0.1s;
+  }
+  .circle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+  }
