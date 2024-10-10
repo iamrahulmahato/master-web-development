@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Budget Tracker</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="headerBar">
+            <header>
+                <img src="./My.png">
+                <h2 class="topbar">Your Current Balance</h2>
+                <p>
+                    <span class="currency">₹</span>
+                    <span class="balance"></span>
+                </p>
+                <header>
+        </div>
+        <div class="content">
+            <h3 class="secondTitle">Add a new transaction: </h3>
+            <div class="form">
+                <form id="expForm">
+                    <div class="formLine left">
+                        <span for="type">Type:</span>
+                        <select id="type">
+                            <option value="chooseOne">Choose one...</option>
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                    </div>
+                    <div class="formLine right">
+                        <span for="name">Name:</span>
+                        <input type="text" id="name">
+                    </div>
+
+                    <div class="formLine right">
+                        <span for="amount">Amount:</span>
+                        <input type="text" id="amount">
+                    </div>
+                    <button type="submit" class="buttonSave">Add to transactions</button>
+                </form>
+            </div>
+        </div>
+        <div class="content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionTable"></tbody>
+            </table>
+        </div>
+
+        <footer style="text-align: center; padding: 20px;">
+            <a href="https://github.com/abhisek2004">@ Created and Design By Abhisek Panda</a>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+
+</html>
