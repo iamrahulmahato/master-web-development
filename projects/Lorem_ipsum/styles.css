@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #1e1e3f;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc; /* Border for the container */
+    border-radius: 10px; /* Rounded corners */
+    background: rgb(114, 102, 237);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for the container */
+}
+
+h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #000000;
+    font-size: 20px;
+}
+
+input[type="number"] {
+    width: 100%; /* Make the input full width */
+    padding: 10px;
+    font-size: 16px; /* Increase font size */
+    margin-bottom: 20px; /* Space below input */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+button {
+    flex: 1; /* Make buttons equal width */
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #0b6531; /* Bootstrap primary color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+#output {
+    margin-top: 20px;
+    white-space: pre-wrap; /* Keeps line breaks */
+    border: 1px dashed #ccc;
+    padding: 10px;
+    background: #f1f1f1;
+    border-radius: 5px;
+}

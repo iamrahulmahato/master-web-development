@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flipkart-Clone</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="shortcut icon" href="https://static-assets-web.flixcart.com/www/promos/new/20150528-140547-favicon-retina.ico" type="image/x-icon">
+</head>
+<body>
+ 
+    <header>
+      <div class="logo">
+          <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg" alt="">
+      </div>
+      <div class="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" placeholder="Search for Products, Brands and More">
+      </div>
+      <div class="login hiconcss">
+          <i class="fa-regular fa-circle-user"></i>
+          <span>Login</span>
+          <i class="ldicon fa-solid fa-angle-down"></i>
+      </div>
+      <div class="Cart hiconcss">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Cart</span>
+      </div>
+      <div class="seller hiconcss">
+          <i class="fa-solid fa-store"></i>
+          <span>Become a Seller</span>
+      </div>
+      <div class="menudot">
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+      </div>
+  </header>
+
+  <section class="a">
+    <div class="a-container">
+      <div class="a-item">
+        <img src="https://rukminim1.flixcart.com/flap/80/80/image/29327f40e9c4d26b.png?q=100" alt=""> Grocery
+      </div>
+      <div class="a-item">
+        <img src="images/head2.PNG" alt=""> Mobile
+      </div>
+      <div class="a-item">
+        <img src="images/head3.PNG" alt=""> Fashion
+      </div>
+      <div class="a-item">
+        <img src="images/head4.PNG" alt="">Electronics 
+      </div>
+      <div class="a-item" >
+       <img src="images/head5.PNG" alt="">Home & Furniture
+      </div>
+      <div class="a-item">
+        <img src="images/head6.PNG" alt=""> Appliances
+      </div>
+      <div class="a-item">
+        <img src="images/head7.PNG" alt=""> Travel
+      </div>
+      <div class="a-item">
+        <img src="images/head8.PNG" alt=""> Beauty, Toys & More 
+      </div>
+      <div class="a-item">
+        <img src="images/head9.PNG" alt=""> Two Wheelers 
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="b">
+    <div class="b-container"></div>
+    <div class="slider">
+      <div class="slides">
+          <div class="slide">
+              <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/1aaeb0a6531bef88.jpg?q=20" alt="image">
+          </div>
+          <div class="slide">
+              <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/57bdf8f50cff60b1.jpg?q=20" alt="image">
+          </div>
+          <div class="slide">
+              <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/f21c8c88a0bb63e0.png?q=20" alt="image">
+          </div>
+          <div class="slide">
+            <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/6b58218b9f0d577c.png?q=20" alt="image">
+        </div>
+        <div class="slide">
+          <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/78e89d02375d5222.jpg?q=20" alt="image">
+      </div>
+      </div>
+      <button class="prev" onclick="prevSlide()">&#10094;</button>
+      <button class="next" onclick="nextSlide()">&#10095;</button>
+  </section>
+
+  <!--section c & d-->
+
+  <div class="container">
+
+  <section class="c">
+    <div class="c-container">
+      <div class="bestOfElectronics">
+        <h1>Best of Electronics <i class="fa-solid fa-circle-chevron-right"></i></h1>
+      </div>
+      <div class="c-item">
+        <img src="images/img1.png" alt="">
+        <div class="c-item-title">Best wireless hea...</div>
+        <div class="c-item-price">Grab Now</div>
+      </div>
+      <div class="c-item">
+        <img src="images/img2.png" alt="">
+        <div class="c-item-title">Best smartwatches</div>
+        <div class="c-item-price">From ₹1,399</div>
+      </div>
+      <div class="c-item">
+        <img src="images/img3.png" alt="">
+        <div class="c-item-title">Best bluetooth sp...</div>
+        <div class="c-item-price">From ₹499</div>
+      </div>
+      <div class="c-item">
+        <img src="images/img4.png" alt="">
+        <div class="c-item-title">Best monitors</div>
+        <div class="c-item-price">From ₹9990</div>
+      </div>
+      <div class="c-item">
+        <img src="images/img6.jpg" alt="">
+        <div class="c-item-title">Best Cameras</div>
+        <div class="c-item-price">From ₹11,999</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d">
+    <div class="ad">
+      <img src="images/img8.png" alt="">
+    </div>
+  </section>
+</div>
+
+<!-- *** -->
+
+<section class="e">
+  <div class="e-container">
+    <div class="bestOfBeauty">
+      <h2>Beauty, Food, Toys & more<i class="fa-solid fa-circle-chevron-right"></i></h2>
+    </div>
+    <div class="e-item">
+      <img src="images/e1.PNG" alt="">
+      <div class="e-item-title">Top Stationery</div>
+      <div class="e-item-price">From ₹199</div>
+    </div>
+    <div class="e-item">
+      <img src="images/e2.PNG" alt="">
+      <div class="e-item-title">Coffee Powder</div>
+      <div class="e-item-price">Upto 80% Off</div>
+    </div>
+    <div class="e-item">
+      <img src="images/e3.PNG" alt="">
+      <div class="e-item-title">Electric Cycle</div>
+      <div class="e-item-price">Upto 40% Off</div>
+    </div>
+    <div class="e-item">
+      <img src="images/e4.PNG" alt="">
+      <div class="e-item-title">Soft Toys</div>
+      <div class="e-item-price">Upto 70% Off</div>
+    </div>
+    <div class="e-item">
+      <img src="images/e5.PNG" alt="">
+      <div class="e-item-title">Best of Action..</div>
+      <div class="e-item-price">Upto 70% Off</div>
+    </div>
+    <div class="e-item">
+      <img src="images/e6.PNG" alt="">
+      <div class="e-item-title">Remote Control...</div>
+      <div class="e-item-price">Upto 75% Off</div>
+    </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="ad2">
+  <div class="ad2">
+    <img src="https://rukminim1.flixcart.com/fk-p-flap/3376/560/image/0735712fe84c602d.jpg?q=50" alt="" class="s">
+  </div>
+</section>
+
+<!--section f,g,h-->
+
+<div class="container2">
+<section class="f">
+  <div class="f-container">
+    <div class="endOfSeason">
+      <h3>End of Season Bestsellers<i class="fa-solid fa-circle-chevron-right"></i></h3>
+    </div>
+    <div class="f">
+      <img src="images/f1.jpg" alt="">
+      <div class="f-item-title">Women's</div>
+      <div class="f-item-price" style="color: green;">Special Offer</div>
+    </div>
+    <div class="f">
+      <img src="images/f2.jpg" alt="">
+      <div class="f-item-title">Men's</div>
+      <div class="f-item-price" style="color: green;">Best Picks</div>
+    </div>
+    <div class="f">
+      <img src="images/f3..PNG" alt="">
+      <div class="f-item-title">Toys</div>
+      <div class="f-item-price" style="color: green;">From ₹199</div>
+    </div>
+    <div class="f">
+      <img src="images/f4.jpg" alt="">
+      <div class="f-item-title">Hair Oil</div>
+      <div class="f-item-price" style="color: green;">Min. 50%</div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="g">
+  <div class="g-container">
+    <div class="mobilesToCheckOut">
+      <h4>Mobiles to Check Out<i class="fa-solid fa-circle-chevron-right"></i></h4>
+    </div>
+    <div class="g">
+      <img src="images/g1.jpg" alt="">
+      <div class="g-item-title">Full HD+</div>
+      <div class="g-item-price" style="color: green;">Best Products</div>
+    </div>
+    <div class="g">
+      <img src="images/g2.jpg" alt="">
+      <div class="g-item-title">Snapdragon</div>
+      <div class="g-item-price" style="color: green;">Best Selling</div>
+    </div>
+    <div class="g">
+      <img src="images/g3.png" alt="">
+      <div class="g-item-title">Top Collection</div>
+      <div class="g-item-price" style="color: green;">Top Collection</div>
+    </div>
+    <div class="g">
+      <img src="images/g4.png" alt="">
+      <div class="g-item-title">Discounts</div>
+      <div class="g-item-price" style="color: green;">Min. 50% off</div>
+    </div>
+   </div>
+  </section>
+
+  <section class="h">
+    <div class="h-container">
+      <div class="monsoonEssentials">
+        <h5>Monsoon Essentials<i class="fa-solid fa-circle-chevron-right"></i></h5>
+      </div>
+      <div class="h">
+        <img src="images/h1.jpg" alt="">
+        <div class="h-item-title">Men's Slippers &...</div>
+        <div class="h-item-price" style="color: green;">Min. 70% Off</div>
+      </div>
+      <div class="h">
+        <img src="images/h2.jpg" alt="">
+        <div class="h-item-title">Exercise & Fitness</div>
+        <div class="h-item-price" style="color: green;">Min. 50% Off</div>
+      </div>
+      <div class="h">
+        <img src="images/h3.jpg" alt="">
+        <div class="h-item-title">Torches</div>
+        <div class="h-item-price" style="color: green;">Grab or Gone</div>
+      </div>
+      <div class="h">
+        <img src="images/h4.PNG" alt="">
+        <div class="h-item-title">Backpacks</div>
+        <div class="h-item-price" style="color: green;">Min. 70% Off</div>
+      </div>
+      
+  </section>
+</div>
+
+<!-- *** -->
+  
+<section class="i">
+  <div class="i-container">
+    <div class="sports">
+      <h6>Top Deals<i class="fa-solid fa-circle-chevron-right"></i></h6>
+    </div>
+    <div class="i-item">
+      <img src="images/i1.PNG" alt="">
+      <div class="i-item-title">Puma, Adidas..</div>
+      <div class="i-item-price">Min. 45% Off</div>
+      <div class="i-item-deal">Get Offers</div>
+    </div>
+    <div class="i-item">
+      <img src="images/i2.PNG" alt="">
+      <div class="i-item-title">Apple IPads</div>
+      <div class="i-item-price">Shop Now!</div>
+    </div>
+    <div class="i-item">
+      <img src="images/i3.PNG" alt="">
+      <div class="i-item-title">Amazing Deals!</div>
+      <div class="i-item-price">From ₹299</div>
+    </div>
+    <div class="i-item">
+      <img src="images/i4.PNG" alt="">
+      <div class="i-item-title">Kurta Sets</div>
+      <div class="i-item-price">Under ₹599</div>
+    </div>
+    <div class="i-item">
+      <img src="images/i5.PNG" alt="">
+      <div class="i-item-title">Kurta Sets</div>
+      <div class="i-item-price">Min. 75% Off</div>
+      <div class="i-item-deal">Get Offers</div>
+    </div>
+    <div class="i-item">
+      <img src="images/i6.PNG" alt="">
+      <div class="i-item-title">InstaX Cameras</div>
+      <div class="i-item-price">Get Now!</div>
+    </div>
+    </div>
+    </section>
+
+<!--footer-->
+
+<footer>
+  <div class="footer-top">
+      <div class="footer-section">
+          <div class="footer-column">
+              <div class="footer-heading">
+                  <p>ABOUT</p>
+              </div>
+              <div class="footer-links">
+                  <a href="#">Contact Us</a>
+                  <a href="#">About Us</a>
+                  <a href="#">Career</a>
+                  <a href="#">Flipkart Stories</a>
+                  <a href="#">Press</a>
+                  <a href="#">Corporate Information</a>
+                  
+              </div>
+          </div>
+          <div class="footer-column">
+              <div class="footer-heading">
+                  <p>GROUP COMPANIES</p>
+              </div>
+              <div class="footer-links" style="margin-bottom:70px;">
+                  <a href="#">Myntra</a>
+                  <a href="#">Cleartip</a>
+                  <a href="#">Shopsy</a>
+              </div>
+          </div>
+          <div class="footer-column">
+              <div class="footer-heading">
+                  <p>HELP</p>
+              </div>
+              <div class="footer-links" style="margin-bottom:20px;">
+                  <a href="#">Payments</a>
+                  <a href="#">Shipping</a>
+                  <a href="#">Cancellation & Returns</a>
+                  <a href="#">FAQ</a>
+                  <a href="#">Report Infringement</a>
+                 
+              </div>
+          </div>
+          <div class="footer-column">
+              <div class="footer-heading">
+                  <p>CONSUMER POLICY</p>
+              </div>
+              <div class="footer-links">
+                  <a href="#">Cancellation & Returns</a>
+                  <a href="#">Terms of Use</a>
+                  <a href="#">Security</a>
+                  <a href="#">Privacy</a>
+                  <a href="#">Sitemap</a>
+                  <a href="#">Grievance Redressal</a>
+              </div>
+          </div>
+          <div class="footer-column">
+              <div class="footer-heading">
+                <p>Mail Us</span></p>
+              </div>
+              <div class="footer-links" style="margin-bottom:90px;">
+                  <a href="#">Flipkart Internet Private Limited</a>
+                  <a href="#">Karnataka, India</a>
+              </div>
+              <div class="socials" style="font-size: 0.8rem;
+              color: #878787; position: absolute; top: 140px">
+                <p>Socials</span></p>
+                <div class="icons" style="color: white; margin-top:10px; font-size: 1em;">
+                <ul>
+                  <li>
+                   <i class="fa-brands fa-facebook"></i>
+                  </li>
+                  <li>
+                    <i class="fa-brands fa-instagram"></i>
+                  </li>
+                  <li>
+                    <i class="fa-brands fa-youtube"></i>
+                  </li>
+                </ul>
+              </div>
+              
+            </div>
+          </div>
+          
+          <div class="footer-column">
+              <div class="footer-heading">
+                  <p>Registered Office Address</p>
+              </div>
+              <div class="footer-links" style="color: white;">
+                  Flipkart Internet Private Limited <br> Buildings Alysaa, Begonia &
+                  <br> Clove Embassy Tech Village, <br> Outer Rung Road, Devarabeesanahalli Village, <br>
+                  Bengaluru, 560103, <br>
+                  Karnataka, India <br>
+                  CIN: 8888888888<br>
+                  Telephone: 000000000
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <div class="footer-bottom-group">
+          <div class="bottom-section">
+              <span><i class="fa-solid fa-store" style="color:rgb(255, 208, 0); margin-right: 5px;"></i></i> Become a Seller</span>
+          </div>
+          <div class="bottom-section">
+              <span><i class="fa-regular fa-star" style="color:rgb(255, 208, 0); margin-right: 5px;"></i> Advertise </span>
+          </div>
+          <div class="bottom-section">
+              <span><i class="fa-solid fa-gift" style="color:rgb(255, 208, 0); margin-right: 5px;"></i> Gift Cards</span>
+          </div>
+          <div class="bottom-section">
+              <span></span><i class="fa-solid fa-circle-question" style="color:rgb(255, 208, 0); margin-right: 5px;"></i> Help Centre</span>
+          </div>
+          <div class="bottom-section">
+            <span></span><i class="fa-regular fa-copyright" style="color:rgb(255, 208, 0); margin-right: 5px;"></i> 2007-2024</span>
+        </div>
+          <div class="payment-methods">
+              <img src="payment-methods.svg" alt="">
+          </div>
+      </div>
+  </div>
+</footer>
+
+<!-- script -->
+ 
+  <script>
+    let currentSlide = 0;
+
+function showSlide(index) {
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+    if (index >= totalSlides) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = totalSlides - 1;
+    } else {
+        currentSlide = index;
+    }
+    slides.style.transform = `translateX(${-currentSlide * 100}%)`;
+}
+
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+    showSlide(currentSlide - 1);
+}
+
+setInterval(() => {
+    nextSlide();
+}, 3000);
+  </script>
+</body>
+</html>
