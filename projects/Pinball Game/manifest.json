@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "   Pinball Game Extension",
+    "version": "1.0",
+    "description": "Shoot the Ball",
+    "permissions": [
+        "storage"
+    ],
+    "optional-permissions" : ["tabs"],
+    "action": {
+        "default_popup": "index.html"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "index.html"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+    }

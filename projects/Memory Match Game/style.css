@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #6563ff; /* Background color */
+}
+
+.wrapper {
+    height: 400px; /* Height of the game board */
+    width: 400px; /* Width of the game board */
+    padding: 25px; /* Padding around the game board */
+    background: #f8f8f8; /* Background color of the wrapper */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.cards {
+    height: 100%; /* Full height */
+    width: 100%; /* Full width */
+    display: flex; /* Flexbox for card layout */
+    flex-wrap: wrap; /* Allow wrapping of cards */
+    justify-content: space-between; /* Space between cards */
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.cards .card {
+    cursor: pointer; /* Pointer on hover */
+    position: relative; /* Positioning for card flip */
+    perspective: 800px; /* 3D perspective */
+    transform-style: preserve-3d; /* Preserve 3D styles */
+    height: calc(100% / 4 - 10px); /* Dynamic height */
+    width: calc(100% / 4 - 10px); /* Dynamic width */
+    margin: 5px; /* Margin for spacing */
+}
+
+.card.shake {
+    animation: shake 0.35s ease-in-out; /* Shake animation */
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-13px);
+    }
+    40% {
+        transform: translateX(13px);
+    }
+    60% {
+        transform: translateX(-8px);
+    }
+    80% {
+        transform: translateX(8px);
+    }
+}
+
+.cards .card .view {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    user-select: none; /* Prevent text selection */
+    pointer-events: none; /* Disable pointer events */
+    position: absolute; /* Positioning for flipping */
+    background: #fff; /* Background of the card */
+    border-radius: 7px; /* Rounded corners */
+    backface-visibility: hidden; /* Hide back face when flipped */
+    transition: transform 0.25s linear; /* Transition for flip */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.card .front-view span {
+    color: #6563ff; /* Color of the question mark */
+    font-size: 40px; /* Font size */
+}
+
+.card .back-view {
+    transform: rotateY(-180deg); /* Rotate back view */
+}
+
+.card .back-view img {
+    max-width: 100%; /* Adjust to fit the card */
+    border-radius: 7px; /* Optional: for a nicer appearance */
+}
+
+.card.flip .front-view {
+    transform: rotateY(180deg); /* Rotate front view */
+}
+
+.card.flip .back-view {
+    transform: rotateY(0); /* Show back view */
+}
+
