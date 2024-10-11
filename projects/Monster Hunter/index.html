@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Monster Hunter</title>
+  </head>
+  <body>
+
+    <div class="information">
+      <div class="score" id="currentLives">❤️ </div>
+      <div class="difficulty-menu">
+        <button class="difficulty-btn" style="background: rgb(2, 202, 2);" onclick="setDifficulty('easy')">Easy</button>
+        <button class="difficulty-btn" style="background: yellow;" onclick="setDifficulty('medium')">Medium</button>
+        <button class="difficulty-btn" style="background: rgb(238, 2, 2);" onclick="setDifficulty('hard')">Hard</button>
+      </div>
+      <button class="btn" id="startGameBtn" onclick="startGame()">
+        Start Game
+      </button>
+      <div>
+        <div class="score" id="currentScore">Score: </div>
+        <div class="score" id="highestScore">High Score:</div>
+      </div>
+    </div>
+
+    <canvas id="gameCanvas" width="800" height="550"></canvas>
+
+    <script src="script.js"></script>
+  </body>
+</html>
