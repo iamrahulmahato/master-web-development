@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutritional Data</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            /* ADNAN RIZVI*/
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #ffcccb, #ffebcd); /* Gradient background */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height */
+        }
+
+        #container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%; /* Responsive width */
+            max-width: 800px; /* Max width */
+            text-align: center; /* Center align text */
+        }
+
+        h1 {
+             /* ADNAN RIZVI*/
+            margin-bottom: 20px;
+            color: #333; /* Dark color for the heading */
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+         /* ADNAN RIZVI*/
+
+        #searchButton {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px; /* Space between input and button */
+        }
+
+        #searchButton:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px; /* Space above the table */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1; /* Highlight row on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h1>Recipe Nutrition Search</h1>
+    <input type="text" id="foodInput" placeholder="Enter food item...">
+    <button id="searchButton">Search</button>
+
+    <table id="resultTable">
+        <thead>
+            <tr>
+                <th>Food</th>
+                <th>Calories</th>
+                <th>Proteins (g)</th>
+                <th>Fats (g)</th>
+                <th>Carbohydrates (g)</th>
+                <th>Sugar (g)</th>
+                <th>Fibres (g)</th>
+                <th>Salt (g)</th>
+            </tr>
+        </thead>
+        <tbody id="resultBody">
+            <!-- Data will be populated here -->
+        </tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

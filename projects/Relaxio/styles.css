@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  padding: 10px;
+  background: linear-gradient(270deg, #000000, #6D018B);
+  background-size: 200% 200%;
+  animation: Gradient 3s ease infinite;
+  color: #fff;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: auto;
+  align-items: center;
+  animation: bodyFadeIn 1s;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 16px;
+  font-family: 'Roboto Mono', monospace;
+  border: 2px solid #4CAF50;
+  background-color: transparent;
+  color: #4CAF50;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  border: 2px solid #45a049;
+  background-color: #45a049;
+  color: white;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  font-size: 6em;
+  font-family: 'Honk', cursive;
+}
+
+h2, h3 {
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #fff;
+  width: 80%;
+  margin: 20px auto;
+}
+
+img {
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+#gameButtons, #audioButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Minimalistic Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@keyframes Gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes bodyFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

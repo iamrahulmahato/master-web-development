@@ -1,0 +1,749 @@
+@import "https://unpkg.com/normalize.css";
+@import "https://unpkg.com/open-props/open-props.min.css";
+@import "https://unpkg.com/open-props/normalize.min.css";
+
+
+* {
+  box-sizing: border-box;
+}
+
+.land-of-three * {
+  transform-style: preserve-3d;
+}
+
+[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+:root {
+  --cell-size: 6vmin;
+  --primary-hue: 280;
+  --secondary-hue: 320;
+  --base-drop: 0.05;
+  --red: hsl(18, 100%, 50%);
+  --yellow: hsl(44, 83%, 53%);
+  --green: hsl(130, 52%, 46%);
+  --blue: hsl(215, 100%, 53%);
+  --screen-hide: 1;
+  --intro-screen-hide: 0;
+  --screen-delay: 0;
+  --show-results: 0;
+  --show-win: 0;
+  --show-draw: 0;
+  --show-primary-win: 0;
+  --show-secondary-win: 0;
+  --column-padding: 0.75;
+  --gap-coefficient: 0.1;
+  --primary: var(--red);
+  --secondary: var(--yellow);
+  --rows: 6;
+  --column-buffer: calc(var(--cell-size) * 2);
+  --column-padding: calc(var(--cell-size) * var(--column-padding, 0.75));
+  --column-size: calc(var(--rows, 6) * var(--cell-size) + var(--column-padding, 0.75));
+  /*--column-height: calc(var(--cell-size) * (-1 - var(--column-padding)));*/
+  --rotation: -24deg;
+  --bg: var(--surface-1);
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+h1 {
+  color: var(--gray-0);
+}
+
+svg {
+  fill: currentColor;
+}
+
+form {
+  display: grid;
+  place-items: center;
+  position: fixed;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(7, var(--cell-size));
+  grid-auto-flow: column;
+  grid-gap: 0 0;
+  position: relative;
+}
+
+.board__column {
+  aspect-ratio: 1 / var(--rows);
+  position: relative;
+}
+
+.board__controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+form > [type="reset"] {
+  height: 50px;
+  aspect-ratio: 1;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 6;
+  transform: translateZ(300vmin);
+}
+
+.board__move:hover {
+  --show-ghost: 1;
+}
+
+.board__move[for*="s"] {
+  --disc-hue: var(--secondary-hue);
+}
+.board__move[for*="p"] {
+  --disc-hue: var(--primary-hue);
+}
+
+.board__cell {
+  aspect-ratio: 1;
+}
+
+.board__labels {
+  --depth: var(--cell-size);
+  color: transparent;
+  position: absolute;
+  height: calc((var(--rows, 6) * var(--cell-size)) + var(--column-buffer));
+  left: 0;
+  bottom: 0;
+  cursor: pointer;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  z-index: var(--row);
+}
+
+.move-controls {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.board__labels .cuboid__side {
+  overflow: hidden;
+}
+
+.board__move {
+  height: 100%;
+  width: var(--cell-size);
+  position: absolute;
+}
+
+.board__disc--primary {
+  --disc-color: var(--primary);
+}
+
+.board__disc--secondary {
+  --disc-color: var(--secondary);
+}
+
+.disc {
+  --depth: calc(var(--cell-size) * 0.5);
+  color: var(--disc-color);
+  position: absolute;
+  inset: 0;
+  display: none;
+  animation: drop calc((var(--base-drop) * var(--row)) * 1s);
+}
+
+.board__column:has([for*="s"]:hover) .disc--ghost {
+  display: block;
+  --show-ghost: 1;
+  --disc-color: var(--secondary);
+}
+
+.board__column:has([for*="p"]:hover) .disc--ghost {
+  display: block;
+  --show-ghost: 1;
+  --disc-color: var(--primary);
+}
+
+.disc--ghost {
+  width: 100%;
+  aspect-ratio: 1;
+  color: var(--disc-color);
+  position: absolute;
+  top: calc(var(--column-buffer) * -1);
+  left: 0;
+  opacity: var(--show-ghost, 1);
+}
+
+.win-disc {
+  height: var(--cell-size);
+  aspect-ratio: 1;
+  background: var(--winner);
+}
+
+.disc__piece {
+  height: 80%;
+  aspect-ratio: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes drop {
+  from {
+    transform: translateY(calc(
+      (var(--row) * (var(--cell-size) * -1)) - (var(--column-buffer) - var(--cell-size))
+    ));
+  }
+}
+
+/* Aesthetic stuff */
+.board__aesthetics {
+  position: absolute;
+  inset: calc(var(--cell-size) * -0.5);
+}
+
+.board__cage .cuboid__side:nth-of-type(1),
+.board__cage .cuboid__side:nth-of-type(3),
+.board__cage .cuboid__side:nth-of-type(5),
+.board__cage .cuboid__side:nth-of-type(6) {
+  border: calc(var(--cell-size) * 0.5) solid var(--blue);
+  background: repeating-linear-gradient(90deg, var(--blue) 0 calc(var(--cell-size) * 0.1), transparent calc(var(--cell-size) * 0.1) calc(var(--cell-size) * 0.9), var(--blue) calc(var(--cell-size) * 0.9) calc(var(--cell-size) * 1));
+}
+.board__cage .cuboid__side:nth-of-type(1),
+.board__cage .cuboid__side:nth-of-type(3) {
+  border-top: 0;
+  border-bottom: 0;
+}
+.board__cage .cuboid__side:nth-of-type(5),
+.board__cage .cuboid__side:nth-of-type(6) {
+  background: repeating-linear-gradient(90deg, var(--blue) 0 calc(var(--cell-size) * 0.1), transparent calc(var(--cell-size) * 0.1) calc(var(--cell-size) * 0.9), var(--blue) calc(var(--cell-size) * 0.9) calc(var(--cell-size) * 1)),
+    repeating-linear-gradient(0deg, var(--blue) 0 calc(var(--cell-size) * 0.1), transparent calc(var(--cell-size) * 0.1) calc(var(--cell-size) * 0.9), var(--blue) calc(var(--cell-size) * 0.9) calc(var(--cell-size) * 1));
+}
+
+.board-container {
+  transform: translate3d(0, 0, 100vmin) rotateX(var(--rotation, -24deg)) rotateY(var(--rotation, -24deg));
+}
+
+.board__cage {
+  --depth: calc(var(--cell-size) * 0.55);
+  color: var(--blue);
+  width: 100%;
+  height: 100%;
+}
+
+.board__leg {
+  position: absolute;
+  bottom: -20%;
+  width: calc(var(--cell-size) * 0.75);
+  height: 50%;
+}
+
+.leg__upright {
+  --depth: var(--cell-size);
+  height: 100%;
+  width: 100%;
+  color: var(--blue);
+}
+
+.leg__foot {
+  --depth: calc(var(--cell-size) * 4);
+  color: var(--blue);
+}
+
+.board__leg--left {
+  right: 95%;
+}
+
+.board__leg--right {
+  left: 95%;
+}
+
+.leg {
+  height: 100%;
+  width: 100%;
+}
+
+.leg__foot {
+  width: 100%;
+  aspect-ratio: 1;
+  position: absolute;
+  bottom: 0;
+  background: hsl(280 80% 50% / 0.5);
+}
+
+/* Generic reusable game UI stuff */
+
+/* Cuboidy stuff */
+
+.cuboid {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.cuboid__side {
+  background: currentColor;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  filter: brightness(var(--brightness, 1));
+}
+/* T, R, B, L, F, B */
+.cuboid__side:nth-of-type(1) {
+  --brightness: 0.8;
+  top: 0;
+  height: var(--depth, 50vmin);
+  transform: translateY(-50%) rotateX(-90deg);
+}
+.cuboid__side:nth-of-type(2) {
+  --brightness: 0.6;
+  top: 50%;
+  right: 0;
+  width: var(--depth, 50vmin);
+  transform: translate(50%, -50%) rotateY(-90deg);
+}
+
+.cuboid__side:nth-of-type(3) {
+  --brightness: 1;
+  transform: translateZ(calc(var(--depth, 50vmin) / 2)) rotateY(0deg);
+}
+
+.board__cage .cuboid__side:nth-of-type(3) {
+  --brightness: 1.3;
+  bottom: 0;
+  height: var(--depth, 50vmin);
+  transform: translateY(50%) rotateX(90deg);
+}
+.board__cage .cuboid__side:nth-of-type(4) {
+  --brightness: 0.6;
+  top: 50%;
+  width: var(--depth, 50vmin);
+  transform: translate(-50%, -50%) rotateY(90deg);
+}
+.board__cage .cuboid__side:nth-of-type(5) {
+  --brightness: 0.75;
+  transform: translateZ(calc(var(--depth, 50vmin) / -2)) rotateY(180deg);
+}
+.board__cage .cuboid__side:nth-of-type(6) {
+  --brightness: 1;
+  transform: translateZ(calc(var(--depth, 50vmin) / 2)) rotateY(0deg);
+}
+
+/* Override for  */
+.disc__piece .cuboid__side:nth-of-type(3) {
+  --brightness: 1;
+  height: 100%;
+  width: 100%;
+  transform: translateZ(calc(var(--depth, 50vmin) / 2)) rotateY(0deg);
+}
+
+/* Dialog and screen */
+
+:root:has(#dismiss:checked) .screen--intro {
+  transform: translate3d(-50%, -50%, 200vmin) translateY(100vh) scale(0);
+  z-index: -1;
+}
+
+.screen {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  transform: translate3d(-50%, -50%, 200vmin);
+  transition: transform 0.2s;
+}
+
+.dialog {
+  min-width: calc(var(--columns) * var(--cell-size));
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(1rem, 2vmin, 2rem);
+  backdrop-filter: blur(10px) saturate(0.75);
+  color: var(--gray-0);
+  background: hsl(210 29% 20% / 0.8);
+  position: absolute;
+  box-shadow: var(--shadow-6);
+  text-align: center;
+  border-style: solid;
+  border-top-color: var(--red);
+  border-right-color: var(--green);
+  border-bottom-color: var(--yellow);
+  border-left-color: var(--blue);
+  border-width: var(--size-2);
+  display: grid;
+}
+
+.dialog * + * {
+  margin-top: 2rem;
+}
+
+.dialog__content {
+  padding: var(--size-4);
+  display: grid;
+  place-items: center;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.dialog__content {
+  opacity: var(--opacity, 1);
+  z-index: var(--z, 2);
+}
+
+.dialog__content--intro {
+  --opacity: calc(1 - var(--show-win, 0));
+  --z: calc(1 - (2 * var(--show-win, 0)));
+}
+
+.dialog__content--win {
+  --z: calc(-1 + (var(--show-win) * 2));
+  --opacity: var(--show-win);
+}
+
+.dialog__content--draw {
+  --z: calc(-1 + (var(--show-draw) * 2));
+  --opacity: var(--show-draw);
+}
+
+/* Transition buttons */
+.faux-button {
+  --bg: var(--gray-9);
+  box-sizing: border-box;
+  font-size: var(--font-size-fluid-1);
+  padding: var(--size-4) var(--size-6);
+  background: var(--bg);
+  color: var(--gray-0);
+  font-weight: bold;
+  font-family: 'Google Sans', sans-serif;
+  border: var(--size-2) solid var(--gray-0);
+  display: inline-block;
+  transform: translateY(calc(var(--y, 0) * 1%)) scale(var(--s));
+  transition: transform 0.1s, background 0.1s, opacity 0.1s;
+}
+
+.faux-button:hover {
+  --bg: black;
+  --y: -5;
+  --s: 1.1;
+}
+
+.faux-button:active {
+  --bg: black;
+  --y: 5;
+  --s: 0.9;
+}
+
+/* Reset button */
+.game-reset {
+  background: var(--bg);
+  color: var(--gray-0);
+  height: 48px;
+  aspect-ratio: 1;
+  padding: 0;
+  border: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  opacity: 0.25;
+}
+
+.game-reset:hover {
+  opacity: 1;
+}
+
+.game-reset svg {
+  width: 65%;
+}
+
+
+
+/* Logic Demons live down here.... */
+
+/* The "Magic" bullet for turn switching */
+/* Creates a width to reveal the other label */
+.board__labels .move-controls:after {
+  content: counter(turn, lower-roman);
+  font-size: 1px;
+  letter-spacing: var(--cell-size);
+  color: transparent;
+}
+
+.board__move[for*="s"] {
+  left: 0;
+}
+
+.board__move[for*="p"] {
+  right: 0;
+}
+
+body {
+  counter-reset: turn 1;
+}
+
+[id*="p"]:checked {
+  counter-increment: turn 2;
+}
+
+[id*="s"]:checked {
+  counter-increment: turn -2;
+}
+
+.board:has(:is([id=s-1], [id=p-1]):checked) .board__labels[data-for=move-1],
+.board:has([id=s-2]:checked, [id=p-2]:checked) .board__labels[data-for=move-2],
+.board:has([id=s-3]:checked, [id=p-3]:checked) .board__labels[data-for=move-3],
+.board:has([id=s-4]:checked, [id=p-4]:checked) .board__labels[data-for=move-4],
+.board:has([id=s-5]:checked, [id=p-5]:checked) .board__labels[data-for=move-5],
+.board:has([id=s-6]:checked, [id=p-6]:checked) .board__labels[data-for=move-6],
+.board:has([id=s-7]:checked, [id=p-7]:checked) .board__labels[data-for=move-7],
+.board:has([id=s-8]:checked, [id=p-8]:checked) .board__labels[data-for=move-8],
+.board:has([id=s-9]:checked, [id=p-9]:checked) .board__labels[data-for=move-9],
+.board:has([id=s-10]:checked, [id=p-10]:checked) .board__labels[data-for=move-10],
+.board:has([id=s-11]:checked, [id=p-11]:checked) .board__labels[data-for=move-11],
+.board:has([id=s-12]:checked, [id=p-12]:checked) .board__labels[data-for=move-12],
+.board:has([id=s-13]:checked, [id=p-13]:checked) .board__labels[data-for=move-13],
+.board:has([id=s-14]:checked, [id=p-14]:checked) .board__labels[data-for=move-14],
+.board:has([id=s-15]:checked, [id=p-15]:checked) .board__labels[data-for=move-15],
+.board:has([id=s-16]:checked, [id=p-16]:checked) .board__labels[data-for=move-16],
+.board:has([id=s-17]:checked, [id=p-17]:checked) .board__labels[data-for=move-17],
+.board:has([id=s-18]:checked, [id=p-18]:checked) .board__labels[data-for=move-18],
+.board:has([id=s-19]:checked, [id=p-19]:checked) .board__labels[data-for=move-19],
+.board:has([id=s-20]:checked, [id=p-20]:checked) .board__labels[data-for=move-20],
+.board:has([id=s-21]:checked, [id=p-21]:checked) .board__labels[data-for=move-21],
+.board:has([id=s-22]:checked, [id=p-22]:checked) .board__labels[data-for=move-22],
+.board:has([id=s-23]:checked, [id=p-23]:checked) .board__labels[data-for=move-23],
+.board:has([id=s-24]:checked, [id=p-24]:checked) .board__labels[data-for=move-24],
+.board:has([id=s-25]:checked, [id=p-25]:checked) .board__labels[data-for=move-25],
+.board:has([id=s-26]:checked, [id=p-26]:checked) .board__labels[data-for=move-26],
+.board:has([id=s-27]:checked, [id=p-27]:checked) .board__labels[data-for=move-27],
+.board:has([id=s-28]:checked, [id=p-28]:checked) .board__labels[data-for=move-28],
+.board:has([id=s-29]:checked, [id=p-29]:checked) .board__labels[data-for=move-29],
+.board:has([id=s-30]:checked, [id=p-30]:checked) .board__labels[data-for=move-30],
+.board:has([id=s-31]:checked, [id=p-31]:checked) .board__labels[data-for=move-31],
+.board:has([id=s-32]:checked, [id=p-32]:checked) .board__labels[data-for=move-32],
+.board:has([id=s-33]:checked, [id=p-33]:checked) .board__labels[data-for=move-33],
+.board:has([id=s-34]:checked, [id=p-34]:checked) .board__labels[data-for=move-34],
+.board:has([id=s-35]:checked, [id=p-35]:checked) .board__labels[data-for=move-35],
+.board:has([id=s-36]:checked, [id=p-36]:checked) .board__labels[data-for=move-36],
+.board:has([id=s-37]:checked, [id=p-37]:checked) .board__labels[data-for=move-37],
+.board:has([id=s-38]:checked, [id=p-38]:checked) .board__labels[data-for=move-38],
+.board:has([id=s-39]:checked, [id=p-39]:checked) .board__labels[data-for=move-39],
+.board:has([id=s-40]:checked, [id=p-40]:checked) .board__labels[data-for=move-40],
+.board:has([id=s-41]:checked, [id=p-41]:checked) .board__labels[data-for=move-41],
+.board:has([id=s-42]:checked, [id=p-42]:checked) .board__labels[data-for=move-42] {
+  display: none;
+}
+
+/* How to work out the winning combinations. You can't nest :has() */
+/* But you could use data-attributes or checks for it */
+
+/* If a column has 4 cells in a row somehow it's a vertical win */
+.board__column:has([data-row=p-1]:checked):has([data-row=p-2]:checked):has([data-row=p-3]:checked):has([data-row=p-4]:checked) ~ .win,
+.board__column:has([data-row=p-2]:checked):has([data-row=p-3]:checked):has([data-row=p-4]:checked):has([data-row=p-5]:checked) ~ .win,
+.board__column:has([data-row=p-3]:checked):has([data-row=p-4]:checked):has([data-row=p-5]:checked):has([data-row=p-6]:checked) ~ .win {
+  display: block;
+  --winner: var(--primary);
+  --show-win: 1;
+}
+.board__column:has([data-row=s-1]:checked):has([data-row=s-2]:checked):has([data-row=s-3]:checked):has([data-row=s-4]:checked) ~ .win,
+.board__column:has([data-row=s-2]:checked):has([data-row=s-3]:checked):has([data-row=s-4]:checked):has([data-row=s-5]:checked) ~ .win,
+.board__column:has([data-row=s-3]:checked):has([data-row=s-4]:checked):has([data-row=s-5]:checked):has([data-row=s-6]:checked) ~ .win {
+  display: block;
+  --winner: var(--secondary);
+  --show-win: 1;
+}
+
+/* If you have 4 columns each with the same row checked, you have a match */
+.board__column:has([data-row=s-1]:checked) +
+.board__column:has([data-row=s-1]:checked) +
+.board__column:has([data-row=s-1]:checked) +
+.board__column:has([data-row=s-1]:checked) ~ .win,
+.board__column:has([data-row=s-2]:checked) +
+.board__column:has([data-row=s-2]:checked) +
+.board__column:has([data-row=s-2]:checked) +
+.board__column:has([data-row=s-2]:checked) ~ .win,
+.board__column:has([data-row=s-3]:checked) +
+.board__column:has([data-row=s-3]:checked) +
+.board__column:has([data-row=s-3]:checked) +
+.board__column:has([data-row=s-3]:checked) ~ .win,
+.board__column:has([data-row=s-4]:checked) +
+.board__column:has([data-row=s-4]:checked) +
+.board__column:has([data-row=s-4]:checked) +
+.board__column:has([data-row=s-4]:checked) ~ .win,
+.board__column:has([data-row=s-5]:checked) +
+.board__column:has([data-row=s-5]:checked) +
+.board__column:has([data-row=s-5]:checked) +
+.board__column:has([data-row=s-5]:checked) ~ .win,
+.board__column:has([data-row=s-6]:checked) +
+.board__column:has([data-row=s-6]:checked) +
+.board__column:has([data-row=s-6]:checked) +
+.board__column:has([data-row=s-6]:checked) ~ .win {
+  display: block;
+  --winner: var(--secondary);
+  --show-win: 1;
+}
+
+.board__column:has([data-row=p-1]:checked) +
+.board__column:has([data-row=p-1]:checked) +
+.board__column:has([data-row=p-1]:checked) +
+.board__column:has([data-row=p-1]:checked) ~ .win,
+.board__column:has([data-row=p-2]:checked) +
+.board__column:has([data-row=p-2]:checked) +
+.board__column:has([data-row=p-2]:checked) +
+.board__column:has([data-row=p-2]:checked) ~ .win,
+.board__column:has([data-row=p-3]:checked) +
+.board__column:has([data-row=p-3]:checked) +
+.board__column:has([data-row=p-3]:checked) +
+.board__column:has([data-row=p-3]:checked) ~ .win,
+.board__column:has([data-row=p-4]:checked) +
+.board__column:has([data-row=p-4]:checked) +
+.board__column:has([data-row=p-4]:checked) +
+.board__column:has([data-row=p-4]:checked) ~ .win,
+.board__column:has([data-row=p-5]:checked) +
+.board__column:has([data-row=p-5]:checked) +
+.board__column:has([data-row=p-5]:checked) +
+.board__column:has([data-row=p-5]:checked) ~ .win,
+.board__column:has([data-row=p-6]:checked) +
+.board__column:has([data-row=p-6]:checked) +
+.board__column:has([data-row=p-6]:checked) +
+.board__column:has([data-row=p-6]:checked) ~ .win {
+  display: block;
+  --winner: var(--primary);
+  --show-win: 1;
+}
+
+/* If you have these diagonal combinations, you also have a win */
+.board__column:has([data-row=p-6]:checked) +
+.board__column:has([data-row=p-5]:checked) +
+.board__column:has([data-row=p-4]:checked) +
+.board__column:has([data-row=p-3]:checked) ~ .win,
+.board__column:has([data-row=p-5]:checked) +
+.board__column:has([data-row=p-4]:checked) +
+.board__column:has([data-row=p-3]:checked) +
+.board__column:has([data-row=p-2]:checked) ~ .win,
+.board__column:has([data-row=p-4]:checked) +
+.board__column:has([data-row=p-3]:checked) +
+.board__column:has([data-row=p-2]:checked) +
+.board__column:has([data-row=p-1]:checked) ~ .win,
+.board__column:has([data-row=p-1]:checked) +
+.board__column:has([data-row=p-2]:checked) +
+.board__column:has([data-row=p-3]:checked) +
+.board__column:has([data-row=p-4]:checked) ~ .win,
+.board__column:has([data-row=p-2]:checked) +
+.board__column:has([data-row=p-3]:checked) +
+.board__column:has([data-row=p-4]:checked) +
+.board__column:has([data-row=p-5]:checked) ~ .win,
+.board__column:has([data-row=p-3]:checked) +
+.board__column:has([data-row=p-4]:checked) +
+.board__column:has([data-row=p-5]:checked) +
+.board__column:has([data-row=p-6]:checked) ~ .win {
+  display: block;
+  --winner: var(--primary);
+  --show-win: 1;
+}
+.board__column:has([data-row=s-6]:checked) +
+.board__column:has([data-row=s-5]:checked) +
+.board__column:has([data-row=s-4]:checked) +
+.board__column:has([data-row=s-3]:checked) ~ .win,
+.board__column:has([data-row=s-5]:checked) +
+.board__column:has([data-row=s-4]:checked) +
+.board__column:has([data-row=s-3]:checked) +
+.board__column:has([data-row=s-2]:checked) ~ .win,
+.board__column:has([data-row=s-4]:checked) +
+.board__column:has([data-row=s-3]:checked) +
+.board__column:has([data-row=s-2]:checked) +
+.board__column:has([data-row=s-1]:checked) ~ .win,
+.board__column:has([data-row=s-1]:checked) +
+.board__column:has([data-row=s-2]:checked) +
+.board__column:has([data-row=s-3]:checked) +
+.board__column:has([data-row=s-4]:checked) ~ .win,
+.board__column:has([data-row=s-2]:checked) +
+.board__column:has([data-row=s-3]:checked) +
+.board__column:has([data-row=s-4]:checked) +
+.board__column:has([data-row=s-5]:checked) ~ .win,
+.board__column:has([data-row=s-3]:checked) +
+.board__column:has([data-row=s-4]:checked) +
+.board__column:has([data-row=s-5]:checked) +
+.board__column:has([data-row=s-6]:checked) ~ .win {
+  display: block;
+  --winner: var(--secondary);
+  --show-win: 1;
+}
+
+.board__column:has([data-row*="-1"]:checked):has([data-row*="-2"]:checked):has([data-row*="-3"]:checked):has([data-row*="-4"]:checked):has([data-row*="-5"]:checked):has([data-row*="-6"]:checked) +
+.board__column:has([data-row*="-1"]:checked):has([data-row*="-2"]:checked):has([data-row*="-3"]:checked):has([data-row*="-4"]:checked):has([data-row*="-5"]:checked):has([data-row*="-6"]:checked) +
+.board__column:has([data-row*="-1"]:checked):has([data-row*="-2"]:checked):has([data-row*="-3"]:checked):has([data-row*="-4"]:checked):has([data-row*="-5"]:checked):has([data-row*="-6"]:checked) +
+.board__column:has([data-row*="-1"]:checked):has([data-row*="-2"]:checked):has([data-row*="-3"]:checked):has([data-row*="-4"]:checked):has([data-row*="-5"]:checked):has([data-row*="-6"]:checked) +
+.board__column:has([data-row*="-1"]:checked):has([data-row*="-2"]:checked):has([data-row*="-3"]:checked):has([data-row*="-4"]:checked):has([data-row*="-5"]:checked):has([data-row*="-6"]:checked) +
+.board__column:has([data-row*="-1"]:checked):has([data-row*="-2"]:checked):has([data-row*="-3"]:checked):has([data-row*="-4"]:checked):has([data-row*="-5"]:checked):has([data-row*="-6"]:checked) +
+.board__column:has([data-row*="-1"]:checked):has([data-row*="-2"]:checked):has([data-row*="-3"]:checked):has([data-row*="-4"]:checked):has([data-row*="-5"]:checked):has([data-row*="-6"]:checked) + .win {
+  display: block;
+  --show-draw: 1;
+}
+
+/* End logic. Soooo much better than SF */
+.win {
+  display: none;
+  width: 300%;
+  height: 300%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  animation: result 0.2s 0.5s both;
+  transform: translate3d(-50%, -50%, 0)
+    rotateY(calc(var(--rotation) * -1))
+    rotateX(calc(var(--rotation) * -1))
+    translateZ(100vmin)
+    translateY(0);
+}
+
+@keyframes result {
+  0% {
+    transform: translate3d(-50%, -50%, 0)
+    rotateY(calc(var(--rotation) * -1))
+    rotateX(calc(var(--rotation) * -1))
+    translateZ(100vmin)
+    translateY(100vh);
+  }
+}
+
+
+/* Let's try something new */
+
+[id*=p]:checked ~ .board__disc {
+  display: block;
+  --disc-color: var(--primary);
+}
+[id*=s]:checked ~ .board__disc {
+  display: block;
+  --disc-color: var(--secondary);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(7, var(--cell-size));
+  grid-auto-flow: column;
+  grid-gap: 0 0;
+  position: relative;
+}

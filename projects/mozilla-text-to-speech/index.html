@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text to Speech</title>
+    <!-- External CSS for styling -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <h1>Text to Speech</h1>
+
+        <!-- Button to toggle the text box visibility -->
+        <button id="toggle" class="btn-toggle btn">Toggle Text Box</button>
+
+        <!-- Text box for user input -->
+        <div class="text-box" id="text-box">
+            <div class="close" id="close">x</div>
+            <h3>Choose a Voice</h3>
+            <!-- Dropdown to select a voice -->
+            <select id="voices"></select>
+            <!-- Text area for input text -->
+            <textarea id="text" placeholder="Enter the text you want to read aloud..."></textarea>
+            <!-- Button to read the text -->
+            <button class="btn" id="read">Read Text</button>
+        </div>
+    </div>
+
+    <main></main>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
