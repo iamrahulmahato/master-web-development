@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.gradient-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to right, #ffd2cf, #ffb5b8);
+    color: white;
+    overflow: hidden;
+    text-align: center;
+}
+
+.heading {
+    margin: 0;
+    background: linear-gradient(45deg, #3498db, #8e44ad, #3498db);
+    background-size: 200% 200%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradientAnimation 3s linear infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.paragraph {
+    margin-top: 10px;
+    color: #100b0b;
+    text-align: center;
+}
+
+.form-section {
+    flex: 1;
+    background: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    color: white;
+    margin-bottom: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+}
+
+.result-container {
+    position: relative;
+}
+
+.result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #2ecc71;
+    display: none;
+}
+
+.send-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.send-btn:hover {
+    background-color: #2980b9;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #f0f0f0;
+    padding: 10px;
+    transform-origin: 100% 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+
+    .gradient-content{
+        order: 2;
+    }
+    .form-section {
+        flex: 1; 
+    }
+}

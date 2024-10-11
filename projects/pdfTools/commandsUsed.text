@@ -1,0 +1,7 @@
+initialize npm: npm init -y
+install express: npm i express or npm install express
+run server.js: node server.js
+install nodemon for auto restart server.js: npm i -g nodemon
+run server.js through nodemon: nodemon server.js
+install multer: npm i multer (used for uploading files) 
+pdf merger : npm i pdf-merger-js

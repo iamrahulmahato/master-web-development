@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- Add Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <h1 id="title">RELAXIO</h1>
+    <hr>
+    <button id="quoteButton">Motivate Me</button>
+    <h2 id="quote"></h2>
+    <hr>
+    <button id="imageButton">Meow! &#x1F638;</button>
+    <img id="image" width="200" height="200">
+    <hr>
+    <h3>Guess the Number Game</h3>
+    <p>Guess a number between 1 and 10:</p>
+    <input id="guess" type="number" min="1" max="10">
+    <div id="gameButtons">
+      <button id="guessButton">Guess</button>
+      <button id="resetButton">Reset</button>
+    </div>
+    <p id="gameResult"></p>
+    <hr>
+    <h3>Relaxing Music</h3>
+    <div id="audioButtons">
+      <button id="prevButton"><i class="bi bi-skip-backward-fill"></i></button>
+      <button id="playButton"><i class="bi bi-play-fill"></i></button>
+      <button id="nextButton"><i class="bi bi-skip-forward-fill"></i></button>
+      <button id="repeatButton"><i class="bi bi-arrow-repeat"></i></button> <!-- Repeat button -->
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
