@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Bootstrap Table</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Add custom styles here */
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="table-responsive">
+            <table id="userTable" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">S.No</th>
+                        <th scope="col">User ID</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table body will be filled dynamically using JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal for meeting code input -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Enter Meeting Code</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="meetingForm">
+                        <div class="form-group">
+                            <p>Hey! Welcome EduBot portal!</p>
+                            <p>Goto to <a href="/">Virtual Portal</a> to get your meeting code. <br>
+                                If you have already got the code, please enter the meeting code to join the meeting.</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="receiverEmail">Receiver Email</label>
+                            <input type="email" class="form-control" id="receiverEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="meetingCode">Meeting Code:</label>
+                            <input type="text" class="form-control" id="meetingCode" required>
+                        </div>
+                        <div class="form-group my-4">
+                            <label for="disclaimer">Disclaimer:</label>
+                            <p>By clicking send, you agree to follow the rules and regulations of the meeting platform.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="submitBtn" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const cid = urlParams.get('cid');
+            // Fetch data from the API
+            if (cid) {
+                $.ajax({
+                    url: 'http://localhost:5000/enrollment/get-users-by-course-id?cid=' + cid,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (response) {
+                        // Populate the table with the fetched data
+                        if (response.users && response.users.length > 0) {
+                            $.each(response.users, function (index, user) {
+                                var rowNum = index + 1;
+                                var newRow = '<tr>' +
+                                    '<td>' + rowNum + '</td>' +
+                                    '<td>' + user.id + '</td>' +
+                                    '<td>' + user.email + '</td>' +
+                                    '<td>' +
+                                    '<button type="button" class="btn btn-primary btn-sm">Message</button>' +
+                                    '<button type="button" class="btn btn-success btn-sm mx-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Meet Now</button>' +
+                                    '</td>' +
+                                    '</tr>';
+                                $('#userTable tbody').append(newRow);
+                            });
+                        } else {
+                            // No users found
+                            $('#userTable tbody').append('<tr><td colspan="4">No users found</td></tr>');
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        // Error handling
+                        console.error('Error:', error);
+                        $('#userTable tbody').append('<tr><td colspan="4">Error fetching data</td></tr>');
+                    }
+                });
+            }
+            else {
+                $('#userTable tbody').append('<tr><td colspan="4">No users found</td></tr>');
+                console.error('cid parameter is missing');
+            }
+
+            $('#submitBtn').click(function () {
+                var meetingCode = $('#meetingCode').val();
+                var receiverEmail = $('#receiverEmail').val();
+                console.log('Meeting code:', meetingCode);
+                console.log('Receiver email:', receiverEmail);
+                console.log('Course ID:', cid);
+                $.ajax({
+                    url: 'http://localhost:5000/enrollment/sendmail?cid=' + cid,
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        meeting_code: meetingCode,
+                        receiver_email: receiverEmail
+                    }),
+                    success: function (response) {
+                        console.log('Mail sent successfully:', response);
+                        // You can add any success handling here, such as showing a success message
+                        // Close the modal
+                        $('#meetingModal').modal('hide');
+                        // Clear the input fields
+                        $('#meetingCode').val('');
+                        $('#receiverEmail').val('');
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error sending mail:', error);
+                        // You can add any error handling here, such as showing an error message
+                    }
+                });
+            });
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>
