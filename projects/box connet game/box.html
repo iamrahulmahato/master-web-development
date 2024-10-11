@@ -1,3 +1,15 @@
+<!-- Cancel button code by Sadaf -->
+<a href="/index.html?page=main" id="cancelBtn">
+  <img src="cancel.png" alt="Cancel" />
+</a>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const page = urlParams.get('page');
+
+  if (page === 'main') {
+    window.location.href = '/index.html'; 
+  }
+</script>
 <form>
     <div class="land-of-three">
       <button class="game-reset faux-button" type="reset" title="Reset">

@@ -6,8 +6,34 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" charset="utf-8"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
+    <style>
+      #cancelBtn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          display: block;
+        }
+    
+        #cancelBtn img {
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+        }
+        </style>
   </head>
   <body>
+    <!-- Cancel button code by Sadaf -->
+    <a href="index.html?page=main" id="cancelBtn">
+      <img src="Images/cancel.png" alt="Cancel" />
+    </a>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const page = urlParams.get('page');
+
+      if (page === 'main') {
+        window.location.href = 'http://127.0.0.1:5501/index.html'; 
+      }
+    </script>
     <div class="score-board">
       <h3>score</h3>
       <h1 id="score"></h1>

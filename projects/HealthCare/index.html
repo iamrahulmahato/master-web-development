@@ -108,13 +108,36 @@ button {
 .hidden {
     display: none; /* Ensure hidden elements are not displayed */
 }
-
+#cancelBtn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          display: block;
+        }
+    
+        #cancelBtn img {
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+        }
 
 
     </style>
     <style href="style.css" rel="stylesheet"></style>
 </head>
 <body>
+     <!-- Cancel button code by Sadaf -->
+     <a href="index.html?page=main" id="cancelBtn">
+        <img src="cancel.png" alt="Cancel" />
+      </a>
+      <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get('page');
+  
+        if (page === 'main') {
+          window.location.href = 'http://127.0.0.1:5501/index.html'; 
+        }
+      </script>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg " >
         <div class="container-fluid">
