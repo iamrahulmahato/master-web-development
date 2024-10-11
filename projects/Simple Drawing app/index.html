@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Drawing App</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <div class="app-container">
+    <h1>Simple Drawing App</h1>
+    <div class="toolbar">
+      <label for="colorPicker">Color: </label>
+      <input type="color" id="colorPicker" value="#ff6347">
+      
+      <label for="brushSize">Brush Size: </label>
+      <input type="range" id="brushSize" min="1" max="10" value="5">
+      
+      <button id="clearButton">Clear Canvas</button>
+    </div>
+    
+    <div class="canvas-container">
+      <canvas id="drawingCanvas"></canvas>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
