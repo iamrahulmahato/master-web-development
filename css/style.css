@@ -216,3 +216,14 @@ body {
 #scrollToTopBtn {
     animation: float 3s infinite ease-in-out;
 }
+
+.btn-container a {
+    display: inline-block;
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+.btn-container a:hover {
+    background-color: #92c3ed; 
+    color: #192333;
+    transform: scale(1.1); 
+}
