@@ -28,7 +28,7 @@ body {
 .content {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align items to the top */
+    align-items: center; /* Changed from flex-start to center to align items horizontally */
     min-height: 100vh;
     padding: 20px;
     flex-direction: column; /* Stack elements vertically */
@@ -92,6 +92,10 @@ input[type="button"][value="AC"]:hover {
     margin-bottom: 20px;
     max-width: 400px;
     width: 100%;
+    /* Center the sections within the flex container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .section h2 {
