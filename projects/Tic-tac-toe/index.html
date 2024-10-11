@@ -8,8 +8,34 @@
     <link rel="stylesheet" href="style.css">
     <!-- adding fevicon -->
     <link rel="shortcut icon" href="gametic.png" type="image/x-icon">
+    <style>
+        #cancelBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: block;
+          }
+      
+          #cancelBtn img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+          }
+          </style>
 </head>
 <body>
+    <!-- Cancel button code by Sadaf -->
+    <a href="index.html?page=main" id="cancelBtn">
+        <img src="cancel.png" alt="Cancel" />
+      </a>
+      <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get('page');
+  
+        if (page === 'main') {
+          window.location.href = 'http://127.0.0.1:5501/index.html'; 
+        }
+      </script>
     <h1>Tic Tac Toe</h1>
     <p>Player <span id="player">X's</span> turn</p>
     <div class="container">

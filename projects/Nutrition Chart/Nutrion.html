@@ -75,10 +75,34 @@
         tr:hover {
             background-color: #f1f1f1; /* Highlight row on hover */
         }
+        #cancelBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: block;
+          }
+      
+          #cancelBtn img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+          }
+
     </style>
 </head>
 <body>
+<!-- Cancel button code by Sadaf -->
+<a href="/index.html?page=main" id="cancelBtn">
+    <img src="cancel.png" alt="Cancel" />
+  </a>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const page = urlParams.get('page');
 
+    if (page === 'main') {
+      window.location.href = '/index.html'; 
+    }
+  </script>
 <div id="container">
     <h1>Recipe Nutrition Search</h1>
     <input type="text" id="foodInput" placeholder="Enter food item...">

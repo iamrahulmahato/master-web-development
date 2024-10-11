@@ -7,9 +7,35 @@
     <link rel="stylesheet" href="style.css">
 
     <title>Connect 4 Dots Game</title>
+    <style>
+        #cancelBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: block;
+          }
+      
+          #cancelBtn img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+          }
+          </style>
 </head>
 
 <body>
+    <!-- Cancel button code by Sadaf -->
+    <a href="index.html?page=main" id="cancelBtn">
+        <img src="cancel.png" alt="Cancel" />
+      </a>
+      <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get('page');
+  
+        if (page === 'main') {
+          window.location.href = 'http://127.0.0.1:5501/index.html'; 
+        }
+      </script>
     <div class="container" align="center">
         <h2>Connect Four Dots</h2>
         <h3 id="gameCaptions">Click a column to begin the game</h3>

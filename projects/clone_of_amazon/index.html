@@ -7,9 +7,34 @@
     <title>amazon</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css"/>
-     
+    <style>
+        #cancelBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: block;
+          }
+      
+          #cancelBtn img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+          }
+          </style>
 </head>
 <body>
+    <!-- Cancel button code by Sadaf -->
+    <a href="index.html?page=main" id="cancelBtn">
+        <img src="imgs/cancel.png" alt="Cancel" />
+      </a>
+      <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get('page');
+  
+        if (page === 'main') {
+          window.location.href = 'http://127.0.0.1:5501/index.html'; 
+        }
+      </script>
 <header>
     <div class="navbar">
         <div class="navlogo border">

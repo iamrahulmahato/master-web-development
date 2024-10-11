@@ -747,3 +747,15 @@ body {
   grid-gap: 0 0;
   position: relative;
 }
+        #cancelBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: block;
+          }
+      
+          #cancelBtn img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+          }

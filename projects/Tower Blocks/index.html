@@ -9,8 +9,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
     <title>Tower Blocks</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      #cancelBtn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          display: block;
+        }
+    
+        #cancelBtn img {
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+        }
+        </style>
   </head>
   <body>
+    <!-- Cancel button code by Sadaf -->
+    <a href="index.html?page=main" id="cancelBtn">
+      <img src="cancel.png" alt="Cancel" />
+    </a>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const page = urlParams.get('page');
+
+      if (page === 'main') {
+        window.location.href = 'http://127.0.0.1:5501/index.html'; 
+      }
+    </script>
     <script src="script.js" async></script>
     <div id="container">
       <div id="game"></div>

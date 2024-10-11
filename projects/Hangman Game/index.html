@@ -8,8 +8,34 @@
     <link rel="stylesheet" href="style.css">
     <script src="scripts/word-list.js" defer></script>
     <script src="scripts/script.js" defer></script>
+    <style>
+        #cancelBtn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          display: block;
+        }
+    
+        #cancelBtn img {
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+        }
+      </style>
 </head>
 <body>
+    <!-- Cancel button code by Sadaf -->
+    <a href="index.html?page=main" id="cancelBtn">
+        <img src="images/cancel.png" alt="Cancel" />
+      </a>
+      <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get('page');
+  
+        if (page === 'main') {
+          window.location.href = 'http://127.0.0.1:5501/index.html'; 
+        }
+      </script>
     <div class="game-modal">
         <div class="content">
             <img src="#" alt="gif">

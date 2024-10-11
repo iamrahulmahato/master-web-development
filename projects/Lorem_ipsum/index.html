@@ -5,8 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lorem Ipsum Generator</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        #cancelBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: block;
+          }
+      
+          #cancelBtn img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+          }
+          </style>
 </head>
 <body>
+    <!-- Cancel button code by Sadaf -->
+    <a href="index.html?page=main" id="cancelBtn">
+        <img src="cancel.png" alt="Cancel" />
+      </a>
+      <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get('page');
+  
+        if (page === 'main') {
+          window.location.href = 'http://127.0.0.1:5501/index.html'; 
+        }
+      </script>
     <div class="container">
         <h1>Lorem Ipsum Generator</h1>
         <label for="lines">Number of Lines:</label>

@@ -8,9 +8,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
   <link rel="shortcut icon" href="https://static-assets-web.flixcart.com/www/promos/new/20150528-140547-favicon-retina.ico" type="image/x-icon">
+  <style>
+    #cancelBtn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: block;
+      }
+  
+      #cancelBtn img {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+      </style>
 </head>
 <body>
- 
+ <!-- Cancel button code by Sadaf -->
+ <a href="index.html?page=main" id="cancelBtn">
+  <img src="images/cancel.png" alt="Cancel" />
+</a>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const page = urlParams.get('page');
+
+  if (page === 'main') {
+    window.location.href = 'http://127.0.0.1:5501/index.html'; 
+  }
+</script>
     <header>
       <div class="logo">
           <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg" alt="">
