@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EduConnect Invitation Mail</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        /* CLIENT-SPECIFIC STYLES */
+        body,
+        table,
+        td,
+        a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        /* RESET STYLES */
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+
+        table {
+            border-collapse: collapse !important;
+        }
+
+        body {
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+
+        /* iOS BLUE LINKS */
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* MOBILE STYLES */
+        @media screen and (max-width:650px) {
+            h1 {
+                font-size: 28px !important;
+                line-height: 28px !important;
+            }
+        }
+
+        /* ANDROID CENTER FIX */
+        div[style*="margin: 16px 0;"] {
+            margin: 0 !important;
+        }
+    </style>
+</head>
+
+<body style="background-color: #f4f4f4; margin: 0 !important; padding: 0 !important;">
+
+    <!-- HIDDEN PREHEADER TEXT -->
+    <div
+        style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+        Meeting Request from {{ user_name }} from EduConnect
+    </div>
+
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!-- LOGO -->
+        <tr>
+            <td bgcolor="#C7A780" align="center">
+                <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="650">
+            <tr>
+            <td align="center" valign="top" width="650">
+            <![endif]-->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 650px;">
+                    <tr>
+                        <td align="center" valign="top" style="padding: 40px 10px 40px 10px;">
+                            <a href="http://localhost:5000" target="_blank">
+                                <img alt="EduConnect"
+                                    src="https://vijaisuria.github.io/mit-healthcentre-website/logo.png" width="200"
+                                    height="35"
+                                    style="display: block; width: 200px; max-width: 200px; min-width: 35px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;"
+                                    border="0">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+            </td>
+        </tr>
+        <!-- HERO -->
+        <tr>
+            <td bgcolor="#C7A780" align="center" style="padding: 0px 10px 0px 10px;">
+                <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="650">
+            <tr>
+            <td align="center" valign="top" width="650">
+            <![endif]-->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 650px;">
+                    <tr>
+                        <td bgcolor="#ffffff" align="center" valign="middle" style="border-radius: 4px 4px 0px 0px;">
+                            <table align="center" cellpadding="0" cellspacing="0" border="0">
+                                <td bgcolor="#ffffff" align="center"
+                                    style="padding: 40px 20px 10px 20px; color: #666666; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                                    <p style="margin: 0;">Meeting Request from EduConnect</p>
+                                </td>
+                                <tr>
+                                    <td bgcolor="#ffffff" align="center" valign="top"
+                                        style="padding: 0px 20px 20px 20px; color: #111111; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 24px; font-weight: bold; line-height: 24px;">
+                                        <h1 style="font-size: 24px; font-weight: bold; margin: 0;">{{sender_name}} on
+                                            {{course_name}}</h1>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+            </td>
+        </tr>
+
+        <!-- COPY BLOCK -->
+        <tr>
+            <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
+                <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="650">
+            <tr>
+            <td align="center" valign="top" width="650">
+            <![endif]-->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 650px;">
+                    <tr>
+                        <td align="center" valign="middle">
+                            <p>{{sender_name}} like to invite you to a meeting to discuss {{course_name}} on the
+                                EduConnect portal.</p>
+                            <p>{{course_description}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#ffffff" align="center" valign="middle" width="380" style="max-width: 380px">
+                            <table align="center" cellpadding="0" cellspacing="0" border="0">
+
+                                <tr>
+                                    <td height="20"></td>
+                                </tr>
+                                <tr>
+                                    <td align="center" valign="middle">
+                                        <img src="https://img.freepik.com/free-vector/business-meeting-top-view_23-2147495184.jpg"
+                                            alt="img" width="380" height="385"
+                                            style="margin:0; padding:0; border:0; border-radius: 4px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="5"></td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td bgcolor="#ffffff" align="center"
+                            style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                            <p style="margin: 0;">Click the "Join Meeting" button below to enter the meeting room. By
+                                clicking the button, you acknowledge and accept the
+                                EduConnect meeting terms and conditions.</p>
+                        </td>
+                    </tr>
+
+                    <!-- Buttons -->
+                    <tr>
+                        <td align="center" bgcolor="#ffffff" style="border-radius: 0px 0px 4px 4px;">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td bgcolor="#ffffff" align="center"
+                                            style="text-align:center;vertical-align:middle;font-size:0;">
+
+                                            <div style="display:inline-block;vertical-align:middle;">
+                                                <table border="0" align="center" cellpadding="0" cellspacing="0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td height="10"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="280" align="center">
+                                                                <table align="center" width="80%" border="0"
+                                                                    cellspacing="0" cellpadding="0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td align="center" valign="middle">
+                                                                                <a href="http://localhost:5000/peer/meet/${{meeting_code}}"
+                                                                                    target="_blank">
+                                                                                    <button alt="Go to meet"
+                                                                                        style="margin:0; padding:10px; border-radius: 12px; background-color: rgb(51, 51, 207); text-align:center;  font-size: large; color: white">Connect
+                                                                                        Now</button>
+                                                                                </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="10"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td height="30"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+            </td>
+        </tr>
+
+        <!-- COPY BLOCK -->
+        <tr>
+            <td bgcolor="#f4f4f4" align="center" style="padding: 30px 10px 0px 10px;">
+                <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="650">
+            <tr>
+            <td align="center" valign="top" width="650">
+            <![endif]-->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 650px;">
+
+                    <!-- HEADLINE -->
+                    <tr>
+                        <td bgcolor="#C7A780" align="center"
+                            style="padding: 30px 0px 10px 0px; border-radius: 4px 4px 4px 4px; color: #f1f1f1; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                            <h2 style="font-size: 22px; font-weight: bold; color: #ffffff; margin: 0;">Maintaining
+                                Professional Ethics</h2>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: center; font-size: medium;">This meeting is a great
+                                            opportunity to collaborate and learn from each other.
+                                            Please remember to maintain professional
+                                            ethics during the meeting. This includes being respectful, on-topic, and
+                                            focused
+                                            on achieving our learning goals.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+            </td>
+        </tr>
+
+        <!-- FOOTER -->
+        <tr>
+            <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
+                <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="650">
+            <tr>
+            <td align="center" valign="top" width="650">
+            <![endif]-->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 650px;">
+                    <tr>
+                        <td height="20"></td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top" style="padding: 10px 10px 20px 10px;">
+                            <a href="http://localhost:5000/" target="_blank">
+                                <img alt="EduConnect"
+                                    src="https://vijaisuria.github.io/mit-healthcentre-website/EduConnect.png"
+                                    width="144" height="25"
+                                    style="display: block; width: 144px; max-width: 144px; min-width: 144px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #2f2f2f; font-size: 18px;"
+                                    border="0">
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td height="20"></td>
+                    </tr>
+                    <!-- COPY -->
+                    <tr>
+                        <td bgcolor="#f4f4f4" align="center"
+                            style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;">
+                            <p style="margin: 0;">Please note that this email and any attachments are for the intended
+                                recipient(s) only and may contain confidential
+                                information. Unauthorized disclosure, use, or distribution is strictly prohibited. <a
+                                    href="localhost:5000" target="_blank"
+                                    style="color: #111111; font-weight: 700;">Terms and Conditions</a>. </p>
+                        </td>
+                    </tr>
+                    <!-- COPYRIGHT -->
+                    <tr>
+                        <td bgcolor="#f4f4f4" align="center"
+                            style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;">
+                            <p style="margin: 0;">Copyright 2024 - EduConnect. All rights reserved.</p>
+                        </td>
+                    </tr>
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

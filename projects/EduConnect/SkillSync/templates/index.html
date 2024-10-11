@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Sync</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Centering the Skill Gap Analysis section */
+        .analysis-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+        /* Styling for the skill list */
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .skill-list li {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Skill Sync</h1>
+        <form action="/" method="post">
+            <div class="form-group">
+                <label for="careerGoal">Career Goal:</label>
+                <input type="text" class="form-control" id="careerGoal" name="careerGoal">
+            </div>
+            
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="manualSkills" name="manualSkills" onchange="toggleSkillsInput()">
+                <label class="form-check-label" for="manualSkills">Manually add skills</label>
+            </div>
+            <div id="manualSkillsInput" style="display:none;">
+                <div class="form-group">
+                    <label for="skill">Skill:</label>
+                    <input type="text" class="form-control" id="skill" name="skill[]">
+                    <button type="button" class="btn btn-primary mt-2" onclick="addSkill()">Add Skill</button>
+                </div>
+            </div>
+            
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="linkedinSkills" name="linkedinSkills" onchange="toggleLinkedinInput()">
+                <label class="form-check-label" for="linkedinSkills">Import skills from LinkedIn</label>
+            </div>
+            <div id="linkedinInput" style="display:none;">
+                <div class="form-group">
+                    <label for="linkedinUsername">LinkedIn Username:</label>
+                    <input type="text" class="form-control" id="linkedinUsername" name="linkedinUsername">
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        {% if profile_data %}
+            <div class="analysis-section">
+                {% if gemini_response %}
+                    <h2>Skill Gap Analysis</h2>
+                    <p>{{ gemini_response }}</p>
+                {% endif %}
+                {% if courses %}
+                    <h2>Recommended Courses</h2>
+                    <ul class="skill-list">
+                        {% for course in courses %}
+                            <li>{{ course }}</li>
+                        {% endfor %}
+                    </ul>
+                    <button onclick="gotoHome()">Proceed to EduConnect</button>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function toggleSkillsInput() {
+            var manualSkillsInput = document.getElementById("manualSkillsInput");
+            if (document.getElementById("manualSkills").checked) {
+                manualSkillsInput.style.display = "block";
+            } else {
+                manualSkillsInput.style.display = "none";
+            }
+        }
+    
+        function toggleLinkedinInput() {
+            var linkedinInput = document.getElementById("linkedinInput");
+            if (document.getElementById("linkedinSkills").checked) {
+                linkedinInput.style.display = "block";
+            } else {
+                linkedinInput.style.display = "none";
+            }
+        }
+    
+        function addSkill() {
+            var skillInput = document.createElement("input");
+            skillInput.setAttribute("type", "text");
+            skillInput.setAttribute("name", "skill[]");
+            var skill = document.getElementById("skill").value.trim();
+            if (skill !== "") {
+                skillInput.value = skill;
+                document.getElementById("skill").value = "";
+                document.getElementById("manualSkillsInput").appendChild(skillInput);
+            }
+        }
+
+        function gotoHome(){
+            // perform api call to given api
+            window.location.href = "http://localhost:5000" ;
+        }
+    </script>
+</body>
+</html>
