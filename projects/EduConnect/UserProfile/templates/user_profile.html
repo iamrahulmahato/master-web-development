@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>My Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style type="text/css">
+    body {
+      margin-top: 20px;
+      background: linear-gradient(90deg,
+          rgb(62, 53, 230) 0%,
+          rgb(95, 95, 240) 49%,
+          rgb(134, 232, 252) 100%);
+    }
+
+    .avatar-xxl {
+      height: 7rem;
+      width: 7rem;
+    }
+
+    .card {
+      margin-bottom: 20px;
+      -webkit-box-shadow: 0 2px 3px #eaedf2;
+      box-shadow: 0 2px 3px #eaedf2;
+    }
+
+    .card:hover {
+      background-color: rgba(255, 255, 255, 0.87);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.884);
+    }
+
+    .pb-0 {
+      padding-bottom: 0 !important;
+    }
+
+    .font-size-16 {
+      font-size: 16px !important;
+    }
+
+    .avatar-title {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background-color: #038edc;
+      color: #fff;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      font-weight: 500;
+      height: 100%;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .bg-soft-primary {
+      background-color: rgba(3, 142, 220, 0.15) !important;
+    }
+
+    .rounded-circle {
+      border-radius: 50% !important;
+    }
+
+    .nav-tabs-custom .nav-item .nav-link.active {
+      color: #038edc;
+    }
+
+    .nav-tabs-custom .nav-item .nav-link {
+      border: none;
+    }
+
+    .nav-tabs-custom .nav-item .nav-link.active {
+      color: #038edc;
+    }
+
+    .avatar-group {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      padding-left: 12px;
+    }
+
+    .border-end {
+      border-right: 1px solid #eff0f2 !important;
+    }
+
+    .d-inline-block {
+      display: inline-block !important;
+    }
+
+    .badge-soft-danger {
+      color: #f34e4e;
+      background-color: rgba(243, 78, 78, 0.1);
+    }
+
+    .badge-soft-warning {
+      color: #f7cc53;
+      background-color: rgba(247, 204, 83, 0.1);
+    }
+
+    .badge-soft-success {
+      color: #51d28c;
+      background-color: rgba(81, 210, 140, 0.1);
+    }
+
+    .avatar-group .avatar-group-item {
+      margin-left: -14px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+    }
+
+    .avatar-sm {
+      height: 2rem;
+      width: 2rem;
+    }
+
+    .nav-tabs-custom .nav-item {
+      position: relative;
+      color: #343a40;
+    }
+
+    .nav-tabs-custom .nav-item .nav-link.active:after {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+
+    .nav-tabs-custom .nav-item .nav-link::after {
+      content: "";
+      background: #038edc;
+      height: 2px;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: -2px;
+      -webkit-transition: all 250ms ease 0s;
+      transition: all 250ms ease 0s;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+
+    .badge-soft-secondary {
+      color: #74788d;
+      background-color: rgba(116, 120, 141, 0.1);
+    }
+
+    .badge-soft-secondary {
+      color: #74788d;
+    }
+
+    .work-activity {
+      position: relative;
+      color: #74788d;
+      padding-left: 5.5rem;
+    }
+
+    .work-activity::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      top: 0;
+      left: 66px;
+      border-left: 1px solid rgba(3, 142, 220, 0.25);
+    }
+
+    .work-activity .work-item {
+      position: relative;
+      border-bottom: 2px dashed #eff0f2;
+      margin-bottom: 14px;
+    }
+
+    .work-activity .work-item:last-of-type {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border: none;
+    }
+
+    .work-activity .work-item::after,
+    .work-activity .work-item::before {
+      position: absolute;
+      display: block;
+    }
+
+    .work-activity .work-item::before {
+      content: attr(data-date);
+      left: -157px;
+      top: -3px;
+      text-align: right;
+      font-weight: 500;
+      color: #74788d;
+      font-size: 12px;
+      min-width: 120px;
+    }
+
+    .work-activity .work-item::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      left: -26px;
+      top: 3px;
+      background-color: #fff;
+      border: 2px solid #038edc;
+    }
+
+    /*** Navbar ***/
+    .navbar .dropdown-toggle::after {
+      border: none;
+      content: "\f107";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+      margin-right: 30px;
+      padding: 25px 0;
+      color: #ffffff;
+      font-size: 15px;
+      text-transform: uppercase;
+      outline: none;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover,
+    .navbar-light .navbar-nav .nav-link.active {
+      color: var(--primary);
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-light .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 10px 0;
+      }
+
+      .navbar-light .navbar-nav {
+        border-top: 1px solid #eeeeee;
+      }
+    }
+
+    .navbar-light .navbar-brand,
+    .navbar-light a.btn {
+      height: 75px;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    .navbar-light.sticky-top {
+      top: -100px;
+      transition: 0.5s;
+    }
+
+    @media (min-width: 992px) {
+      .navbar .nav-item .dropdown-menu {
+        display: block;
+        margin-top: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s;
+      }
+
+      .navbar .dropdown-menu.fade-down {
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+      }
+
+      .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        transform: rotateX(0deg);
+        visibility: visible;
+        transition: 0.5s;
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-white navbar-light shadow fixed-top p-0">
+    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+      <img src="EduConnect.png" style="height: 60px" />
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto p-4 p-lg-0">
+        <a href="index.html" class="nav-item nav-link active">Home</a>
+        <a href="about.html" class="nav-item nav-link">About</a>
+        <a href="courses.html" class="nav-item nav-link">Courses</a>
+        <a href="profile" class="nav-item nav-link">Profile</a>
+        <div class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+          <div class="dropdown-menu fade-down m-0">
+            <a href="team.html" class="dropdown-item">Our Team</a>
+            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+            <a href="404.html" class="dropdown-item">404 Page</a>
+          </div>
+        </div>
+        <a href="contact.html" class="nav-item nav-link">Contact</a>
+      </div>
+      <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i
+          class="fa fa-arrow-right ms-3"></i></a>
+    </div>
+  </nav>
+  <div class="container" style="margin-top: 120px;">
+    <div class="row">
+      <div class="col-xl-8">
+        <div class="card">
+          <div class="card-body pb-0">
+            <div class="row align-items-center">
+              <div class="col-md-3">
+                <div class="text-center border-end">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                    class="img-fluid avatar-xxl rounded-circle" alt />
+                  <h4 class="text-primary font-size-20 mt-3 mb-2">{{ profile.name }}</h4>
+                  <h5 class="text-muted font-size-13 mb-0">Web Designer</h5>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="ms-3">
+                  <div>
+                    <h4 class="card-title mb-2">Biography</h4>
+                    <p class="mb-0 text-muted">Hi, I'm {{ profile.name }}</p>
+                  </div>
+                  <div class="row my-4">
+                    <div class="col-md-12">
+                      <div>
+                        <p class="text-muted mb-2 fw-medium">
+                          <i class="mdi mdi-email-outline me-2"></i>{{ profile.email }}
+                        </p>
+                        <p class="text-muted fw-medium mb-0">
+                          <i class="mdi mdi-phone-in-talk-outline me-2"></i>{{ profile.phone }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="nav nav-tabs nav-tabs-custom border-bottom-0 mt-3 nav-justfied" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <a class="nav-link px-4" href="https://bootdey.com/snippets/view/profile-projects"
+                        target="__blank">
+                        <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                        <span class="d-none d-sm-block">Projects</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a class="nav-link px-4 active" data-bs-toggle="tab" href="profile_task_with_team_cards.html"
+                        role="tab" aria-selected="false" tabindex="-1">
+                        <span class="d-block d-sm-none"><i class="mdi mdi-menu-open"></i></span>
+                        <span class="d-none d-sm-block">Tasks</span>
+                      </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a class="nav-link px-4" href="profile_with_team_section.html" target="__blank">
+                        <span class="d-block d-sm-none"><i class="mdi mdi-account-group-outline"></i></span>
+                        <span class="d-none d-sm-block">Team</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="tab-content p-4">
+            <div class="tab-pane active show" id="tasks-tab" role="tabpanel">
+              <h4 class="card-title mb-4">Tasks</h4>
+              <div class="row">
+                <div class="col-xl-12">
+                  <!-- Task list will be filled dynamically using JavaScript -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="pb-2">
+              <h4 class="card-title mb-3">About</h4>
+              <p>
+                {{ profile.bio }}
+              </p>
+              <ul class="ps-3 mb-0">
+                <li>it will seem like simplified.</li>
+                <li>To achieve this, it would be necessary to have uniform pronunciation</li>
+              </ul>
+            </div>
+            <hr />
+            <div class="pt-2">
+              <h4 class="card-title mb-4">My Skill</h4>
+              <div class="d-flex gap-2 flex-wrap" id="skillsPlaceholder">
+                <ul>
+                  {% for skill in skills %}
+                  <li>{{ skill }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div>
+              <h4 class="card-title mb-4">Personal Details</h4>
+              <div class="table-responsive">
+                <table class="table table-bordered mb-0">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Name</th>
+                      <td>{{ profile.name }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Email</th>
+                      <td>{{ profile.email }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+    // No need for this script since we're loading data via Flask and Jinja
+  </script>
+</body>
+
+</html>
