@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,45 +13,42 @@
         <div class="logo">Password Manager</div>
         <ul>
             <li>Home</li>
-            
         </ul>
     </nav>
+
     <div class="container">
         <h1>Password Manager</h1>
-        <p>We're thrilled to have you here. Your digital life contains a myriad of passwords, and we know how
-            challenging it can be to manage them all. That's why we're here to make it easy for you.</p>
-        <h2>Your Passwords <span id="alert">(Copied!)</span></h2> 
-        <table>
-            <tr>
-                <th>Website</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>Delete</th>
-            </tr> 
- 
-        </table>
+        <p>We're thrilled to have you here. Your digital life contains a myriad of passwords, and we know how challenging it can be to manage them all. That's why we're here to make it easy for you.</p>
+
+        <h2>Your Passwords <span id="alert">(Copied!)</span></h2>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Website</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Delete</th>
+                </tr> 
+            </table>
+        </div>
 
         <h2>Add a Password</h2>
-        <form action="/submit" method="post">
-
-            <!-- Text input for website -->
-            <label for="website">Website:</label>
-            <input type="text" id="website" name="website" required>
-            <br><br>
-
-            <!-- Text input for username -->
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <br><br>
-
-            <!-- Password input -->
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <br>
-            <!-- Submit button -->
-            <button class="btn" type="submit">Submit</button>
-        </form>
+        <div class="card">
+            <form action="/submit" method="post">
+                <label for="website">Website:</label>
+                <input type="text" id="website" name="website" required>
+                
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button class="btn" type="submit">Submit</button>
+            </form>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 

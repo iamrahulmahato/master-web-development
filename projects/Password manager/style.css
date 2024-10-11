@@ -1,24 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,700;1,300&family=Poppins:wght@300;400;600&display=swap');
-body{
+
+body {
     background-image: url(esf.jpg);
-}
-* {
+    background-size: cover;
     margin: 0;
     padding: 0;
-    font-family: 'Noto Sans', sans-serif;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Sans', sans-serif, 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 nav {
     background-color: black;
     color: white;
-    padding: 12px 3px;
+    padding: 12px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.logo{
-    margin: 0 23px;
+.logo {
+    margin-left: 20px;
     font-weight: 800;
     font-size: 25px;
     cursor: pointer;
@@ -26,65 +30,130 @@ nav {
 
 ul {
     display: flex;
-    margin: 0 23px;
-    align-items: center;
+    list-style-type: none;
+    margin-right: 20px;
 }
 
 ul > li {
-    list-style: none;
-    margin: 0 13px;
+    margin: 0 15px;
     cursor: pointer;
 }
 
-ul > li:hover{
+ul > li:hover {
     color: white;
-
-}
-
-table, td, tr{
-    border: 2px solid black;
-    border-collapse: collapse;
-    padding: 5px 13px;
 }
 
 .container {
-    max-width: 80vw;
-    margin: 23px auto;
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2, h3 {
-    margin: 23px 0;
+h1, h2 {
+    text-align: center;
+    margin: 20px 0;
 }
 
-.btn{
-    padding: 8px 17px;
-    background: black;
-    color: white;
-    font-weight: 900;
-    border: 2px solid gray;
+p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Add scrollable container for the table */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scroll if needed */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Dark Glassy Card */
+.card {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
     border-radius: 8px;
-    margin: 25px 0;
-    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    color: white; /* Text color for better contrast */
 }
 
-.btnsm{ 
-    padding: 8px 17px;
-    background: black;
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: white; /* Label color for contrast */
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2); /* Light transparent input background */
+    color: white; /* Text color inside input */
+}
+
+form input::placeholder {
+    color: #ddd; /* Placeholder color for contrast */
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
     color: white;
     font-weight: 900;
-    border: 2px solid gray;
-    border-radius: 8px; 
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-img{
-    cursor: pointer;
-    position: relative;
-    bottom: 7px;
-    width: 15px;
-    height: 13px;
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
-#alert{
-    display: none;
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+    .container {
+        max-width: 95%;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+
+    .card {
+        max-width: 90%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    ul > li {
+        font-size: 14px;
+    }
+
+    table, th, td {
+        font-size: 12px;
+    }
 }
