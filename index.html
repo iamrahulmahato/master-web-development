@@ -17,6 +17,32 @@
 
     <title>Master web development</title>
     <link rel="icon" href="./faviconicon.png" type="image/png">
+    <style>
+         @media (max-width: 1200px) {
+    .footer-container {
+      padding: 20px;
+    }
+    .mwd-footer-content {
+      text-align: center;
+    }
+    .tags.social {
+      justify-content: center;
+    }
+    .btn {
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-secondary:hover {
+        background-color: #6c757d;
+    }
+    </style>
+
+
+
 </head>
 
 <body>
@@ -1649,6 +1675,76 @@
     </section>
  
     <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
+    
+    <footer id="footer">
+      <div class="footer-container">
+          <div class="row mb-3 col-3-main">
+              <div class="col-3">
+                 <div id = "about-us">
+                  <h2 class="footer-title secondary-title" >About Us</h2>
+
+                    <div class="secondary-title text-secondary " >
+                       <p class="mt-2 text-lg" style="text-align: left;" >
+                        We are a close-knit team of passionate developers dedicated to sharing captivating technology and apps with the world.
+                       </p>
+
+                       <address class="mt-2">
+                           <i class="fas fa-map-marker-alt text-primary"></i>
+                           5 South Main Street Los Angeles, ZZ-9611 USA
+                       </address>
+
+                       <div class="phone mt-2">
+                           <i class="fas fa-mobile text-primary"></i>
+                           125-896-485
+                       </div>
+
+                      <div class="email mt-2">
+                            <a href="mailto: mwdsupport@gmail.com" style="color: 3B3B58;"><i class="fas fa-envelope text-primary"></i>
+                           <span>mwdsupport@gmail.com</span>
+                        </a>
+                       </div>
+
+                       <div>
+                        <img src="https://hits.sh/anshika-26.github.io/WordWise.svg?label=Website%20Views&extraCount=1515&color=30322f&labelColor=F5B3B5" alt="Web views" style="height: 20px;width: 150px;margin-top: 40px;">
+                       </div>
+                    </div>
+
+                 </div>
+              </div>
+              
+              <div class="col-3">
+                   <h2 class="footer-title secondary-title">Popular Tags</h2>
+
+                   <div class="tags">
+                       <div class="d-flex-gap flex-wrap">
+                           <a href="#" class="nav-link btn bg-light " style="font-weight: 400;">Apps</a>
+                           <a href="#" class="nav-link btn bg-light" style="font-weight: 400;">Games</a>
+                           <a href="#" class="nav-link btn bg-light" style="font-weight: 400;">Algorithm</a>
+                           <a href="#" class="nav-link btn bg-light" style="font-weight: 400;">Techonogy</a>
+                           <a href="#" class="nav-link btn bg-light" style="font-weight: 400;">Clones</a>
+                       </div>
+                   </div>
+
+                   <h2 class="footer-title secondary-title mt-5">Connect with us</h2>
+
+                   <div class="tags social" id="contact">
+                    <div class="social-icons">
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"><img src="fb.png" width="85px" height="70px"></i></a>
+            <a href="https://x.com/" target="_blank"><i class="fa-brands fa-x-twitter" aria-hidden="true"><img src="x.png" width="45px" height="57px"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram-twitter" aria-hidden="true"><img src="insta.png" width="75px" height="70px"></i></a>
+          </div>
+                       
+                   </div>
+
+                </div>
+                
+       <!-- the authentication copyright -->
+       <div class="mwd-footer">
+        <div class="mwd-footer-content">
+          <p>&copy; <span id="current-year">2024</span> Master Web Development. All rights reserved.</p>
+        </div>
+    </div>
+  </footer>
 
     <script src="./js/app.js"></script>
 </body>
