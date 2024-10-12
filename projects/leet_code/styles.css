@@ -1,0 +1,115 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fa;
+    color: #263238;
+}
+
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    padding: 0 20px;
+}
+
+.navbar h1 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #262626;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.question-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.question-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid #e8e8e8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.question-header h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+
+#question-difficulty {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 100px;
+}
+
+#question-difficulty[data-difficulty="Easy"] {
+    background-color: #00af9b;
+    color: #fff;
+}
+
+#question-difficulty[data-difficulty="Medium"] {
+    background-color: #ffc01e;
+    color: #fff;
+}
+
+#question-difficulty[data-difficulty="Hard"] {
+    background-color: #ff375f;
+    color: #fff;
+}
+
+.question-body {
+    padding: 24px;
+}
+
+#question-description {
+    font-size: 14px;
+    margin: 0;
+}
+
+.question-footer {
+    padding: 16px 24px;
+    border-top: 1px solid #e8e8e8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#leetcode-link, #new-question-btn {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#leetcode-link {
+    background-color: #1890ff;
+    color: #fff;
+}
+
+#leetcode-link:hover {
+    background-color: #40a9ff;
+}
+
+#new-question-btn {
+    background-color: #f0f0f0;
+    color: #262626;
+    border: none;
+}
+
+#new-question-btn:hover {
+    background-color: #e8e8e8;
+}
