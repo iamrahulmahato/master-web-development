@@ -1,0 +1,164 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="title">
+        <a href="#">JavaScript Scientific Calculator</a>
+    </div>
+    <div class="content">
+        <table border="3">
+            <tr>
+                <td colspan="6"><input type="text" id="textval" readonly/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="AC" onclick="clear_textval()"/> </td>
+                <td><input type="button" value="C" onclick="backspace()"/> </td>
+                <td><input type="button" value="(" onclick="display('(')"/> </td>
+                <td><input type="button" value=")" onclick="display(')')"/> </td>
+                <td><input type="button" value="%" onclick="display('%')"/> </td>
+                <td><input type="button" value="π" onclick="display(Math.PI)"/> </td>
+            </tr>
+			<tr>
+                <td><input type="button" value="tan" onclick="trigFunc('tan')"/> </td>
+                <td><input type="button" value="x!" onclick="factorial()"/> </td>
+                <td><input type="button" value="sin⁻¹" onclick="invTrigFunc('asin')"/> </td>
+                <td><input type="button" value="cos⁻¹" onclick="invTrigFunc('acos')"/> </td>
+                <td><input type="button" value="tan⁻¹" onclick="invTrigFunc('atan')"/> </td>
+                <td><input type="button" value="eˣ" onclick="exp()"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="display('7')"/> </td>
+                <td><input type="button" value="8" onclick="display('8')"/> </td>
+                <td><input type="button" value="9" onclick="display('9')"/> </td>
+                <td><input type="button" value="/" onclick="display('/')"/> </td>
+                <td><input type="button" value="x²" onclick="square()"/> </td>
+                <td><input type="button" value="x³" onclick="cube()"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="display('4')"/> </td>
+                <td><input type="button" value="5" onclick="display('5')"/> </td>
+                <td><input type="button" value="6" onclick="display('6')"/> </td>
+                <td><input type="button" value="*" onclick="display('*')"/> </td>
+                <td><input type="button" value="√" onclick="sqrt()"/> </td>
+                <td><input type="button" value="³√" onclick="cuberoot()"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="display('1')"/> </td>
+                <td><input type="button" value="2" onclick="display('2')"/> </td>
+                <td><input type="button" value="3" onclick="display('3')"/> </td>
+                <td><input type="button" value="-" onclick="display('-')"/> </td>
+                <td><input type="button" value="log" onclick="logBase10()"/> </td>
+                <td><input type="button" value="^" onclick="display('**')"/> </td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="0" onclick="display('0')"/> </td>
+                <td><input type="button" value="." onclick="display('.')"/> </td>
+                <td><input type="button" value="=" onclick="evaluate_exp()"/> </td>
+                <td><input type="button" value="+" onclick="display('+')"/> </td>
+                <td><input type="button" value="sin" onclick="trigFunc('sin')"/> </td>
+                <td><input type="button" value="cos" onclick="trigFunc('cos')"/> </td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+function display(val) {
+    document.getElementById("textval").value += val;
+}
+
+function evaluate_exp() {
+    try {
+        let x = document.getElementById("textval").value;
+        let y = eval(x);
+        document.getElementById("textval").value = y;
+    } catch (err) {
+        document.getElementById("textval").value = "Error";
+    }
+}
+
+function clear_textval() {
+    document.getElementById("textval").value = "";
+}
+
+function backspace() {
+    let input = document.getElementById("textval").value;
+    document.getElementById("textval").value = input.substring(0, input.length - 1);
+}
+
+function sqrt() {
+    let x = document.getElementById("textval").value;
+    let y = Math.sqrt(eval(x));
+    document.getElementById("textval").value = y;
+}
+
+function cuberoot() {
+    let x = document.getElementById("textval").value;
+    let y = Math.cbrt(eval(x));
+    document.getElementById("textval").value = y;
+}
+
+function square() {
+    let x = document.getElementById("textval").value;
+    let y = Math.pow(eval(x), 2);
+    document.getElementById("textval").value = y;
+}
+
+function cube() {
+    let x = document.getElementById("textval").value;
+    let y = Math.pow(eval(x), 3);
+    document.getElementById("textval").value = y;
+}
+
+function logBase10() {
+    let x = document.getElementById("textval").value;
+    let y = Math.log10(eval(x));
+    document.getElementById("textval").value = y;
+}
+
+function trigFunc(func) {
+    let x = document.getElementById("textval").value;
+    let angle = eval(x);
+    let result;
+    switch(func) {
+        case 'sin': result = Math.sin(angle * Math.PI / 180); break;
+        case 'cos': result = Math.cos(angle * Math.PI / 180); break;
+        case 'tan': result = Math.tan(angle * Math.PI / 180); break;
+    }
+    document.getElementById("textval").value = result;
+}
+
+function invTrigFunc(func) {
+    let x = document.getElementById("textval").value;
+    let angle = eval(x);
+    let result;
+    switch(func) {
+        case 'asin': result = Math.asin(angle) * 180 / Math.PI; break;
+        case 'acos': result = Math.acos(angle) * 180 / Math.PI; break;
+        case 'atan': result = Math.atan(angle) * 180 / Math.PI; break;
+    }
+    document.getElementById("textval").value = result;
+}
+
+function factorial() {
+    let x = document.getElementById("textval").value;
+    let num = eval(x);
+    if (num < 0) {
+        document.getElementById("textval").value = "Error";
+        return;
+    }
+    let fact = 1;
+    for (let i = 1; i <= num; i++) {
+        fact *= i;
+    }
+    document.getElementById("textval").value = fact;
+}
+
+function exp() {
+    let x = document.getElementById("textval").value;
+    let y = Math.exp(eval(x));
+    document.getElementById("textval").value = y;
+}
+</script>
+</html>

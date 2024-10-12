@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+@keyframes backgroundPulse {
+    0% { background-color: #000; }
+    50% { background-color: #1a1a1a; }
+    100% { background-color: #000; }
+}
+
+#game-board {
+    width: 600px;
+    height: 400px;
+    background-color: #000;
+    position: relative;
+    margin: 0 auto;
+    border: 2px solid #333;
+    animation: backgroundPulse 4s ease-in-out infinite;
+}
+
+@keyframes paddlePulse {
+    0% { box-shadow: 0 0 5px #fff; }
+    50% { box-shadow: 0 0 15px #fff; }
+    100% { box-shadow: 0 0 5px #fff; }
+}
+
+.paddle {
+    width: 10px;
+    height: 80px;
+    background-color: #fff;
+    position: absolute;
+    transition: top 0.1s ease-out;
+    animation: paddlePulse 2s ease-in-out infinite;
+}
+
+#player-paddle {
+    left: 10px;
+}
+
+#computer-paddle {
+    right: 10px;
+}
+
+@keyframes ballSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#ball {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    animation: ballSpin 0.5s linear infinite;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@keyframes scoreChange {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.score-change {
+    animation: scoreChange 0.3s ease-out;
+}
+
+#start-button {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#start-button:hover {
+    background-color: #45a049;
+}
+
+.controls {
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Add these styles at the end of your CSS file */
+#game-over {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Tile Memory Game</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/flipnormal.css">
+</head>
+
+<body>
+
+	<ul>
+		<li id="li1">
+
+				<div class="navbar">
+					<span id="heading">
+						<!-- Memory Flip Card Game -->
+					</span>
+					<span id="home-button">
+						<!-- <a href="FlipGame.html">RETRY</a> -->
+						<button onclick="play();" class="retr">RETRY</button>
+					</span>
+					<span id="home">
+						<a href="index.html">HOME</a>
+					</span>
+					<span id="score">
+						Score:00
+					</span>
+					<span id="time">
+						<span id="time-display">Time Left:</span><span id="time-num">38s</span>
+					</span>
+					<p id="time-bar"></p>
+				</div>
+
+				<button onclick="abc(1);" id="1" class="button1 large medium">
+					<img id="img1" class="svg-class" src="">
+				</button>
+				<button onclick="abc(2);" id="2" class="button1 large medium">
+					<img id="img2" class="svg-class" src="">
+				</button>
+				<button onclick="abc(3);" id="3" class="button1  large medium">
+					<img id="img3" class="svg-class" src="">
+				</button>
+				<button onclick="abc(15);" id="15" class="button1  large medium">
+					<img id="img15" class="svg-class" src="">
+				</button>
+				<button onclick="abc(4);" id="4" class="button1  large medium">
+					<img id="img4" class="svg-class" src="">
+				</button>
+				<button onclick="abc(5);" id="5" class="button1  large medium">
+					<img id="img5" class="svg-class" src="">
+				</button>
+				<button onclick="abc(6);" id="6" class="button1  large medium">
+					<img id="img6" class="svg-class" src="">
+				</button>
+				<button onclick="abc(16);" id="16" class="button1  large medium">
+					<img id="img16" class="svg-class" src="">
+				</button>
+				<button onclick="abc(7);" id="7" class="button1  large medium">
+					<img id="img7" class="svg-class" src="">
+				</button>
+				<button onclick="abc(8);" id="8" class="button1  large medium">
+					<img id="img8" class="svg-class" src="">
+				</button>
+				<button onclick="abc(9);" id="9" class="button1  large medium">
+					<img id="img9" class="svg-class" src="">
+				</button>
+				<button onclick="abc(10);" id="10" class="button1  large medium">
+					<img id="img10" class="svg-class" src="">
+				</button>
+				<button onclick="abc(11);" id="11" class="button1  large medium">
+					<img id="img11" class="svg-class" src="">
+				</button>
+				<button onclick="abc(12);" id="12" class="button1  large medium">
+					<img id="img12" class="svg-class" src="">
+				</button>
+				<button onclick="abc(13);" id="13" class="button1  large medium">
+					<img id="img13" class="svg-class" src="">
+				</button>
+				<button onclick="abc(14);" id="14" class="button1  large medium">
+					<img id="img14" class="svg-class" src="">
+				</button>
+
+		</li>
+
+		<li id="li2" class="transition">
+
+				<div class="navbar">
+					<span id="heading">
+						Memory Tiles
+					</span>
+					<span id="home">
+						<a href="index.html">HOME</a>
+					</span>
+				</div>
+
+				<div id="scores-info" class="">
+					<div id="s">
+						Your Score: 00
+					</div>
+					<div id="comments">
+						Well, it looks like you need more practice before you can ace this game. Don't worry, just hit the play button and try your best. After all, it's just a game!
+					</div>
+				</div>
+
+				<div class="again">
+					<button class="play-again" onclick="play();">
+						PLAY AGAIN <img src="flipassets/replay.svg" width="30" height="30" style="position: relative; top: 4px;">
+					</button>
+				</div>
+
+		</li>
+
+		<li id="li3">
+
+			<div class="navbar">
+				<span id="heading">
+					Memory Tiles
+				</span>
+				<span id="home">
+					<a href="index.html">RELOAD</a>
+				</span>
+			</div>
+
+			<div id="initial">
+				<div id="instructions">
+					INSTRUCTIONS
+				</div>
+				<div id="ins-comments">
+					<p>
+					This is a timed tile memory game. Tap on the tiles to view what is hidden under them.
+					You can uncover atmost two tiles at a time. Match as many pairs of logos based on what you see and remember within the stipulated time.
+					</p>
+					<p>
+						Press <span id="rh">RETRY</span> if you wish to retry. Or if you wish to leave the game, click on <span id="rh">HOME</span> button. This will take you to the main page.
+					</p>
+				</div>
+			</div>
+
+			<div class="again" id="extra">
+				<button class="play-again" onclick="play();">
+					PLAY  <img src="flipassets/play.svg" width="30" height="30" style="position: relative; top: 4px;">
+				</button>
+			</div>
+
+		</li>
+
+	</ul>
+
+
+	<script type="text/javascript" src="js/flipnormal.js"></script>
+
+</body>
