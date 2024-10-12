@@ -1,5 +1,5 @@
 body {
-    background-color: #411530; /* Dark background */
+    background-color: #411530;
     font-size: 62.5%;
     margin: 0;
     font-family: 'Space Grotesk', sans-serif;
@@ -31,7 +31,7 @@ body {
 
 h1 {
     color: white;
-    background: linear-gradient(135deg, #D1512D, #FFC107); /* Gradient background */
+    background: linear-gradient(135deg, #D1512D, #FFC107);
     font-size: 3.5em;
     text-align: center;
     margin: 0;
@@ -45,12 +45,12 @@ h1 {
     font-size: 2.5em;
     font-weight: bold;
     color: #FFD700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for better readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #stripe {
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-    height: 50px; /* Increased height for better touch targets */
+    background: rgba(255, 255, 255, 0.8);
+    height: 50px;
     text-align: center;
     color: black;
     display: flex;
@@ -67,16 +67,11 @@ h1 {
     font-weight: bold;
 }
 
-#message:hover {
-    cursor: pointer;
-    scale: 1.05;
-}
-
 button {
     outline: none;
     color: #D1512D;
     background-color: white;
-    padding: 10px 20px; /* Adjusted padding for better button size */
+    padding: 10px 20px;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 400;
     font-size: 1.5em;
@@ -85,9 +80,9 @@ button {
     transition: all 0.3s ease;
     cursor: pointer;
     margin: 0 10px;
-    border-radius: 5px; /* Rounded corners */
-    border: none; /* Remove border */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
@@ -98,4 +93,11 @@ button:hover {
 .selected {
     background-color: #D1512D;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .square {
+        width: 45%;
+        padding-bottom: 45%;
+    }
 }
