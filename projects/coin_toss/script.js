@@ -2,17 +2,18 @@ document.getElementById('flipButton').addEventListener('click', function() {
     const coin = document.getElementById('coin');
     const result = document.getElementById('result');
     const flipButton = this;
+    let flipCount = parseInt(result.getAttribute("data-flip-count")) || 0;
 
     // Disable the button during the animation
     flipButton.disabled = true;
 
-    // Determine the result and set the coin's rotation
-    const isHeads = Math.random() < 0.5;
-    coin.style.transform = `rotateY(${isHeads ? 0 : 180}deg)`;
+    // Set the coin to always show "Heads"
+    coin.style.transform = 'rotateY(0deg)';
 
-    // Display the result after the animation
+    // Display the "Heads" result after the animation
     setTimeout(() => {
-        result.textContent = isHeads ? 'Heads' : 'Tails';
+        result.textContent = `Heads! Total Flips: ${++flipCount}`;
+        result.setAttribute("data-flip-count", flipCount);
         result.style.opacity = 1;
 
         // Re-enable the button
