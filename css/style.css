@@ -1,3 +1,26 @@
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000327;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #95ff00;
+  border-radius: 10px;
+  border: 3px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #95ff00 #000327;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -40,6 +63,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--bg);
+    overflow-x: hidden;
 }
 
 #projects {
