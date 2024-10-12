@@ -14,6 +14,8 @@ winningLine.style.backgroundColor = '#45a049'; // Set the color of the winning l
 winningLine.style.display = 'none'; // Initially hidden
 document.body.appendChild(winningLine); // Append the winning line to the body
 
+const slider = document.querySelector('.highlight'); // The slider highlight element
+
 const selectBox = (element) => {
     if (element.target.innerText === '' && currPlayer== 'X') {
         element.target.innerText = currPlayer;
@@ -30,9 +32,9 @@ const selectBox = (element) => {
 }
 
 const switchPlayer = () => {
-    currPlayer = currPlayer === 'X' ? 'O' : 'X';
-    document.querySelector('#player').innerText = `${currPlayer}'s`;
-}
+    currPlayer = currPlayer === 'X' ? 'O' : 'X'; // Toggle player
+    updateSlider(); // Update slider position after player switch
+};
 
 
 const checkWinner = () => {
@@ -127,10 +129,18 @@ const resetGame = () => {
         box.innerText = '';
     });
     currPlayer = 'X';
-    document.querySelector('#player').innerText = `${currPlayer}'s`; 
     gameMessage.innerText = ''; // Clear any messages
     gameMessage.style.display = 'none'; // Hide the message
     winningLine.style.display = 'none'; // Hide the winning line
+    updateSlider(); // Reset slider position
+}
+
+const updateSlider = () => {
+    if (currPlayer === 'X') {
+        slider.style.transform = 'translateX(0)'; // Move to X position
+    } else {
+        slider.style.transform = 'translateX(100%)'; // Move to O position
+    }
 }
 
 const aiMove = () => {
@@ -210,4 +220,5 @@ boxes.forEach(box => {
 });
 
 const reset = document.querySelector('#reset');
-reset.addEventListener('click', resetGame);  
+reset.addEventListener('click', resetGame);
+updateSlider();

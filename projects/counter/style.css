@@ -42,7 +42,8 @@ p {
 
 .button-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 10px;
     margin-top: 20px;
 }
 
@@ -50,13 +51,14 @@ button {
     background-color: #10b981;
     color: white;
     border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 16px;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 4px 6px rgba(16, 185, 129, 0.3);
+    white-space: nowrap;
 }
 
 button:hover {
@@ -91,6 +93,33 @@ button:active {
 }
 
 .save-btn:active {
+    transform: translateY(1px);
+}
+
+/* New styles for the Cancel button */
+.cancel-btn {
+    background-color: #ef4444; /* Red background */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(239, 68, 68, 0.3);
+    width: auto;
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+.cancel-btn:hover {
+    background-color: #dc2626; /* Darker red on hover */
+    box-shadow: 0 6px 8px rgba(239, 68, 68, 0.4);
+}
+
+.cancel-btn:active {
     transform: translateY(1px);
 }
 

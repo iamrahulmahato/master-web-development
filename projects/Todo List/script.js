@@ -2,6 +2,40 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('addTaskButton').addEventListener('click', addTask);
 });
 
+
+//Scroll bar funtion 
+document.addEventListener('DOMContentLoaded', function() {
+    const addTaskButton = document.getElementById('addTaskButton');
+    const taskInput = document.getElementById('taskInput');
+    const pendingTasks = document.getElementById('pendingTasks');
+    const completedTasks = document.getElementById('completedTasks');
+
+    // Function to add a task to Pending Tasks
+    addTaskButton.addEventListener('click', function() {
+        const taskText = taskInput.value.trim();
+        if (taskText) {
+            const newTask = document.createElement('li');
+            newTask.textContent = taskText;
+
+            // Add a checkbox for completing tasks
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    completedTasks.appendChild(newTask);
+                    pendingTasks.removeChild(newTask);
+                }
+            });
+
+            newTask.prepend(checkbox);
+            pendingTasks.appendChild(newTask);
+            taskInput.value = ''; 
+        }
+    });
+});
+
+
+
 function addTask() {
     const taskInput = document.getElementById('taskInput');
     const taskText = taskInput.value.trim();
@@ -110,3 +144,37 @@ function findListItem(task, listId) {
 HTMLElement.prototype.containsText = function (text) {
     return this.innerText.toLowerCase().includes(text.toLowerCase());
 };
+
+
+
+// Search Funtion 
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('addTaskButton').addEventListener('click', addTask);
+
+    // Add event listener for search input
+    document.getElementById('searchInput').addEventListener('input', searchTasks);
+});
+
+function searchTasks() {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+    filterTaskList('pendingTasks', searchTerm);
+    filterTaskList('completedTasks', searchTerm);
+}
+
+function filterTaskList(listId, searchTerm) {
+    const list = document.getElementById(listId);
+    const listItems = list.getElementsByTagName('li');
+
+    for (let i = 0; i < listItems.length; i++) {
+        const listItem = listItems[i];
+        const taskText = listItem.innerText.toLowerCase();
+
+        // Show or hide the task based on search term match
+        if (taskText.includes(searchTerm)) {
+            listItem.style.display = '';
+        } else {
+            listItem.style.display = 'none';
+        }
+    }
+}

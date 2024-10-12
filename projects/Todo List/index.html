@@ -6,6 +6,37 @@
     <title>ToDo App</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+html, body {
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-height: 100vh; 
+    overflow: hidden; 
+  
+    padding: 10px;
+    box-sizing: border-box; 
+}
+
+h2 {
+    margin-bottom: 5px; 
+}
+
+.task-list {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 10px 0; 
+    max-height: 170px; 
+    overflow-y: auto; 
+    border: 1px solid #ddd; 
+    padding: 5px; 
+}
+
+
+</style>
 
 <body>
     
@@ -15,14 +46,19 @@
         <h2>Add Task</h2>
         <input type="text" id="taskInput" placeholder="Enter task">
         <button id="addTaskButton">Add Task</button>
-
+    
+        <h2>Search Tasks</h2>
+        <input type="text" id="searchInput" placeholder="Search tasks..." style="width: 95%;">
+    
         <h2>Pending Tasks</h2>
-        <ul id="pendingTasks"></ul>
-
+        <ul id="pendingTasks" class="task-list"></ul>
+    
         <h2>Completed Tasks</h2>
-        <ul id="completedTasks"></ul>
+        <ul id="completedTasks" class="task-list"></ul>
     </div>
+    
 
   <script src="script.js"></script>
+ 
 </body>
 </html>
