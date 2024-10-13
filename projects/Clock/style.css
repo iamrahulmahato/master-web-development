@@ -1,21 +1,67 @@
-body{
-    background-image:url(v.png);
-   background-position: center;
-   background-repeat: no-repeat;
-   background-attachment: fixed;
-   background-size: cover;
-   margin: 0;
+body {
+  background-image: url(v.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
 }
-#container{
-    display: flex;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    justify-content: center;
-    font-size: 15vh;
-    backdrop-filter: blur(15px);
-    font-weight: bold;
-    margin-top: 10%;
+
+#container {
+  display: flex;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  justify-content: center;
+  font-size: 15vh;
+  backdrop-filter: blur(15px);
+  font-weight: bold;
+  margin-top: 5%;
 }
-h1{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 8vh;
+
+h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 8vh;
+}
+
+#timezone-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 3vh; /* Larger text for label */
+  color: black;
+  font-weight: bold;
+  backdrop-filter: blur(15px);
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2); /* Transparent background */
+  border-radius: 10px;
+  width: 50%; /* Limit the width to avoid stretching fully */
+  max-width: 600px; /* Optional max width for larger screens */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-left: auto;
+  margin-right: auto; /* Center the div horizontally */
+}
+
+select {
+  font-size: 3vh; /* Larger text for dropdown */
+  padding: 10px;
+  margin-left: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5); /* Light transparent background */
+  color: black;
+  border-radius: 5px;
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+select:hover {
+  background-color: rgba(255, 255, 255, 0.7); /* Slight hover effect */
+}
+
+#clock {
+  backdrop-filter: blur(15px); /* Blurred background for the clock */
+  background: rgba(255, 255, 255, 0.2); /* Transparent background */
+  padding: 20px;
+  border-radius: 20px;
 }
