@@ -1,6 +1,60 @@
 const toggleModeBtn = document.getElementById("toggle-mode-btn");
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
+
+let nextBtn = document.querySelector('.next')
+let prevBtn = document.querySelector('.prev')
+
+/*slider section*/
+let slider = document.querySelector('.slider')
+let sliderList = slider.querySelector('.slider .list')
+let thumbnail = document.querySelector('.slider .thumbnail')
+let thumbnailItems = thumbnail.querySelectorAll('.item')
+let slideButton = document.querySelector('.button button ')
+thumbnail.appendChild(thumbnailItems[0])
+
+
+slideButton.onclick = function() {
+  moveSlider('next')
+}
+
+// Function for next button 
+nextBtn.onclick = function() {
+    moveSlider('next')
+}
+
+
+// Function for prev button 
+prevBtn.onclick = function() {
+    moveSlider('prev')
+}
+
+
+function moveSlider(direction) {
+    let sliderItems = sliderList.querySelectorAll('.item')
+    let thumbnailItems = document.querySelectorAll('.thumbnail .item')
+    
+    if(direction === 'next'){
+        sliderList.appendChild(sliderItems[0])
+        thumbnail.appendChild(thumbnailItems[0])
+        slider.classList.add('next')
+    } else {
+        sliderList.prepend(sliderItems[sliderItems.length - 1])
+        thumbnail.prepend(thumbnailItems[thumbnailItems.length - 1])
+        slider.classList.add('prev')
+    }
+
+
+    slider.addEventListener('animationend', function() {
+        if(direction === 'next'){
+            slider.classList.remove('next')
+        } else {
+            slider.classList.remove('prev')
+        }
+    }, {once: true}) // Remove the event listener after it's triggered once
+}
+/*slider section*/
+
 if (prefersDarkScheme.matches) {
   document.documentElement.setAttribute("data-theme", "dark");
 } else {
@@ -49,3 +103,52 @@ function scrollFunction() {
 scrollToTopBtn.onclick = function() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 };
+function filterCards() {
+    // Get the input value
+    let searchTerm = document.getElementById('search-input').value.toLowerCase();
+    // Get all the cards in the container
+    let cards = document.querySelectorAll('.card');
+    
+    // Loop through the cards and filter based on the input
+    cards.forEach(function (card) {
+        let cardHeading = card.querySelector('.card-heading').innerText.toLowerCase();
+        
+        let cardDescription = card.querySelector('.card-description').innerText.toLowerCase();
+        
+        // Check if the search term is in the card heading or description
+        if (cardHeading.includes(searchTerm) || cardDescription.includes(searchTerm)) {
+            card.style.display = "block"; // Show the card
+        } else {
+            card.style.display = "none"; // Hide the card
+        }
+    });
+}
+document.addEventListener('DOMContentLoaded', function() {
+  const cardContainer = document.getElementsByClassName('projects-container')[0];
+  const cards = Array.from(cardContainer.getElementsByClassName('card'));
+  console.log(cards);
+
+  // Sort cards alphabetically based on the card title
+  cards.sort((a, b) => {
+    const headingA = a.querySelector('.card-heading');
+    const headingB = b.querySelector('.card-heading');
+    
+    // Check if both headings exist before sorting
+    if (headingA && headingB) {
+        const titleA = headingA.innerText.toUpperCase();
+        const titleB = headingB.innerText.toUpperCase();
+        return titleA.localeCompare(titleB);
+    } else {
+        // Handle cases where card headings are missing
+        console.warn('One or both cards are missing headings.');
+        return 0;
+    }
+});
+  // Remove current cards and append them in the new order
+  cardContainer.innerHTML = '';
+  cards.forEach(card => {
+      cardContainer.appendChild(card);
+  });
+});
+
+

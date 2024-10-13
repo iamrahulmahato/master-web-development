@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('chef.jpg')no-repeat center center;
+    background-size: contain; /* Show the entire image without cropping */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
+    background-color: #938e93; /*  Add a background color as fallback */
+}
+
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container {
+    .container {
+        max-width: 600px;
+        margin: auto;
+        background: rgba(249, 246, 246, 0.6); /* White background with 30% opacity */
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(227, 224, 224, 0.3); /* Light shadow for a subtle effect */
+    }
+}
+
+h1 {
+    margin-top: 0;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.4); /* Light transparent background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+    color: #2c2b2b;
+}
+
+button {
+    background-color: #3cf512c5;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #19e92a94;
+}
+
+.recipe {
+    background: #71d6dbbe;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.recipe h2 {
+    margin: 0 0 10px;
+}
+
+.recipe p {
+    margin: 5px 0;
+}
+

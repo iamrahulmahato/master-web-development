@@ -21,29 +21,36 @@
   </head>
   <body>
     <div class="main_box">
+      <!-- Hidden Checkbox for Toggling Sidebar -->
       <input type="checkbox" id="check" />
+      
+      <!-- Sidebar Toggle Button (Hamburger Menu) -->
       <div class="btn_one">
         <label for="check">
           <i class="fa-solid fa-bars"></i>
         </label>
       </div>
 
+      <!-- Sidebar Menu -->
       <div class="sidebar_menu">
+        <!-- Logo -->
         <div class="logo">
           <a href="#">Shekhar's Photography</a>
         </div>
 
+        <!-- Sidebar Close Button -->
         <div class="btn_two">
-          <label for="check" >
+          <label for="check">
             <i class="fa-solid fa-xmark"></i>
           </label>
         </div>
 
+        <!-- Navigation Menu -->
         <div class="menu">
           <ul>
             <li>
               <i class="fa-solid fa-image"></i>
-              <a href="#">Gallery</a>
+              <a href="#gallery">Gallery</a>
             </li>
             <li>
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -63,7 +70,7 @@
             </li>
             <li>
               <i class="fa-solid fa-phone"></i>
-              <a href="#">Contact</a>
+              <a href="#contact">Contact</a>
             </li>
             <li>
               <i class="fa-regular fa-comments"></i>
@@ -72,15 +79,104 @@
           </ul>
         </div>
 
+        <!-- Social Media Links -->
         <div class="social_media">
           <ul>
-            <a href="#"><i class="fa-brands fa-facebook"></i></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
           </ul>
         </div>
       </div>
+
+      <!-- Main Content Area -->
+      <div class="content">
+        <!-- Header Section -->
+        <header>
+          <h1>Welcome to Shekhar's Photography</h1>
+          <p>Capturing moments that last forever</p>
+        </header>
+
+        <!-- Gallery Section -->
+        <section class="gallery" id="gallery">
+         <img src="baby_shoot.jpg" alt="Photo 1"></a>
+          <img src="dancer.jpg" alt="Photo 2"></a>
+         <img src="girly.jpg" alt="Photo 3"></a>
+       <img src="wedding.jpeg" alt="Photo 4"></a>
+        <!-- <img src="camera.png" alt="Photo 5"></a>-->
+        <!--<img src="photography_img.jpg" alt="Photo 6"></a>-->
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+          <h2>About Me</h2>
+          <p>
+            Hello! I'm Shekhar, a professional photographer specializing in capturing stunning images that tell a story. With years of experience in various photography genres, I strive to bring your visions to life through my lens.
+          </p>
+        </section>
+
+        <!-- Services Section -->
+<section class="services">
+  <h2>Our Services</h2>
+  <div class="services-container">
+    <!-- Service 1 -->
+    <div class="service-card">
+      <h3>Wedding Photography</h3>
+      <p>Capture the most beautiful moments of your special day with our professional wedding photography package.</p>
+      <span class="price">$1200</span>
     </div>
+    
+    <!-- Service 2 -->
+    <div class="service-card">
+      <h3>Portrait Photography</h3>
+      <p>Perfect for individual, family, or group portraits in a variety of settings.</p>
+      <span class="price">$500</span>
+    </div>
+    
+    <!-- Service 3 -->
+    <div class="service-card">
+      <h3>Event Photography</h3>
+      <p>Document corporate events, birthdays, and other special occasions with high-quality images.</p>
+      <span class="price">$800</span>
+    </div>
+    
+    <!-- Service 4 -->
+    <div class="service-card">
+      <h3>Product Photography</h3>
+      <p>Showcase your products with stunning visuals to boost your business presence online.</p>
+      <span class="price">$300</span>
+    </div>
+  </div>
+</section>
+
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+          <h2>Contact</h2>
+          <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required/>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required/>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+          </form>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+          <p>&copy; 2024 Shekhar's Photography. All rights reserved.</p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Lightbox JS (Optional) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   </body>
 </html>
+  

@@ -5,6 +5,17 @@ const boxes = document.querySelectorAll('.box');
 const gameMessage = document.querySelector('#gameMessage');
 const winSound = new Audio('win-sound1.wav'); // Add a sound file for victory
 
+// The winning line element to visually show the winning combination
+const winningLine = document.createElement('div');
+winningLine.id = 'winning-line';
+winningLine.style.position = 'absolute'; // Set position to absolute
+winningLine.style.height = '4px'; // Set the height of the line
+winningLine.style.backgroundColor = '#45a049'; // Set the color of the winning line
+winningLine.style.display = 'none'; // Initially hidden
+document.body.appendChild(winningLine); // Append the winning line to the body
+
+const slider = document.querySelector('.highlight'); // The slider highlight element
+
 const selectBox = (element) => {
     if (element.target.innerText === '') {
         element.target.innerText = currPlayer;
@@ -18,9 +29,9 @@ const selectBox = (element) => {
 }
 
 const switchPlayer = () => {
-    currPlayer = currPlayer === 'X' ? 'O' : 'X';
-    document.querySelector('#player').innerText = `${currPlayer}'s`;
-}
+    currPlayer = currPlayer === 'X' ? 'O' : 'X'; // Toggle player
+    updateSlider(); // Update slider position after player switch
+};
 
 const checkWinner = () => {
     const winningCombinations = [
@@ -40,6 +51,7 @@ const checkWinner = () => {
             GameStatus = `${a} is the champion!`;
             winSound.play(); // Play win sound when a player wins
             displayMessage(GameStatus); // Display the win message in the center
+            drawWinningLine(combination); // Draw the winning line
             setTimeout(() => resetGame(), 2000); // Reset after 2 seconds
             return true; 
         }
@@ -67,16 +79,65 @@ const displayMessage = (message) => {
     gameMessage.style.display = 'block'; // Ensure the message is shown
 }
 
+
+const drawWinningLine = (combination) => {
+    const firstBox = document.querySelector(`#${combination[0]}`).getBoundingClientRect();
+    const lastBox = document.querySelector(`#${combination[2]}`).getBoundingClientRect();
+
+    const x1 = firstBox.left + firstBox.width / 2;
+    const y1 = firstBox.top + firstBox.height / 2;
+    const x2 = lastBox.left + lastBox.width / 2;
+    const y2 = lastBox.top + lastBox.height / 2;
+
+    const angle = Math.atan2(y2 - y1, x2 - x1);
+    const length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+
+    winningLine.style.width = `${length}px`;
+    winningLine.style.transform = `rotate(${angle}rad)`;
+    winningLine.style.display = 'block';
+
+    // Adjust position based on winning type
+    if (combination[0] === combination[1] && combination[1] === combination[2]) { // Horizontal
+        winningLine.style.top = `${firstBox.top + firstBox.height / 2 - 2}px`; // Centered above the row
+        winningLine.style.left = `${firstBox.left}px`;
+    } else if (combination[0] === combination[3] && combination[3] === combination[6]) { // Vertical
+        winningLine.style.top = `${firstBox.top}px`;
+        winningLine.style.left = `${firstBox.left + firstBox.width / 2 - 2}px`; // Centered in the column
+    } else if (combination[0] === combination[4] && combination[4] === combination[8]) { // Diagonal \
+        winningLine.style.top = `${firstBox.top}px`;
+        winningLine.style.left = `${firstBox.left}px`;
+        winningLine.style.transform = `rotate(45deg)`; // Adjust for diagonal \
+    } else if (combination[2] === combination[4] && combination[4] === combination[6]) { // Diagonal /
+        winningLine.style.top = `${firstBox.top}px`;
+        winningLine.style.left = `${lastBox.left}px`;
+        winningLine.style.transform = `rotate(-45deg)`; // Adjust for diagonal /
+    }
+
+    // Ensure the line is correctly centered
+    const midPointX = (x1 + x2) / 2;
+    const midPointY = (y1 + y2) / 2;
+
+    winningLine.style.top = `${midPointY - 2}px`; // Adjust the Y position
+    winningLine.style.left = `${midPointX - length / 2}px`; // Adjust the X position
+}
 const resetGame = () => {
     boxes.forEach(box => {
         box.innerText = '';
     });
     currPlayer = 'X';
-    document.querySelector('#player').innerText = `${currPlayer}'s`; 
     gameMessage.innerText = ''; // Clear any messages
     gameMessage.style.display = 'none'; // Hide the message
+    winningLine.style.display = 'none'; // Hide the winning line
+    updateSlider(); // Reset slider position
 }
 
+const updateSlider = () => {
+    if (currPlayer === 'X') {
+        slider.style.transform = 'translateX(0)'; // Move to X position
+    } else {
+        slider.style.transform = 'translateX(100%)'; // Move to O position
+    }
+}
 
 boxes.forEach(box => {
     box.addEventListener('click', selectBox);
@@ -84,3 +145,6 @@ boxes.forEach(box => {
 
 const reset = document.querySelector('#reset');
 reset.addEventListener('click', resetGame);
+
+updateSlider();
+

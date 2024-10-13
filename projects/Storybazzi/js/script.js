@@ -346,3 +346,33 @@
     }
   });
 })(jQuery);
+
+
+//logic for that toggle button
+const checkbox = document.getElementById("checkbox")
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark")
+})
+
+//---------------LOGIC FOR THAT BUTTON THAT TAKES TO THE TOP OF THE PAGE----------
+// Get the button element
+let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Show the button when user scrolls down
+window.onscroll = function() {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    scrollToTopBtn.style.display = "block"; // Show the button
+  } else {
+    scrollToTopBtn.style.display = "none"; // Hide the button
+  }
+}
+
+// When the user clicks the button, scroll to the top of the page
+scrollToTopBtn.addEventListener("click", function() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+});
