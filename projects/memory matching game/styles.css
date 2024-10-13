@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 320px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #2196F3;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    font-size: 24px;
+    color: white;
+    position: relative;
+    transform: scale(1);
+    transition: transform 0.2s;
+}
+
+.card.flipped {
+    background-color: #fff;
+    color: #2196F3;
+}
+
+.card.flipped::before {
+    content: attr(data-icon);
+    font-size: 36px;
+    position: absolute;
+    color: #2196F3;
+}
+
+.card.matched {
+    background-color: #4CAF50;
+    color: white;
+    cursor: default;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}

@@ -15,10 +15,35 @@ h1 {
 font-size: 3rem;
 height: 5vh;
 }
-p {
-font-size: 1.5rem;
-height: 5vh;
-font-weight: 700;
+.slider {
+  position: relative;
+  width: 130px; /* Adjust width of the slider */
+  height: 40px; /* Adjust height of the slider */
+  background-color: #e0e0e0; /* Background color for the slider */
+  border-radius: 20px; /* Rounded edges */
+  margin: 20px 0; /* Margin for spacing */
+}
+.highlight {
+  position: absolute;
+  height: 100%; /* Full height of the slider */
+  width: 50%; /* Half width for highlighting X or O */
+  background-color: #4caf50; /* Green color for the active player */
+  border-radius: 20px; /* Rounded edges */
+  transition: left 0.3s ease; /* Smooth transition */
+}
+.slider-text {
+  position: absolute;
+  top: 5%;
+  transform: translateY(-50%);
+  width: 50%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333; /* Text color */
+}
+
+#sliderTextO {
+  left: 50%; /* Position O text on the right side */
 }
 /* Center the game message for win or tie */
 #gameMessage {
