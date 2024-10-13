@@ -15,6 +15,33 @@ VERSION:	Versoin Number
 [TABLE OF CONTENTS]
 -------------------------------------------------------------------*/
 /*  typography */
+
+/*---scrollbar styling------*/
+/* Style for the custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scroll thumb color */
+  border-radius: 10px;
+  border: 3px solid #f1f1f1; /* Padding inside the thumb */
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #598de2; /* Change color on hover */
+}
+
+::-webkit-scrollbar-thumb:active{
+  background-color: #0c6a92; /* Change color on hover */
+}
+
 body {
   line-height: 1.7;
   font-family: "Open Sans", sans-serif;
@@ -22,6 +49,85 @@ body {
   color: #696c6d;
   font-size: 14px;
 }
+
+
+/*============syling of the header section========*/
+header .container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body.dark {
+  background-color: #292c35;
+} /* #9b59b6 */
+
+body.dark h1, body.dark .support a {color: #fff;}
+
+body.dark p {
+  color: #fff; /* Change paragraph text to white in dark mode */
+}
+
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {color: #f1c40f;}
+
+.fa-sun {color: #f39c12;}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+/* ====================================== */
+
+/* Style for the Scroll to Top Button */
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  font-size: 19px;
+  background-color: #28709d;
+  color: white;
+  cursor: pointer;
+  padding: 16px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#scrollToTopBtn:hover {
+  background-color: #093f68;
+  border: 1px black;
+}
+
 
 p, .paragraph {
   font-weight: 400;

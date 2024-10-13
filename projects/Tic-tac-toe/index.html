@@ -11,7 +11,11 @@
 </head>
 <body>
     <h1>Tic Tac Toe</h1>
-    <p>Player <span id="player">X's</span> turn</p>
+    <div class="slider">
+        <div class="highlight" id="highlight"></div>
+        <p class="slider-text" id="sliderTextX">X</p>
+        <p class="slider-text" id="sliderTextO">O</p>
+    </div>
     <div class="container">
         <div class="row row1">
             <div class="box" id="box1"></div>
@@ -31,8 +35,9 @@
     </div>
    <!--  Added message display area for user-friendly messages  -->
     <p id="gameMessage"></p>
+     <!-- Winning line div -->
+    <div id="winning-line"></div>
     <button id="reset">New Game</button>
-
     <script src="app.js"></script>
 </body>
 </html>

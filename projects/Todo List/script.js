@@ -2,6 +2,40 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('addTaskButton').addEventListener('click', addTask);
 });
 
+
+//Scroll bar funtion 
+document.addEventListener('DOMContentLoaded', function() {
+    const addTaskButton = document.getElementById('addTaskButton');
+    const taskInput = document.getElementById('taskInput');
+    const pendingTasks = document.getElementById('pendingTasks');
+    const completedTasks = document.getElementById('completedTasks');
+
+    // Function to add a task to Pending Tasks
+    addTaskButton.addEventListener('click', function() {
+        const taskText = taskInput.value.trim();
+        if (taskText) {
+            const newTask = document.createElement('li');
+            newTask.textContent = taskText;
+
+            // Add a checkbox for completing tasks
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    completedTasks.appendChild(newTask);
+                    pendingTasks.removeChild(newTask);
+                }
+            });
+
+            newTask.prepend(checkbox);
+            pendingTasks.appendChild(newTask);
+            taskInput.value = ''; 
+        }
+    });
+});
+
+
+
 function addTask() {
     const taskInput = document.getElementById('taskInput');
     const taskText = taskInput.value.trim();
