@@ -1,56 +1,58 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Currency Converter</title>
-    <!--font awesome-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <!--css file-->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="content">
-        <img src="img/currency.png" alt="Currency" id="currencyImage">
-      </div>      
-      <header>CURRENCY CONVERTER</header>
-      <form action="#" method="post">
-        <div class="amount">
-          <p>Enter Amount</p>
-          <input type="text" value="1" />
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter - Convert your currency</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">CurrencyConverter</div>
+        <ul>
+            <li><a href="/">Home</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Choose a currency to convert</h1>
+        <div class="card">
+            <form action="/action.php" method="get">
+                <label for="quantity">Choose a quantity: </label>
+                <input type="number" name="quantity" min="1" max="10" required>
+                <label for="currency">Choose a currency: </label>
+                <select name="currency" required>
+                    <option value="INR">Indian Rupee</option>
+                    <option value="USD">US Dollar</option>
+                    <option value="EUR">Euro</option>
+                </select>
+                <button class="btn" type="submit">Submit</button>
+            </form>
         </div>
-        <div class="drop-list">
-          <div class="from">
-            <p>From</p>
-            <div class="select-box">
-              <img src="https://flagcdn.com/48x36/in.png" alt="country-flag" />
-              <select name="" id="">
-                <!--options will be added using JS-->
-              </select>
-            </div>
-          </div>
-          <div class="icon"><i class="fas fa-exchange-alt"></i></div>
-          <div class="to">
-            <p>To</p>
-            <div class="select-box">
-              <img src="https://flagcdn.com/48x36/us.png" alt="country-flag" />
-              <select name="" id="">
-                <!--options will be added using JS-->
-              </select>
-            </div>
-          </div>
+
+        <div class="output">
+            <h2>Here are your converted values in different currencies</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Currency</th>
+                        <th>Code</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
-        <div class="exchange_rate">Getting exchange rate...</div>
-        <button id="rotateButton">Get Exchange Rate</button>
-      </form>
     </div>
-    <!--script file-->
-    <script src="country_code.js"></script>
+    <div id="toast" class="toast">Currency converted successfully!</div>
+
+    <footer>
+        Copyright &copy; All rights reserved
+    </footer>
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>
