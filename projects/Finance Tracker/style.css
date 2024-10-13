@@ -1,0 +1,92 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:  #3c3c50;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+h1 {
+    color: #efd6f5;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+.input-section form {
+    display: inline-block;
+    text-align: left;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input, select, button {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #180000;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3); /* Example shadow */
+   
+}
+
+button {
+    background-color: #297fb936;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #593163;
+}
+
+.dashboard {
+    margin-top: 40px;
+}
+
+canvas {
+    margin: 20px auto;
+}
+
+.notification {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    display: none;
+}
+/* Existing styles here... */
+
+/* Add this for animated cursor */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3498db;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.1s, height 0.1s, border 0.1s;
+}
+
+.cursor.expand {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #e74c3c;
+}
+
+/* Optional: Hide default cursor */
+body {
+    cursor: none;
+}
+
+
