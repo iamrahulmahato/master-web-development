@@ -40,6 +40,12 @@ html {
     --head: #334155;
     --card: #fff;
     --p: #4b5563;
+
+    --input-bg: #ffffff;  /* Input background color */
+    --input-border: #3b4a5a;  /* Input border color */
+    --input-text: #000000;  /* Input text color */
+    --input-placeholder: #94a3b8; /* Placeholder text color */
+
 }
 
 html[data-theme="dark"] {
@@ -49,6 +55,11 @@ html[data-theme="dark"] {
     --head: #fff;
     --card: #192333;
     --p: #94A3B8;
+
+    --input-bg: #2c3a4b;  /* Input background color */
+    --input-border: #3b4a5a;  /* Input border color */
+    --input-text: #ffffff;  /* Input text color */
+    --input-placeholder: #fffff0; /* Placeholder text color */
 }
 
 a {
@@ -882,4 +893,35 @@ body {
     background-color: #92c3ed; 
     color: #192333;
     transform: scale(1.1); 
+}
+#search-input {
+    width: 100%;
+    max-width: 50%;
+    min-width: 40%;
+    padding: 12px 20px;
+    margin: 20px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border: 1px solid var(--input-border);
+}
+input::placeholder {
+    color: var(--input-placeholder);
+}
+input:focus {
+    border-color: var(--btn-color);
 }
