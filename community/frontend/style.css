@@ -121,6 +121,10 @@ body {
 .card-content {
     padding: 1rem;
 }
+.card-content:hover{
+    animation: normal;
+    color: #e18605;
+}
 
 .card-heading {
     color: #1e293b;
@@ -128,7 +132,7 @@ body {
 }
 
 .card-description {
-    color: #475569;
+    color: #232c39;
     font-size: 0.9rem;
     margin-top: 0.2rem;
 }
@@ -137,6 +141,7 @@ body {
     position: fixed;
     top: 1rem;
     right: 1rem;
+    color:#1e293b
 }
 
 #toggle-mode-btn {
