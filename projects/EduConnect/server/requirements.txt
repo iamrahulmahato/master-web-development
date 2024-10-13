@@ -1,5 +1,0 @@
-flask
-flask_mail
-flask_jwt_extended
-python-dotenv
-flask_cors

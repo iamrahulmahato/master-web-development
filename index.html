@@ -18,6 +18,32 @@
 
     <title>Master web development</title>
     <link rel="icon" href="./faviconicon.png" type="image/png">
+    <style>
+         @media (max-width: 1200px) {
+    .footer-container {
+      padding: 20px;
+    }
+    .mwd-footer-content {
+      text-align: center;
+    }
+    .tags.social {
+      justify-content: center;
+    }
+    .btn {
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-secondary:hover {
+        background-color: #6c757d;
+    }
+    </style>
+
+
+
 </head>
 
 <body>
@@ -46,18 +72,8 @@
             <input type="text" id="search-input" placeholder="Search games by Title/Description..."
                 oninput="filterCards()" style="margin-bottom: 10px;">
         </div>
-       
-
-
-
-
-
-
-
 
         <div class="slider">
-
-        
 
         <div class="list">
 
@@ -69,6 +85,21 @@
                 <div class="type">Game</div>
                 <div class="description">
                    A simple air ballon game.......
+                </div>
+                <div class="button">
+                <button>SLIDE MORE</button>
+                </div>
+            </div>
+           </div>
+
+           <div class="item">
+            <img src="./images/coin toss game.webp" alt="">
+
+            <div class="content">
+                <div class="title">Coin Toss</div>
+                <div class="type">Game</div>
+                <div class="description">
+                   A Game to flip the coin and bet on it either head or tail.......
                 </div>
                 <div class="button">
                 <button>SLIDE MORE</button>
@@ -92,7 +123,6 @@
             </div>
            </div>
 
-
            <div class="item">
             <img src="./images/doraemon image.jpg" alt="">
 
@@ -107,7 +137,6 @@
                 </div>
             </div>
            </div>
-
 
 
            <div class="item">
@@ -141,7 +170,6 @@
            </div>
 
         </div>
-
 
 
         <div class="thumbnail">
@@ -178,14 +206,6 @@
     </div>
 
 
-
-       
-
-
-
-          
-      
-
         <div class="projects-container">
             <a href="./projects/GenerateGradientColor/index.html" class="card" target="_blank">
                 <div class="card-cover">
@@ -198,6 +218,7 @@
                     </p>
                 </div>
             </a>
+            
             <a href="./projects/box connet game/box.html" class="card" target="_blank">
                 <div class="card-cover ">
                     <img src="./assets/image/box connet game.png" alt="">
@@ -206,6 +227,28 @@
                     <h3 class="card-heading">box connet game </h3>
                     <p class="card-description">
                         Play and Win🏆
+                    </p>
+                </div>
+            </a>
+            <a href="./projects/coin_toss/index.html" class="card" target="_blank">
+                <div class="card-cover ">
+                    <img src="./images/coin toss game.webp" alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">Coin Toss Game</h3>
+                    <p class="card-description">
+                        A Game to flip the coin and bet on it either head or tail.
+                    </p>
+                </div>
+            </a>
+            <a href="./projects/guess_the_shape/index.html" class="card" target="_blank">
+                <div class="card-cover ">
+                    <img src="./images/guess the shape.webp" alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">Guess the Shape</h3>
+                    <p class="card-description">
+                        A Game to guess the shape, we have over 100 shapes to guess....
                     </p>
                 </div>
             </a>
@@ -220,7 +263,17 @@
                     </p>
                 </div>
             </a>
-            
+            <a href="./projects/RandomRecipeGenerator/index.html" class="card" target="_blank">
+                <div class="card-cover">
+                    <img src="assets\image\recipegenerator.jpg" alt="Generate recipe">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">Random Recipe Generator</h3>
+                    <p class="card-description">
+                        Discover new recipes with a click!
+                    </p>
+                </div>
+            </a>
             <a href="./projects/Travel Vlog/home.html" class="card" target="_blank">
                 <div class="card-cover">
                     <img src="./assets/image/travel-vlog.jpg" alt="Counter">
@@ -232,6 +285,19 @@
                     </p>
                 </div>
             </a>
+
+            <a href="./projects/BookVerse/index.html" class="card" target="_blank">
+                <div class="card-cover">
+                    <img src="./assets/image/bookverse logo.png" alt="Counter">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">BookVerse-A book website</h3>
+                    <p class="card-description">
+                        One book, endless imagination.
+                    </p>
+                </div>
+            </a>
+
             <a href="./projects/counter/index.html" class="card" target="_blank">
                 <div class="card-cover">
                     <img src="./assets/image/counter.png" alt="Counter">
@@ -630,25 +696,26 @@
                     </p>
                 </div>
             </a>
-            <a href="./projects/Wordle Game/index.html" class="card" target="_blank">
+
+            
             <a href="./projects/MazeGame/index.html" class="card" target="_blank">
                 <div class="card-cover">
                     <img src="./projects/MazeGame/assests/logo.png" alt="wordle logo">
                 </div>
                 <div class="card-content">
-
                     <h3 class="card-heading">Maze Game with AI</h3>
                     <p class="card-description">
                         play against AI.
                     </p>
                 </div>
             </a>
-            <a href="./projects/Wordle Game/index.html" class="card" target="_blank">
+
+
+           <a href="./projects/Wordle Game/index.html" class="card" target="_blank">
                 <div class="card-cover">
                     <img src="./projects/Wordle Game/wordle-logo.png" alt="wordle logo">
                 </div>
                 <div class="card-content">
-
                     <h3 class="card-heading">Wordle Game</h3>
                     <p class="card-description">
                         Test your word-guessing skills.
@@ -816,6 +883,7 @@
                     </p>
                 </div>
             </a>
+
             <a href="./projects/Dictionary/index.html" class="card">
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/DICT.jpg" alt="">
@@ -827,6 +895,47 @@
                     </p>
                 </div>
             </a>
+
+
+                <a href="./projects/FlashCard Quiz App/index.html" class="card" target="_blank">
+                    <div class="card-cover">
+                        <img src="./projects/Flashcard Quiz App/image/image.png" alt="Flashcard Quiz App logo">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-heading">Flashcard Quiz App</h3>
+                        <p class="card-description">
+                            Create and review flashcards for effective learning.
+                        </p>
+                    </div>
+                </a>
+                
+
+             
+                <a href="./projects/weather/index.html" class="card" target="_blank">
+                    <div class="card-cover counter-cover-colour">
+                        <img src="./assets/image/weather.jpg" class="weather-img" alt="">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-heading">Weather</h3>
+                        <p class="card-description">
+                            Check weather
+                        </p>
+                    </div>
+                    </a>
+
+<a href="./projects/Password manager/index.html" class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/Password-manager.png" alt="">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Password manager</h3>
+        <p class="card-description">
+            Manage your passwords
+        </p>
+    </div>
+</a>
+
+
             <a href="./projects/Currency Convertor/index.html" class="card" target="_blank">
                 <div class="card-cover ">
                     <img src="./assets/image/currency.jpg" alt="">
@@ -838,10 +947,9 @@
                     </p>
                 </div>
             </a>
-            <a href="projects\TRIVIA\index.html" class="card" target="_blank">
+
+            <a href="./projects/Brick Breaker/index.html" class="card" target="_blank">
                 <div class="card-cover">
-          <a href="./projects/Brick Breaker/index.html" class="card">
-                <div class="card-cover counter-cover-colour">
                     <img src="assets/image/brick.png" alt="Brick Breaker">
                 </div>
                 <div class="card-content">
@@ -874,6 +982,7 @@
                         Explore the World, One Challenge at a Time!          </p>
                 </div>
             </a>
+
             <a href="./projects/Lorem_ipsum/index.html" class="card">
                 <div class="card-cover">
                     <img src="./assets/image/lorem_ipsum.png" alt="Lorem_ipsum">
@@ -888,28 +997,17 @@
 
 
 
-            <a href="projects\Whack a mole\index.html" class="card">
-
-                <div class="card-cover">
-
-                    <img src="assets\image\mole logo.png" alt="Whac a mole logo">
-
-                </div>
-
-                <div class="card-content">
-
-                    <h3 class="card-heading">Whack a Mole</h3>
-
-                    <p class="card-description">
-
-                        Smash moles, score big fun!</p>
-
-                </div>
-
-            </a>
-
-
-
+        <a href="projects\Whack a mole\index.html" class="card">
+            <div class="card-cover">
+                <img src="assets\image\mole logo.png" alt="Whac a mole logo">
+            </div>
+            <div class="card-content">
+                <h3 class="card-heading">Whack a Mole</h3>
+                <p class="card-description">
+                Smash moles, score big fun!
+                </p>
+            </div>
+        </a>
 
             <a href="./projects/Pokedex/index.html" class="card">
                 <div class="card-cover counter-cover-colour">
@@ -921,7 +1019,9 @@
                         Find Details of your favorite Pokemon
                     </p>
                 </div>
-        </a>
+
+            </a>
+
               <a href="./projects/Super Mario/index.html" class="card">
                     <div class="card-cover counter-cover-colour">
                         <img src="./assets/image/supermario.png" alt="Super Mario">
@@ -935,7 +1035,6 @@
               </a>
 
             <a href="./projects/Magic8Ball/index.html" class="card" target="_blank">
-
                 <div class="card-cover counter-cover-colour">
                     <img src="./projects/Magic8Ball/magic8ball.png" alt="magic8ball">
                 </div>
@@ -946,6 +1045,7 @@
                     </p>
                 </div>
             </a>
+
             <a href="./projects/Rock Paper Scissors/index.html" class="card" target="_blank">
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/Rock-paper-scissor.png" alt="Rock paper scissor icon">
@@ -957,6 +1057,7 @@
                     </p>
                 </div>
             </a>
+
             <a href="./projects/Password manager/index.html" class="card">
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/Password-manager.png" \ alt="">
@@ -968,6 +1069,7 @@
                     </p>
                 </div>
             </a>
+
             <a href="./projects/eye that follow/index.html" class="card">
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/ETE.jpg" \ alt="">
@@ -979,8 +1081,6 @@
                     </p>
             </div>
         </a>
-
-
 
 
             <a href="./projects/Notes Taking Website/index.html" class="card">
@@ -1006,6 +1106,7 @@
                     </p>
                 </div>
             </a>
+
             <a href="./projects/Slide Puzzle/index.html" class="card">
                 <div class="card-cover counter-cover-colour">
                     <img src="assets/image/slide.png" alt="Slide puzzle">
@@ -1017,6 +1118,7 @@
                     </p>
                 </div>
             </a>
+
             <a href="./projects/Flappy Bird/index.html" class="card">
                 <div class="card-cover counter-cover-colour">
                     <img src="assets/image/flappybird.png" alt="Flappy Bird">
@@ -1028,6 +1130,142 @@
                     </p>
                 </div>
             </a>
+
+
+            <!-- <a href="./projects/Stick Hero/index.html" class="card"> -->
+                <!-- <div class="card-cover counter-cover-colour"> -->
+                    <!-- <img src="assets/image/stick.png" alt="Stick Hero"> -->
+                <!-- </div> -->
+                <!-- <div class="card-content"> -->
+                    <!-- <h3 class="card-heading">Stick Hero</h3> -->
+                    <!-- <p class="card-description"> -->
+                        <!-- A fun popular game. -->
+                        <!-- <a href="./projects/Among Us/index.html" class="card"> -->
+                            <!-- <div class="card-cover counter-cover-colour"> -->
+                                <!-- <img src="assets/image/amongus.png" alt="Among Us"> -->
+                            <!-- </div> -->
+                            <!-- <div class="card-content"> -->
+                                <!-- <h3 class="card-heading">Among Us</h3> -->
+                                <!-- <p class="card-description"> -->
+                                    <!-- Find who is imposter. -->
+                                <!-- </p> -->
+                            <!-- </div> -->
+
+                            <a href="./projects/Among Us Game/index.html" class="card">
+                                <div class="card-cover counter-cover-colour">
+                                    <img src="assets/image/amongus.png" alt="Flappy Bird">
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-heading">Among us</h3>
+                                    <p class="card-description">
+                                        Find who is imposter.
+                                    </p>
+                                </div>
+                            </a>
+
+                        <a href="./projects/Joke Generator/index.html" class="card">
+                            <div class="card-cover counter-cover-colour">
+                                <img src="assets/image/jokeGenerator.jpeg" alt="Joke Generator">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-heading">Joke Generator</h3>
+                                <p class="card-description">
+                                    Find who is imposter.
+                                </p>
+                            </div>
+                        </a>
+                        <a href="./projects/Doodle Jump/index.html" class="card">
+                            <div class="card-cover counter-cover-colour">
+                                <img src="./assets/image/doodle.png" alt="Doodle Jump">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-heading">Doodle Jump</h3>
+                                <p class="card-description">
+                                    Enjoy and Jump.
+                                </p>
+                            </div>
+                        </a>
+                        <a href="./projects/Email Validator/index.html" class="card">
+                            <div class="card-cover counter-cover-colour">
+                                <img src="./assets/image/email.png" alt="Email Validator">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-heading">Email Validator</h3>
+                                <p class="card-description">
+                                    Validate E-MAIL
+                                </p>
+                            </div>
+                        </a>
+                        <a href="./projects/Maze/index.html" class="card">
+                            <div class="card-cover counter-cover-colour">
+                                <img src="./assets/image/maze.jpg" alt="maze game'">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-heading">Maze Game</h3>
+                                <p class="card-description">
+                                    Play exciting maze game
+                                </p>
+                            </div>
+                        </a>
+                        <a href="./projects/Virtual Keyboard/index.html" class="card">
+                            <div class="card-cover counter-cover-colour">
+                                <img src="./assets/image/vc.jpg" alt="Virtual Keyboard'">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-heading">Virtual Keyboard</h3>
+                                <p class="card-description">
+                                    Virtual Keyboard
+                                </p>
+                            </div>
+
+
+                        </a>
+                        <a href="./projects/Minesweeper/index.html" class="card" target="_blank">
+                            <div class="card-cover counter-cover-colour">
+                                <img src="./assets/image/minesweeper.jpeg" alt="Minesweeper">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-heading">Minesweeper</h3>
+                                <p class="card-description">
+                                    Classic Minesweeper game.
+                                </p>
+                            </div>
+                        </a>
+                        <a href="./projects/Tetris_Game/index.html" class="card">
+                            <div class="card-cover counter-cover-colour">
+                                <img src="./assets/image/tetrsis.jpg" alt="Doodle Jump">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-heading">Tetris Game</h3>
+                                <p class="card-description">
+                                    Arrange falling blocks to clear lines.
+                                </p>
+                            </div>
+                        </a>
+                        <a href="./projects/Connect4/index.html" class="card" target="_blank">
+                            <div class="card-cover ">
+                                <img src="./projects/Connect4/Connectfour.png" alt="">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-heading">Connect4(Two player)</h3>
+                                <p class="card-description">
+                                    Connect4: Where Strategy Meets Fun, One Disc at a Time!
+                                </p>
+                            </div>
+                        </a>
+                        <a href="./projects/pionoGame/index.html" class="card" target="_blank">
+                            <div class="card-cover counter-cover-colour">
+                                <img src="./assets/image/piano.png" alt="pianoImage">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-heading">Piano</h3>
+                                <p class="card-description">
+                                    Experience the most realistic virtual piano.
+                                </p>
+                            </div>
+                        </a>
+
+
             <a href="./projects/Candy Game/index.html" class="card">
                 <div class="card-cover counter-cover-colour">
                     <img src="assets/image/candy.png" alt="Candy Game">
@@ -1352,8 +1590,49 @@
                 </div>
             </a>
 
+            <a href="./projects/leet_code/index.html" class="card" target="_blank">
+                <div class="card-cover counter-cover-colour">
+                    <img src="./assets/image/leetcode.png" alt="LeetCode Question Generator">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">LeetCode Question Generator</h3>
+                    <p class="card-description">
+                        Generate random LeetCode questions for practice.
+                    </p>
+                </div>
+            </a>
+
+
+            <a href="./projects/Photo Gallery/index.html" class="card">
+
+            <a href="./projects/netflix-clone/index.html" class="card" target="_blank">
+                <div class="card-cover counter-cover-colour">
+                    <img src="./assets/image/netflix-clone.jpg" alt="chatbot">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">Netflix Clone</h3>
+                    <p class="card-description">
+                        A UI-based Clone of the popular mainstream service "NETFLIX".
+                    </p>
+                </div>
+            </a>
+
+
+              <a href="./projects/3D Music Visualizer/index.html" class="card" target="_blank">
+                <div class="card-cover counter-cover-colour">
+                    <img src="./assets/image/3D_music_visualizer.jpg" alt="music visualizer">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">3D Music Visualizer</h3>
+                    <p class="card-description">
+                         Experience the most realistic 3D music visualizer. 
+                    </p>
+                </div>
+            </a>
+              
             <!-- =========================== Tip calculator ================================= -->
             <a href="projects/Tip calculator/index.html" class="card" target="_blank">
+
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/calculator.png" alt="Calculator" style="width: 10rem; height: auto;">
                 </div>
@@ -1376,28 +1655,57 @@
                     </p>
                 </div>
              </a>
+<!-- =========================== Shooter Game ================================= -->
+<a href="./projects/Shooter_Game/index.html" class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/Shooter_game.png" alt="Shooter Game" style="width: 10rem; height: auto;">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Shooter Game</h3>
+        <p class="card-description">
+            Take aim and unleash your skills in shooter experience!
+        </p>
+    </div>
+</a>
+<!-- =========================== End Shooter Game ================================= -->
 
+<!-- =========================== Simple Drawing App ================================= -->
+<a href="projects/Simple Drawing app/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/drawing app.png" alt="Drawing App" style="width: 10rem; height: auto;">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Drawing App</h3>
+        <p class="card-description">
+            Unleash Your Creativity with Every Stroke!
+        </p>
+    </div>
+</a>
+<!-- =========================== End Simple Drawing App ================================= -->
 
-             <!-- =========================== Simple Drawing app ================================= -->
-            <a href="projects/Simple Drawing app/index.html" class="card" target="_blank">
+            <!-- =========================== Othello Game ================================= -->
+            <a href="projects/Othello/index.html" class="card" target="_blank">
                 <div class="card-cover counter-cover-colour">
-                    <img src="./assets/image/drawing app.png" alt="Drawing App" style="width: 10rem; height: auto;">
+                    <img src="./assets/image/Othello.png" alt="Othello Game" style="width: 10rem; height: auto;">
                 </div>
                 <div class="card-content">
-                    <h3 class="card-heading">Drawing App</h3>
+                    <h3 class="card-heading">Othello Game</h3>
                     <p class="card-description">
-                        Unleash Your Creativity with Every Stroke!
+                        Othello is a strategic board game where players aim to flip their opponent's discs to their color.
                     </p>
                 </div>
             </a>
             <!--============================== End =========================================== -->
 
+   
 
-     </div>
+                
+
 
     </section>
 
     <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
+
 
     <script src="./js/app.js"></script>
 </body>
