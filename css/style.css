@@ -929,3 +929,37 @@ input::placeholder {
 input:focus {
     border-color: var(--btn-color);
 }
+
+footer{
+  background-color: #141d2b;
+  height: 20vh;
+  width: 100vw;
+}
+
+.gridbox{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0px 0px 0px 0px;
+}
+.gridbox li{
+  justify-self: center;
+  padding: 3%;
+  align-self: center;
+  text-align: center;
+  height: 50px;
+}
+.gridbox li a{
+  color: #06cfaa;
+  font-size: 1rem;
+}
+.container{
+  text-align: center;
+  color: rgb(215, 209, 196);
+}
+.container a{
+  color: rgb(213, 108, 108);
+}
