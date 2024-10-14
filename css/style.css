@@ -37,7 +37,7 @@ html {
     --primary: #f43f5e;
     --btn-color: #f43f5e;
     --btn-text: #fff;
-    --head: #334155;
+    --head: #223652;
     --card: #fff;
     --p: #4b5563;
 
@@ -50,9 +50,9 @@ html {
 
 html[data-theme="dark"] {
     --bg: #1e293b;
-    --btn-color: #fecdd3;
+    --btn-color: #e9efad;
     --btn-text: #1e293b;
-    --head: #fff;
+    --head: #fb7878;
     --card: #192333;
     --p: #94A3B8;
 
@@ -91,7 +91,7 @@ body {
 }
 
 .projects-heading h3 {
-    font-size: 2.7rem;
+    font-size: 2.8rem;
     font-weight: 600;
     color: var(--head);
 }
@@ -102,6 +102,11 @@ body {
 
 .btn-container {
     margin-top: 2rem;
+}
+
+.btn-container a:hover{
+    color:blue;
+    transition: .3s ease;
 }
 
 .projects-heading .source-code-btn {
@@ -430,9 +435,9 @@ body {
 
 /* Hover Effects for Project */
 .projects-container a:hover {
-    background-color: #f9cbd3;
+    background-color: #ec2c0a;
     transform: translateY(-6px);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.4s ease;
   }
 
 .card {
@@ -447,7 +452,7 @@ body {
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    box-shadow: 0 1px 3px 0 rgba(23, 23, 23, 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 
 .card-cover {
@@ -459,8 +464,8 @@ body {
 }
 
 .card-cover img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 85%;
+    max-height: 85%;
     object-fit: contain;
 }
 
@@ -495,6 +500,10 @@ body {
     top: 1rem;
     right: 1rem;
 }
+.icon .icon2:hover{
+    color: yellow;
+}
+
 
 #toggle-mode-btn {
     border: none;
@@ -851,11 +860,11 @@ body {
     background-color: var(--btn-color);
     color: var(--btn-text);
     padding: 12px 16px;
-    border-radius: 50%;
+    border-radius: 60%;
     cursor: pointer;
     opacity: 0;
     transition: opacity 0.5s, transform 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
 }
 
 #scrollToTopBtn:hover {
