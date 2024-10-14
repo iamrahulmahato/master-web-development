@@ -19,3 +19,10 @@ function pauseSong() {
     playPauseBtn.textContent = '▶️';
 }
 
+playPauseBtn.addEventListener('click', () => {
+    if (audioPlayer.paused) {
+        playSong();
+    } else {
+        pauseSong();
+    }
+});
