@@ -165,4 +165,5 @@ Special thanks to:
 - **Swiper.js** for the smooth slider functionality.  
 - **Google Fonts** for the elegant typography.  
 ---
+
 This **Music Player** project showcases a fusion of design and functionality using **HTML, CSS, and JavaScript**. It’s a perfect project to enhance web development skills while creating something enjoyable and interactive. 🎶
