@@ -26,3 +26,22 @@ playPauseBtn.addEventListener('click', () => {
         pauseSong();
     }
 });
+
+nextBtn.addEventListener('click', () => {
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    playSong();
+});
+
+prevBtn.addEventListener('click', () => {
+    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+    playSong();
+});
+
+volumeControl.addEventListener('input', () => {
+    audioPlayer.volume = volumeControl.value;
+});
+
+audioPlayer.addEventListener('timeupdate', () => {
+    const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+    progressBar.value = progress;
+});
