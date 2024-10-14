@@ -158,14 +158,7 @@ We welcome contributions to enhance the project! If you would like to contribute
 3. Commit your changes.  
 4. Submit a pull request.  
 ---
-## 📝 **License**  
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.  
----
-## 👩‍💻 **Contact**  
-If you have any questions or suggestions, feel free to reach out:  
-- **Email**: your-email@example.com  
-- **GitHub**: [https://github.com/your-username](https://github.com/your-username)  
----
+
 ## 📢 **Acknowledgements**  
 Special thanks to:  
 - **Font Awesome** for the beautiful icons used in the project.  
