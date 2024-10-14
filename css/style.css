@@ -929,3 +929,88 @@ input::placeholder {
 input:focus {
     border-color: var(--btn-color);
 }
+
+/* General Container Styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f8f9fa; /* Light grey background */
+  border-top: 2px solid #ddd; /* Subtle border on top */
+}
+
+/* Feedback Text and Link */
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+a {
+  color: #007bff;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: 0px solid #007bff;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Scroll to Top Button */
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #0056b3;
+}
+
+/* Icon Size */
+#scrollToTopBtn i {
+  font-size: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
