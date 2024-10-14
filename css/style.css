@@ -18,7 +18,7 @@
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: #95ff00 #000327;
+  scrollbar-color: #08ecbb #3c0751;
 }
 
 * {
@@ -35,7 +35,7 @@ html {
 html {
     --bg: #f8fafc;
     --primary: #f43f5e;
-    --btn-color: #f43f5e;
+    --btn-color: #fa2b4d;
     --btn-text: #fff;
     --head: #334155;
     --card: #fff;
@@ -84,6 +84,7 @@ body {
 .projects-heading {
     margin-top: 20px;
     text-align: center;
+    color: #000;
 }
 
 .projects-heading h3 span {
@@ -102,6 +103,7 @@ body {
 
 .btn-container {
     margin-top: 2rem;
+    transition: .3s ease-in;
 }
 
 .projects-heading .source-code-btn {
@@ -188,7 +190,7 @@ body {
 
 .slider .list .item .button button:hover{
     letter-spacing: 3px;
-    background-color: #f43f5e;
+    background-color: #f6294b;
     border-radius: 7px 7px 7px;
 }
 .slider .list .item .button button:nth-child(2){
@@ -244,7 +246,7 @@ body {
 
 
 .thumbnail .item img:hover{
-    box-shadow:5px 5px 5px 5px black ;
+    box-shadow:5px 5px 5px 5px rgb(12, 12, 12) ;
 }
 
 /* nextPrevArrows Section  */
@@ -430,7 +432,7 @@ body {
 
 /* Hover Effects for Project */
 .projects-container a:hover {
-    background-color: #f9cbd3;
+    background-color: #ea6279;
     transform: translateY(-6px);
     transition: transform 0.3s ease, background-color 0.3s ease;
   }
@@ -451,7 +453,7 @@ body {
 }
 
 .card-cover {
-    background: rgba(25, 90, 216, 0.2);
+    background: rgba(19, 90, 230, 0.2);
     height: 150px;
     display: flex;
     align-items: center;
@@ -460,7 +462,7 @@ body {
 
 .card-cover img {
     max-width: 80%;
-    max-height: 80%;
+    max-height: 85%;
     object-fit: contain;
 }
 
@@ -474,6 +476,7 @@ body {
 .card-heading {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    color: #000;
 }
 
 .card-description {
@@ -515,7 +518,7 @@ body {
 }
 
 #footer {
-    padding-top: 5em; 
+    padding-top: 5.5em; 
   }
   
   #footer .feature-post .flex-item {
@@ -634,6 +637,7 @@ body {
   
   .nav-links1 a:hover::after {
     transform: scaleX(1);
+    color: #06cfaa;
   }
   .nav-links {
     flex-direction: column;
@@ -646,7 +650,7 @@ body {
   
   .nav-link:hover{
    /* Change background color on hover */
-          color: #f8b5b5;
+          color: #fa7373;
           scale: 1.1; /* Change text color on hover */
         /* Optional: Change border color on hover */
           transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
@@ -714,7 +718,7 @@ body {
   }
   
   .form-container .social-btn img {
-    width: 20px;
+    width: 25px;
     margin-right: 10px;
   }
   .form-container .social-btn img {
@@ -890,7 +894,7 @@ body {
 }
 
 .btn-container a:hover {
-    background-color: #92c3ed; 
+    background-color: #75b4ec; 
     color: #192333;
     transform: scale(1.1); 
 }
@@ -908,7 +912,7 @@ body {
 }
 
 #search-input:focus {
-    border-color: #007bff;
+    border-color: #1251e1;
     outline: none;
     box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
 }

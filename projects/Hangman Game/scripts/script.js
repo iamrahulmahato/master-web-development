@@ -64,10 +64,18 @@ const initGame = (button, clickedLetter) => {
 // Creating keyboard buttons and adding event listeners
 for (let i = 97; i <= 122; i++) {
     const button = document.createElement("button");
+    button.id=String.fromCharCode(i);
     button.innerText = String.fromCharCode(i);
     keyboardDiv.appendChild(button);
     button.addEventListener("click", (e) => initGame(e.target, String.fromCharCode(i)));
 }
+
+//add event listner to key presses
+window.addEventListener('keydown',(e) => {
+    console.log(e.key)
+    document.getElementById(e.key).click();
+})
+
 
 getRandomWord();
 playAgainBtn.addEventListener("click", getRandomWord);
