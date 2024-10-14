@@ -1,67 +1,198 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap");
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Manrope", sans-serif;
 }
-a {
-  color: black;
-  text-decoration: none;
-}
+
 body {
-  background-color: #333533;
-}
-.flex-container {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
   display: flex;
-}
-.share-btn {
-  background-color: white;
-  padding: 0.65rem 0.8rem;
-  border-radius: 50%;
-}
-#share-link {
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  margin: 1rem;
+  height: 100vh;
 }
-#profile-picture {
-  display: block;
-  width: 100px;
-  margin: 1rem auto;
-  border-radius: 50%;
-}
-.profile > h1,
-.profile > h2 {
+
+.container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px whitesmoke;
+  padding: 20px;
+  width: 80%;
+  height: 90%;
   text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 5vw;
+}
+
+
+.profile {
+  text-align: center;
+  padding: 30px;
+  background-color: white;
+  border-radius: 20px 0 20px 0;
+  box-shadow: 5px 5px 1px rgba(15, 2, 34, 0.637);
+  width: 40rem;
+  height: 70%;
+  border:1px solid rgb(95, 50, 107) ;
+}
+
+.profile-picture-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  animation: neon-border 2s linear infinite;
+}
+
+.profile-picture-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@keyframes neon-border {
+  0% {
+      box-shadow:1px 1px 1px rgb(53, 1, 53), 0 1px 2px bla;
+  }
+  50% {
+      box-shadow:0px 0px 6px 3px purple , 1px 0 3px paleturquoise ;
+  }
+  100% {
+      box-shadow: 0px 0px 5px lavender;
+  }
+}
+
+.profile-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 20px;
+  color: #333;
+}
+
+.profile-specialist {
+  font-size: 18px;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 0;
+  border-top: 2px solid #ddd;
+  padding-top: 10px;
+  margin-top: 15px;
+}
+
+.about{
+  font-size: 15px;
+  font-weight: 500;
+  font-family: cursive;
+  overflow:scroll;
+  max-height: 40%;
+  text-align: left;
+  padding:5px;
+}
+
+.about ::-webkit-scrollbar{
+  width: 10px;
+  display: none;
+}
+
+/* Optional additional hover effects for profile picture */
+.profile-picture-container:hover {
+  animation: neon-border-hover 1.5s linear infinite;
+}
+
+@keyframes neon-border-hover {
+  0% {
+    box-shadow: 0px 0px 5px rgb(0, 234, 255);
+    
+}
+}
+
+.social-media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between boxes */
+}
+
+.social-media a {
+  flex: 1 1 calc(33.33% - 20px); /* Each box takes up one-third of the row */
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  color: #333;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s;
+}
+
+.social-media i {
+  margin-right: 8px;
+}
+.social-media a{
+  margin: 5px;
+}
+
+.social-media h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.icon {
+  display: block;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.icon:hover {
   color: white;
 }
-.profile > h1 {
-  font-size: 1.25rem;
+
+.facebook:hover {
+  background-color: #3b5998;
 }
-.profile > h2 {
-  font-weight: 400;
-  font-size: 1rem;
+
+.instagram:hover {
+  background-color: #C13584;
 }
-.links-container {
-  padding: 1rem 0.75rem;
-  list-style-type: none;
+
+.twitter:hover {
+  background-color: #1DA1F2;
 }
-.links-container li {
-  text-align: center;
-  margin: 1rem 0;
+
+.youtube:hover {
+  background-color: #FF0000;
 }
-.nav-link {
-  display: block;
-  border-radius: 10px;
-  background-color: white;
-  padding: 1rem 0;
-  box-shadow: 10px 10px black;
-  font-weight: 600;
+
+.linkedin:hover {
+  background-color: #0077B5;
 }
-@media (min-width: 768px) {
-  main {
-    max-width: 750px;
-    margin: 0 auto;
-  }
+
+.github:hover {
+  background-color: #333;
+}
+
+.tiktok:hover {
+  background-color: #69C9D0;
+}
+
+.quora:hover {
+  background-color: #A82400;
+}
+
+.pinterest:hover {
+  background-color: #E60023;
 }
