@@ -17,11 +17,14 @@ document.body.appendChild(winningLine); // Append the winning line to the body
 const slider = document.querySelector('.highlight'); // The slider highlight element
 
 const selectBox = (element) => {
-    if (element.target.innerText === '') {
+    if (element.target.innerText === '' && currPlayer== 'X') {
         element.target.innerText = currPlayer;
         gameMessage.innerText = ''; // Clear any previous messages
         if (!checkWinner()) { 
             switchPlayer();
+            if (currPlayer === 'O') { // If it's the AI's turn
+                aiMove(); // Execute the AI's move
+            }
         }
     } else {
         alert('Already filled');
@@ -32,6 +35,7 @@ const switchPlayer = () => {
     currPlayer = currPlayer === 'X' ? 'O' : 'X'; // Toggle player
     updateSlider(); // Update slider position after player switch
 };
+
 
 const checkWinner = () => {
     const winningCombinations = [
@@ -139,12 +143,82 @@ const updateSlider = () => {
     }
 }
 
+const aiMove = () => {
+    const winningCombinations = getWinningCombinations();
+
+    // Check if AI can win in the next move
+    for (const combination of winningCombinations) {
+        if (canWin(combination, 'O')) {
+            makeMove(combination.find(id => document.querySelector(`#${id}`).innerText === ''), 'O');
+            return;
+        }
+    }
+
+    // Check if the player can win in the next move and block them
+    for (const combination of winningCombinations) {
+        if (canWin(combination, 'X')) {
+            makeMove(combination.find(id => document.querySelector(`#${id}`).innerText === ''), 'O');
+            return;
+        }
+    }
+
+    // Prefer center if available
+    const centerBox = 'box5';
+    if (document.querySelector(`#${centerBox}`).innerText === '') {
+        makeMove(centerBox, 'O');
+        return;
+    }
+
+    // Prefer corners
+    const cornerBoxes = ['box1', 'box3', 'box7', 'box9'];
+    const availableCorners = cornerBoxes.filter(corner => document.querySelector(`#${corner}`).innerText === '');
+    if (availableCorners.length > 0) {
+        const randomCorner = availableCorners[Math.floor(Math.random() * availableCorners.length)];
+        makeMove(randomCorner, 'O');
+        return;
+    }
+
+    // Finally, choose any random available box
+    const emptyBoxes = Array.from(boxes).filter(box => box.innerText === '');
+    if (emptyBoxes.length > 0) {
+        const randomBox = emptyBoxes[Math.floor(Math.random() * emptyBoxes.length)];
+        makeMove(randomBox.id, 'O');
+    }
+};
+
+// Helper function to make a move
+const makeMove = (boxId, player) => {
+    const box = document.querySelector(`#${boxId}`);
+    box.innerText = player;
+    if (!checkWinner()) {
+        switchPlayer(); // Switch back to the player's turn
+    }
+};
+
+// Function to check if a player can win with the current combination
+const canWin = (combination, player) => {
+    const marks = combination.map(id => document.querySelector(`#${id}`).innerText);
+    return marks.filter(mark => mark === player).length === 2 && marks.filter(mark => mark === '').length === 1;
+};
+
+// Function to get winning combinations
+const getWinningCombinations = () => {
+    return [
+        ['box1', 'box2', 'box3'],
+        ['box4', 'box5', 'box6'],
+        ['box7', 'box8', 'box9'],
+        ['box1', 'box4', 'box7'],
+        ['box2', 'box5', 'box8'],
+        ['box3', 'box6', 'box9'],
+        ['box1', 'box5', 'box9'],
+        ['box3', 'box5', 'box7']
+    ];
+};
+
 boxes.forEach(box => {
     box.addEventListener('click', selectBox);
 });
 
 const reset = document.querySelector('#reset');
 reset.addEventListener('click', resetGame);
-
 updateSlider();
-

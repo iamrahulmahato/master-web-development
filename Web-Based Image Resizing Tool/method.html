@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resizing Methods - Image Resizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Image Resizer</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Available Resizing Methods</h2>
+            <p>Our application uses the <strong>LANCZOS</strong> filter to resize images. This filter offers high-quality resizing, particularly effective when reducing image sizes. Below is a brief explanation of the resampling filters available in the Pillow library:</p>
+
+            <ul>
+                <li><strong>NEAREST (Image.NEAREST)</strong>: A simple and fast method that picks the nearest pixel. It produces blocky images.</li>
+                <li><strong>BILINEAR (Image.BILINEAR)</strong>: Uses linear interpolation between pixels, producing smoother images than NEAREST.</li>
+                <li><strong>BICUBIC (Image.BICUBIC)</strong>: Produces higher-quality images than BILINEAR by considering more pixels.</li>
+                <li><strong>LANCZOS (Image.LANCZOS)</strong>: The highest quality filter, particularly good for downscaling images, which we use in this application.</li>
+            </ul>
+        </section>
+    </main>
+   
+</body>
+</html>

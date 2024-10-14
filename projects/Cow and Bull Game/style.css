@@ -1,0 +1,43 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #d5aaff;
+    margin: 0;
+}
+
+.container{
+    background-color: #ecd4ff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+input[type="text"]{
+    padding: 8px;
+    font-size: 18px;
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#result{
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#history{
+    margin-top: 15px;
+}
+
+.history-item{
+    margin-top: 10px;
+}

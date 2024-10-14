@@ -259,7 +259,11 @@ function missedTheSpot() {
   scene.remove(topLayer.threejs);
 
   gameEnded = true;
-  if (resultsElement && !autopilot) resultsElement.style.display = "flex";
+  if (resultsElement && !autopilot) {
+    resultsElement.style.display = "flex";
+    resultsElement.style.fontSize = "2em";
+    resultsElement.innerHTML = `Game Over, You missed the block! <br> Your final score is: ${scoreElement.innerText}<br>Press 'R' to restart.`;
+  }
 }
 
 function animation(time) {
