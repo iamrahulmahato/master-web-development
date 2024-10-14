@@ -7,3 +7,15 @@ const progressBar = document.getElementById('progress-bar');
 
 const songs = ['song1.mp3', 'song2.mp3', 'song3.mp3'];
 let currentSongIndex = 0;
+
+function playSong() {
+    audioPlayer.src = songs[currentSongIndex];
+    audioPlayer.play();
+    playPauseBtn.textContent = '⏸️';
+}
+
+function pauseSong() {
+    audioPlayer.pause();
+    playPauseBtn.textContent = '▶️';
+}
+
