@@ -498,6 +498,9 @@ body {
     top: 1rem;
     right: 1rem;
 }
+.icon.theme-mode-toggler {
+    z-index: 101;
+}
 
 #toggle-mode-btn {
     border: none;
