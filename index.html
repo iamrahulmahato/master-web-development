@@ -61,6 +61,51 @@
 
     </div>
 
+    <button id="scrollBtn" class="scroll-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16l-6.364-6.364 1.414-1.414z" />
+            <path d="M12 19.172l4.95-4.95 1.414 1.414L12 22l-6.364-6.364 1.414-1.414z" />
+        </svg>
+    </button>
+    
+    <style>
+        .scroll-button {
+            position: fixed;
+            right: 15px;
+            top: 15%;
+            background-color: #fa2b4d;
+            color: white;
+            border: none;
+            border-radius: 50%; /* Circle-shaped button */
+            height: 43px;
+            width: 43px;
+            padding: 0;
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+    
+        .scroll-button:hover {
+            transform: scale(1.2);
+        }
+    </style>
+    
+    <script>
+        document.getElementById("scrollBtn").addEventListener("click", function () {
+    
+            const viewportHeight = window.innerHeight;
+    
+            window.scrollBy({
+                top: viewportHeight,
+                behavior: "smooth"
+            });
+        });
+    </script>
+    
+
     <section id="projects">
         <div class="projects-heading">
             <p>Master web development</p>
