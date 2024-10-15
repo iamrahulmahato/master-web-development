@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ffffff;
+    text-align: center;
+    font-family: Outfit;
+    min-height: 100vh;
+}
+.logo{
+    margin-top: 20px;
+}
+.login-container{
+    max-width:350px;
+    border: 1px solid #d2d2d2;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px 26px;
+    border-radius: 8px;
+    text-align: left;
+}
+.login-title{
+    font-size: 28px;
+    font-weight: 400;
+}
+.input-lable{
+    margin-top: 20px;
+}
+.login-container input{
+    width: 100%;
+    height: 31px;
+    margin-top: 5px;
+    padding: 3px 7px;
+    border: 1px solid #a0a0a0;
+    border-radius: 3px;
+    font-size: 12px;
+}
+.login-container input:focus{
+    outline: 3px solid #c2f2ff;
+}
+.login-container button{
+    width: 100%;
+    height: 31px;
+    margin: 15px 0px;
+    background: #FFD814;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.login-container button:hover{
+    background: #ebc712;
+}
+.login-condition{
+    font-size: 12px;
+}
+.login-container p span{
+    color: #0066c0;
+}
+.login-help{
+    font-size: 13px;
+    margin: 20px 0px;
+}
+hr{
+    border: none;
+    height: 1px;
+    background-color: #d4d4d4;
+}
+.login-container h4{
+    margin: 15px 0px;
+    font-size: 13px;
+}
+.login-business{
+    font-size: 13px;
+}
+.login-section-text{
+    width: 350px;
+    font-size: 13px;
+    color: #737373;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+.login-section-text hr{
+    width: 110px;
+}
+.login-signup-btn{
+    width: 350px;
+    height: 30px;
+    font-size: 13px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #c3c3c3;
+}
+.login-signup-btn:hover{
+    background-color: #f1f1f1;
+}
+
+footer{
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    margin-top: 20px;
+    padding: 20px 0px;
+    position: fixed;
+    bottom: 0;
+    background: linear-gradient(to bottom, #f4f4f4, #ffffff);
+    border-top: 2px solid #ededed;
+    font-size: 12px;
+}
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+footer .footer-links a{
+    text-decoration: none;
+    color: #0066c0;
+}

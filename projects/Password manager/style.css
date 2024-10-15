@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,700;1,300&family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    background-image: url(esf.jpg);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: black;
+    color: white;
+    padding: 12px 3px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    margin: 0 23px;
+    font-weight: 800;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+ul {
+    display: flex;
+    margin: 0 23px;
+    align-items: center;
+}
+
+ul>li {
+    list-style: none;
+    margin: 0 13px;
+    cursor: pointer;
+}
+
+ul>li:hover {
+    color: lightgray;
+}
+
+/* Container */
+.container {
+    max-width: 80vw;
+    margin: 23px auto;
+}
+
+/* Card styling */
+.card {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+h1,
+h2 {
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Button */
+.btn {
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    font-weight: 700;
+    border: 2px solid gray;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table,
+th,
+td {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+    padding: 15px;
+    color: #fff;
+}
+
+th {
+    background-color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+td {
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+    word-break: break-all;
+}
+
+tr:hover td {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+img {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+}
+
+.btnsm {
+    padding: 8px 15px;
+    background: black;
+    color: rgb(248, 2, 2);
+    border: 2px solid gray;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btnsm:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Toast Styling */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    z-index: 100;
+    animation: fadeInOut 3s ease forwards;
+}
+
+.hrline {
+    margin-top: 2rem;
+}
+.cpy{
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+/* Responsive adjustments */
+@media only screen and (min-width: 768px) {
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    .btn {
+        width: auto;
+        display: inline-block;
+        padding: 10px 40px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        max-width: 92vw;
+    }
+
+    th,
+    td {
+        font-size: 12px;
+        padding: 10px;
+    }
+}

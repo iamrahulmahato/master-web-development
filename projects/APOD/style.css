@@ -1,0 +1,364 @@
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+body{
+  background: url(https://images.unsplash.com/photo-1608178398319-48f814d0750c?q=80&w=1479&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 50px;
+ 
+
+ 
+ 
+}
+#content{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
+
+.container{
+    width: 100vw;
+  
+}
+
+.todayimg{
+    display: flex;
+    background-color: rgba(128, 128, 128, 0.541);
+    width: 90%;
+    border-radius: 20px;
+    /* width: 90vw;
+    margin: 10px;
+    justify-content:space-around;
+    align-items: center;
+    
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 30px;
+   border-radius: 20px; */
+
+}
+.img{
+    width: 80%;
+    margin: 5px;
+   
+}
+.apodh1{
+    color:transparent;
+    -webkit-text-stroke: 2px cyan;
+    font-family:'gilroy',serif;
+    font-size: 300%;
+    padding: 10px;
+}
+.bydate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 10px;
+    width: 80%;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+
+    margin: 5px;
+    padding: 5px;
+    width: 70%;
+    
+ 
+}
+.t-title{
+    color: transparent;
+    -webkit-text-stroke: 2px burlywood;
+}
+.t-ex{
+    color: white;
+    font-size:1.2rem;
+}
+.t-date{
+    color: white;
+}
+.t-copyright{
+    color: aqua;
+}
+.bdh{
+    color:aquamarine;
+    font-size: 3vw;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+.apodR{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.apodR button{
+    background-color:darkcyan;
+  border: none;
+   height: 39px;
+   color: aqua;
+   border: none;
+   width: 20vw;
+   max-width: 100px;
+   font-family: 'gilroy';
+   font-size: 13px;
+   
+}
+.searcgBtn{
+padding: 0;
+border-radius: 0px 0 0 0px;
+height: 40px;
+}
+.apodR button:hover{
+    background-color: aqua;
+    color: darkcyan;
+    scale: 0.9;
+}
+.apodR button:active{
+   scale: 0.7;
+}
+
+.sec{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.apodInput{
+    height: 35px;
+    font-size: 10px;
+    width: 50vw;
+    max-width: 200px;
+    background-color:white;
+    border: none;
+    border: 3px solid darkcyan;
+    color: darkslategrey;
+    border-radius: 10px 0 0 10px;
+   
+    text-align: center;
+    
+ }
+ .refreshBtn{
+    border-radius: 0 10px 10px 0;
+ }
+ 
+.todayVideo{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    justify-content:space-around;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.541);
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 30px;
+   border-radius: 20px;
+
+}
+.vdo{
+    width: 100vh;
+    height: 70vh;
+    margin: 5px;
+   
+}
+.APODinfo{
+    width: 90%;
+   
+    background-color: rgba(128, 128, 128, 0.541);;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10%;
+    border-radius: 20px;
+
+}
+.download{
+    height: 33px;
+    width: 100px;
+    margin-top: 5px;
+    border-radius: 50px;
+    background-color:darkcyan;
+    border: none;
+    box-shadow: 0 10px 2px 1px black;
+    color: aqua;
+ }
+.download:hover{
+    transform: scale(0.9);
+    color: darkcyan;
+    background-color: aqua;
+ }
+ 
+ .download:active{
+    transform: scale(0.7);
+    color: darkcyan;
+    background-color: aqua;
+ }
+.APODinfo  h1
+{
+ color: burlywood;
+}
+@media screen  and (orientation:"portrait"){
+    .body2{
+        padding-top: 800px;
+    }
+    .apodh1{
+        font-size: 100px;
+    }
+    .apddInput{
+        height:60px;
+     }
+     .searcgBtn{
+        height: 64px;
+        color: red;
+     }
+     .apodR button{
+        background-color:darkcyan;
+      border: none;
+       height: 39px;
+       color: aqua;
+       border: none;
+       width: 50px;
+       font-family: 'gilroy';
+       font-size: 13px;
+       
+    }
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.color-changing-spinner {
+   width: 50px;
+   height: 50px;
+   border: 5px solid transparent;
+   border-top: 5px solid #3498db; /* Initial color */
+   border-radius: 50%;
+   animation: spin 2s linear infinite, changeColor 10s linear infinite; /* Animation definitions */
+ }
+ 
+ @keyframes spin {
+   0% {
+     transform: rotate(0deg);
+   }
+   100% {
+     transform: rotate(360deg);
+   }
+ }
+ 
+ @keyframes changeColor {
+   0%, 25% {
+     border-top: 5px solid #3498db; /* Start with blue */
+   }
+   25%, 50% {
+     border-top: 5px solid #e74c3c; /* Transition to red */
+   }
+   50%, 75% {
+     border-top: 5px solid #27ae60; /* Transition to green */
+   }
+   75%, 100% {
+     border-top: 5px solid #f39c12; /* Transition to yellow */
+   }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+@media screen and (max-width:790px)  {
+    .todayimg{
+        margin: 0;
+        flex-direction: column;
+        justify-content: center;
+    
+    }
+    .t-ex{
+        font-size: 15px;
+    }
+    .t-title{
+        font-size: 30px;
+    }
+    .todayVideo{
+        margin: 0;
+        flex-direction: column;
+        justify-content: center;
+    
+    }
+    .body2{
+        padding-top: 100px;
+    }
+   
+}
+
+@media (max-width:1176px) {
+    .today{
+        flex-direction: column;
+        width: 100%;
+        border-radius: 10%;
+        
+    }
+    .body2{
+        padding-top: 100px;
+    }
+    
+}
+@media screen and (max-width:630px)  {
+    
+    .todayVideo{
+       width: 100%;
+       flex-shrink: inherit;
+    
+    }
+    .vdo{
+        width: 60vh;
+        height: 50vh;
+    }
+    
+    
+}

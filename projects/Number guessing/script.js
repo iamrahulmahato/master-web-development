@@ -5,6 +5,13 @@ let highScore = 20;
 document.querySelector('.btn_check').addEventListener('click', checkGuess);
 document.querySelector('.btn_again').addEventListener('click', resetGame);
 
+//Added event listener for 'Enter' key press
+document.querySelector('.input_number').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+        checkGuess();
+    }
+});
+
 function checkGuess() {
     const guess = Number(document.querySelector('.input_number').value);
     if (!guess) {
@@ -34,7 +41,7 @@ function resetGame() {
     secretNumber = Math.floor(Math.random() * 20) + 1;
     score = 20;
     document.querySelector('.score').textContent = score;
-    document.querySelector('.message').textContent = 'Start Guesing..........';
+    document.querySelector('.message').textContent = 'Start Guessing..........';
     document.querySelector('.input_number').value = '';
     document.querySelector('.hide_num').textContent = '?';
     document.body.style.backgroundColor = '#222';
@@ -48,13 +55,13 @@ function celebrate() {
     celebration.classList.add('celebration');
     celebration.innerHTML = `
     <div class="sparkles">
-      <div class="sparkle"></div>
-      <div class="sparkle"></div>
-      <div class="sparkle"></div>
-      <div class="sparkle"></div>
-      <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
     </div>
-  `;
+`;
     document.body.appendChild(celebration);
     setTimeout(() => {
         document.body.removeChild(celebration);

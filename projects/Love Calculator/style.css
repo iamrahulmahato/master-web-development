@@ -28,6 +28,20 @@ body {
 .contentbox h1 span {
     color: #ec4899;
 }
+.spinner {
+    border: 4px solid #f3f3f3; 
+    border-top: 4px solid #ec4899; 
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 1rem auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 #calculate {
     margin-top: 2rem;
@@ -38,6 +52,14 @@ body {
     font-size: 20px;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+#calculate:hover {
+    background-color: #ec4899;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
 }
 
 .gap {

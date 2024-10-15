@@ -1,0 +1,444 @@
+@font-face {
+    font-family: emoji;
+    src: url(https://xem.github.io/track-not-found/twemoji.ttf);
+}
+
+@keyframes wood {
+    100% {
+        background-position: -100% center;
+    }
+}
+
+@keyframes tree {
+    0% {
+        left: 600px;
+    }
+
+    100% {
+        left: -600px;
+    }
+}
+
+@keyframes wobble {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes rumble {
+    10% {
+        margin-top: -5px;
+    }
+
+    20% {
+        margin-top: 5px;
+    }
+
+    30% {
+        margin-top: -5px;
+    }
+
+    40% {
+        margin-top: 5px;
+    }
+
+    50% {
+        margin-top: -5px;
+    }
+
+    60% {
+        margin-top: 5px;
+    }
+
+    70% {
+        margin-top: -5px;
+    }
+
+    80% {
+        margin-top: 5px;
+    }
+
+    90% {
+        margin-top: -5px;
+    }
+
+    100% {
+        margin-top: 5px;
+    }
+}
+
+@keyframes wiggle {
+    50% {
+        transform: scale(1.5);
+    }
+}
+
+#viewport {
+    width: 900px;
+    height: 480px;
+    overflow: hidden;
+    contain: strict;
+    border: 1px solid;
+    position: relative;
+    perspective: 600px;
+}
+
+#viewport * {
+    transform-style: preserve-3d;
+    box-sizing: border-box;
+}
+
+#camera {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+* {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: manipulation;
+    box-sizing: border-box;
+}
+
+#viewport {
+    background: #6b6;
+    font-family: emoji, calibri, sans-serif;
+}
+
+#all {
+    transform-origin: 0 0;
+}
+
+#viewport.blue {
+    background: linear-gradient(#abf, #def);
+}
+
+h1 {
+    margin-left: -70px;
+}
+
+body {
+    font-family: calibri, arial;
+    overflow: hidden;
+    margin: 0;
+    background: #000;
+}
+
+#gg,
+#h1,
+#h2,
+#h3,
+#h4,
+#hud {
+    position: fixed;
+    color: #fff;
+    text-align: center;
+    width: 900px;
+    text-shadow: 3px 3px 5px #000;
+}
+
+#h1 {
+    margin-top: -480px;
+    font-size: 60px;
+}
+
+#h2 {
+    margin-top: -400px;
+    font-size: 20px;
+}
+
+#h3 {
+    margin-top: -100px;
+    font-size: 40px;
+    animation: wobble 2s infinite;
+    cursor: pointer;
+}
+
+#h4 {
+    margin-top: -465px;
+    margin-left: 420px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.mobile #h4 {
+    display: none;
+}
+
+.plane {
+    opacity: 1;
+}
+
+.train {
+    font-size: 50px;
+    line-height: 50px;
+}
+
+#train * {
+    pointer-events: none;
+}
+
+.boat {
+    font-size: 80px;
+    line-height: 80px;
+}
+
+.ground {
+    border-radius: 50%;
+}
+
+.tree {
+    font-size: 60px;
+    line-height: 60px;
+}
+
+.shadow {
+    color: rgba(0, 0, 0, 0.002);
+    text-shadow: 0 0 rgba(0, 0, 0, 0.35);
+    line-height: 70px;
+}
+
+.title .woods {
+    position: fixed;
+    animation: wood 0.9s infinite linear;
+}
+
+.tree {
+    position: fixed;
+    animation: tree 9s infinite linear;
+}
+
+.tree.fixed {
+    animation: none;
+    transition: 1s;
+}
+
+.tree2 {
+    animation-delay: -1.5s;
+}
+
+.tree3 {
+    animation-delay: -2.5s;
+}
+
+.tree4 {
+    animation-delay: -3.5s;
+}
+
+.tree5 {
+    animation-delay: -5s;
+}
+
+.tree6 {
+    animation-delay: -6.5s;
+}
+
+.tree6 {
+    animation-delay: -7s;
+}
+
+#hud {
+    width: 900px;
+    height: 480px;
+    margin-top: -480px;
+    text-align: left;
+    font-size: 26px;
+    padding: 5px 0 0 5px;
+    opacity: 0;
+    transition: opacity 2s;
+    pointer-events: none;
+}
+
+#hud * {
+    pointer-events: all;
+    margin-top: 5px;
+}
+
+.fixed {
+    animation: none;
+}
+
+.hill {
+    background: linear-gradient(rgba(255, 255, 255, 0),
+            #6b6 10%,
+            #6b6 90%,
+            rgba(255, 255, 255, 0));
+}
+
+.mobile .hill {
+    background: #6b6;
+}
+
+.hill2 {
+    transition: opacity 0.2s;
+    background: linear-gradient(rgba(255, 255, 255, 0),
+            #494 10%,
+            #494 90%,
+            rgba(255, 255, 255, 0));
+}
+
+.mobile .hill2 {
+    background: #494;
+}
+
+.hill3 {
+    transition: opacity 0.2s;
+    background: #494;
+}
+
+.river {
+    background: linear-gradient(rgba(255, 255, 255, 0),
+            #78d 10%,
+            #45f 90%,
+            rgba(255, 255, 255, 0));
+    transition: opacity 0.5s;
+}
+
+.mobile .river {
+    background: linear-gradient(#78d 10%, #45f 90%);
+}
+
+.river2 {
+    background: linear-gradient(#fff1,
+            rgba(255, 255, 255, 0) 10%,
+            rgba(255, 255, 255, 0) 50%,
+            #fff2);
+    background-size: 100% 200px;
+    transition: opacity 0.5s;
+}
+
+#buttons {
+    margin: 370px 0;
+}
+
+button {
+    font-size: 25px;
+    background: #c8c8c8;
+    min-width: 50px;
+    min-height: 50px;
+    margin-left: 10px;
+}
+
+button img {
+    vertical-align: bottom;
+}
+
+#hud button * {
+    pointer-events: none;
+}
+
+button span {
+    font-family: emoji, calibri;
+}
+
+.reverse {
+    transform: scaleX(-1);
+    display: inline-block;
+}
+
+#b_2d {
+    margin-left: 50px;
+}
+
+button.on {
+    background: #fff;
+}
+
+#black {
+    width: 900px;
+    height: 480px;
+    background: #000;
+    position: absolute;
+    top: 0;
+    opacity: 1;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    color: #fff;
+    text-align: center;
+    padding: 90px 0 0;
+}
+
+#black h1 {
+    margin-left: 0;
+}
+
+.cp1 {
+    position: absolute;
+    top: 335px;
+    left: 830px;
+    text-align: center;
+}
+
+.cp2 {
+    position: absolute;
+    top: 330px;
+    left: 730px;
+    text-align: center;
+}
+
+.cp1 button,
+.cp2 button {
+    min-height: 40px;
+}
+
+.woods {
+    background: linear-gradient(90deg,
+            #ca0,
+            #ca0 50%,
+            rgba(255, 255, 255, 0) 50%);
+    background-size: 16.5px;
+    background-position: 25px 0;
+    font-size: 40px;
+    font-family: arial;
+    text-indent: 50px;
+    padding-top: 16px;
+}
+
+.track * {
+    pointer-events: none;
+}
+
+.sun {
+    background: radial-gradient(#fea, rgba(255, 255, 255, 0) 50%);
+    transition: transform 1s;
+}
+
+.rumble {
+    animation: rumble 0.7s;
+}
+
+.rumble2 {
+    animation: rumble 0.4s;
+}
+
+#level {
+    padding: 0 0 0 10px;
+    transition: transform 0.2s 0.5s;
+}
+
+.dynamite img {
+    animation: wiggle 1s infinite;
+}
+
+a {
+    color: #57f;
+}
+
+button.mini {
+    padding: 5px;
+    font-size: 16px;
+    min-height: 0;
+}

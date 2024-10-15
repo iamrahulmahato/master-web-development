@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url('https://images.unsplash.com/photo-1546529249-8de036dd3c9a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D ') no-repeat center ;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    background: rgba(0, 0, 0, 0.4); /* Reduced transparency for better visibility */
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+}
+
+
+
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 10px; /* Adjust the space around the icon */
+}
+
+.search button img {
+    width: 27px;
+    height: 32px;
+    filter: invert(0.5); /* Ensure the icon is visible */
+}
+
+.search input {
+    flex: 1; /* Make input take up the remaining space */
+    padding: 15px 20px; /* Adjust padding for better appearance */
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.weather-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #fff;
+}
+
+.weather-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.weather_icon {
+    width: 70px;
+    margin-bottom: 15px;
+}
+
+.temp {
+    font-size: 72px;
+    font-weight: 400;
+}
+
+.city {
+    font-size: 36px;
+    font-weight: 300;
+}
+
+.details {
+    display: flex;
+    justify-content: center; /* Center the content */
+    gap: 50px; /* Add space between the two items */
+    margin-top: 15px;
+    width: 100%; /* Full width */
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.detail-icon {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.details span {
+    font-size: 16px;
+    font-weight: 600;
+    color: white; /* Adjust color for readability */
+}
+
+
+.details p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.humidity, .wind {
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .weather-content {
+        align-items: center;
+    }
+
+    .temp {
+        font-size: 56px;
+    }
+
+    .city {
+        font-size: 28px;
+    }
+}

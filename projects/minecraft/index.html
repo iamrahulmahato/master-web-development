@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft | Menu</title>
+    <link rel="stylesheet" href="/assets/style/style.css">
+    <script src="https://kit.fontawesome.com/1ac956ea12.js" crossorigin="anonymous"></script>
+    <audio src="/assets/sounds/minecraftclick.mp3" id="clickSound"></audio>
+    <script src="/modules/index.js" defer type="module"></script>
+</head>
+
+
+
+<body>
+
+    <section id="section">
+        <img class="logo" src="/assets/images/logo.png.png" alt="">
+        <section id="loader">
+            <div class="loader"></div>
+        </section>
+        <div class="selectionbox">
+            <div class="buttons gameintro">
+                <h1>A little bit about the game</h1>
+                <h2>You can harvest all tiles for materials except the <span class="skybluetxt">"sky"</span> tiles
+                    using the according tools:</h2>
+                <h2><span class="toolname">Hatchet</span>: Leaves & Trees | <span class="toolname">Pickaxe</span>: Coal
+                    , Ruby , Diamond & Stone | <span class="toolname">Shovel</span>: Grass</h2>
+                <H2>You can then take the materials from your inventory and place them on any unoccupied tile</H2>
+                <h2>In the sandbox you will start off with a blank map and lots of materials to your disposal</h2>
+            </div>
+        </div>
+        <div id="selbox1" class="selectionBox">
+            <h1>Select Map Size</h1>
+            <div class="buttons">
+                <div id="widthcontainer">
+                    <i class="fa-solid fa-chevron-left arrow" id="decWidth"></i>
+                    <h1 id="Width">24</h1>
+                    <i class="fa-solid fa-chevron-right arrow" id="incWidth"></i>
+                </div>
+                <button id="startBtn">MAKE IT RAIN</button>
+                <button id="sandboxBtn">SANDBOX</button>
+                <div id="heightcontainer">
+                    <i class="fa-solid fa-chevron-left arrow" id="decHeight"></i>
+                    <h1 id="Height">24</h1>
+                    <i class="fa-solid fa-chevron-right arrow" id="incHeight"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

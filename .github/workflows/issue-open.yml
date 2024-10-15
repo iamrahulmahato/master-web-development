@@ -1,0 +1,18 @@
+name: Issue Auto Commenter
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add comment to new issue
+        uses: actions-ecosystem/action-add-comment@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          issue_number: ${{ github.event.issue.number }}
+          comment: |
+            👋 Thanks for opening this issue! We appreciate your contribution. Please make sure you’ve provided all the necessary details and screenshots, and don't forget to follow our Guidelines and Code of Conduct. Happy coding! 🚀

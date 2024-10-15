@@ -10,12 +10,32 @@
 </head>
 <body>
     <main>
-        <h1>Click to generate a random password!</h1>
-        <input type="text" id="password">
-        <div>
-            <button id="create">Create</button>
-            <button id="clear">Clear</button>
+        <h1>Password Generator</h1>
+        <div class="password-container">
+            <input type="text" id="password" readonly>
+            <button id="copy" title="Copy to clipboard">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                </svg>
+            </button>
         </div>
+        <div class="strength-meter">
+            <label for="strengthMeter">Password Strength:</label>
+            <meter id="strengthMeter" min="0" max="6" low="2" high="4" optimum="6" value="0"></meter>
+        </div>
+        <div class="options">
+            <div class="length-container">
+                <label for="passwordLength">Password length: <span id="lengthDisplay">12</span></label>
+                <input type="range" id="passwordLength" min="4" max="50" value="12" oninput="updateLengthDisplay()">
+            </div>
+            <div class="checkbox-container">
+                <label><input type="checkbox" id="lowercase" checked> Lowercase</label>
+                <label><input type="checkbox" id="uppercase" checked> Uppercase</label>
+                <label><input type="checkbox" id="numbers" checked> Numbers</label>
+                <label><input type="checkbox" id="symbols"> Symbols</label>
+            </div>
+        </div>
+        <button id="create">Generate Password</button>
     </main>
 </body>
 </html>
