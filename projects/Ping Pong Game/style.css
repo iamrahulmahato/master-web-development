@@ -101,6 +101,20 @@ h1 {
     background-color: #45a049;
 }
 
+#pause-button{
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#pause-button:hover {
+    background-color: #45a049;
+}
+
 .controls {
     margin-top: 20px;
     font-style: italic;
