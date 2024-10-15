@@ -42,6 +42,73 @@
     }
 }
     </style>
+    <style>
+        /* Chatbot Container */
+      .chatbot-container {
+          position: fixed;
+          bottom: 34px; /* Adjust as needed */
+          right: 100px; /* Adjust as needed */
+          z-index: 1000; /* Ensure it appears above other elements */
+      }
+
+      /* Chatbot Button */
+      .chatbot-button {
+          background-color: #007bff; /* Change to your preferred color */
+          border: none;
+          border-radius: 50%;
+          padding: 5px; /* Smaller padding */
+          cursor: pointer;
+          position: relative;
+          width: 50px; /* Adjusted size */
+          height: 50px; /* Adjusted size */
+      }
+
+      /* Button Image */
+      .chatbot-button img {
+          width: 30px; /* Adjusted image size */
+          height: 30px; /* Adjusted image size */
+      }
+
+      /* Tooltip Text */
+      .tooltip-text {
+          display: none; /* Hide by default */
+          position: absolute;
+          bottom: 100%; /* Position above the button */
+          right: 50%;
+          transform: translateX(50%);
+          background-color: #333; /* Background color for tooltip */
+          color: #fff; /* Tooltip text color */
+          padding: 5px;
+          border-radius: 5px;
+          white-space: nowrap; /* Prevent text from wrapping */
+      }
+
+      /* Show Tooltip on Hover */
+      .chatbot-button:hover .tooltip-text {
+          display: block; /* Show on hover */
+      }
+
+      /* Chat Window Styles */
+      .chat-window {
+          position: fixed;
+          bottom: 90px; /* Adjust based on the button size */
+          right: 20px; /* Same as the button */
+          width: 400px; /* Smaller width */
+          height: 500px; /* Fixed height for compactness */
+          border: 1px solid #ccc;
+          background-color: white;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          display: none; /* Hidden by default */
+          z-index: 1000; /* Ensure it appears above other elements */
+      }
+
+      /* Iframe for Chatbot HTML */
+      #chat-iframe {
+          width: 100%; /* Full width of the chat window */
+          height: calc(100% - 40px); /* Height minus header */
+          border: none; /* Remove border */
+      }
+      </style>
 
 
 
@@ -1865,6 +1932,34 @@
 
 
     <script src="./js/app.js"></script>
+    <div class="chatbot-container">
+        <button class="chatbot-button group" id="chatbot-toggle">
+            <img class="h-20" src="chatbot.gif" alt="chatbot">
+            <span class="tooltip-text">
+                Welcome to Web Dev! <br>
+                How can I help You? ^_^ 
+            </span>
+        </button>
+        
+        <!-- Chat Window -->
+        <div id="chat-window" class="chat-window">
+            <!-- Iframe to load chatbot.html -->
+            <iframe id="chat-iframe" src="chatbot.html"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript Functionality
+        document.getElementById('chatbot-toggle').addEventListener('click', function() {
+            const chatWindow = document.getElementById('chat-window');
+            // Toggle visibility of the chat window
+            chatWindow.style.display = chatWindow.style.display === 'none' || chatWindow.style.display === '' ? 'flex' : 'none';
+        });
+
+        document.getElementById('close-chat').addEventListener('click', function() {
+            document.getElementById('chat-window').style.display = 'none'; // Hide chat on close
+        });
+    </script>
 </body>
  
 <style>
