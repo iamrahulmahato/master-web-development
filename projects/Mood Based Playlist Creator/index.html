@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Mood-Based Playlist Creator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Mood-Based Playlist Creator</h1>
+        <label for="mood">Select Your Mood:</label>
+        <select id="mood">
+            <option value="">--Choose a mood--</option>
+            <option value="happy">Happy</option>
+            <option value="sad">Sad</option>
+            <option value="chill">Chill</option>
+            <option value="energetic">Energetic</option>
+        </select>
+        <button id="generate">Generate Playlist</button>
+        <div id="playlist" class="playlist"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
