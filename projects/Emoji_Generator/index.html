@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Emoji Creator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Custom Emoji Creator</h1>
+
+  <div class="container">
+    <!-- Emoji Canvas -->
+    <div class="emoji-canvas">
+      <canvas id="emojiCanvas" width="250" height="250"></canvas>
+    </div>
+
+    <!-- Feature Selection Section -->
+    <div class="features-section">
+      <h2>Select Features</h2>
+      
+      <!-- Eyes Selection -->
+      <div class="feature-group">
+        <h3>Eyes</h3>
+        <img src="eye1.png" class="clickable" id="eye1" alt="Eye 1">
+        <img src="eye2.png" class="clickable" id="eye2" alt="Eye 2">
+        <img src="eye3.png" class="clickable" id="eye3" alt="Eye 3">
+        <img src="eye4.png" class="clickable" id="eye4" alt="Eye 3">
+        <img src="eye5.png" class="clickable" id="eye5" alt="Eye 3">
+        <img src="eye6.png" class="clickable" id="eye6" alt="Eye 3">
+      </div>
+
+      <!-- Mouths Selection -->
+      <div class="feature-group">
+        <h3>Mouths</h3>
+        <img src="mouth1.png" class="clickable" id="mouth1" alt="Mouth 1">
+        <img src="mouth2.png" class="clickable" id="mouth2" alt="Mouth 2">
+        <img src="mouth3.png" class="clickable" id="mouth3" alt="Mouth 3">
+      </div>
+
+      <!-- Nose Selection (New Section) -->
+      <div class="feature-group">
+        <h3>Nose</h3>
+        <img src="nose1.png" class="clickable" id="nose1" alt="Nose 1">
+        <img src="nose2.png" class="clickable" id="nose2" alt="Nose 2">
+        <img src="nose3.png" class="clickable" id="nose3" alt="Nose 2">
+      </div>
+
+      <!-- Accessories Selection -->
+      <div class="feature-group">
+        <h3>Accessories</h3>
+        <img src="hat1.png" class="clickable" id="hat1" alt="Hat">
+        <img src="hat2.png" class="clickable" id="hat2" alt="Hat">
+        <img src="hat3.png" class="clickable" id="hat3" alt="Hat">
+       
+      </div>
+    </div>
+  </div>
+
+  <!-- Download Button -->
+  <button id="downloadEmoji">Download Emoji</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
