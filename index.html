@@ -17,8 +17,22 @@
 
 
     <title>Master web development</title>
+    <meta name="description" content="A collection of web development projects showcasing various skills and technologies.">
+    <meta name="keywords" content="web development, projects, showcase, portfolio, coding, programming">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Master Web Development",
+            "url": "https://example.com",
+            "logo": "./assets/image/favicon.png"
+        }
+    </script>
+
     <link rel="icon" href="./faviconicon.png" type="image/png">
     <style>
+
         @media (max-width: 1200px) {
             .footer-container {
                 padding: 20px;
@@ -45,14 +59,128 @@
                 background-color: #6c757d;
             }
         }
+
+         @media (max-width: 1200px) {
+    .footer-container {
+      padding: 20px;
+    }
+    .mwd-footer-content {
+      text-align: center;
+    }
+    .tags.social {
+      justify-content: center;
+    }
+    .btn {
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-secondary:hover {
+        background-color: #6c757d;
+    }
+}
+
+/* cursor trail effect  */
+
+.circle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgb(244, 63, 94), rgb(253, 91, 118));
+  transition: transform 0.1s, left 0.1s, top 0.1s;
+  background-color: #f43f5e;
+}
+    .circle-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+ 
+
     </style>
+    <style>
+        /* Chatbot Container */
+      .chatbot-container {
+          position: fixed;
+          bottom: 34px; /* Adjust as needed */
+          right: 100px; /* Adjust as needed */
+          z-index: 1000; /* Ensure it appears above other elements */
+      }
+
+      /* Chatbot Button */
+      .chatbot-button {
+          background-color: #007bff; /* Change to your preferred color */
+          border: none;
+          border-radius: 50%;
+          padding: 5px; /* Smaller padding */
+          cursor: pointer;
+          position: relative;
+          width: 50px; /* Adjusted size */
+          height: 50px; /* Adjusted size */
+      }
+
+      /* Button Image */
+      .chatbot-button img {
+          width: 30px; /* Adjusted image size */
+          height: 30px; /* Adjusted image size */
+      }
+
+      /* Tooltip Text */
+      .tooltip-text {
+          display: none; /* Hide by default */
+          position: absolute;
+          bottom: 100%; /* Position above the button */
+          right: 50%;
+          transform: translateX(50%);
+          background-color: #333; /* Background color for tooltip */
+          color: #fff; /* Tooltip text color */
+          padding: 5px;
+          border-radius: 5px;
+          white-space: nowrap; /* Prevent text from wrapping */
+      }
+
+      /* Show Tooltip on Hover */
+      .chatbot-button:hover .tooltip-text {
+          display: block; /* Show on hover */
+      }
+
+      /* Chat Window Styles */
+      .chat-window {
+          position: fixed;
+          bottom: 90px; /* Adjust based on the button size */
+          right: 20px; /* Same as the button */
+          width: 400px; /* Smaller width */
+          height: 500px; /* Fixed height for compactness */
+          border: 1px solid #ccc;
+          background-color: white;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          display: none; /* Hidden by default */
+          z-index: 1000; /* Ensure it appears above other elements */
+      }
+
+      /* Iframe for Chatbot HTML */
+      #chat-iframe {
+          width: 100%; /* Full width of the chat window */
+          height: calc(100% - 40px); /* Height minus header */
+          border: none; /* Remove border */
+      }
+      </style>
 
 
 
 </head>
 
 <body>
-    <div class="icon">
+    <div class="icon theme-mode-toggler">
         <div class="icon2">
             <button id="toggle-mode-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 20 20"
@@ -63,6 +191,51 @@
         </div>
 
     </div>
+
+    <button id="scrollBtn" class="scroll-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16l-6.364-6.364 1.414-1.414z" />
+            <path d="M12 19.172l4.95-4.95 1.414 1.414L12 22l-6.364-6.364 1.414-1.414z" />
+        </svg>
+    </button>
+    
+    <style>
+        .scroll-button {
+            position: fixed;
+            right: 15px;
+            top: 15%;
+            background-color: #fa2b4d;
+            color: white;
+            border: none;
+            border-radius: 50%; /* Circle-shaped button */
+            height: 43px;
+            width: 43px;
+            padding: 0;
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+    
+        .scroll-button:hover {
+            transform: scale(1.2);
+        }
+    </style>
+    
+    <script>
+        document.getElementById("scrollBtn").addEventListener("click", function () {
+    
+            const viewportHeight = window.innerHeight;
+    
+            window.scrollBy({
+                top: viewportHeight,
+                behavior: "smooth"
+            });
+        });
+    </script>
+    
 
     <section id="projects">
         <div class="projects-heading">
@@ -84,6 +257,7 @@
                 <div class="item">
                     <img src="./images/air ballon game.jpg" alt="">
 
+
                     <div class="content">
                         <div class="title">Air Ballon </div>
                         <div class="type">Game</div>
@@ -94,6 +268,16 @@
                             <button>SLIDE MORE</button>
                         </div>
                     </div>
+
+            <div class="content">
+                <div class="title">Air Balloon </div>
+                <div class="type">Game</div>
+                <div class="description">
+                   A simple air balloon game.......
+                </div>
+                <div class="button">
+                <button>SLIDE MORE</button>
+
                 </div>
 
                 <div class="item">
@@ -341,7 +525,7 @@
         <div class="projects-container">
             <a href="./projects/GenerateGradientColor/index.html" class="card" target="_blank">
                 <div class="card-cover">
-                    <img src="https://cssgradient.io/images/css-gradient-examples-ba7f335a.svg" alt="Generate Gradient">
+                    <img src="https://cssgradient.io/images/css-gradient-examples-ba7f335a.svg" alt="Generate Gradient Color">
                 </div>
                 <div class="card-content">
                     <h3 class="card-heading">Generate Gradient</h3>
@@ -351,6 +535,19 @@
                 </div>
             </a>
 
+            <a href="./projects/OTPgenerator/OTP.html" class="card" target="_blank">
+                <div class="card-cover">
+                    <img src="assets/image/otp.webp" alt="Generate Gradient">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">OTP Generator</h3>
+                    <p class="card-description">
+                        Generate OTP upto 6 digits
+                    </p>
+                </div>
+            </a>
+            
+
             <a href="./projects/box connet game/box.html" class="card" target="_blank">
                 <div class="card-cover ">
                     <img src="./assets/image/box connet game.png" alt="">
@@ -359,6 +556,17 @@
                     <h3 class="card-heading">box connet game </h3>
                     <p class="card-description">
                         Play and Win🏆
+                    </p>
+                </div>
+            </a>
+            <a href="./projects/Zomato-Clone-main/index.html" class="card" target="_blank">
+                <div class="card-cover counter-cover-colour">
+                    <img src="./assets/image/download.jpg" alt="Z">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">Zomato</h3>
+                    <p class="card-description">
+                        Zomato
                     </p>
                 </div>
             </a>
@@ -456,6 +664,17 @@
                 </div>
             </a>
 
+            <a href="./projects/IP Info Card/index.html" class="card" target="_blank">
+                <div class="card-cover">
+                    <img src="./assets/image/ip-info-card.png" alt="Counter">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">IP Info Display Card</h3>
+                    <p class="card-description">
+                        A Card to Know Your IP Details
+                    </p>
+                </div>
+            </a>
 
             <a href="./projects/APOD/index.html" class="card" target="_blank">
                 <div class="card-cover ">
@@ -797,18 +1016,6 @@
                 </div>
             </a>
 
-            <a href="./projects/Sudoku Solver/index.html" class="card" target="_blank">
-                <div class="card-cover">
-                    <img src="./projects/Sudoku Solver/image/pngegg.png" alt="Sudoku Solver">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Sudoku</h3>
-                    <p class="card-description">
-                        Solve your Sudoku.
-                    </p>
-                </div>
-            </a>
-
             <a href="./projects/Simon/index.html" class="card" target="_blank">
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/simon_img.png" alt="Simon Game">
@@ -820,6 +1027,8 @@
                     </p>
                 </div>
             </a>
+
+           
             <a href="./projects/Drum-kit/index.html" class="card" target="_blank">
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/drum.png" alt="Drum">
@@ -1020,6 +1229,7 @@
             </a>
 
 
+
             <a href="./projects/FlashCard Quiz App/index.html" class="card" target="_blank">
                 <div class="card-cover">
                     <img src="./projects/Flashcard Quiz App/image/image.png" alt="Flashcard Quiz App logo">
@@ -1032,6 +1242,30 @@
                 </div>
             </a>
 
+                <a href="./projects/FlashCard Quiz App/index.html" class="card" target="_blank">
+                    <div class="card-cover">
+                        <img src="./projects/Flashcard Quiz App/image/image.png" alt="Flashcard Quiz App logo">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-heading">Flashcard Quiz App</h3>
+                        <p class="card-description">
+                            Create and review flashcards for effective learning.
+                        </p>
+                    </div>
+                </a>
+
+                <a href="./projects/Guess the country by flag/index.html" class="card" target="_blank">
+                    <div class="card-cover">
+                        <img src="./projects/Guess the country by flag/intro.jpeg" alt="Flashcard Quiz App logo">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-heading">Guess the country by flag</h3>
+                        <p class="card-description">
+                            A fun flag-guessing game to learn geography through play!
+                        </p>
+                    </div>
+                </a>
+                
 
 
             <a href="./projects/weather/index.html" class="card" target="_blank">
@@ -1206,17 +1440,6 @@
                 </div>
             </a>
 
-            <a href="./projects/Dice Game/index.html" class="card">
-                <div class="card-cover counter-cover-colour">
-                    <img src="./assets/image/dice_game.png" alt="Dice Game">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Dice Game</h3>
-                    <p class="card-description">
-                        The Player who gets the more number on the dice wins.(Just Refresh Me!!)
-                    </p>
-                </div>
-            </a>
 
             <a href="./projects/Slide Puzzle/index.html" class="card">
                 <div class="card-cover counter-cover-colour">
@@ -1241,6 +1464,7 @@
                     </p>
                 </div>
             </a>
+
 
             <a href="./projects/Doodle Jump/index.html" class="card">
                 <div class="card-cover counter-cover-colour">
@@ -1308,6 +1532,86 @@
                     </p>
                 </div>
             </a>
+
+                            <a href="./projects/Among Us Game/index.html" class="card">
+                                <div class="card-cover counter-cover-colour">
+                                    <img src="assets/image/amongus.png" alt="Flappy Bird">
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-heading">Among us</h3>
+                                    <p class="card-description">
+                                        Find who is imposter.
+                                    </p>
+                                </div>
+                            </a>
+
+                        <a href="./projects/Joke Generator/index.html" class="card">
+                            <div class="card-cover counter-cover-colour">
+                                <img src="assets/image/jokeGenerator.jpeg" alt="Joke Generator">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-heading">Joke Generator</h3>
+                                <p class="card-description">
+                                    Find who is imposter.
+                                </p>
+                            </div>
+                        </a>
+                        
+                        <a href="./projects/Email Validator/index.html" class="card">
+                            <div class="card-cover counter-cover-colour">
+                                <img src="./assets/image/email.png" alt="Email Validator">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-heading">Email Validator</h3>
+                                <p class="card-description">
+                                    Validate E-MAIL
+                                </p>
+                            </div>
+                        </a>
+                        <a href="./projects/Maze/index.html" class="card">
+                            <div class="card-cover counter-cover-colour">
+                                <img src="./assets/image/maze.jpg" alt="maze game'">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-heading">Maze Game</h3>
+                                <p class="card-description">
+                                    Play exciting maze game
+                                </p>
+                            </div>
+                        </a>
+                        <a href="./projects/Minesweeper/index.html" class="card" target="_blank">
+                            <div class="card-cover counter-cover-colour">
+                                <img src="./assets/image/minesweeper.jpeg" alt="Minesweeper">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-heading">Minesweeper</h3>
+                                <p class="card-description">
+                                    Classic Minesweeper game.
+                                </p>
+                            </div>
+                        </a>
+                        <a href="./projects/Tetris_Game/index.html" class="card">
+                            <div class="card-cover counter-cover-colour">
+                                <img src="./assets/image/tetrsis.jpg" alt="Doodle Jump">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-heading">Tetris Game</h3>
+                                <p class="card-description">
+                                    Arrange falling blocks to clear lines.
+                                </p>
+                            </div>
+                        </a>
+                        <a href="./projects/Connect4/index.html" class="card" target="_blank">
+                            <div class="card-cover ">
+                                <img src="./projects/Connect4/Connectfour.png" alt="">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-heading">Connect4(Two player)</h3>
+                                <p class="card-description">
+                                    Connect4: Where Strategy Meets Fun, One Disc at a Time!
+                                </p>
+                            </div>
+                        </a>
 
 
             <a href="./projects/Candy Game/index.html" class="card">
@@ -1638,6 +1942,10 @@
                 </div>
             </a>
 
+
+
+
+
             <a href="./projects/netflix-clone/index.html" class="card" target="_blank">
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/netflix-clone.jpg" alt="chatbot">
@@ -1649,7 +1957,17 @@
                     </p>
                 </div>
             </a>
-
+            <a href="projects/TESLA-clone/tesla.html" class="card" target="_blank">
+                <div class="card-cover counter-cover-colour">
+                    <img src="assets/image/Tesla_T_symbol.svg.png" alt="chatbot">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">TESLA CLONE</h3>
+                    <p class="card-description">
+                        A UI-based Clone of the popular car company TESLA.
+                    </p>
+                </div>
+            </a>
 
             <a href="./projects/3D Music Visualizer/index.html" class="card" target="_blank">
                 <div class="card-cover counter-cover-colour">
@@ -1746,7 +2064,39 @@
             </a>
 
 
+                
 
+    
+ <!-- =========================== Recipe Book ================================= -->
+     <a href="./projects/Recipe Book/index.html" class="card" target="_blank">
+        <div class="card-cover counter-cover-colour">
+            <img src="./assets/image/recipe.webp" alt="recipebook">
+        </div>
+        <div class="card-content">
+            <h3 class="card-heading">Recipe Book</h3>
+            <p class="card-description">
+                Gather Delicious Secret Recipes!
+            </p>
+        </div>
+    </a>
+<!-- =========================== ================================= -->
+
+<!-- =========================== Bus reservation system ================================= -->
+<a href="projects/Bus Reservation System/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/bus-stop.png" alt="Bus image" style="width: 10rem; height: auto;">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Bus Reservation System</h3>
+        <p class="card-description">
+            Fast, Easy, and Reliable Bus Reservations.
+        </p>
+    </div>
+</a>
+<!-- =========================== End ================================= -->
+ </div>
+    </section>
+ 
 
 
 
@@ -1817,8 +2167,90 @@
 
     <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
 
+    <!-- cursor trail effect  -->
+
+    <div class="circle-container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
 
     <script src="./js/app.js"></script>
+    <div class="chatbot-container">
+        <button class="chatbot-button group" id="chatbot-toggle">
+            <img class="h-20" src="chatbot.gif" alt="chatbot">
+            <span class="tooltip-text">
+                Welcome to Web Dev! <br>
+                How can I help You? ^_^ 
+            </span>
+        </button>
+        
+        <!-- Chat Window -->
+        <div id="chat-window" class="chat-window">
+            <!-- Iframe to load chatbot.html -->
+            <iframe id="chat-iframe" src="chatbot.html"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript Functionality
+        document.getElementById('chatbot-toggle').addEventListener('click', function() {
+            const chatWindow = document.getElementById('chat-window');
+            // Toggle visibility of the chat window
+            chatWindow.style.display = chatWindow.style.display === 'none' || chatWindow.style.display === '' ? 'flex' : 'none';
+        });
+
+        document.getElementById('close-chat').addEventListener('click', function() {
+            document.getElementById('chat-window').style.display = 'none'; // Hide chat on close
+        });
+    </script>
 </body>
+ 
+<style>
+    body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+</style>
+<footer style="color: red;text-align: end;">
+  <p style="width: fit-content;">&copy; 2024 Master Web Development. All Rights Reserved.</p>
+</footer>
 
 </html>

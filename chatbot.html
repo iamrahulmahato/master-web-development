@@ -1,0 +1,231 @@
+<!-- You need the add the GEMINI_API_KEY to run the AI project -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Bot</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/a11y-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
+    <style>
+        body {
+            background-color: white; /* Background color for the page */
+            display: flex; /* Use flexbox for layout */
+            min-height: 100vh; /* Full height */
+            margin: 0; /* Remove default margins */
+        }
+
+        /* Chat Container */
+        .chat-container {
+            width: 100%; /* Take full width */
+            max-width: 600px; /* Max width for the chat area */
+            background-color: white; /* Background color of the chat */
+            margin: auto; /* Center the chat container */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+            display: flex;
+            flex-direction: column; /* Vertical layout */
+            height: 100vh; /* Height of chat container */
+            position: relative; /* Position for absolute children */
+        }
+
+        /* Output Field */
+        #output-field {
+            text-align: center; /* Center text */
+            font-size: 1.25rem; /* Increase font size */
+            font-weight: bold; /* Bold font */
+            padding: 10px; /* Padding */
+        }
+
+        /* Output Container */
+        #output-container {
+            flex: 1; /* Take remaining space */
+            overflow-y: auto; /* Scrollable */
+            padding: 10px; /* Padding */
+            max-height: 100vh; /* Max height */
+        }
+
+        /* Input Group */
+        .input-group {
+            margin-top: auto; /* Push to the bottom */
+        }
+
+        /* Input Field */
+        #prompt-input {
+            flex: 1; /* Take remaining space */
+        }
+
+        /* Hidden Image Input */
+        #image-input {
+            display: none; /* Hide image input */
+        }
+
+        /* Style for Loading Animation */
+        .loading {
+            display: flex; /* Flexbox for dots */
+            justify-content: center; /* Center dots */
+            align-items: center; /* Center vertically */
+        }
+
+        .loading-dot {
+            width: 8px; /* Dot size */
+            height: 8px; /* Dot size */
+            border-radius: 50%; /* Circular dots */
+            background-color: #007bff; /* Dot color */
+            margin: 0 5px; /* Spacing between dots */
+            animation: loading 0.6s infinite alternate; /* Animation */
+        }
+
+        /* Animation for Loading Dots */
+        @keyframes loading {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.5); }
+        }
+    </style>
+</head>
+<body>
+    <div id="Loader"></div>
+    <div class="chat-container">
+        <div id="output-field" class="text-center">
+            How can I help you today?
+        </div>
+        <div id="output-container"></div>
+        <div class="input-group mb-3">
+            <input
+                type="text"
+                id="prompt-input"
+                class="form-control"
+                placeholder="Type your prompt here..."
+                aria-label="Message input"
+            />
+            <button id="generate-btn" class="btn btn-primary">Send</button>
+        </div>
+    </div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+
+    <script type="module">
+      import {
+        GoogleGenerativeAI,
+        HarmBlockThreshold,
+        HarmCategory,
+      } from "@google/generative-ai";
+
+      const API_KEY = "GEMINI_API_KEY"; // Replace with your gemini-api actual API key 
+      const genAI = new GoogleGenerativeAI(API_KEY);
+      let chat;
+
+      const safetySettings = [
+        {
+          category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+          threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+        },
+      ];
+
+      async function sendMessage(prompt) {
+        let model;
+        clearGreeting(); // Clear the greeting after sending the message
+
+        if (!chat) {
+            chat = await genAI
+              .getGenerativeModel({ model: "gemini-pro", safetySettings })
+              .startChat({
+                history: [],
+                generationConfig: {
+                  maxOutputTokens: 4000, // maxOutputTokens Limit around 4096
+                },
+              });
+        }
+        model = chat;
+
+        try {
+          const result = await model.sendMessage(prompt);
+          const response = await result.response;
+          if (response) {
+            const text = await response.text();
+            displayMessage(text, "ai");
+          } else {
+            displayMessage("This content is not safe for display based on current settings.", "ai");
+          }
+        } catch (error) {
+          console.error("Error during message generation:", error);
+          displayMessage("This content is not safe for display based on current settings or an internal error.", "ai");
+        }
+        clearInputs();
+      }
+
+      function displayMessage(message, sender) {
+        const outputContainer = document.getElementById("output-container");
+        const msgDiv = document.createElement("div");
+        msgDiv.classList.add(sender === "user" ? "user-message" : "ai-message");
+
+        if (sender === "ai") {
+          // Show loading animation for AI messages
+          msgDiv.innerHTML =
+            '<div class="loading">' +
+            '<div class="loading-dot"></div>' +
+            '<div class="loading-dot"></div>' +
+            '<div class="loading-dot"></div>' +
+            "</div>";
+          outputContainer.appendChild(msgDiv);
+
+          // Simulate processing delay
+          setTimeout(() => {
+            // Clear loading animation
+            msgDiv.innerHTML = marked.parse(message);
+            outputContainer.scrollTop = outputContainer.scrollHeight; // Scroll to bottom
+          }, 1500);
+        } else {
+          msgDiv.innerHTML = marked.parse(message);
+          outputContainer.appendChild(msgDiv);
+        }
+
+        // Ensure the latest message is visible
+        outputContainer.scrollTop = outputContainer.scrollHeight;
+      }
+
+      function clearInputs() {
+        document.getElementById("prompt-input").value = "";
+      }
+
+      document.getElementById("generate-btn").addEventListener("click", async () => {
+        const prompt = document.getElementById("prompt-input").value;
+        if (prompt.trim() !== "") {
+          displayMessage(prompt, "user");
+          await sendMessage(prompt);
+        }
+      });
+
+      function clearGreeting() {
+        const outputField = document.getElementById("output-field");
+        if (outputField) {
+          outputField.style.display = "none"; // Hide the field completely
+        }
+      }
+    </script>
+    <script>
+      var loader = document.getElementById("Loader");
+      window.addEventListener("load", function () {
+        loader.style.display = "none";
+      });
+    </script>
+</body>
+</html>

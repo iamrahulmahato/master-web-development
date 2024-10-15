@@ -1,160 +1,167 @@
 * {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1c1c1c; /* Dark background */
+  background-image: url("img/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 370px;
+  background: rgba(255, 255, 255, 0.1); /* Transparent with gloss effect */
+  padding: 30px;
+  border-radius: 7px;
+  backdrop-filter: blur(10px); /* Glossy effect */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); /* Deep shadow */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Light border for gloss */
+}
+
+.wrapper header {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  color: #e509e5; /* Bright accent color */
+  font-weight: bold;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;                       
+}
+
+.wrapper img {                                
+  width: 100px;
+  transition: transform 0.5s ease;            
+}
+
+.rotate {                                      
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  body {
-    background-image: url("img/background.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
-    min-height: 100vh;
-    padding: 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  100% {
+    transform: rotate(360deg);
   }
-  
-  .wrapper {
-    width: 370px;
-    background: #fff;
-    padding: 30px;
-    border-radius: 7px;
-    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.01);
-  }
-  
-  .wrapper header {
-    font-size: 22px;
-    font-weight: 600;
-    text-align: center;
-    color: rgb(225, 9, 225);
-    font-weight: bold;
-  }
-  
-  /* Flexbox to center the image */
-  .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 15vh;                       
-  }
-  
-  .wrapper img {                                
-    width: 100px;
-    transition: transform 0.5s ease;            
-  }
-  
-  .rotate {                                      
-    animation: spin 2s linear infinite;
-  }
-  
-  /* Keyframes for animation */
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .wrapper form {
-    margin: 40px 0 20px 0;
-  }
-  
-  .wrapper form input,
-  .wrapper form select,
-  .wrapper form button {
-    width: 100%;
-    border: none;
-    outline: none;
-    border-radius: 6px;
-  }
-  
-  .wrapper form p {
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-  
-  .wrapper form input {
-    height: 50px;
-    padding: 0 15px;
-    border: 1px solid #999;
-    font-size: 17px;
-  }
-  
-  .wrapper form input:focus {
-    border: 2px solid purple;
-    padding: 0 14px;
-  }
-  
-  .wrapper form .drop-list {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .wrapper form .drop-list .select-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 115px;
-    height: 45px;
-    border: 1px solid #999;
-    border-radius: 5px;
-  }
-  
-  .wrapper form .drop-list .select-box img {
-    max-width: 21px;
-  }
-  
-  .wrapper form .drop-list .select-box select {
-    width: auto;
-    font-size: 16px;
-    background: none;
-    margin: 0 -5px 0 5px;
-  }
-  
-  .wrapper form .drop-list .select-box select::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  .wrapper form .drop-list .select-box select::-webkit-scrollbar-track {
-    background: #fff;
-  }
-  
-  .wrapper form .drop-list .select-box select::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 5px;
-    border-right: 2px solid #fff;
-  }
-  
-  .wrapper .drop-list .icon {
-    font-size: 22px;
-    margin-top: 30px;
-    cursor: pointer;
-  }
-  
-  .wrapper form .exchange_rate {
-    font-size: 18px;
-    text-align: center;
-    margin: 20px 0 30px;
-    font-weight: bold;
-  }
-  
-  .wrapper form button {
-    height: 52px;
-    background-image: linear-gradient( 109.6deg,  rgba(103,30,117,1) 11.2%, rgba(252,76,2,1) 91.1% );
-    color: #fff;
-    font-size: 17px;
-    cursor: pointer;
-  }
-  
-  .wrapper form button:hover {
-    border: 2px solid black;
-  }
-  
+}
+
+.wrapper form {
+  margin: 40px 0 20px 0;
+}
+
+.wrapper form input,
+.wrapper form select,
+.wrapper form button {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+}
+
+.wrapper form p {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #fff; /* White text for dark theme */
+}
+
+.wrapper form input {
+  height: 50px;
+  padding: 0 15px;
+  border: 1px solid #555; /* Darker input borders */
+  background-color: #333; /* Dark input background */
+  color: #fff;
+  font-size: 17px;
+}
+
+.wrapper form input:focus {
+  border: 2px solid #a020f0; /* Purple focus */
+  padding: 0 14px;
+}
+
+.wrapper form .drop-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.wrapper form .drop-list .select-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 115px;
+  height: 45px;
+  border: 1px solid #555;
+  background-color: #333;
+  border-radius: 5px;
+}
+
+.wrapper form .drop-list .select-box img {
+  max-width: 21px;
+}
+
+.wrapper form .drop-list .select-box select {
+  width: auto;
+  font-size: 16px;
+  background: none;
+  color: #fff;
+  margin: 0 -5px 0 5px;
+}
+
+.wrapper form .drop-list .select-box select::-webkit-scrollbar {
+  width: 8px;
+}
+
+.wrapper form .drop-list .select-box select::-webkit-scrollbar-track {
+  background: #333;
+}
+
+.wrapper form .drop-list .select-box select::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 5px;
+  border-right: 2px solid #333;
+}
+
+.wrapper .drop-list .icon {
+  font-size: 22px;
+  margin-top: 30px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.wrapper form .exchange_rate {
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0 30px;
+  font-weight: bold;
+  color: #fff; /* White text for rates */
+}
+
+.wrapper form button {
+  height: 52px;
+  background-image: linear-gradient(109.6deg, rgba(103,30,117,1) 11.2%, rgba(252,76,2,1) 91.1%);
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.wrapper form button:hover {
+  border: 2px solid black;
+}
