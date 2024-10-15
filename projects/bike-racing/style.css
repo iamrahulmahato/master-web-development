@@ -6,12 +6,21 @@ body {
     font-family: sans-serif;
   }
 
+  P{
+    font-size:30px;
+    text-align: center;
+    padding:10px;
+    margin: 10px;
+    font-family: cursive;
+    font-weight: 800;
+    text-shadow: 3px 3px 3px red;
+  }
+
   #help p{
     font-size: 20px;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 600;
-    
   }
   
   #container{
@@ -56,8 +65,8 @@ body {
   }
   #car{
     bottom: 8%;
-    left: 60%;
-    background-color: #ffdf5a;
+    left: 60%;background-color: #ffdf5a;
+    
   }
   .f_glass{
     position: absolute;
