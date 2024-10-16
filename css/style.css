@@ -443,11 +443,15 @@ body {
 .card {
     background: var(--card);
     border-radius: 8px;
+
+    color: #0f172a;
+    transition: all 0.2s ease-in-out;
     color: var(--head);
     transition: all 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+
 }
 
 .card:hover {
@@ -513,7 +517,6 @@ body {
     justify-content: center;
     border-radius: 9999px;
     padding: 8px;
-    align-items: center;
     background-color: #f43f5e;
     color: #ffffff;
     cursor: pointer;
@@ -521,6 +524,47 @@ body {
 
 #toggle-mode-btn svg {
     fill: #fff;
+}
+
+
+/* Contributor Card Styles */
+.contributor-card {
+    background: var(--card);
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.contributor-card:hover {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.contributor-card-cover {
+    height: 8rem; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    background-color: rgba(249, 89, 95, 0.2); /* Pinkish background */
+}
+
+.contributor-card-cover img {
+    height: 100%;
+}
+
+.contributor-card-content {
+    padding: 1rem;
+}
+
+.contributor-card-heading {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.contributor-card-description {
+    color: #475569;
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
 }
 
 #footer {
@@ -935,3 +979,4 @@ input::placeholder {
 input:focus {
     border-color: var(--btn-color);
 }
+

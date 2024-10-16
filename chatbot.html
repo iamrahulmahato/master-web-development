@@ -128,34 +128,34 @@
         HarmBlockThreshold,
         HarmCategory,
       } from "@google/generative-ai";
-
-      const API_KEY = "GEMINI_API_KEY"; // Replace with your gemini-api actual API key 
+    
+      const API_KEY = "GEMINI_API_KEY"; // Replace with your actual API key
       const genAI = new GoogleGenerativeAI(API_KEY);
       let chat;
-
+    
       const safetySettings = [
         {
           category: HarmCategory.HARM_CATEGORY_HARASSMENT,
           threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
         },
       ];
-
+    
       async function sendMessage(prompt) {
         let model;
         clearGreeting(); // Clear the greeting after sending the message
-
+    
         if (!chat) {
-            chat = await genAI
-              .getGenerativeModel({ model: "gemini-pro", safetySettings })
-              .startChat({
-                history: [],
-                generationConfig: {
-                  maxOutputTokens: 4000, // maxOutputTokens Limit around 4096
-                },
-              });
+          chat = await genAI
+            .getGenerativeModel({ model: "gemini-pro", safetySettings })
+            .startChat({
+              history: [],
+              generationConfig: {
+                maxOutputTokens: 4000, // maxOutputTokens Limit around 4096
+              },
+            });
         }
         model = chat;
-
+    
         try {
           const result = await model.sendMessage(prompt);
           const response = await result.response;
@@ -171,14 +171,13 @@
         }
         clearInputs();
       }
-
+    
       function displayMessage(message, sender) {
         const outputContainer = document.getElementById("output-container");
         const msgDiv = document.createElement("div");
         msgDiv.classList.add(sender === "user" ? "user-message" : "ai-message");
-
+    
         if (sender === "ai") {
-          // Show loading animation for AI messages
           msgDiv.innerHTML =
             '<div class="loading">' +
             '<div class="loading-dot"></div>' +
@@ -186,26 +185,23 @@
             '<div class="loading-dot"></div>' +
             "</div>";
           outputContainer.appendChild(msgDiv);
-
-          // Simulate processing delay
+    
           setTimeout(() => {
-            // Clear loading animation
             msgDiv.innerHTML = marked.parse(message);
-            outputContainer.scrollTop = outputContainer.scrollHeight; // Scroll to bottom
+            outputContainer.scrollTop = outputContainer.scrollHeight;
           }, 1500);
         } else {
           msgDiv.innerHTML = marked.parse(message);
           outputContainer.appendChild(msgDiv);
         }
-
-        // Ensure the latest message is visible
+    
         outputContainer.scrollTop = outputContainer.scrollHeight;
       }
-
+    
       function clearInputs() {
         document.getElementById("prompt-input").value = "";
       }
-
+    
       document.getElementById("generate-btn").addEventListener("click", async () => {
         const prompt = document.getElementById("prompt-input").value;
         if (prompt.trim() !== "") {
@@ -213,19 +209,25 @@
           await sendMessage(prompt);
         }
       });
-
+    
+      document.getElementById("prompt-input").addEventListener("keydown", async (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          const prompt = document.getElementById("prompt-input").value;
+          if (prompt.trim() !== "") {
+            displayMessage(prompt, "user");
+            await sendMessage(prompt);
+          }
+        }
+      });
+    
       function clearGreeting() {
         const outputField = document.getElementById("output-field");
         if (outputField) {
-          outputField.style.display = "none"; // Hide the field completely
+          outputField.style.display = "none";
         }
       }
     </script>
-    <script>
-      var loader = document.getElementById("Loader");
-      window.addEventListener("load", function () {
-        loader.style.display = "none";
-      });
-    </script>
-</body>
-</html>
+    </body>
+    </html>
+        
