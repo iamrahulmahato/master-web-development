@@ -485,6 +485,9 @@ body {
     margin-bottom: 0.5rem;
     color: #000;
 }
+[data-theme="dark"] .card-heading {
+    color: white; /* Dark mode heading color */
+}
 
 .card-description {
     font-size: 0.9rem;
