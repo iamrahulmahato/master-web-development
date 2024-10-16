@@ -929,18 +929,3 @@ input::placeholder {
 input:focus {
     border-color: var(--btn-color);
 }
-.about-container {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.about-link {
-  text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.about-link:hover {
-  color: #0056b3;
-}
