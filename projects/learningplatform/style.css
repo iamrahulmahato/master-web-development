@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    
+    color: #333;
+    margin: 0;
+    width: 100%;
+    background-color: #f0f4f8; /* Base background color */
+    background-image: radial-gradient(circle, #a88fe264 1px, transparent 1px),
+                      radial-gradient(circle, #8a888073 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px; /* Adjusts the position of the dots */
+}
+
+header {
+    background-color: rgba(84, 228, 84, 0.64);
+    color: rgb(14, 14, 14);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 2px 1px 6px black;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 2px 2px 2px #846fe1;
+}
+
+header p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    color: #666;
+}
+
+#home-section .image{
+    width: 100%;
+    height: 100vh;
+    padding: 15px;
+    border-radius: 16px;
+}
+
+#home-section .image img{
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 2px 2px 2px #a092dcd0;
+}
+
+#home-section .image img:hover{
+    border: 2px solid purple;
+}
+
+#home-section button{
+    background-color: #9f92dc71;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+#home-section button:hover{
+    background-color: #a092dcd0;
+    border: 1px solid black;
+    text-decoration:underline;
+}
+
+nav {
+    background-color: rgba(25, 224, 25, 0.837);
+    padding: 10px;
+    text-align: center;
+    box-shadow: 2px 1px 6px black;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    font-weight: 800;
+}
+
+nav ul li a:hover {
+    color:rgb(121, 57, 241);
+    text-decoration: underline;
+}
+
+main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #004e92;
+    margin-bottom: 30px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.course-card {
+    background-color: #c1bae2c0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.478);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card h3 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.course-card p {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #666;
+
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+     text-decoration: underline;
+}
+
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 203, 5, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.course-card:hover::before {
+    opacity: 1;
+}
+
+footer {
+    background-color: rgb(25, 224, 25);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #004e92;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #ffcb05;
+}
