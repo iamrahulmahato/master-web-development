@@ -71,6 +71,13 @@ body {
     border-radius: 0.5rem;
     color: var(--btn-text);
     padding: 0.8rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.source-code-btn:hover{
+    background-color: #c7365f;
+    transform: scale(1.5);
+    color: var(--btn-text);
 }
 
 .projects-container {
