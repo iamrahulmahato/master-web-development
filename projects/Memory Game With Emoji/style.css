@@ -1,17 +1,17 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #1a1a1a; /* Off-black background */
-    color: #b8f0b8; /* Light green text */
+    background-color: #1a1a1a; /* Dark background */
+    color: #fff; /* White text */
     margin: 0;
 }
 
 h1 {
-    color: #a0f0a0; /* Lighter green */
+    color: #fff; /* White title */
 }
 
 #controls {
@@ -22,8 +22,8 @@ h1 {
     padding: 10px;
     margin: 0 10px;
     border-radius: 5px;
-    background-color: #2d3e2d; /* Darker green */
-    color: #b8f0b8;
+    background-color: #444; /* Darker buttons */
+    color: #fff;
     border: none;
     cursor: pointer;
 }
@@ -35,31 +35,31 @@ h1 {
 }
 
 .card {
-    width: 100px;
-    height: 100px;
-    background-color: rgba(200, 255, 200, 0.2); /* Light green tiles with low opacity */
+    width: 80px; /* Adjust for smaller tiles */
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.8); /* White tiles */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
+    font-size: 30px; /* Slightly smaller emoji size */
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease;
 }
 
 .card.hidden {
-    background-color: rgba(50, 100, 50, 0.2); /* Slightly darker hidden state */
+    background-color: rgba(200, 200, 200, 0.8); /* Lighter hidden state */
     cursor: pointer;
 }
 
 .card:hover {
-    background-color: rgba(150, 255, 150, 0.3); /* Hover effect */
+    background-color: rgba(255, 255, 255, 1); /* Hover effect */
 }
 
 #message {
     margin-top: 20px;
     font-size: 20px;
-    font-weight: bold;
-    color: #a0f0a0; /* Lighter green for messages */
+    font-weight: 600;
+    color: #fff; /* White for messages */
 }

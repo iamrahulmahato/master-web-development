@@ -1,4 +1,4 @@
-const emojis = ['🍎', '🍌', '🍇', '🍉', '🍓', '🍒', '🍍', '🥥'];
+const emojis = ['🍎', '🍌', '🍇', '🍉', '🍓', '🍒', '🍍', '🥥', '🍑', '🍊', '🍋', '🍈']; // Added more emojis for larger boards
 let gameBoard = document.getElementById('game-board');
 let message = document.getElementById('message');
 let firstCard = null;
@@ -33,12 +33,12 @@ function resetGame() {
 // Set up board based on selected size
 function setupBoard() {
     let totalCards = boardSize * boardSize;
-    let emojiPairs = [...emojis, ...emojis].slice(0, totalCards / 2); // Adjust emoji count
+    let emojiPairs = [...emojis].slice(0, totalCards / 2); // Adjust emoji count
     cards = [...emojiPairs, ...emojiPairs];
     cards.sort(() => 0.5 - Math.random()); // Shuffle the emojis
 
     // Set grid size dynamically
-    gameBoard.style.gridTemplateColumns = `repeat(${boardSize}, 100px)`;
+    gameBoard.style.gridTemplateColumns = `repeat(${boardSize}, 80px)`; // Smaller tile size
 
     cards.forEach((emoji) => {
         const card = document.createElement('div');
