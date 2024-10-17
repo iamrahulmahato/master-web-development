@@ -1,201 +1,163 @@
+/* General Styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
 body {
-    
+    font-family: 'Poppins', sans-serif;
+    background: #f7f7f7;
     color: #333;
-    margin: 0;
-    width: 100%;
-    background-color: #f0f4f8; /* Base background color */
-    background-image: radial-gradient(circle, #a88fe264 1px, transparent 1px),
-                      radial-gradient(circle, #8a888073 1px, transparent 1px);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px; /* Adjusts the position of the dots */
 }
 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styling */
 header {
-    background-color: rgba(57, 200, 57, 0.915);
-    color: rgb(14, 14, 14);
-    padding: 20px;
+    background: #007bff;
+    color: white;
     text-align: center;
-    box-shadow: 2px 1px 6px black;
+    padding: 2rem 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 3rem;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    text-shadow: 2px 2px 2px #846fe1;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 i {
+    margin-right: 10px;
 }
 
 header p {
-    font-size: 1.3rem;
-    margin-top: 10px;
-    color: #666;
+    font-size: 1.2rem;
+    margin-top: 1rem;
 }
 
-#home-section .image{
-    width: 100%;
-    height: 100vh;
-    padding: 15px;
-    border-radius: 16px;
+/* Subjects Section */
+#subjects {
+    margin: 4rem 0;
+    text-align: center;
 }
 
-#home-section .image img{
-    width: 100%;
-    border-radius: 16px;
-    box-shadow: 2px 2px 2px #a092dcd0;
-}
-
-#home-section .image img:hover{
-    border: 2px solid purple;
-}
-
-#home-section button{
-    background-color: #9f92dc71;
-    padding: 10px 20px;
-    border-radius: 30px;
+#subjects h2 {
     font-size: 2rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-top: 30px;
+    margin-bottom: 2rem;
+}
+
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.subject-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
-#home-section button:hover{
-    background-color: #a092dcd0;
-    border: 1px solid black;
-    text-decoration:underline;
-}
-
-nav {
-    background-color: rgba(25, 224, 25, 0.837);
-    padding: 10px;
-    text-align: center;
-    box-shadow: 2px 1px 6px black;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-    font-weight: 800;
-}
-
-nav ul li a:hover {
-    color:rgb(121, 57, 241);
-    text-decoration: underline;
-}
-
-main {
-    padding: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    height: 100%;
-}
-
-.content-section {
-    display: none;
-}
-
-.content-section.active {
-    display: block;
-}
-
-h2 {
-    font-size: 2.5rem;
-    color: #004e92;
-    margin-bottom: 30px;
-}
-
-.course-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.course-card {
-    background-color: #c1bae2c0;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.478);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.course-card h3 {
-    font-size: 1.8rem;
-    color: #333;
-}
-
-.course-card p {
-    font-size: 1rem;
-    margin-top: 10px;
-    color: #666;
-
-}
-
-.course-card:hover {
+.subject-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-     text-decoration: underline;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
-.course-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+.subject-card i {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.subject-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.subject-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Contact Form */
+#contact {
+    background: #fff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #f1f1f1;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
     width: 100%;
-    height: 100%;
-    background: rgba(255, 203, 5, 0.1);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
-.course-card:hover::before {
-    opacity: 1;
+button {
+    padding: 0.8rem 2rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
+button:hover {
+    background: #0056b3;
+}
+
+/* Footer */
 footer {
-    background-color: rgb(25, 224, 25);
+    background: #282c34;
     color: white;
     text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 1.5rem 0;
 }
 
-ul {
-    list-style-type: none;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
 
-ul li {
-    margin-bottom: 10px;
-}
-
-ul li a {
-    color: #004e92;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-ul li a:hover {
-    color: #ffcb05;
+    .subject-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }

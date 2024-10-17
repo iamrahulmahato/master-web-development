@@ -1,95 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Development Learning Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="learning.css">
-    <script src="learning.js" defer></script>
 </head>
-
 <body>
+
+    <!-- Header Section -->
     <header>
-        <h1>Master Web Development</h1>
-        <p>Your Ultimate Guide to Learning Web Development Technologies</p>
+        <div class="container">
+            <h1><i class='bx bx-code-alt'></i> Master Web Development</h1>
+            <p>Become an expert in web technologies. Start learning today!</p>
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#home" onclick="showSection('home')">Home</a></li>
-            <li><a href="#courses" onclick="showSection('courses')">Courses</a></li>
-            <li><a href="#resources" onclick="showSection('resources')">Resources</a></li>
-            <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <!-- Home Section -->
-        <section id="home-section" class="content-section active">
-            <div></div>
-            <h2>Welcome to Web Dev Mastery</h2>
-            <p>Learn the latest web development technologies with our comprehensive courses.</p>
-
-            <button onclick="showSection('courses')">start learning</button>
-            </div>
-
-            <div class="image">
-                <img src="/projects/learningplatform/lp.jpg" alt="">
-            </div>
-        </section>
-
-        <!-- Courses Section -->
-        <section id="courses-section" class="content-section">
-            <h2>Web Development Courses</h2>
-            <div class="course-grid">
-                <div class="course-card html">
+    <!-- Subjects Section -->
+    <section id="subjects">
+        <div class="container">
+            <h2>Web Development Subjects</h2>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <i class='bx bxl-html5'></i>
                     <h3>HTML</h3>
-                    <p>Master the foundation of web structure.</p>
+                    <p>Learn the foundation of web structure and semantic markup.</p>
                 </div>
-                <div class="course-card css">
+                <div class="subject-card">
+                    <i class='bx bxl-css3'></i>
                     <h3>CSS</h3>
-                    <p>Style websites with modern CSS techniques.</p>
+                    <p>Style websites with responsive layouts and modern CSS techniques.</p>
                 </div>
-                <div class="course-card js">
+                <div class="subject-card">
+                    <i class='bx bxl-javascript'></i>
                     <h3>JavaScript</h3>
-                    <p>Make websites dynamic with JavaScript.</p>
+                    <p>Make your websites interactive and dynamic with JavaScript.</p>
                 </div>
-                <div class="course-card react">
+                <div class="subject-card">
+                    <i class='bx bxl-react'></i>
                     <h3>React</h3>
-                    <p>Learn the most popular frontend framework.</p>
-                </div>
-                <div class="course-card node">
-                    <h3>Node.js</h3>
-                    <p>Build backend with JavaScript.</p>
-                </div>
-                <div class="course-card database">
-                    <h3>Databases</h3>
-                    <p>Learn SQL and NoSQL databases.</p>
+                    <p>Build modern web applications with React, the popular frontend library.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Resources Section -->
-        <section id="resources-section" class="content-section">
-            <h2>Learning Resources</h2>
-            <ul>
-                <li><a href="https://developer.mozilla.org/en-US/docs/Learn" target="_blank">MDN Web Docs</a></li>
-                <li><a href="https://www.freecodecamp.org" target="_blank">FreeCodeCamp</a></li>
-                <li><a href="https://www.codecademy.com" target="_blank">Codecademy</a></li>
-            </ul>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact-section" class="content-section">
+    <!-- Contact Form Section -->
+    <section id="contact">
+        <div class="container">
             <h2>Contact Us</h2>
-            <p>Email: support@webdevmastery.com</p>
-        </section>
-    </main>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2024 Web Dev Mastery. All rights reserved.</p>
+        <p>&copy; 2024 Web Dev Mastery. All Rights Reserved.</p>
     </footer>
-</body>
 
+    <script src="learning.js"></script>
+</body>
 </html>
