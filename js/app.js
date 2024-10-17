@@ -3,6 +3,7 @@ const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 let nextBtn = document.querySelector('.next');
 let prevBtn = document.querySelector('.prev');
 
+
 let slider = document.querySelector('.slider');
 let sliderList = slider.querySelector('.slider .list');
 let thumbnail = document.querySelector('.slider .thumbnail');
@@ -19,9 +20,10 @@ nextBtn.onclick = function() {
     moveSlider('next');
 };
 
+
 prevBtn.onclick = function() {
     moveSlider('prev');
-};
+}
 
 function moveSlider(direction) {
     let sliderItems = sliderList.querySelectorAll('.item');
@@ -96,6 +98,13 @@ scrollToTopBtn.onclick = function() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
+let filterCardsTimeout;
+
+document.getElementById('search-input').addEventListener('input', function() {
+    clearTimeout(filterCardsTimeout);
+    filterCardsTimeout = setTimeout(filterCards, 500);
+});
+
 function filterCards() {
     let searchTerm = document.getElementById('search-input').value.toLowerCase();
     let cards = document.querySelectorAll('.card');
@@ -129,4 +138,41 @@ document.addEventListener('DOMContentLoaded', function() {
     cards.forEach(card => {
         cardContainer.appendChild(card);
     });
+}, { once: true });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    circles.forEach(function (circle) {
+        circle.x = 0;
+        circle.y = 0;
+    });
+
+    window.addEventListener("mousemove", function (e) {
+        coords.x = e.pageX;
+        coords.y = e.pageY - window.scrollY; 
+    });
+
+    function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+            circle.style.left = `${x - 12}px`;
+            circle.style.top = `${y - 12}px`;
+            circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+            const nextCircle = circles[index + 1] || circles[0];
+            circle.x = x;
+            circle.y = y;
+
+            x += (nextCircle.x - x) * 0.3;
+            y += (nextCircle.y - y) * 0.3;
+        });
+
+        requestAnimationFrame(animateCircles);
+    }
+
+    animateCircles();
 });
