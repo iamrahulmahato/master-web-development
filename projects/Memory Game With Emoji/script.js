@@ -73,7 +73,7 @@ function checkForMatch() {
         disableCards();
         matchedPairs++;
         if (matchedPairs === cards.length / 2) {
-            message.textContent = 'Congratulations! You matched all the pairs!';
+            message.textContent = 'Congratulations🥳! You matched all the pairs!';
         }
     } else {
         unflipCards();
