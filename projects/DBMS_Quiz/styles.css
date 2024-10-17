@@ -1,0 +1,157 @@
+/* General body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #74ebd5, #9face6); /* Gradient background */
+}
+
+/* Landing page styling */
+.landing-page {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.landing-page h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.landing-page button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #3498db;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.landing-page button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Quiz container styling */
+.quiz-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.quiz-container h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.quiz-container h2 {
+    color: #34495e;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+#timer {
+    color: #e74c3c;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Styling for the question options */
+#options button {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+    padding: 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#options button:hover {
+    background-color: #2980b9;
+    transform: scale(1.02);
+}
+
+/* Correct and incorrect answer styling */
+.correct {
+    background-color: #2ecc71 !important; /* Green for correct */
+    color: white;
+    border: none;
+}
+
+.incorrect {
+    background-color: #e74c3c !important; /* Red for incorrect */
+    color: white;
+    border: none;
+}
+
+#next-btn {
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+/* Score box */
+#score-box h2 {
+    color: #27ae60;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Feedback message styling */
+.feedback {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.feedback.correct {
+    color: rgba(255, 255, 255, 0.85); /* Green for correct answers */
+}
+
+.feedback.incorrect {
+    color: rgba(255, 255, 255, 0.85);/* Red for incorrect answers */
+}
+
+/* Other existing styles here */
+
+/* General hidden class */
+.hidden {
+    display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .quiz-container {
+        width: 90%;
+    }
+}
