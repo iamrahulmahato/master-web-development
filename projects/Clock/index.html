@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Clock</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <center><h1>Live Clock</h1></center>
+
+    <div id="timezone-selector">
+      <label for="timezone">Select Timezone: </label>
+      <select id="timezone" onchange="updateClock()">
+        <option value="Asia/Kolkata">Delhi (IST)</option>
+        <option value="America/New_York">New York (EST)</option>
+        <option value="Europe/London">London (GMT)</option>
+        <option value="Asia/Tokyo">Tokyo (JST)</option>
+        <option value="Australia/Sydney">Sydney (AEST)</option>
+        <option value="Europe/Berlin">Berlin (CET)</option>
+        <option value="America/Los_Angeles">Los Angeles (PST)</option>
+        <option value="Africa/Johannesburg">Johannesburg (SAST)</option>
+        <option value="Asia/Dubai">Dubai (GST)</option>
+        <option value="America/Sao_Paulo">São Paulo (BRT)</option>
+        <option value="Europe/Stockholm">Stockholm, Sweden (CET)</option>
+      </select>
+    </div>
+
+    <div id="container">
+      <div id="clock">00:00:00</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

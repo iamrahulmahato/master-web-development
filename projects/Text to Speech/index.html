@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Text to Speech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Text to Speech</h1>
+    <textarea id="text-input" placeholder="Type something..."></textarea>
+    
+    <div class="controls">
+      <label for="rate">Rate: <span id="rate-value">1</span></label>
+      <input type="range" id="rate" min="0.5" max="5" step="0.2" value="1">
+      
+      <label for="pitch">Pitch: <span id="pitch-value">1</span></label>
+      <input type="range" id="pitch" min="0" max="5" step="0.2" value="1">
+    </div>
+
+    <button id="speak-btn">Speak</button>
+
+    <p id="status"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

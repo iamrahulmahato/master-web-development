@@ -1,0 +1,268 @@
+*{
+    
+}
+html{
+    font-family:'Nova Round', cursive;
+
+}
+header{
+    size: 2rem;
+   
+}
+#navbar #media{
+    justify-content: right;
+    display:flex;
+    height:0.1px;
+    /* width: 1px; */
+    background-color: rgb(215, 145, 99);
+    
+}
+#navbar ul{
+    display:flex;
+    justify-content: center;
+    /* background-color: rgb(215, 145, 99); */
+    
+}
+#navbar ul li{
+    font-size: 1rem;
+    list-style: none;
+    text-align: center;
+}
+#navbar ul li a{
+    display:block;
+    padding: 3px 20px;
+    text-decoration: none;
+    color:black;
+    border-radius: 20px;
+    
+    
+}
+#navbar ul li a:hover{
+    color:white;
+    background-color:  rgb(250, 166, 58);}
+
+#bg{
+    content:"";
+    position:absolute;
+    background: url(image/front\ page.jpg) no-repeat center bottom/cover;
+    height:69%;
+    width:100%;
+    z-index: -1;
+    opacity: 0.78;
+    
+}
+#bg h1{
+    text-align: center;
+    font-size: 4rem;
+    padding-top: 23px;
+    margin-top: -82px;
+    /* line-height: 0; */
+    margin-left: 490px;
+}
+#bg h2{
+    text-align: center;
+    font-size: 4rem;
+    margin-left: 200px;
+}
+#bg p{
+    font-size: 2rem;
+    text-align: right;
+    margin-right:12% ;
+    letter-spacing: 1rem;
+    margin-bottom: 12px;
+    line-height: 0;
+    margin-top: 76px;
+    /* padding-top: 0.4em; */
+}
+.para{
+    margin-top: 35rem;
+    text-align: center;
+    background-color: rgb(245, 211, 167);
+}
+.para .but{
+    font-size: 22px;
+    border-radius: 12px;
+    font-weight: bolder;
+    color: rgb(4, 61, 17);
+    background-color: rgb(195, 249, 168);
+   
+}
+
+#places{
+   display:grid;
+   /* flex-direction: column; */
+   /* align-items: center; */
+   grid-template-columns: repeat(4,1fr);
+   /* height: 20%; */
+}
+#places .class{
+    border: 2px solid black;
+    margin:12px 3px;
+    border-radius:23px;
+    color:white;
+    
+
+    /* background:url(newyork.jpg); */}
+
+    #places .class h2{
+        color:rgb(201, 254, 6)}
+    #places .class1{
+        background: url(image/newyork.jpg)no-repeat center bottom/cover;
+        border-radius: 23px;
+        background-size: cover;
+        padding: 34px;
+    box-sizing: border-box;
+    object-fit: cover;
+    height: 342px; /* Adjust the height as needed */
+    overflow: hidden; /* Ensure the background doesn't overflow the grid item */
+    position: relative;
+    
+    }
+    #places .class1:hover{
+        box-shadow: 100px black;
+    }
+    #places .class2{
+        background: url(image/dubai.jpg)no-repeat center bottom/cover;
+        border-radius: 23px;
+        background-size: cover;
+        padding: 34px;
+    box-sizing: border-box;
+    object-fit: cover;
+    /* background-size: cover; */
+    background-position: center center;
+    height: 342px; /* Adjust the height as needed */
+    overflow: hidden; /* Ensure the background doesn't overflow the grid item */
+    position: relative;
+}
+    
+    
+    #places .class3{
+        background: url(image/maldives\ -\ Copy.jpg)no-repeat center center/cover;
+        border-radius: 23px;
+        background-size: cover;
+        padding: 34px;
+    box-sizing: border-box;
+    object-fit: cover;
+    background-position: center center;
+    height: 342px; /* Adjust the height as needed */
+    overflow: hidden; /* Ensure the background doesn't overflow the grid item */
+    position: relative;
+}
+    
+    
+    #places .class4{
+        background: url(image/Singapore_place.jpg)no-repeat center center/cover;
+        border-radius: 23px;
+        background-size: cover;
+        padding: 34px; 
+     box-sizing: border-box;
+    object-fit: cover; 
+    background-position: center center;
+    height: 342px; /* Adjust the height as needed */
+    overflow: hidden; /* Ensure the background doesn't overflow the grid item */
+    position: relative;
+}
+#india{
+    justify-content: center;
+    background-color: rgb(248, 148, 121);
+}
+
+#india .butt{
+    align-items: center;
+    font-size: 22px;
+    border-radius: 12px;
+    font-weight: bolder;
+    color: rgb(4, 61, 17);
+    background-color: rgb(195, 249, 168);
+    margin-left: 45%;
+    padding-left: 23px;
+    padding-right: 23px;
+}
+
+
+#places .class5{
+    background: url(image/agra.jpeg)no-repeat center bottom/cover;
+    border-radius: 23px;
+    background-size: cover;
+    padding: 34px;
+box-sizing: border-box;
+object-fit: cover;
+/* background-size: cover; */
+background-position: center center;
+height: 342px; /* Adjust the height as needed */
+overflow: hidden; /* Ensure the background doesn't overflow the grid item */
+position: relative;
+}
+
+#places .class6{
+    background: url(image/kashmir.jpg)no-repeat center bottom/cover;
+    border-radius: 23px;
+    background-size: cover;
+    padding: 34px;
+box-sizing: border-box;
+object-fit: cover;
+/* background-size: cover; */
+background-position: center center;
+height: 342px; /* Adjust the height as needed */
+overflow: hidden; /* Ensure the background doesn't overflow the grid item */
+position: relative;
+}
+
+#places .class7{
+    background: url(image/kerela.webp)no-repeat center bottom/cover;
+    border-radius: 23px;
+    background-size: cover;
+    padding: 34px;
+box-sizing: border-box;
+object-fit: cover;
+/* background-size: cover; */
+background-position: center center;
+height: 342px; /* Adjust the height as needed */
+overflow: hidden; /* Ensure the background doesn't overflow the grid item */
+position: relative;
+
+}
+
+#places .class8{
+    background: url(image/jaipur.jpg)no-repeat center bottom/cover;
+    border-radius: 23px;
+    background-size: cover;
+    padding: 34px;
+box-sizing: border-box;
+object-fit: cover;
+/* background-size: cover; */
+background-position: center center;
+height: 342px; /* Adjust the height as needed */
+overflow: hidden; /* Ensure the background doesn't overflow the grid item */
+position: relative;
+}
+    
+    
+    .btn{
+        background-color: white;
+        color:rgb(2, 121, 2);
+        font-size: 21px;
+        border-radius: 21px;
+        padding:6px 20px;
+        font-weight:bolder;
+        cursor:pointer;
+    }
+    .btn:hover{
+        background-color: rgb(180, 242, 166) ;
+    }
+    .btn a{
+        text-decoration: none;
+    }
+     section #india{
+        background-color: rgb(203, 171, 248);
+     }
+    
+    
+
+
+footer{
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 2px;
+}
