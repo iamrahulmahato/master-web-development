@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f5f8;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #a0aa5b;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+    color: #5158ba;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cfacac;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #cedd79;
+    outline: none;
+    box-shadow: 0 0 10px rgba(74, 84, 241, 0.1);
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #4f56ab;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #39b8ae;
+    transform: translateY(-2px);
+}
+
+.meal-suggestions {
+    margin-top: 30px;
+}
+
+.meal-card {
+    background-color: #9e9c89;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.meal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.meal-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    margin-right: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.meal-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    /* color: #333; */
+}
+
+.meal-card p {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    /* color: #555; */
+}
+
+/* Additional styling for readability */
+.meal-card p span {
+    font-weight: bold;
+    color: #4a54f1;
+}
+
+@media (max-width: 768px) {
+    .meal-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .meal-card img {
+        margin-bottom: 15px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}
