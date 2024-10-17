@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Black background */
+    color: #ffffff; /* White text for contrast */
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+#game {
+    max-width: 800px; /* Limit the width of the game */
+    margin: 0 auto; /* Center the game */
+    padding: 20px;
+    border: 2px solid #ffffff; /* White border */
+    border-radius: 10px;
+    background-color: #1e1e1e; /* Darker background for the game area */
+}
+
+#ecosystem {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.species {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+.plant {
+    background-color: #4caf50; /* Green for plants */
+}
+
+.animal {
+    background-color: #ff9800; /* Orange for animals */
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Blue button */
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#stats {
+    margin-top: 20px;
+    font-size: 18px;
+    background-color: #333; /* Dark background for stats */
+    padding: 10px;
+    border-radius: 5px;
+}
