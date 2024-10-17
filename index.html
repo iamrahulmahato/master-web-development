@@ -32,88 +32,86 @@
 
     <link rel="icon" href="./faviconicon.png" type="image/png">
     <style>
-        .feedback {
-            width: 100%;
-            min-height: 100vh;
-            background: linear-gradient(45deg, #010758, #490d61);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
+.feedback {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #010758, #490d61);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
-        }
+.feedback h1 {
+    font-size: 45px;
+    font-weight: 500;
+    margin-top: -50px;
+    margin-bottom: 50px;
+    color: #fff;
+}
 
-        .feedback h1 {
-            font-size: 45px;
-            font-weight: 500;
-            margin-top: -50px;
-            margin-bottom: 50px;
-            color: #fff;
-        }
+.feedback h1 span {
+    color: #ff2963;
+}
 
-        .feedback h1 span {
-            color: #ff2963;
-        }
+textarea {
+    width: 600px;
+    height: 250px;
+    background: #7b77c5;
+    color: #fff;
+    font-size: 15px;
+    border: 0;
+    outline: 0;
+    padding: 20px;
+    border-radius: 10px;
+    resize: none;
+    margin-bottom: 30px;
+    align-items: center;
+}
 
-        textarea {
-            width: 600px;
-            height: 250px;
-            background: #7b77c5;
-            color: #fff;
-            font-size: 15px;
-            border: 0;
-            outline: 0;
-            padding: 20px;
-            border-radius: 10px;
-            resize: none;
-            margin-bottom: 30px;
-            align-items: center;
-        }
+textarea::placeholder {
+    font-size: 16px;
+    color: #ddd;
+}
 
-        textarea::placeholder {
-            font-size: 16px;
-            color: #ddd;
-        }
-        button {
-            background: #ff2963;
-            color: #fff;
-            font-size: 16px;
-            padding: 10px 30px;
-            border-radius: 35px;
-            border: 0;
-            outline: 0;
-            cursor: pointer;
-        }
-        button a{
-            color: white;
-        }
+button {
+    background: #ff2963;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 35px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
 
-        @media (max-width: 1200px) {
-            .footer-container {
-                padding: 20px;
-            }
+button a {
+    color: white;
+}
 
-            .mwd-footer-content {
-                text-align: center;
-            }
+@media (max-width: 1200px) {
+    .footer-container {
+        padding: 20px;
+    }
+    .mwd-footer-content {
+        text-align: center;
+    }
+    .tags.social {
+        justify-content: center;
+    }
+    .btn {
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
 
-            .tags.social {
-                justify-content: center;
-            }
+    .btn-secondary:hover {
+        background-color: #6c757d;
+    }
+}
 
-            .btn {
-                margin-top: 10px;
-                border-radius: 5px;
-            }
-
-            .btn-primary:hover {
-                background-color: #0056b3;
-            }
-
-            .btn-secondary:hover {
-                background-color: #6c757d;
-            }
-        }
 /* cursor trail effect  */
 
 .circle {
@@ -134,7 +132,9 @@
       height: 100%;
       pointer-events: none;
       z-index: 9999;
+
      }
+    }
         /* Chatbot Container */
       .chatbot-container {
           position: fixed;
@@ -265,277 +265,342 @@
     
 
     <section id="projects">
-        <div class="projects-heading">
-            <p>Master web development</p>
-            <h3><span>Open</span> Projects</h3>
-            <div class="btn-container">
-                <a href="http://github.com/iamrahulmahato/master-web-development" target="_blank"
-                    rel="noopener noreferrer" class="source-code-btn">View source code</a>
+<div class="projects-heading">
+    <p>Master web development</p>
+    <h3><span>Open</span> Projects</h3>
+    <div class="btn-container">
+        <a href="http://github.com/iamrahulmahato/master-web-development" target="_blank" rel="noopener noreferrer" class="source-code-btn">View source code</a>
+    </div>
+    <br />
+    <input type="text" id="search-input" placeholder="Search games by Title/Description..." oninput="filterCards()" style="margin-bottom: 10px;">
+</div>
+
+<div class="slider">
+    <div class="list">
+        <div class="item">
+            <img src="./images/air ballon game.jpg" alt="">
+            <div class="content">
+                <div class="title">Air Balloon</div>
+                <div class="type">Game</div>
+                <div class="description">A simple air balloon game.......</div>
+                <div class="button">
+                    <button>SLIDE MORE</button>
+                </div>
             </div>
-            <br />
-            <input type="text" id="search-input" placeholder="Search games by Title/Description..."
-                oninput="filterCards()" style="margin-bottom: 10px;">
         </div>
 
-        <div class="slider">
-
-            <div class="list">
-
-                <div class="item">
-                    <img src="./images/air ballon game.jpg" alt="">
-
-                    <div class="content">
-                        <div class="title">Air Ballon </div>
-                        <div class="type">Game</div>
-                        <div class="description">
-                            A simple air ballon game.......
-                        </div>
-                        <div class="button">
-                            <button>SLIDE MORE</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="./images/coin toss game.webp" alt="">
-
-                    <div class="content">
-                        <div class="title">Coin Toss</div>
-                        <div class="type">Game</div>
-                        <div class="description">
-                            A Game to flip the coin and bet on it either head or tail.......
-                        </div>
-                        <div class="button">
-                            <button>SLIDE MORE</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="./images/github profile viewer.jpg" alt="">
-
-                    <div class="content">
-                        <div class="title">Github Profile</div>
-                        <div class="type">Viewer</div>
-                        <div class="description">
-                            Github Profile Viewer allows user to effortlessly explore <br><br>
-                            and analyze Github Profiles Highligthing Key status and Contribution........
-                        </div>
-                        <div class="button">
-                            <button>SLIDE MORE</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="./images/doraemon image.jpg" alt="">
-
-                    <div class="content">
-                        <div class="title">DORAEMON </div>
-                        <div class="type">PUZZLE GAME</div>
-                        <div class="description">
-                            A simple doraemon slide puzzle game.....
-                        </div>
-                        <div class="button">
-                            <button>SLIDE MORE</button>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="item">
-                    <img src="./images/tic tac toe.jpg" alt="">
-
-                    <div class="content">
-                        <div class="title">TIC-TAC-TOE</div>
-                        <div class="type">GAME</div>
-                        <div class="description">
-                            A minimalistic two player game.......
-                        </div>
-                        <div class="button">
-                            <button>SEE MORE</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="./images/moon night.jpg" alt="">
-
-                    <div class="content">
-                        <div class="title">SCROLL DOWN </div>
-                        <div class="type">FOR MORE</div>
-                        <div class="description">
-                            Exciting this are waiting for you.......
-                        </div>
-                        <div class="button">
-                            <button>SCROLL DOWN</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="thumbnail">
-
-                <div class="item">
-                    <img src="./images/air ballon game.jpg" alt="">
-
-                </div>
-
-                <div class="item">
-                    <img src="./images/github profile viewer.jpg" alt="">
-                </div>
-
-                <div class="item">
-                    <img src="./images/doraemon image.jpg" alt="">
-                </div>
-
-                <div class="item">
-                    <img src="./images/tic tac toe.jpg" alt="">
-                </div>
-
-                <div class="item">
-                    <img src="./images/moon night.jpg" alt="">
+        <div class="item">
+            <img src="./images/coin toss game.webp" alt="">
+            <div class="content">
+                <div class="title">Coin Toss</div>
+                <div class="type">Game</div>
+                <div class="description">A Game to flip the coin and bet on it either head or tail.......</div>
+                <div class="button">
+                    <button>SLIDE MORE</button>
                 </div>
             </div>
+        </div>
 
-            <div class="slider">
+        <div class="item">
+            <img src="./images/github profile viewer.jpg" alt="">
+            <div class="content">
+                <div class="title">Github Profile</div>
+                <div class="type">Viewer</div>
+                <div class="description">
+                    Github Profile Viewer allows users to effortlessly explore <br><br>
+                    and analyze Github Profiles highlighting key status and contributions........
+                </div>
+                <div class="button">
+                    <button>SLIDE MORE</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="./images/doraemon image.jpg" alt="">
+            <div class="content">
+                <div class="title">DORAEMON</div>
+                <div class="type">PUZZLE GAME</div>
+                <div class="description">A simple doraemon slide puzzle game.....</div>
+                <div class="button">
+                    <button>SLIDE MORE</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="./images/tic tac toe.jpg" alt="">
+            <div class="content">
+                <div class="title">TIC-TAC-TOE</div>
+                <div class="type">GAME</div>
+                <div class="description">A minimalistic two-player game.......</div>
+                <div class="button">
+                    <button>SEE MORE</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="./images/moon night.jpg" alt="">
+            <div class="content">
+                <div class="title">SCROLL DOWN</div>
+                <div class="type">FOR MORE</div>
+                <div class="description">Exciting things are waiting for you.......</div>
+                <div class="button">
+                    <button>SCROLL DOWN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="thumbnail">
+        <div class="item">
+            <img src="./images/air ballon game.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="./images/github profile viewer.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="./images/doraemon image.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="./images/tic tac toe.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="./images/moon night.jpg" alt="">
+        </div>
+    </div>
+</div>
 
                 <div class="list">
 
                     <div class="item">
                         <img src="./images/air ballon game.jpg" alt="">
+<div class="item">
+    <img src="./images/air ballon game.jpg" alt="">
+    <div class="content">
+        <div class="title">Air Balloon</div>
+        <div class="type">Game</div>
+        <div class="description">
+            A simple air balloon game.......
+        </div>
+        <div class="button">
+            <button>SLIDE MORE</button>
+        </div>
+    </div>
+</div>
 
-                        <div class="content">
-                            <div class="title">Air Ballon </div>
-                            <div class="type">Game</div>
-                            <div class="description">
-                                A simple air ballon game.......
+<div class="item">
+    <img src="./images/coin toss game.webp" alt="">
+    <div class="content">
+        <div class="title">Coin Toss</div>
+        <div class="type">Game</div>
+        <div class="description">
+            A game to flip the coin and bet on it either head or tail.......
+        </div>
+        <div class="button">
+            <button>SLIDE MORE</button>
+        </div>
+    </div>
+</div>
+
                             </div>
                             <div class="button">
                                 <button>SLIDE MORE</button>
                             </div>
                         </div>
                     </div>
+
 
                     <div class="item">
-                        <img src="./images/coin toss game.webp" alt="">
+<div class="item">
+    <img src="./images/github profile viewer.jpg" alt="">
 
-                        <div class="content">
-                            <div class="title">Coin Toss</div>
-                            <div class="type">Game</div>
-                            <div class="description">
-                                A Game to flip the coin and bet on it either head or tail.......
+    <div class="content">
+        <div class="title">Github Profile</div>
+        <div class="type">Viewer</div>
+        <div class="description">
+            Github Profile Viewer allows users to effortlessly explore <br><br>
+            and analyze Github Profiles, highlighting key stats and contributions........
+        </div>
+        <div class="button">
+            <button>SLIDE MORE</button>
+        </div>
+    </div>
+</div>
+
+<div class="item">
+    <img src="./images/doraemon image.jpg" alt="">
+
+    <div class="content">
+        <div class="title">DORAEMON</div>
+        <div class="type">PUZZLE GAME</div>
+        <div class="description">
+            A simple Doraemon slide puzzle game.....
+        </div>
+        <div class="button">
+            <button>SLIDE MORE</button>
+        </div>
+    </div>
+</div>
+
                             </div>
                             <div class="button">
                                 <button>SLIDE MORE</button>
                             </div>
                         </div>
                     </div>
+<div class="item">
+    <img src="./images/tic tac toe.jpg" alt="">
 
+    <div class="content">
+        <div class="title">TIC-TAC-TOE</div>
+        <div class="type">GAME</div>
+        <div class="description">
+            A minimalistic two-player game.......
+        </div>
+        <div class="button">
+            <button>SEE MORE</button>
+        </div>
+    </div>
+</div>
 
-                    <div class="item">
-                        <img src="./images/github profile viewer.jpg" alt="">
+<div class="item">
+    <img src="./images/moon night.jpg" alt="">
 
-                        <div class="content">
-                            <div class="title">Github Profile</div>
-                            <div class="type">Viewer</div>
-                            <div class="description">
-                                Github Profile Viewer allows user to effortlessly explore <br><br>
-                                and analyze Github Profiles Highligthing Key status and Contribution........
-                            </div>
-                            <div class="button">
-                                <button>SLIDE MORE</button>
-                            </div>
-                        </div>
-                    </div>
+    <div class="content">
+        <div class="title">SCROLL DOWN</div>
+        <div class="type">FOR MORE</div>
+        <div class="description">
+            Exciting things are waiting for you.......
+        </div>
+        <div class="button">
+            <button>SCROLL DOWN</button>
+        </div>
+    </div>
+</div>
 
-                    <div class="item">
-                        <img src="./images/doraemon image.jpg" alt="">
+<div class="item">
+    <img src="./images/github profile viewer.jpg" alt="">
 
-                        <div class="content">
-                            <div class="title">DORAEMON </div>
-                            <div class="type">PUZZLE GAME</div>
-                            <div class="description">
-                                A simple doraemon slide puzzle game.....
-                            </div>
-                            <div class="button">
-                                <button>SLIDE MORE</button>
-                            </div>
-                        </div>
-                    </div>
+    <div class="content">
+        <div class="title">Github Profile</div>
+        <div class="type">Viewer</div>
+        <div class="description">
+            Github Profile Viewer allows users to effortlessly explore <br><br>
+            and analyze Github Profiles, highlighting key stats and contributions........
+        </div>
+        <div class="button">
+            <button>SLIDE MORE</button>
+        </div>
+    </div>
+</div>
 
+<div class="item">
+    <img src="./images/doraemon image.jpg" alt="">
+
+    <div class="content">
+        <div class="title">DORAEMON</div>
+        <div class="type">PUZZLE GAME</div>
+        <div class="description">
+            A simple Doraemon slide puzzle game.....
+        </div>
+        <div class="button">
+            <button>SLIDE MORE</button>
+        </div>
+    </div>
+</div>
 
                     <div class="item">
                         <img src="./images/tic tac toe.jpg" alt="">
 
-                        <div class="content">
-                            <div class="title">TIC-TAC-TOE</div>
-                            <div class="type">GAME</div>
-                            <div class="description">
-                                A minimalistic two player game.......
-                            </div>
-                            <div class="button">
-                                <button>SEE MORE</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <img src="./images/moon night.jpg" alt="">
-
-                        <div class="content">
-                            <div class="title">SCROLL DOWN </div>
-                            <div class="type">FOR MORE</div>
-                            <div class="description">
-                                Exciting this are waiting for you.......
-                            </div>
-                            <div class="button">
-                                <button>SCROLL DOWN</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="thumbnail">
-
-                    <div class="item">
-                        <img src="./images/air ballon game.jpg" alt="">
-                    </div>
-
-                </div>
-
-
-                <div class="item">
-                    <img src="./images/github profile viewer.jpg" alt="">
-                </div>
-
-                <div class="item">
-                    <img src="./images/doraemon image.jpg" alt="">
-                </div>
-
-                <div class="item">
-                    <img src="./images/tic tac toe.jpg" alt="">
-                </div>
-
-                <div class="item">
-                    <img src="./images/moon night.jpg" alt="">
-                </div>
-            </div>
-
-
-            <div class="nextPrevArrows">
-                <button class="prev">
-                    < </button>
-                        <button class="next"> > </button>
-            </div>
-
-
-
+<div class="item">
+    <img src="./images/github profile viewer.jpg" alt="">
+    <div class="content">
+        <div class="title">Github Profile</div>
+        <div class="type">Viewer</div>
+        <div class="description">
+            Github Profile Viewer allows users to effortlessly explore <br><br>
+            and analyze Github Profiles, highlighting key stats and contributions........
         </div>
+        <div class="button">
+            <button>SLIDE MORE</button>
+        </div>
+    </div>
+</div>
+
+<div class="item">
+    <img src="./images/doraemon image.jpg" alt="">
+    <div class="content">
+        <div class="title">DORAEMON</div>
+        <div class="type">PUZZLE GAME</div>
+        <div class="description">
+            A simple Doraemon slide puzzle game.....
+        </div>
+        <div class="button">
+            <button>SLIDE MORE</button>
+        </div>
+    </div>
+</div>
+
+<div class="item">
+    <img src="./images/tic tac toe.jpg" alt="">
+    <div class="content">
+        <div class="title">TIC-TAC-TOE</div>
+        <div class="type">GAME</div>
+        <div class="description">
+            A minimalistic two-player game.......
+        </div>
+        <div class="button">
+            <button>SEE MORE</button>
+        </div>
+    </div>
+</div>
+
+<div class="item">
+    <img src="./images/moon night.jpg" alt="">
+    <div class="content">
+        <div class="title">SCROLL DOWN</div>
+        <div class="type">FOR MORE</div>
+        <div class="description">
+            Exciting things are waiting for you.......
+        </div>
+        <div class="button">
+            <button>SCROLL DOWN</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="thumbnail">
+    <div class="item">
+        <img src="./images/air ballon game.jpg" alt="">
+    </div>
+
+    <div class="item">
+        <img src="./images/github profile viewer.jpg" alt="">
+    </div>
+
+    <div class="item">
+        <img src="./images/doraemon image.jpg" alt="">
+    </div>
+
+    <div class="item">
+        <img src="./images/tic tac toe.jpg" alt="">
+    </div>
+
+    <div class="item">
+        <img src="./images/moon night.jpg" alt="">
+    </div>
+</div>
+
+<div class="nextPrevArrows">
+    <button class="prev"> < </button>
+    <button class="next"> > </button>
+</div>
+</div>
+</div>
+
 
 
         <div class="projects-container">
@@ -550,6 +615,7 @@
                     </p>
                 </div>
             </a>
+
             <a href="./projects/OTPgenerator/OTP.html" class="card" target="_blank">
                 <div class="card-cover">
                     <img src="assets/image/otp.webp" alt="Generate Gradient">
@@ -560,7 +626,7 @@
                         Generate OTP upto 6 digits
                     </p>
                 </div>
-            </a>
+          </a>
             <a href="./projects/box connet game/box.html" class="card" target="_blank">
                 <div class="card-cover ">
                     <img src="./assets/image/box connet game.png" alt="">
@@ -572,6 +638,7 @@
                     </p>
                 </div>
             </a>
+
             <a href="./projects/Zomato-Clone-main/index.html" class="card" target="_blank">
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/download.jpg" alt="Z">
@@ -597,6 +664,7 @@
                     </p>
                 </div>
             </a>
+
             <a href="./projects/guess_the_shape/index.html" class="card" target="_blank">
                 <div class="card-cover ">
                     <img src="./images/guess the shape.webp" alt="">
@@ -608,6 +676,7 @@
                     </p>
                 </div>
             </a>
+
             <a href="./projects/Color Guessing Game/index.html" class="card" target="_blank">
                 <div class="card-cover ">
                     <img src="./assets/image/colorguess.png" alt="Color Guessing Game">
@@ -619,6 +688,7 @@
                     </p>
                 </div>
             </a>
+
             <a href="./projects/RandomRecipeGenerator/index.html" class="card" target="_blank">
                 <div class="card-cover">
                     <img src="assets\image\recipegenerator.jpg" alt="Generate recipe">
@@ -630,6 +700,7 @@
                     </p>
                 </div>
             </a>
+
             <a href="./projects/Travel Vlog/home.html" class="card" target="_blank">
                 <div class="card-cover">
                     <img src="./assets/image/travel-vlog.jpg" alt="Counter">
@@ -787,7 +858,21 @@
                         A single page blog.
                     </p>
                 </div>
+                
+                  
             </a>
+
+            <a href="./projects/Contributor_1/index1.html" class="card">
+            <div class="contributor-card">
+                <div class="contributor-card-cover">
+                    <img src="./assets/image/contr.png" alt="Contributor Image" /> <!-- Replace with your image path -->
+                </div>
+                <div class="contributor-card-content">
+                    <h3 class="contributor-card-heading">Contributors Page</h3>
+                    <p class="contributor-card-description">A brief description of the contributor.</p>
+                </div>
+            </div>
+
             <a href="./projects/8_puzzle/index.html" class="card" target="_blank">
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/numbers.png" alt="">
@@ -1161,39 +1246,6 @@
                 </div>
             </a>
 
-            <!-- <a href="./projects/Typing%20Speed%20Test/index.html" class="card">
-
-            <a href="./projects/Typing Test/index.html" class="card"> -->
-
-            <!-- <a href="./projects/Typing Test/index.html" class="card" target="_blank">
-                <div class="card-cover">
-                    <img src="./assets/image/Typing_test.jpg" alt="Typing test logo">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Typing Speed Test</h3>
-                    <p class="card-description">
-                        Test Your Speed on Typing
-                    </p>
-                </div>
-
-
-
-            <a href="./projects/Virtual Pet Game/index.html "class="card">
-                <div class="card-cover counter-cover-colour">
-                    <img src="assets/image/vp.jpg" alt="pet">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Virtual Pet Game</h3>
-                    <p class="card-description">
-                        Adopt, care, and interact with virtual pets
-                    </p>
-                </div>
-            </a> 
-
-            <a href="./projects/Rolling Triumph/index.html" class="card">
-
-            </a> -->
-
             <a href="./projects/Rolling Triumph/index.html" class="card" target="_blank">
                 <div class="card-cover">
                     <img src="./assets/image/Rolling_Triumph.jpg" alt="Rolling Triumph">
@@ -1240,9 +1292,6 @@
                     </p>
                 </div>
             </a>
-
-
-
                 <a href="./projects/FlashCard Quiz App/index.html" class="card" target="_blank">
                     <div class="card-cover">
                         <img src="./projects/Flashcard Quiz App/image/image.png" alt="Flashcard Quiz App logo">
@@ -1266,7 +1315,6 @@
                         </p>
                     </div>
                 </a>
-
             <a href="./projects/weather/index.html" class="card" target="_blank">
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/weather.jpg" class="weather-img" alt="">
@@ -1338,7 +1386,9 @@
                     </p>
                 </div>
             </a>
-             <a href="projects\Whack a mole\index.html" class="card">
+
+            <a href="projects\Whack a mole\index.html" class="card">
+
                 <div class="card-cover">
                     <img src="assets\image\mole logo.png" alt="Whac a mole logo">
                 </div>
@@ -1459,6 +1509,71 @@
                     </p>
                 </div>
             </a>
+<a href="./projects/Doodle Jump/index.html" class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/doodle.png" alt="Doodle Jump">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Doodle Jump</h3>
+        <p class="card-description">Enjoy and Jump.</p>
+    </div>
+</a>
+<a href="./projects/Email Validator/index.html" class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/email.png" alt="Email Validator">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Email Validator</h3>
+        <p class="card-description">Validate E-MAIL</p>
+    </div>
+</a>
+<a href="./projects/Maze/index.html" class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/maze.jpg" alt="Maze Game">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Maze Game</h3>
+        <p class="card-description">Play exciting maze game</p>
+    </div>
+</a>
+<a href="./projects/Minesweeper/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/minesweeper.jpeg" alt="Minesweeper">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Minesweeper</h3>
+        <p class="card-description">Classic Minesweeper game.</p>
+    </div>
+</a>
+<a href="./projects/Tetris_Game/index.html" class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/tetrsis.jpg" alt="Tetris Game">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Tetris Game</h3>
+        <p class="card-description">Arrange falling blocks to clear lines.</p>
+    </div>
+</a>
+<a href="./projects/Connect4/index.html" class="card" target="_blank">
+    <div class="card-cover">
+        <img src="./projects/Connect4/Connectfour.png" alt="Connect4">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Connect4 (Two Player)</h3>
+        <p class="card-description">Connect4: Where Strategy Meets Fun, One Disc at a Time!</p>
+    </div>
+</a>
+<a href="./projects/Among Us Game/index.html" class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="assets/image/amongus.png" alt="Among Us">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Among Us</h3>
+        <p class="card-description">Find who is the imposter.</p>
+    </div>
+</a>
+
+
             <a href="./projects/Doodle Jump/index.html" class="card">
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/doodle.png" alt="Doodle Jump">
@@ -1524,18 +1639,19 @@
                         Connect4: Where Strategy Meets Fun, One Disc at a Time!
                     </p>
                 </div>
-          </a>
-             <a href="./projects/Among Us Game/index.html" class="card">
-                    <div class="card-cover counter-cover-colour">
-                            <img src="assets/image/amongus.png" alt="Flappy Bird">
-                     </div>
+            </a>
+
+                            <a href="./projects/Among Us Game/index.html" class="card">
+                                <div class="card-cover counter-cover-colour">
+                                    <img src="assets/image/amongus.png" alt="Flappy Bird">
+                                </div>
                                 <div class="card-content">
                                     <h3 class="card-heading">Among us</h3>
                                     <p class="card-description">
                                         Find who is imposter.
                                     </p>
                                 </div>
-                 </a>
+                            </a>
 
                         <a href="./projects/Joke Generator/index.html" class="card">
                             <div class="card-cover counter-cover-colour">
@@ -1612,6 +1728,97 @@
                 <div class="card-content">
                     <h3 class="card-heading">Lamb Lane</h3>
                     <p class="card-description">
+<a href="./projects/Doodle Jump/index.html" class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/doodle.png" alt="Doodle Jump">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Doodle Jump</h3>
+        <p class="card-description">Enjoy and Jump.</p>
+    </div>
+</a>
+<a href="./projects/Email Validator/index.html" class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/email.png" alt="Email Validator">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Email Validator</h3>
+        <p class="card-description">Validate E-MAIL</p>
+    </div>
+</a>
+<a href="./projects/Maze/index.html" class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/maze.jpg" alt="Maze Game">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Maze Game</h3>
+        <p class="card-description">Play exciting maze game</p>
+    </div>
+</a>
+<a href="./projects/Minesweeper/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/minesweeper.jpeg" alt="Minesweeper">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Minesweeper</h3>
+        <p class="card-description">Classic Minesweeper game.</p>
+    </div>
+</a>
+<a href="./projects/Tetris_Game/index.html" class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/tetrsis.jpg" alt="Tetris Game">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Tetris Game</h3>
+        <p class="card-description">Arrange falling blocks to clear lines.</p>
+    </div>
+</a>
+<a href="./projects/Connect4/index.html" class="card" target="_blank">
+    <div class="card-cover">
+        <img src="./projects/Connect4/Connectfour.png" alt="Connect4">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Connect4 (Two Player)</h3>
+        <p class="card-description">Connect4: Where Strategy Meets Fun, One Disc at a Time!</p>
+    </div>
+</a>
+<a href="./projects/Among Us Game/index.html" class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="assets/image/amongus.png" alt="Among Us">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Among Us</h3>
+        <p class="card-description">Find who is the imposter.</p>
+    </div>
+</a>
+<a href="./projects/Train Track Game/index.html" class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/traintrack.png" alt="Train Track Game">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Train Track Game</h3>
+        <p class="card-description">A Train Track Game created using Three.js.</p>
+    </div>
+</a>
+<a href="./projects/Building Block/index.html" class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/buildingblock.png" alt="Building Block">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Building Block</h3>
+        <p class="card-description">A Building Block Game.</p>
+    </div>
+</a>
+<a href="./projects/Lamb Lane/index.html" class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/lamblane.png" alt="Lamb Lane">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Lamb Lane</h3>
+        <p class="card-description">Explore the fun in Lamb Lane.</p>
+    </div>
+</a>
+
                         A Lamb Lane Game.
                     </p>
                 </div>
@@ -1975,152 +2182,190 @@
 
 
 
- <!-- =========================== Recipe Book ================================= -->
-     <a href="./projects/Recipe Book/index.html" class="card" target="_blank">
-        <div class="card-cover counter-cover-colour">
-            <img src="./assets/image/recipe.webp" alt="recipebook">
-        </div>
-        <div class="card-content">
-            <h3 class="card-heading">Recipe Book</h3>
-            <p class="card-description">
-                Gather Delicious Secret Recipes!
-            </p>
-        </div>
-    </a>
+<!-- =========================== Recipe Book ================================= -->
+<a href="./projects/Recipe Book/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/recipe.webp" alt="recipebook">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Recipe Book</h3>
+        <p class="card-description">Gather Delicious Secret Recipes!</p>
+    </div>
+</a>
 <!-- =========================== ================================= -->
 
-<!-- =========================== Bus reservation system ================================= -->
+<!-- =========================== Bus Reservation System ================================= -->
 <a href="projects/Bus Reservation System/index.html" class="card" target="_blank">
     <div class="card-cover counter-cover-colour">
         <img src="./assets/image/bus-stop.png" alt="Bus image" style="width: 10rem; height: auto;">
     </div>
     <div class="card-content">
         <h3 class="card-heading">Bus Reservation System</h3>
-        <p class="card-description">
-            Fast, Easy, and Reliable Bus Reservations.
-        </p>
+        <p class="card-description">Fast, Easy, and Reliable Bus Reservations.</p>
     </div>
 </a>
 
-
-
-
-
-
-
-    <!-- =========================== Othello Game ================================= -->
-    <a href="projects/Othello/index.html" class="card" target="_blank">
-        <div class="card-cover counter-cover-colour">
-            <img src="./assets/image/Othello.png" alt="Othello Game" style="width: 10rem; height: auto;">
-        </div>
-        <div class="card-content">
-            <h3 class="card-heading">Othello Game</h3>
-            <p class="card-description">
-                Othello is a strategic board game where players aim to flip their opponent's discs to their color.
-            </p>
-        </div>
-    </a>
-    <!--============================== End =========================================== -->
-
-
-    <section>
-        <div class="feedback">
-            <!-- <h2> Have a Feedback? &nbsp;&nbsp; <a href="feedback.html" target="_blank">Click here to provide feedback</a></h2> -->
-            <h1>Have a<span> Feedback?</span></h1>
-            <textarea placeholder="write anything here...."></textarea>
-            <button><a href="feedback.html" target="_blank">Click here to provide feedback</a></button>
-        </div>
-    </section>
-
-
-    </section>
-
-    <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
-
-    <!-- cursor trail effect  -->
-
-    <div class="circle-container">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-      </div>
-
-    <script src="./js/app.js"></script>
-    <div class="chatbot-container">
-        <button class="chatbot-button group" id="chatbot-toggle">
-            <img class="h-20" src="chatbot.gif" alt="chatbot">
-            <span class="tooltip-text">
-                Welcome to Web Dev! <br>
-                How can I help You? ^_^ 
-            </span>
-        </button>
-        
-        <!-- Chat Window -->
-        <div id="chat-window" class="chat-window">
-            <!-- Iframe to load chatbot.html -->
-            <iframe id="chat-iframe" src="chatbot.html"></iframe>
-        </div>
+<!-- =========================== Tower of Hanoi ================================= -->
+<a href="projects/Tower of Hanoi/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/Tower-of-Hanoi.png" alt="Tower of Hanoi" style="width: 10rem; height: auto;">
     </div>
+    <div class="card-content">
+        <h3 class="card-heading">Tower of Hanoi</h3>
+        <p class="card-description">Solve the classic Tower of Hanoi puzzle.</p>
+    </div>
+</a>
 
-    <script>
-        // JavaScript Functionality
-        document.getElementById('chatbot-toggle').addEventListener('click', function() {
-            const chatWindow = document.getElementById('chat-window');
-            // Toggle visibility of the chat window
-            chatWindow.style.display = chatWindow.style.display === 'none' || chatWindow.style.display === '' ? 'flex' : 'none';
-        });
+<!-- =========================== Othello Game ================================= -->
+<a href="projects/Othello/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/Othello.png" alt="Othello Game" style="width: 10rem; height: auto;">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Othello Game</h3>
+        <p class="card-description">Othello is a strategic board game where players aim to flip their opponent's discs to their color.</p>
+    </div>
+</a>
+<!-- =========================== End ================================= -->
 
-        document.getElementById('close-chat').addEventListener('click', function() {
-            document.getElementById('chat-window').style.display = 'none'; // Hide chat on close
-        });
-    </script>
+<!-- =========================== Odd Even Game ================================= -->
+<a href="projects/Odd_even_game/odd_even_game.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/odd_even.jpg" alt="Odd Even Game" style="width: 10rem; height: auto;">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Odd Even Game</h3>
+        <p class="card-description">Try your luck with the odd or even game.</p>
+    </div>
+</a>
+
+<!-- =========================== Platformer Game ================================= -->
+<a href="./projects/Platformer Game/index.html" class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="assets/image/platformer.png" alt="platformer">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Platformer Game</h3>
+        <p class="card-description">Basic side-scroller platform game</p>
+    </div>
+</a>
+
+<section>
+    <div class="feedback">
+        <h1>Have a <span>Feedback?</span></h1>
+        <textarea placeholder="Write anything here...."></textarea>
+        <button><a href="feedback.html" target="_blank">Click here to provide feedback</a></button>
+    </div>
+</section>
+
+            <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
+
+
+
+
+
+
+
+
+
+            <!-- =========================== Othello Game ================================= -->
+            <a href="projects/Othello/index.html" class="card" target="_blank">
+                <div class="card-cover counter-cover-colour">
+                    <img src="./assets/image/Othello.png" alt="Othello Game" style="width: 10rem; height: auto;">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">Othello Game</h3>
+                    <p class="card-description">
+                        Othello is a strategic board game where players aim to flip their opponent's discs to their color.
+                    </p>
+                </div>
+            </a>
+
+        <!--============================== End =========================================== -->
+
+
+            
+        </div>
+        
+        
+    </section>
+    <script src="./js/app.js"></script>
 </body>
+
+
+        
+            
+            <!-- <a href="./projects/Typing%20Speed%20Test/index.html" class="card">
+
+            <a href="./projects/Typing Test/index.html" class="card"> -->
+
+            <!-- <a href="./projects/Typing Test/index.html" class="card" target="_blank">
+                <div class="card-cover">
+                    <img src="./assets/image/Typing_test.jpg" alt="Typing test logo">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">Typing Speed Test</h3>
+                    <p class="card-description">
+                        Test Your Speed on Typing
+                    </p>
+                </div>
+
+
+
+            <a href="./projects/Virtual Pet Game/index.html "class="card">
+                <div class="card-cover counter-cover-colour">
+                    <img src="assets/image/vp.jpg" alt="pet">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">Virtual Pet Game</h3>
+                    <p class="card-description">
+                        Adopt, care, and interact with virtual pets
+                    </p>
+                </div>
+            </a> 
+
+            <a href="./projects/Rolling Triumph/index.html" class="card">
+
+            </a> -->
+
+          
+   
+
+        <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
+
+
+
+        <script src="./js/app.js"></script>
+        <div class="chatbot-container">
+            <button class="chatbot-button group" id="chatbot-toggle">
+                <img class="h-20" src="chatbot.gif" alt="chatbot">
+                <span class="tooltip-text">
+                    Welcome to Web Dev! <br>
+                    How can I help You? ^_^ 
+                </span>
+            </button>
+            
+            <!-- Chat Window -->
+            <div id="chat-window" class="chat-window">
+                <!-- Iframe to load chatbot.html -->
+                <iframe id="chat-iframe" src="chatbot.html"></iframe>
+            </div>
+        </div>
+
+        <script>
+            // JavaScript Functionality
+            document.getElementById('chatbot-toggle').addEventListener('click', function() {
+                const chatWindow = document.getElementById('chat-window');
+                // Toggle visibility of the chat window
+                chatWindow.style.display = chatWindow.style.display === 'none' || chatWindow.style.display === '' ? 'flex' : 'none';
+            });
+
+            document.getElementById('close-chat').addEventListener('click', function() {
+                document.getElementById('chat-window').style.display = 'none'; // Hide chat on close
+            });
+        </script>
+
+    <!-- </body> -->
  
-<style>
-    body, html {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-</style>
-<footer style="color: red;text-align: end;">
-  <p style="width: fit-content;">&copy; 2024 Master Web Development. All Rights Reserved.</p>
-</footer>
-
+     
 </html>
