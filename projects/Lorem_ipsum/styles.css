@@ -1,69 +1,175 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
     background-color: #1e1e3f;
 }
 
-.container {
-    max-width: 600px;
-    margin: auto;
+header {
+    text-align: center;
     padding: 20px;
-    border: 1px solid #ccc; /* Border for the container */
-    border-radius: 10px; /* Rounded corners */
-    background: rgb(114, 102, 237);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for the container */
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
-    font-size: 34px;
-    margin-bottom: 20px;
-    color: #333;
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 600px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: white;
+    transition: transform 0.3s;;
+}
+
+.container:hover {
+    transform: scale(1.002);
 }
 
 label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #000000;
+    color: #ffffff;
     font-size: 20px;
 }
 
 input[type="number"] {
-    width: 100%; /* Make the input full width */
     padding: 10px;
-    font-size: 16px; /* Increase font size */
-    margin-bottom: 20px; /* Space below input */
-    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    backdrop-filter: blur(10px);
 }
 
 .button-container {
     display: flex;
-    gap: 10px; /* Space between buttons */
+    gap: 10px;
+    flex-wrap: wrap; /* Adjusts buttons for small screens */
 }
 
 button {
-    flex: 1; /* Make buttons equal width */
+    flex: 1;
     padding: 10px;
     font-size: 16px;
     color: white;
-    background-color: #0b6531; /* Bootstrap primary color */
-    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
 }
 
 #output {
     margin-top: 20px;
-    white-space: pre-wrap; /* Keeps line breaks */
-    border: 1px dashed #ccc;
+    white-space: pre-wrap;
+    border: 1px dashed rgba(255, 255, 255, 0.5);
     padding: 10px;
-    background: #f1f1f1;
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
+    color: white;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s;
+}
+
+#output:hover {
+    transform: scale(1.009);
+}
+
+#toast {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Adjust for smaller screens */
+@media screen and (max-width: 768px) { 
+
+    .container {
+        padding: 15px;
+        margin: 20px 10px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    label {
+        font-size: 18px;
+    }
+
+    input[type="number"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .button-container {
+        gap: 5px;
+    }
+}
+
+/* Adjust for mobile phones */
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    input[type="number"] {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    #output {
+        font-size: 14px;
+    }
 }
