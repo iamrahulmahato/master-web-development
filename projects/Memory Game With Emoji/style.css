@@ -5,13 +5,31 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #1a1a1a; /* Off-black background */
+    color: #b8f0b8; /* Light green text */
     margin: 0;
+}
+
+h1 {
+    color: #a0f0a0; /* Lighter green */
+}
+
+#controls {
+    margin-bottom: 20px;
+}
+
+#board-size, #reset-btn {
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 5px;
+    background-color: #2d3e2d; /* Darker green */
+    color: #b8f0b8;
+    border: none;
+    cursor: pointer;
 }
 
 #game-board {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
     grid-gap: 10px;
     margin-top: 20px;
 }
@@ -19,23 +37,29 @@ body {
 .card {
     width: 100px;
     height: 100px;
-    background-color: #fff;
+    background-color: rgba(200, 255, 200, 0.2); /* Light green tiles with low opacity */
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 40px;
     cursor: pointer;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
 }
 
 .card.hidden {
-    background-color: #ddd;
+    background-color: rgba(50, 100, 50, 0.2); /* Slightly darker hidden state */
     cursor: pointer;
+}
+
+.card:hover {
+    background-color: rgba(150, 255, 150, 0.3); /* Hover effect */
 }
 
 #message {
     margin-top: 20px;
     font-size: 20px;
     font-weight: bold;
+    color: #a0f0a0; /* Lighter green for messages */
 }
