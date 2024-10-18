@@ -435,6 +435,11 @@ body {
     background-color: #ea6279;
     transform: translateY(-6px);
     transition: transform 0.3s ease, background-color 0.3s ease;
+    
+  }
+  .projects-container a:hover .card-description {
+  color:white;
+    
   }
 
 .card {
