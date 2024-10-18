@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🎥 Creative Video Recorder 🎬</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        video {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .download-link {
+            display: block;
+            margin-top: 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Video Recorder</h1>
+        <video id="videoPreview" autoplay></video>
+        <div class="controls">
+            <button id="startRecording" class="button start">🔴 Start Recording</button>
+            <button id="stopRecording" class="button stop" disabled>⏹️ Stop Recording</button>
+        </div>
+        <a id="downloadLink" class="download-link" style="display: none;">⬇️ Download Video</a>
+    </div>
+    
+    <script>
+        const videoPreview = document.getElementById("videoPreview");
+        const startRecordingButton = document.getElementById("startRecording");
+        const stopRecordingButton = document.getElementById("stopRecording");
+        const downloadLink = document.getElementById("downloadLink");
+
+        let mediaRecorder;
+        let recordedChunks = [];
+        let stream;
+
+        startRecordingButton.addEventListener("click", startRecording);
+        stopRecordingButton.addEventListener("click", stopRecording);
+
+        async function startRecording() {
+            try {
+                stream = await navigator.mediaDevices.getUserMedia({ video: true });
+
+                // Show the video stream in the preview element
+                videoPreview.srcObject = stream;
+                mediaRecorder = new MediaRecorder(stream);
+
+                mediaRecorder.ondataavailable = (event) => {
+                    if (event.data.size > 0) {
+                        recordedChunks.push(event.data);
+                    }
+                };
+
+                mediaRecorder.onstop = () => {
+                    const videoBlob = new Blob(recordedChunks, { type: "video/webm" });
+                    recordedChunks = [];
+
+                    const videoURL = URL.createObjectURL(videoBlob);
+                    
+                    // Set the recorded video as the source for the video preview
+                    videoPreview.srcObject = null; // Stop showing the live stream
+                    videoPreview.src = videoURL;  // Show the recorded video
+                    videoPreview.controls = true; // Enable video controls (play, pause, etc.)
+                    videoPreview.play(); // Play the recorded video automatically
+
+                    downloadLink.href = videoURL;
+                    downloadLink.style.display = "block";
+                    downloadLink.download = "recorded-video.webm";
+                };
+
+                mediaRecorder.start();
+                startRecordingButton.disabled = true;
+                stopRecordingButton.disabled = false;
+            } catch (error) {
+                console.error("Error starting recording:", error);
+            }
+        }
+
+        function stopRecording() {
+            if (mediaRecorder && mediaRecorder.state === "recording") {
+                mediaRecorder.stop();
+                startRecordingButton.disabled = false;
+                stopRecordingButton.disabled = true;
+
+                // Stop the camera stream
+                stream.getTracks().forEach(track => track.stop());
+            }
+        }
+
+    </script>
+</body>
+</html>
