@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
+    <title>Library Management System - Login</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Header styling */
+        h1 {
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            margin-color: white;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            width: 100%;
+        }
+
+        .header-container h1 {
+            font-size: 2em;
+        }
+
+        /* Form container */
+        .form-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Form box styling */
+        .form-box {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Background book animation */
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .book {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background-color: #f3e8c5;
+            border: 3px solid #8b5e34;
+            transform: rotate(20deg);
+            opacity: 0.9;
+            border-radius: 5px;
+            animation: floatBook 10s linear infinite;
+        }
+
+        .book:nth-child(1) {
+            left: 10%;
+            animation-duration: 12s;
+            animation-delay: 0s;
+        }
+
+        .book:nth-child(2) {
+            left: 30%;
+            animation-duration: 10s;
+            animation-delay: 3s;
+        }
+
+        .book:nth-child(3) {
+            left: 50%;
+            animation-duration: 8s;
+            animation-delay: 5s;
+        }
+
+        .book:nth-child(4) {
+            left: 70%;
+            animation-duration: 14s;
+            animation-delay: 2s;
+        }
+
+        @keyframes floatBook {
+            0% {
+                bottom: -100px;
+                transform: rotate(10deg);
+            }
+
+            100% {
+                bottom: 110%;
+                transform: rotate(30deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-container">
+        <h1>Library Management System</h1>
+    </div>
+
+    <!-- Animated background with books -->
+    <div class="background">
+        <div class="book"></div>
+        <div class="book"></div>
+        <div class="book"></div>
+        <div class="book"></div>
+    </div>
+
+    <div class="form-container">
+        <form action="/Submit" method="POST" class="form-box max-w-sm w-full">
+            <h2 style="text-align: center; font-size: 32px; margin-bottom: 20px;">Login</h2>
+
+            <div class="mb-5">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Email</label>
+                <input type="email" name="Email" id="email"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                    placeholder="name@flowbite.com" required />
+            </div>
+            <div class="mb-5">
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Password</label>
+                <input type="password" name="Password" id="password"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                    required />
+            </div>
+            <button type="submit"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Submit
+            </button>
+            
+            <!-- Display flash messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+  <ul>
+    {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{% endwith %}
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>
