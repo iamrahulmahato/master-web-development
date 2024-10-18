@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    background: url('./img/bg.webp') no-repeat center bottom;
+    background-size: 100% 100%;
+    align-items: center;
+    justify-content: center; 
+    flex-direction: column;
+    height: 100vh;
+}
+
+.slider {
+    width: 500px;
+    height: 721px;
+    top: 15px;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.control {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    top: 50%;
+    margin-top: -25px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.2em;
+    opacity: 0.5;
+}
+
+.control:hover {
+    opacity: 1;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+ol {
+    list-style: none;
+    height: 100%;
+    position: relative;
+}
+
+ol li {
+    display: block;
+    height: 100%;
+    float: left;
+    width: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.autoplay {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.autoplay label {
+    margin-right: 10px;
+    color: #eee9e9;
+    background-color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.autoplay input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+
+
+
