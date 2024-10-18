@@ -1,0 +1,899 @@
+/* <------- Google Fonts ---------> */
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: "Mulish", sans-serif;
+}
+:root {
+    --primary-color: #fe5b3e;
+    --text-dark: #0f172a;
+    --a-colour: #16171a;
+    --text-light: #475569;
+    --extra-light: #f2f2f2;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --gradient: linear-gradient(to bottom, #fe5c3c, #fc8023);
+    --logo-size: 1.65rem;
+    --big-size: 3.5rem;
+    --medium-size: 2.6rem;
+    --small-medium-size: 2rem;
+    --a-size: 1.15rem;
+    --button-size: 1rem;
+    --p-size: 1.1rem;
+    --menu-size: 1.4rem;
+    --i-size:1.6rem;
+}
+html,
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+/* <----------- Scroll Bar ------------> */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 25px;
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    border-radius: 25px;
+    background: var(--primary-color);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gradient);
+}
+
+/* <----------- Section ------------> */
+section{
+    margin-top: 80px;
+    padding: 0 40px;
+}
+
+/* <---------- h5 ------------> */
+h5{
+    font-size: var(--menu-size);
+    color: #303538;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+/* <---------- h2 ------------> */
+h2{
+    font-size: var(--medium-size);
+    font-weight: 800;
+    line-height: var(--medium-size);
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* <---------- p ------------> */
+p{
+    font-weight: 300;
+}
+
+/* <---------- i ------------> */
+.rent i,
+.service i,
+.customer i{
+    padding: 15px 19px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    font-size: var(--i-size);
+    color: var(--primary-color);
+}
+
+/* <----------- Download ------------> */
+.download-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    gap: 20px;
+}
+.download-btn img{
+    width: 10vw;
+}
+/* <------- Header ----------> */
+.header{
+    background-color: #F8F8F8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+}
+.header.shadow{
+    background-color: var(--white);
+    box-shadow: 0 4px 7px rgba(0,0,0,0.2);
+}
+.logo{
+    font-size: var(--logo-size);
+    color: var(--text-dark);
+    font-weight: 700;
+}
+.logo span{
+    font-weight: 900;
+}
+.nav-bar{
+    display: flex;
+    align-items: center;
+}
+.nav-bar li a{
+    margin: 0 20px;
+    font-size: var(--a-size);
+    color: var(--a-colour);
+    font-weight: 600;
+    position: relative;
+}
+.nav-bar li a::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 25px;
+    transition: all 0.4s ease-in-out;
+}
+.nav-bar li a:hover::after{
+    width: 100%;
+}
+#menu-icon{
+    font-size: var(--i-size);
+    color: var(--a-colour);
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+}
+.sign{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.sign button{
+    padding: 10px 20px;
+    font-size: var(--button-size);
+    font-weight: 600;
+    cursor: pointer;
+}
+.sign .sign-in{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.sign .sign-up{
+    background-color: #3C4286;
+    border-radius: 10px;
+    border: none;
+    color: var(--extra-light);
+    transition: all 0.4s ease-in;
+}
+.sign .sign-up:hover{
+    background-color: #2a2e5e;
+}
+
+/* <-------- Home --------> */
+.home{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #F8F8F8;
+}
+.home .left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.home .left h1{
+    font-size: var(--medium-size);
+    margin-bottom: 20px;
+    line-height: var(--medium-size);
+    font-weight: 800;
+    position: relative;
+}
+.home .left h1::before{
+    content: '';
+    position: absolute;
+    width: 15%;
+    height: 5px;
+    border-radius: 25px;
+    background-color: var(--primary-color);
+    bottom: -5px;
+    left: 0;
+}
+.home .left p{
+    font-size: var(--p-size);
+    color: var(--a-colour);
+    margin-bottom: 45px;
+}
+.home .right{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home .right img{
+    width: 55vw;
+    z-index: 1;
+}
+.home .right::before{
+    content: '';
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 70%;
+    height: 80%;
+    padding: 80px 0;
+    background: var(--gradient);
+    border-radius: 20px;
+}
+
+/* <---------- Rent Section ----------> */
+.rent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+.rent h5{
+    text-align: center;
+}
+.rent h2{
+    text-align: center;
+}
+.rent .rent-box{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    gap: 1rem;
+}
+.rent .rent-box .rent-elem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+}
+.rent .rent-box .rent-elem i{
+    transition: all 0.3s ease-in;
+}
+.rent .rent-box .rent-elem:hover i{
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* <--------- Service Section ------------> */
+.service{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    min-height: 100vh;
+    padding: 90px 40px;
+}
+.service .left img{
+    width: 42.5vw;
+}
+.service .right{
+    display: flex;
+    flex-direction: column;
+}
+.service .right h2{
+    font-size: var(--small-medium-size);
+    line-height: var(--medium-size);
+    font-weight: 800;
+}
+.service .right .service-box{
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+}
+.service-box .service-elem{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.service-box .service-elem .service-elem-text{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.service-box .service-elem .service-elem-text h3{
+    color: #333;
+    font-weight: 800;
+}
+
+/* <---------- Customer Section -------------> */
+.customer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 90px 40px;
+    min-height: 100vh;
+}
+.customer h2{
+    width: 60%;
+    text-align: center;
+    margin-bottom: 10vw;
+}
+.customer-box{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    position: relative;
+    gap: 12vw;
+}
+.customer-box .left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5vw;
+}
+.left .customer-elem{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.left .customer-elem:nth-child(2n + 1){
+    left: 15%;
+}
+.left .customer-elem:nth-child(2n){
+    left: -25%;
+}
+.left .customer-elem i{
+    width: 55px;
+    height: 55px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.customer-box .right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 14vw;
+    gap: 5vw;
+}
+.right .customer-elem{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: right;
+}
+.right .customer-elem:nth-child(2n){
+    right: -65%;
+}
+.right .customer-elem:nth-child(2n + 1){
+    right: -25%;
+}
+.right .customer-elem i{
+    width: 55px;
+    height: 55px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.customer-box .mid{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+}
+.customer-box .mid img{
+    width: 25vw;
+}
+
+/* <----------- Download Section -------------> */
+.download{
+    width: 100%;
+    padding: 50px 40px 30px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    position: relative;
+}
+.download::before{
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 60%;
+    background-color: var(--primary-color);
+    z-index: -1;
+    border-radius: 20px;
+}
+.download .left{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+.download .left h2{
+    color: var(--white);
+    margin-bottom: 25px;
+}
+.download .left p{
+    color: var(--white);
+    margin-bottom: 45px;
+    width: 80%;
+}
+.download .right{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.download .right img{
+    width: 25vw;
+}
+
+/* <----------- Contact Section -------------> */
+.contact{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 120px;
+}
+.contact .left img{
+    width: 20vw;
+}
+.contact .right{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 2rem;
+}
+.contact .right h5{
+    font-weight: 700;
+    text-align: center;
+}
+.contact .right .form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.contact .right .form input[type="text"],
+.contact .right .form input[type="email"]{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid var(--primary-color);
+    outline: none;
+    padding: 0 15px;
+    border-radius: 5px;
+    font-size: 17px;
+    color: #444;
+    transition: all 0.3s ease-in;
+}
+.contact .right .form .msg-box{
+    width: 100%;
+    height: 100px;
+    border: 1.2px solid var(--primary-color);
+    outline: none;
+    resize: none;
+    font-size: 17px;
+    color: #444;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in;
+}
+.contact .right .form input[type="text"]:focus,
+.contact .right .form input[type="email"]:focus,
+.contact .right .form .msg-box:focus{
+    border: 1.4px solid var(--primary-color);
+}
+.btn-bx{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.submit-btn {
+    width: 150px;
+    padding: 0;
+    border: none;
+    transform: rotate(5deg);
+    transform-origin: center;
+    font-family: "Gochi Hand", cursive;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    box-shadow: 0 2px 0 #494a4b;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: var(--primary-color);
+}
+.submit-btn span {
+    background: #f1f5f8;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 2px solid var(--text-light);
+} 
+.submit-btn:active {
+    transform: translateY(5px);
+    padding-bottom: 0px;
+    outline: 0;
+}
+
+/* <---------- Footer ------------> */
+.footer{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 60px;
+    gap: 2rem;
+    position: relative;
+}
+.footer .row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+.footer .row .col{
+    display: flex;
+    flex-direction: column;
+}
+.footer .row .col h4{
+    font-size: var(--i-size);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.footer .row .col p{
+    font-size: var(--p-size);
+    margin-bottom: 10px;
+    transition: all 0.4s ease-in;
+    cursor: pointer;
+    font-weight: 500;
+}
+.footer .row .col p:hover{
+    color: var(--primary-color);
+}
+.rule{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3px;
+    border-radius: 25px;
+    background-color: var(--text-dark);
+}
+.copyright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.copyright p{
+    font-weight: 600;
+    text-align: center;
+    font-size: var(--p-size);
+    color: var(--text-dark);
+}
+
+/* <---------- Make It Responsive -----------> */
+@media (max-width:1024px){
+    :root {
+        --logo-size: 1.45rem;
+        --big-size: 3.3rem;
+        --medium-size: 2.4rem;
+        --small-medium-size: 1.8rem;
+        --a-size: 1.05rem;
+        --button-size: 1rem;
+        --p-size: 1.1rem;
+        --menu-size: 1.1rem;
+    }
+    .header{
+        padding: 0 15px;
+    }
+    .home{
+        width: 100%;
+        min-height: 100vh;
+        background-color: #F8F8F8;
+        padding: 0 15px;
+    }
+    .contact{
+        padding: 0 40px;
+    }
+}
+@media (max-width:768px){
+    .header{
+        background: var(--primary-color);
+    }
+    .logo{
+        color: var(--white);
+    }
+    section{
+        padding: 90px 20px;
+    }
+    #menu-icon{
+        display: initial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px;
+        left: 50%;
+        color: white;
+    }
+    .nav-bar{
+        position: absolute;
+        top: -500%;
+        left: 50%;
+        transform: translate(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        height: fit-content;
+        background-color: var(--primary-color);
+        padding: 70px 0;
+        transition: all 0.5s ease-in-out;
+        z-index: 100;
+    }
+    .nav-bar li a{
+        color: var(--white);
+    }
+    .nav-bar.active{
+        top: 0;
+        transition: all 0.5s ease-in-out;
+    }
+    .sign{
+        flex-shrink: 0;
+    }
+    .sign button{
+        color: var(--white);
+        padding: 8px 18px;
+    }
+    .sign .sign-in{
+        display: none;
+    }
+    .sign .sign-up{
+        background-color: var(--primary-color);
+        border: 1.25px solid var(--white);
+    }
+    .home {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        position: relative;
+    }
+    .header.shadow{
+        background-color: var(--primary-color);
+        box-shadow: 0 4px 7px rgba(0,0,0,0.2);
+    }
+    .home::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: var(--gradient);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .home .left {
+        width: 100%;
+    }
+    .home .left h1::before{
+        bottom: -7px;
+    }
+    .home .left p {
+        font-size: var(--p-size);
+        margin-bottom: 20px;
+    }
+    .home .left .download-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .home .left .download-btn img{
+        width: 110px;
+    }
+    .home .right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        justify-content: center;
+    }
+    .home .right img{
+        width: 80vw;
+    }
+    .home .right::before {
+       display: none;
+    }   
+    .rent h2{
+        font-size: var(--small-medium-size);
+    }
+    .rent .rent-box{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        align-items: center;
+        gap: 1.25rem;
+    } 
+    .service{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .service .left img{
+        width: 75vw;
+    }
+    .left .customer-elem:nth-child(2n + 1){
+        left: 0;
+    }
+    .customer h2{
+        width: 100%;
+        font-size: var(--small-medium-size);
+    }
+    .customer-box{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #fafafa9f;
+        padding: 20px 40px;
+        gap: 1rem;
+    }
+    .customer-box .right{
+        padding-right: 0;
+    }
+    .customer h4{
+        font-size: var(--p-size);
+    }
+    .left .customer-elem:nth-child(2n + 1){
+        left: 0;
+    }
+    .left .customer-elem:nth-child(2n){
+        left: 0;
+    }
+    .right .customer-elem:nth-child(2n){
+        right: 0;
+    }
+    .right .customer-elem:nth-child(2n + 1){
+        right: 0;
+    }
+    .customer-box .mid img{
+        width: 205px;
+    }
+    .download{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+    .download::before{
+        height: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .download .left{
+        width: 100%;
+        padding: 0;
+    }
+    .download .left p{
+        font-size: var(--p-size);
+        width: 100%;
+    }
+    .download .right {
+        display: none;
+    }
+    .download .download-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .download .download-btn img{
+        width: 20vw;
+    }
+    .contact{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 35px;
+        gap: 1rem;
+    }
+    .contact .left{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .contact .left img{
+        width: 25vw;
+    }
+    .contact .left,
+    .contact .right{
+        width: 100%;
+    }
+    .contact .right{
+        gap: 1rem;
+        width: 100%;
+    }
+    .footer{
+        padding: 30px 40px;
+    }
+}
+@media (max-width:500px){
+    :root{
+        --medium-size: 2.1rem;
+        --p-size : 0.8rem;
+    }
+    .home .left h1{
+        font-size: var(--small-medium-size);
+    }
+    #menu-icon{
+        margin-left: 0;
+    }
+    .home::before{
+        height: 40%;
+    }
+    .home{
+        gap: 2rem;
+    }
+    .home .right img{
+        margin-top: 90px;
+    }
+    .rent .rent-box{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        align-items: center;
+    }
+    .customer-box{
+        padding: 20px 10px;
+    }
+    .download .download-btn img{
+        width: 25vw;
+    }
+    .contact .left img{
+        width: 150px;
+    }
+}

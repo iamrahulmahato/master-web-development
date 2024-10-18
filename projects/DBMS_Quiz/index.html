@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizDB: Test Your Knowledge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Landing page -->
+    <div class="landing-page">
+        <h1>Welcome to the DBMS Quiz</h1>
+        <button id="start-btn" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- Quiz container (initially hidden) -->
+    <div class="quiz-container hidden" id="quiz-container">
+        <h1>DBMS Quiz</h1>
+        <div id="quiz-box">
+            <h2 id="question">Question Text</h2>
+            <h2 id="timer">Time left: <span id="time-left">15</span> seconds</h2>
+            <div id="options">
+                <!-- Options will be inserted here via JavaScript -->
+            </div>
+            <p id="feedback" class="feedback"></p> <!-- Feedback message -->
+            <button id="next-btn" onclick="nextQuestion()" disabled>Next</button>
+        </div>
+        <div id="score-box" class="hidden">
+            <h2>Your Score: <span id="score"></span></h2>
+            <button onclick="restartQuiz()">Restart Quiz</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
