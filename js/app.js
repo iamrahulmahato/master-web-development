@@ -1,71 +1,70 @@
 const toggleModeBtn = document.getElementById("toggle-mode-btn");
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+let nextBtn = document.querySelector('.next');
+let prevBtn = document.querySelector('.prev');
 
-let nextBtn = document.querySelector('.next')
-let prevBtn = document.querySelector('.prev')
 
-/* slider section */
-let slider = document.querySelector('.slider')
-let sliderList = slider.querySelector('.slider .list')
-let thumbnail = document.querySelector('.slider .thumbnail')
-let thumbnailItems = thumbnail.querySelectorAll('.item')
-let slideButton = document.querySelector('.button button')
-thumbnail.appendChild(thumbnailItems[0])
+let slider = document.querySelector('.slider');
+let sliderList = slider.querySelector('.slider .list');
+let thumbnail = slider.querySelector('.thumbnail');
+let thumbnailItems = thumbnail.querySelectorAll('.item');
+let slideButton = document.querySelector('.button button');
+thumbnail.appendChild(thumbnailItems[0]);
 
 slideButton.onclick = function() {
-    moveSlider('next')
-}
+    moveSlider('next');
+};
 
-// Function for next button 
 nextBtn.onclick = function() {
-    moveSlider('next')
-}
+    moveSlider('next');
+};
 
-// Function for prev button 
 prevBtn.onclick = function() {
-    moveSlider('prev')
-}
+    moveSlider('prev');
+};
 
 function moveSlider(direction) {
-    let sliderItems = sliderList.querySelectorAll('.item')
-    let thumbnailItems = document.querySelectorAll('.thumbnail .item')
-    
+    let sliderItems = sliderList.querySelectorAll('.item');
+    let thumbnailItems = document.querySelectorAll('.thumbnail .item');
+
     if (direction === 'next') {
-        sliderList.appendChild(sliderItems[0])
-        thumbnail.appendChild(thumbnailItems[0])
-        slider.classList.add('next')
+        sliderList.appendChild(sliderItems[0]);
+        thumbnail.appendChild(thumbnailItems[0]);
+        slider.classList.add('next');
     } else {
-        sliderList.prepend(sliderItems[sliderItems.length - 1])
-        thumbnail.prepend(thumbnailItems[thumbnailItems.length - 1])
-        slider.classList.add('prev')
+        sliderList.prepend(sliderItems[sliderItems.length - 1]);
+        thumbnail.prepend(thumbnailItems[thumbnailItems.length - 1]);
+        slider.classList.add('prev');
     }
 
     slider.addEventListener('animationend', function() {
         if (direction === 'next') {
-            slider.classList.remove('next')
+            slider.classList.remove('next');
         } else {
-            slider.classList.remove('prev')
+            slider.classList.remove('prev');
         }
-    }, { once: true }) // Remove the event listener after it's triggered once
+    }, { once: true });
 }
-/* slider section */
 
-// Check localStorage for theme preference
-const storedTheme = localStorage.getItem("theme")
-if (storedTheme) {
-    document.documentElement.setAttribute("data-theme", storedTheme)
+function setTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+}
+
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+    setTheme(savedTheme);
 } else if (prefersDarkScheme.matches) {
-    document.documentElement.setAttribute("data-theme", "dark")
+    setTheme("dark");
 } else {
-    document.documentElement.setAttribute("data-theme", "light")
+    setTheme("light");
 }
 
 toggleModeBtn.onclick = () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
     const newTheme = currentTheme === "light" ? "dark" : "light";
-    
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme); // Store the preference in localStorage
+
+    setTheme(newTheme);
 
     if (newTheme === "dark") {
         toggleModeBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 20 20" fill="currentColor">
@@ -76,9 +75,8 @@ toggleModeBtn.onclick = () => {
             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
         </svg>`;
     }
-}
+};
 
-// ====================== Scroll to top ======================== 
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
 window.onscroll = function() {
@@ -91,7 +89,6 @@ function scrollFunction() {
         scrollToTopBtn.style.opacity = "1"; 
     } else {
         scrollToTopBtn.style.opacity = "0"; 
-
         setTimeout(() => {
             scrollToTopBtn.style.display = "none";
         }, 500); 
@@ -104,30 +101,24 @@ scrollToTopBtn.onclick = function() {
 
 let filterCardsTimeout;
 
-function filterCards() {
-    // Get the input value
-    let searchTerm = document.getElementById('search-input').value.toLowerCase();
-    // Get all the cards in the container
-    let cards = document.querySelectorAll('.card');
-    
-    // Loop through the cards and filter based on the input
-    cards.forEach(function (card) {
-        let cardHeading = card.querySelector('.card-heading').innerText.toLowerCase();
-        let cardDescription = card.querySelector('.card-description').innerText.toLowerCase();
-        
-        // Check if the search term is in the card heading or description
-        if (cardHeading.includes(searchTerm) || cardDescription.includes(searchTerm)) {
-            card.style.display = "block"; // Show the card
-        } else {
-            card.style.display = "none"; // Hide the card
-        }
-    });
-}
-
 document.getElementById('search-input').addEventListener('input', function() {
     clearTimeout(filterCardsTimeout);
     filterCardsTimeout = setTimeout(filterCards, 500);
 });
+
+function filterCards() {
+    let searchTerm = document.getElementById('search-input').value.toLowerCase();
+    let cards = document.querySelectorAll('.card');
+    cards.forEach(function (card) {
+        let cardHeading = card.querySelector('.card-heading').innerText.toLowerCase();
+        let cardDescription = card.querySelector('.card-description').innerText.toLowerCase();
+        if (cardHeading.includes(searchTerm) || cardDescription.includes(searchTerm)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     const currentTheme = document.documentElement.getAttribute("data-theme");
@@ -142,9 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
         </svg>`;
     }
-});
-
-document.addEventListener('DOMContentLoaded', function() {
+    
     const cardContainer = document.getElementsByClassName('projects-container')[0];
     const cards = Array.from(cardContainer.getElementsByClassName('card'));
     
@@ -152,18 +141,18 @@ document.addEventListener('DOMContentLoaded', function() {
     cards.sort((a, b) => {
         const headingA = a.querySelector('.card-heading');
         const headingB = b.querySelector('.card-heading');
-        
+
         // Check if both headings exist before sorting
         if (headingA && headingB) {
             const titleA = headingA.innerText.toUpperCase();
             const titleB = headingB.innerText.toUpperCase();
             return titleA.localeCompare(titleB);
         } else {
-            // Handle cases where card headings are missing
             console.warn('One or both cards are missing headings.');
             return 0;
         }
     });
+
     // Remove current cards and append them in the new order
     cardContainer.innerHTML = '';
     cards.forEach(card => {
@@ -192,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
         circles.forEach(function (circle, index) {
             circle.style.left = `${x - 12}px`;
             circle.style.top = `${y - 12}px`;
-            circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+            circle.style.transform = `scale(${(circles.length - index) / circles.length}`;
 
             const nextCircle = circles[index + 1] || circles[0];
             circle.x = x;
@@ -206,4 +195,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     animateCircles();
-});
+}); 
