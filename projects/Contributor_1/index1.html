@@ -32,9 +32,9 @@
         background-image: linear-gradient(120deg, #fbccff, #d8f9ff, #d4c6ff); 
       }
       body.dark-mode {
-  background-color: #333;
-  color: #ffffff;
-}
+        background-color: #333;
+        color: #ffffff;
+      }
       .top-btn {
         display: none;
         width: 50px;
@@ -74,13 +74,28 @@
         border-radius: 5px;
         outline: none;
         margin: 5px 10px;
-        border: 1px solid rgb(146, 110, 110);
+        /* border: 1px solid rgb(146, 110, 110); */
+        background: none;
       }
 
       .pagination-btns button.btn, .pagination-btns button.btn i.bi {
         font-size: 2rem;
       }
 
+      .pagination-btns button.btn i.bi{
+        cursor: pointer;
+      }
+
+    
+      .pagination-btns button{
+        border: none;
+        outline: none;
+      }
+
+      .pagination-btns .scale:active {
+        transform: scale(1.2); 
+        transition: transform 0.1s ease-in-out;
+      }
 
 #progress-container {
   position: fixed ;
@@ -124,9 +139,9 @@
       <h1 class="title">Our Contributors</h1>
       <div id="contributors" class="contributors-grid"></div>
       <div class="pagination-btns">
-        <button class="btn" id="prevBtn"> <i class="bi bi-arrow-left-circle"></i> </button>
+        <button class="btn scale" id="prevBtn"> <i class="bi bi-arrow-left-circle"></i> </button>
         <button class="btn" id="pageNoBox">1</button>
-        <button class="btn" id="nextBtn"> <i class="bi bi-arrow-right-circle"></i> </button>
+        <button class="btn scale" id="nextBtn"> <i class="bi bi-arrow-right-circle"></i> </button>
       </div>
     </div>
     <button class="top-btn" id="goToTopBtn" onclick="goToTop()">
