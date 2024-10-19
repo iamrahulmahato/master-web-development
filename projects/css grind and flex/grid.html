@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid and Flexbox Playground</title>
+    <link rel="stylesheet" href="grid.css">
+</head>
+<body>
+    <h2>CSS Grid and Flexbox Playground</h2>
+    <div class="controls">
+        <h3>Grid Settings</h3>
+        <label for="grid-columns">Grid Columns:</label>
+        <input type="text" id="grid-columns" placeholder="e.g., 1fr 1fr">
+        <br>
+        <label for="grid-rows">Grid Rows:</label>
+        <input type="text" id="grid-rows" placeholder="e.g., 1fr 2fr">
+        <br>
+        <button onclick="applyGridSettings()">Apply Grid Settings</button>
+
+        <h3>Flexbox Settings</h3>
+        <label for="flex-direction">Flex Direction:</label>
+        <select id="flex-direction">
+            <option value="row">Row</option>
+            <option value="column">Column</option>
+            <option value="row-reverse">Row Reverse</option>
+            <option value="column-reverse">Column Reverse</option>
+        </select>
+        <br>
+        <label for="justify-content">Justify Content:</label>
+        <select id="justify-content">
+            <option value="flex-start">Flex Start</option>
+            <option value="center">Center</option>
+            <option value="flex-end">Flex End</option>
+            <option value="space-around">Space Around</option>
+            <option value="space-between">Space Between</option>
+        </select>
+        <br>
+        <button onclick="applyFlexboxSettings()">Apply Flexbox Settings</button>
+    </div>
+
+    <div class="playground">
+        <div class="grid-container">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">A</div>
+            <div class="flex-item">B</div>
+            <div class="flex-item">C</div>
+        </div>
+    </div>
+
+    <script src="grid.js"></script>
+</body>
+</html>
