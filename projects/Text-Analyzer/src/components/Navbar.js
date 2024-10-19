@@ -19,7 +19,7 @@ export default function Navbar() {
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
-                  to="/text-analyzer"
+                  to="/"
                 >
                   Home
                 </NavLink>
@@ -28,7 +28,7 @@ export default function Navbar() {
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
-                  to="/text-analyzer/about"
+                  to="/about"
                 >
                   about
                 </NavLink>
@@ -37,7 +37,7 @@ export default function Navbar() {
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
-                  to="/text-analyzer/contactus"
+                  to="/contactus"
                 >
                   contact
                 </NavLink>
