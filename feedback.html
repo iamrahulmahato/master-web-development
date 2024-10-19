@@ -52,20 +52,32 @@
         button:hover {
             background-color: #7fde1a;
         }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .back-button:hover {
+            background-color: #e0e0e0;
+        }
     </style>
 </head>
 <body>
-
+    <a href="#" class="back-button">Back to Home</a>
     <div class="container">
         <h1>Feedback Form</h1>
         <h4>We value your feedback...</h4>
         <form action="/submit-feedback" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Enter your email id" required>
-
             <label for="rating">How would you rate your experience?</label>
             <select id="rating" name="rating" required>
                 <option value="excellent">Excellent</option>
@@ -73,13 +85,10 @@
                 <option value="average">Average</option>
                 <option value="poor">Poor</option>
             </select>
-
             <label for="feedback">Feedback:</label>
             <textarea id="feedback" name="feedback" rows="5" placeholder="Write a feedback..." required></textarea>
-
             <button type="submit">Submit Feedback</button>
         </form>
     </div>
-
 </body>
 </html>
