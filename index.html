@@ -40,13 +40,14 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 20px; /* Add padding for smaller screens */
 }
 
 .feedback h1 {
-    font-size: 45px;
+    font-size: 35px; /* Smaller default font size */
     font-weight: 500;
-    margin-top: -50px;
-    margin-bottom: 50px;
+    margin-top: -30px; /* Adjust margins for smaller screens */
+    margin-bottom: 30px;
     color: #fff;
 }
 
@@ -54,8 +55,27 @@
     color: #ff2963;
 }
 
+@media (min-width: 600px) {
+    /* For tablets and larger screens */
+    .feedback h1 {
+        font-size: 45px;
+        margin-top: -50px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (min-width: 900px) {
+    /* For desktop screens */
+    .feedback h1 {
+        font-size: 55px;
+        margin-top: -70px;
+        margin-bottom: 70px;
+    }
+}
+
 textarea {
-    width: 600px;
+    width: 100%; /* Set to 100% width for smaller screens */
+    max-width: 500px; /* Max width for larger screens */
     height: 250px;
     background: #7b77c5;
     color: #fff;
@@ -66,8 +86,24 @@ textarea {
     border-radius: 10px;
     resize: none;
     margin-bottom: 30px;
-    align-items: center;
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
 }
+
+@media (min-width: 600px) {
+    /* For tablet-sized screens */
+    textarea {
+        width: 80%; /* Adjust width for larger screens */
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 900px) {
+    /* For desktop-sized screens */
+    textarea {
+        width: 500px; /* Set fixed width for larger screens */
+    }
+}
+
 
 textarea::placeholder {
     font-size: 16px;
