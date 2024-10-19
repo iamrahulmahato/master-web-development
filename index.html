@@ -131,13 +131,14 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 20px; /* Add padding for smaller screens */
 }
 
 .feedback h1 {
-    font-size: 45px;
+    font-size: 35px; /* Smaller default font size */
     font-weight: 500;
-    margin-top: -50px;
-    margin-bottom: 50px;
+    margin-top: -30px; /* Adjust margins for smaller screens */
+    margin-bottom: 30px;
     color: #fff;
 }
 
@@ -145,8 +146,27 @@
     color: #ff2963;
 }
 
+@media (min-width: 600px) {
+    /* For tablets and larger screens */
+    .feedback h1 {
+        font-size: 45px;
+        margin-top: -50px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (min-width: 900px) {
+    /* For desktop screens */
+    .feedback h1 {
+        font-size: 55px;
+        margin-top: -70px;
+        margin-bottom: 70px;
+    }
+}
+
 textarea {
-    width: 600px;
+    width: 100%; /* Set to 100% width for smaller screens */
+    max-width: 500px; /* Max width for larger screens */
     height: 250px;
     background: #7b77c5;
     color: #fff;
@@ -157,8 +177,24 @@ textarea {
     border-radius: 10px;
     resize: none;
     margin-bottom: 30px;
-    align-items: center;
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
 }
+
+@media (min-width: 600px) {
+    /* For tablet-sized screens */
+    textarea {
+        width: 80%; /* Adjust width for larger screens */
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 900px) {
+    /* For desktop-sized screens */
+    textarea {
+        width: 500px; /* Set fixed width for larger screens */
+    }
+}
+
 
 textarea::placeholder {
     font-size: 16px;
@@ -166,15 +202,25 @@ textarea::placeholder {
 }
 
 button {
-    background: #ff2963;
+    background: #0b0a0a;
     color: #fff;
-    font-size: 16px;
+    font-size: 12px;
     padding: 10px 30px;
     border-radius: 35px;
     border: 0;
     outline: 0;
     cursor: pointer;
+    white-space: nowrap; /* Ensures text doesn't wrap to a new line */
+    width: auto; /* Adjust width automatically based on content */
+    text-align: center;
+    display: inline-block; /* Make sure it fits content */
 }
+
+button:hover {
+    background: #0c0c0c;
+}
+
+
 
 button a {
     color: white;
@@ -1915,6 +1961,20 @@ button a {
                     </p>
                 </div>
             </a>
+            <a href="./projects/Swiggy Clone/index.html" class="card" target="_blank">
+                <div class="card-cover counter-cover-colour">
+                    <img src="./assets/image/Swiggy-Logo.png" alt="">
+                </div>
+                <div class="card-content">
+
+                    <h3 class="card-heading">Swiggy Clone</h3>
+                    <p class="card-description">
+                        Swiggy
+                    </p>
+                </div>
+            </a>
+
+
             <a href="./projects/15_puzzle/index.html" class="card" target="_blank">
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/15.png" alt="">
@@ -2568,19 +2628,7 @@ button a {
                 </div>
             </a>
 
-            <a href="./projects/Magic8Ball/index.html" class="card" target="_blank">
-
-
-                <div class="card-cover counter-cover-colour">
-                    <img src="./assets/image/supermario.png" alt="Super Mario">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Super Mario</h3>
-                    <p class="card-description">
-                        A Popular Game.
-                    </p>
-                </div>
-            </a>
+            
 
             <a href="./projects/Magic8Ball/index.html" class="card" target="_blank">
                 <div class="card-cover counter-cover-colour">
@@ -2685,15 +2733,7 @@ button a {
         <p class="card-description">Validate E-MAIL</p>
     </div>
 </a>
-<a href="./projects/Maze/index.html" class="card">
-    <div class="card-cover counter-cover-colour">
-        <img src="./assets/image/maze.jpg" alt="Maze Game">
-    </div>
-    <div class="card-content">
-        <h3 class="card-heading">Maze Game</h3>
-        <p class="card-description">Play exciting maze game</p>
-    </div>
-</a>
+
 <a href="./projects/Minesweeper/index.html" class="card" target="_blank">
     <div class="card-cover counter-cover-colour">
         <img src="./assets/image/minesweeper.jpeg" alt="Minesweeper">
@@ -2721,96 +2761,16 @@ button a {
         <p class="card-description">Connect4: Where Strategy Meets Fun, One Disc at a Time!</p>
     </div>
 </a>
-<a href="./projects/Among Us Game/index.html" class="card">
-    <div class="card-cover counter-cover-colour">
-        <img src="assets/image/amongus.png" alt="Among Us">
-    </div>
-    <div class="card-content">
-        <h3 class="card-heading">Among Us</h3>
-        <p class="card-description">Find who is the imposter.</p>
-    </div>
-</a>
 
 
-            <a href="./projects/Doodle Jump/index.html" class="card">
-                <div class="card-cover counter-cover-colour">
-                    <img src="./assets/image/doodle.png" alt="Doodle Jump">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Doodle Jump</h3>
-                    <p class="card-description">
-                        Enjoy and Jump.
-                    </p>
-                </div>
-            </a>
-            <a href="./projects/Email Validator/index.html" class="card">
-                <div class="card-cover counter-cover-colour">
-                    <img src="./assets/image/email.png" alt="Email Validator">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Email Validator</h3>
-                    <p class="card-description">
-                        Validate E-MAIL
-                    </p>
-                </div>
-            </a>
-            <a href="./projects/Maze/index.html" class="card">
-                <div class="card-cover counter-cover-colour">
-                    <img src="./assets/image/maze.jpg" alt="maze game'">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Maze Game</h3>
-                    <p class="card-description">
-                        Play exciting maze game
-                    </p>
-                </div>
-            </a>
-            <a href="./projects/Minesweeper/index.html" class="card" target="_blank">
-                <div class="card-cover counter-cover-colour">
-                    <img src="./assets/image/minesweeper.jpeg" alt="Minesweeper">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Minesweeper</h3>
-                    <p class="card-description">
-                        Classic Minesweeper game.
-                    </p>
-                </div>
-            </a>
-            <a href="./projects/Tetris_Game/index.html" class="card">
-                <div class="card-cover counter-cover-colour">
-                    <img src="./assets/image/tetrsis.jpg" alt="Doodle Jump">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Tetris Game</h3>
-                    <p class="card-description">
-                        Arrange falling blocks to clear lines.
-                    </p>
-                </div>
-            </a>
-            <a href="./projects/Connect4/index.html" class="card" target="_blank">
-                <div class="card-cover ">
-                    <img src="./projects/Connect4/Connectfour.png" alt="">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Connect4(Two player)</h3>
-                    <p class="card-description">
-                        Connect4: Where Strategy Meets Fun, One Disc at a Time!
-                    </p>
-                </div>
-            </a>
 
-                            <a href="./projects/Among Us Game/index.html" class="card">
-                                <div class="card-cover counter-cover-colour">
-                                    <img src="assets/image/amongus.png" alt="Flappy Bird">
-                                </div>
-                                <div class="card-content">
-                                    <h3 class="card-heading">Among us</h3>
-                                    <p class="card-description">
-                                        Find who is imposter.
-                                    </p>
-                                </div>
-                            </a>
-
+        
+            
+            
+            
+            
+            
+                           
                         <a href="./projects/Joke Generator/index.html" class="card">
                             <div class="card-cover counter-cover-colour">
                                 <img src="assets/image/jokeGenerator.jpeg" alt="Joke Generator">
@@ -2823,18 +2783,7 @@ button a {
                             </div>
                         </a>
                         
-                        <a href="./projects/Email Validator/index.html" class="card">
-                            <div class="card-cover counter-cover-colour">
-                                <img src="./assets/image/email.png" alt="Email Validator">
-                            </div>
-                            <div class="card-content">
-                                <h3 class="card-heading">Email Validator</h3>
-                                <p class="card-description">
-                                    Validate E-MAIL
-                                </p>
-                            </div>
-                        </a>
-
+                        
 
             <a href="./projects/Candy Game/index.html" class="card">
                 <div class="card-cover counter-cover-colour">
@@ -2880,31 +2829,9 @@ button a {
                     </p>
                 </div>
             </a>
-            <a href="./projects/Lamb Lane/index.html" class="card">
-                <div class="card-cover counter-cover-colour">
-                    <img src="./assets/image/lamblane.png" alt="Lamb Lane">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Lamb Lane</h3>
-                    <p class="card-description">
-<a href="./projects/Doodle Jump/index.html" class="card">
-    <div class="card-cover counter-cover-colour">
-        <img src="./assets/image/doodle.png" alt="Doodle Jump">
-    </div>
-    <div class="card-content">
-        <h3 class="card-heading">Doodle Jump</h3>
-        <p class="card-description">Enjoy and Jump.</p>
-    </div>
-</a>
-<a href="./projects/Email Validator/index.html" class="card">
-    <div class="card-cover counter-cover-colour">
-        <img src="./assets/image/email.png" alt="Email Validator">
-    </div>
-    <div class="card-content">
-        <h3 class="card-heading">Email Validator</h3>
-        <p class="card-description">Validate E-MAIL</p>
-    </div>
-</a>
+            
+
+
 <a href="./projects/Maze/index.html" class="card">
     <div class="card-cover counter-cover-colour">
         <img src="./assets/image/maze.jpg" alt="Maze Game">
@@ -2914,33 +2841,9 @@ button a {
         <p class="card-description">Play exciting maze game</p>
     </div>
 </a>
-<a href="./projects/Minesweeper/index.html" class="card" target="_blank">
-    <div class="card-cover counter-cover-colour">
-        <img src="./assets/image/minesweeper.jpeg" alt="Minesweeper">
-    </div>
-    <div class="card-content">
-        <h3 class="card-heading">Minesweeper</h3>
-        <p class="card-description">Classic Minesweeper game.</p>
-    </div>
-</a>
-<a href="./projects/Tetris_Game/index.html" class="card">
-    <div class="card-cover counter-cover-colour">
-        <img src="./assets/image/tetrsis.jpg" alt="Tetris Game">
-    </div>
-    <div class="card-content">
-        <h3 class="card-heading">Tetris Game</h3>
-        <p class="card-description">Arrange falling blocks to clear lines.</p>
-    </div>
-</a>
-<a href="./projects/Connect4/index.html" class="card" target="_blank">
-    <div class="card-cover">
-        <img src="./projects/Connect4/Connectfour.png" alt="Connect4">
-    </div>
-    <div class="card-content">
-        <h3 class="card-heading">Connect4 (Two Player)</h3>
-        <p class="card-description">Connect4: Where Strategy Meets Fun, One Disc at a Time!</p>
-    </div>
-</a>
+
+
+
 <a href="./projects/Among Us Game/index.html" class="card">
     <div class="card-cover counter-cover-colour">
         <img src="assets/image/amongus.png" alt="Among Us">
@@ -2950,24 +2853,8 @@ button a {
         <p class="card-description">Find who is the imposter.</p>
     </div>
 </a>
-<a href="./projects/Train Track Game/index.html" class="card">
-    <div class="card-cover counter-cover-colour">
-        <img src="./assets/image/traintrack.png" alt="Train Track Game">
-    </div>
-    <div class="card-content">
-        <h3 class="card-heading">Train Track Game</h3>
-        <p class="card-description">A Train Track Game created using Three.js.</p>
-    </div>
-</a>
-<a href="./projects/Building Block/index.html" class="card">
-    <div class="card-cover counter-cover-colour">
-        <img src="./assets/image/buildingblock.png" alt="Building Block">
-    </div>
-    <div class="card-content">
-        <h3 class="card-heading">Building Block</h3>
-        <p class="card-description">A Building Block Game.</p>
-    </div>
-</a>
+
+
 <a href="./projects/Lamb Lane/index.html" class="card">
     <div class="card-cover counter-cover-colour">
         <img src="./assets/image/lamblane.png" alt="Lamb Lane">
@@ -2977,11 +2864,22 @@ button a {
         <p class="card-description">Explore the fun in Lamb Lane.</p>
     </div>
 </a>
+ <!-- platformer game -->
 
-                        A Lamb Lane Game.
-                    </p>
-                </div>
-            </a>
+ <a href="./projects/Platformer Game/index.html " class="card">
+    <div class="card-cover counter-cover-colour">
+        <img src="assets/image/platformer.png" alt="platformer">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Platformer Game</h3>
+        <p class="card-description">
+            Basic side-scroller platform game
+        </p>
+    </div>
+</a>
+
+
+                      
             <a href="./projects/Cut The Rope/index.html" class="card">
                 <div class="card-cover counter-cover-colour">
                     <img src="assets/image/cutrope.png" alt="Cut The Rope">
@@ -3004,17 +2902,7 @@ button a {
                     </p>
                 </div>
             </a>
-            <a href="./projects/Email Validator/index.html" class="card">
-                <div class="card-cover counter-cover-colour">
-                    <img src="./assets/image/email.png" alt="Email Validator">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Email Validator</h3>
-                    <p class="card-description">
-                        Validate E-MAIL
-                    </p>
-                </div>
-            </a>
+           
             <a href="./projects/New Year Countdown/index.html" class="card">
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/n.jpg" alt="new">
@@ -3103,17 +2991,7 @@ button a {
             </a>
 
 
-            <a href="./projects/Minesweeper/index.html" class="card" target="_blank">
-                <div class="card-cover counter-cover-colour">
-                    <img src="./assets/image/minesweeper.jpeg" alt="Minesweeper">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Minesweeper</h3>
-                    <p class="card-description">
-                        Classic Minesweeper game.
-                    </p>
-                </div>
-            </a>
+           
 
             <a href="./projects/Space Collision Game/index.html" class="card" target="_blank">
                 <div class="card-cover ">
@@ -3366,21 +3244,19 @@ button a {
                 </div>
             </a>
 
-
- <!-- =========================== Recipe Book ================================= -->
-     <a href="./projects/Recipe Book/index.html" class="card" target="_blank">
-        <div class="card-cover counter-cover-colour">
-            <img src="./assets/image/recipe.webp" alt="recipebook">
-        </div>
-        <div class="card-content">
-            <h3 class="card-heading">Recipe Book</h3>
-            <p class="card-description">
-                Gather Delicious Secret Recipes!
-            </p>
-        </div>
-    </a>
-<!-- =========================== ================================= -->
-
+            <a href="projects/Tennis Game/index.html" class="card" target="_blank">
+                <div class="card-cover counter-cover-colour">
+                    <img src="/assets/image/Tennis game.png" alt="Tennis" style="width: 10rem; height: auto;">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">Tennis Game</h3>
+                    <p class="card-description">
+                        multiplayers Tennis Game
+                    </p>
+                      </div>
+                        </a>
+            
+ 
 
 <!-- =========================== Recipe Book ================================= -->
 <a href="./projects/Recipe Book/index.html" class="card" target="_blank">
@@ -3417,17 +3293,6 @@ button a {
     </div>
 </a>
 
-<!-- =========================== Othello Game ================================= -->
-<a href="projects/Othello/index.html" class="card" target="_blank">
-    <div class="card-cover counter-cover-colour">
-        <img src="./assets/image/Othello.png" alt="Othello Game" style="width: 10rem; height: auto;">
-    </div>
-    <div class="card-content">
-        <h3 class="card-heading">Othello Game</h3>
-        <p class="card-description">Othello is a strategic board game where players aim to flip their opponent's discs to their color.</p>
-    </div>
-</a>
-<!-- =========================== End ================================= -->
 
 <!-- =========================== Odd Even Game ================================= -->
 <a href="projects/Odd_even_game/odd_even_game.html" class="card" target="_blank">
@@ -3441,90 +3306,13 @@ button a {
 </a>
 
 
-            <!-- =========================== Recipe Book ================================= -->
-            <a href="./projects/Recipe Book/index.html" class="card" target="_blank">
-                <div class="card-cover counter-cover-colour">
-                    <img src="./assets/image/recipe.webp" alt="recipebook">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Recipe Book</h3>
-                    <p class="card-description">
-                        Gather Delicious Secret Recipes!
-                    </p>
-                </div>
-            </a>
-
-            <!-- =========================== ================================= -->
+            
     </section>
 
     <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
 
 
-
-
-
-
-
-
-
-    <!-- =========================== Othello Game ================================= -->
-    <a href="projects/Othello/index.html" class="card" target="_blank">
-        <div class="card-cover counter-cover-colour">
-            <img src="./assets/image/Othello.png" alt="Othello Game" style="width: 10rem; height: auto;">
-        </div>
-        <div class="card-content">
-            <h3 class="card-heading">Othello Game</h3>
-            <p class="card-description">
-                Othello is a strategic board game where players aim to flip their opponent's discs to their color.
-            </p>
-        </div>
-    </a>
-    <!--============================== End =========================================== -->
-
-
-
-
-            <!-- =========================== Recipe Book ================================= -->
-            <a href="./projects/Recipe Book/index.html" class="card" target="_blank">
-                <div class="card-cover counter-cover-colour">
-                    <img src="./assets/image/recipe.webp" alt="recipebook">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Recipe Book</h3>
-                    <p class="card-description">
-                        Gather Delicious Secret Recipes!
-                    </p>
-                </div>
-            </a>
-
-
-            <!-- platformer game -->
-
-            <a href="./projects/Platformer Game/index.html " class="card">
-                <div class="card-cover counter-cover-colour">
-                    <img src="assets/image/platformer.png" alt="platformer">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Platformer Game</h3>
-                    <p class="card-description">
-                        Basic side-scroller platform game
-                    </p>
-                </div>
-            </a>
-
-<!-- =========================== Platformer Game ================================= -->
-<a href="./projects/Platformer Game/index.html" class="card">
-    <div class="card-cover counter-cover-colour">
-        <img src="assets/image/platformer.png" alt="platformer">
-    </div>
-    <div class="card-content">
-        <h3 class="card-heading">Platformer Game</h3>
-        <p class="card-description">Basic side-scroller platform game</p>
-    </div>
-</a>
-
-
-<section>
+        
     <div class="feedback">
         <h1>Have a <span>Feedback?</span></h1>
         <textarea placeholder="Write anything here...."></textarea>
@@ -3796,6 +3584,7 @@ button a {
               <p class="card-description">New year countdown</p>
             </div>
           </a>
+
 
           <a href="./projects/Bill Splitter/index.html" class="card">
             <div class="card-cover counter-cover-colour">
@@ -4292,6 +4081,7 @@ button a {
         </a>
 
 
+
         <!--============================== End =========================================== -->
       </div>
 
@@ -4355,17 +4145,6 @@ button a {
     </button>
 
     
-<a href="projects/Tennis Game/index.html" class="card" target="_blank">
-    <div class="card-cover counter-cover-colour">
-        <img src="/assets/image/Tennis game.png" alt="Tennis" style="width: 10rem; height: auto;">
-    </div>
-    <div class="card-content">
-        <h3 class="card-heading">Tennis Game</h3>
-        <p class="card-description">
-            multiplayers Tennis Game
-        </p>
-          </div>
-            </a>
 
           
    
