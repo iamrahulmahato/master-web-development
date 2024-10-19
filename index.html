@@ -75,15 +75,25 @@ textarea::placeholder {
 }
 
 button {
-    background: #ff2963;
+    background: #0b0a0a;
     color: #fff;
-    font-size: 16px;
+    font-size: 12px;
     padding: 10px 30px;
     border-radius: 35px;
     border: 0;
     outline: 0;
     cursor: pointer;
+    white-space: nowrap; /* Ensures text doesn't wrap to a new line */
+    width: auto; /* Adjust width automatically based on content */
+    text-align: center;
+    display: inline-block; /* Make sure it fits content */
 }
+
+button:hover {
+    background: #0c0c0c;
+}
+
+
 
 button a {
     color: white;
