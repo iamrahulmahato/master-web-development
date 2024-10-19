@@ -4,25 +4,25 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #000327;
+  background: var(--bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color:#06cfaa;
+  background: linear-gradient(135deg, var(--primary), #fecdd3); /* Gradient from primary to a contrasting color */;
   border-radius: 10px;
-  border: 3px solid #f1f1f1;
+  border: 3px solid var(--card);
   transition: background-color 0.3s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
+  background: linear-gradient(135deg, #334155, #f8fafc); /* Dark gradient for hover effect */;
 }
 
-html {
+/*html {
   scrollbar-width: thin;
   scrollbar-color: #62ab9b #3c0751;
   transition: scrollbar-color 0.3s;
-}
+}*/
 
 * {
     margin: 0;
@@ -252,18 +252,19 @@ body {
 /* nextPrevArrows Section  */
 .nextPrevArrows{
     position: absolute;
-    top: 80%;
-    right: 52%;
+    transform: translateY(-200px);
+    left: 150px;
     z-index: 100;
     width: 300px;
     max-width: 30%;
     display: flex;
     gap: 10px;
     align-items: center;
+    justify-content: center;
 }
 .nextPrevArrows button{
     width: 40px;
-    height: 40px;
+    height: 50px;
     border-radius: 50%;
     background-color: #14ff72cb;
     border: none;
@@ -435,6 +436,11 @@ body {
     background-color: #ea6279;
     transform: translateY(-6px);
     transition: transform 0.3s ease, background-color 0.3s ease;
+    
+  }
+  .projects-container a:hover .card-description {
+  color:white;
+    
   }
 
 .card {
