@@ -13,9 +13,9 @@ const App = () => {
     <Router>
     <Navbar/>
       <Routes>
-      <Route path="/text-analyzer" element={<Textform />} />
-      <Route path="/text-analyzer/contactus" element={<Contact />} />
-    <Route path="/text-analyzer/about" element={<Aboutus />} />
+      <Route path="/" element={<Textform />} />
+      <Route path="/contactus" element={<Contact />} />
+    <Route path="/about" element={<Aboutus />} />
       </Routes>
     </Router>
   
