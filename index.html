@@ -339,13 +339,22 @@ button a {
         border: none; /* Remove border */
       }
 
-    </style>
-  </head>
+      @keyframes appear{
+        from{
+            opacity: 0;
+            scale: 0.4;
+        }to{
+            opacity: 1;
+            scale: 1;
+        }
+      }
+      .card{
+        animation: appear 5s linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+      }
 
 </style>
-
-
-
 </head>
 
 
