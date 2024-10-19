@@ -159,6 +159,10 @@ body {
     box-sizing: border-box;
     color: #fff;
     text-shadow: 0 5px 10px #0004;
+    overflow: hidden; /* Ensure content does not overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text is too long */
+    white-space: nowrap; /* Prevent text from wrapping */
+    letter-spacing: 1px;
 }
 
 .slider .list .item .content .title,
@@ -174,22 +178,22 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 130px);
     grid-template-rows: 40px;
-    gap: 5px;
+    gap: 3px;
     margin-top: 20px;
 }
 .slider .list .item .button button{
     border: none;
-    background-color: #eee;
+    background-color: #f6294b;
     font-family: Poppins;
     font-weight: 500;
     cursor: pointer;
     transition: 0.4s;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 
 .slider .list .item .button button:hover{
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     background-color: #f6294b;
     border-radius: 7px 7px 7px;
 }
