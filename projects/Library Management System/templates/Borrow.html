@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/borrow.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Borrow</title>
+</head>
+
+<body>
+    <h1 class="text-center">Library Management System</h1>
+
+    <!-- Dropdown Menu -->
+    <div class="dropdown text-center mb-4">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="viewBooksDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Choose Section
+        </button>
+        <div class="dropdown-menu" aria-labelledby="viewBooksDropdown">
+            <a class="dropdown-item" href="#" onclick="showAvailableBooks()">Books Present</a>
+            <a class="dropdown-item" href="#" onclick="showBorrowedBooks()">Books I Borrowed</a>
+        </div>
+    </div>
+
+    <!-- Books Section (Always showing available books by default) -->
+    <div class="container mt-5" id="availableBooksSection">
+        <h2 style="color:black;text-align:center">Books Present Now</h2>
+        <div class="row" id="availableBooksRow">
+            <!-- Cards will be generated dynamically from the database -->
+        </div>
+    </div>
+
+    <!-- Borrowed Books Section (Initially hidden) -->
+    <div class="container mt-5" id="borrowedBooksSection" style="display:none;">
+        <h2 style="color:black;text-align:center">Books I Borrowed</h2>
+        <div class="row" id="borrowedBooksRow">
+            <!-- Borrowed books will be displayed here -->
+        </div>
+    </div>
+
+    <!-- JavaScript for Toggle Sections and Borrowing Books -->
+    <script>
+        let borrowedBooks = [];
+
+        // Function to show available books
+        function showAvailableBooks() {
+            document.getElementById('availableBooksSection').style.display = 'block';
+            document.getElementById('borrowedBooksSection').style.display = 'none';
+            fetchAvailableBooks();
+        }
+
+        // Function to show borrowed books
+        function showBorrowedBooks() {
+            document.getElementById('availableBooksSection').style.display = 'none';
+            document.getElementById('borrowedBooksSection').style.display = 'block';
+            displayBorrowedBooks();
+        }
+
+        // Function to borrow a book
+        function borrowBook(bookTitle, imageSrc) {
+            if (!borrowedBooks.some(book => book.title === bookTitle)) {
+                borrowedBooks.push({ title: bookTitle, image: imageSrc });
+                alert(`You have borrowed "${bookTitle}"`);
+                displayBorrowedBooks();
+            } else {
+                alert(`You have already borrowed "${bookTitle}"`);
+            }
+        }
+
+        // Function to display borrowed books
+        function displayBorrowedBooks() {
+            const borrowedBooksRow = document.getElementById('borrowedBooksRow');
+            borrowedBooksRow.innerHTML = '';
+
+            borrowedBooks.forEach(book => {
+                borrowedBooksRow.innerHTML += `
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="${book.image}" alt="Card image">
+                            <div class="card-body">
+                                <h5 class="card-title">${book.title}</h5>
+                                <button class="btn btn-danger" onclick="returnBook('${book.title}')">Return</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Function to return a borrowed book
+        function returnBook(bookTitle) {
+            borrowedBooks = borrowedBooks.filter(book => book.title !== bookTitle);
+            alert(`You have returned "${bookTitle}"`);
+            displayBorrowedBooks();
+        }
+
+        // Function to fetch available books
+        function fetchAvailableBooks() {
+            const availableBooks = [
+                { title: "The Girl on the Train", image: "{{url_for('static', filename='css/Book1.png') }}" },
+                { title: "Sherlock Holmes", image: "{{url_for('static', filename='css/Book2.png') }}" },
+                { title: "War and Peace", image: "{{url_for('static', filename='css/Book3.png') }}" },
+                { title: "It Ends With Us", image: "{{url_for('static', filename='css/Book4.png') }}" },
+                { title: "1984", image: "{{url_for('static', filename='css/Book5.png') }}" },  // New book
+                { title: "The Great Gatsby", image: "{{url_for('static', filename='css/Book6.png') }}" }  // New book
+            ];
+
+            const booksRow = document.querySelector('#availableBooksRow');
+            booksRow.innerHTML = '';
+
+            availableBooks.forEach(book => {
+                booksRow.innerHTML += `
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="${book.image}" alt="Card image">
+                            <div class="card-body">
+                                <h5 class="card-title">${book.title}</h5>
+                                <button class="btn btn-primary" onclick="borrowBook('${book.title}', '${book.image}')">Borrow</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Load available books on page load
+        window.onload = fetchAvailableBooks;
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
