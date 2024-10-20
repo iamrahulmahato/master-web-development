@@ -8,12 +8,14 @@ let slider = document.querySelector('.slider');
 let sliderList = slider.querySelector('.slider .list');
 let thumbnail = slider.querySelector('.thumbnail');
 let thumbnailItems = thumbnail.querySelectorAll('.item');
-let slideButton = document.querySelector('.button button');
+let slideButton = document.querySelectorAll('.button button');
 thumbnail.appendChild(thumbnailItems[0]);
 
-slideButton.onclick = function() {
-    moveSlider('next');
-};
+slideButton.forEach(button => {
+    button.onclick = function() {
+        moveSlider('next'); // Call the moveSlider function for each button
+    };
+});
 
 nextBtn.onclick = function() {
     moveSlider('next');
@@ -37,14 +39,28 @@ function moveSlider(direction) {
         slider.classList.add('prev');
     }
 
+    // Update the button text based on the new first item
+    updateButtonText(sliderItems[0]); 
+
+    // Hide buttons during transition
+    slideButton.forEach(button => button.style.display = 'none');
+
+    slider.classList.add(direction);
     slider.addEventListener('animationend', function() {
         if (direction === 'next') {
             slider.classList.remove('next');
         } else {
             slider.classList.remove('prev');
         }
+        // Show buttons again after the transition ends
+        slideButton.forEach(button => button.style.display = 'block');
+
     }, { once: true });
 }
+function updateButtonText(currentSlide) {
+    let title = currentSlide.querySelector('.title').innerText; // Get title from current slide
+    slideButton.innerText = `See More about ${title}`; // Update button text
+} 
 
 function setTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
