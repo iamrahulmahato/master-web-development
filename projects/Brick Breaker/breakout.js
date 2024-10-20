@@ -58,13 +58,24 @@ window.onload = function() {
     context.fillStyle="skyblue";
     context.fillRect(player.x, player.y, player.width, player.height);
 
-    requestAnimationFrame(update);
-    document.addEventListener("keydown", movePlayer);
-
+    document.getElementById("playButton").addEventListener("click", startGame);
     //create blocks
     createBlocks();
 }
-
+function startGame() {
+    document.getElementById("playButton").style.display = "none";
+    document.getElementById("board").style.display = "block";
+    initializeGame();
+}
+function initializeGame() {
+    board = document.getElementById("board");
+    board.height = boardHeight;
+    board.width = boardWidth;
+    context = board.getContext("2d");
+    requestAnimationFrame(update);
+    document.addEventListener("keydown", movePlayer);
+    createBlocks();
+}
 function update() {
     requestAnimationFrame(update);
     //stop drawing
