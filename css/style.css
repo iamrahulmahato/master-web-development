@@ -258,7 +258,7 @@ body {
 .nextPrevArrows{
     position: absolute;
     transform: translateY(-200px);
-    left: 50px;
+    left: 150px;
     z-index: 100;
     width: 300px;
     max-width: 30%;
