@@ -1,1 +1,68 @@
-.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Game Against AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Cricket Game Against AI</h1>
+
+        <!-- Toss Section -->
+        <div id="toss-section">
+            <h2>Let's Start with the Toss!</h2>
+            <p>Choose Heads or Tails to see who starts:</p>
+            <div class="btn-container">
+                <button id="heads" class="btn">Heads</button>
+                <button id="tails" class="btn">Tails</button>
+            </div>
+            <p id="toss-result" class="message"></p>
+        </div>
+
+        <!-- Choice Section -->
+        <div id="choice-section" style="display: none;">
+            <h2 id="toss-winner-message"></h2>
+            <p>What would you like to do?</p>
+            <div class="btn-container">
+                <button id="bat" class="btn">Bat</button>
+                <button id="bowl" class="btn">Bowl</button>
+            </div>
+        </div>
+
+        <!-- Game Section -->
+        <div id="game-section" style="display: none;">
+            <h2 id="status"></h2>
+            <p>Choose a number between 1-6 to play:</p>
+            <div id="number-buttons" class="btn-container">
+                <button class="number-btn btn">1</button>
+                <button class="number-btn btn">2</button>
+                <button class="number-btn btn">3</button>
+                <button class="number-btn btn">4</button>
+                <button class="number-btn btn">5</button>
+                <button class="number-btn btn">6</button>
+            </div>
+            <p id="score-display">Your Score: 0</p>
+            <p id="balls-remaining">Balls Remaining: 12</p>
+            <p id="wickets">Wickets: 0/3</p>
+        </div>
+
+        <!-- Transition Message Section -->
+        <div id="transition-message-section" style="display: none;">
+            <h2 id="transition-message"></h2>
+            <p>Get ready for the next phase of the game...</p>
+        </div>
+
+        <!-- Result Section -->
+        <div id="result-section" style="display: none;">
+            <h2>Game Over!</h2>
+            <p id="final-result"></p>
+            <button id="restart" class="btn">Restart Game</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
