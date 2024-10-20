@@ -1,6 +1,10 @@
 *{
     
 }
+body, h1, h2, h3, button, a, p {
+    font-family: 'Roboto', sans-serif;
+}
+
 html{
     font-family:'Nova Round', cursive;
 
@@ -75,7 +79,7 @@ header{
     /* padding-top: 0.4em; */
 }
 .para{
-    margin-top: 35rem;
+    margin-top: 38rem;
     text-align: center;
     background-color: rgb(245, 211, 167);
 }
@@ -95,15 +99,14 @@ header{
    grid-template-columns: repeat(4,1fr);
    /* height: 20%; */
 }
-#places .class{
+#places .class {
     border: 2px solid black;
-    margin:12px 3px;
-    border-radius:23px;
-    color:white;
-    
-
-    /* background:url(newyork.jpg); */}
-
+    margin: 12px 3px;
+    border-radius: 23px;
+    color: white;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth hover effect */
+}
     #places .class h2{
         color:rgb(201, 254, 6)}
     #places .class1{
@@ -164,7 +167,7 @@ header{
 }
 #india{
     justify-content: center;
-    background-color: rgb(248, 148, 121);
+    background-color: rgb(245, 211, 167);
 }
 
 #india .butt{
@@ -236,8 +239,46 @@ height: 342px; /* Adjust the height as needed */
 overflow: hidden; /* Ensure the background doesn't overflow the grid item */
 position: relative;
 }
-    
-    
+#places .class:hover {
+    transform: scale(1.05); /* Slight zoom-in effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Box-shadow on hover */
+    z-index: 1; /* Bring hovered card above others */
+}
+#places .class::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Overlay with slight opacity */
+    border-radius: 23px; /* Match border radius */
+    transition: background 0.3s ease;
+}
+
+#places .class:hover::before {
+    background: rgba(0, 0, 0, 0.4); /* Darker overlay on hover */
+}
+#places .class .card-description {
+    display: none; /* Hidden by default */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 0 0 23px 23px; /* Match card border radius */
+}
+
+#places .class:hover .card-description {
+    display: block; /* Show on hover */
+    transition: opacity 0.5s ease;
+}
+
+
     .btn{
         background-color: white;
         color:rgb(2, 121, 2);
@@ -257,11 +298,25 @@ position: relative;
         background-color: rgb(203, 171, 248);
      }
     
+     button.but, button.butt {
+        background-color: #f57c00; /* Matches the theme color */
+        border: none;
+        color: white;
+        padding: 5px 2px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 2px;
+        margin: 10px 2px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
     
 
-
 footer{
-    background: black;
+    background: #333;
     color: white;
     text-align: center;
     padding: 2px;
