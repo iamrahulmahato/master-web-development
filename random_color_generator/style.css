@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: green;
+    transition: background-color 0.5s ease; /* Smooth transition */
+}
+.main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    color: black;
+    background-color: aqua;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Button hover effect */
+}
+.btn:hover {
+    background-color: lightblue;
+}
+.container{
+    padding: 20px;
+    width: 25rem;
+    font-size: 40px;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    background-color: antiquewhite;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.hidden {
+    display: none;
+}
+#copy-message {
+    font-size: 16px;
+    color: green;
+    margin-top: 10px;
+}
