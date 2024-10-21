@@ -307,7 +307,13 @@ body {
   opacity: 0;
   animation: showContent .5s 1s linear 1 forwards,back 20s linear infinite;
 }
-
+@keyframes showContent{
+  to{
+      transform: translateY(0px);
+      filter: blur(0px);
+      opacity: 1;
+  }
+}
 @keyframes back{
 100%{
   background-position: 2000px 0 ;
