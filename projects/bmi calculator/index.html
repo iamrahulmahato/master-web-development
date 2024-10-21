@@ -5,34 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI Calculator</title>
+    <title>Refined BMI Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="contentbox">
-        <h1><span>BMI</span> Calculator</h1><br>
-        <p>Underweight: <18.5 <br>Normal: 18.5-24.9<br>Overweight: >25</p>
+        <h1><span>BMI</span> Calculator</h1>
+        <p class="info-text">Underweight: &lt; 18.5 <br> Normal: 18.5 - 24.9 <br> Overweight: &gt; 25</p>
 
         <div class="input-group">
-            <input type="text" required id="weight" placeholder="Weight in kg">
-            <span class="highlight"></span>
-            <span class="bar"></span>
+            <label for="weight">Weight</label>
+            <input type="number" required id="weight" placeholder="Enter your weight">
+            <select id="weight-unit">
+                <option value="kg">Kilograms (kg)</option>
+                <option value="lbs">Pounds (lbs)</option>
+            </select>
         </div>
 
         <div class="input-group">
-            <input type="text" required id="height" placeholder="Height in meters">
-            <span class="highlight"></span>
-            <span class="bar"></span>
+            <label for="height">Height</label>
+            <input type="number" required id="height" placeholder="Enter your height">
+            <select id="height-unit">
+                <option value="m">Meters (m)</option>
+                <option value="cm">Centimeters (cm)</option>
+                <option value="in">Inches (in)</option>
+                <option value="ft">Feet (ft)</option>
+            </select>
         </div>
-        <button id="calculate">Calculate</button>
 
-        <div class="footer">
+        <button id="calculate">Calculate BMI</button>
+
+        <div class="footer" id="result-container">
             <h2 id="result-message"></h2>
+            <div id="bmi-category"></div>
+            <div id="health-tips" class="health-tips"></div>
         </div>
     </div>
 
-    <script src="javascript.js"></script>
+    <script src="javascript.js">
+
+    </script>
 </body>
 
 </html>
