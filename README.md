@@ -26,6 +26,15 @@
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/iamrahulmahato/master-web-development?style=social">
 </div>
 
+## 📚 Table of Contents
+- [⚡️ Introduction](#introduction)
+- [💯 Open Source Programs](#open-source-programs)
+- [🎯 All Projects](#all-projects)
+- [🚀 Getting Started](#getting-started)
+- [🛠️ Git Instructions](#git-instructions)
+- [❤️ Contributors](#contributors)
+- [📜 Code of Conduct](#code-of-conduct)
+
 ## ⚡️  Introduction
 This repository contains frontend projects that will help you to become an ace Frontend Developer.
 
