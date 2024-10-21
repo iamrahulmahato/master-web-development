@@ -171,9 +171,11 @@ body {
     font-size: 5em;
     font-weight: bold;
     line-height: 1.3em;
+    
+
 }
 .slider .list .item .type{
-    color: #14ff72cb;
+    color: #efefefcb;
 }
 .slider .list .item .button{
     display: grid;
