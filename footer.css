@@ -1,0 +1,179 @@
+html {
+    scroll-behavior: smooth;
+}
+
+footer {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    color: #000;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #000;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px; /* Adjust space between text and line */
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #f8c5c5; /* Pink color for the line */
+    transition: width 0.3s ease;
+}
+
+.footer-section ul li a:hover::after {
+    width: 100%; /* Line expands from 0 to 100% width */
+}
+
+.footer-section ul li a:hover {
+    color: #f8c5c5; /* Pink text on hover */
+}
+
+.footer-section p {
+    color: #555;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping if screen is too small */
+}
+
+#newsletter-heading{
+    font-size: 25px;
+    margin-right: 150px;
+}
+.newsletter input[type="email"] {
+    padding: 10px;
+    width: 70%; /* Adjusted width for better alignment */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px; /* Adds spacing between input and button */
+    box-sizing: border-box; /* Ensures padding doesn't exceed width */
+}
+
+.newsletter button {
+    padding: 10px 20px; /* Ensured padding to make button height match input */
+    background-color: #f8c5c5; /* Pink background */
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+    background-color: #e39a9a; /* Slightly darker pink on hover */
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column; /* Stacks the social icons and copyright text vertically */
+    justify-content: center;
+    align-items: center; /* Centers content horizontally */
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    text-align: center; /* Ensures text is centered */
+}
+
+
+.footer-bottom .social-icons a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom .social-icons {
+    margin-bottom: 10px; /* Adds spacing between social icons and copyright text */
+}
+
+.footer-bottom .social-icons a:hover {
+    color: #f8c5c5; /* Soft pink color on hover */
+}
+
+.footer-bottom p {
+    margin-top: 10px; /* Adds some spacing between icons and text */
+    color: #777;
+    font-size: 14px;
+    text-align: center; /* Ensures the copyright text is centered */
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    color: #000; /* Regular text color */
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for glow effect */
+    position: relative;
+}
+
+.footer-section h3:hover {
+    color: #000; /* Keeps text color black */
+    text-shadow: 0 0 20px rgba(248, 197, 197, 1), /* Pinkish glow from behind */
+                 0 0 30px rgba(248, 197, 197, 0.9),
+                 0 0 45px rgba(248, 197, 197, 0.8);
+}
+
+
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    .newsletter input[type="email"], .newsletter button {
+        width: 100%; /* Makes input and button full width on small screens */
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
