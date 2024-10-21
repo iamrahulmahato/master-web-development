@@ -125,12 +125,54 @@ scrollToTopBtn.onclick = function() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-let filterCardsTimeout;
 
-document.getElementById('search-input').addEventListener('input', function() {
+
+let filterCardsTimeout;
+let suggestionsContainer = document.createElement('div');
+suggestionsContainer.setAttribute('id', 'suggestions');
+document.getElementById('search-input').parentElement.appendChild(suggestionsContainer);
+
+document.getElementById('search-input').addEventListener('input', function () {
     clearTimeout(filterCardsTimeout);
-    filterCardsTimeout = setTimeout(filterCards, 500);
+    filterCardsTimeout = setTimeout(showSuggestions, 300);
 });
+
+function showSuggestions() {
+    let searchTerm = document.getElementById('search-input').value.toLowerCase();
+    let cards = document.querySelectorAll('.card');
+    suggestionsContainer.innerHTML = ''; // Clear previous suggestions
+
+    if (searchTerm === '') {
+        suggestionsContainer.style.display = 'none'; // Hide suggestions if input is empty
+        return;
+    }
+
+    let matchedCards = Array.from(cards).filter(function (card) {
+        let cardHeading = card.querySelector('.card-heading').innerText.toLowerCase();
+        let cardDescription = card.querySelector('.card-description').innerText.toLowerCase();
+        return cardHeading.includes(searchTerm) || cardDescription.includes(searchTerm);
+    });
+
+    if (matchedCards.length > 0) {
+        suggestionsContainer.style.display = 'block'; // Show suggestions
+        matchedCards.forEach(function (card) {
+            let suggestionItem = document.createElement('div');
+            suggestionItem.classList.add('suggestion-item');
+            suggestionItem.innerText = card.querySelector('.card-heading').innerText;
+
+            // Clicking a suggestion will populate the search bar and hide suggestions
+            suggestionItem.addEventListener('click', function () {
+                document.getElementById('search-input').value = card.querySelector('.card-heading').innerText;
+                suggestionsContainer.style.display = 'none'; // Hide suggestions
+                filterCards(); // Trigger filter after selection
+            });
+
+            suggestionsContainer.appendChild(suggestionItem);
+        });
+    } else {
+        suggestionsContainer.style.display = 'none'; // Hide if no match
+    }
+}
 
 function filterCards() {
     let searchTerm = document.getElementById('search-input').value.toLowerCase();
@@ -145,6 +187,7 @@ function filterCards() {
         }
     });
 }
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const currentTheme = document.documentElement.getAttribute("data-theme");

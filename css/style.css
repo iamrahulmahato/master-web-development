@@ -904,24 +904,56 @@ body {
     color: #192333;
     transform: scale(1.1); 
 }
+#suggestions {
+  display: none;
+  width: 100%; 
+  max-width: 50%; 
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  color: white !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #000327ad;
+  position: absolute;
+  z-index: 1000;
+  top: auto; /* Slightly below the search bar (adjust this value if needed) */
+  left: 25%; 
+  padding: 0;
+}
+
+.suggestion-item {
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.suggestion-item:hover {
+  background-color: #efd45b75;
+  color: #000;
+  transform: scale(1.1);
+  transition: transform 0.3s ease; 
+}
+
 #search-input {
-    width: 100%;
-    max-width: 50%;
-    min-width: 40%;
-    padding: 12px 20px;
-    margin: 20px 0;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+  width: 100%;
+  max-width: 50%;
+  min-width: 40%;
+  padding: 12px 20px;
+  margin: 20px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative; /* Ensures suggestions are positioned correctly under the search bar */
 }
 
 #search-input:focus {
-    border-color: #1251e1;
-    outline: none;
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+  border-color: #1251e1;
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
 }
+
 input[type="text"],
 input[type="password"],
 input[type="email"] {
