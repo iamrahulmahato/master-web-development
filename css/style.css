@@ -172,8 +172,9 @@ body {
     font-weight: bold;
     line-height: 1.3em;
 }
-.slider .list .item .type{
-    color: #14ff72cb;
+
+.slider .list .item .type.h1{
+    color: #efefefcb;
 }
 .slider .list .item .button{
     display: grid;
@@ -296,23 +297,34 @@ body {
 .slider .list .item:nth-child(1) .content .description,
 .slider .list .item:nth-child(1) .content .buttons
 {
-    transform: translateY(50px);
-    filter: blur(20px);
-    opacity: 0;
-    animation: showContent .5s 1s linear 1 forwards;
+  transform: translateY(50px);
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+  background: url(img/back.png);
+  -webkit-background-clip: text;
+  background-position: 0 0;
+  filter: blur(20px);
+  opacity: 0;
+  animation: showContent .5s 1s linear 1 forwards,back 20s linear infinite;
 }
 @keyframes showContent{
-    to{
-        transform: translateY(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
+  to{
+      transform: translateY(0px);
+      filter: blur(0px);
+      opacity: 1;
+  }
 }
+@keyframes back{
+100%{
+  background-position: 2000px 0 ;
+}
+}
+
 .slider .list .item:nth-child(1) .content .title{
-    animation-delay: 0.4s !important;
+    animation-delay: 0.4s !;
 }
 .slider .list .item:nth-child(1) .content .type{
-    animation-delay: 0.6s !important;
+    animation-delay: 0.6s ;
 }
 .slider .list .item:nth-child(1) .content .description{
     animation-delay: 0.8s !important;
