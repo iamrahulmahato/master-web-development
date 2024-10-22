@@ -3,83 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4df;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 50%;
-            margin: 50px auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        h4 {
-            text-align: center;
-            color: grey;
-        }
-        label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
-        input, textarea, select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-        button {
-            background-color: #5cb85c;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #7fde1a;
-        }
-    </style>
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1>Feedback Form</h1>
-        <h4>We value your feedback...</h4>
-        <form action="/submit-feedback" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email id" required>
-
+    <div class="feedback-form">
+        <h2>Feedback Form</h2>
+        
+        <!-- Rating Section -->
+        <div class="form-group rating">
             <label for="rating">How would you rate your experience?</label>
-            <select id="rating" name="rating" required>
-                <option value="excellent">Excellent</option>
-                <option value="good">Good</option>
-                <option value="average">Average</option>
-                <option value="poor">Poor</option>
-            </select>
+            <div class="rating-stars">
+                <input type="radio" name="rating" id="star5" value="5">
+                <label for="star5" title="5 stars"></label>
+                <input type="radio" name="rating" id="star4" value="4">
+                <label for="star4" title="4 stars"></label>
+                <input type="radio" name="rating" id="star3" value="3">
+                <label for="star3" title="3 stars"></label>
+                <input type="radio" name="rating" id="star2" value="2">
+                <label for="star2" title="2 stars"></label>
+                <input type="radio" name="rating" id="star1" value="1">
+                <label for="star1" title="1 star"></label>
+            </div>
+        </div>
 
-            <label for="feedback">Feedback:</label>
-            <textarea id="feedback" name="feedback" rows="5" placeholder="Write a feedback..." required></textarea>
+        <!-- Feedback Text Section -->
+        <div class="name-email-bg">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+        <div class="form-group">
+            <label for="feedback">Your Feedback:</label>
+            <textarea id="feedback" rows="4" placeholder="Write your feedback here..."></textarea>
+        </div>
 
-            <button type="submit">Submit Feedback</button>
-        </form>
+
+        <!-- Submit Button -->
+        <button class="submit-btn" id="submitBtn">Submit</button>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>

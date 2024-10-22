@@ -147,6 +147,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: blur(4px);
 }
 .slider .list .item .content{
     position: absolute;
@@ -159,6 +160,10 @@ body {
     box-sizing: border-box;
     color: #fff;
     text-shadow: 0 5px 10px #0004;
+    overflow: hidden; /* Ensure content does not overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text is too long */
+    white-space: nowrap; /* Prevent text from wrapping */
+    letter-spacing: 1px;
 }
 
 .slider .list .item .content .title,
@@ -167,29 +172,30 @@ body {
     font-weight: bold;
     line-height: 1.3em;
 }
-.slider .list .item .type{
-    color: #14ff72cb;
+
+.slider .list .item .type.h1{
+    color: #efefefcb;
 }
 .slider .list .item .button{
     display: grid;
     grid-template-columns: repeat(2, 130px);
     grid-template-rows: 40px;
-    gap: 5px;
+    gap: 3px;
     margin-top: 20px;
 }
 .slider .list .item .button button{
     border: none;
-    background-color: #eee;
+    background-color: #f6294b;
     font-family: Poppins;
     font-weight: 500;
     cursor: pointer;
     transition: 0.4s;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 
 .slider .list .item .button button:hover{
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     background-color: #f6294b;
     border-radius: 7px 7px 7px;
 }
@@ -252,18 +258,19 @@ body {
 /* nextPrevArrows Section  */
 .nextPrevArrows{
     position: absolute;
-    top: 80%;
-    right: 52%;
+    transform: translateY(-200px);
+    left: 150px;
     z-index: 100;
     width: 300px;
     max-width: 30%;
     display: flex;
     gap: 10px;
     align-items: center;
+    justify-content: center;
 }
 .nextPrevArrows button{
     width: 40px;
-    height: 40px;
+    height: 50px;
     border-radius: 50%;
     background-color: #14ff72cb;
     border: none;
@@ -290,23 +297,34 @@ body {
 .slider .list .item:nth-child(1) .content .description,
 .slider .list .item:nth-child(1) .content .buttons
 {
-    transform: translateY(50px);
-    filter: blur(20px);
-    opacity: 0;
-    animation: showContent .5s 1s linear 1 forwards;
+  transform: translateY(50px);
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+  background: url(img/back.png);
+  -webkit-background-clip: text;
+  background-position: 0 0;
+  filter: blur(20px);
+  opacity: 0;
+  animation: showContent .5s 1s linear 1 forwards,back 20s linear infinite;
 }
 @keyframes showContent{
-    to{
-        transform: translateY(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
+  to{
+      transform: translateY(0px);
+      filter: blur(0px);
+      opacity: 1;
+  }
 }
+@keyframes back{
+100%{
+  background-position: 2000px 0 ;
+}
+}
+
 .slider .list .item:nth-child(1) .content .title{
-    animation-delay: 0.4s !important;
+    animation-delay: 0.4s !;
 }
 .slider .list .item:nth-child(1) .content .type{
-    animation-delay: 0.6s !important;
+    animation-delay: 0.6s ;
 }
 .slider .list .item:nth-child(1) .content .description{
     animation-delay: 0.8s !important;
@@ -898,24 +916,56 @@ body {
     color: #192333;
     transform: scale(1.1); 
 }
+#suggestions {
+  display: none;
+  width: 100%; 
+  max-width: 50%; 
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  color: white !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #000327ad;
+  position: absolute;
+  z-index: 1000;
+  top: auto; /* Slightly below the search bar (adjust this value if needed) */
+  left: 25%; 
+  padding: 0;
+}
+
+.suggestion-item {
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.suggestion-item:hover {
+  background-color: #efd45b75;
+  color: #000;
+  transform: scale(1.1);
+  transition: transform 0.3s ease; 
+}
+
 #search-input {
-    width: 100%;
-    max-width: 50%;
-    min-width: 40%;
-    padding: 12px 20px;
-    margin: 20px 0;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+  width: 100%;
+  max-width: 50%;
+  min-width: 40%;
+  padding: 12px 20px;
+  margin: 20px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative; /* Ensures suggestions are positioned correctly under the search bar */
 }
 
 #search-input:focus {
-    border-color: #1251e1;
-    outline: none;
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+  border-color: #1251e1;
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
 }
+
 input[type="text"],
 input[type="password"],
 input[type="email"] {
@@ -928,4 +978,38 @@ input::placeholder {
 }
 input:focus {
     border-color: var(--btn-color);
+}
+
+footer{
+  background-color: #141d2b;
+  height: 20vh;
+  width: 100vw;
+}
+
+.gridbox{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0px 0px 0px 0px;
+}
+.gridbox li{
+  justify-self: center;
+  padding: 3%;
+  align-self: center;
+  text-align: center;
+  height: 50px;
+}
+.gridbox li a{
+  color: #06cfaa;
+  font-size: 1rem;
+}
+.container{
+  text-align: center;
+  color: rgb(215, 209, 196);
+}
+.container a{
+  color: rgb(213, 108, 108);
 }
