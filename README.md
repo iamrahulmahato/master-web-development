@@ -142,7 +142,36 @@ The list of projects are given below -
 [ 89- Zombie Attack Game](https://masterwebdevelopment.netlify.app/projects/Stick%20Hero/index.html)  
 [ 90- Zero Line Game](https://masterwebdevelopment.netlify.app/projects/Zero%20Line%20Game/index.html) 
 
+<div align = "center">
+<br>
 
+<table align="center">
+    <thead align="center">
+        <tr border: 1px;>
+            <td><b>🌟 Stars</b></td>
+            <td><b>🍴 Forks</b></td>
+            <td><b>🐛 Issues</b></td>
+            <td><b>🔔 Open PRs</b></td>
+            <td><b>🔕 Close PRs</b></td>
+            <td><b>🛠️ Languages</b></td>
+            <td><b>🌐 Contributors </b></td>
+        </tr>
+     </thead>
+  <tbody>
+    <tr>
+        <td><img alt="Stars" src="https://img.shields.io/github/stars/iamrahulmahato/master-web-development?style=flat&logo=github"/></td>
+        <td><img alt="Forks" src="https://img.shields.io/github/forks/iamrahulmahato/master-web-development?style=flat&logo=github"/></td>
+        <td><img alt="Issues" src="https://img.shields.io/github/issues/iamrahulmahato/master-web-development?style=flat&logo=github"/></td>
+        <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/iamrahulmahato/master-web-development?style=flat&logo=github"/></td>
+        <td><img alt="Close Pull Requests" src="https://img.shields.io/github/issues-pr-closed/iamrahulmahato/master-web-development?style=flat&color=critical&logo=github"/></td>
+        <td><img alt="GitHub language count" src="https://img.shields.io/github/languages/count/iamrahulmahato/master-web-development?style=flat&color=critical&logo=github"/></td>
+        <td><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/iamrahulmahato/master-web-development?color=2b9348"/></td>
+    </tr>
+</tbody>
+
+</table>
+</div>
+<br>
 
 <center><h1 align="center">Getting Started  </h1></center>
 
