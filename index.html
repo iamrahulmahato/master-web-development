@@ -67,15 +67,38 @@
         <div class="projects-heading">
             <p>Master web development</p>
             <h3><span>Open</span> Projects</h3>
-            <div class="btn-container">
+            <!-- <div class="btn-container">
                 <a href="http://github.com/iamrahulmahato/master-web-development" target="_blank"
                     rel="noopener noreferrer" class="source-code-btn">View source code</a>
             </div>
             <br />
             <input type="text" id="search-input" placeholder="Search games by Title/Description..."
                 oninput="filterCards()" style="margin-bottom: 10px;">
-        </div>
-
+        </div> -->
+        <div class="container">
+            <div class="btn-container">
+              <a href="http://github.com/iamrahulmahato/master-web-development" 
+                 target="_blank"
+                 rel="noopener noreferrer" 
+                 class="source-code-btn">
+                 View Source Code
+              </a>
+            </div>
+            
+            <div class="search-container">
+              <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Search games by Title/Description..."
+                oninput="filterCards()"
+              >
+              <button class="search-btn" onclick="filterCards()">
+                <span class="search-icon"></span>
+                Search
+              </button>
+            </div>
+          </div>
+        
         <div class="slider">
 
         <div class="list">
