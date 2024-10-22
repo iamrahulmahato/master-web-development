@@ -32,7 +32,7 @@
 - [🎯 All Projects](#all-projects)
 - [🚀 Getting Started](#getting-started)
 - [🛠️ Git Instructions](#git-instructions)
-- [❤️ Contributors](#contributors)
+- [❤  Contributors](#contributors)
 - [📜 Code of Conduct](#code-of-conduct)
 
 ## ⚡️  Introduction
