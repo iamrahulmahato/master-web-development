@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .time {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="time" id="display">25:00</div>
+    <button id="startBtn">Start</button>
+    <button id="pauseBtn">Pause</button>
+    <button id="resetBtn">Reset</button>
+</div>
+
+<script>
+    let timer;
+    let isRunning = false;
+    let timeLeft = 1500; // 25 minutes in seconds
+
+    const display = document.getElementById('display');
+    const startBtn = document.getElementById('startBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    function updateDisplay() {
+        const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+        const seconds = (timeLeft % 60).toString().padStart(2, '0');
+        display.textContent = `${minutes}:${seconds}`;
+    }
+
+    function startTimer() {
+        if (!isRunning) {
+            timer = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    updateDisplay();
+                } else {
+                    clearInterval(timer);
+                    alert('Time is up! Take a break.');
+                }
+            }, 1000);
+            isRunning = true;
+        }
+    }
+
+    function pauseTimer() {
+        clearInterval(timer);
+        isRunning = false;
+    }
+
+    function resetTimer() {
+        clearInterval(timer);
+        timeLeft = 1500; // Reset to 25 minutes
+        updateDisplay();
+        isRunning = false;
+    }
+
+    startBtn.addEventListener('click', startTimer);
+    pauseBtn.addEventListener('click', pauseTimer);
+    resetBtn.addEventListener('click', resetTimer);
+
+    updateDisplay();
+</script>
+
+</body>
+</html>
