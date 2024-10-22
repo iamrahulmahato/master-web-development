@@ -17,6 +17,16 @@ slideButton.forEach(button => {
     };
 });
 
+// Adding smooth scroll effect from footer to above the website
+document.getElementsById('scroll-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Smooth scroll
+    });
+});
+
+
 nextBtn.onclick = function() {
     moveSlider('next');
 };
