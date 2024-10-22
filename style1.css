@@ -1,0 +1,159 @@
+/* Variables for light and dark mode */
+:root {
+    --bg: #f8fafc; /* Light mode background */
+    --primary: #f43f5e;
+    --btn-color: #fa2b4d;
+    --btn-text: #fff;
+    --head: #334155;
+    --card: #fff; /* Light mode card background */
+    --p: #4b5563;
+  }
+  
+  [data-theme="dark"] {
+    --bg: #1e293b; /* Dark mode background */
+    --btn-color: #fecdd3;
+    --btn-text: #1e293b;
+    --head: #fff;
+    --card: #192333; /* Dark mode card background */
+    --p: #94A3B8;
+  }
+  
+  body {
+    background-color: var(--bg); /* Matches the theme */
+    color: var(--p);
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  /* Feedback Form Styling */
+  .feedback-form {
+    background-color: var(--card); /* Matches the theme */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 50px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .feedback-form h2 {
+    color: var(--head);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Rating Styling */
+  .rating-stars {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .rating-stars label {
+    width: 20px;
+    height: 20px;
+    background-color: var(--p); /* Use theme color */
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  .rating-stars input[type="radio"] {
+    display: none;
+  }
+  
+  .rating-stars input[type="radio"]:checked ~ label {
+    background-color: var(--primary);
+  }
+  
+  .rating-stars label:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Form Group Styling */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--head);
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--p);
+    border-radius: 5px;
+    background-color: var(--bg); /* Matches the theme */
+    color: var(--p);
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+  }
+  
+  /* Submit Button Styling */
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--btn-color);
+    color: var(--btn-text);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+  }
+  
+  .submit-btn:hover {
+    background-color: var(--primary);
+    padding: 14px; /* Responsive button hover effect */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .feedback-form {
+      padding: 15px;
+    }
+  
+    .submit-btn {
+      font-size: 14px;
+    }
+  }
+  .form-group input {
+    /* This inherits styles from the existing input rules */
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  /* Animation for name and email fields */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .form-group {
+    animation: fadeIn 0.5s ease forwards; /* Apply animation */
+  }
+  
+  .name-email-bg {
+    background-color: var(--card); /* Background color to match theme */
+    border-radius: 5px; /* Rounded corners for the background */
+    padding: 10px; /* Padding around the fields */
+    margin-bottom: 20px; /* Space below the section */
+  }
+  .form-group {
+    margin-bottom: 20px; /* Space between each field */
+    width: 100%; /* Ensure it takes full width */
+  }
