@@ -517,8 +517,8 @@ body {
     top: 1rem;
     right: 1rem;
 }
-
-#toggle-mode-btn {
+/* earlier this code was in use for dark mode  */
+/* #toggle-mode-btn {
     border: none;
     display: inline-flex;
     appearance: none;
@@ -534,8 +534,49 @@ body {
 
 #toggle-mode-btn svg {
     fill: #fff;
+} */
+
+/* Code Updated for THEME MODE TOGGLE */
+.dark-mode {
+  background-color: #333;
+  color: #f1f1f1;
 }
 
+.toggle-button {
+  border: none;
+  display: inline-flex;
+  appearance: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 8px;
+  background-color: #f43f5e;
+  color: #ffffff;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+.toggle-button:hover {
+  background-color: #000000; /* Updated hover color */
+}
+
+
+@media (max-width: 768px) {
+  .toggle-button {
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggle-button {
+    padding: 4px;
+  }
+}
+/* till above line THEME MODE toggle code  */
 #footer {
     padding-top: 5.5em; 
   }
