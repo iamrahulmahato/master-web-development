@@ -3,162 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>master-web-development</title>
 
+    <title>FAQ Page</title>
     <style>
-       
-    
-            #faq{
-                padding-top: 80px;
-                padding-top: 70px;
-              }
-                              
-                
-                .faq-container {
-                  max-width: 900px;
-                  margin: 40px auto;
-                  padding: 20px;
-                  background-color: rgb(203, 203, 220);
-                  border: 1px solid #ddd;
-                  border-radius: 10px;
-                  box-shadow: 2 10px 8px rgba(0, 0, 0, 0.1);
-                }
-                
-                .faq-title {
-                  text-align: center;
-                  font-size: 1.8em;
-                  color: #161515;
-                  margin-bottom: 20px;
-                }
-                
-                .faq {
-                  margin-bottom: 15px;
-                }
-                
-                .faq input[type="checkbox"] {
-                  display: none;
-                }
-                
-                .faq-question {
-                  padding: 15px;
-                  font-size: 1.2em;
-                  background-color: #f8c5c5;
-                  color: #000000;
-                  border: none;
-                  border-radius: 5px;
-                  cursor: pointer;
-                  /* display: block; */
-                  display: flex;
-                  justify-content: space-between;
-                  align-items: center;
-                  transition: background-color 0.3s ease;
-                }
-                
-                .faq-question:hover {
-                  background-color:#c03737;
-                }
-                
-                .faq-answer {
-                  max-height: 0;
-                  overflow: hidden;
-                  padding: 0 15px;
-                  background-color: #f3f1ef;
-                  color: #000000;
-                  border-left: 4px solid #0f0f10;
-                  transition: all 0.6s ease;
-                }
-                
-                .faq input[type="checkbox"]:checked ~ .faq-answer {
-                  max-height: 150px;
-                  padding: 15px;
-                }
-                .arrow {
-                  margin-top: -3px;
-                  display: inline-block;
-                  width: 12px;
-                  height: 12px;
-                  border-right: 2px solid #fff;
-                  border-bottom: 2px solid #fff;
-                  transform: rotate(45deg);
-                  transition: transform 0.3s ease;
-                }
-                /* Rotate arrow on FAQ open */
-                .faq input[type="checkbox"]:checked + label .arrow {
-                  transform: rotate(225deg);
-                }
-              
-            </style>
-           
+       body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.faq-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 60px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
 
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #222;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.faq-item {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+.faq-question {
+    margin: 0;
+    padding: 20px;
+    background-color: #f57460f1;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq-question::after {
+    content: '\25BC';
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+    transform: rotate(180deg);
+}
+
+.faq-question:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 15px;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-left: 15px solid #fbe11b;
+    border-right: 15px solid #fbe11b;;
+    border-radius: 6px;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+    </style>
 </head>
 <body>
-   
-<!-- FAQ Section -->
-<section id="faq">          
-  <div class="faq-container">
-      <h1 class="faq-title" data-aos="fade-right">Frequently Asked Questions</h1>  
+    <div class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+
+        <div class="faq-item">
+          <h3 class="faq-question">How do I create an account to start playing?</h3>
+          <p class="faq-answer">User don't need to create any account here.They can freely visit here and play the game they want.</p>
+      </div>
+
+      <div class="faq-item">
+          <h3 class="faq-question">Can I play games anytime?</h3>
+          <p class="faq-answer">Yes, all the games on our site can be played anytime.</p>
+      </div>
+
       
-      <div class="faq" data-aos="fade-right">
-          <input type="checkbox" id="faq1">
-          <label for="faq1" class="faq-question">1.What is the purpose of the master-web-development repository? <span class="arrow"></span></label>
-          <div class="faq-answer">
-            The repository is designed to help aspiring developers become ace Frontend Developers by providing various frontend projects.
-          </div>
+
+      <div class="faq-item">
+          <h3 class="faq-question">Do I need to purchase any games?</h3>
+          <p class="faq-answer">No,all the games on our site are free to play anytime.</p>
       </div>
 
-      <div class="faq" data-aos="fade-right">
-          <input type="checkbox" id="faq2">
-          <label for="faq2" class="faq-question">2. What technologies does the master-web-development repository focus on? <span class="arrow"></span></label>
-          <div class="faq-answer">
-            It focuses on HTML, CSS, JavaScript, and Browser APIs such as localStorage and IndexDB.
-          </div>
+      <div class="faq-item">
+          <h3 class="faq-question">What should I do if a game isn't loading properly?</h3>
+          <p class="faq-answer">If a game isn’t loading, try refreshing the page, clearing your browser cache.</p>
       </div>
+      
+      
+            <div class="faq-item">
+                <h3 class="faq-question">Which kind of games are available here?
+                </h3>
+                <p class="faq-answer">You can get many beginner level games here along with iq games,puzzle solving, funny games etc.</p>
+            </div>
+      
+            <div class="faq-item">
+                <h3 class="faq-question">Can I play the games in any device?
+                </h3>
+                <p class="faq-answer">Yes,all the games are responsive here.So, you can play them in any device and enjoy yourself.</p>
+            </div>
+    </div>
 
-      <div class="faq" data-aos="fade-right">
-          <input type="checkbox" id="faq3">
-          <label for="faq3" class="faq-question">3. How can the master-web-development repository help someone improve their frontend skills? <span class="arrow"></span></label>
-          <div class="faq-answer">
-            By offering hands-on projects that teach key frontend technologies,
-             it helps users practice and master skills needed for effective web development.
-          </div>
-      </div>
+    <script>
+        // Select all question elements
+        const faqQuestions = document.querySelectorAll('.faq-question');
 
-      <div class="faq" data-aos="fade-right">
-          <input type="checkbox" id="faq4">
-          <label for="faq4" class="faq-question">4.What is the goal of completing the projects in the master-web-development repository? <span class="arrow"></span></label>
-          <div class="faq-answer">
-            The goal is to become well-versed in fundamental frontend technologies, enabling users to build interactive and dynamic web applications.
-          </div>
-      </div>
-
-      <div class="faq" data-aos="fade-right">
-          <input type="checkbox" id="faq5">
-          <label for="faq5" class="faq-question">5.Why is learning Browser APIs like localStorage and IndexDB important for frontend development? <span class="arrow"></span></label>
-          <div class="faq-answer">
-            Browser APIs like localStorage and IndexDB are essential for managing data in the browser, enabling features such as offline functionality and persistent user data storage.
-          </div>
-      </div>
-
-      <div class="faq" data-aos="fade-right">
-          <input type="checkbox" id="faq6">
-          <label for="faq6" class="faq-question">6.  What kind of projects can be found in the master-web-development repository? <span class="arrow"></span></label>
-          <div class="faq-answer">
-            The repository contains a variety of frontend projects that cover different aspects of web development, 
-            from creating user interfaces with HTML and CSS to adding interactivity with JavaScript and using Browser APIs.
-          </div>
-      </div>
-
-      <div class="faq" data-aos="fade-right">
-          <input type="checkbox" id="faq7">
-          <label for="faq7" class="faq-question">7. How does the master-web-development repository help users understand JavaScript better? <span class="arrow"></span></label>
-          <div class="faq-answer">
-            By providing JavaScript-based projects, it allows users to practice writing scripts, understand event handling, manipulate the DOM, and use Browser APIs, thus deepening their understanding of JavaScript.
-          </div>
-      </div>
-  </div>
-</section>
-
-     
-
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                // Toggle the visibility of the corresponding answer
+                const answer = question.nextElementSibling;
+                answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+            });
+        });
+    </script>   
 </body>
 </html>
