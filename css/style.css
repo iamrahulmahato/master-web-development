@@ -456,6 +456,7 @@ body {
   }
 
 .card {
+  width: 333px;
     background: var(--card);
     border-radius: 8px;
     color: var(--head);
