@@ -40,7 +40,7 @@ This repository contains frontend projects that will help you to become an ace F
 
 The goal is to be well versed with HTML, CSS, JavaScript and Browser APIs such as localStorage, IndexDB, etc.
 
-## 💯open source programs this repo has been part of
+## 💯 Open Source Programs this repo has been part of
 <div align="center">
 <img width="576" alt="Hfest-Logo-2-Color-Void@2x" src="https://user-images.githubusercontent.com/49890655/193454110-793ede4b-6685-4b66-937a-97e03e390496.png">
 
@@ -63,14 +63,14 @@ The list of projects are given below -
 [ 09- BMI Calculator](https://masterwebdevelopment.netlify.app/projects/bmi%20calculator/index.html) 
 <br>
 [ 10- BookVerse-A Book Website](https://yourwebsite.com/projects/bookverse/)  
-[ 11- Box Connect Game](https://masterwebdevelopment.netlify.app/projects/box%20connet%20game/box.html) 
+[ 11- Box Connect Game](https://masterwebdevelopment.netlify.app/projects/box%20connect%20game/box.html) 
 <br>
 [ 12- Brick Breaker](https://masterwebdevelopment.netlify.app/projects/Brick%20Breaker/index.html) 
 <br>
 [ 13- Bubble Hit Game](https://masterwebdevelopment.netlify.app/projects/Bubble%20Hit%20%20Game/)  
 [ 14- Calculator](https://yourwebsite.com/projects/calculator/)  
 [ 15- Candy Game](https://masterwebdevelopment.netlify.app/projects/Candy%20Game/index.html)  
-[ 16- Chatbaot](https://masterwebdevelopment.netlify.app/projects/Christmas%20Bauble/index.html) <br>
+[ 16- Chatbot](https://masterwebdevelopment.netlify.app/projects/Christmas%20Bauble/index.html) <br>
 [ 17- Christmas Bauble](https://masterwebdevelopment.netlify.app/projects/Christmas%20Bauble/index.html)  
 [ 18- Coin Toss Game](https://yourwebsite.com/projects/coin_toss/)  
 [ 19- Color Guessing Game](https://masterwebdevelopment.netlify.app/projects/Color%20Guessing%20Game/index.html) 
@@ -265,6 +265,40 @@ git push
 </div>
 
 <br>
+### Troubleshooting
+
+If you encounter any issues while setting up or using the project, please refer to the following troubleshooting steps:
+
+1. **Dependency Conflicts**: 
+   - Ensure that all required dependencies are installed with compatible versions. Run `npm install` or `yarn install` to reinstall dependencies.
+   - Check for peer dependency warnings, and if needed, update your dependencies using `npm update` or `yarn upgrade`.
+
+2. **Setup Issues**: 
+   - Double-check that you have followed the setup instructions correctly. Missing environment variables or misconfigurations are common issues.
+   - Ensure that you are using the correct Node.js version (check `.nvmrc` or `package.json` for version details). If you're not, you can switch versions using `nvm use`.
+
+3. **Platform-Specific Errors**: 
+   - On Windows, make sure you have proper permissions to execute scripts. You might need to run the terminal or IDE as an administrator.
+   - On Linux/macOS, ensure that all necessary permissions are set for running scripts with `chmod +x`.
+   - If you're facing file path issues, ensure your terminal or IDE is running in the correct directory by checking with `pwd` (Linux/macOS) or `cd` (Windows).
+
+4. **Common Errors**:
+   - **"Module not found"**: Run `npm install` or `yarn install` to make sure all required modules are installed.
+   - **"Permission denied"**: On Linux/macOS, you might need to use `sudo` for certain commands.
+   - **"EADDRINUSE"**: If you see this error, a port is already in use. Use `lsof -i :PORT_NUMBER` to check and kill the process.
+
+5. **Debugging & Logging**: 
+   - For more detailed error logs, run the application with the `DEBUG` environment variable set to `*` (e.g., `DEBUG=* npm start`).
+   - If using Node.js, add `--inspect` to enable the built-in debugger (e.g., `node --inspect index.js`).
+
+### Contact for Support
+
+If the above steps do not resolve your issue, feel free to open a GitHub issue:
+
+- GitHub Issues: [Submit an issue here](https://github.com/iamrahulmahato/master-web-development/issues)
+
+We’re happy to assist with any project-related queries!
+
 
   
 ## ❤️ Code of Conduct
