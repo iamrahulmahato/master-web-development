@@ -67,6 +67,8 @@
         <div class="projects-heading">
             <p>Master web development</p>
             <h3><span>Open</span> Projects</h3>
+           
+          <button id="quiz-button" class="source-code-btn">Go to Challenges</button>
             <div class="btn-container">
                 <a href="http://github.com/iamrahulmahato/master-web-development" target="_blank"
                     rel="noopener noreferrer" class="source-code-btn">View source code</a>
@@ -959,10 +961,23 @@
     <div class="card-content">
         <h3 class="card-heading">Age calculator</h3>
         <p class="card-description">
-            Calculates age
+            Calculates age 
         </p>
     </div>
 </a>
+
+<a href="./projects/Password Toggle/index.html" class="card" target="_blank">
+    <div class="card-cover">
+        <img src="https://cdn-icons-png.flaticon.com/512/5582/5582931.png" alt="Password Generator logo">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Password Toggle</h3>
+        <p class="card-description">
+            Toggles password
+        </p>
+    </div>
+</a>
+
 
             <!-- START -->
             <a href="./projects/githubProfileViewer/index.html" class="card" target="_blank">
@@ -1873,7 +1888,7 @@
 
             <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
 
-
+        <div class="projects-container">
           <a href="./projects/Flappy Bird/index.html" class="card">
             <div class="card-cover counter-cover-colour">
               <img src="assets/image/flappybird.png" alt="Flappy Bird" />
@@ -2286,22 +2301,19 @@
             </p>
           </div>
         </a>
-        <!--============================== End =========================================== -->
 
+        <!--============================== End =========================================== -->
         <a href="./projects/Chatbot/index.html" class="card" target="_blank">
-          <div class="card-cover counter-cover-colour">
-            <img src="./assets/image/chat-7767693_1280.jpg" alt="chatbot" />
-          </div>
-          <div class="card-content">
-            <h3 class="card-heading">Chatbot</h3>
-            <p class="card-description">
-              A simple chatbot. <br />
-              <strong>
-                Please use your own google gemini api key for the chatbot to
-                work.
-              </strong>
-            </p>
-          </div>
+            <div class="card-cover counter-cover-colour">
+              <img src="./assets/image/chat-7767693_1280.jpg" alt="chatbot" />
+            </div>
+            <div class="card-content">
+              <h3 class="card-heading">Chatbot</h3>
+              <p class="card-description">
+                A simple chatbot.<b>Please use your own google gemini api key for the chatbot to
+                    work</b>
+              </p>
+            </div>
         </a>
 
         <a href="./projects/Relaxio" class="card">
@@ -2387,10 +2399,7 @@
               Experience the most realistic 3D music visualizer.
             </p>
           </div>
-        </a>
-
-
-                
+        </a>               
 
     
  <!-- =========================== Recipe Book ================================= -->
@@ -2405,6 +2414,7 @@
             </p>
         </div>
     </a>
+    
 <!-- =========================== ================================= -->
 
     <a href="projects/Othello/index.html" class="card" target="_blank">
@@ -2429,6 +2439,8 @@
             </p>
         </div>
     </a>
+</div>
+    
     </section>
     <!--============================== End =========================================== -->
  
@@ -2474,7 +2486,7 @@
             <li><a href="">Account</a></li>
             <li><a href="">Media Centre</a></li>
             <li><a href="">Terms of use</a></li>
-            <li><a href="">Privacy</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
             <li><a href="">Cookie Preferences</a></li>
             <li><a href="">Contact Us</a></li>
         </ul>
@@ -2500,10 +2512,19 @@
 
 
     <script src="./js/app.js"></script>
+<<<<<<< Updated upstream
     <div class="gtranslate_wrapper"></div>
     <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
+=======
+    <script>
+        // Function to redirect to quiz.html
+        document.getElementById('quiz-button').onclick = function() {
+            window.location.href = 'challenges/index.html'; // Adjust the path if necessary
+        };
+    </script>
+>>>>>>> Stashed changes
 </body>
 
 </html>
