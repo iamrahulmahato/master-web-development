@@ -24,7 +24,27 @@
     font-family: 'Arial', sans-serif;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   }
-  
+  #back_to_home {
+  background-color: #696a6b; /* Blue background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for the button */
+  border: none; /* Remove default borders */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Change cursor to pointer */
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+}
+
+#back_to_home:hover {
+  background-color: #357ABD; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+#back_to_home:active {
+  transform: translateY(0); /* Reset lift when clicked */
+}
+
   /* Feedback Form Styling */
   .feedback-form {
     background-color: var(--card); /* Matches the theme */
@@ -80,10 +100,21 @@
     font-weight: bold;
     color: var(--head);
   }
-  
+  .form-group label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.form-group label i {
+    margin-right: 8px;
+    color: #000000; /* Icon color */
+}
   .form-group input,
   .form-group textarea {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     border: 1px solid var(--p);
     border-radius: 5px;
