@@ -1,6 +1,3 @@
-I have added a realtime device tracker | Issue #1623
-
-
 # Realtime Device Tracker
 
 This is a mini project for tracking a device connected to our app in real-time. Similar to online delivery apps where you can see the rider's current location, this app smoothly tracks and displays your location continuously.
