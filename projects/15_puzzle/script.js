@@ -68,3 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+function showRules() {
+    document.getElementById('rules-modal').style.display = 'flex';
+}
+
+function closeRules() {
+    document.getElementById('rules-modal').style.display = 'none';
+}
