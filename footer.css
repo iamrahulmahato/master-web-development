@@ -1,10 +1,7 @@
-html {
-    scroll-behavior: smooth;
-}
-
+/* General styles for the footer */
 footer {
-    background-color: #fff;
-    padding: 40px 20px;
+    background-color: #f7f7f7; /* Light gray background */
+    padding: 30px 15px;
     text-align: center;
     color: #000;
     font-family: Arial, sans-serif;
@@ -14,12 +11,13 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eaeaea;
 }
 
 .footer-section {
     flex: 1;
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 .footer-section h3 {
@@ -27,72 +25,56 @@ footer {
     color: #000;
     font-size: 18px;
     font-weight: bold;
+    position: relative;
+    transition: text-shadow 0.3s ease, color 0.3s ease;
 }
 
+.footer-section p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Quick Links styling */
 .footer-section ul {
     list-style: none;
     padding: 0;
 }
 
 .footer-section ul li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .footer-section ul li a {
     text-decoration: none;
     color: #000;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 2px; /* Adjust space between text and line */
+    font-size: 14px;
     transition: color 0.3s ease;
 }
 
-.footer-section ul li a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: #f8c5c5; /* Pink color for the line */
-    transition: width 0.3s ease;
-}
-
-.footer-section ul li a:hover::after {
-    width: 100%; /* Line expands from 0 to 100% width */
-}
-
+/* Hover effect on links */
 .footer-section ul li a:hover {
-    color: #f8c5c5; /* Pink text on hover */
+    color: #f8c5c5;
 }
 
-.footer-section p {
-    color: #555;
-}
-
+/* Subscribe form */
 .newsletter form {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allows wrapping if screen is too small */
+    flex-wrap: wrap;
 }
 
-#newsletter-heading{
-    font-size: 25px;
-    margin-right: 150px;
-}
 .newsletter input[type="email"] {
     padding: 10px;
-    width: 70%; /* Adjusted width for better alignment */
+    width: 70%;
     border: 1px solid #ddd;
     border-radius: 5px;
-    margin-right: 10px; /* Adds spacing between input and button */
-    box-sizing: border-box; /* Ensures padding doesn't exceed width */
+    margin-right: 10px;
 }
 
 .newsletter button {
-    padding: 10px 20px; /* Ensured padding to make button height match input */
-    background-color: #f8c5c5; /* Pink background */
+    padding: 10px 20px;
+    background-color: #f8c5c5;
     color: #000;
     border: none;
     border-radius: 5px;
@@ -100,80 +82,151 @@ footer {
     transition: background-color 0.3s ease;
 }
 
+/* Hover effect on the subscribe button */
 .newsletter button:hover {
-    background-color: #e39a9a; /* Slightly darker pink on hover */
+    background-color: #e39a9a;
 }
 
-.footer-bottom {
+/* Footer bottom links */
+.footer-links-bottom {
     display: flex;
-    flex-direction: column; /* Stacks the social icons and copyright text vertically */
-    justify-content: center;
-    align-items: center; /* Centers content horizontally */
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-    text-align: center; /* Ensures text is centered */
+    justify-content: space-around;
+    padding: 15px 0;
+    background-color: #eaeaea;
 }
 
+.footer-links-bottom a {
+    text-decoration: none;
+    color: #00b894;
+    font-size: 14px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect on footer bottom links */
+.footer-links-bottom a:hover {
+    color: #0984e3;
+}
+
+/* Footer bottom section */
+.footer-bottom {
+    padding-top: 10px;
+}
+
+.footer-bottom .social-icons {
+    margin: 10px 0;
+}
 
 .footer-bottom .social-icons a {
-    margin: 0 10px;
-    text-decoration: none;
+    margin: 0 8px;
     color: #000;
     font-size: 20px;
     transition: color 0.3s ease;
 }
 
-.footer-bottom .social-icons {
-    margin-bottom: 10px; /* Adds spacing between social icons and copyright text */
-}
-
+/* Hover effect on social icons */
 .footer-bottom .social-icons a:hover {
-    color: #f8c5c5; /* Soft pink color on hover */
+    color: #f8c5c5;
 }
 
-.footer-bottom p {
-    margin-top: 10px; /* Adds some spacing between icons and text */
-    color: #777;
-    font-size: 14px;
-    text-align: center; /* Ensures the copyright text is centered */
-}
-
-.footer-section h3 {
-    margin-bottom: 15px;
-    color: #000; /* Regular text color */
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for glow effect */
-    position: relative;
-}
-
-.footer-section h3:hover {
-    color: #000; /* Keeps text color black */
-    text-shadow: 0 0 20px rgba(248, 197, 197, 1), /* Pinkish glow from behind */
-                 0 0 30px rgba(248, 197, 197, 0.9),
-                 0 0 45px rgba(248, 197, 197, 0.8);
-}
-
-
-
-/* Mobile view */
+/* Mobile view adjustments */
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
         align-items: center;
     }
-
-    .footer-section {
-        margin-bottom: 30px;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
+}
     .newsletter input[type="email"], .newsletter button {
-        width: 100%; /* Makes input and button full width on small screens */
-        margin-right: 0;
+        width: 100%;
         margin-bottom: 10px;
     }
+    /* Hover effect on the subscribe button */
+.newsletter button:hover {
+    background-color: #e39a9a;
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+/* Footer bottom section */
+.footer-bottom {
+    padding-top: 10px;
+    padding-bottom: 10px; /* Add some bottom padding */
+    background-color: #eaeaea; /* Background color for the footer bottom */
+    text-align: center; /* Center the text */
+}
+
+.footer-bottom p {
+    margin: 0; /* Remove default margin */
+    color: #666; /* Dark gray color for the text */
+    font-size: 14px; /* Font size */
+    font-family: Arial, sans-serif; /* Font family */
+}
+
+/* Media Query for responsive design */
+@media (max-width: 768px) {
+    .footer-bottom p {
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+}
+.footer-bottom .social-icons a {
+    margin: 0 8px;
+    color: #000; /* Default color */
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+/* Hover effects for each social media icon */
+.footer-bottom .social-icons a:hover {
+    color: #000; /* Default hover color */
+}
+
+/* Specific hover colors for each icon */
+.footer-bottom .social-icons a:hover .fab.fa-facebook-f {
+    color: #3b5998; /* Facebook Blue */
+}
+
+.footer-bottom .social-icons a:hover .fab.fa-twitter {
+    color: #1da1f2; /* Twitter Blue */
+}
+
+.footer-bottom .social-icons a:hover .fab.fa-instagram {
+    color: #e1306c; /* Instagram Red */
+}
+
+.footer-bottom .social-icons a:hover .fab.fa-linkedin-in {
+    color: #0077b5; /* LinkedIn Blue */
+}
+
+.footer-bottom .social-icons a:hover .fab.fa-youtube {
+    color: #ff0000; /* YouTube Red */
+}
+
+.footer-bottom .social-icons a:hover .fab.fa-pinterest {
+    color: #e60023; /* Pinterest Red */
+}
+
+.footer-bottom .social-icons a:hover .fab.fa-snapchat-ghost {
+     color: #fffc00;; /* Snapchat Yellow */
+}
+.gridbox {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+    gap: 15px; /* Space between items */
+}
+
+.gridbox li {
+    text-align: center; /* Center text */
+}
+
+.gridbox a {
+    text-decoration: none; /* Remove underline */
+    color: #000; /* Default text color */
+    font-size: 14px; /* Adjust font size */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transition effects */
+}
+
+/* Hover effect for links */
+.gridbox a:hover {
+    color: #f8c5c5; /* Change color on hover */
+    text-decoration: underline; /* Add underline on hover */
 }
