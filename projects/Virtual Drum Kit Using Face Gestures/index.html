@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Drum Kit with Face Gestures</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        video {
+            border: 2px solid #ff9800;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Virtual Drum Kit with Face Gestures</h1>
+    <video id="video" autoplay playsinline width="640" height="480"></video>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection"></script>
+
+    <script>
+        const video = document.getElementById('video');
+
+        // Preload drum sounds
+        const sounds = {
+            mouthOpen: new Audio('https://www.myinstants.com/media/sounds/snare.mp3'),
+            blink: new Audio('https://www.myinstants.com/media/sounds/crash.mp3')
+        };
+
+        async function setupWebcam() {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            video.srcObject = stream;
+            return new Promise(resolve => {
+                video.onloadedmetadata = () => resolve(video);
+            });
+        }
+
+        async function detectGestures() {
+            const model = await faceLandmarksDetection.load(
+                faceLandmarksDetection.SupportedPackages.mediapipeFacemesh
+            );
+
+            function playSound(sound) {
+                sound.currentTime = 0;  // Reset sound to the start
+                sound.play();
+            }
+
+            async function detect() {
+                const predictions = await model.estimateFaces({ input: video });
+
+                if (predictions.length > 0) {
+                    const landmarks = predictions[0].scaledMesh;
+                    const mouthTop = landmarks[13]; // Upper lip
+                    const mouthBottom = landmarks[14]; // Lower lip
+                    const leftEye = landmarks[159]; // Left eye bottom
+                    const rightEye = landmarks[145]; // Right eye bottom
+
+                    // Detect mouth open gesture
+                    if (mouthBottom[1] - mouthTop[1] > 15) {
+                        playSound(sounds.mouthOpen);
+                    }
+
+                    // Detect blink gesture (eyes close together)
+                    if (Math.abs(leftEye[1] - rightEye[1]) < 3) {
+                        playSound(sounds.blink);
+                    }
+                }
+                requestAnimationFrame(detect);
+            }
+            detect();
+        }
+
+        setupWebcam().then(() => detectGestures());
+    </script>
+
+</body>
+</html>
