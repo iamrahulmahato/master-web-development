@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Toggle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="input-box">
+        <input type="password" placeholder="password" id="password">
+        <img src="https://github.com/shriyadindi/password-toggle/blob/main/eye-close.png?raw=true" id="eyeicon">
+    </div>
+
+
+    <script>
+        
+
+        let eyeicon = document.getElementById("eyeicon");
+        let password = document.getElementById("password");
+
+        eyeicon.onclick = function(){
+            if(password.type == "password")
+            {
+                password.type = "text";
+                eyeicon.src = "https://github.com/shriyadindi/password-toggle/blob/main/eye-open.png?raw=true";
+            }
+            else
+            {
+                password.type = "password";   
+                eyeicon.src = "https://github.com/shriyadindi/password-toggle/blob/main/eye-close.png?raw=true";           
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>
