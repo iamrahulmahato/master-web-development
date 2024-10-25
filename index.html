@@ -2003,12 +2003,6 @@
     <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
 
 
-        
-    <div class="feedback">
-        <h1>Have a <span>Feedback?</span></h1>
-        <textarea placeholder="Write anything here...."></textarea>
-        <button><a href="feedback.html" target="_blank">Click here to provide feedback</a></button>
-    </div>
 </section>
 
             <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
@@ -2580,8 +2574,134 @@
 
 
             <!-- =========================== Othello Game ================================= -->
+             <div>
+                
+  <section id="feedback">
+    <div class="container">
+      <h2>We Value Your Feedback!</h2>
+      <p>Your input helps us improve our services. Please share your thoughts with us below.</p>
+      <form>
+        
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
+                                oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
+                                oninput="this.setCustomValidity('')">
+        </div>
 
-   
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+
+        
+        <div class="form-group">
+          <label for="rating">Rating</label>
+          <select id="rating" name="rating" required>
+            <option value="5">Excellent - 5 Stars</option>
+            <option value="4">Very Good - 4 Stars</option>
+            <option value="3">Good - 3 Stars</option>
+            <option value="2">Fair - 2 Stars</option>
+            <option value="1">Poor - 1 Star</option>
+          </select>
+        </div>
+
+        
+        <div class="form-group">
+          <label for="feedback">Your Feedback</label>
+          <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..." required></textarea>
+        </div>
+
+        
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </div>
+  </section>
+             </div>
+
+   <style>
+    
+/* Feedback Form Section */
+#feedback {
+    background: linear-gradient(to right, #faf9fa, #fefefe);
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+  }
+  
+  #feedback h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  #feedback p {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  /* Form Container */
+  #feedback .container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    background: linear-gradient(to right, #f8bab5, #f38787);
+  }
+  
+  .container h2, .container p {
+    color: #333;
+  }
+  
+  /* Form Group */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-size: 1rem;
+    color: #333;
+    display: block;
+  }
+  /* General Body Styling */
+ #feedback .form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+#feedback button{
+    width: 100%;
+    padding: 12px;
+    background-color: var(--btn-color);
+    color: var(--btn-text);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+  }
+   </style>
     <footer>
         <div class="footer-content">
             <div class="footer-section quick-links">
