@@ -1,0 +1,279 @@
+*
+{
+    margin: 0;
+    outline: none;
+    font-family: 'Okra, Helvetica', sans-serif;
+    font-weight: 300;
+}
+
+.container1{
+    padding-top: 2%;
+    display: flex;
+}
+
+.container4{
+    padding-top:40px;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    font-weight: normal;
+    color: #9C9C9C;
+    padding-bottom: 50px;
+}
+.container4-1,.container4-2,.container4-3,.container4-4,.container4-5
+{
+    padding-left:10%;
+    font-size:13px;
+    padding-top: 30px;
+    line-height:2;
+}
+.container4-1
+{
+    padding-left:0;
+    font-size:13px;
+    padding-top: 30px;
+}
+.container5{
+    padding-left: 10%;
+    padding-right: 10%;
+    font-weight: lighter;
+    font-size:14px;
+    padding-bottom: 20px;
+    margin-top: 0;
+    color:#9C9C9C;
+}
+.container3{
+    height:20px;
+    padding-left:144px; 
+    padding-top: 20px;
+}
+.container3,.container4,.container5{
+    background-color: #FCFCFC
+}
+#India{
+    height:25px;
+}
+.store-footer{
+    height: 40px;
+    margin-top: 10%;
+}
+.icons-footer{
+    width:23px;
+}
+.l-space{
+    letter-spacing:2px;
+    font-weight: bold;
+    color:#000000;
+}
+#language-globe{
+    height:18px;
+}
+
+.footer_logo1{
+    height:27px;
+    margin-left: 12%;
+}
+
+.footer_logo2{
+height:30px;
+margin-left:10%;
+}
+
+.container3{
+    font-family: 'Paytone One', sans-serif;
+    padding-left:3px;
+    display: flex;
+}
+div.dropdown-multicol2{
+    width: 30em;
+  }
+  div.dropdown-multicol2>div.dropdown-col{
+    display:inline-block;
+    width: 24%;
+  }
+
+.drop1{
+     margin-left: 46%;
+}
+
+.drop2{
+    margin-left:2%;
+}
+
+.dropdown-item{
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight:lighter;
+}
+
+.container2
+{
+    margin-top: 7%;
+    margin-left: 7%;
+    margin-right: 6%;
+}
+
+.Dukh-Dard{
+    display: inline-block;
+    margin-top: 2%;
+}
+.Sheher{
+    display: inline-block;
+    text-align: left;
+    text-decoration: none;
+    color: rgb(130, 130, 130);
+    margin-bottom: 1.2rem;
+    width: 19%;
+    line-height: 1.8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+.wrapper{
+   
+    
+    margin-top: -1%;
+    margin-left: 2%; 
+   border-radius: 20px;
+   border: #000000;
+    
+   
+  
+  } 
+  .container-fluid{
+      margin-top:-5%;
+      
+  }
+  .signup{
+  margin-right:15%;
+  text-decoration: none;
+  font-size:20px;
+  
+  text-decoration: none;
+  }
+.signup,.login{
+  color:#9C9C9C;
+  font-weight: 100;
+ 
+}
+
+.login{
+    text-decoration: none;
+    
+    font-size:20px;
+    
+    
+    margin-left: 75%;
+}
+  .wrapper .search_box{
+    width: 700px;
+    background: #fff;
+    border-radius: 5px;
+    height: 55px;
+    display: flex;
+   padding-top: 5px;
+    box-shadow: 0 8px 6px -10px #b3c6ff;
+    
+  }
+  
+  
+  
+  
+  .wrapper .search_box .dropdown{
+    width: 250px;
+    border-right: 2px solid #dde2f1;
+    color: #9fa3b1;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .wrapper .search_box .dropdown .default_option{
+    text-transform: uppercase;
+    padding: 13px 15px;
+    font-size: 14px;
+  }
+  .search_field{
+      margin-top: -7px;
+  }
+  
+  .wrapper .search_box .dropdown ul{
+    position: absolute;
+    top: 70px;
+    left: -10px;
+    background: #fff;
+    width: 150px;
+    border-radius: 5px;
+    /* padding: 20px; */
+    display: none;
+    box-shadow: 8px 8px 6px -10px #b3c6ff;
+  }
+  
+  .wrapper .search_box .dropdown ul li{
+    padding-bottom: -2px;
+  }
+  
+  .wrapper .search_box .dropdown ul li:last-child{
+    padding-bottom: 0;
+  }
+  
+  .wrapper .search_box .dropdown ul li:hover{
+    color: #6f768d;
+  }
+  
+  .wrapper .search_box .dropdown:before{
+    content: "";
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    border: 8px solid;
+     border-color: #000000 transparent transparent transparent; 
+  }
+  
+  .wrapper .search_box .search_field{
+    width: 800px;
+    height: 100%;
+    position: relative;
+  }
+  
+  .wrapper .search_box .search_field .input{
+    width: 450px;
+    height: 30px;
+    border: 0px;
+    font-size: 16px;
+    margin-top: 3%;
+    padding-left: 38px;
+    padding-right: 38px;
+    color: #6f768d;
+  
+  }
+  
+  
+  .wrapper .search_box .search_field .fas{
+    position: absolute;
+    top: 22px;
+    left: 10px;
+    font-size: 16px;
+    color: grey;
+    cursor: pointer;
+  } 
+  
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #9fa3b1;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+   color: #9fa3b1;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: #9fa3b1;
+  }
+  .enterprises{
+    margin-top: 12%;
+    letter-spacing: 2px;  
+    color: black; 
+}
+.ent{
+  letter-spacing: 0px;
+  color: #9C9C9C;
+}
+

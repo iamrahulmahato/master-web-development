@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undo and Redo Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            margin: 10px 5px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #e2e2e2;
+        }
+        #controls {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Undo and Redo Text Example</h1>
+<div id="controls">
+    <button id="undoBtn" disabled>Undo</button>
+    <button id="redoBtn" disabled>Redo</button>
+</div>
+<textarea id="textArea"></textarea>
+
+<script>
+    const textArea = document.getElementById('textArea');
+    const undoBtn = document.getElementById('undoBtn');
+    const redoBtn = document.getElementById('redoBtn');
+
+    let history = [];
+    let redoStack = [];
+
+    function saveState() {
+        // Save current text and clear redo stack
+        redoStack = [];
+        history.push(textArea.value);
+        updateButtons();
+    }
+
+    function updateButtons() {
+        undoBtn.disabled = history.length === 0;
+        redoBtn.disabled = redoStack.length === 0;
+    }
+
+    textArea.addEventListener('input', saveState);
+
+    undoBtn.addEventListener('click', () => {
+        if (history.length > 0) {
+            // Move current state to redo stack
+            redoStack.push(history.pop());
+            // Set textarea value to last state
+            textArea.value = history[history.length - 1] || '';
+            updateButtons();
+        }
+    });
+
+    redoBtn.addEventListener('click', () => {
+        if (redoStack.length > 0) {
+            // Move state back to history
+            history.push(redoStack.pop());
+            // Set textarea value to last state
+            textArea.value = history[history.length - 1] || '';
+            updateButtons();
+        }
+    });
+</script>
+
+</body>
+</html>

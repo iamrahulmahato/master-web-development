@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cow and Bull Game</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🐮Cow and Bull Game🐂</h1>
+            <h2>Guess the secret 4-digit number.</h2>
+            <p style="font-style: italic;">🐂<strong>Bulls: </strong> Correct digit at correct position, 🐮<strong>Cows: </strong> Correct digit at wrong position.</p>
+            <p>💡Careful, you only get 10 guesses. Good luck!</p>
+            <div>
+                <input type="text" id="guess-input" max-length="4" placeholder="Make your guess!">
+                <button id="guess-btn">Submit</button>
+            </div>
+            <div id="result"></div>
+            <div id="history"></div>
+            <button id="reset-btn">Reset Game</button>
+        </div>
+        <script src="./script.js" async defer></script>
+    </body>
+</html>

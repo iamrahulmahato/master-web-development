@@ -1,0 +1,69 @@
+.navigation {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 80%;
+	max-width: 35rem;
+	height: 100%;
+	z-index: 10;
+	background: #fff;
+	transform: translateX(100%);
+	transition: transform 0.5s cubic-bezier(0.5, 0, 0, 0.75);
+}
+
+.navigation.is--active {
+	transform: translateX(0);
+}
+
+.navigation ul {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.navigation ul li {
+	width: 100%;
+	padding: 1.2rem 0;
+	padding-left: 2rem;
+	margin-bottom: 0.5rem;
+	cursor: pointer;
+	border-radius: 1.2rem;
+	transition: background-color 0.33s ease;
+}
+
+.nav__link {
+	color: #393c41;
+	font-weight: 600;
+	font-size: 1.5rem;
+	text-transform: capitalize;
+}
+
+.navigation ul li:hover {
+	background: #0000000d;
+}
+
+.close__btn__container {
+	text-align: right;
+	margin: 2rem 3rem;
+}
+
+.navigation__close__btn {
+	width: 3rem;
+	cursor: pointer;
+}
+
+.blur__overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(1rem);
+	transition: display 0.4s ease;
+}
+
+.blur__overlay.is--active {
+	display: block;
+}
