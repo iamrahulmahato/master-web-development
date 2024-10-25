@@ -1,5 +1,6 @@
 let currPlayer = 'X';
 let GameStatus = '';
+let isMultiplayer = false; // Track if the game is in multiplayer mode
 const boxes = document.querySelectorAll('.box');
 
 const gameMessage = document.querySelector('#gameMessage');
@@ -17,12 +18,13 @@ document.body.appendChild(winningLine); // Append the winning line to the body
 const slider = document.querySelector('.highlight'); // The slider highlight element
 
 const selectBox = (element) => {
-    if (element.target.innerText === '' && currPlayer== 'X') {
+    if (element.target.innerText === '') {
         element.target.innerText = currPlayer;
         gameMessage.innerText = ''; // Clear any previous messages
-        if (!checkWinner()) { 
+        if (!checkWinner()) {
             switchPlayer();
-            if (currPlayer === 'O') { // If it's the AI's turn
+            // If multiplayer, no need for AI move
+            if (!isMultiplayer && currPlayer === 'O') { // If it's the AI's turn
                 aiMove(); // Execute the AI's move
             }
         }
@@ -124,6 +126,7 @@ const drawWinningLine = (combination) => {
     winningLine.style.top = `${midPointY - 2}px`; // Adjust the Y position
     winningLine.style.left = `${midPointX - length / 2}px`; // Adjust the X position
 }
+
 const resetGame = () => {
     boxes.forEach(box => {
         box.innerText = '';
@@ -184,41 +187,47 @@ const aiMove = () => {
         const randomBox = emptyBoxes[Math.floor(Math.random() * emptyBoxes.length)];
         makeMove(randomBox.id, 'O');
     }
-};
-
-// Helper function to make a move
+}
 const makeMove = (boxId, player) => {
-    const box = document.querySelector(`#${boxId}`);
-    box.innerText = player;
+    document.querySelector(`#${boxId}`).innerText = player;
     if (!checkWinner()) {
-        switchPlayer(); // Switch back to the player's turn
+        switchPlayer(); // Switch player after AI move
     }
-};
-
-// Function to check if a player can win with the current combination
+}
 const canWin = (combination, player) => {
-    const marks = combination.map(id => document.querySelector(`#${id}`).innerText);
-    return marks.filter(mark => mark === player).length === 2 && marks.filter(mark => mark === '').length === 1;
-};
+    const [a, b, c] = combination.map(id => document.querySelector(`#${id}`).innerText);
+    return (a === player && b === player && c === '') ||
+           (a === player && b === '' && c === player) ||
+           (a === '' && b === player && c === player);
+}
 
-// Function to get winning combinations
-const getWinningCombinations = () => {
-    return [
-        ['box1', 'box2', 'box3'],
-        ['box4', 'box5', 'box6'],
-        ['box7', 'box8', 'box9'],
-        ['box1', 'box4', 'box7'],
-        ['box2', 'box5', 'box8'],
-        ['box3', 'box6', 'box9'],
-        ['box1', 'box5', 'box9'],
-        ['box3', 'box5', 'box7']
-    ];
-};
+const getWinningCombinations = () => [
+    ['box1', 'box2', 'box3'],
+    ['box4', 'box5', 'box6'],
+    ['box7', 'box8', 'box9'],
+    ['box1', 'box4', 'box7'],
+    ['box2', 'box5', 'box8'],
+    ['box3', 'box6', 'box9'],
+    ['box1', 'box5', 'box9'],
+    ['box3', 'box5', 'box7']
+];
 
+
+// Add event listeners for boxes
 boxes.forEach(box => {
     box.addEventListener('click', selectBox);
 });
 
-const reset = document.querySelector('#reset');
-reset.addEventListener('click', resetGame);
+// Reset button event listener
+document.querySelector('#reset').addEventListener('click', resetGame);
+
+// Multiplayer button event listener
+document.querySelector('#multiplayer').addEventListener('click', () => {
+    isMultiplayer = !isMultiplayer; // Toggle multiplayer mode
+    const modeText = isMultiplayer ? 'Multiplayer Mode' : 'Single Player Mode';
+    alert(`Switched to ${modeText}`); // Alert the current mode
+    resetGame(); // Reset the game when switching modes
+});
+
+// Initial slider position
 updateSlider();
