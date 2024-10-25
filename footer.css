@@ -19,12 +19,11 @@ footer {
 
 .footer-section {
     flex: 1;
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 .footer-section h3 {
     margin-bottom: 15px;
-    color: #000;
     font-size: 18px;
     font-weight: bold;
 }
@@ -72,14 +71,12 @@ footer {
 
 .newsletter form {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap; /* Allows wrapping if screen is too small */
 }
 
 #newsletter-heading{
     font-size: 25px;
-    margin-right: 150px;
 }
 .newsletter input[type="email"] {
     padding: 10px;
@@ -87,7 +84,6 @@ footer {
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-right: 10px; /* Adds spacing between input and button */
-    box-sizing: border-box; /* Ensures padding doesn't exceed width */
 }
 
 .newsletter button {
@@ -104,6 +100,17 @@ footer {
     background-color: #e39a9a; /* Slightly darker pink on hover */
 }
 
+.gridbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.gridbox li {
+    margin: 0 10px;
+}
+
 .footer-bottom {
     display: flex;
     flex-direction: column; /* Stacks the social icons and copyright text vertically */
@@ -111,9 +118,11 @@ footer {
     align-items: center; /* Centers content horizontally */
     border-top: 1px solid #ddd;
     padding-top: 20px;
-    text-align: center; /* Ensures text is centered */
 }
 
+.footer-bottom .social-icons {
+    margin-bottom: 10px;
+}
 
 .footer-bottom .social-icons a {
     margin: 0 10px;
@@ -123,37 +132,14 @@ footer {
     transition: color 0.3s ease;
 }
 
-.footer-bottom .social-icons {
-    margin-bottom: 10px; /* Adds spacing between social icons and copyright text */
-}
-
 .footer-bottom .social-icons a:hover {
     color: #f8c5c5; /* Soft pink color on hover */
 }
 
 .footer-bottom p {
-    margin-top: 10px; /* Adds some spacing between icons and text */
     color: #777;
     font-size: 14px;
-    text-align: center; /* Ensures the copyright text is centered */
 }
-
-.footer-section h3 {
-    margin-bottom: 15px;
-    color: #000; /* Regular text color */
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for glow effect */
-    position: relative;
-}
-
-.footer-section h3:hover {
-    color: #000; /* Keeps text color black */
-    text-shadow: 0 0 20px rgba(248, 197, 197, 1), /* Pinkish glow from behind */
-                 0 0 30px rgba(248, 197, 197, 0.9),
-                 0 0 45px rgba(248, 197, 197, 0.8);
-}
-
 
 
 /* Mobile view */
@@ -164,16 +150,10 @@ footer {
     }
 
     .footer-section {
-        margin-bottom: 30px;
+        margin-bottom: 10px 0;
     }
 
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
     .newsletter input[type="email"], .newsletter button {
         width: 100%; /* Makes input and button full width on small screens */
-        margin-right: 0;
-        margin-bottom: 10px;
     }
 }
