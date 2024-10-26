@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enhanced JavaScript Scientific Calculator</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Include math.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.5.0/math.min.js"></script>
+</head>
+<body>
+    <div class="title">
+        <a href="#">JavaScript Scientific Calculator</a>
+    </div>
+    <div class="content">
+        <!-- Calculator Table -->
+        <table>
+            <tr>
+                <td colspan="6"><input type="text" id="textval" readonly/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="AC" onclick="clear_textval()"/> </td>
+                <td><input type="button" value="C" onclick="backspace()"/> </td>
+                <td><input type="button" value="(" onclick="display('(')"/> </td>
+                <td><input type="button" value=")" onclick="display(')')"/> </td>
+                <td><input type="button" value="%" onclick="display('%')"/> </td>
+                <td><input type="button" value="π" onclick="display(Math.PI)"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="tan" onclick="trigFunc('tan')"/> </td>
+                <td><input type="button" value="x!" onclick="factorial()"/> </td>
+                <td><input type="button" value="sin⁻¹" onclick="invTrigFunc('asin')"/> </td>
+                <td><input type="button" value="cos⁻¹" onclick="invTrigFunc('acos')"/> </td>
+                <td><input type="button" value="tan⁻¹" onclick="invTrigFunc('atan')"/> </td>
+                <td><input type="button" value="eˣ" onclick="exp()"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="display('7')"/> </td>
+                <td><input type="button" value="8" onclick="display('8')"/> </td>
+                <td><input type="button" value="9" onclick="display('9')"/> </td>
+                <td><input type="button" value="/" onclick="display('/')"/> </td>
+                <td><input type="button" value="x²" onclick="square()"/> </td>
+                <td><input type="button" value="x³" onclick="cube()"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="display('4')"/> </td>
+                <td><input type="button" value="5" onclick="display('5')"/> </td>
+                <td><input type="button" value="6" onclick="display('6')"/> </td>
+                <td><input type="button" value="*" onclick="display('*')"/> </td>
+                <td><input type="button" value="√" onclick="sqrt()"/> </td>
+                <td><input type="button" value="³√" onclick="cuberoot()"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="display('1')"/> </td>
+                <td><input type="button" value="2" onclick="display('2')"/> </td>
+                <td><input type="button" value="3" onclick="display('3')"/> </td>
+                <td><input type="button" value="-" onclick="display('-')"/> </td>
+                <td><input type="button" value="log" onclick="logBase10()"/> </td>
+                <td><input type="button" value="^" onclick="display('^')"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="0" onclick="display('0')"/> </td>
+                <td><input type="button" value="." onclick="display('.')"/> </td>
+                <td><input type="button" value="=" onclick="evaluate_exp()"/> </td>
+                <td><input type="button" value="+" onclick="display('+')"/> </td>
+                <td><input type="button" value="sin" onclick="trigFunc('sin')"/> </td>
+                <td><input type="button" value="cos" onclick="trigFunc('cos')"/> </td>
+            </tr>
+        </table>
+
+        <!-- Matrix Calculation Section -->
+        <div class="section">
+            <h2>Matrix Calculations</h2>
+            <input type="text" class="matrix-input" id="matrixA" placeholder="Matrix A (e.g., [[1,2],[3,4]])"/>
+            <input type="text" class="matrix-input" id="matrixB" placeholder="Matrix B (optional)"/>
+            <br/>
+            <input type="button" value="A + B" onclick="matrixAdd()"/>
+            <input type="button" value="A - B" onclick="matrixSubtract()"/>
+            <input type="button" value="A * B" onclick="matrixMultiply()"/>
+            <input type="button" value="det(A)" onclick="matrixDeterminant()"/>
+            <input type="button" value="inv(A)" onclick="matrixInverse()"/>
+            <div class="matrix-result" id="matrixResult"></div>
+        </div>
+
+        <!-- Function Definition Section -->
+        <div class="section">
+            <h2>Function Definition</h2>
+            <input type="text" class="function-input" id="functionDef" placeholder="Define function (e.g., f(x)=x^2 + 3*x + 2)"/>
+            <br/>
+            <input type="button" value="Define" onclick="defineFunction()"/>
+            <input type="text" class="function-input" id="functionEval" placeholder="Evaluate f(5)"/>
+            <input type="button" value="Evaluate" onclick="evaluateFunction()"/>
+            <div class="function-result" id="functionResult"></div>
+        </div>
+    </div>
+
+    <script>
+        // Existing Calculator Functions
+        function display(val) {
+            let current = document.getElementById("textval").value;
+            // Replace '^' with '**' for exponentiation
+            if(val === '^') {
+                val = '**';
+            }
+            document.getElementById("textval").value = current + val;
+        }
+        
+        function evaluate_exp() {
+            try {
+                let x = document.getElementById("textval").value;
+                // Replace '^' with '**' for exponentiation
+                x = x.replace(/\^/g, '**');
+                let y = math.evaluate(x);
+                document.getElementById("textval").value = y;
+            } catch (err) {
+                document.getElementById("textval").value = "Error";
+            }
+        }
+        
+        function clear_textval() {
+            document.getElementById("textval").value = "";
+        }
+        
+        function backspace() {
+            let input = document.getElementById("textval").value;
+            document.getElementById("textval").value = input.substring(0, input.length - 1);
+        }
+        
+        function sqrt() {
+            try {
+                let x = document.getElementById("textval").value;
+                let y = math.sqrt(math.evaluate(x));
+                document.getElementById("textval").value = y;
+            } catch (err) {
+                document.getElementById("textval").value = "Error";
+            }
+        }
+        
+        function cuberoot() {
+            try {
+                let x = document.getElementById("textval").value;
+                let y = math.cbrt(math.evaluate(x));
+                document.getElementById("textval").value = y;
+            } catch (err) {
+                document.getElementById("textval").value = "Error";
+            }
+        }
+        
+        function square() {
+            try {
+                let x = document.getElementById("textval").value;
+                let y = math.pow(math.evaluate(x), 2);
+                document.getElementById("textval").value = y;
+            } catch (err) {
+                document.getElementById("textval").value = "Error";
+            }
+        }
+        
+        function cube() {
+            try {
+                let x = document.getElementById("textval").value;
+                let y = math.pow(math.evaluate(x), 3);
+                document.getElementById("textval").value = y;
+            } catch (err) {
+                document.getElementById("textval").value = "Error";
+            }
+        }
+        
+        function logBase10() {
+            try {
+                let x = document.getElementById("textval").value;
+                let y = math.log10(math.evaluate(x));
+                document.getElementById("textval").value = y;
+            } catch (err) {
+                document.getElementById("textval").value = "Error";
+            }
+        }
+        
+        function trigFunc(func) {
+            try {
+                let x = document.getElementById("textval").value;
+                let angle = math.evaluate(x);
+                let result;
+                switch(func) {
+                    case 'sin': result = math.sin(math.unit(angle, 'deg')); break;
+                    case 'cos': result = math.cos(math.unit(angle, 'deg')); break;
+                    case 'tan': result = math.tan(math.unit(angle, 'deg')); break;
+                }
+                document.getElementById("textval").value = result;
+            } catch (err) {
+                document.getElementById("textval").value = "Error";
+            }
+        }
+        
+        function invTrigFunc(func) {
+            try {
+                let x = document.getElementById("textval").value;
+                let value = math.evaluate(x);
+                let result;
+                switch(func) {
+                    case 'asin': result = math.asin(value) * (180 / Math.PI); break;
+                    case 'acos': result = math.acos(value) * (180 / Math.PI); break;
+                    case 'atan': result = math.atan(value) * (180 / Math.PI); break;
+                }
+                document.getElementById("textval").value = result;
+            } catch (err) {
+                document.getElementById("textval").value = "Error";
+            }
+        }
+        
+        function factorial() {
+            try {
+                let x = document.getElementById("textval").value;
+                let num = math.evaluate(x);
+                if (num < 0) {
+                    document.getElementById("textval").value = "Error";
+                    return;
+                }
+                let fact = math.factorial(num);
+                document.getElementById("textval").value = fact;
+            } catch (err) {
+                document.getElementById("textval").value = "Error";
+            }
+        }
+        
+        function exp() {
+            try {
+                let x = document.getElementById("textval").value;
+                let y = math.exp(math.evaluate(x));
+                document.getElementById("textval").value = y;
+            } catch (err) {
+                document.getElementById("textval").value = "Error";
+            }
+        }
+
+        // Matrix Calculation Functions
+        function matrixAdd() {
+            try {
+                let A = math.evaluate(document.getElementById("matrixA").value);
+                let B = math.evaluate(document.getElementById("matrixB").value);
+                let result = math.add(A, B);
+                document.getElementById("matrixResult").innerText = `A + B = ${math.format(result)}`;
+            } catch (err) {
+                document.getElementById("matrixResult").innerText = "Error in addition";
+            }
+        }
+
+        function matrixSubtract() {
+            try {
+                let A = math.evaluate(document.getElementById("matrixA").value);
+                let B = math.evaluate(document.getElementById("matrixB").value);
+                let result = math.subtract(A, B);
+                document.getElementById("matrixResult").innerText = `A - B = ${math.format(result)}`;
+            } catch (err) {
+                document.getElementById("matrixResult").innerText = "Error in subtraction";
+            }
+        }
+
+        function matrixMultiply() {
+            try {
+                let A = math.evaluate(document.getElementById("matrixA").value);
+                let B = math.evaluate(document.getElementById("matrixB").value);
+                let result = math.multiply(A, B);
+                document.getElementById("matrixResult").innerText = `A * B = ${math.format(result)}`;
+            } catch (err) {
+                document.getElementById("matrixResult").innerText = "Error in multiplication";
+            }
+        }
+
+        function matrixDeterminant() {
+            try {
+                let A = math.evaluate(document.getElementById("matrixA").value);
+                let result = math.det(A);
+                document.getElementById("matrixResult").innerText = `det(A) = ${result}`;
+            } catch (err) {
+                document.getElementById("matrixResult").innerText = "Error calculating determinant";
+            }
+        }
+
+        function matrixInverse() {
+            try {
+                let A = math.evaluate(document.getElementById("matrixA").value);
+                let result = math.inv(A);
+                document.getElementById("matrixResult").innerText = `inv(A) = ${math.format(result)}`;
+            } catch (err) {
+                document.getElementById("matrixResult").innerText = "Error calculating inverse";
+            }
+        }
+
+        // Function Definition and Evaluation
+        let definedFunctions = {};
+
+        function defineFunction() {
+            let funcDef = document.getElementById("functionDef").value;
+            try {
+                // Example input: f(x)=x^2 + 3*x + 2
+                let match = funcDef.match(/([a-zA-Z]\w*)\((\w+)\)\s*=\s*(.+)/);
+                if (!match) throw "Invalid function format";
+                let funcName = match[1];
+                let param = match[2];
+                let expr = match[3];
+                definedFunctions[funcName] = { param: param, expr: expr };
+                document.getElementById("functionResult").innerText = `Function ${funcName}(${param}) defined.`;
+            } catch (err) {
+                document.getElementById("functionResult").innerText = "Error defining function";
+            }
+        }
+
+        function evaluateFunction() {
+            let funcEval = document.getElementById("functionEval").value;
+            try {
+                // Example input: f(5)
+                let match = funcEval.match(/([a-zA-Z]\w*)\((.+)\)/);
+                if (!match) throw "Invalid evaluation format";
+                let funcName = match[1];
+                let arg = match[2];
+                if (!definedFunctions[funcName]) throw "Function not defined";
+                let { param, expr } = definedFunctions[funcName];
+                let scope = {};
+                scope[param] = math.evaluate(arg);
+                let result = math.evaluate(expr, scope);
+                document.getElementById("functionResult").innerText = `${funcName}(${arg}) = ${result}`;
+            } catch (err) {
+                document.getElementById("functionResult").innerText = "Error evaluating function";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Online Compiler",
+  "description": "Compile and run Java, C++, and Python code.",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html"
+
+  },
+  "permissions": ["storage"]
+}

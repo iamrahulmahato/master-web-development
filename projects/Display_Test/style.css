@@ -1,0 +1,159 @@
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.5s ease;
+    padding: 20px;
+}
+
+h1 {
+    color: #6203e0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#colorbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.color-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.color-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#current-color {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+#current-color .color-display {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#reset-btn, #add-color-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #6203e0;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+#reset-btn:hover, #add-color-btn:hover {
+    background-color: #4502a0;
+}
+
+#add-color-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+#add-color-section input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+    font-size: 1rem;
+}
+
+#add-color-section button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+#add-color-section button:hover {
+    background-color: #1e7e34;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .color-circle {
+        width: 40px;
+        height: 40px;
+    }
+
+    #current-color {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #add-color-section {
+        flex-direction: column;
+    }
+
+    #add-color-section input, #add-color-section button {
+        width: 100%;
+    }
+}
+
+/* Copy Tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the element */
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

@@ -1,0 +1,143 @@
+body {
+    background-color: #FFF4B5;
+    color: #664343; /* Change font color */
+    font-family: 'Roboto', sans-serif; /* Change font family */
+}
+
+/* Existing styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Video responsive setup from css tricks */
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* --------------------------------------- */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.segment {
+    animation: fadeIn 1s ease-in-out;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    border: 2px solid #664343; /* Add border */
+    -webkit-box-shadow: 0px 0px 12px 6px rgba(0,0,0,0.14);
+    -moz-box-shadow: 0px 0px 12px 6px rgba(0,0,0,0.14);
+    box-shadow: 0px 0px 12px 6px rgba(0,0,0,0.14);
+    background-color: #FFF; /* Add background color for segments */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+}
+
+.segment:hover {
+    transform: scale(1.02); /* Slightly enlarge the segment */
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.2); /* Enhance shadow on hover */
+}
+
+.button {
+    cursor: pointer;
+    background-color: #664343;
+    padding: 20px;
+    margin: 0 auto; /* Center the button */
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    width: 200px; /* Set a fixed width */
+    -webkit-box-shadow: 0px 0px 12px 6px rgba(0,0,0,0.14);
+    -moz-box-shadow: 0px 0px 12px 6px rgba(0,0,0,0.14);
+    box-shadow: 0px 0px 12px 6px rgba(0,0,0,0.14);
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for smooth effect */
+}
+
+.button:hover {
+    background-color: #503737; /* Darker shade for hover effect */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.imgCard {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for better responsiveness */
+    gap: 20px; /* Add gap between items */
+}
+
+.imgCard > div {
+    flex: 1;
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+ul li {
+    margin: 5px;
+    list-style-type: none;
+}
+
+@media(max-width: 750px) {
+    .imgCard {
+        flex-direction: column;
+    }
+    .segment {
+        padding: 10px;
+        margin: 10px;
+    }
+    .button {
+        padding: 15px 30px;
+        margin: 10px auto;
+    }
+    .description {
+        margin-bottom: 20px;
+        margin-top: 10px !important;
+    }    
+    div.img.segment {
+        margin-right: 10px;
+    }
+}
+
+.description.segment {
+    margin-top: 0;
+}
+
+.img.segment {
+    margin-right: 5px;
+}
+
+.img h3 {
+    margin-bottom: 20px;
+}
+
+.ingredients {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

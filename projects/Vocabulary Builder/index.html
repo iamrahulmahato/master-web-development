@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vocabulary Builder</h1>
+            <nav>
+                <button id="flashcardsBtn">Flashcards</button>
+                <button id="quizBtn">Quiz</button>
+                <button id="addWordBtn">Add Word</button>
+            </nav>
+        </header>
+        <main>
+            <section id="flashcardsSection" class="hidden">
+                <h2>Flashcards</h2>
+                <div id="flashcardsContainer"></div>
+            </section>
+            <section id="quizSection" class="hidden">
+                <h2>Quiz</h2>
+                <div id="quizContainer"></div>
+                <div id="quizFeedback"></div>
+                <button id="showAnswerBtn">Show Answer</button>
+                <button id="nextQuestionBtn">Next Question</button>
+            </section>
+            <section id="addWordSection" class="hidden">
+                <h2>Add New Word</h2>
+                <form id="addWordForm">
+                    <label for="word">Word:</label>
+                    <input type="text" id="word" required>
+                    <label for="definition">Definition:</label>
+                    <textarea id="definition" required></textarea>
+                    <button type="submit">Add Word</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

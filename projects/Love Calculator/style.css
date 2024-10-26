@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-image: url('lovecalbg.jpg'); /* Add your preferred background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentbox {
+    background-color: rgba(7, 7, 7, 0.512);
+    backdrop-filter: blur(2px); /* Blur effect */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 350px;
+}
+
+.contentbox:hover{
+    border: 1px solid palevioletred;
+}
+
+h1 span {
+    color: #ff4081;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+h1 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+    color: white;
+}
+
+p {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    font-size: 1rem;
+    width: 100%;
+    padding: 10px 0;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: white;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: -20px;
+    font-size: 0.85rem;
+    color: #ff4081;
+}
+
+input:focus {
+    border-color: #ff4081;
+    box-shadow: 0px 8px 15px rgba(255, 64, 129, 0.2);
+}
+
+button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: white;
+    color: #ff4081;
+    box-shadow: 0px 8px 15px rgba(255, 64, 129, 0.3);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#result-message {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+#result-percentage {
+    color: #ff4081;
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+.spinner {
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid #ff4081;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

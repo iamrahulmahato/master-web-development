@@ -1,0 +1,101 @@
+html{
+    background-color: rgb(249, 189, 197);
+}
+.main{
+    background-color: rgb(248, 51, 51);
+    color: wheat;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    text-align: center;
+    font-family: "Matemasie", sans-serif;
+    font-size: 30px;
+}
+#caption{
+    position: absolute;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:rgb(248, 51, 51);
+    font-size: medium;
+    width: 100%;
+    text-align: center;
+}
+
+.note{
+    font-size: 15px;
+}
+
+.pressed{
+    box-shadow: 0px 3px 3px 0px black;
+    opacity: 0.5;
+}
+
+.drum{
+    color : rgb(244, 46, 46);
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    height : 100px;
+    width : 100px;
+    margin : 15px;
+    border : solid rgb(248, 51, 51) 5px;
+    border-radius: 15px;
+}
+
+footer{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top : 500px;
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.w{
+    background-image: url("./tom1.png");
+}
+
+.a{
+    background-image: url("./tom2.png");
+}
+
+.s{
+    background-image: url("./tom3.png");
+}
+
+.d{
+    background-image: url("./tom4.png");
+}
+
+.j{
+    background-image: url("./snare.png");
+}
+
+.k{
+    background-image: url("./crash.png");
+}
+
+.l{
+    background-image: url("./kick.png");
+}
+
+@media (max-width: 520px){
+    footer{
+        position: absolute;
+        top: 625px;
+    }
+}
+
+@media (max-width: 417px){
+    footer{
+        position: absolute;
+        top: 675px;
+    }
+}
+
+@media (max-width: 280px){
+    footer{
+        position: absolute;
+        top: 1111px;
+    }
+}

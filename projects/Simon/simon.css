@@ -1,0 +1,142 @@
+html{
+    background-color: rgb(146, 78, 195);
+}
+
+#title{
+    width: 100%;
+    text-align: center;
+    font-family: cursive;
+    font-weight: 900;
+    font-size: 50px;
+    color: rgb(15, 8, 119);
+    text-shadow: 3px 3px 3px  rgb(237, 216, 216);
+    margin-top: 35px;
+    margin-bottom: 0px;
+}
+
+.levels{
+    text-align: center;
+    font-size: 25px;
+    color: rgb(5, 31, 103);
+}
+
+.count{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    font-size: 30px;
+    font-family: monospace;
+}
+
+.container{
+    display : grid;
+    grid-template-rows: repeat(2, 200px);
+    grid-template-columns: repeat(2, 200px);
+    gap: 50px;
+    margin-top: 65px;
+    justify-content: center;
+}
+
+.box{
+    background-color: rgb(146, 78, 195);
+    border: 10px solid rgb(15, 8, 119);
+    border-radius: 100px;
+}
+
+.one{
+    background-color: red;
+}
+
+.two{
+    background-color: green;
+}
+
+.three{
+    background-color: yellow;
+}
+
+.four{
+    background-color: blue;
+}
+
+.replay{
+    font-size: 15px;
+    color: white;
+    background-color: rgb(15, 8, 119);
+    border: 0px solid;
+    border-radius: 5px;
+    position: absolute;
+    padding: 5px 10px;
+    top: 10px;
+    left: 10px;
+}
+
+.dropdown{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+
+
+.instruct{
+    font-size: 15px;
+    color: white;
+    background-color: rgb(15, 8, 119);
+    border: 0px solid;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.instruct:hover, .replay:hover{
+    color: rgb(15, 8, 119);
+    background-color: white;
+}
+
+.up{
+    display: none;
+}
+
+.down{
+    width: 250px;
+    text-align: start;
+}
+
+.wrong{
+    background-color: red;
+}
+
+@media (max-width: 500px){
+    .container{
+        grid-template-rows: repeat(2, 150px);
+        grid-template-columns: repeat(2, 150px);
+        gap: 35px;
+    }
+}
+
+@media (max-width: 335px){
+    #title{
+        font-size: 40px;
+    }
+    .container{
+        grid-template-rows: repeat(2, 120px);
+        grid-template-columns: repeat(2, 120px);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 270px){
+    #title{
+        font-size: 30px;
+    }
+    .levels{
+        font-size: 20px;
+    }
+    .container{
+        grid-template-rows: repeat(2, 105px);
+        grid-template-columns: repeat(2, 105px);
+        gap: 12px;
+    }
+    .box{
+        border: 7px solid rgb(15, 8, 119);
+    }
+}

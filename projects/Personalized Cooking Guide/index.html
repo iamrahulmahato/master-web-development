@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Personalized Recipe Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Personalized Recipe Generator</h1>
+        <form id="recipeForm">
+            <label for="ingredient">Favorite Ingredient:</label>
+            <input type="text" id="ingredient" required>
+            <label for="diet">Dietary Preference:</label>
+            <select id="diet">
+                <option value="">--Select a diet--</option>
+                <option value="vegan">Vegan</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="gluten-free">Gluten-Free</option>
+                <option value="none">None</option>
+            </select>
+            <button type="submit">Generate Recipe</button>
+        </form>
+        <div id="recipe" class="recipe"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

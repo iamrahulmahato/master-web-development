@@ -1,0 +1,899 @@
+
+.navbar{
+    margin-top: 0%;
+    width: 1513px;
+    height: 40px;
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    text-decoration: none;
+    background-color: #ffffff;
+    font-family:sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;                              
+}
+
+.logo img{
+    height:38px;
+
+}
+.logo strong{
+    color: #5D12D2;
+}
+.navbar .homebutton{
+    padding-left: 540px;
+
+}
+.navbar a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 15px;
+    color: #000;
+    
+}
+.navbar a:hover{
+    color: rgb(255, 0, 0);
+}
+.navbar a::after{
+    content: '';
+    display: flex;
+    width: 0; 
+    height: 2px;
+    background: #f30808;
+    transition: width 0.3s ease;
+ 
+ }
+ .navbar a:hover::after{
+    width: 100%;
+ }
+ .main-headers{
+    display: flex;
+ }
+ .main-headers a{
+    padding-left: 50px;
+ }
+ .homeheading{
+    padding-top: 0px;
+    background-color: #78D6C6;
+    height: 40px;
+ }
+ .home2{
+    background-color: aquamarine;
+    height: 30px;
+ }
+ .home3 {
+    background-image: url(duck.jpg);
+    background-size: 1513px 800px;
+    width: 1513px;
+    height: 800px;
+    padding-top: 0px;
+    margin-top: 0px;
+
+
+    }
+    .home4 {
+        background-image: url(aniam3.jpg);
+        background-size: 1513px 800px;
+        width: 1513px;
+        height: 800px;
+        padding-top: 0px;
+        margin-top: 0px;
+    
+    
+        }
+        .home5 {
+            background-image: url(anima3.jpg);
+            background-size: 1513px 800px;
+            width: 1513px;
+            height: 800px;
+            padding-top: 0px;
+            margin-top: 0px;
+            }
+            .home6 {
+                background-image: url(anima5.jpg);
+                background-size: 1513px 800px;
+                width: 1513px;
+                height: 800px;
+                padding-top: 0px;
+                margin-top: 0px;
+                }
+
+  .dive h4{
+    font-size: 40px;
+    padding-top: 120px;
+    padding-left: 320px;
+ }   
+   
+   
+
+ 
+  h1{
+    font-size: 60px;
+    color: #419197;
+    padding-left: 400px;
+ }
+ .foot{
+    padding-top: 1px;
+    height: AUTO;
+    width: 1513px;
+    line-height: 0.2;
+    font-size: 15px;
+    background-color: #dce6e8;
+    padding-bottom:1px;
+ }
+.foot p{
+    font-size: 15px;
+    padding-left: 600px;
+    font-family: Rubik,Playfair Display,sans-serif;
+}
+.foot .design{
+    color: #000;
+}
+.foot .powered{
+    color: #475569;
+}
+ 
+ 
+ .searchbar{
+    padding-top: 50px;
+ }
+ #searchbar{
+    height: 20px;
+    width: 500px;
+    color: #f20000;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-display:initial;
+   
+ }
+ .search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: auto;
+    background-color:#7fffd4;
+ }
+
+ .animal-list{
+    display: flex;
+    width: auto;
+    height: auto;
+   
+ }
+ .animal-list h5{
+    font-size: 25px;
+    padding-left: 27px;
+    padding-bottom: 0%;
+ }
+ .listing{
+    display:block;
+    height: auto;
+    width: auto;
+    border: 2px;
+ }
+ .animal-name a{
+    color: #807a79;
+    text-decoration: none;
+ }
+ .animal-name a:hover{
+    color:red;
+    border-bottom: solid;
+    
+ }
+ .mammals{
+    padding-top: 100px;
+    font-size: 50px;
+ }
+ .birds{
+    padding-top: 100px;
+    font-size: 50px;
+ }
+ .reptiles{
+    padding-top: 100px;
+    font-size: 50px;
+ }
+ .fish{
+    padding-top: 100px;
+    font-size: 50px;
+ }
+ .amphibians{
+    padding-top: 100px;
+    font-size: 50px;
+ }
+ .box-portion{
+    padding-top: 30px;
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: space-evenly;
+ }
+ .box{
+    height: 400px;
+    width: 300px;
+    border-width: 5px;
+    border-style:solid;
+    border-top-color: #419197;
+    border-right-color:#419197;
+    border-bottom-color:#78D6C6;
+    border-left-color:#78D6C6;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    transition-property: transform;
+    transition-duration: 0.5s;
+   
+ }
+ 
+
+.box:hover {
+   transform:scale(1.1);
+   animation-name: rotate; 
+   animation-duration: 2s; 
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+  /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;*/
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+@keyframes rotate {
+     0%{
+       border-top-color:#5D12D2;
+       border-right-color: #B931FC;
+       border-bottom-color: #FF6AC2;
+       border-left-color: #FFE5E5;
+
+     }
+    25% { 
+        border-top-color:#FFE5E5;
+        border-right-color: #5D12D2;
+        border-bottom-color: #B931FC;
+        border-left-color: #FF6AC2;
+    }
+    50%{
+        border-top-color:#FF6AC2;
+        border-right-color: #FFE5E5;
+        border-bottom-color: #5D12D2;
+        border-left-color: #B931FC;
+    }
+    100%{
+        border-top-color:#B931FC;
+        border-right-color: #FF6AC2;
+        border-bottom-color: #FFE5E5;
+        border-left-color: #5D12D2;
+    }
+}
+.about{
+    padding-top: 270px;
+    height: 140px;
+    width: 300px;
+    position:relative;
+
+   
+}
+.heading{
+    position:absolute;
+    height: 130px;
+    background-color: #00000099;
+    line-height: 18px;
+}
+
+ .heading h3{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    padding-bottom:0% ;
+    color: #fff;
+    padding-left: 40px;
+    line-height: 18px;
+
+}
+ .heading p{
+    font-size:14px;
+    color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 18px;
+
+}
+
+
+#African-Wildcat{
+    height: 400px;
+    background-image: url(African-wildcat.jpg);
+    background-size:300px 400px;
+    
+}
+#Asian-Elephant{
+    height: 400px;
+    background-image: url(Asian-Elephant.jpg);
+    background-size:300px 400px;
+    
+}
+#Asian-House-Shrew{
+    height: 400px;
+    background-image: url(Asian-House-Shrew.webp);
+    background-size:300px 400px;
+    
+}
+#Asian-Long-Tailed{
+    height: 400px;
+    background-image: url(Asian-Long-Tailed.jpg);
+    background-size:300px 400px;
+    
+}
+#Asian-Palm-Civet{
+    height: 400px;
+    background-image: url(Asian-Palm-Civet.webp);
+    background-size:300px 400px;
+    
+}
+#Black-Beared-Tomb-Bat{
+    height: 400px;
+    background-image: url(Black-Beared-Tomb-Bat.jpg);
+    background-size:300px 400px;
+    
+}
+#Black-Buck{
+    height: 400px;
+    background-image: url(Black-Buck.webp);
+    background-size:300px 400px;
+    
+}
+#Black-Rat{
+    height: 400px;
+    background-image: url(Black-Rat.jpg);
+    background-size:300px 400px;
+    
+}
+#Blyths-Bat{
+    height: 400px;
+    background-image: url(Blyths-Bat.jpeg);
+    background-size:300px 400px;
+    
+}
+#Brown-Rat{
+    height: 400px;
+    background-image: url(Brown-Rat.jpg);
+    background-size:300px 400px;
+    
+}
+#Chital{
+    height: 400px;
+    background-image: url(Chital.jpg);
+    background-size:300px 400px;
+    
+}
+#Common-Mouse{
+    height: 400px;
+    background-image: url(Common-Indian-field-mouse.jpg);
+    background-size:300px 400px;
+    
+}
+#Domestic-Cat{
+    height: 400px;
+    background-image: url(Domestic-Cat.jpg);
+    background-size:300px 400px;
+    
+}
+#Domestic-Cattle{
+    height: 400px;
+    background-image: url(Domestic-Cattle.webp);
+    background-size:300px 400px;
+    
+}
+#Domestic-Dog{
+    height: 400px;
+    background-image: url(Domestic-Dog.jpg);
+    background-size:300px 400px;
+    
+}
+#Domestic-Goat{
+    height: 400px;
+    background-image: url(Domestic-Goat.jpg);
+    background-size:300px 400px;
+    
+}
+#Domestic-Horse{
+    height: 400px;
+    background-image: url(Domestic-Horse.jpeg);
+    background-size:300px 400px;
+    
+}
+#Domestic-Sheep{
+    height: 400px;
+    background-image: url(Domestic-Sheep.webp);
+    background-size:300px 400px;
+    
+}
+#Domestic-Water-Buffello{
+    height: 400px;
+    background-image: url(Domestic-Water-Buffello.jpg);
+    background-size:300px 400px;
+    
+}
+#Dormers-Bat{
+    height: 400px;
+    background-image: url(Dormers-Bat.jpg);
+    background-size:300px 400px;
+    
+}
+#Dromedary-Camel{
+    height: 400px;
+    background-image: url(Dromedary-Camel.webp);
+    background-size:300px 400px;
+    
+}
+#European-Rabbit{
+    height: 400px;
+    background-image: url(European-Rabbit.jpg);
+    background-size:300px 400px;
+    
+}
+#Five-Stripped-Palm-Squirrel{
+    height: 400px;
+    background-image: url(Five-Stripped-Palm-Squirrel.webp);
+    background-size:300px 400px;
+    
+}
+#Four-Horned-Entelope{
+    height: 400px;
+    background-image: url(Four-Horned-Entelope.jpg);
+    background-size:300px 400px;
+    
+}
+#Gaur{
+    height: 400px;
+    background-image: url(Gaur.jpg);
+    background-size:300px 400px;
+    
+}
+#Gray-Wolf{
+    height: 400px;
+    background-image: url(Gray-Wolf.avif);
+    background-size:300px 400px;
+    
+}
+#Horsfields-Bats{
+    height: 400px;
+    background-image: url(Horsfields-Bats.webp);
+    background-size:300px 400px;
+    
+}
+#House-Mouse{
+    height: 400px;
+    background-image: url(House-Mouse.jpg);
+    background-size:300px 400px;
+    
+}
+#Indian-Chevarotain{
+    height: 400px;
+    background-image: url(Indian-Chevarotain.jpeg);
+    background-size:300px 400px;
+    
+}
+#Indian-Crested-Porcupine{
+    height: 400px;
+    background-image: url(Indian-Crested-Porcupine.jpg);
+    background-size:300px 400px;
+    
+}
+#Indian-Flying-Fox{
+    height: 400px;
+    background-image: url(Indian-Flying-Fox.jpg);
+    background-size:300px 400px;
+    
+}
+#Indian-Gazelle{
+    height: 400px;
+    background-image: url(Indian-Gazelle.jpg);
+    background-size:300px 400px;
+    
+}
+#Indian-Giant-Squirrel{
+    height: 400px;
+    background-image: url(Indian-Giant-Squirrel.jpg);
+    background-size:300px 400px;
+    
+}
+#Indian-Gray-Mongoose{
+    height: 400px;
+    background-image: url(Indian-Gray-Mongoose.JPG);
+    background-size:300px 400px;
+    
+}
+#Indian-Pengolin{
+    height: 400px;
+    background-image: url(Indian-Pengolin.jpg);
+    background-size:300px 400px;
+    
+}
+#Madras-Treeshrew{
+    height: 400px;
+    background-image: url(Madras-Treeshrew.jpg);
+    background-size:300px 400px;
+    
+}
+#Nilgai{
+    height: 400px;
+    background-image: url(Nilgai.jpg);
+    background-size:300px 400px;
+    
+}
+#Northern-Plain-Gray-Langur{
+    height: 400px;
+    background-image: url(Northern-Plain-Gray-Langur.jpg);
+    background-size:300px 400px;
+    
+}
+#Northern-Red-Muntjac{
+    height: 400px;
+    background-image: url(Northern-Red-Muntjac.jpeg);
+    background-size:300px 400px;
+    
+}
+#Red-Fox{
+    height: 400px;
+    background-image: url(Red-Fox.jpg);
+    background-size:300px 400px;
+    
+}
+#Rhesus-Macaque{
+    height: 400px;
+    background-image: url(Rhesus-Macaque.jpg);
+    background-size:300px 400px;
+    
+}
+#Sloth-Bear{
+    height: 400px;
+    background-image: url(Sloth-Bear.avif);
+    background-size:300px 400px;
+    
+}
+#Small-Indian-Civet{
+    height: 400px;
+    background-image: url(Small-Indian-Civet.jpg);
+    background-size:300px 400px;
+    
+}
+#Smooth-Coated-Otter{
+    height: 400px;
+    background-image: url(Smooth-Coated-Otter.webp);
+    background-size:300px 400px;
+    
+}
+#Stripped-Hyana{
+    height: 400px;
+    background-image: url(Stripped-Hyana.jpg);
+    background-size:300px 400px;
+    
+}
+#Tiger{
+    height: 400px;
+    background-image: url(Tiger.jpg);
+    background-size:300px 400px;
+    
+}
+#Wild-Bear{
+    height: 400px;
+    background-image: url(Wild-Bear.jpg);
+    background-size:300px 400px;
+    
+}
+#Wild-water-Buffello{
+    height: 400px;
+    background-image: url(Wild-Water-Buffello.webp);
+    background-size:300px 400px;
+    
+}
+
+
+
+
+#R-Asian-House-Gecko{
+    height: 400px;
+    background-image: url(R-Asian-House-Gecko.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Banded-Krait{
+    height: 400px;
+    background-image: url(R-Banded-Krait.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Banded-kukri-Snake{
+    height: 400px;
+    background-image: url(R-Banded-Kukri-Snake.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Banded-Racer{
+    height: 400px;
+    background-image: url(R-Banded-Racer.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Bark-Gecko{
+    height: 400px;
+    background-image: url(R-Bark-Gecko.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Barred-Wolf-Snake{
+    height: 400px;
+    background-image: url(R-Barred-Wolf-Snake.jpeg);
+    background-size:300px 400px;
+    
+}
+#R-Beaked-Blind-Snake{
+    height: 400px;
+    background-image: url(R-Beaked-Blind-Snake.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Bengal-Monitor{
+    height: 400px;
+    background-image: url(R-Bengal-Monitor.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Black-Headed-Snake{
+    height: 400px;
+    background-image: url(R-Black-Headed-Snake.webp);
+    background-size:300px 400px;
+    
+}
+#R-Blanfords-Rock-Agama{
+    height: 400px;
+    background-image: url(R-Blanfords-Rock-Agama.jpeg);
+    background-size:300px 400px;
+    
+}
+#R-Brahminy-Blind-Snake{
+    height: 400px;
+    background-image: url(R-Brahminy-Blind-Snake.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Bronze-Mabuya{
+    height: 400px;
+    background-image: url(R-Bronze-Mabuya.jpeg);
+    background-size:300px 400px;
+    
+}
+#R-Brooks-House-Gecko{
+    height: 400px;
+    background-image: url(R-Brooks-House-Gecko.jpeg);
+    background-size:300px 400px;
+    
+}
+#R-Buff-Striped-Keelback{
+    height: 400px;
+    background-image: url(R-Buff-Striped-Keelback.jpeg);
+    background-size:300px 400px;
+    
+}
+#R-Chequered-Keelback{
+    height: 400px;
+    background-image: url(R-Chequered-Keelback.jpeg);
+    background-size:300px 400px;
+    
+}
+#R-Clouded-Bent-Toed-Gecko{
+    height: 400px;
+    background-image: url(R-Clouded-Bent-Toed-Gecko.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Common-Bamboo-Viper{
+    height: 400px;
+    background-image: url(R-Common-Bamboo-Viper.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Common-Bronzeback{
+    height: 400px;
+    background-image: url(R-Common-Bronzeback.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Common-Cat-Snake{
+    height: 400px;
+    background-image: url(R-Common-Cat-Snake.jpeg);
+    background-size:300px 400px;
+    
+}
+#R-Common-Dotted-Garden-Skink{
+    height: 400px;
+    background-image: url(R-Common-Dotted-Garden-Skink.jpeg);
+    background-size:300px 400px;
+    
+}
+#R-Common-krait{
+    height: 400px;
+    background-image: url(R-Common-krait.webp);
+    background-size:300px 400px;
+    
+}
+#R-Common-Leopard-Gecko{
+    height: 400px;
+    background-image: url(R-Common-Leopard-Gecko.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Common-Water-Monitor{
+    height: 400px;
+    background-image: url(R-Common-Water-Monitor.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Diards-Blind-Snake{
+    height: 400px;
+    background-image: url(R-Diards-Blind-Snake.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Dutta-Mahendragiri-Gecko{
+    height: 400px;
+    background-image: url(R-Dutta-Mahendragiri-Gecko.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Elliot-Earth-Snake{
+    height: 400px;
+    background-image: url(R-Elliot-Earth-Snake.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Flat-Tailed-House-Gecko{
+    height: 400px;
+    background-image: url(R-Flat-Tailed-House-Gecko.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Forstens-Cat-Snake{
+    height: 400px;
+    background-image: url(R-Forstens-Cat-Snake.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Golden-Tree-Snake{
+    height: 400px;
+    background-image: url(R-Golden-Tree-Snake.webp);
+    background-size:300px 400px;
+    
+}
+#R-Green-Keelback{
+    height: 400px;
+    background-image: url(R-Green-Keelback.jpeg);
+    background-size:300px 400px;
+    
+}
+#R-Hardwickes-Bloodsucker{
+    height: 400px;
+    background-image: url(R-Hardwickes-Bloodsucker.jpeg);
+    background-size:300px 400px;
+    
+}
+#R-Indian-Black-Turtle{
+    height: 400px;
+    background-image: url(R-Indian-Black-Turtle.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Indian-Chameleon{
+    height: 400px;
+    background-image: url(R-Indian-Chameleon.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Indian-Cobra{
+    height: 400px;
+    background-image: url(R-Indian-Cobra.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Indian-Egg-Eater{
+    height: 400px;
+    background-image: url(R-Indian-Egg-Eater.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Indian-Flapshell-Turtle{
+    height: 400px;
+    background-image: url(R-Indian-Flapshell-Turtle.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Indian-Python{
+    height: 400px;
+    background-image: url(R-Indian-Python.jpeg);
+    background-size:300px 400px;
+    
+}
+#R-Indian-Star-Tortoise{
+    height: 400px;
+    background-image: url(R-Indian-Star-Tortoise.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Indian-Wolf-Snake{
+    height: 400px;
+    background-image: url(R-Indian-Wolf-Snake.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Jerdons-Snake-Eye{
+    height: 400px;
+    background-image: url(R-Jerdons-Snake-Eye.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Kanger-Valley-Rock-Gecko{
+    height: 400px;
+    background-image: url(R-Kanger-Valley-Rock-Gecko.jpg);
+    background-size:300px 400px;
+    
+}
+#R-Kanker-Rock-Gecko{
+    height: 400px;
+    background-image: url(R-Kanker-Rock-Gecko.jpg);
+    background-size:300px 400px;
+    
+}
+#R-King-Cobra{
+    height: 400px;
+    background-image: url(R-King-Cobra.avif);
+    background-size:300px 400px;
+    
+}
+
+
+
+
+
+
+
+
+.top-page {
+    display: grid;
+    grid-template-columns: auto 0px; 
+  }
+  .container-top {
+    --offset: 100px;
+    --fade: 120px;
+    
+    display: flex;
+    width: 60px;
+    justify-self: end;
+    justify-content: flex-end;
+    align-items: flex-end;
+    -webkit-mask:linear-gradient(#0000 calc(100vh + var(--offset)),#000 calc(100vh + var(--offset) + var(--fade)));
+  }
+  
+  .top {
+    position: sticky;
+    bottom: 20px;      
+    margin-right:10px; 
+    
+    /* visual styling */
+    width:100%;
+    aspect-ratio:1;
+    background:#ff0303;
+    border-radius:10px;
+  }
+  .top:before {
+    content:"";
+    position:absolute;
+    inset:30%;
+    transform:translateY(20%) rotate(-45deg);
+    border-top:5px solid #fff;
+    border-right:5px solid #fff;
+  }
+  
+  p {
+    font-size: 25px;
+  }
+  
+  /* remove the below if you don't want smooth scrolling */
+  

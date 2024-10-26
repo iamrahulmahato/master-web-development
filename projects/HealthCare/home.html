@@ -1,0 +1,263 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> WeCare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+
+  <style>
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            color: black;
+            margin-top: 0;
+            margin-left: 2px;
+        }
+
+        .myimg {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 25px;
+        }
+        .navbar{
+            background-color: #006d77;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg " >
+        <div class="container-fluid">
+            <!-- Logo at the top-left corner -->
+            <div class="logo">
+                <img src="logo.jpg" alt="logo" class="myimg">
+            </div>
+
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html" style="color:#edf6f9">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html" style="color:#edf6f9">Diagnosis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html" style="color:#edf6f9">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html" style="color:#edf6f9">Contact</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html" style="color:#edf6f9">Blog</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" style="color:#edf6f9">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+
+
+<!-- Optional: Add some custom styles for the timeline -->
+<style>
+    .timeline {
+        list-style: none;
+        padding: 0;
+    }
+
+    .timeline li {
+        margin: 20px 0;
+    }
+
+    .timeline h5 {
+        margin: 0;
+        font-weight: bold;
+    }
+    .tag-line{
+      position: absolute;
+      top: 40%;
+      left: 10%;
+      color: black;
+      font-size: 4rem;
+      font-weight: bold;
+   }
+   .img-section{
+      position: absolute;
+      top: 30%;
+      right: 10%; 
+      height: 80px;
+      width: 315px; 
+   }
+   .text-bg-info{
+      background-color: rgb(48, 91, 159) !important;
+      color: white !important;
+      font-size: 2rem !important; 
+      text-align: center;
+      font-weight: bold;
+   }
+  /* Base Styles */
+.fact {
+    background-color: #f0f8ff; /* Light blue background */
+    border-left: 5px solid #4caf50; /* Green left border */
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 10px;
+    max-width: 100%; /* Responsive width */
+    width: 100%; /* Ensure it takes full width */
+    box-sizing: border-box; /* Ensure padding/border are included in the width */
+    overflow: hidden;
+}
+
+.fact h4 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.fact p {
+    color: #555;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Hover effects to make the facts interactive */
+.fact:hover {
+    transform: scale(1.02); /* Slight zoom */
+    background-color: #e6f7ff; /* Slightly darker blue on hover */
+}
+
+/* Add icon or background image (optional for visual) */
+.fact::before {
+    content: "💡"; /* Lightbulb icon */
+    font-size: 1.5rem;
+    color: #4caf50;
+    margin-right: 10px;
+}
+
+/* Additional hover effect on heading */
+.fact h4:hover {
+    color: #4caf50;
+    cursor: pointer;
+}
+
+/* Make the left border change on hover */
+.fact:hover {
+    border-left-color: #ff9800; /* Change border color to orange */
+}
+
+/* Animation on load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fact {
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .fact {
+        padding: 10px;
+        margin: 15px 0;
+    }
+
+    .fact h4 {
+        font-size: 1.1rem; /* Adjust heading size */
+    }
+
+    .fact p {
+        font-size: 0.9rem; /* Adjust paragraph size */
+    }
+}
+
+@media (max-width: 480px) {
+    .fact {
+        padding: 8px;
+        margin: 10px 0;
+        border-left-width: 3px; /* Thinner border for mobile */
+    }
+
+    .fact h4 {
+        font-size: 1rem; /* Smaller heading for mobile */
+    }
+
+    .fact p {
+        font-size: 0.85rem; /* Smaller paragraph text */
+    }
+
+    .fact::before {
+        font-size: 1.2rem; /* Smaller icon */
+    }
+}
+</style>
+<img src="home-bgimg.jpg" alt="" height="520px" width="100%" margin-left="2px" padding="4px"> 
+
+
+<div class="tag-line">
+   <p><h1>Disease is Smart,</h1></p>
+   <p><h1>We can be SMARTER.</h1></p>
+</div>
+<div class="img-section">
+   <img src="healthcare.jpg" alt="" height="220px" width="100%" margin-left="2px" padding="4px"> 
+</div>
+<div class="text-bg-info p-4">DO YOU KNOW?</div>
+<div class="fact">
+   <h4><STRONG>1. Drinking a cup of coffee can reduce feelings of depression.</STRONG></h4>
+      <p>Feeling a little down in the morning? One study found that a cup of coffee can boost your mood and lower your risk of depression. But don’t go for the decaf. You need caffeine for this effect.</p>
+</div>
+<div class="fact">
+   <h4><STRONG>2. Owning a dog may reduce heart disease risk.</STRONG></h4>
+      <p>The American Heart Association says owning pets improves mental health and may lower blood pressure and cholesterol levels, lowering your risk for heart disease.</p>
+</div>
+<div class="fact">
+   <h4><STRONG>3. Stress increases your risk of type 2 diabetes.</STRONG></h4>
+      <p>You may already know that stress can increase your heart disease risk, but it also increases your risk of developing type 2 diabetes due to cortisol level increases. Cortisol increases blood sugar levels.</p>
+</div>
+<div class="fact">
+   <h4><STRONG>4.  The body can produce enough heat in just half an hour to boil water.</STRONG></h4>
+      <p>Each hour, the human body creates 350,000 joules of energy, which creates the same amount of energy as a 100-watt light bulb. This ends up being enough heat to boil a half gallon of water in just 30 minutes.
+
+      </p>
+</div>
+<div class="fact">
+   <h4><STRONG>5. Humans are the only animals who cry due to emotion.</STRONG></h4>
+      <p>You may see tears in other animals, but they don’t stem from emotions. That’s a human trait.</p>
+</div>
+<div class="fact">
+   <h4><STRONG>6. Your nose has a superpower.</STRONG></h4>
+      <p>The average human nose can remember 50,000 different smells. While a dog’s nose may be more powerful, that number’s still impressive.</p>
+</div>
+<div class="fact">
+   <h4><STRONG>7. Your brain is powerful.</STRONG></h4>
+      <p>The brain operates on 12 to 25 watts, which is enough power to light an LED light bulb.</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+      
+
+</body>
+
+</html>

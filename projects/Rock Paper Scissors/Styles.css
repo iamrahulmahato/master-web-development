@@ -1,0 +1,135 @@
+        /* General body styling */
+        body {
+          background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+          font-family: "Arial", sans-serif;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+          overflow: hidden;
+      }
+
+      h1 {
+          font-size: 2.5rem;
+          text-align: center;
+          margin-top: 0;
+          color: #333;
+      }
+
+      p {
+          font-size: 1.3rem;
+          font-weight: 600;
+          text-align: center;
+          margin-bottom: 0.5rem;
+          color: #333;
+      }
+
+      /* Button and flex layout */
+      .buttons, .computer-buttons {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 1.5rem;
+      }
+
+      button {
+          border: none;
+          font-size: 3rem;
+          margin: 0 1rem;
+          padding: 0.5rem;
+          cursor: pointer;
+          border-radius: 50%;
+          transition: all 0.3s ease-in-out;
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+          background-color: #fff;
+          color: #333;
+          position: relative;
+      }
+
+      button:hover {
+          transform: scale(1.15);
+          box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      button:active {
+          transform: scale(1.05);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Specific button colors */
+      #rock {
+          background-color: #f44336;
+          color: #fff;
+      }
+
+      #paper {
+          background-color: #2196f3;
+          color: #fff;
+      }
+
+      #scissors {
+          background-color: #4caf50;
+          color: #fff;
+      }
+
+      /* Score styling */
+      #user-score, #computer-score {
+          font-size: 2rem;
+          transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      /* Animation on score change */
+      .score-animate {
+          transform: scale(1.3);
+          color: #ffd700;
+      }
+
+      /* Result message styling */
+      #result {
+          font-size: 1.4rem;
+          text-align: center;
+          margin-top: 20px;
+          opacity: 0;
+          transition: opacity 0.5s ease-in-out;
+      }
+
+      #round-number {
+          font-size: 1.7rem;
+          margin-bottom: 1rem;
+          animation: zoomIn 0.5s ease;
+      }
+
+      @keyframes zoomIn {
+          0% { transform: scale(0.5); opacity: 0; }
+          100% { transform: scale(1); opacity: 1; }
+      }
+
+      /* Result animation */
+      .fade-in {
+          opacity: 1;
+      }
+
+      /* Computer button glow effect */
+      .glow {
+          box-shadow: 0 0 10px 3px #ffd700;
+      }
+
+      /* Reset button styling */
+      #reset-button {
+          display: block;
+          margin: 20px auto;
+          padding: 10px 20px;
+          font-size: 1rem;
+          background-color: #ff9800;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+      }
+
+      #reset-button:hover {
+          background-color: #e68900;
+      }
