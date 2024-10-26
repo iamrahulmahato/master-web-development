@@ -1,0 +1,89 @@
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  width: 400px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  box-shadow: inset 5px 5px 10px #d9d9d9, inset -5px -5px 10px #ffffff;
+}
+
+button {
+  padding: 15px 30px;
+  background: linear-gradient(145deg, #9b59b6, #8e44ad); /* Purple button */
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 8px 8px 16px #6d3981, -8px -8px 16px #b47bd6; /* Purple shadows */
+  position: relative;
+  overflow: hidden;
+}
+
+button:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s;
+}
+
+button:hover {
+  background-color: #8e44ad; /* Slightly darker purple on hover */
+  transform: translateY(-3px);
+  box-shadow: 12px 12px 24px #6d3981, -12px -12px 24px #b47bd6;
+}
+
+button:hover:before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#emojiOutput {
+  margin-top: 20px;
+  font-size: 2rem;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: inset 5px 5px 10px #d9d9d9, inset -5px -5px 10px #ffffff;
+  height: 100px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}

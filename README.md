@@ -26,6 +26,15 @@
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/iamrahulmahato/master-web-development?style=social">
 </div>
 
+## 📚 Table of Contents
+- [⚡️ Introduction](#introduction)
+- [💯 Open Source Programs](#open-source-programs)
+- [🎯 All Projects](#all-projects)
+- [🚀 Getting Started](#getting-started)
+- [🛠️ Git Instructions](#git-instructions)
+- [❤️ Contributors](#contributors)
+- [📜 Code of Conduct](#code-of-conduct)
+
 ## ⚡️  Introduction
 This repository contains frontend projects that will help you to become an ace Frontend Developer.
 
@@ -142,7 +151,36 @@ The list of projects are given below -
 [ 89- Zombie Attack Game](https://masterwebdevelopment.netlify.app/projects/Stick%20Hero/index.html)  
 [ 90- Zero Line Game](https://masterwebdevelopment.netlify.app/projects/Zero%20Line%20Game/index.html) 
 
+<div align = "center">
+<br>
 
+<table align="center">
+    <thead align="center">
+        <tr border: 1px;>
+            <td><b>🌟 Stars</b></td>
+            <td><b>🍴 Forks</b></td>
+            <td><b>🐛 Issues</b></td>
+            <td><b>🔔 Open PRs</b></td>
+            <td><b>🔕 Close PRs</b></td>
+            <td><b>🛠️ Languages</b></td>
+            <td><b>🌐 Contributors </b></td>
+        </tr>
+     </thead>
+  <tbody>
+    <tr>
+        <td><img alt="Stars" src="https://img.shields.io/github/stars/iamrahulmahato/master-web-development?style=flat&logo=github"/></td>
+        <td><img alt="Forks" src="https://img.shields.io/github/forks/iamrahulmahato/master-web-development?style=flat&logo=github"/></td>
+        <td><img alt="Issues" src="https://img.shields.io/github/issues/iamrahulmahato/master-web-development?style=flat&logo=github"/></td>
+        <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/iamrahulmahato/master-web-development?style=flat&logo=github"/></td>
+        <td><img alt="Close Pull Requests" src="https://img.shields.io/github/issues-pr-closed/iamrahulmahato/master-web-development?style=flat&color=critical&logo=github"/></td>
+        <td><img alt="GitHub language count" src="https://img.shields.io/github/languages/count/iamrahulmahato/master-web-development?style=flat&color=critical&logo=github"/></td>
+        <td><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/iamrahulmahato/master-web-development?color=2b9348"/></td>
+    </tr>
+</tbody>
+
+</table>
+</div>
+<br>
 
 <center><h1 align="center">Getting Started  </h1></center>
 
@@ -154,7 +192,14 @@ Refer to the following articles on the basics of Git and Github in case you are 
 - [Cloning a Repo](https://help.github.com/en/desktop/contributing-to-projects/creating-a-pull-request)
 - [How to create a Pull Request](https://opensource.com/article/19/7/create-pull-request-github)
 
-<center><h1 align="center"> Contribution </h1></center>
+
+### This project is now OFFICIALLY accepted for
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/SwanandD121/FeatherPerfect_fe/refs/heads/main/Untitled%20design.png" alt="GSSoC 2024 Extd" width="80%">
+  <img src="https://cdn.discordapp.com/attachments/657543125190967316/1294560786114674748/Screenshot_2024-10-12_122347.png?ex=670b752f&is=670a23af&hm=26ddd7f41740b8b19ee4985e7568b3892091384b3b85e7165770a4b10f4d1050&" alt="Hacktoberfest 2024" width="80%">
+</div>
+<br>
 
 <div align="center">
 
@@ -205,15 +250,9 @@ git push
 
 * Tip : Complete this process in GitHub ](in your browser)
 
-```mermaid
-flowchart LR
-    Fork[Fork the project-->branch[Create a New Branch
-    branch-->Edit[Edit file
-    Edit-->commit[Commit the changes
-    commit -->|Finally|creatpr](](Create a Pull Request))
-    
- ```
-<br>
+[![](https://mermaid.ink/img/pako:eNpFUMtywjAM_BWNzvADOfRQWk5th0mPCQfhKI_iB1XsYRjg35EdpvVBlrQrraQrmtAxVtjbcDYjSYSPuvWgbxvk2GQDcWQ4SfhhE_ewXr_AQcibsdkIU2Qg-OIzvJbcfqldCIX73k2xyQb6yfITL3FGTXBO8U35ipAO4Qeen8QFz9TbdvJk7eUGpsju6n_9XbIWav5NPEctxBU6FkdTp4tdc6MWtbXjFit1O5Jji62_K49SDN8Xb7CKkniFEtIwYtWTnTVKp04F3iYahNxflnX4IJ_L3cr57g_ewG4o?type=png)](https://mermaid.live/edit#pako:eNpFUMtywjAM_BWNzvADOfRQWk5th0mPCQfhKI_iB1XsYRjg35EdpvVBlrQrraQrmtAxVtjbcDYjSYSPuvWgbxvk2GQDcWQ4SfhhE_ewXr_AQcibsdkIU2Qg-OIzvJbcfqldCIX73k2xyQb6yfITL3FGTXBO8U35ipAO4Qeen8QFz9TbdvJk7eUGpsju6n_9XbIWav5NPEctxBU6FkdTp4tdc6MWtbXjFit1O5Jji62_K49SDN8Xb7CKkniFEtIwYtWTnTVKp04F3iYahNxflnX4IJ_L3cr57g_ewG4o)
+
+
 
 
 <div align="center">
