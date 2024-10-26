@@ -152,18 +152,40 @@
 </head>
 
 <body>
-    <div class="icon">
-        <div class="icon2">
-            <button id="toggle-mode-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 20 20"
-                   
-                    fill="currentColor">
-                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                </svg>
-            </button>
-        </div>
 
-    </div>
+    <!-- MODE TOGGLE code -->
+ <!-- Dark Mode Toggle Button with Icon -->
+ <button class="toggle-button" id="toggle-mode-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+    </svg>
+  </button>
+
+  <script>
+    // Function to toggle dark mode
+    const toggleDarkMode = () => {
+      document.body.classList.toggle('dark-mode');
+      // Save the current mode in localStorage
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    };
+
+    // Check localStorage to apply the saved theme on page load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+
+    // Event listener for the toggle button
+    const toggleButton = document.getElementById('toggle-mode-btn');
+    toggleButton.addEventListener('click', toggleDarkMode);
+  </script>
+
+<!-- MODE TOGGLE code -ends-->
+
 
     <section id="projects">
         <div class="projects-heading">
