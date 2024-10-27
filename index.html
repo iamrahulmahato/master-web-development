@@ -10,6 +10,63 @@
     <link rel="preconnect" href= "https://fonts.googleapis.com" />
     <link rel="preconnect" href= "https://fonts.gstatic.com" crossorigin />
     <link
+<main>
+
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#root {
+    flex: 1;
+}
+
+.follow-us {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto; /* Keep this at the bottom */
+}
+
+.follow-us h2 {
+    color: grey; /* Grey color for the heading */
+    font-size: 28px; /* Increased size for the heading */
+    margin-bottom: 15px; /* Space between heading and icons */
+}
+
+.follow-us a {
+    margin: 0 15px;
+    color: grey; /* Grey color for icons */
+    text-decoration: none;
+}
+
+.follow-us a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+.follow-us a:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+.follow-us img {
+    width: 50px; /* Set logo size */
+    height: 50px;
+    filter: grayscale(100%); /* Grey color for icons */
+    transition: filter 0.3s; /* Smooth transition effect */
+}
+
+.follow-us a:hover img {
+    filter: grayscale(0%); /* Color on hover */
+}</style>
+
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet" />
     <link rel="shortcut icon" href="./assets/image/favicon.png" type="image/x-icon">
@@ -17,6 +74,7 @@
     <link rel="stylesheet" href="./footer.css">
 
 
+</main>
     <title>Master web development</title>
     <link rel="icon" href="./faviconicon.png" type="image/png">
     <style>
@@ -2372,7 +2430,45 @@
             </a>
 
 
+                
+
+    
+<main>
+ <!-- =========================== Recipe Book ================================= -->
+     <a href="./projects/Recipe Book/index.html" class="card" target="_blank">
+        <div class="card-cover counter-cover-colour">
+            <img src="./assets/image/recipe.webp" alt="recipebook">
+        </div>
+        <div class="card-content">
+            <h3 class="card-heading">Recipe Book</h3>
+            <p class="card-description">
+                Gather Delicious Secret Recipes!
+            </p>
+        </div>
+    </a>
+<!-- =========================== ================================= -->
+    </section>
+    <div class="follow-us">
+        <h2>Follow Us</h2>
+        <a href="https://www.linkedin.com/in/berajeevkumar/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" />
+        </a>
+        <a href="https://x.com/be_rajeevkumar" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter Logo" />
+        </a>
+        <a href="https://github.com/beRajeevKumar" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" />
+        </a>
+    </div>
+    <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
+
+            <!-- =========================== Recipe Book ================================= -->
+            <a href="./projects/Recipe Book/index.html" class="card" target="_blank">
+
+            <a href="projects/Tennis Game/index.html" class="card" target="_blank">
+
             <a href="projects/Tennis Game/index.html" class="card Games " target="_blank">
+
                 <div class="card-cover counter-cover-colour">
                     <img src="/assets/image/Tennis game.png" alt="Tennis" style="width: 10rem; height: auto;">
                 </div>
@@ -2422,6 +2518,9 @@
     </div>
 </a>
 
+ 
+          </main>
+
 <!-- =========================== Tower of Hanoi ================================= -->
 <a href="projects/Tower of Hanoi/index.html" class="card Games " target="_blank">
     <div class="card-cover counter-cover-colour">
@@ -2432,6 +2531,7 @@
         <p class="card-description">Solve the classic Tower of Hanoi puzzle.</p>
     </div>
 </a>
+
 
 
 <!-- =========================== Odd Even Game ================================= -->
