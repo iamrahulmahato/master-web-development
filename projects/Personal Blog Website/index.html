@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        #post-list {
+            margin-top: 20px;
+        }
+
+        .post {
+            background: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Personal Blog</h1>
+        <nav>
+            <a href="#posts">Posts</a>
+            <a href="#new-post">New Post</a>
+        </nav>
+    </header>
+    <main>
+        <section id="posts">
+            <h2>Blog Posts</h2>
+            <div id="post-list"></div>
+        </section>
+        <section id="new-post">
+            <h2>Create a New Post</h2>
+            <input type="text" id="post-title" placeholder="Post Title">
+            <textarea id="post-content" placeholder="Post Content"></textarea>
+            <button id="add-post">Add Post</button>
+        </section>
+    </main>
+    <script>
+        const postList = document.getElementById('post-list');
+        const addPostButton = document.getElementById('add-post');
+
+        let posts = [];
+
+        function renderPosts() {
+            postList.innerHTML = '';
+            posts.forEach((post, index) => {
+                const postElement = document.createElement('div');
+                postElement.className = 'post';
+                postElement.innerHTML = `
+                    <h3>${post.title}</h3>
+                    <p>${post.content}</p>
+                    <button onclick="deletePost(${index})">Delete</button>
+                `;
+                postList.appendChild(postElement);
+            });
+        }
+
+        function deletePost(index) {
+            posts.splice(index, 1);
+            renderPosts();
+        }
+
+        addPostButton.addEventListener('click', () => {
+            const title = document.getElementById('post-title').value;
+            const content = document.getElementById('post-content').value;
+            if (title && content) {
+                posts.push({ title, content });
+                document.getElementById('post-title').value = '';
+                document.getElementById('post-content').value = '';
+                renderPosts();
+            }
+        });
+
+        renderPosts();
+    </script>
+</body>
+</html>

@@ -1,29 +1,772 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resizing Methods - Image Resizer</title>
+    <title>Image Resizer</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
+    <style>
+        /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f4f8; /* Light background */
+    color: #333; /* Default text color */
+    line-height: 1.6;
+    padding: 0 20px;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transition for dark mode */
+}
+
+h1, h2, h3 {
+    color:rgb(141, 82, 116); /* Dark text color */
+    margin-bottom: 15px;
+    transition: color 0.5s ease; /* Transition for heading color */
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #3498db; /* Header color */
+    color: white;
+    margin-bottom: 20px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+/* Buttons */
+button {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background-color: #f39c12; /* Button color */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e67e22; /* Button hover color */
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    justify-content: center;
+    background-color: #2980b9; /* Navigation color */
+    padding: 10px;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Transition for link hover */
+    display: flex; /* Added for icon alignment */
+    align-items: center; /* Center the icon and text */
+}
+
+nav ul li a i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+nav ul li a:hover {
+    color: #f1c40f; /* Hover color for links */
+}
+
+/* Main Content */
+main {
+    max-width: 900px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 40px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* User Interaction Form */
+#interaction {
+    background-color: #ecf0f1; /* Light background for the interaction section */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#interaction h2 {
+    color: #2c3e50; /* Dark text color for heading */
+}
+
+#interaction form {
+    background-color: #ffffff; /* Light background for the form */
+    color: #333; /* Dark text color for the form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#interaction form label {
+    color: #333; /* Dark text color for labels */
+}
+
+#interaction form input[type="file"],
+#interaction form select,
+#interaction form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #ffffff; /* Light input background */
+    color: #333; /* Dark input text */
+    border: 1px solid #bdc3c7; /* Light border for visibility */
+    border-radius: 5px;
+}
+
+#interaction form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db; /* Button color */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    transition: background-color 0.5s ease; /* Transition for button hover */
+}
+
+#interaction form button:hover {
+    background-color: #2980b9; /* Button hover color */
+}
+
+/* Feedback Section */
+#feedback {
+    background-color: #f8c471; /* Light orange background for feedback section */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+#contact, #help {
+    margin-bottom: 40px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #2980b9; /* Footer color */
+    color: white;
+    margin-top: 40px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #dcca85; /* Link color in footer */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #2c3e50; /* Dark background */
+    color: #ecf0f1; /* Light text color */
+}
+
+h1.dark-mode, h2.dark-mode, h3.dark-mode {
+    color: #ecf0f1; /* Light text color for headings in dark mode */
+}
+
+#interaction h2.dark-mode {
+    color: #f39c12; /* Bright color for h2 in dark mode for visibility */
+}
+
+#interaction.dark-mode {
+    background-color: #34495e; /* Dark background for the interaction section */
+}
+
+#interaction form {
+    background-color: #2c3e50; /* Dark background for the form */
+    color: #ecf0f1; /* Light text color for the form */
+}
+
+#interaction form label {
+    color: #ecf0f1; /* Light text color for labels */
+}
+
+#interaction form input[type="file"],
+#interaction form select,
+#interaction form input[type="number"] {
+    background-color: #34495e; /* Dark input background */
+    color: #ecf0f1; /* Light input text */
+}
+
+/* Sidebar Styles */
+#settings-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background: white; /* Background color of the sidebar */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow for the sidebar */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000; /* Ensure it appears on top */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+#settings-sidebar.hidden {
+    transform: translateX(100%); /* Slide out when hidden */
+}
+
+/* Close Button Style */
+#close-settings {
+    background-color: #dc3545; /* Red background for close button */
+}
+
+#close-settings:hover {
+    background-color: #c82333; /* Darker red for hover */
+}
+
+/* Theme Switch Button Style */
+#theme-switch {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: #2c3e50; /* Dark background for theme switch */
+    color: #ecf0f1; /* Light text color for theme switch */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#theme-switch:hover {
+    background-color: #34495e; /* Darker shade on hover */
+}
+
+/* Icons Style */
+.icon {
+    margin-right: 5px; /* Space between icon and text */
+
+}
+
+/* Crop Section */
+#crop {
+    border: 2px solid #3498db;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(135, 218, 222);
+    width: 900px;
+    text-align: center;
+}
+
+/* Upload Input */
+#image-upload {
+    margin-bottom: 20px;
+}
+
+/* Drag-and-Drop Area */
+#drop-area {
+    border: 2px dashed #3498db;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Image Display Box */
+#image-container {
+    display: none; /* Hide initially */
+}
+
+#uploaded-image {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Cropped Image Display */
+#cropped-image {
+    border: 2px solid #2ecc71;
+    margin-top: 20px;
+    display: none; /* Hide initially */
+    max-width: 100%;
+}
+.wrapper{
+  width: 450px;
+  height: 288px;
+  padding: 30px;
+  background:white;
+  border-radius: 9px;
+  transition: height 0.2s ease;
+  
+}
+.wrapper.active{
+  height: 537px;
+}
+.wrapper .upload-box{
+  height: 225px;
+
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px dashed #afafaf;
+}
+.wrapper.active .upload-box{
+  border: none;
+}
+.upload-box p{
+  font-size: 1.06rem;
+  margin-top: 20px;
+}
+.wrapper.active .upload-box p{
+  display: none;
+}
+.wrapper.active .upload-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.wrapper .content{
+  opacity: 0;
+  margin-top: 28px;
+  pointer-events: none;
+}
+.wrapper.active .content{
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.5s 0.05s ease;
+}
+.content .row{
+  display: flex;
+  justify-content: space-between;
+}
+.content .row .column{
+  width: calc(100% / 2 - 15px);
+}
+.row .column label{
+  font-size: 1.06rem;
+}
+.sizes .column input{
+  width: 100%;
+  height: 49px;
+  outline: none;
+  margin-top: 7px;
+  padding: 0 15px;
+  font-size: 1.06rem;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+}
+.sizes .column input:focus{
+  padding: 0 14px;
+  border: 2px solid #927DFC;
+}
+.content .checkboxes{
+  margin-top: 20px;
+}
+.checkboxes .column{
+  display: flex;
+  align-items: center;
+}
+.checkboxes .column input{
+  width: 17px;
+  height: 17px;
+  margin-right: 9px;
+  accent-color: #927DFC;
+}
+.content .download-btn{
+  width: 100%;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.06rem;
+  border-radius: 5px;
+  padding: 15px 0;
+  margin: 30px 0 10px;
+  background: #927DFC;
+  text-transform: uppercase;
+}
+/* Toggle Switch Styles */
+label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    color: #3498db;
+}
+
+input[type="checkbox"] {
+    display: none; /* Hide the default checkbox */
+}
+
+.slider {
+    width: 34px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 34px;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.slider:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+/* Change to Dark Mode */
+input[type="checkbox"]:checked + .slider {
+    background-color: #2196F3;
+}
+
+input[type="checkbox"]:checked + .slider:before {
+    transform: translateX(14px);
+}
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+/* Toggle Switch Styles */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Space between the link and the switch */
+}
+
+input[type="checkbox"] {
+    display: none; /* Hide the default checkbox */
+}
+
+.slider {
+    width: 34px;
+    height: 20px;
+    background-color: #ccc; /* Light mode background */
+    border-radius: 34px;
+    position: relative;
+    transition: background-color 0.2s;
+    margin-left: 5px; /* Space between the icon and the switch */
+}
+
+/* Circle inside the toggle switch */
+.slider:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+/* Change to Dark Mode */
+input[type="checkbox"]:checked + .slider {
+    background-color: #2196F3; /* Color of the switch in dark mode */
+}
+
+input[type="checkbox"]:checked + .slider:before {
+    transform: translateX(14px); /* Move the circle to the right */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333; /* Dark mode background */
+    color: white; /* Text color in dark mode */
+}
+
+/* Adjust the toggle switch colors in dark mode */
+body.dark-mode .slider {
+    background-color: #555; /* Background of toggle in dark mode */
+}
+
+body.dark-mode .slider:before {
+    background-color: #fff; /* Circle color in dark mode */
+}
+
+
+
+    </style>
 </head>
+
 <body>
     <header>
         <h1>Image Resizer</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Available Resizing Methods</h2>
-            <p>Our application uses the <strong>LANCZOS</strong> filter to resize images. This filter offers high-quality resizing, particularly effective when reducing image sizes. Below is a brief explanation of the resampling filters available in the Pillow library:</p>
-
+        <nav>
             <ul>
-                <li><strong>NEAREST (Image.NEAREST)</strong>: A simple and fast method that picks the nearest pixel. It produces blocky images.</li>
-                <li><strong>BILINEAR (Image.BILINEAR)</strong>: Uses linear interpolation between pixels, producing smoother images than NEAREST.</li>
-                <li><strong>BICUBIC (Image.BICUBIC)</strong>: Produces higher-quality images than BILINEAR by considering more pixels.</li>
-                <li><strong>LANCZOS (Image.LANCZOS)</strong>: The highest quality filter, particularly good for downscaling images, which we use in this application.</li>
+                <li><a href="#home"><i class="fas fa-home icon"></i>Home</a></li>
+                <li>
+                    <a href="#changetheme" id="theme-toggle">
+                        <i class="fas fa-adjust icon"></i>Change Theme
+                    </a>
+                    <label>
+                        <input type="checkbox" id="theme-switcher">
+                        <span class="slider"></span>
+                    </label>
+                </li>
+                <li><a href="#feedback"><i class="fas fa-comment-dots icon"></i>Feedback</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope icon"></i>Contact</a></li>
+                <li><a href="#help"><i class="fas fa-question-circle icon"></i>Help</a></li>
             </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="instructions">
+            <h2>How to Use the Image Cropper</h2>
+            <ol>
+                <li><strong>Upload an Image:</strong> Click on the "Choose File" or "Upload" button and select an image from your device.</li>
+                <li><strong>Display the Image:</strong> The uploaded image will be displayed on the canvas.</li>
+                <li><strong>Set Crop Dimensions:</strong> Click and drag on the canvas to create a rectangular selection area for cropping.</li>
+                <li><strong>Crop the Image:</strong> Click on the "Crop" button to cut the selected area from the uploaded image.</li>
+                <li><strong>Download the Cropped Image:</strong> Click the "Download" button to save the cropped image to your device.</li>
+                <li><strong>Reset the Canvas:</strong> Click the "Reset" button to clear the canvas and start over.</li>
+            </ol>
+        </section>
+        
+        <section id="crop">
+        <h1>Crop The Image</h1>
+        <div class="wrapper">
+            <div class="upload-box">
+              <input type="file" accept="image/*" hidden>
+              <img src="https://www.codingnepalweb.com/demos/resize-and-compress-image-javascript/upload-icon.svg" alt="">
+              <p>Browse File to Upload</p>
+            </div>
+            <div class="content">
+              <div class="row sizes">
+                <div class="column width">
+                  <label>Width</label>
+                  <input type="number">
+                </div>
+                <div class="column height">
+                  <label>Height</label>
+                  <input type="number">
+                </div>
+              </div>
+              <div class="row checkboxes">
+                <div class="column ratio">
+                  <input type="checkbox" id="ratio" checked>
+                  <label for="ratio">Lock aspect ratio</label>
+                </div>
+                <div class="column quality">
+                  <input type="checkbox" id="quality">
+                  <label for="quality">Reduce quality</label>
+                </div>
+              </div>
+              <button class="download-btn">Download Image</button>
+            </div>
+          </div>
+        </section>
+        <section id="feedback">
+            <h2>Feedback</h2>
+            <p>We appreciate your feedback!</p>
+            <textarea id="feedbackTextarea" rows="4" placeholder="Leave your comments here..."></textarea>
+            <button type="button" id="submitFeedbackBtn">Submit Feedback</button>
+        </section>
+        
+        <!-- Existing sections ... -->
+
+<section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <h3>1. What formats of images can I upload?</h3>
+        <p>You can upload JPG, PNG, and GIF formats.</p>
+    </div>
+    <div class="faq-item">
+        <h3>2. Is there a limit to the image size I can upload?</h3>
+        <p>Yes, the maximum file size for uploads is 5MB.</p>
+    </div>
+    <div class="faq-item">
+        <h3>3. Can I crop images after resizing them?</h3>
+        <p>Yes, you can crop images after resizing them using the Crop Image section.</p>
+    </div>
+    <div class="faq-item">
+        <h3>4. How do I download my resized or cropped images?</h3>
+        <p>After resizing or cropping, a download button will appear. Click it to download your image.</p>
+    </div>
+    <div class="faq-item">
+        <h3>5. Who can I contact for further assistance?</h3>
+        <p>You can reach out to us at <a href="mailto:support@example.com">support@example.com</a>.</p>
+    </div>
+</section>
+<!-- Remaining sections ... -->
+
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or feedback, please reach out to us!</p>
+    <p>Email: support@example.com</p>
+</section>
+
+        <section id="help">
+            <h2>Help Center</h2>
+            <p>Need help? Check out our help center for assistance.</p>
         </section>
     </main>
-   
+
+    <footer>
+        <p>&copy; 2024 Image Resizer. All rights reserved.</p>
+        <p>Follow us on:
+            <a href="#"><i class="fab fa-twitter icon"></i> Twitter</a>,
+            <a href="#"><i class="fab fa-facebook-f icon"></i> Facebook</a>,
+            <a href="#"><i class="fab fa-instagram icon"></i> Instagram</a>.
+        </p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.16/cropper.min.js"></script>
+    <script>
+const uploadBox = document.querySelector(".upload-box"),
+previewImg = uploadBox.querySelector("img"),
+fileInput = uploadBox.querySelector("input"),
+widthInput = document.querySelector(".width input"),
+heightInput = document.querySelector(".height input"),
+ratioInput = document.querySelector(".ratio input"),
+qualityInput = document.querySelector(".quality input"),
+downloadBtn = document.querySelector(".download-btn");
+let ogImageRatio;
+const loadFile = (e) => {
+    const file = e.target.files[0]; // getting first user selected file
+    if(!file) return; // return if user hasn't selected any file
+    previewImg.src = URL.createObjectURL(file); // passing selected file url to preview img src
+    previewImg.addEventListener("load", () => { // once img loaded
+        widthInput.value = previewImg.naturalWidth;
+        heightInput.value = previewImg.naturalHeight;
+        ogImageRatio = previewImg.naturalWidth / previewImg.naturalHeight;
+        document.querySelector(".wrapper").classList.add("active");
+    });
+}
+widthInput.addEventListener("keyup", () => {
+    // getting height according to the ratio checkbox status
+    const height = ratioInput.checked ? widthInput.value / ogImageRatio : heightInput.value;
+    heightInput.value = Math.floor(height);
+});
+heightInput.addEventListener("keyup", () => {
+    // getting width according to the ratio checkbox status
+    const width = ratioInput.checked ? heightInput.value * ogImageRatio : widthInput.value;
+    widthInput.value = Math.floor(width);
+});
+const resizeAndDownload = () => {
+    const canvas = document.createElement("canvas");
+    const a = document.createElement("a");
+    const ctx = canvas.getContext("2d");
+    // if quality checkbox is checked, pass 0.5 to imgQuality else pass 1.0
+    // 1.0 is 100% quality where 0.5 is 50% of total. you can pass from 0.1 - 1.0
+    const imgQuality = qualityInput.checked ? 0.5 : 1.0;
+    // setting canvas height & width according to the input values
+    canvas.width = widthInput.value;
+    canvas.height = heightInput.value;
+    // drawing user selected image onto the canvas
+    ctx.drawImage(previewImg, 0, 0, canvas.width, canvas.height);
+    
+    // passing canvas data url as href value of <a> element
+    a.href = canvas.toDataURL("image/jpeg", imgQuality);
+    a.download = new Date().getTime(); // passing current time as download value
+    a.click(); // clicking <a> element so the file download
+}
+downloadBtn.addEventListener("click", resizeAndDownload);
+fileInput.addEventListener("change", loadFile);
+uploadBox.addEventListener("click", () => fileInput.click());
+// Function to handle feedback submission
+const submitFeedbackBtn = document.getElementById("submitFeedbackBtn");
+const feedbackTextarea = document.getElementById("feedbackTextarea");
+
+submitFeedbackBtn.addEventListener("click", () => {
+    const feedback = feedbackTextarea.value.trim();
+
+    if (feedback) {
+        // Show a popup message thanking the user for their feedback
+        alert("Thank you for your feedback!");
+
+        // Reset the feedback textarea
+        feedbackTextarea.value = '';
+    } else {
+        alert("Please enter your feedback before submitting.");
+    }
+});
+// Get elements
+const themeSwitcher = document.getElementById('theme-switcher');
+
+// Function to toggle theme
+themeSwitcher.addEventListener('change', () => {
+    if (themeSwitcher.checked) {
+        document.body.classList.add('dark-mode');
+        document.body.classList.remove('light-mode');
+        alert("Dark mode activated");
+    } else {
+        document.body.classList.add('light-mode');
+        document.body.classList.remove('dark-mode');
+        alert("Light mode activated");
+    }
+});
+
+// On page load, check the current theme
+if (localStorage.getItem('theme') === 'dark') {
+    themeSwitcher.checked = true;
+    document.body.classList.add('dark-mode');
+} else {
+    document.body.classList.add('light-mode');
+}
+
+// Save the theme to local storage
+themeSwitcher.addEventListener('change', () => {
+    if (themeSwitcher.checked) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+});
+
+
+
+
+    </script>
+    
 </body>
+
 </html>

@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6d541;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+    font-style: bold;
+    font-size: 40px;
+}
+
+.gallery-container {
+    width: 80%;
+    height: 80vh;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 2px solid black;
+    position: relative;
+}
+
+.artwork {
+    display: flex;
+    transition: transform 0.3s ease;
+    cursor: grab;
+}
+
+.artwork img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
