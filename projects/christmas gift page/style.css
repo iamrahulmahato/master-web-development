@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body
+{
+    height: 100%;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-image: linear-gradient(to left, #ffc3eb, #ffd1f1, #fedff6, #ffedfa, #fffafe);}
+#a{
+    width: 100%;
+    height: 10%;
+    /* background-color: brown; */
+    display: flex;
+
+}
+#b{
+    width: 10%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+#b a{
+    text-decoration: none;
+    color: black;
+    font-family: "Cabin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-size: 27px;
+    letter-spacing: 1px;
+}
+#c{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    gap: 50px;
+    align-items: center;
+    /* background-color: chartreuse; */
+}
+#c a{
+    
+    text-decoration: none;
+    color: black;
+    font-family: "Cabin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+#z{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    /* background-color: bisque; */
+}
+
+#d{
+    width: 100%;
+    height: 50%;
+    border: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: rgb(190, 17, 17);;
+
+} 
+#d a{
+    text-decoration: none;
+    color: rgb(190, 17, 17);
+    font-family: "Cabin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+#a1 hr{
+    border-top: 2px solid #f7c0bc;    
+}
+
+#e{
+    width: 100%;
+    height: auto;
+    /* background-color: blueviolet; */
+    display: flex;
+}
+
+#f{
+    width: 40%;
+    height: auto;
+    /* background-color: blue;} */}
+#g{
+    height: 300px;
+    width: 100%;
+    /* background-color: beige; */
+    display: flex;
+    align-items: end;
+}
+#g h1{
+    font-size: 55px;
+    color: black;
+    font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  line-height: 80px;
+  word-spacing: 5px;
+}
+#h{
+    height: 60px;
+    width: 100%;
+    /* background-color: blueviolet; */
+}
+#h p{
+    font-size: medium;
+    font-family: "Kanit", sans-serif;
+}
+
+#i{height: 70px;
+    width: 100%;
+    /* background-color: gray; */
+    display: flex;
+    align-items: center;
+}
+#i button{
+    border: 2px;
+    border-style: none;
+    border-radius: 10px;
+    width: 155px ;
+    height: 40px;
+    background-color: rgb(230, 77, 77);
+    color: white;
+    font-size: 18px;
+    font-family: "Kanit", sans-serif;
+}
+
+#k{
+    height: 222px;
+    width: 100%;
+    /* background-color: rgb(112, 112, 53); */
+    display: flex;
+}
+
+#l{
+    
+    height: 130px;
+    width: 50%;
+    background-color: rgb(255, 255, 229);
+    border: 1px;
+    border-radius: 10px;
+    border-style: none;
+    
+    padding-top: 10px;
+    padding-left: 10px;
+    display: grid;
+    
+
+    
+}
+#l p{
+    font-size: large;
+    font-family: "Cabin", sans-serif;
+    padding-bottom: 10px;
+}
+#l input{
+    /* background-color: #fedff6; */
+    padding-left: 10px;
+    border: 1px;
+    border-radius: 10px;
+    border-style: solid;
+    height: 40px;
+    width: 200px;
+    border-color: #f7c0bc;
+
+}
+#o{
+    width:60%;
+    height:650px;
+    /* background-color: antiquewhite; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#both{
+    display: flex;
+    gap: 5px;
+}
+#n{
+    /* border-color: gray; */
+    padding-left: 10px;
+    border: 0.5px;
+    border-radius: 10px;
+    /* border-style: solid; */
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+background-color: rgb(254, 231, 231);
+
+}
+#n a{
+    text-decoration: none;
+    font-size: 25px;
+    color: #ff7979;
+
+}
+
+#o img{
+    width:600px;
+    
+    height: 622px;}
+

@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0e0e0;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+#game-container {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#puzzle-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.puzzle-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.puzzle-item:hover {
+    transform: scale(1.1);
+}
+
+/* Default Colors */
+.puzzle-item[data-color="red"] {
+    background-color: red;
+}
+
+.puzzle-item[data-color="green"] {
+    background-color: green;
+}
+
+.puzzle-item[data-color="blue"] {
+    background-color: blue;
+}
+
+.puzzle-item[data-color="yellow"] {
+    background-color: #FFD700; /* Gold */
+}
+
+.puzzle-item[data-color="purple"] {
+    background-color: purple;
+}
+
+/* Colorblind Mode Styles */
+.colorblind-mode .puzzle-item[data-color="red"] {
+    background-color: #b03030; /* Dark Red */
+}
+
+.colorblind-mode .puzzle-item[data-color="green"] {
+    background-color: #7f9e7e; /* Dark Green */
+}
+
+.colorblind-mode .puzzle-item[data-color="blue"] {
+    background-color: #2f4f4f; /* Dark Slate Gray */
+}
+
+.colorblind-mode .puzzle-item[data-color="yellow"] {
+    background-color: #d9c700; /* Dark Gold */
+}
+
+.colorblind-mode .puzzle-item[data-color="purple"] {
+    background-color: #5c4a9d; /* Dark Purple */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    #game-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .puzzle-item {
+        width: 80px;
+        height: 80px;
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Profle </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(back.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.profile-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 25px;
+  padding: 30px;
+  border: 3px solid #57110f;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+.image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+}
+.image .profile-pic{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px rgba(110, 11, 11, 0.619);
+}
+.data{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+.data h2{
+  font-size: 33px;
+  font-weight: 600;
+}
+span{
+  font-size: 18px;
+}
+.row{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.row .info{
+  text-align: center;
+  padding: 0 20px;
+}
+.buttons{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.buttons .btn{
+  color: rgba(243, 235, 237, 0.903);
+  text-decoration: none;
+  margin: 0 20px;
+  padding: 8px 25px;
+  border-radius: 25px;
+  font-size: 18px;
+  white-space: nowrap;
+  background-color: #50120c;
+}
+.buttons .btn:hover{
+  box-shadow: inset 0 5px 20px rgba(236, 231, 231, 0.4);
+}
+  </style>
+</head>
+<body>
+  <section class="main">
+  <div class="profile-card">
+    <div class="image">
+      <img src="PROFILE.jpg" alt="image" class="profile-pic">
+    </div>
+    <div class="data">
+      <h2>User name</h2>
+      <span>Mail id</span>
+      <span>Detalis</span>
+    </div>
+    <div class="row">
+      <div class="info">
+        <h3>Recents</h3>
+        <span>--</span>
+      </div>
+      <div class="info">
+        <h3>Appointments</h3>
+        <span>--</span>
+      </div>
+      <div class="info">
+        <h3>Case Won</h3>
+        <span>--</span>
+      </div>
+    </div>
+    <div class="buttons">
+      <a href="#" class="btn">Message</a>
+      <a href="#" class="btn">Recent Me</a>
+    </div>
+  </div>
+  
+</section>
+<a href="index.html" class="btn btn-primary">Back</a>
+
+
+</body>
+</html>

@@ -76,7 +76,9 @@ body {
     background-color: var(--bg);
     overflow-x: hidden;
 }
-
+[data-theme="dark"] body {
+  background-color: rgb(4, 4, 35); /* Blue background for dark mode */
+}
 #projects {
     margin: 5rem 0;
 }
@@ -101,11 +103,131 @@ body {
     color: var(--p);
 }
 
-.btn-container {
+/* .btn-container {
     margin-top: 2rem;
     transition: .3s ease-in;
+} */
+/* search bar and button */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
+.btn-container {
+  margin: 20px;
+  text-align: center;
+}
+
+.hero-btn-container{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#quiz-button{
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.source-code-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  /* background-color: #0066cc; */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.source-code-btn:hover {
+  /* background-color: #0052a3; */
+  color: black;
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: 20px;
+  align-items: center; 
+  justify-content: center;
+}
+
+#search-input {
+  flex: 1;
+  height: 44px;
+  padding: 0 16px; 
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  line-height: 44px; 
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: #ff3333;
+  box-shadow: 0 4px 12px rgba(255, 51, 51, 0.15);
+}
+
+#search-input::placeholder {
+  color: #888;
+  line-height: 44px; 
+}
+
+.search-btn {
+  height: 44px; 
+  padding: 0 24px;
+  background-color: #fa2b4d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(255, 51, 51, 0.3);
+  box-sizing: border-box;
+}
+
+.search-btn:hover {
+  background-color: #ff1a1a;
+  box-shadow: 0 6px 16px rgba(255, 51, 51, 0.4);
+  transform: translateY(-2px);
+}
+
+.search-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 51, 51, 0.2);
+}
+
+.search-icon {
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid #fff;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+}
+
+.search-icon::after {
+  content: '';
+  position: absolute;
+  width: 1.5px;
+  height: 6px;
+  background: #fff;
+  bottom: -4px;
+  right: -2px;
+  transform: rotate(-45deg);
+}
+/* end */
 .projects-heading .source-code-btn {
     background-color: var(--btn-color);
     font-weight: 500;
@@ -497,13 +619,19 @@ body {
     margin-bottom: 0.5rem;
     color: #000;
 }
+/* Dark mode styles */
+[data-theme="dark"] .card-heading {
+  color: #ffffff; /* white color for dark mode */
+}
 
 .card-description {
     font-size: 0.9rem;
     color: var(--p);
     flex-grow: 1;
 }
-
+[data-theme="dark"] .card-description {
+  color: #cdd2d8;
+}
 .counter-cover-color {
     background: rgba(255, 206, 0, 0.2);
 }
@@ -909,13 +1037,12 @@ body {
 
 .btn-container a {
     display: inline-block;
-    transition: transform 0.3s ease, background-color 0.3s ease; 
+    transition: all 0.3s ease; 
 }
 
-.btn-container a:hover {
-    background-color: #75b4ec; 
-    color: #192333;
-    transform: scale(1.1); 
+#quiz-button:hover, .btn-container a:hover {
+    box-shadow: rgba(233, 45, 45, 0.1) 0px 1px 0px, rgba(237, 71, 71, 0.1) 0px 8px 24px, rgba(235, 65, 65, 0.1) 0px 16px 48px;
+    transform: scale(1.05); 
 }
 #suggestions {
   display: none;
