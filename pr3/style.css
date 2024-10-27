@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ 
+ * 
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body
+{
+    height: 100%;
+    width: 100%;
+}
+#q{
+    display:flex;
+    width: 100%;
+    height: 10%;
+    /* background-color: aqua; */
+    align-items: center;
+    justify-content: space-between;
+}
+#b{
+    width: 10%;
+    height: 100%;
+    /* background-color: blue; */
+}
+#b a{
+    text-decoration: none;
+    width: 100px;
+    height: 100px;
+}
+#b i{
+    font-size: 40px;    
+    line-height: 65px;
+    letter-spacing: -36px;
+    padding-left: 10%;
+    color: black;
+}
+#c{
+    /* background-color: brown; */
+    width: 90%;
+    height: 100%;
+    justify-content: end;
+    display: flex;
+    /* padding: 20px  ;  */
+    gap: 20px;
+    align-items: center;
+    padding-right:30px ;
+
+} 
+#c a{
+    text-decoration: none;
+    color: black;       
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 15px; 
+
+}   
+#c p2{
+    color: dimgrey;
+}
+
+#d{
+    width: 100%;
+    height: 12%;
+    /* background-color:aqua; */
+    justify-content: left;
+    display: flex;
+    gap: 70px;
+    align-items: center;
+    padding-left: 40px;
+}
+#d a{
+    text-decoration: none;
+    color: black;       
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: large; 
+}
+#mid{
+    width: 100%;
+    height: 78%;
+    /* background-color: brown; */
+}
+#f{
+    width: 100%;
+    height: 50%;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    overflow-x: auto;
+
+}
+#f::-webkit-scrollbar{
+    background-color:whitesmoke;
+    /* scroll-behavior: smooth;     */
+    height: 12px;
+
+
+}
+#f::-webkit-scrollbar-thumb{
+    
+    background-color: lightgrey;
+        border-radius: 100px;
+    
+}
+
+#e{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:70%;
+    height: 100%;
+    /* border: 2px solid #000000; */
+    /* background-color: brown; */
+    flex-shrink: 0;
+    line-height: 40px;
+
+}
+#e pre{
+    font-size: 20px;
+    font-family:sans-serif;
+}
+#e h1{
+    padding-left: 50px;
+    font-size: 100px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: black;
+
+}
+#e h1:hover{
+    color:darkred;
+}
+#g{
+    width: 100%;
+    height: 50%;
+    /* background-color: rgb(255, 0, 0); */
+
+
+}
+#g img{
+     width: 100%;
+     height: 100%;
+    object-fit: cover;
+    object-position: 0 -250px;}
+}
