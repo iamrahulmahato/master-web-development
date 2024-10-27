@@ -1,0 +1,23 @@
+.homeContainer {
+  @apply w-4/12 mx-auto p-2 border border-white rounded mt-8 text-white flex flex-col items-center;
+
+  h1 {
+    @apply text-xl text-center;
+  }
+
+  button {
+    @apply bg-buttonPrimary py-2 px-4 rounded;
+  }
+
+  .enterRoom {
+    @apply flex flex-col items-center mt-3 w-full;
+
+    input {
+      @apply text-black text-lg p-1 rounded w-9/12 mb-3;
+    }
+  }
+
+  .separatorText {
+    @apply my-3 text-xl;
+  }
+}
