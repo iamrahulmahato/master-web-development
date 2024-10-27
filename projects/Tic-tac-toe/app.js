@@ -1,5 +1,6 @@
 let currPlayer = 'X';
 let GameStatus = '';
+let winner = true;
 const boxes = document.querySelectorAll('.box');
 
 const gameMessage = document.querySelector('#gameMessage');
@@ -17,13 +18,16 @@ document.body.appendChild(winningLine); // Append the winning line to the body
 const slider = document.querySelector('.highlight'); // The slider highlight element
 
 const selectBox = (element) => {
-    if (element.target.innerText === '' && currPlayer== 'X') {
+    if (element.target.innerText === '') {
         element.target.innerText = currPlayer;
         gameMessage.innerText = ''; // Clear any previous messages
         if (!checkWinner()) { 
             switchPlayer();
-            if (currPlayer === 'O') { // If it's the AI's turn
-                aiMove(); // Execute the AI's move
+            if (currPlayer === 'O'){
+                aiMove1(); // Execute the AI's move
+            }
+            else{
+                aiMove2(); // Execute the AI's move
             }
         }
     } else {
@@ -57,6 +61,7 @@ const checkWinner = () => {
             displayMessage(GameStatus); // Display the win message in the center
             drawWinningLine(combination); // Draw the winning line
             setTimeout(() => resetGame(), 2000); // Reset after 2 seconds
+            winner = true;
             return true; 
         }
     }
@@ -66,11 +71,28 @@ const checkWinner = () => {
         displayMessage("It's a tie!");
         winSound.play();
         setTimeout(() => resetGame(), 2000); // Reset after 2 seconds
+        winner = true;
         return true; 
     }
-
+    winner = false;
     return false; 
 }
+
+const button1 = document.querySelector('#sliderTextO');
+button1.addEventListener('click', () => {
+    if (!winner){
+        return;
+    }
+    switchPlayer();
+});
+
+const button2 = document.querySelector('#sliderTextX');
+button2.addEventListener('click', () => {
+    if (!winner){
+        return;
+    }
+    switchPlayer();
+});
 
 const displayMessage = (message) => {
     gameMessage.innerText = message; // Update message display
@@ -143,13 +165,13 @@ const updateSlider = () => {
     }
 }
 
-const aiMove = () => {
+const aiMove1 = () => {
     const winningCombinations = getWinningCombinations();
-
+    const aiSymbol = 'O'
     // Check if AI can win in the next move
     for (const combination of winningCombinations) {
-        if (canWin(combination, 'O')) {
-            makeMove(combination.find(id => document.querySelector(`#${id}`).innerText === ''), 'O');
+        if (canWin(combination, aiSymbol)) {
+            makeMove(combination.find(id => document.querySelector(`#${id}`).innerText === ''), aiSymbol);
             return;
         }
     }
@@ -157,7 +179,7 @@ const aiMove = () => {
     // Check if the player can win in the next move and block them
     for (const combination of winningCombinations) {
         if (canWin(combination, 'X')) {
-            makeMove(combination.find(id => document.querySelector(`#${id}`).innerText === ''), 'O');
+            makeMove(combination.find(id => document.querySelector(`#${id}`).innerText === ''), aiSymbol);
             return;
         }
     }
@@ -165,7 +187,7 @@ const aiMove = () => {
     // Prefer center if available
     const centerBox = 'box5';
     if (document.querySelector(`#${centerBox}`).innerText === '') {
-        makeMove(centerBox, 'O');
+        makeMove(centerBox, aiSymbol);
         return;
     }
 
@@ -174,7 +196,7 @@ const aiMove = () => {
     const availableCorners = cornerBoxes.filter(corner => document.querySelector(`#${corner}`).innerText === '');
     if (availableCorners.length > 0) {
         const randomCorner = availableCorners[Math.floor(Math.random() * availableCorners.length)];
-        makeMove(randomCorner, 'O');
+        makeMove(randomCorner, aiSymbol);
         return;
     }
 
@@ -182,7 +204,50 @@ const aiMove = () => {
     const emptyBoxes = Array.from(boxes).filter(box => box.innerText === '');
     if (emptyBoxes.length > 0) {
         const randomBox = emptyBoxes[Math.floor(Math.random() * emptyBoxes.length)];
-        makeMove(randomBox.id, 'O');
+        makeMove(randomBox.id, aiSymbol);
+    }
+};
+
+const aiMove2 = () => {
+    const winningCombinations = getWinningCombinations();
+    const aiSymbol = 'X'
+    // Check if AI can win in the next move
+    for (const combination of winningCombinations) {
+        if (canWin(combination, aiSymbol)) {
+            makeMove(combination.find(id => document.querySelector(`#${id}`).innerText === ''), aiSymbol);
+            return;
+        }
+    }
+
+    // Check if the player can win in the next move and block them
+    for (const combination of winningCombinations) {
+        if (canWin(combination, 'O')) {
+            makeMove(combination.find(id => document.querySelector(`#${id}`).innerText === ''), aiSymbol);
+            return;
+        }
+    }
+
+    // Prefer center if available
+    const centerBox = 'box5';
+    if (document.querySelector(`#${centerBox}`).innerText === '') {
+        makeMove(centerBox, aiSymbol);
+        return;
+    }
+
+    // Prefer corners
+    const cornerBoxes = ['box1', 'box3', 'box7', 'box9'];
+    const availableCorners = cornerBoxes.filter(corner => document.querySelector(`#${corner}`).innerText === '');
+    if (availableCorners.length > 0) {
+        const randomCorner = availableCorners[Math.floor(Math.random() * availableCorners.length)];
+        makeMove(randomCorner, aiSymbol);
+        return;
+    }
+
+    // Finally, choose any random available box
+    const emptyBoxes = Array.from(boxes).filter(box => box.innerText === '');
+    if (emptyBoxes.length > 0) {
+        const randomBox = emptyBoxes[Math.floor(Math.random() * emptyBoxes.length)];
+        makeMove(randomBox.id, aiSymbol);
     }
 };
 
