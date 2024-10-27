@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Emotion Detection Feedback Form</title>
+</head>
+<body>
+    <div id="form-container">
+        <h1>Feedback Form</h1>
+        <form id="feedback-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" rows="5" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div id="emotion-result" class="emotion-result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
