@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    overflow: hidden;
+}
+
+label{
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+input{
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-width: 1px;
+    border-color: rgb(170, 170, 170);
+    &:focus{
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+        --tw-border-opacity: 1;
+        border-color: rgb(59 130 246 / var(--tw-border-opacity));
+    }
+    
+}
+
+button{
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 250ms ease-in-out;
+    font-family: "Poppins", sans-serif;
+
+    &:focus{
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+    }
+}
+
+.callButtons{
+    font-weight: 500;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding: 0.625rem;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+}

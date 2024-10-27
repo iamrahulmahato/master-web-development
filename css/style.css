@@ -76,7 +76,9 @@ body {
     background-color: var(--bg);
     overflow-x: hidden;
 }
-
+[data-theme="dark"] body {
+  background-color: rgb(4, 4, 35); /* Blue background for dark mode */
+}
 #projects {
     margin: 5rem 0;
 }
@@ -113,7 +115,7 @@ body {
 }
 
 .btn-container {
-  margin-bottom: 20px;
+  margin: 20px;
   text-align: center;
 }
 
@@ -138,6 +140,7 @@ body {
   width: 100%;
   margin-top: 20px;
   align-items: center; 
+  justify-content: center;
 }
 
 #search-input {
@@ -604,13 +607,19 @@ body {
     margin-bottom: 0.5rem;
     color: #000;
 }
+/* Dark mode styles */
+[data-theme="dark"] .card-heading {
+  color: #ffffff; /* white color for dark mode */
+}
 
 .card-description {
     font-size: 0.9rem;
     color: var(--p);
     flex-grow: 1;
 }
-
+[data-theme="dark"] .card-description {
+  color: #cdd2d8;
+}
 .counter-cover-color {
     background: rgba(255, 206, 0, 0.2);
 }
