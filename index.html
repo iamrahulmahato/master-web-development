@@ -3188,6 +3188,211 @@ visitor
 <script src="visi.js"></script>
 
  main
+ 
+
+    <!-- Newsletter pop-up -->
+    <style>
+
+        .popup-nl {
+  
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1009;
+  
+        }
+  
+        .popup-content-nl {
+  
+            display: flex;
+            background-color: white;
+            border-radius: 10px;
+            max-width: 800px;
+            height: 450px;
+            width: 700px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  
+        }
+  
+        .close1-btn-nl {
+  
+            width: 20px;
+            cursor: pointer;
+            margin: 18px 10px;
+            position: absolute;
+            top: -4px;
+            right: 12px;
+            font-size: 18px;
+            font-weight: 800;
+  
+        }
+  
+        .popup-left-nl img {
+  
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+  
+        }
+  
+        .popup-right-nl {
+  
+            padding: 20px;
+            width: 50%;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center;
+  
+        }
+  
+        .popup-nl h1 {
+  
+            font-size: 24px;
+            background: linear-gradient(to right, #913700, #ff6000, #913700); 
+            -webkit-text-fill-color: transparent; 
+            -webkit-background-clip: text; 
+            text-align: center;
+            margin-bottom: 12px;
+            margin-top: 35px;
+  
+        }
+  
+        .h2-nl{
+  
+            font-size: 18px;
+            margin-bottom: 8px;
+            text-align: center;
+            color: #333;
+  
+        }
+  
+        .pop_up-nl {
+  
+            margin-bottom: 15px;
+            font-weight: bold;
+            background: -webkit-linear-gradient(left, #007d39, #44f899, #005f2b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 12.7px;
+  
+        }
+  
+        .bold{
+  
+            font-size: 13.1px;
+  
+        }
+  
+        input[type="email"] {
+  
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            font-size: 14px;
+  
+        }
+  
+        .signup-btn1-nl {
+  
+            width: 100%;
+            height: 30px;
+            text-align: center;
+            background: linear-gradient(to right, #febd1b, #ffdb80, #febd1b);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+  
+        }
+  
+        .signup-btn1-nl:hover {
+  
+            background-color: #4682B4;
+  
+        }
+  
+        .no-thanks-nl {
+  
+            display: block;
+            margin-top: 10px;
+            color: #888;
+            text-decoration: none;
+            margin-bottom: 15px;
+  
+        }
+  
+        .no-thanks-nl:hover {
+  
+            color: #000000;
+            font-size: 14px;
+  
+        }
+  
+        .terms-nl {
+  
+            margin-top: 15px;
+            font-size: 10px;
+            color: #888;
+  
+        }
+  
+        .terms-nl a {
+  
+            display: inline;
+  
+        }
+  
+        .terms-nl a:hover {
+  
+            text-decoration: underline;
+  
+        }
+  
+        .popup-right-nl p {
+  
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: center;
+  
+        }
+  
+  
+      </style>
+      <div id="popup-nl" class="popup-nl">
+        <div class="popup-content-nl">
+            <div class="popup-left-nl">
+                <img src="popup.jpg" alt="finance">
+            </div>
+  
+            <div class="popup-right-nl">
+                <a href="# " class="close1-btn-nl close-nl">X</a>
+                <h1>Subscribe to Newsletter!</h1>
+                <h2 class="h2-nl">Join our web development community!</h2>
+                <p class="pop_up-nl">Subscribe for valuable insights, coding tips, latest trends, resources and updates on the latest tools and technologies</p>
+                <form id="emailForm-nl">
+                    <input type="email" id="email-nl" placeholder="Enter your email" required>
+                    <button type="submit" class="signup-btn1-nl">Subscribe</button>
+                </form>
+                <a href="#" class="no-thanks-nl close-nl">No thanks</a>
+                <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a href="terms&cond.html">Terms of Service</a> and <a href="privacynotice.html">Privacy Policy</a>.</p>
+            </div>
+        </div>
+      </div>
+      <script src="popup.js"></script>
+
+
 </body>
 
 </html>
