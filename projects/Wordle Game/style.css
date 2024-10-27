@@ -181,41 +181,104 @@ body {
 
 
 /*Keyboard*/
-/*body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }*/
-  
-  .keyboard {
-    display: inline-block;
-    padding: 10px;
-    background-color:#ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-  
-  .key {
-    background-color: #d6d6d6;
-    color: rgb(19, 19, 19);
-    border: none;
-    padding: 10px 15px;
-    margin: 4px;
-    border-radius: 5px;
-    font-size: 18px;
+button {
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.2s;
-  }
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Virtual Keyboard Styles */
+.keyboard {
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 650px;
+}
+
+.key-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.key {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border: 1px solid #dcdde1;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #2f3640;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.key:hover {
+    background-color: #dfe4ea;
+    transform: scale(1.1);
+}
+
+.large-key {
+    width: 127px;
+}
+
+.spacebar {
+    width: 240px;
+    font-size: 14px;
+}
+
+/* Hide the keyboard initially */
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .key {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .keyboard {
+        max-width: 500px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .key {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .keyboard {
+        max-width: 400px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .spacebar {
+        width: 200px;
+        font-size: 12px;
+    }
+}
 
   

@@ -30,21 +30,31 @@ height: 5vh;
   background-color: #4caf50; /* Green color for the active player */
   border-radius: 20px; /* Rounded edges */
   transition: left 0.3s ease; /* Smooth transition */
+  border: none; /* Remove default button border */
+  outline: none; /* Remove default button outline */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: transform 0.3s ease; /* Add smooth sliding transition */
+
 }
 .slider-text {
   position: absolute;
-  top: 5%;
+  top: 50%; /* Center vertically */
   transform: translateY(-50%);
-  width: 50%;
+  width: 50%; /* Set width of the button */
   text-align: center;
   font-size: 1rem;
   font-weight: bold;
   color: #333; /* Text color */
+  background: none; /* Remove default button background */
+  border: none; /* Remove default button border */
+  outline: none; /* Remove default button outline */
+  cursor: pointer; /* Change cursor to pointer */
 }
 
 #sliderTextO {
   left: 50%; /* Position O text on the right side */
 }
+
 /* Center the game message for win or tie */
 #gameMessage {
   display: none; /* Initially hidden */
@@ -119,6 +129,23 @@ border-right: 0;
   transition: background-color 0.3s, transform 0.3s; /* Transition effects */
 }
 #reset:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.01); /* Slightly enlarge on hover */
+}
+#multiplayer{
+  width: 100px; /* Set a specific width */
+  height: 40px; /* Set a specific height */
+  font-size: 1rem; /* Font size */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+  border: none; /* Remove border */
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text color */
+  transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+}
+#multiplayer:hover{
   background-color: #45a049; /* Darker green on hover */
   transform: scale(1.01); /* Slightly enlarge on hover */
 }
