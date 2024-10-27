@@ -27,7 +27,7 @@ body {
     overflow: hidden; /* Hide overflow text */
     animation: fadeIn 1s ease-in-out; /* Animation */
     transition: box-shadow 0.3s ease, border 0.3s ease; /* Transition for box-shadow and border */
-url(../../../Documents/RandomMovieNameGenerator/index.css)
+
 }
 .container:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased box-shadow on hover */
