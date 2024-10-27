@@ -75,3 +75,36 @@ const words = [ 'blind', 'space', 'belly', 'motor', 'peace', 'sweet', 'thief', '
     // Start the game when the page loads
     window.onload = startNewGame;
     
+    // Get elements
+    const showKeyboardBtn = document.getElementById('showKeyboardBtn');
+    const virtualKeyboard = document.getElementById('virtualKeyboard');
+    const textInput = document.getElementById('guessInput');
+    const keys = document.querySelectorAll('.key');
+
+    // Show or hide keyboard when the show button is clicked
+    showKeyboardBtn.addEventListener('click', () => {
+        if (virtualKeyboard.classList.contains('hidden')) {
+            virtualKeyboard.classList.remove('hidden');
+            showKeyboardBtn.textContent = 'Hide Keyboard';
+        } else {
+            virtualKeyboard.classList.add('hidden');
+            showKeyboardBtn.textContent = 'Show Keyboard';
+        }
+    });
+
+    // Add functionality to each key
+    keys.forEach(key => {
+        key.addEventListener('click', () => {
+            const keyValue = key.textContent;
+
+            if (key.id === 'backspaceKey') {
+                textInput.value = textInput.value.slice(0, -1);
+            } else if (key.id === 'enterKey') {
+                textInput.value += '\n';
+            } else if (key.id === 'spacebar') {
+                textInput.value += ' ';
+            } else {
+                textInput.value += keyValue;
+            }
+        });
+    });
