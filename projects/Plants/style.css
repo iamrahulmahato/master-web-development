@@ -225,7 +225,7 @@ section {
 
 .slide-detail {
   position: absolute;
-  top: 130px;
+  top: 75px;
   left: 30%;
   z-index: 10;
   width: 50%;
@@ -247,7 +247,7 @@ section {
 
 .slide-detail-facts {
   position: absolute;
-  top: 240px;
+  top: 190px;
   left: 30%;
   z-index: 10;
   width: 50%;

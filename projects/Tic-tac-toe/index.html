@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
+    <!-- adding fevicon -->
+    <link rel="shortcut icon" href="gametic.png" type="image/x-icon">
 </head>
 <body>
     <h1>Tic Tac Toe</h1>
-    <p>Player <span id="player">X's</span> turn</p>
+    <div class="slider">
+        <button class="highlight" id="highlight"></button>
+        <button class="slider-text" id="sliderTextX">X</button>
+        <button class="slider-text" id="sliderTextO">O</button>
+    </div>
     <div class="container">
         <div class="row row1">
             <div class="box" id="box1"></div>
@@ -27,8 +33,15 @@
             <div class="box" id="box9"></div>
         </div>
     </div>
-    <button id="reset">New game</button>
-
+   <!--  Added message display area for user-friendly messages  -->
+    <p id="gameMessage"></p>
+     <!-- Winning line div -->
+    <div id="winning-line"></div>
+    <!-- <button id="reset">New Game</button> -->
+    <div class="footer-content">
+        <button id="reset">New Game</button>
+        <button id="multiplayer">Multiplayer</button>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>

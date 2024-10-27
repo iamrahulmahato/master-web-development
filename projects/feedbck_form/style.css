@@ -1,0 +1,140 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body
+{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background: rgb(235,175,227);
+    background: linear-gradient(90deg, rgba(235,175,227,1) 36%, rgba(189,103,218,1) 84%);    
+} 
+#a{
+    height: 15%;
+    width: 100%;
+}
+#a h1{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight:bold;
+    padding-top:30px;
+
+}
+#l{
+    width:100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    margin:2px auto;
+    padding: 30px 20px;
+    max-width: 550px;
+    box-shadow:  2px 5px 10px rgba(0, 0, 0, 0.5);
+    background-color: whitesmoke;
+    max-height: max-content;
+    margin-bottom: 30px;
+    font-size: larger;
+}
+ 
+#b{
+    text-align: left;
+    margin-bottom: 25px;
+    font-size: larger;
+    line-height: 10px;
+} 
+
+#b label{
+    display: flex;
+    margin: 10px;
+    text-align: left;
+
+}
+#b input,
+#b select{
+    border: 2px #777;
+    border-radius: 2px;
+    font-family: inherit;
+    display:flex;
+    width: 95%;
+    padding: 10px;
+    border-style: solid;
+    font-size:15px;
+
+
+
+}
+#d{
+    text-align: left;
+    font-size: larger;
+    gap: 50px;
+
+}
+#d label{
+    display: block;
+    margin: 10px;
+    line-height: 40px;
+}
+#d input
+{
+    border: 2px #777;
+    border-radius: 2px;
+    font-family: inherit;
+    display:flex;
+    width: 95%;
+    padding: 10px;
+    border-style: solid;
+    font-size:15px;
+
+
+}
+#c{
+    display: block;
+    margin: 10px;
+    text-align: left;
+    font-size: larger;
+    line-height: 40px;
+
+
+}
+#c input{
+    
+    border: 1px #777;
+    border-radius: 2px;
+    font-family: inherit;
+    display: inline-block;
+    font-size: larger;
+    line-height: 60px;
+    text-align: center;
+    font-size:15px;
+
+}
+
+
+#e{
+    
+    width:100px;
+    height: 25px;
+   padding-left: 180px;
+}
+
+#e input{
+    background-color: black;
+    
+    width:100px;
+    height: 30px;
+    font-size:20px;
+    color: azure;
+    border-radius: 20px ;
+
+    
+
+}

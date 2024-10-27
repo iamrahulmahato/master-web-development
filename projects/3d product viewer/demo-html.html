@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360 Deg Product Viewer</title>
+    <script src="/projects/3d product viewer/pdt360DegViewer.js"></script>
+    <script>
+    document.write('<style>h1,h3,h4{text-align:center;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.viewer{position:relative;margin:20px 0}#pdtViewer{width:67%;margin:0 auto}#pdtViewer img{padding:40px 20px;border:.5px solid #eee;user-select:none;-moz-user-select:none}#dummy{display:none}.loader{width:100%;height:100%;position:absolute;background:rgba(0,0,0,.5);z-index:1;top:0}.three-bounce{text-align:center;font-size:26px;position:absolute;top:50%;left:50%}.three-bounce div{display:inline-block;width:18px;height:18px;border-radius:100%;background-color:#fff;-webkit-animation:bouncedelay 1.4s infinite ease-in-out both;animation:bouncedelay 1.4s infinite ease-in-out both}.three-bounce .one{-webkit-animation-delay:-0.32s;animation-delay:-0.32s}.three-bounce .two{-webkit-animation-delay:-0.16s;animation-delay:-0.16s}.btnDiv{text-align:center;margin:10px 0}.btnDiv button{margin:4px 8px;padding:20px;border:0;background-color:dodgerblue;color:#fff;border-radius:50%;font-size:16px;position:relative;cursor:pointer}.btnDiv button:active{background-color:#006dd8}.btnDiv button:hover{box-shadow:0 0 8px 1px #1b8eff}.btnDiv button:focus{outline:0}.btnDiv button:before,.btnDiv button.pause:after,.btnDiv button.plus:after,.btnDiv button.right:after,.btnDiv button.left:after{position:absolute;content:""}.btnDiv button.play:before,.btnDiv button.left:before,.btnDiv button.right:after{border:11px solid transparent;border-left-color:inherit;left:16px;top:24%}.btnDiv button.pause:before,.btnDiv button.pause:after{left:12px;top:28%;width:6px;height:19px;background:#fff}.btnDiv button.pause:after{right:12px;left:auto}.btnDiv button.stop:before{left:11px;top:25%;width:45%;height:50%;background:#fff}.btnDiv button.plus:before{left:17px;top:27%;background:#fff;width:6px;height:20px}.btnDiv button.plus:after,.btnDiv button.minus:before,.btnDiv button.right:before,.btnDiv button.left:after{left:9px;top:44%;background:#fff;width:22px;height:6px}.btnDiv button.left:after{left:11px;width:21px}.btnDiv button.right:before{width:20px}.btnDiv button.left:before,.btnDiv button.play.leftNav:before{border-right-color:inherit;border-left-color:transparent;left:-4px}.btnDiv button.right:after{left:22px}.btnDiv button.play.leftNav:before{left:1px;top:21%}.btnDiv.navDiv{text-align:left}.btnDiv.navDiv button{position:absolute;top:50%}.btnDiv.navDiv button.rightNav{right:0}img.draggable{cursor:e-resize}img.keys{cursor:pointer}@keyframes bouncedelay{0%,80%,100%{-webkit-transform:scale(0);transform:scale(0)}40%{transform:scale(1);-webkit-transform:scale(1)}}@-webkit-keyframes bouncedelay{0%,80%,100%{-webkit-transform:scale(0);transform:scale(0)}40%{transform:scale(1);-webkit-transform:scale(1)}}@media screen and (max-width:1030px){#pdtViewer img{width:100%}}@media screen and (max-width:992px){.hidePhone{display:none}.btnDiv{zoom:.7}}@media screen and (max-width:1250px){#pdtViewer img{padding:40px 0}#pdtViewer{width:95%}}@media screen and (max-width:767px){.fork{width:100px;position:absolute!important}h1{margin-top:60px}}</style>');
+    </script>
+</head>
+<body>
+    <h1>360 Degree Product Viewer</h1>
+    <br />
+    <div id="pdtViewer">
+        <h3>Playable(controls) with Autoplay</h3>
+        <div id="car0"></div>
+
+        <h3>Playable(controls) without Autoplay</h3>
+        <div id="car1"></div>
+
+        <h3>Autoplay without Playable(controls)</h3>
+        <div id="car2"></div>
+
+        <h3>Drag over the image</h3>
+        <div id="car3"></div>
+
+        <h3 class="hidePhone">Mouse Move over the image</h3>
+        <div id="car4"></div>
+
+        <h3>Click on the Navigation Buttons</h3>
+        <div id="car5"></div>
+
+        <h3 class="hidePhone">Click on the image and Keypress Navigation Arrows</h3>
+        <div id="car6"></div>
+
+        <h3 class="hidePhone">Scroll over the image</h3>
+        <div id="car7"></div>
+    </div>
+    <div id="dummy"></div>
+    <script>
+        var path = './img/';
+
+        //pdt360DegViewer(imgDivid, count, path, imgType, playable, autoPlay, drag, mouseMove, buttonNavigation, keyNavigation, scroll);
+
+        pdt360DegViewer('car0', 51, path, 'png', true, true, false, false, false, false, false);    //playable autoPlay
+        pdt360DegViewer('car1', 51, path, 'png', true, false, false, false, false, false, false);   //playable
+        pdt360DegViewer('car2', 51, path, 'png', false, true, false, false, false, false, false);   //autoPlay
+        pdt360DegViewer('car3', 51, path, 'png', false, false, true, false, false, false, false);   //draggable
+        pdt360DegViewer('car4', 51, path, 'png', false, false, false, true, false, false, false);   //mouseMove
+        pdt360DegViewer('car5', 51, path, 'png', false, false, false, false, true, false, false);   //buttonNavigation
+        pdt360DegViewer('car6', 51, path, 'png', false, false, false, false, false, true, false);   //keys
+        pdt360DegViewer('car7', 51, path, 'png', false, false, false, false, false, false, true);   //scroll
+    </script>
+</body>
+</html>

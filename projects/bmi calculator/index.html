@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../styles.css" />
-    <title>BMI Calculator</title>
-  </head>
-  <body style="background-color: rgb(248, 190, 190);">
-    
-    
-  <div class="background-image-container">
-    <div class="container">
-      <h1 class="text">BMI Calculator</h1>
-      <form>
-        <h3><label class="text">Height in CM: </label><input type="text" id="height" /></h3>
-        <h3><label class="text">Weight in KG: </label><input type="text" id="weight" /></h3>
-        <button >Calculate</button>
-        <div id="results"></div>
-        <div id="weight-guide">
-          <h2 class="text">BMI Weight Guide</h2>
-          <h3 class="text">Under Weight = Less than 18.6</h3>
-          <h3 class="text">Normal Range = 18.6 and 24.9</h3>
-          <h3 class="text">Overweight = Greater than 24.9</h3>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refined BMI Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="contentbox">
+        <h1><span>BMI</span> Calculator</h1>
+        <p class="info-text">Underweight: &lt; 18.5 <br> Normal: 18.5 - 24.9 <br> Overweight: &gt; 25</p>
+
+        <div class="input-group">
+            <label for="weight">Weight</label>
+            <input type="number" required id="weight" placeholder="Enter your weight">
+            <select id="weight-unit">
+                <option value="kg">Kilograms (kg)</option>
+                <option value="lbs">Pounds (lbs)</option>
+            </select>
         </div>
-      </form>
+
+        <div class="input-group">
+            <label for="height">Height</label>
+            <input type="number" required id="height" placeholder="Enter your height">
+            <select id="height-unit">
+                <option value="m">Meters (m)</option>
+                <option value="cm">Centimeters (cm)</option>
+                <option value="in">Inches (in)</option>
+                <option value="ft">Feet (ft)</option>
+            </select>
+        </div>
+
+        <button id="calculate">Calculate BMI</button>
+
+        <div class="footer" id="result-container">
+            <h2 id="result-message"></h2>
+            <div id="bmi-category"></div>
+            <div id="health-tips" class="health-tips"></div>
+        </div>
     </div>
-  </div>
-  </body>
-  <script src="javascript.js"></script>
+
+    <script src="javascript.js">
+
+    </script>
+</body>
+
 </html>

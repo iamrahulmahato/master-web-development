@@ -1,160 +1,178 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 300;
-    background-color: #e5e5f7;
-    opacity: 0.9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    transition: background-color 0.3s;
-}
-
-body.dark-theme {
-    background-color: #1a1a2e;
+  background: url("pxfuel.jpg") center/cover no-repeat;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Helvetica", sans-serif;
+  color: #f0f8ff;
 }
 
 .container {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    width: 500px; 
-    padding: 20px;
-    overflow: hidden;
+  background: rgba(34, 49, 63, 0.7);
+  border-radius: 12px;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  color: #f5f7fa;
 }
 
-.todo-header {
+h1 {
+  text-align: center;
+  border-bottom: 1px solid #8fb596;
+  padding-bottom: 10px;
+  font-size: 2rem;
+  color: #b8e994; /* Light green for the main heading */
+}
+
+h2 {
+  color: #eceea9ec;
+  margin-bottom: 10px;
+}
+
+#taskInput,
+#searchInput {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #f0f8ff;
+}
+
+#taskInput::placeholder,
+#searchInput::placeholder {
+  color: #e0f3df;
+}
+
+#addTaskButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #519a5e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #f0f8ff;
+  transition: background-color 0.3s ease;
+}
+
+#addTaskButton:hover {
+  background-color: #7aa580;
+}
+
+button {
+  padding: 10px;
+  margin-right: 10px;
+  background-color: #489857;
+  color: #f0f8ff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #398b44;
+}
+
+/* Task Display Styling */
+ul {
+  list-style-type: disc;
+  padding: 0;
+}
+
+li {
+  background-color: rgba(255, 223, 186, 0.8);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li span {
+  color: #5a4a2c; /* Dark brown for task text to contrast with bg */
+  margin-right: 10px;
+}
+
+#pendingTasks li {
+  border-left: 5px solid #ffeb0add; /* Accent color for pending tasks */
+}
+
+#completedTasks li {
+  border-left: 5px solid #3a7a46; /* Accent color for completed tasks */
+}
+
+/* Styling for the Pomodoro section */
+.pomodoro-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 250px;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pomodoro-section {
     text-align: center;
-    margin-bottom: 20px;
-    background-color: #444cf7;
-    padding: 15px;
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.todo-header h2 {
-    font-size: 1.5rem; 
-}
-
-.todo-header button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    border: none;
-    background-color: #fff;
-    color: #444cf7;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.todo-header button:hover {
-    background-color: #f0f0f0;
-}
-
-.form-todo {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.form-todo input[type="text"], 
-.form-todo input[type="date"],
-.form-todo select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #ccc;
-    font-size: 1rem;
-}
-
-.form-todo input[type="submit"] {
-    padding: 10px;
-    background-color: #444cf7;
-    color: white;
-    font-size: 1rem;
+.timer {
+    font-size: 3rem;
     font-weight: bold;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-.form-todo input[type="submit"]:hover {
-    background-color: #3339b1;
-}
-
-.todo-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.todo-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    cursor: grab;
-}
-
-.todo-list li.dragging {
-    opacity: 0.5;
-}
-
-.todo-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.tick-btn,
-.delete-btn {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
     color: #444cf7;
+    margin-bottom: 10px;
 }
 
-.tick-btn:hover {
-    color: #4caf50;
+.timer-controls button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 1rem;
+    background-color: #444cf7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.delete-btn:hover {
-    color: #d32f2f;
-}
-
-.task.completed {
-    text-decoration: line-through;
-    opacity: 0.6;
-}
-
-.priority-high {
-    background-color: #ffcccc; /* Red for high priority */
-}
-
-.priority-medium {
-    background-color: #fff3cd; /* Yellow for medium priority */
-}
-
-.priority-low {
-    background-color: #d4edda; /* Green for low priority */
+.timer-controls button:hover {
+    background-color: #3330e3;
 }
 
 @media screen and (max-width: 600px) {
     .container {
         width: 90%;
     }
+
+    .pomodoro-container {
+        width: 90%;
+        top: auto;
+        bottom: 20px;
+        right: auto;
+        left: 20px;
+    }
 }
 
-.todo-list li.dragging {
-    opacity: 0.5;
-    border: 2px dashed #444cf7; /* Add a dashed border to the dragging item */
+.custom-alert {
+    position: fixed;
+    top: 30px; /* Creates space from the top of the screen */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the alert horizontally */
+    background-color: #444cf7;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    z-index: 1000;
+    opacity: 0.9;
+    transition: opacity 0.3s ease-in-out;
+    display: none;
 }

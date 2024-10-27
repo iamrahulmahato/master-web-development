@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+
+    <title>Display Tester</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Display Tester</h1>
+    <div id="colorbox"></div>
+
+    <div id="current-color">
+        <div class="color-display" id="current-color-display"></div>
+        <span id="current-color-code">#f5f5f5</span>
+        <div class="tooltip" id="copy-tooltip">
+            📋
+            <span class="tooltiptext" id="tooltip-text">Copy</span>
+        </div>
+    </div>
+
+    <div>
+        <button id="reset-btn">Reset Background</button>
+    </div>
+
+    <div id="add-color-section">
+        <input type="color" id="new-color-picker" value="#6203e0">
+        <button id="add-color-btn">Add Color</button>
+    </div>
+    <script src="script.js">
+    </script>
+</body>
+
+</html>

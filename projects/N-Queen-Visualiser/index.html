@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>N-Queen-Visualiser</title>
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        />
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <header class="header">
+            <h2>
+                N-Queens Visualiser
+                <i class="fas fa-crown" style="color: #fdfffc"></i>
+            </h2>
+        </header>
+        <div class="container">
+            <div class="landing-div">
+                <h1>Welcome to the Chess Visualiser</h1>
+                <h4 class="objective-title">Objective</h4>
+                <p class="justified-text">
+                    The objective of the N-Queens problem is to place N queens on an N x N chessboard so that no two queens can attack each other. This means that no two queens can share the same row, column, or diagonal. The problem has been around since the 19th century and has fascinated mathematicians, computer scientists, and puzzle enthusiasts for decades. 
+                    The problem is considered a classic example of a problem that can be solved using recursion and backtracking. You can formulate the problem recursively by:<br/><br/>
+                    1. Simplifying the problem to the most trivial case<br/>
+                    2. Generating all possible permutations of the queens' positions<br/>
+                    3. Checking if each permutation is a valid placement.
+                </p>
+                <button id="start-button">Get Started</button>
+            </div>
+            <div class="n-queen">
+                <div class="inputbox">
+                    <input
+                        type="number"
+                        class="numberbox"
+                        id="numberbox"
+                        required
+                    />
+                    <label>Enter the Number of Queens</label>
+                </div>
+                <div class="slider-container">
+                    <input
+                        class="slider"
+                        id="slider"
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="40"
+                    />
+                    <div id="progress-bar"></div>
+                </div>
+                <button class="play-button" id="play-button">
+                    <i class="fa fa-play" aria-hidden="true"></i> Play
+                </button>
+            </div>
+            <div class="queen-arrangement" id="queen-arrangement"></div>
+            <div id="n-queen-board"></div>
+        </div>
+        <script src="chess.js"></script>
+    </body>
+</html>
