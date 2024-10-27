@@ -1,176 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
+    background-image: url('lovecalbg.jpg'); /* Add your preferred background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: #f472b6;
 }
 
 .contentbox {
+    background-color: rgba(7, 7, 7, 0.512);
+    backdrop-filter: blur(2px); /* Blur effect */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     text-align: center;
-    width: 400px;
-    height: 600px;
-    padding: 20px;
-    margin: 0 auto;
-    border-radius: 10px;
-    background: #FFF;
-    color: #0f172a;
+    width: 350px;
 }
 
-.contentbox h1 span {
-    color: #ec4899;
+.contentbox:hover{
+    border: 1px solid palevioletred;
 }
 
-#calculate {
-    margin-top: 2rem;
-    width: 150px;
-    height: 50px;
-    background-color: #ec4899;
+h1 span {
+    color: #ff4081;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+h1 {
+    margin-bottom: 15px;
+    font-size: 2rem;
     color: white;
-    font-size: 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
 }
 
-#calculate:hover {
-    background-color: #ec4899;
-    cursor: pointer;
-    transform: scale(1.1);
-    transition: transform 0.2s ease-in-out;
-}
-
-.gap {
-    margin-bottom: 0.5rem;
-}
-
-.footer {
-    margin-top: 2rem;
+p {
+    color: white;
+    margin-bottom: 20px;
 }
 
 .input-group {
     position: relative;
-    margin: 40px 0 20px;
+    margin-bottom: 30px;
 }
 
-input {
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
-    display: block;
-    width: 100%;
+.input-group input {
+    background: transparent;
     border: none;
-    border-bottom: 1px solid #757575;
-}
-
-input:focus {
+    border-bottom: 2px solid white;
+    color: white;
+    font-size: 1rem;
+    width: 100%;
+    padding: 10px 0;
     outline: none;
 }
 
-label {
-    color: #999;
-    font-size: 18px;
-    font-weight: normal;
+.input-group label {
     position: absolute;
-    pointer-events: none;
-    left: 5px;
     top: 10px;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
-}
-
-input:focus~label,
-input:valid~label {
-    top: -20px;
-    font-size: 14px;
-    color: #ec4899;
-}
-
-.bar {
-    position: relative;
-    display: block;
-    width: 315px;
-}
-
-.bar:before,
-.bar:after {
-    content: '';
-    height: 2px;
-    width: 0;
-    bottom: 1px;
-    position: absolute;
-    background: #ec4899;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
-}
-
-.bar:before {
-    left: 50%;
-}
-
-.bar:after {
-    right: 50%;
-}
-
-input:focus~.bar:before,
-input:focus~.bar:after {
-    width: 50%;
-}
-
-.highlight {
-    position: absolute;
-    height: 60%;
-    width: 100px;
-    top: 25%;
     left: 0;
+    color: white;
     pointer-events: none;
-    opacity: 0.5;
+    transition: 0.3s ease;
 }
 
-input:focus~.highlight {
-    -webkit-animation: inputHighlighter 0.3s ease;
-    -moz-animation: inputHighlighter 0.3s ease;
-    animation: inputHighlighter 0.3s ease;
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: -20px;
+    font-size: 0.85rem;
+    color: #ff4081;
 }
 
-
-/* animations */
-
-@-webkit-keyframes inputHighlighter {
-    from {
-        background: #ec4899;
-    }
-    to {
-        width: 0;
-        background: #ec4899;
-    }
+input:focus {
+    border-color: #ff4081;
+    box-shadow: 0px 8px 15px rgba(255, 64, 129, 0.2);
 }
 
-@-moz-keyframes inputHighlighter {
-    from {
-        background: #ec4899;
-    }
-    to {
-        width: 0;
-        background: transparent;
-    }
+button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-@keyframes inputHighlighter {
-    from {
-        background: #ec4899;
-    }
-    to {
-        width: 0;
-        background: transparent;
-    }
+button:hover {
+    background-color: white;
+    color: #ff4081;
+    box-shadow: 0px 8px 15px rgba(255, 64, 129, 0.3);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#result-message {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+#result-percentage {
+    color: #ff4081;
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+.spinner {
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid #ff4081;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

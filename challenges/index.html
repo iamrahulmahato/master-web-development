@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development challengezes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #14135b; /* Light cyan background */
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #ffffff; /* Dark cyan text */
+        }
+
+        .quiz-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .quiz-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .quiz-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .quiz-card h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #00796b;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Web Development Challenges</h1>
+    <div class="quiz-container">
+        <div class="quiz-card">
+            <h2>HTML Challenge</h2>
+            <button onclick="startQuiz()">Start</button>
+        </div>
+        <div class="quiz-card">
+            <h2>EASY CSS CHALLENGE</h2>
+            <button onclick="csseasy()">Start</button>
+        </div>
+        <div class="quiz-card">
+            <h2>CSS Intermediate Quiz</h2>
+            <button onclick="cssmed()">Start</button>
+        </div>
+        <div class="quiz-card">
+            <h2>CSS Advanced Quiz</h2>
+            <button onclick="csshard()">Start</button>
+        </div>
+        <div class="quiz-card">
+            <h2>JavaScript Basic Quiz</h2>
+            <button onclick="alert('Quiz not implemented yet')">Start</button>
+        </div>
+        <div class="quiz-card">
+            <h2>JavaScript Medium Quiz</h2>
+            <button onclick="alert('Quiz not implemented yet')">Start</button>
+        </div>
+        <div class="quiz-card">
+            <h2>JavaScript Advanced Quiz</h2>
+            <button onclick="alert('Quiz not implemented yet')">Start</button>
+        </div>
+    </div>
+
+    <script>
+        function startQuiz() {
+            window.location.href = 'challengehtml.html'; // Redirect to the quiz page
+        }
+        function csseasy() {
+            window.location.href = 'easycss.html'; // Redirect to the quiz page
+        }
+        function cssmed() {
+            window.location.href = 'medcss.html'; // Redirect to the quiz page
+        }
+        function csshard() {
+            window.location.href = 'hardcss.html'; // Redirect to the quiz page
+        }
+    </script>
+</body>
+</html>

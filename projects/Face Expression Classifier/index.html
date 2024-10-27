@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Face Expression Classifier</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #222;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        video {
+            border: 2px solid #4caf50;
+            border-radius: 10px;
+        }
+        h1 {
+            margin-top: 10px;
+        }
+        .expression {
+            margin-top: 10px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Real-Time Face Expression Classifier</h1>
+    <video id="video" autoplay playsinline width="640" height="480"></video>
+    <div class="expression" id="expression">Loading...</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection"></script>
+    <script>
+        const video = document.getElementById('video');
+        const expressionDisplay = document.getElementById('expression');
+
+        // Expressions model with simple labels for demonstration
+        const expressions = ['Happy', 'Sad', 'Surprised', 'Neutral'];
+
+        async function setupWebcam() {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            video.srcObject = stream;
+            return new Promise((resolve) => {
+                video.onloadedmetadata = () => resolve(video);
+            });
+        }
+
+        async function detectExpressions() {
+            const model = await faceLandmarksDetection.load(
+                faceLandmarksDetection.SupportedPackages.mediapipeFacemesh
+            );
+
+            function getRandomExpression() {
+                return expressions[Math.floor(Math.random() * expressions.length)];
+            }
+
+            async function detect() {
+                const predictions = await model.estimateFaces({ input: video });
+
+                if (predictions.length > 0) {
+                    // Random expression assignment for demo (replace with real logic later)
+                    expressionDisplay.textContent = `Expression: ${getRandomExpression()}`;
+                } else {
+                    expressionDisplay.textContent = 'No face detected';
+                }
+
+                requestAnimationFrame(detect);
+            }
+            detect();
+        }
+
+        setupWebcam().then(() => detectExpressions());
+    </script>
+
+</body>
+</html>
