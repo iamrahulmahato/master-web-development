@@ -113,7 +113,7 @@ body {
 }
 
 .btn-container {
-  margin-bottom: 20px;
+  margin: 20px;
   text-align: center;
 }
 
@@ -138,6 +138,7 @@ body {
   width: 100%;
   margin-top: 20px;
   align-items: center; 
+  justify-content: center;
 }
 
 #search-input {
