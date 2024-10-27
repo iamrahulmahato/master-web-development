@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-Based Music Recommender</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s ease-in-out;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        select, button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .suggestions {
+            margin-top: 20px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body id="appBody">
+
+    <div>
+        <h1>Mood-Based Music Recommender</h1>
+        <select id="moodSelect">
+            <option value="">Select Your Mood</option>
+            <option value="happy">Happy</option>
+            <option value="sad">Sad</option>
+            <option value="energetic">Energetic</option>
+            <option value="calm">Calm</option>
+        </select>
+        <button onclick="getRecommendations()">Get Recommendations</button>
+
+        <div class="suggestions" id="suggestions"></div>
+    </div>
+
+    <script>
+        const appBody = document.getElementById('appBody');
+        const suggestionsDiv = document.getElementById('suggestions');
+
+        const moodThemes = {
+            happy: { color: '#FFD700', songs: ['Happy - Pharrell Williams', 'Can’t Stop the Feeling - Justin Timberlake'] },
+            sad: { color: '#708090', songs: ['Someone Like You - Adele', 'Fix You - Coldplay'] },
+            energetic: { color: '#FF4500', songs: ['Eye of the Tiger - Survivor', 'Uptown Funk - Bruno Mars'] },
+            calm: { color: '#87CEEB', songs: ['Weightless - Marconi Union', 'Better Together - Jack Johnson'] },
+        };
+
+        function getRecommendations() {
+            const mood = document.getElementById('moodSelect').value;
+            if (mood && moodThemes[mood]) {
+                const theme = moodThemes[mood];
+                appBody.style.backgroundColor = theme.color;
+                suggestionsDiv.innerHTML = `
+                    <h2>Recommended Songs:</h2>
+                    <ul>
+                        ${theme.songs.map(song => `<li>${song}</li>`).join('')}
+                    </ul>
+                `;
+            } else {
+                alert('Please select a mood!');
+            }
+        }
+    </script>
+
+</body>
+</html>
