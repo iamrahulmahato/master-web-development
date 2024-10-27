@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+
+Chai aur tweet
+
+{% endblock %}
+
+{% block container %}
+
+
+<h1 class="text-center mt-4">
+Welcome to this django project
+</h1>
+
+<a class="btn btn-primary" href="{% url 'tweet_create' %}">Create a tweet</a>
+
+<div class="container row gap-3">
+    {%for tweet in tweets%}
+    <div class="card" style="width: 18rem;">
+        <img src="{{tweet.photo.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{tweet.user.username}}</h5>
+          <p class="card-text">{{tweet.text}}</p>
+
+          {% if tweet.user == user %}
+          <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-primary">Edit</a>
+          <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger">Delete</a>
+          {% endif %}
+        </div>
+      </div>
+    
+    {% endfor %}
+
+
+</div>
+
+
+{% endblock %}
