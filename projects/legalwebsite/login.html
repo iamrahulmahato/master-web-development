@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Legal</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #edb055;
+        }
+
+        .container {
+            background-color: #4b0c09;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 20px 20px 20px rgba(18, 23, 5, 0.639);
+            max-width: 450px;
+            width: 200%;
+        }
+
+        input, button {
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #200607;
+            border-radius: 4px;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        button {
+            background-color:rgb(44, 190, 42);
+            color: white;
+            border:rgb(57, 10, 10);
+            cursor: pointer;
+            font-size: 16px;
+            padding: 12px 24px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        button:hover {
+            background-color: #08a525;
+        }
+        input:hover{
+            background-color: #f4bcbc;
+        }
+        .main{
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h2 class="main">Login Form</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="tel" id="phoneNum" placeholder="Phone Number" required>
+            <input type="date" id="dob" required>
+            
+            
+            <button>
+                <a href="lawyer.html" target="_blank">LOGIN</a>
+            </button>
+            
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var phoneNum = document.getElementById('phoneNum').value;
+            var dob = document.getElementById('dob').value;
+
+            // You can now use these values for authentication or further processing
+            console.log('Username: ' + username);
+            console.log('Password: ' + password);
+            console.log('Phone Number: ' + phoneNum);
+            console.log('Date of Birth: ' + dob);
+           
+        });
+    </script>
+</body>
+</html>
