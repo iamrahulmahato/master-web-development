@@ -1141,3 +1141,64 @@ footer{
 .container a{
   color: rgb(213, 108, 108);
 }
+
+/* Responsive design for tablets (768px and below) */
+@media (max-width: 768px) {
+  .projects-container {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      padding: 1rem;
+  }
+  
+  .card {
+      width: 100%;
+  }
+  
+  .slider .list .item .content .title {
+      font-size: 2.5rem;
+  }
+  
+  .hero-btn-container {
+      flex-direction: column;
+      gap: 10px;
+  }
+  
+  .search-container, .btn-container {
+      flex-direction: column;
+  }
+
+  .search-btn {
+      width: 100%;
+  }
+}
+
+/* Responsive design for mobile screens (480px and below) */
+@media (max-width: 480px) {
+  .projects-heading h3 {
+      font-size: 2rem;
+  }
+
+  .slider .list .item .content .title {
+      font-size: 1.8rem;
+  }
+
+  .nav-links1 {
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  .card {
+      width: 100%;
+  }
+  
+  .gridbox {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  
+  #search-input {
+      width: 100%;
+  }
+
+  .search-btn {
+      width: 100%;
+  }
+}
