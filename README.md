@@ -264,6 +264,7 @@ git push
 </div>
 
 <br>
+
 ### Troubleshooting
 
 If you encounter any issues while setting up or using the project, please refer to the following troubleshooting steps:
