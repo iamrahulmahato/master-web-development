@@ -260,7 +260,9 @@ git push
 
   Big thanks to all the contributors! 🎉
 
-  <a href="https://github.com/iamrahulmahato/master-web-development/pulse"> <img align="center" src="https://contrib.rocks/image?max=100&repo=iamrahulmahato/master-web-development" /> </a> 
+ <p align="center">
+    <img src="https://github.com/iamrahulmahato/master-web-development/graphs/contributors" width="700" height="250" />
+</p>
   
 </div>
 
