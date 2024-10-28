@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata for SEO and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Creative Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section with Navigation -->
+    <header>
+        <h1>Welcome to My Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="navigate('home')">Home</a></li>
+                <li><a href="#about" onclick="navigate('about')">About</a></li>
+                <li><a href="#contact" onclick="navigate('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Sections -->
+    <main>
+        <!-- Home Section with Blog Posts -->
+        <section id="home" class="content-section">
+            <h2>Blog Posts</h2>
+            <article>
+                <h3>First Post</h3>
+                <p>Welcome to my creative space! Here, I share my thoughts, experiences, and inspirations.</p>
+            </article>
+            <article>
+                <h3>A New Perspective</h3>
+                <p>Exploring new ideas and perspectives through writing. Join me on this journey!</p>
+            </article>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="content-section hidden">
+            <h2>About Me</h2>
+            <p>I'm a passionate writer who loves to share insights and connect with people through stories. This blog is my personal corner of the web where creativity meets reality.</p>
+        </section>
+
+        <!-- Contact Section with Form -->
+        <section id="contact" class="content-section hidden">
+            <h2>Contact Me</h2>
+            <form id="contactForm" onsubmit="return validateForm()">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Your Name">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Your Email">
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 My Creative Blog. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Navigation and Form Validation -->
+    <script>
+        // Function to navigate between sections
+        function navigate(section) {
+            document.querySelectorAll('.content-section').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById(section).classList.remove('hidden');
+        }
+
+        // Form validation for contact form
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) {
+                alert('Please fill in all fields.');
+                return false;
+            }
+            alert('Message sent successfully!');
+            return true;
+        }
+    </script>
+</body>
+</html>
+
+<!-- CSS Styling -->
+<style>
+    /* Reset and font styling */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+    body { color: #333; background: #f9f9f9; font-family: 'Helvetica Neue', sans-serif; }
+
+    /* Header and navigation styling with gradient */
+    header { 
+        background: linear-gradient(45deg, #6a0572, #a70f4a); 
+        color: #fff; 
+        padding: 1.5rem; 
+        text-align: center; 
+        font-size: 2.5rem; 
+        font-weight: bold; 
+    }
+    nav ul { list-style: none; padding-top: 1rem; }
+    nav ul li { display: inline; margin-right: 20px; }
+    nav ul li a { color: #ffd700; text-decoration: none; font-size: 1.2rem; font-weight: bold; }
+
+    /* Main content sections styling */
+    main { padding: 2rem; max-width: 800px; margin: auto; }
+    .content-section { margin-bottom: 3rem; border-radius: 8px; padding: 1.5rem; }
+    .hidden { display: none; }
+
+    /* Home, About and Contact sections styling */
+    #home { background: #ffffff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+    #about { background: #f0f8ff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+    #contact { background: #ffe4e1; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+
+    /* Article styling with hover effect */
+    article { margin-bottom: 1.5rem; padding: 1rem; border-left: 4px solid #a70f4a; }
+    article:hover { background: #fafafa; border-left: 4px solid #ffd700; }
+    article h3 { color: #6a0572; font-size: 1.8rem; margin-bottom: 0.5rem; }
+    article p { font-size: 1rem; line-height: 1.6; }
+
+    /* Form styling with soft border */
+    form { max-width: 500px; margin: auto; padding: 1.5rem; background: #ffffff; border: 2px solid #ffd700; border-radius: 8px; }
+    form label { display: block; margin-top: 1rem; font-size: 1rem; color: #333; }
+    form input, form textarea { width: 100%; padding: 0.7rem; margin-top: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; }
+    form button { margin-top: 1rem; padding: 0.7rem 1rem; background: #6a0572; color: #fff; border: none; border-radius: 4px; font-size: 1.1rem; cursor: pointer; }
+    form button:hover { background: #a70f4a; }
+
+    /* Footer styling with dark background */
+    footer { text-align: center; padding: 1rem; background: #333; color: #fff; font-size: 0.9rem; }
+</style>
