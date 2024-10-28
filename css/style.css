@@ -69,7 +69,7 @@ html {
 
 }
 
-html[data-theme="dark"] {
+html [data-theme="dark"] {
     --bg: #1e293b;
     --btn-color: #fecdd3;
     --btn-text: #1e293b;
