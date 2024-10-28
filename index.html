@@ -10,11 +10,13 @@
     <link rel="preconnect" href= "https://fonts.googleapis.com" />
     <link rel="preconnect" href= "https://fonts.gstatic.com" crossorigin />
     <link
-<main>
-
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
 <style>
 body {
     font-family: 'Poppins', sans-serif;
@@ -67,8 +69,6 @@ body {
     filter: grayscale(0%); /* Color on hover */
 }</style>
 
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet" />
     <link rel="shortcut icon" href="./assets/image/favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="./footer.css">
@@ -233,8 +233,7 @@ body {
                     rel="noopener noreferrer" class="source-code-btn">View source code</a>
             </div>
             <br />
-            <input type="text" id="search-input" placeholder="Search games by Title/Description..."
-                oninput="filterCards()" style="margin-bottom: 10px;">
+            
         </div>
         <div class="container">
             <!-- <div class="btn-container">
@@ -247,12 +246,8 @@ body {
             </div> -->
             
             <div class="search-container">
-              <input 
-                type="text" 
-                id="search-input" 
-                placeholder="Search games by Title/Description..."
-                oninput="filterCards()"
-              >
+                <input type="text" id="search-input" placeholder="Search games by Title/Description..."
+                oninput="filterCards()" style="margin-bottom: 10px;">
               <button class="search-btn" onclick="filterCards()">
                 <span class="search-icon"></span>
                 Search
@@ -931,24 +926,32 @@ body {
             </a>
 <a href="./projects/Real-Time Heatmap with Mouse Interactions/index.html" class="card" target="_blank">
     <div class="card-cover counter-cover-colour">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg3AyPZ2vwkck-Vgv59NJhxjXF5Tl6Wl4_0g&s" alt="">
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg3AyPZ2vwkck-Vgv59NJhxjXF5Tl6Wl4_0g&s" alt="Real-Time Heatmap">
+
     </div>
     <div class="card-content">
         <h3 class="card-heading">Real-Time Heatmap with Mouse Interactions</h3>
         <p class="card-description">
-            Real-Time Heatmap with Mouse Interactions
+
+            Create a real-time heatmap based on mouse movements!
+
         </p>
     </div>
 </a>
 
 <a href="./projects/Memory Tiles/index.html" class="card Games" target="_blank">
-    <div class="card-cover counter-cover-colour">
-        <img src="path/to/memory-tiles/image.jpg" alt="">
+
+    <div class="card-cover">
+        <img src="https://example.com/memory-tiles-image.jpg" alt="Memory Tiles">
+
     </div>
     <div class="card-content">
         <h3 class="card-heading">Memory Tiles</h3>
         <p class="card-description">
-            Test your memory with this fun game!
+
+            Test your memory skills with this fun tile-matching game!
+
         </p>
     </div>
 </a>
@@ -1005,26 +1008,7 @@ body {
     </div>
 </a>
 
-<a href="./projects/Style picker/index.html" class="card" target="_blank">
-    <div class="card-cover counter-cover-colour">
-        <img src="https://www.panaprium.com/cdn/shop/articles/different_fashion_styles_up.jpg?v=1712222301" alt="AI-Powered Style Picker">
-    </div>
-    <div class="card-content">
-        <h3 class="card-heading">AI-Powered Style Picker</h3>
-        <p class="card-description">
-            Customize your style with AI-powered suggestions!
-        </p>
-    </div>
-</a>
 
-    </div>
-    <div class="card-content">
-        <h3 class="card-heading">Random User Generator</h3>
-        <p class="card-description">
-            Generate random user profiles for testing and fun.
-        </p>
-    </div>
-</a>
 
                 <div class="card-cover">
                     <img src="./assets/image/screenshot.png" alt="">
@@ -3229,21 +3213,60 @@ body {
 
         
         <div class="form-group">
-          <label for="rating">Rating</label>
-          <select id="rating" name="rating" required>
-            <option value="5">Excellent - 5 Stars</option>
-            <option value="4">Very Good - 4 Stars</option>
-            <option value="3">Good - 3 Stars</option>
-            <option value="2">Fair - 2 Stars</option>
-            <option value="1">Poor - 1 Star</option>
-          </select>
-        </div>
+          <label for="rating"></label>
+          
 
         
         <div class="form-group">
           <label for="feedback">Your Feedback</label>
           <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..." required></textarea>
         </div>
+        <div id="star-rating" class="stars">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+        <p id="rating-value">Rating: 0</p>
+    
+    
+        <style>
+            .stars {
+               
+                cursor: pointer;
+                font-size: 2rem;
+                color: gray;
+            }
+            .star {
+                transition: color 0.2s;
+            }
+            .star.selected {
+                color: gold;
+            }
+        </style>
+        
+       <script>document.addEventListener("DOMContentLoaded", () => {
+        const stars = document.querySelectorAll(".star");
+        const ratingValue = document.getElementById("rating-value");
+        let selectedRating = 0;
+    
+        stars.forEach(star => {
+            star.addEventListener("mouseover", () => highlightStars(star.dataset.value));
+            star.addEventListener("mouseout", () => highlightStars(selectedRating));
+            star.addEventListener("click", () => {
+                selectedRating = star.dataset.value;
+                ratingValue.innerText = `Rating: ${selectedRating}`;
+            });
+        });
+    
+        function highlightStars(rating) {
+            stars.forEach(star => {
+                star.classList.toggle("selected", star.dataset.value <= rating);
+            });
+        }
+    });
+    </script>
 
         
         <button type="submit">Submit Feedback</button>
