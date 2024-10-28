@@ -34,41 +34,71 @@
         <button id="newGameButton" style="display: none;">New Game</button>
     </div>
 
-    <div class="keyboard">
-        <!-- First Row -->
-        <div class="row">
-          <button class="key">Q</button>
-          <button class="key">W</button>
-          <button class="key">E</button>
-          <button class="key">R</button>
-          <button class="key">T</button>
-          <button class="key">Y</button>
-          <button class="key">U</button>
-          <button class="key">I</button>
-          <button class="key">O</button>
-          <button class="key">P</button>
-        </div>
-        <!-- Second Row -->
-        <div class="row">
-          <button class="key">A</button>
-          <button class="key">S</button>
-          <button class="key">D</button>
-          <button class="key">F</button>
-          <button class="key">G</button>
-          <button class="key">H</button>
-          <button class="key">J</button>
-          <button class="key">K</button>
-          <button class="key">L</button>
-        </div>
-        <!-- Third Row -->
-        <div class="row">
-          <button class="key">Z</button>
-          <button class="key">X</button>
-          <button class="key">C</button>
-          <button class="key">V</button>
-          <button class="key">B</button>
-          <button class="key">N</button>
-          <button class="key">M</button>
+    <div class="keyboard-container">
+        <button id="showKeyboardBtn" style="margin-left: 10px;">Show Keyboard</button>
+        <div id="virtualKeyboard" class="keyboard hidden" style="margin-top: 10px;margin-left: 10px;">
+            <!-- First Row -->
+            <div class="key-row">
+                <button class="key">1</button>
+                <button class="key">2</button>
+                <button class="key">3</button>
+                <button class="key">4</button>
+                <button class="key">5</button>
+                <button class="key">6</button>
+                <button class="key">7</button>
+                <button class="key">8</button>
+                <button class="key">9</button>
+                <button class="key">0</button>
+            </div>
+            <!-- Second Row -->
+            <div class="key-row">
+            <button class="key">Q</button>
+            <button class="key">W</button>
+            <button class="key">E</button>
+            <button class="key">R</button>
+            <button class="key">T</button>
+            <button class="key">Y</button>
+            <button class="key">U</button>
+            <button class="key">I</button>
+            <button class="key">O</button>
+            <button class="key">P</button>
+            </div>
+            <!-- Third Row -->
+            <div class="key-row">
+            <button class="key">A</button>
+            <button class="key">S</button>
+            <button class="key">D</button>
+            <button class="key">F</button>
+            <button class="key">G</button>
+            <button class="key">H</button>
+            <button class="key">J</button>
+            <button class="key">K</button>
+            <button class="key">L</button>
+            </div>
+            <!-- Fourth Row -->
+            <div class="key-row">
+            <button class="key">Z</button>
+            <button class="key">X</button>
+            <button class="key">C</button>
+            <button class="key">V</button>
+            <button class="key">B</button>
+            <button class="key">N</button>
+            <button class="key">M</button>
+            <button class="key large-key" id="backspaceKey">Backspace</button>
+            </div>
+            <!--Fivth row-->
+            <div class="key-row">
+                <button class="key">!</button>
+                <button class="key">@</button>
+                <button class="key">#</button>
+                <button class="key">$</button>
+                <button class="key">%</button>
+                <button class="key">&</button>
+                <button class="key">*</button>
+                <button class="key">(</button>
+                <button class="key">)</button>
+                <button class="key large-key" id="spacebar">Space</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
