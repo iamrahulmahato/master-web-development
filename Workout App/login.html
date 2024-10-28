@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Login Form and Sign up</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+            line-height: 1.5;
+            min-height: 100vh;
+            background: #181818;
+            flex-direction: column;
+            margin: 0;
+            font-family: 'Public Sans', sans-serif;
+
+        }
+
+        .main {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            transition: transform 0.2s;
+            width: 90%;
+            /* Adjust width for mobile devices */
+            max-width: 500px;
+            /* Maximum width for larger screens */
+            text-align: center;
+        }
+
+        h1 {
+            color: #242b3a;
+        }
+
+        form {
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            text-align: left;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #e1e1e1;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border: none;
+            color: black;
+            cursor: pointer;
+            background-color: #D7FB00;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        a{
+            text-decoration: none;
+            color: #242b3a;
+            font-weight: bold;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .main {
+                width: 80%;
+                padding: 15px;
+            }
+
+            form {
+                padding: 15px;
+            }
+
+            button {
+                padding: 12px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main {
+                width: 95%;
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            form {
+                padding: 10px;
+            }
+
+            input,
+            button {
+                font-size: 14px;
+            }
+
+            button {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>ZenFit</h1>
+        <h3>Login to see your profile</h3>
+
+        <form action="">
+            <label for="userInput">
+                Username:
+            </label>
+            <input type="text" id="userInput" name="first" placeholder="Enter Username"
+                required>
+
+            <label for="password">
+                Password:
+            </label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+
+            <div class="wrap">
+                <button type="submit">
+                    Submit
+                </button>
+            </div>
+        </form>
+
+        <p>Not registered?
+            <a href="Signup.html" style="text-decoration: none;" target="_self">
+                Create an account
+            </a>
+        </p>
+    </div>
+    
+</body>
+
+</html>

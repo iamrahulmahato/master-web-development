@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambient Color Light Simulator</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #87CEEB; /* Default: Morning Sky */
+            transition: background-color 3s ease;
+        }
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <button onclick="setMode('morning')">Morning</button>
+        <button onclick="setMode('afternoon')">Afternoon</button>
+        <button onclick="setMode('evening')">Evening</button>
+        <button onclick="setMode('night')">Night</button>
+    </div>
+
+    <script>
+        const body = document.body;
+
+        function setMode(mode) {
+            switch (mode) {
+                case 'morning':
+                    body.style.backgroundColor = '#87CEEB'; // Light Blue
+                    break;
+                case 'afternoon':
+                    body.style.backgroundColor = '#FFD700'; // Bright Yellow
+                    break;
+                case 'evening':
+                    body.style.backgroundColor = '#FF8C00'; // Orange
+                    break;
+                case 'night':
+                    body.style.backgroundColor = '#2C3E50'; // Dark Blue
+                    break;
+            }
+        }
+
+        function updateBackground() {
+            const hour = new Date().getHours();
+            if (hour >= 6 && hour < 12) {
+                setMode('morning');
+            } else if (hour >= 12 && hour < 18) {
+                setMode('afternoon');
+            } else if (hour >= 18 && hour < 21) {
+                setMode('evening');
+            } else {
+                setMode('night');
+            }
+        }
+
+        updateBackground(); // Set initial background
+        setInterval(updateBackground, 60000); // Update every minute
+    </script>
+
+</body>
+</html>

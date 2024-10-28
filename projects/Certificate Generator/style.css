@@ -1,0 +1,31 @@
+body {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+
+form {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 20px;
+    
+    
+}
+
+#getCerti {
+    min-height: 45vh;
+    width: 80vw;
+    margin-top: 20px;
+    margin-bottom: 30vh;
+}
+
+.btn{
+    width: 20vw;
+}
+

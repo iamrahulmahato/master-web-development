@@ -5,21 +5,25 @@ body {
   background-attachment: fixed;
   background-size: cover;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 #container {
   display: flex;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   justify-content: center;
-  font-size: 15vh;
+  font-size: 18vh;
   backdrop-filter: blur(15px);
   font-weight: bold;
   margin-top: 5%;
+  align-self: center;
 }
 
 h1 {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 8vh;
+  font-size: 9vh;
+  margin-top: 14px;
 }
 
 #timezone-selector {
