@@ -953,7 +953,27 @@ body {
     <div class="card-content">
         <h3 class="card-heading">AI-Powered Style Picker</h3>
         <p class="card-description">
+            Discover your unique fashion style with our AI-powered tool!
+        </p>
+    </div>
+</a>
+
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">AI-Powered Style Picker</h3>
+        <p class="card-description">
+<a href="./projects/Style picker/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="https://www.panaprium.com/cdn/shop/articles/different_fashion_styles_up.jpg?v=1712222301" alt="AI-Powered Style Picker">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">AI-Powered Style Picker</h3>
+        <p class="card-description">
             Customize your style with AI-powered suggestions!
+        </p>
+    </div>
+</a>
+
         </p>
     </div>
 </a>
@@ -966,6 +986,7 @@ body {
         <h3 class="card-heading">Random User Generator</h3>
         <p class="card-description">
             Generate random user profiles for testing and fun.
+
         </p>
     </div>
 </a>
@@ -3296,6 +3317,7 @@ body {
             <h3>About Us</h3>
             <p>Empowering aspiring developers to master web development through hands-on, small-scale projects.</p>
         </div>
+        
         <!-- Newsletter Section -->
         <div class="footer-section newsletter">
             <h3>Subscribe to Our Newsletter</h3>
@@ -3304,8 +3326,48 @@ body {
                 <button type="submit">Subscribe</button>
             </form>
         </div>
-    </div>
-
+    </div><a href=""> <style>
+        .share-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #shareBtn {
+            background-color: #f71257;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #shareBtn:hover {
+            background-color: #f8bab5;
+        }
+    </style>
+</head>
+<body>
+            <div class="share-section">
+                <button id="shareBtn">Share Us</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById('shareBtn').addEventListener('click', function() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Contact Us',
+                    text: 'Check out this Contact Us page!',
+                    url: window.location.href
+                }).then(() => {
+                    console.log('Thanks for sharing!');
+                }).catch((error) => {
+                    console.error('Error sharing:', error);
+                });
+            } else {
+                alert('Web Share API is not supported in your browser.');
+            }
+        });
+    </script>
+</a></li>
 
         <!-- Bottom Links Section -->
         <ul class="gridbox">
@@ -3315,8 +3377,10 @@ body {
             <li><a href="#">Media Centre</a></li>
             <li><a href="#">Terms of Use</a></li>
             <li><a href="#">Privacy</a></li>
+            
             <li><a href="#">Cookie Preferences</a></li>
             <li><a href="#">Contact Us</a></li>
+            
         </ul>
 
         <!-- Footer Bottom -->
@@ -3461,6 +3525,7 @@ visitor
             margin-bottom: 15px;
             font-weight: bold;
             background: -webkit-linear-gradient(left, #007d39, #44f899, #005f2b);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-size: 12.7px;
