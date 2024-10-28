@@ -252,19 +252,18 @@ git push
 
 [![](https://mermaid.ink/img/pako:eNpFUMtywjAM_BWNzvADOfRQWk5th0mPCQfhKI_iB1XsYRjg35EdpvVBlrQrraQrmtAxVtjbcDYjSYSPuvWgbxvk2GQDcWQ4SfhhE_ewXr_AQcibsdkIU2Qg-OIzvJbcfqldCIX73k2xyQb6yfITL3FGTXBO8U35ipAO4Qeen8QFz9TbdvJk7eUGpsju6n_9XbIWav5NPEctxBU6FkdTp4tdc6MWtbXjFit1O5Jji62_K49SDN8Xb7CKkniFEtIwYtWTnTVKp04F3iYahNxflnX4IJ_L3cr57g_ewG4o?type=png)](https://mermaid.live/edit#pako:eNpFUMtywjAM_BWNzvADOfRQWk5th0mPCQfhKI_iB1XsYRjg35EdpvVBlrQrraQrmtAxVtjbcDYjSYSPuvWgbxvk2GQDcWQ4SfhhE_ewXr_AQcibsdkIU2Qg-OIzvJbcfqldCIX73k2xyQb6yfITL3FGTXBO8U35ipAO4Qeen8QFz9TbdvJk7eUGpsju6n_9XbIWav5NPEctxBU6FkdTp4tdc6MWtbXjFit1O5Jji62_K49SDN8Xb7CKkniFEtIwYtWTnTVKp04F3iYahNxflnX4IJ_L3cr57g_ewG4o)
 
-<div align="center">
-  
-  <h1><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" width="35" height="35"> Contributors</h1>
-
-  Big thanks to all the contributors! 🎉
+# Contributors 🙋🏽
 
 <p align="center">
-  <img src="https://github.com/iamrahulmahato/master-web-development/graphs/contributors" width="700" height="250" />
+      <a href="https://github.com/iamrahulmahato/master-web-development/graphs/contributors">
+        <img src="https://github.com/iamrahulmahato/master-web-development/graphs/contributors" width="700" height="250" />
+      </a>
 </p>
-  
-</div>
 
 <br>
+
+## Thank you for contributing 💗 
+We truly appreciate your time and effort to help improve our project. Happy coding! 🚀
 
 ### Troubleshooting
 
