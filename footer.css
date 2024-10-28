@@ -1,6 +1,7 @@
 /* General styles for the footer */
 footer {
-    background-color: #f7f7f7; /* Light gray background */
+    background-color: #f7f7f7;
+    /* Light gray background */
     padding: 30px 15px;
     text-align: center;
     color: #000;
@@ -21,9 +22,9 @@ footer {
 }
 
 .footer-section h3 {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: #000;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     position: relative;
     transition: text-shadow 0.3s ease, color 0.3s ease;
@@ -74,8 +75,8 @@ footer {
 
 .newsletter button {
     padding: 10px 20px;
-    background-color: #f8c5c5;
-    color: #000;
+    background-color: #fa2b4d;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -136,97 +137,134 @@ footer {
         align-items: center;
     }
 }
-    .newsletter input[type="email"], .newsletter button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    /* Hover effect on the subscribe button */
+
+.newsletter input[type="email"],
+.newsletter button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Hover effect on the subscribe button */
 .newsletter button:hover {
     background-color: #e39a9a;
-    transform: scale(1.05); /* Slightly enlarge the button */
+    transform: scale(1.05);
+    /* Slightly enlarge the button */
 }
+
 /* Footer bottom section */
 .footer-bottom {
     padding-top: 10px;
-    padding-bottom: 10px; /* Add some bottom padding */
-    background-color: #eaeaea; /* Background color for the footer bottom */
-    text-align: center; /* Center the text */
+    padding-bottom: 10px;
+    /* Add some bottom padding */
+    background-color: #eaeaea;
+    /* Background color for the footer bottom */
+    text-align: center;
+    /* Center the text */
 }
 
 .footer-bottom p {
-    margin: 0; /* Remove default margin */
-    color: #666; /* Dark gray color for the text */
-    font-size: 14px; /* Font size */
-    font-family: Arial, sans-serif; /* Font family */
+    margin: 0;
+    /* Remove default margin */
+    color: #666;
+    /* Dark gray color for the text */
+    font-size: 14px;
+    /* Font size */
+    font-family: Arial, sans-serif;
+    /* Font family */
 }
 
 /* Media Query for responsive design */
 @media (max-width: 768px) {
     .footer-bottom p {
-        font-size: 12px; /* Adjust font size for smaller screens */
+        font-size: 12px;
+        /* Adjust font size for smaller screens */
     }
 }
+
 .footer-bottom .social-icons a {
     margin: 0 8px;
-    color: #000; /* Default color */
+    color: #000;
+    /* Default color */
     font-size: 20px;
     transition: color 0.3s ease;
 }
 
 /* Hover effects for each social media icon */
 .footer-bottom .social-icons a:hover {
-    color: #000; /* Default hover color */
+    color: #000;
+    /* Default hover color */
 }
 
 /* Specific hover colors for each icon */
 .footer-bottom .social-icons a:hover .fab.fa-facebook-f {
-    color: #3b5998; /* Facebook Blue */
+    color: #3b5998;
+    /* Facebook Blue */
 }
 
 .footer-bottom .social-icons a:hover .fab.fa-twitter {
-    color: #1da1f2; /* Twitter Blue */
+    color: #1da1f2;
+    /* Twitter Blue */
 }
 
 .footer-bottom .social-icons a:hover .fab.fa-instagram {
-    color: #e1306c; /* Instagram Red */
+    color: #e1306c;
+    /* Instagram Red */
 }
 
 .footer-bottom .social-icons a:hover .fab.fa-linkedin-in {
-    color: #0077b5; /* LinkedIn Blue */
+    color: #0077b5;
+    /* LinkedIn Blue */
 }
 
 .footer-bottom .social-icons a:hover .fab.fa-youtube {
-    color: #ff0000; /* YouTube Red */
+    color: #ff0000;
+    /* YouTube Red */
 }
 
 .footer-bottom .social-icons a:hover .fab.fa-pinterest {
-    color: #e60023; /* Pinterest Red */
+    color: #e60023;
+    /* Pinterest Red */
 }
 
 .footer-bottom .social-icons a:hover .fab.fa-snapchat-ghost {
-     color: #fffc00;; /* Snapchat Yellow */
+    color: #fffc00;
+    ;
+    /* Snapchat Yellow */
 }
+
 .gridbox {
-    list-style: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
-    display: grid; /* Use grid for layout */
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
-    gap: 15px; /* Space between items */
+    list-style: none;
+    /* Remove bullet points */
+    padding: 0;
+    /* Remove default padding */
+    display: grid;
+    /* Use grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Responsive columns */
+    gap: 15px;
+    /* Space between items */
 }
 
 .gridbox li {
-    text-align: center; /* Center text */
+    text-align: center;
+    /* Center text */
 }
 
 .gridbox a {
-    text-decoration: none; /* Remove underline */
-    color: #000; /* Default text color */
-    font-size: 14px; /* Adjust font size */
-    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transition effects */
+    text-decoration: none;
+    /* Remove underline */
+    color: #000;
+    /* Default text color */
+    font-size: 14px;
+    /* Adjust font size */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    /* Transition effects */
 }
 
 /* Hover effect for links */
 .gridbox a:hover {
-    color: #f8c5c5; /* Change color on hover */
-    text-decoration: underline; /* Add underline on hover */
+    color: #f8c5c5;
+    /* Change color on hover */
+    text-decoration: underline;
+    /* Add underline on hover */
 }
