@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Doodle Classifier</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            border: 2px solid #333;
+            background-color: white;
+            cursor: crosshair;
+        }
+        .controls {
+            margin-top: 10px;
+        }
+        button {
+            padding: 8px 16px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Doodle Classifier</h1>
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <div class="controls">
+        <button id="clearBtn">Clear</button>
+        <p id="prediction">Prediction: <strong>Waiting...</strong></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/teachable-machine-image"></script>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const predictionEl = document.getElementById('prediction');
+        const clearBtn = document.getElementById('clearBtn');
+
+        let drawing = false;
+
+        canvas.addEventListener('mousedown', () => drawing = true);
+        canvas.addEventListener('mouseup', () => drawing = false);
+        canvas.addEventListener('mousemove', draw);
+
+        function draw(e) {
+            if (!drawing) return;
+            ctx.lineWidth = 5;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = '#000';
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(e.offsetX, e.offsetY);
+        }
+
+        clearBtn.addEventListener('click', () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            predictionEl.innerHTML = 'Prediction: <strong>Waiting...</strong>';
+        });
+
+        // Load the Teachable Machine model
+        async function loadModel() {
+            const model = await tmImage.load(
+                'https://teachablemachine.withgoogle.com/models/your-model-url/model.json'
+            );
+            return model;
+        }
+
+        async function predict() {
+            const model = await loadModel();
+
+            setInterval(async () => {
+                const prediction = await model.predict(canvas);
+                predictionEl.innerHTML = `Prediction: <strong>${prediction[0].className}</strong>`;
+            }, 1000);
+        }
+
+        predict();
+    </script>
+
+</body>
+</html>
