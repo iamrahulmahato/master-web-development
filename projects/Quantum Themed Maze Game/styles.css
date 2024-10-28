@@ -1,0 +1,67 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #000428, #004e92); /* Dark gradient background */
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5); /* Subtle text shadow */
+}
+
+.maze {
+    position: relative;
+    width: 420px; /* Increased width for better gameplay */
+    height: 420px; /* Increased height for better gameplay */
+    background-color: rgba(34, 34, 34, 0.9); /* Semi-transparent dark background */
+    border: 4px solid #00ff00; /* Quantum green border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Glow effect */
+    overflow: hidden;
+}
+
+.player {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff0000; /* Player in red */
+    border-radius: 50%; /* Circular player */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Red glow effect */
+    transition: transform 0.1s; /* Smooth movement */
+}
+
+.goal {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #00ff00; /* Goal in quantum green */
+    border-radius: 50%; /* Circular goal */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Green glow effect */
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Green glow effect */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+button:hover {
+    background-color: #00cc00; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+button:active {
+    transform: scale(0.95); /* Slightly shrink button on click */
+}
