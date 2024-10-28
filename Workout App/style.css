@@ -1,0 +1,417 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  background-color: #181818;
+}
+body,
+html {
+  overflow-x: hidden;
+}
+
+nav {
+  width: 100%;
+  height: 5rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  width: 3.125rem;
+  padding-left: 3.125rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  color: #ffffff;
+  font-family: "Anton", sans-serif;
+  padding-left: 1.25rem;
+}
+
+.option {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+}
+
+.option ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.option a {
+  color: #ffffff;
+  text-decoration: none;
+  padding-right: 1.25rem;
+  font-size: 1.25rem;
+  display: flex;
+}
+
+.option a:hover {
+  color: #d7fb00;
+}
+
+.menu-dropdown {
+  display: none;
+}
+.menu-dropdown.active {
+  display: block;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 3.125rem;
+}
+
+.login {
+  padding: 10px 20px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.login:hover {
+  color: gray;
+}
+
+.signup {
+  padding: 10px 20px;
+  background-color: #d7fb00;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.signup:hover {
+  background-color: #778b04;
+  color: black;
+}
+
+.bar {
+  display: none;
+}
+.toggle-menu,
+.fa-xmark {
+  display: none;
+}
+.show-toggle-icon .toggle-menu {
+  display: inline;
+}
+.show-toggle-icon .fa-xmark {
+  display: none;
+}
+
+.show-cross-icon .toggle-menu {
+  display: none;
+}
+
+.show-cross-icon .fa-xmark {
+  display: inline;
+}
+
+main {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.left h2 {
+  color: #ffffff;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 5rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.left .msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.left .msg span {
+  color: #ffffff;
+}
+.left .msg .getStarted {
+  margin-top: 1.5rem;
+}
+.feature-cards {
+  margin: 5rem;
+}
+
+.info {
+  width: 70w;
+  height: 90vh;
+  background-color: #c4f635;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+}
+.top-content {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.top-content img {
+  margin: 2rem;
+  margin-right: 4rem;
+}
+.about-content {
+  margin-left: 4rem;
+  width: 50%;
+}
+.about-content p {
+  display: inline-block;
+}
+.about-content ul {
+  list-style: none;
+}
+
+.memberships {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem;
+}
+.memberships h1 {
+  color: #fff;
+  text-align: left;
+}
+.memberships hr {
+  border: none;
+  height: 2px;
+  width: 50%;
+  background-color: #444;
+}
+.plans {
+  display: flex;
+  gap: 3rem;
+}
+.free,
+.premium {
+  width: 35vw;
+  height: 80vh;
+  cursor: pointer;
+}
+
+.free {
+  background-color: #242b3a;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.free,
+.premium li {
+  color: #e1e1e1;
+}
+.free h1 {
+  margin: 3rem;
+}
+.premium {
+  background-color: #333d54;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.premium h1 {
+  margin: 3rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  /* Default Styles (Desktop) */
+  main {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .logo {
+    left: 0;
+    width: fit-content;
+    padding-left: 0;
+  }
+  .logo h1 {
+    text-align: center;
+  }
+
+  .option,
+  .buttons {
+    display: none;
+  }
+  .bar {
+    display: block;
+  }
+  .toggle-menu {
+    display: inline;
+  }
+  /* Hidden div for menu (initially collapsed) */
+  .menu-dropdown {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 0; /* Start with no height */
+    background-color: #181818;
+    opacity: 0.9;
+    overflow: hidden; /* Hide the content initially */
+    transition: height 0.3s ease;
+    z-index: 1; /* Make sure it sits above other content */
+  }
+
+  /* When menu is active, set height to 30% */
+  .menu-dropdown.active {
+    height: 30vh; /* Expands to 30% of the screen height */
+  }
+
+  /* Column layout for options inside the dropdown */
+  .menu-dropdown ul {
+    list-style: none;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .menu-dropdown ul li {
+    margin: 10px 0;
+  }
+
+  .menu-dropdown ul li a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .menu-dropdown ul li a:hover {
+    color: #d7fb00;
+  }
+
+  /* Ensure bar button is visible */
+  .bar {
+    display: block;
+    cursor: pointer;
+    padding-right: 20px;
+    z-index: 2; /* Place above the menu */
+  }
+
+  .left h2 {
+    font-size: 3rem;
+  }
+
+  .landing-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .info {
+    width: 100%; /* Adjust width to fit smaller screens */
+    height: auto; /* Allow height to adapt to content */
+  }
+
+  .content {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+  }
+
+  .top-content {
+    flex-direction: column; /* Stack image and content */
+    align-items: center;
+    text-align: center;
+  }
+
+  .top-content img {
+    width: 90%; /* Scale image for smaller screens */
+    height: auto; /* Maintain aspect ratio */
+    margin: 1rem 0; /* Adjust margin for spacing */
+  }
+
+  .about-content {
+    width: 90%; /* Make content take up more space on smaller screens */
+    margin: 0; /* Remove side margins */
+  }
+  .plans {
+    flex-direction: column; /* Stack the free and premium plans vertically */
+    align-items: center; /* Center align them */
+  }
+
+  .free,
+  .premium {
+    width: 80vw; /* Decrease width for smaller screens */
+    height: auto; /* Allow height to adjust based on content */
+    margin-bottom: 1.5rem; /* Add space between plans */
+  }
+}
+
+@media (max-width: 480px) {
+  .top-content img {
+    width: 100%; /* Full width for very small screens */
+  }
+
+  .about-content ul {
+    padding-left: 0; /* Remove padding for a cleaner look on small screens */
+  }
+  .plans {
+    gap: 1rem; /* Smaller gap between plans for very small screens */
+  }
+
+  .free,
+  .premium {
+    width: 90vw; /* Further decrease width on very small screens */
+    padding: 1rem; /* Add padding for spacing */
+  }
+}
