@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Creative Canvas Tool</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff6b6b, #f7b731, #3bde5c);
+            background-size: 300% 300%;
+            animation: gradientAnimation 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.7;
+            animation: float 5s infinite ease-in-out;
+            transition: transform 0.3s ease, background-color 0.3s;
+        }
+
+        .particle:hover {
+            transform: scale(1.5);
+            background-color: #ff6b6b;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .welcome-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .welcome-title {
+            font-size: 4rem;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .welcome-text {
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+            animation-delay: 1.5s;
+            margin-top: 20px;
+        }
+
+        .btn-start {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            background-color: #3aac53;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .btn-start:hover {
+            transform: translateY(-5px);
+            background-color: #28a745;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-start:focus {
+            outline: none;
+        }
+
+        /* Circle styles */
+        .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+        }
+        .counter-container {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 10px 20px;
+        border-radius: 8px;
+        z-index: 2; /* Ensures counters are on top */
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .counter {
+        margin: 0 15px;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="gtranslate_wrapper"></div>
+    <script>
+    window.gtranslateSettings = {
+      "default_language":"en",
+      "detect_browser_language":true,
+      "wrapper_selector":".gtranslate_wrapper"
+    }
+    </script>
+    <script 
+      src="https://cdn.gtranslate.net/widgets/latest/float.js"
+      defer
+    ></script>
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!-- Welcome Section -->
+    <div class="welcome-container">
+        <h1 class="welcome-title">Welcome to Master Web Development</h1>
+        <p class="welcome-text">Contribute to Opensource projects effortlessly and View the Reviews.</p>
+        <a href="./test.html" class="btn btn-start">Start Contibuting and Reading</a>
+    </div>
+
+    <div class="counter-container">
+        <div class="counter">
+            <div id="registration-count">0</div>
+            <p>Registrations</p>
+        </div>
+        <div class="counter">
+            <div id="user-count">0</div>
+            <p>Users</p>
+        </div>
+    </div>
+    <script>
+        let registrationCount = 0;
+    let userCount = 0;
+
+    // Start the interval and store its ID
+    const counterInterval = setInterval(incrementCounters, 50);
+
+    function incrementCounters() {
+        if (registrationCount >= 500 && userCount >= 5000) {
+            // Stop the counter when both reach 500 or more
+            clearInterval(counterInterval);
+            return;
+        }
+
+        // Increment counts only if they haven't reached 500 yet
+        if (registrationCount < 500) {
+            registrationCount += Math.floor(Math.random() * 10 + 1);
+            if (registrationCount > 500) registrationCount = 5000; // Cap at 500
+        }
+        
+        if (userCount < 500) {
+            userCount += Math.floor(Math.random() * 15 + 1);
+            if (userCount > 500) userCount = 500; // Cap at 500
+        }
+
+        document.getElementById('registration-count').textContent = `+${registrationCount}`;
+        document.getElementById('user-count').textContent = `+${userCount}`;
+    }
+        // Generate random particles in the background
+        const particleCount = 100;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            const size = Math.random() * 10 + 5; // Random size between 5 and 15px
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.backgroundColor = `rgba(255, 255, 255, ${Math.random()})`; // Random opacity
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.animationDelay = `${Math.random() * 2}s`; // Random animation delay
+            document.body.appendChild(particle);
+        }
+    </script>
+    
+    <script>
+        // Cursor tail effect
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+        const colors = ["#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d", "#e36e5c", "#df685c", "#d5585c"];
+
+        circles.forEach((circle, index) => {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        window.addEventListener("mousemove", (e) => {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach((circle, index) => {
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+                circle.x = x;
+                circle.y = y;
+
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+
+            requestAnimationFrame(animateCircles);
+        }
+
+        animateCircles();
+    </script>
+</body>
+
+</html>
