@@ -1,34 +1,46 @@
-<html></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Guessing Game</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="display-container">
+      <div class="header flex-space">
+        <div class="title">
+          <p>Color Guessing Game</p>
+        </div>
+        <div class="timer"></div>
+      </div>
 
-<head>
-    <title>Color Game</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Space+Grotesk:wght@300;400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-</head>
+      <div id="container">
+        <!-- Questions and options are displayed here-->
+      </div>
 
-<body>
-    <h1>Guess by<span id="color-display">RGB</span></h1>
-    <div id="stripe">
-        <button id="reset">New Colors</button>
-        <span id="message"></span>
-        <button class="mode">Easy</button>
-        <button class="mode selected">Hard</button>
+      <div class="flex-space">
+        <div class="number-of-count">
+          <span class="number-of-questions"></span>
+        </div>
+        <div id="next-button">Next</div>
+      </div>
     </div>
-    <div id="container">
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
+
+    <div class="start-screen">
+      <button id="start-button">Start</button>
     </div>
 
-    <script type="text/javascript" src="script.js"></script>
-</body>
-
+    <div class="score-container hide">
+      <div id="user-score"></div>
+      <button id="restart">Restart</button>
+    </div>
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
 </html>
