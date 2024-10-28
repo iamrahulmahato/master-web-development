@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipe Dream Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pipe Dream</h1>
+
+        <div class="info-panel">
+            <div>Score: <span id="score">0</span></div>
+            <div>Time Left: <span id="time">60</span> sec</div>
+        </div>
+
+        <div id="gameGrid" class="game-grid"></div>
+
+        <div class="control-panel">
+            <button id="startBtn">Start Game</button>
+            <button id="rotateBtn">Rotate Piece</button>
+        </div>
+
+        <div id="nextPiece" class="next-piece-preview"></div>
+
+        <div id="gameOver" class="game-over hidden">
+            <h2>Game Over!</h2>
+            <p>Your Score: <span id="finalScore">0</span></p>
+            <button id="restartBtn">Restart</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Solver</title>
+    <style>
+         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color:black;
+            margin: 0;
+        }
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+        td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 20px;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        input {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 22px;
+            border: none;
+            outline: none;
+            background-color: #f9f9f9;
+            border: 1px solid green;
+        }
+        input:focus {
+            background-color: #e6ffe6;
+        }
+        input[type="number"]::-webkit-inner-spin-button, 
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button:active {
+            box-shadow: none;
+            background-color: #3e8e41;
+        }
+        /* Pulsating animated border */
+        table::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 15px;
+            border: 3px solid transparent;
+            background: linear-gradient(45deg, #4CAF50, #ff5733, #2980b9, #f1c40f);
+            background-size: 400% 400%;
+            animation: pulse-border 6s infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulse-border {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Sudoku Solver</h1>
+    <div>
+        <table>
+            <tbody>
+                <!-- 9x9 Sudoku grid -->
+                <script>
+                    for (let i = 0; i < 9; i++) {
+                        document.write("<tr>");
+                        for (let j = 0; j < 9; j++) {
+                            document.write(`<td><input type="number" min="1" max="9" id="cell-${i}-${j}"></td>`);
+                        }
+                        document.write("</tr>");
+                    }
+                </script>
+            </tbody>
+        </table>
+        
+    </div>
+    <button onclick="solveSudoku()">Solve Sudoku</button>
+
+    <script>
+        // Function to check if the number is valid in the cell
+        function isValid(board, row, col, num) {
+            for (let i = 0; i < 9; i++) {
+                if (board[row][i] == num || board[i][col] == num || 
+                    board[Math.floor(row / 3) * 3 + Math.floor(i / 3)][Math.floor(col / 3) * 3 + i % 3] == num) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Backtracking algorithm to solve the Sudoku
+        function solve(board) {
+            for (let row = 0; row < 9; row++) {
+                for (let col = 0; col < 9; col++) {
+                    if (board[row][col] == 0) {
+                        for (let num = 1; num <= 9; num++) {
+                            if (isValid(board, row, col, num)) {
+                                board[row][col] = num;
+                                if (solve(board)) return true;
+                                board[row][col] = 0;
+                            }
+                        }
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        // Extract values from the grid, solve it, and then update the grid with the solution
+        function solveSudoku() {
+            let board = [];
+            for (let i = 0; i < 9; i++) {
+                board[i] = [];
+                for (let j = 0; j < 9; j++) {
+                    let value = document.getElementById(`cell-${i}-${j}`).value;
+                    board[i][j] = value ? parseInt(value) : 0;
+                }
+            }
+
+            if (solve(board)) {
+                for (let i = 0; i < 9; i++) {
+                    for (let j = 0; j < 9; j++) {
+                        document.getElementById(`cell-${i}-${j}`).value = board[i][j];
+                    }
+                }
+            } else {
+                alert("No solution exists!");
+            }
+        }
+    </script>
+
+</body>
+</html>

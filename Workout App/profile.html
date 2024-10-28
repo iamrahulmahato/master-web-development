@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Fitness Tracker</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #181818;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ccc;
+        }
+
+        .Progress {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 5rem;
+            /* gap: 1rem; */
+        }
+
+        /* Container Styling for Each Section */
+        #timer,
+        #weight-tracker,
+        #progress-tracker {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        /* Header Style */
+        h2 {
+            color: #007bff;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Timer Styling */
+        #time {
+            font-size: 2em;
+            color: #ff5722;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Input Field Styling */
+        input[type="number"] {
+            width: calc(100% - 24px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* List Styling */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #e9f5ff;
+            border-radius: 5px;
+            padding: 8px;
+            margin: 5px 0;
+            color: #333;
+            text-align: left;
+        }
+
+        /* Media Query for Responsive Design */
+        @media (max-width: 768px) {
+
+            #timer,
+            #weight-tracker,
+            #progress-tracker {
+                width: 90%;
+            }
+
+            .Progress {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Profile</h1>
+    <div class="Progress">
+        <!-- Exercise Timer -->
+        <div id="timer">
+            <h2>Exercise Timer</h2>
+            <div>
+                <span id="time">00:00</span>
+            </div>
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="reset">Reset</button>
+        </div>
+
+        <!-- Weight Tracker -->
+        <div id="weight-tracker">
+            <h2>Weight Tracker</h2>
+            <input type="number" id="weight" placeholder="Enter your weight" />
+            <button id="log-weight">Log Weight</button>
+            <ul id="weight-list"></ul>
+        </div>
+
+        <!-- Daily Progress Tracker -->
+        <div id="progress-tracker">
+            <h2>Daily Progress Tracker</h2>
+            <button id="add-progress">Add Progress</button>
+            <ul id="progress-list"></ul>
+        </div>
+    </div>
+
+
+    <script>
+        // Timer Functionality
+        let timerInterval;
+        let time = 0; // in seconds
+
+        function updateTimer() {
+            time++;
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+            document.getElementById('time').textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        document.getElementById('start').addEventListener('click', () => {
+            if (!timerInterval) {
+                timerInterval = setInterval(updateTimer, 1000);
+            }
+        });
+
+        document.getElementById('stop').addEventListener('click', () => {
+            clearInterval(timerInterval);
+            timerInterval = null;
+        });
+
+        document.getElementById('reset').addEventListener('click', () => {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            time = 0;
+            document.getElementById('time').textContent = "00:00";
+        });
+
+        // Weight Tracker Functionality
+        const weights = [];
+
+        document.getElementById('log-weight').addEventListener('click', () => {
+            const weight = document.getElementById('weight').value;
+            if (weight) {
+                weights.push(weight);
+                document.getElementById('weight').value = ''; // Clear input
+                updateWeightList();
+            }
+        });
+
+        function updateWeightList() {
+            const list = document.getElementById('weight-list');
+            list.innerHTML = '';
+            weights.forEach((weight, index) => {
+                const li = document.createElement('li');
+                li.textContent = `Log ${index + 1}: ${weight} kg`;
+                list.appendChild(li);
+            });
+        }
+
+        // Daily Progress Tracker Functionality
+        const progressLogs = [];
+
+        document.getElementById('add-progress').addEventListener('click', () => {
+            const reps = prompt("Enter the number of reps:");
+            const sets = prompt("Enter the number of sets:");
+
+            if (reps && sets) {
+                const logEntry = { reps, sets };
+                progressLogs.push(logEntry);
+                updateProgressList();
+            }
+        });
+
+        function updateProgressList() {
+            const list = document.getElementById('progress-list');
+            list.innerHTML = '';
+            progressLogs.forEach((log, index) => {
+                const li = document.createElement('li');
+                li.textContent = `Day ${index + 1}: ${log.reps} reps, ${log.sets} sets`;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+
+</html>

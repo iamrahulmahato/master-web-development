@@ -128,6 +128,11 @@ input[type="button"][value="AC"]:hover {
     white-space: pre-wrap; /* Preserve formatting for matrices */
 }
 
+.button-boxes {
+    display: flex;
+    gap: 12px;
+}
+
 /* Responsive Design */
 @media (max-width: 480px) {
     input[type="button"] {
