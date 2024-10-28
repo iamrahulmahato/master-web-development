@@ -3425,6 +3425,88 @@ body {
   }
    </style>
     <!-- Footer -->
+
+    <!-- Added FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">What is this website about?</h3>
+                <div class="faq-answer">
+                    <p>This website is dedicated to mastering web development through various projects and challenges.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">What projects are available on the website?</h3>
+                <div class="faq-answer">
+                    <p>There are several projects available on the website, including Tic Tac Toe, Counter, Love Calculator, 15 Puzzle, 8 Puzzle, Snake Game, Calculator, and more.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">How can I contribute?</h3>
+                <div class="faq-answer">
+                    <p>You can contribute by submitting your projects and participating in discussions in the comments.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Where can I find the source code?</h3>
+                <div class="faq-answer">
+                    <p>The source code for each project can be found in the GitHub repository linked in the respective project section.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        /* FAQ Section Styling */
+        #faq {
+            background-color: #f8f8f8;
+            padding: 50px 20px;
+        }
+        
+        #faq h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            padding: 15px 0;
+        }
+    
+        .faq-question {
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #333;
+            margin: 0;
+            padding: 10px;
+            transition: background 0.3s;
+        }
+    
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+    
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #666;
+        }
+    </style>
+    
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+    
+    
 <!-- Footer -->
 <footer>
     <div class="footer-content">
@@ -3539,8 +3621,6 @@ body {
     <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-visitor
-
     <script>
         // Function to redirect to quiz.html
         document.getElementById('quiz-button').onclick = function() {
@@ -3559,7 +3639,7 @@ visitor
 <script src="./assets/css/visitors.css"></script>
 <script src="visi.js"></script>
 
- main
+
  
 
     <!-- Newsletter pop-up -->
