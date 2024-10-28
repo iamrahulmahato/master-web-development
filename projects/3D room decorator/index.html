@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Room Decorator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="controls">
+            <select id="item-selector">
+                <option value="item">Default Item</option>
+                <option value="table">Table</option>
+                <option value="chair">Chair</option>
+                <option value="lamp">Lamp</option>
+            </select>
+            <input type="color" id="color-picker" value="#ff6347" />
+        </div>
+        <button id="add-item">Add Item</button>
+        <div class="room">
+            <div class="wall front-wall"></div>
+            <div class="wall back-wall"></div>
+            <div class="wall left-wall"></div>
+            <div class="wall right-wall"></div>
+            <div class="floor"></div>
+            <div class="ceiling"></div>
+            <div id="items-container"></div>
+        </div>
+    </div>
+    <!-- Add this above the button in index.html -->
+    <script src="script.js"></script>
+</body>
+</html>
