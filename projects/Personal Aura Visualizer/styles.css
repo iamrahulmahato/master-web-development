@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0e7ff; /* Light blue background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.5s; /* Smooth transition for background color */
+}
+
+#aura-visualizer {
+    position: relative;
+    width: 250px; /* Increased size for more visibility */
+    height: 250px; /* Increased size for more visibility */
+    margin-bottom: 20px; /* Space between visualizer and button */
+}
+
+.circle {
+    width: 100px; /* Increased size for visibility */
+    height: 100px; /* Increased size for visibility */
+    background-color: #ffffff; /* White background for the person */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 2; /* Ensuring person is above aura */
+}
+
+.aura {
+    width: 150px; /* Increased aura size */
+    height: 150px; /* Increased aura size */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth opacity and scaling */
+    z-index: 1; /* Aura is behind the person */
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px; /* Rounded button edges */
+    background-color: #4f46e5; /* Darker blue */
+    color: white;
+    font-size: 16px; /* Slightly larger font */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Adding transformation on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Button shadow */
+}
+
+button:hover {
+    background-color: #4338ca; /* Darker on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    #aura-visualizer {
+        width: 200px;
+        height: 200px;
+    }
+
+    .circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .aura {
+        width: 120px;
+        height: 120px;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}

@@ -76,7 +76,9 @@ body {
     background-color: var(--bg);
     overflow-x: hidden;
 }
-
+[data-theme="dark"] body {
+  background-color: rgb(4, 4, 35); /* Blue background for dark mode */
+}
 #projects {
     margin: 5rem 0;
 }
@@ -113,14 +115,25 @@ body {
 }
 
 .btn-container {
-  margin-bottom: 20px;
+  margin: 20px;
   text-align: center;
+}
+
+.hero-btn-container{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#quiz-button{
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .source-code-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #0066cc;
+  /* background-color: #0066cc; */
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -129,7 +142,8 @@ body {
 }
 
 .source-code-btn:hover {
-  background-color: #0052a3;
+  /* background-color: #0052a3; */
+  color: black;
 }
 
 .search-container {
@@ -138,6 +152,7 @@ body {
   width: 100%;
   margin-top: 20px;
   align-items: center; 
+  justify-content: center;
 }
 
 #search-input {
@@ -604,13 +619,19 @@ body {
     margin-bottom: 0.5rem;
     color: #000;
 }
+/* Dark mode styles */
+[data-theme="dark"] .card-heading {
+  color: #ffffff; /* white color for dark mode */
+}
 
 .card-description {
     font-size: 0.9rem;
     color: var(--p);
     flex-grow: 1;
 }
-
+[data-theme="dark"] .card-description {
+  color: #cdd2d8;
+}
 .counter-cover-color {
     background: rgba(255, 206, 0, 0.2);
 }
@@ -1016,13 +1037,12 @@ body {
 
 .btn-container a {
     display: inline-block;
-    transition: transform 0.3s ease, background-color 0.3s ease; 
+    transition: all 0.3s ease; 
 }
 
-.btn-container a:hover {
-    background-color: #75b4ec; 
-    color: #192333;
-    transform: scale(1.1); 
+#quiz-button:hover, .btn-container a:hover {
+    box-shadow: rgba(233, 45, 45, 0.1) 0px 1px 0px, rgba(237, 71, 71, 0.1) 0px 8px 24px, rgba(235, 65, 65, 0.1) 0px 16px 48px;
+    transform: scale(1.05); 
 }
 #suggestions {
   display: none;
