@@ -444,7 +444,7 @@ body {
   color: transparent;
   -webkit-text-stroke: 1px white;
   background: url(img/back.png);
-  -webkit-background-clip: text;
+  --webkit-background-clip: text;
   background-position: 0 0;
   filter: blur(20px);
   opacity: 0;
@@ -641,8 +641,8 @@ body {
     color: #000;
 }
 /* Dark mode styles */
-[data-theme="dark"] .card-heading {
-  color: #ffffff; /* white color for dark mode */
+[data-theme="dark"].card-heading {
+  color: #fff; /* white color for dark mode */
 }
 
 .card-description {
