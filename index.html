@@ -11,12 +11,70 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet" />
+        rel="stylesheet"
+    />
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#root {
+    flex: 1;
+}
+
+.follow-us {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto; /* Keep this at the bottom */
+}
+
+.follow-us h2 {
+    color: grey; /* Grey color for the heading */
+    font-size: 28px; /* Increased size for the heading */
+    margin-bottom: 15px; /* Space between heading and icons */
+}
+
+.follow-us a {
+    margin: 0 15px;
+    color: grey; /* Grey color for icons */
+    text-decoration: none;
+}
+
+.follow-us a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+.follow-us a:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+.follow-us img {
+    width: 50px; /* Set logo size */
+    height: 50px;
+    filter: grayscale(100%); /* Grey color for icons */
+    transition: filter 0.3s; /* Smooth transition effect */
+}
+
+.follow-us a:hover img {
+    filter: grayscale(0%); /* Color on hover */
+}</style>
+
     <link rel="shortcut icon" href="./assets/image/favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="./footer.css">
 
 
+</main>
     <title>Master web development</title>
     <link rel="icon" href="./faviconicon.png" type="image/png">
     <style>
@@ -200,12 +258,15 @@
 
             <button id="quiz-button" class="source-code-btn">Go to Challenges</button>
             <div class="btn-container">
+           
+            <div class="btn-container hero-btn-container">
+                <button id="quiz-button" class="source-code-btn">Go to Challenges</button>
+
                 <a href="http://github.com/iamrahulmahato/master-web-development" target="_blank"
                     rel="noopener noreferrer" class="source-code-btn">View source code</a>
             </div>
             <br />
-            <input type="text" id="search-input" placeholder="Search games by Title/Description..."
-                oninput="filterCards()" style="margin-bottom: 10px;">
+            
         </div>
         <div class="container">
             <!-- <div class="btn-container">
@@ -216,6 +277,21 @@
                  View Source Code
               </a>
             </div> -->
+=======
+            
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search games by Title/Description..."
+                oninput="filterCards()" style="margin-bottom: 10px;">
+              <button class="search-btn" onclick="filterCards()">
+                <span class="search-icon"></span>
+                Search
+              </button>
+            </div>
+          </div>
+        
+        <div class="slider">
+
+        <div class="list">
 
             <div class="search-container">
                 <input type="text" id="search-input" placeholder="Search games by Title/Description..."
@@ -368,7 +444,23 @@
         <div class="projects-heading">
             <p>Master web development</p>
             <h3><span>Organize</span> Projects</h3>
+<div class="nextPrevArrows">
+    <button class="prev"></button>
+    <button class="next"> > </button>
+</div>
 
+<div class="thumbnail">
+    <div class="item">
+        <img src="./images/air ballon game.jpg" alt="">
+    </div>
+</div>
+
+            </div>
+
+            </div>
+
+
+\
             <!-- Category Buttons -->
             <div class="btn-container">
                 <button class="source-code-btn" onclick="filterCategory('All')">All</button>
@@ -384,8 +476,7 @@
 
 
         <div class="projects-container">
-            <a href="./projects/Generate
-            Color/index.html" class="card Generators" target="_blank">
+            <a href="./projects/GenerateGradientColor/index.html" class="card Generators" target="_blank">
                 <div class="card-cover">
                     <img src="https://cssgradient.io/images/css-gradient-examples-ba7f335a.svg" alt="Generate Gradient">
                 </div>
@@ -742,7 +833,44 @@
                     </p>
                 </div>
             </a>
-            <a href="./projects/Password Generator/index.html" class="card Generators " target="_blank">
+
+<a href="./projects/Quantum Themed Maze Game/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-color ">
+        <img src="https://cdn.mos.cms.futurecdn.net/R8Bfi2Thwq7cnTabi4J2pE.jpg" alt="">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Quantum Themed Maze Game</h3>
+        <p class="card-description">
+            Quantum Themed Maze Game
+        </p>
+    </div>
+</a>
+
+<a href="./projects/virtual memory/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-color ">
+
+        <img src="https://platform.vox.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/23165626/memory2final.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400" alt="">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Virtual Memory Jar</h3>
+        <p class="card-description">
+            Virtual Memory Jar
+        </p>
+    </div>
+</a>
+
+<a href="./projects/Password Generator/index.html" class="card Generators" target="_blank">
+    <div class="card-cover counter-cover-color">
+        <img src="path/to/password-generator/image.jpg" alt="">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Password Generator</h3>
+        <p class="card-description">
+   Generate secure passwords easily!
+        </p>
+    </div>
+</a>
+
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/lock.png" alt="">
                 </div>
@@ -753,7 +881,36 @@
                     </p>
                 </div>
             </a>
-            <a href="./projects/memeGen/index.html" class="card Generators " target="_blank">
+<a href="./projects/Physics-Based Particle-sandbox/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="https://www.sandbox.game/img/00_General/seo/home.png" alt="">
+    </div>
+    <div class="card-content">
+
+        <h3 class="card-heading">Physics-Based Particle Sandbox</h3>
+        <p class="card-description">
+            Physics-Based Particle Sandbox
+
+        </p>
+    </div>
+</a>
+
+<a href="./projects/memeGen/index.html" class="card Generators" target="_blank">
+    <div class="card-cover counter-cover-colour">
+
+        <img src="path/to/memeGen/image.jpg" alt="">
+
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Meme Generator</h3>
+        <p class="card-description">
+
+            Create and share memes easily!
+
+        </p>
+    </div>
+</a>
+
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/images.png" alt="">
                 </div>
@@ -764,8 +921,39 @@
                     </p>
                 </div>
             </a>
-            <a href="./projects/Memory Tiles/index.html" class="card Games " target="_blank">
-                <div class="card-cover counter-cover-colour">
+<a href="./projects/Real-Time Heatmap with Mouse Interactions/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg3AyPZ2vwkck-Vgv59NJhxjXF5Tl6Wl4_0g&s" alt="Real-Time Heatmap">
+
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Real-Time Heatmap with Mouse Interactions</h3>
+        <p class="card-description">
+
+            Create a real-time heatmap based on mouse movements!
+
+        </p>
+    </div>
+</a>
+
+<a href="./projects/Memory Tiles/index.html" class="card Games" target="_blank">
+
+    <div class="card-cover">
+        <img src="https://example.com/memory-tiles-image.jpg" alt="Memory Tiles">
+
+
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Memory Tiles</h3>
+        <p class="card-description">
+
+            Test your memory with this fun game.
+        </p>
+    </div>
+</a>
+   <div class="card-cover counter-cover-colour">
+
                     <img src="./projects/Memory Tiles/flipassets/icon.png" alt="">
                 </div>
                 <div class="card-content">
@@ -776,8 +964,51 @@
                 </div>
             </a>
 
-            <a href="./projects/random user generator/index.html" class="card Generators " target="_blank">
-                <div class="card-cover">
+<a href="./projects/Digital Scrapbook with Animated Stickers/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+
+        <img src="https://www.liene-life.com/cdn/shop/articles/scrapbook-with-assortment-home-decorations_1_a5864cc4-8de7-478d-a1db-095da8373f23.jpg?v=1723013345&width=1024" alt="Digital Scrapbook">
+
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Digital Scrapbook with Animated Stickers</h3>
+        <p class="card-description">
+
+            Create your digital scrapbook with fun, animated stickers!
+
+        </p>
+    </div>
+</a>
+
+
+<a href="./projects/Style picker/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="https://www.panaprium.com/cdn/shop/articles/different_fashion_styles_up.jpg?v=1712222301" alt="AI-Powered Style Picker">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">AI-Powered Style Picker</h3>
+        <p class="card-description">
+            Customize your style with AI-powered suggestions!
+        </p>
+    </div>
+</a>
+
+<a href="./projects/random user generator/index.html" class="card Generators" target="_blank">
+
+    <div class="card-cover counter-cover-colour">
+        <img src="https://example.com/random-user-generator-image.jpg" alt="Random User Generator">
+
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Random User Generator</h3>
+        <p class="card-description">
+            Generate random user profiles with this tool.
+        </p>
+    </div>
+</a>
+
+
+  <div class="card-cover">
                     <img src="./assets/image/screenshot.png" alt="">
                 </div>
                 <div class="card-content">
@@ -891,9 +1122,46 @@
                 </div>
             </a>
 
-            <a href="./projects/Sudoku Solver/index.html" class="card Games " target="_blank">
+<a href="./projects/Personal Aura Visualizer/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="https://img.freepik.com/free-photo/spectrum-flashes-coloured-light_23-2151792400.jpg" alt="Personal Aura Visualizer">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Personal Aura Visualizer</h3>
+        <p class="card-description">
+            Personal Aura Visualizer
+        </p>
+    </div>
+</a>
+
+<a href="./projects/Emotion Detection for Feedback Forms/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="https://cdn.prod.website-files.com/624ac40503a527cf47af4192/62fbc984af8f6670c9be15c0_facial-recognition.jpg" alt="Emotion Detection for Feedback Forms">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Emotion Detection for Feedback Forms</h3>
+        <p class="card-description">
+            Emotion Detection for Feedback Forms
+        </p>
+    </div>
+</a>
+
+<a href="./projects/Sudoku Solver/index.html" class="card Games" target="_blank">
+    <div class="card-cover">
+        <img src="path_to_sudoku_image.jpg" alt="Sudoku Solver">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Sudoku Solver</h3>
+        <p class="card-description">
+            A tool for solving Sudoku puzzles easily.
+        </p>
+    </div>
+</a>
+
                 <div class="card-cover">
-                    <img src="projects\Sudoku_Solver\image.png" alt="Sudoku Solver">
+
+                    <img src="./projects/Sudoku_Solver/image.png" alt="Sudoku Solver">
+
                 </div>
                 <div class="card-content">
                     <h3 class="card-heading">Sudoku</h3>
@@ -981,7 +1249,44 @@
             </a>
 
 
-            <a href="./projects/Internet_Speed_checker/index.html" class="card Miscellaneous " target="_blank">
+<a href="./projects/Time Capsule Website/index.html" class="card" target="_blank">
+    <div class="card-cover">
+        <img src="https://i.pinimg.com/736x/61/d5/95/61d59535ddbe691f22b007c2d12a2a1e.jpg" alt="Time Capsule Website">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Time Capsule Website</h3>
+        <p class="card-description">
+            Time Capsule Website
+        </p>
+    </div>
+</a>
+
+<!--============================== Certificate Generator =========================================== -->
+<a href="./projects/Certificate Generator/index.html" class="card Generators" target="_blank">
+    <div class="card-cover">
+        <img src="./projects/Certificate Generator/cer.png" alt="Certificate Generator">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Certificate Generator</h3>
+        <p class="card-description">
+            A Certificate Generator Website
+        </p>
+    </div>
+</a>
+<!--============================== End =========================================== -->
+
+<a href="./projects/Internet_Speed_checker/index.html" class="card Miscellaneous" target="_blank">
+    <div class="card-cover">
+        <img src="path_to_internet_speed_checker_image.jpg" alt="Internet Speed Checker">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Internet Speed Checker</h3>
+        <p class="card-description">
+            Check your internet speed with this simple tool.
+        </p>
+    </div>
+</a>
+
                 <div class="card-cover">
                     <img src="./projects/Internet_Speed_Checker/intspeed.jpg" alt="Text to Speech logo">
                 </div>
@@ -1007,6 +1312,80 @@
             </a>
 
             <a href="./projects/Memory Match Game/index.html" class="card Games" target="_blank">
+<a href="./projects/Patern logic/index.html" class="card" target="_blank">
+    <div class="card-cover">
+        <img src="https://i.pinimg.com/474x/82/4f/13/824f1320464df90f1d12e1ad8de36ab6.jpg" alt="pattern logo">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Mind Match: Pattern Logic Game</h3>
+        <p class="card-description">
+            Mind Match: Pattern Logic Game
+        </p>
+    </div>
+</a>
+
+<a href="./projects/Color puzzle/index.html" class="card" target="_blank">
+    <div class="card-cover">
+        <img src="https://play-lh.googleusercontent.com/ExTusrE6tBOXwC1uzd3EFHYSrlTv1UabD-rMMA2D3Q5WOTNZtAK5LomyqPI5O7LP774" alt="color logo">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Colorblind Mode: Puzzle Through Perspective</h3>
+        <p class="card-description">
+            Colorblind Mode: Puzzle Through Perspective
+        </p>
+    </div>
+</a>
+
+<a href="./projects/Horoscope/index.html" class="card" target="_blank">
+    <div class="card-cover">
+        <img src="https://www.vedicmatters.com/images/article/article-2019-12-23-04-14-14_5e003f1650b23.horoscope.png" alt="horoscope logo">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Personalized Horoscope & Star Map Viewer</h3>
+        <p class="card-description">
+            Personalized Horoscope & Star Map Viewer
+        </p>
+    </div>
+</a>
+
+
+<a href="./projects/Fabric tool/index.html" class="card" target="_blank">
+    <div class="card-cover">
+        <img src="https://saroj.in/cdn/shop/files/WhatsAppImage2023-03-10at5.14.43PM.jpg?v=1728304625" alt="Fabric logo">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Fabric Tool</h3>
+        <p class="card-description">
+            Creates innovative designs with fabric
+        </p>
+    </div>
+</a>
+
+<a href="./projects/Poetry generator/index.html" class="card" target="_blank">
+    <div class="card-cover">
+        <img src="https://cdn.i-scmp.com/sites/default/files/d8/yp/images/shutterstock_339411857.jpg" alt="Poem logo">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Poetry generator</h3>
+        <p class="card-description">
+            Generates poems
+        </p>
+    </div>
+</a>
+
+<a href="./projects/Memory Match Game/index.html" class="card Games" target="_blank">
+    <div class="card-cover">
+        <img src="path/to/memory-match-game-image.jpg" alt="Memory Match Game logo">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Memory Match Game</h3>
+        <p class="card-description">
+            A fun memory matching game.
+        </p>
+    </div>
+</a>
+
+
                 <div class="card-cover">
                     <img src="path/to/memory-match-game-image.jpg" alt="Memory Match Game logo">
                 </div>
@@ -2032,6 +2411,41 @@
                 </p>
             </div>
         </a>
+                <div class="card-cover counter-cover-colour">
+                    <img src="./assets/image/calculator.png" alt="Calculator" style="width: 10rem; height: auto;">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">Tip Calculator</h3>
+                    <p class="card-description">
+                        Quickly calculate tips and total bills with ease.
+                    </p>
+                </div>
+            </a>
+            <!--============================== End =========================================== -->
+            <a href="./projects/Random Image Gen/index.html" class="card Generators ">
+                <div class="card-cover counter-cover-colour">
+                    <img src="assets/image/randomi.png" alt="Brick Breaker">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">Random Image Generator</h3>
+                    <p class="card-description">
+                        A Random Image Generator Website
+                    </p>
+                </div>
+
+<!-- =========================== Shooter Game ================================= -->
+<a href="./projects/Shooter_Game/index.html" class="card Games ">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/Shooter_game.png" alt="Shooter Game" style="width: 10rem; height: auto;">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Shooter Game</h3>
+        <p class="card-description">
+            Take aim and unleash your skills in shooter experience!
+        </p>
+    </div>
+</a>
+<!-- =========================== End Shooter Game ================================= -->
 
         <a href="./projects/Relaxio" class="card Miscellaneous ">
             <div class="card-cover">
@@ -2082,6 +2496,57 @@
                 </p>
             </div>
         </a>
+                
+
+    
+<main>
+ <!-- =========================== Recipe Book ================================= -->
+     <a href="./projects/Recipe Book/index.html" class="card" target="_blank">
+        <div class="card-cover counter-cover-colour">
+            <img src="./assets/image/recipe.webp" alt="recipebook">
+        </div>
+        <div class="card-content">
+            <h3 class="card-heading">Recipe Book</h3>
+            <p class="card-description">
+                Gather Delicious Secret Recipes!
+            </p>
+        </div>
+    </a>
+<!-- =========================== ================================= -->
+    </section>
+    <div class="follow-us">
+        <h2>Follow Us</h2>
+        <a href="https://www.linkedin.com/in/berajeevkumar/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" />
+        </a>
+        <a href="https://x.com/be_rajeevkumar" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter Logo" />
+        </a>
+        <a href="https://github.com/beRajeevKumar" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" />
+        </a>
+    </div>
+    <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
+
+            <!-- =========================== Recipe Book ================================= -->
+            <a href="./projects/Recipe Book/index.html" class="card" target="_blank">
+
+            <a href="projects/Tennis Game/index.html" class="card" target="_blank">
+
+            <a href="projects/Tennis Game/index.html" class="card Games " target="_blank">
+
+                <div class="card-cover counter-cover-colour">
+                    <img src="/assets/image/Tennis game.png" alt="Tennis" style="width: 10rem; height: auto;">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">Tennis Game</h3>
+                    <p class="card-description">
+                        multiplayers Tennis Game
+                    </p>
+                      </div>
+                        </a>
+            
+ 
 
 
         <a href="./projects/3D Music Visualizer/index.html" class="card Miscellaneous " target="_blank">
@@ -2239,6 +2704,19 @@
             </div>
         </a>
 
+ 
+          </main>
+
+<!-- =========================== Tower of Hanoi ================================= -->
+<a href="projects/Tower of Hanoi/index.html" class="card Games " target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/Tower-of-Hanoi.png" alt="Tower of Hanoi" style="width: 10rem; height: auto;">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Tower of Hanoi</h3>
+        <p class="card-description">Solve the classic Tower of Hanoi puzzle.</p>
+    </div>
+</a>
 
         <!-- =========================== Odd Even Game ================================= -->
         <a href="projects/Odd_even_game/odd_even_game.html" class="card Games " target="_blank">
@@ -2251,6 +2729,17 @@
             </div>
         </a>
 
+
+<!-- =========================== Odd Even Game ================================= -->
+<a href="projects/Odd_even_game/odd_even_game.html" class="card Games " target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="./assets/image/odd_even.jpg" alt="Odd Even Game" style="width: 10rem; height: auto;">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Odd Even Game</h3>
+        <p class="card-description">Try your luck with the odd or even game.</p>
+    </div>
+</a>
 
 
     </section>
@@ -2791,6 +3280,62 @@
                         <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
 
+        
+        <div class="form-group">
+          <label for="rating"></label>
+          
+
+        
+        <div class="form-group">
+          <label for="feedback">Your Feedback</label>
+          <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..." required></textarea>
+        </div>
+        <div id="star-rating" class="stars">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+        <p id="rating-value">Rating: 0</p>
+    
+    
+        <style>
+            .stars {
+               
+                cursor: pointer;
+                font-size: 2rem;
+                color: gray;
+            }
+            .star {
+                transition: color 0.2s;
+            }
+            .star.selected {
+                color: gold;
+            }
+        </style>
+        
+       <script>document.addEventListener("DOMContentLoaded", () => {
+        const stars = document.querySelectorAll(".star");
+        const ratingValue = document.getElementById("rating-value");
+        let selectedRating = 0;
+    
+        stars.forEach(star => {
+            star.addEventListener("mouseover", () => highlightStars(star.dataset.value));
+            star.addEventListener("mouseout", () => highlightStars(selectedRating));
+            star.addEventListener("click", () => {
+                selectedRating = star.dataset.value;
+                ratingValue.innerText = `Rating: ${selectedRating}`;
+            });
+        });
+    
+        function highlightStars(rating) {
+            stars.forEach(star => {
+                star.classList.toggle("selected", star.dataset.value <= rating);
+            });
+        }
+    });
+    </script>
 
                     <div class="form-group">
                         <label for="rating">Rating</label>
@@ -2932,6 +3477,76 @@
             </div>
         </div>
 
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <!-- Quick Links Section -->
+        <div class="footer-section quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">ChatBot</a></li>
+                <li><a href="#">Feedback</a></li>
+                <li><a href="#">FAQ's</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <!-- About Us Section -->
+        <div class="footer-section about-us">
+            <h3>About Us</h3>
+            <p>Empowering aspiring developers to master web development through hands-on, small-scale projects.</p>
+        </div>
+        
+        <!-- Newsletter Section -->
+        <div class="footer-section newsletter">
+            <h3>Subscribe to Our Newsletter</h3>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div><a href=""> <style>
+        .share-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #shareBtn {
+            background-color: #f71257;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #shareBtn:hover {
+            background-color: #f8bab5;
+        }
+    </style>
+</head>
+<body>
+            <div class="share-section">
+                <button id="shareBtn">Share Us</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById('shareBtn').addEventListener('click', function() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Contact Us',
+                    text: 'Check out this Contact Us page!',
+                    url: window.location.href
+                }).then(() => {
+                    console.log('Thanks for sharing!');
+                }).catch((error) => {
+                    console.error('Error sharing:', error);
+                });
+            } else {
+                alert('Web Share API is not supported in your browser.');
+            }
+        });
+    </script>
+</a></li>
 
         <!-- Bottom Links Section -->
         <ul class="gridbox">
@@ -2941,8 +3556,10 @@
             <li><a href="#">Media Centre</a></li>
             <li><a href="#">Terms of Use</a></li>
             <li><a href="#">Privacy</a></li>
+            
             <li><a href="#">Cookie Preferences</a></li>
             <li><a href="#">Contact Us</a></li>
+            
         </ul>
 
         <!-- Footer Bottom -->
@@ -2996,6 +3613,213 @@ visitor
 <script src="visi.js"></script>
 
 main
+ main
+ 
+
+    <!-- Newsletter pop-up -->
+    <style>
+
+        .popup-nl {
+  
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1009;
+  
+        }
+  
+        .popup-content-nl {
+  
+            display: flex;
+            background-color: white;
+            border-radius: 10px;
+            max-width: 800px;
+            height: 450px;
+            width: 700px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  
+        }
+  
+        .close1-btn-nl {
+  
+            width: 20px;
+            cursor: pointer;
+            margin: 18px 10px;
+            position: absolute;
+            top: -4px;
+            right: 12px;
+            font-size: 18px;
+            font-weight: 800;
+  
+        }
+  
+        .popup-left-nl img {
+  
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+  
+        }
+  
+        .popup-right-nl {
+  
+            padding: 20px;
+            width: 50%;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center;
+  
+        }
+  
+        .popup-nl h1 {
+  
+            font-size: 24px;
+            background: linear-gradient(to right, #913700, #ff6000, #913700); 
+            -webkit-text-fill-color: transparent; 
+            -webkit-background-clip: text; 
+            text-align: center;
+            margin-bottom: 12px;
+            margin-top: 35px;
+  
+        }
+  
+        .h2-nl{
+  
+            font-size: 18px;
+            margin-bottom: 8px;
+            text-align: center;
+            color: #333;
+  
+        }
+  
+        .pop_up-nl {
+  
+            margin-bottom: 15px;
+            font-weight: bold;
+            background: -webkit-linear-gradient(left, #007d39, #44f899, #005f2b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 12.7px;
+  
+        }
+  
+        .bold{
+  
+            font-size: 13.1px;
+  
+        }
+  
+        input[type="email"] {
+  
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            font-size: 14px;
+  
+        }
+  
+        .signup-btn1-nl {
+  
+            width: 100%;
+            height: 30px;
+            text-align: center;
+            background: linear-gradient(to right, #febd1b, #ffdb80, #febd1b);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+  
+        }
+  
+        .signup-btn1-nl:hover {
+  
+            background-color: #4682B4;
+  
+        }
+  
+        .no-thanks-nl {
+  
+            display: block;
+            margin-top: 10px;
+            color: #888;
+            text-decoration: none;
+            margin-bottom: 15px;
+  
+        }
+  
+        .no-thanks-nl:hover {
+  
+            color: #000000;
+            font-size: 14px;
+  
+        }
+  
+        .terms-nl {
+  
+            margin-top: 15px;
+            font-size: 10px;
+            color: #888;
+  
+        }
+  
+        .terms-nl a {
+  
+            display: inline;
+  
+        }
+  
+        .terms-nl a:hover {
+  
+            text-decoration: underline;
+  
+        }
+  
+        .popup-right-nl p {
+  
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: center;
+  
+        }
+  
+  
+      </style>
+      <div id="popup-nl" class="popup-nl">
+        <div class="popup-content-nl">
+            <div class="popup-left-nl">
+                <img src="popup.jpg" alt="finance">
+            </div>
+  
+            <div class="popup-right-nl">
+                <a href="# " class="close1-btn-nl close-nl">X</a>
+                <h1>Subscribe to Newsletter!</h1>
+                <h2 class="h2-nl">Join our web development community!</h2>
+                <p class="pop_up-nl">Subscribe for valuable insights, coding tips, latest trends, resources and updates on the latest tools and technologies</p>
+                <form id="emailForm-nl">
+                    <input type="email" id="email-nl" placeholder="Enter your email" required>
+                    <button type="submit" class="signup-btn1-nl">Subscribe</button>
+                </form>
+                <a href="#" class="no-thanks-nl close-nl">No thanks</a>
+                <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a href="terms&cond.html">Terms of Service</a> and <a href="privacynotice.html">Privacy Policy</a>.</p>
+            </div>
+        </div>
+      </div>
+      <script src="popup.js"></script>
+
+
 </body>
 
 </html>

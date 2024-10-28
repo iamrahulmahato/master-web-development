@@ -1,0 +1,81 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2d2d2d;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.card {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4a4e69;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card.matched {
+    background-color: #9aab00;
+    box-shadow: 0 0 20px rgba(154, 171, 0, 0.6);
+}
+
+.card.hidden {
+    background-color: #222831;
+    transition: background-color 0.5s;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffcc00;
+    color: #282c34;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #ffcc00;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
