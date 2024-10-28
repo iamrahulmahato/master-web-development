@@ -208,6 +208,9 @@ body {
 </head>
 
 <body>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+      </div>
     <div class="icon">
         <div class="icon2">
             <button id="toggle-mode-btn">
@@ -926,7 +929,6 @@ body {
         </p>
     </div>
 </a>
-
 <a href="./projects/Quantum Themed Maze Game/index.html" class="card" target="_blank">
     <div class="card-cover counter-cover-color">
         <img src="https://cdn.mos.cms.futurecdn.net/R8Bfi2Thwq7cnTabi4J2pE.jpg" alt="Quantum Themed Maze Game">
@@ -1037,7 +1039,6 @@ body {
     <div class="card-content">
         <h3 class="card-heading">Memory Tiles</h3>
         <p class="card-description">
-
             Test your memory with this fun game.
         </p>
     </div>
@@ -1080,6 +1081,18 @@ body {
     </div>
 </a>
 
+
+<a href="./projects/Style picker/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="https://www.panaprium.com/cdn/shop/articles/different_fashion_styles_up.jpg?v=1712222301" alt="AI-Powered Style Picker">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">AI-Powered Style Picker</h3>
+        <p class="card-description">
+            Customize your style with AI-powered suggestions!
+        </p>
+    </div>
+</a>
 
 <a href="./projects/random user generator/index.html" class="card Generators" target="_blank">
 
@@ -3783,7 +3796,15 @@ visitor
         </div>
       </div>
       <script src="popup.js"></script>
+      <script>
 
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
+        </script>
 
 </body>
 
