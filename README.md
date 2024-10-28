@@ -256,7 +256,7 @@ git push
 
 <p align="center">
       <a href="https://github.com/iamrahulmahato/master-web-development/graphs/contributors">
-        <img src="https://github.com/iamrahulmahato/master-web-development/graphs/contributors" width="700" height="250" />
+         <img src="https://api.vaunt.dev/v1/github/entities/iamrahulmahato/repositories/master-web-development/contributors?format=svg&limit=54" width="700" height="250" /> 
       </a>
 </p>
 
