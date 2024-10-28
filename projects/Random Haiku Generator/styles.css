@@ -1,0 +1,134 @@
+@keyframes slideIn {
+    from { transform: translate(-50%, -60%); }
+    to { transform: translate(-50%, -50%); }
+}
+body{
+    background-color: black;
+}
+.haiku {
+    font-size: 1.5em;
+    margin-top: 40px;
+    color:white;
+    margin-bottom: 30px;;
+    transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out, color 0.3s ease-in-out;
+    max-height: 100%; /* Ensures haiku does not overflow container */
+    overflow: hidden; /* Prevents content overflow */
+    min-height: 100px; /* Set a minimum height to prevent container resizing */
+    animation: textFadeIn 2s ease-in-out; /* Add text animation */
+}
+
+.haiku:hover {
+    transform: scale(1.05);
+    font-size: 1.6em; /* Slightly increase font size on hover */
+    color: #333; /* Change text color on hover */
+}
+
+@keyframes textFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.generate-btn {
+    background: #ca0808;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-family: "Sacramento", cursive;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.generate-btn:hover {
+    background: #45a049;
+    transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out, slideIn 1s ease-in-out;
+    height: 300px; /* Increased height */
+    width: 500px; /* Fixed width to prevent realignment */
+     /* Changed background color */
+    font-family: 'Courier New', Courier, monospace; /* Changed font style */
+    overflow: hidden; /* Prevents content overflow */
+    transition: transform 0.3s ease-in-out; /* Add transition for hover effect */
+}
+
+.container:hover {
+    transform: translate(-50%, -50%) scale(1.05); /* Slightly increase size on hover */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translate(-50%, -60%); }
+    to { transform: translate(-50%, -50%); }
+}
+
+@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
+h1 {
+    font-size: calc(5px + 10vh); /* Reduced font size */
+    line-height: calc(5px + 12vh); /* Adjusted line height */
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+    font-family: "Sacramento", cursive;
+    text-align: center;
+    animation: blink 12s infinite;
+    -webkit-animation: blink 12s infinite;
+    position: absolute; /* Position the title at the top */
+    top: 10px; /* Adjust the top position */
+    width: 100%; /* Ensure the title spans the width of the page */
+  }
+  
+  body {
+    padding: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #222;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 7px,
+      rgba(0, 0, 0, 0.8) 9px,
+      rgba(0, 0, 0, 0.8) 13px,
+      transparent 13px
+    );
+    flex-direction: column; /* Ensure content is stacked vertically */
+  }
+  
+  @-webkit-keyframes blink {
+    20%, 24%, 55% {
+      color: #111;
+      text-shadow: none;
+    }
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+      color: #fff6a9;
+    }
+  }
+  
+  @keyframes blink {
+    20%, 24%, 55% {
+      color: #111;
+      text-shadow: none;
+    }
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+      color: #fff6a9;
+    }
+  }
