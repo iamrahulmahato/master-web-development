@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Comic Sans MS', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #fdf1e3, #f8e0c7);
+  }
+  
+  .scrapbook {
+    width: 80vw;
+    height: 80vh;
+    padding: 20px;
+    background: url('https://example.com/scrapbook-background.jpg') center/cover, #f5e6d3;
+    border: 15px solid #e3c09b;
+    border-radius: 15px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    color: #6d4c41;
+    text-align: center;
+    text-shadow: 2px 2px #e3c09b;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    text-align: center;
+    color: #8b5e3c;
+    margin-bottom: 20px;
+  }
+  
+  .sticker {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: grab;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .sticker:hover {
+    transform: rotate(10deg) scale(1.1);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+  }
+  
+  .sticker:active {
+    cursor: grabbing;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  

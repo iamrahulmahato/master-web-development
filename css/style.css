@@ -119,10 +119,21 @@ body {
   text-align: center;
 }
 
+.hero-btn-container{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#quiz-button{
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
 .source-code-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #0066cc;
+  /* background-color: #0066cc; */
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -131,7 +142,8 @@ body {
 }
 
 .source-code-btn:hover {
-  background-color: #0052a3;
+  /* background-color: #0052a3; */
+  color: black;
 }
 
 .search-container {
@@ -1025,13 +1037,12 @@ body {
 
 .btn-container a {
     display: inline-block;
-    transition: transform 0.3s ease, background-color 0.3s ease; 
+    transition: all 0.3s ease; 
 }
 
-.btn-container a:hover {
-    background-color: #75b4ec; 
-    color: #192333;
-    transform: scale(1.1); 
+#quiz-button:hover, .btn-container a:hover {
+    box-shadow: rgba(233, 45, 45, 0.1) 0px 1px 0px, rgba(237, 71, 71, 0.1) 0px 8px 24px, rgba(235, 65, 65, 0.1) 0px 16px 48px;
+    transform: scale(1.05); 
 }
 #suggestions {
   display: none;
