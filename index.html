@@ -3176,19 +3176,25 @@ body {
           <input type="email" id="email" name="email" placeholder="Your Email" required>
         </div>
 
-        
+         
         <div class="form-group">
-          <label for="rating">Rating</label>
-          <select id="rating" name="rating" required>
-            <option value="5">Excellent - 5 Stars</option>
-            <option value="4">Very Good - 4 Stars</option>
-            <option value="3">Good - 3 Stars</option>
-            <option value="2">Fair - 2 Stars</option>
-            <option value="1">Poor - 1 Star</option>
-          </select>
+            <label for="rating">Rating</label>
+            <!-- Star Rating Section -->
+            <div class="star-rating" aria-label="Rating" role="radiogroup">
+                <input type="radio" id="star5" name="rating" value="5" required>
+                <label for="star5" title="5 stars">★</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4" title="4 stars">★</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3" title="3 stars">★</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2" title="2 stars">★</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1" title="1 star">★</label>
+            </div>
         </div>
+ 
 
-        
         <div class="form-group">
           <label for="feedback">Your Feedback</label>
           <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..." required></textarea>
@@ -3282,6 +3288,46 @@ body {
     margin: 0;
     padding: 0;
   }
+
+
+  .star-rating {
+
+  display: flex;
+  justify-content: center; 
+  flex-direction: row-reverse;
+
+}
+
+.star-rating input {
+
+  display: none; 
+
+}
+
+.star-rating label {
+
+  font-size: 46px; 
+  color: #dd8f8f; 
+  cursor: pointer; 
+  transition: color 0.2s;
+  margin: 0 5px; /* Add margin for gaps between stars */
+
+}
+
+.star-rating input:checked ~ label {
+
+  color: #fa2b4d; 
+
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+
+  color: #fa2b4d; 
+
+}
+
+
    </style>
     <!-- Footer -->
 <!-- Footer -->
