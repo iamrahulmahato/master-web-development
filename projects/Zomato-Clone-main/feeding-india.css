@@ -1,0 +1,168 @@
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* Title */
+
+#title {
+    background-image: url(images/feeding-india-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3% 20%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* navbar */
+
+.navbar-style {
+    background-color: transparent;
+    width: 100%;
+}
+
+.nav-image {
+    width: 10rem;
+    margin-right: 9rem;
+}
+
+.bar-item {
+    color: whitesmoke;
+    font-size: smaller;
+    font-weight: 600;
+}
+
+.bar-item-style :hover {
+    color: rgb(230, 111, 135);
+}
+
+/* text */
+
+.text-box{
+    margin-bottom: 15%;
+}
+
+.title-info {
+    margin: 21% 0 2%;
+    color: whitesmoke;
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+.title-text {
+    color: whitesmoke;
+    font-size: 1.58rem;
+    font-weight: 500;
+}
+
+.dn-button {
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 100;
+    background: #e64762;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    margin: 3% 0;
+}
+
+.dn-button:hover {
+    background: #e82149;
+    text-decoration: none;
+}
+
+/* Info */
+
+#info{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.info-box{
+    padding: 5% 20%;
+}
+
+.text-about{
+    font-size: 1.75rem;
+    padding-bottom: 4%;
+}
+
+.table-text{
+    font-size: 1.2rem;
+    font-weight: 200;
+    color: gray;
+}
+
+.table-image{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.km-link{
+    margin-top: 3%;
+    color: #e82149;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.text-table-info{
+    margin-top: 5%;
+    margin-bottom: 15%;
+}
+
+/* Count */
+
+.counter{
+    padding: 5% 10%;
+    background-color: rgba(232, 232, 232, 0.519);
+    border-radius: 2%;
+    margin-bottom: 10%;
+}
+
+.count-meals{
+    color: #e82149;
+}
+
+/* Daily Feeding Program Section*/
+
+.dfp-heading{
+    font-weight: 500;
+    margin-bottom: 7%;
+}
+
+.dfp-content{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: grey;
+}
+
+.dfp-image{
+    width: 95%;
+}
+
+/* Emergency Relief Campaigns */
+
+#erc{
+    background-color: rgba(232, 232, 232, 0.519);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Footer */
+
+footer{
+    padding: 5% 0;
+    background-color: rgba(232, 232, 232, 0.519);
+}
+
+.footer-info{
+    padding: 0 15%;
+}
+
+.footer-logo{
+    width: 65%;
+    margin-bottom: 1rem;
+}
+
+.footer-text-info{
+    font-size: 0.75rem
+}

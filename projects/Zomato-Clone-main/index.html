@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital@1&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="https://b.zmtcdn.com/images/logo/zomato_logo_2017.png">
+    <title>Zomato</title>
+    
+        
+<body onload="myFunction()" style="margin:0;">
+    <div id="loader"></div>
+    <!--Header-->
+    <!--Image Added-->
+
+    <div class="container1">
+        <img class="pic" src="Images/download.png" alt="">
+        <nav class="navbar">
+            <div class="container-fluid">
+<a class="getapp" href="#"><i class="sc-rbbb40-1 iFnyeo sc-bqjOQT frkeLA" size="30" color="#FFFFFF" padding-right="50%" margin-left="40%"><svg xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" width="17" height="10" viewBox="0 0 20 20" aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="sc-rbbb40-0 gvsUip"><title>download-app</title><path d="M18.5793 9.18939H16.5865H16.3199C15.7307 9.18939 15.2529 9.6672 15.2529 10.2583V10.3742C15.2529 10.9659 15.7307 11.444 16.3207 11.444H18.3156H18.5793C19.1696 11.444 19.6488 10.9639 19.6488 10.3742L19.6477 10.2569C19.6488 9.6672 19.1696 9.18939 18.5793 9.18939Z"></path><path d="M18.5804 6.52262H18.1097V1.35122C18.1097 0.607964 17.5017 0 16.7582 0H7.84167C7.09841 0 6.49045 0.608249 6.49045 1.35122V5.06151C4.69196 6.07821 2.83696 7.14029 2.83296 7.14286C1.82597 7.5573 0.350586 8.89453 0.350586 12.0522C0.350586 12.3342 0.369139 12.5945 0.395113 12.846C0.40339 12.9197 0.412524 12.9904 0.422514 13.0615C0.448488 13.2462 0.481027 13.4229 0.519845 13.5907C0.533831 13.6506 0.544678 13.7131 0.559805 13.7705C0.612039 13.9646 0.67255 14.1467 0.740482 14.32C0.774733 14.4059 0.811839 14.4841 0.84923 14.5646C0.88919 14.6494 0.929436 14.7327 0.972535 14.8106C1.02249 14.9045 1.07244 14.995 1.12724 15.0809C1.14037 15.1009 1.15464 15.1192 1.16805 15.1394C2.46847 17.1052 4.8675 17.114 4.8675 17.114H6.49045V18.6494C6.49045 19.3918 7.09841 19.9997 7.84167 19.9997H16.7579C17.5014 19.9997 18.1094 19.3915 18.1094 18.6494V16.7767H18.3155V16.7755H18.5784C19.1695 16.7755 19.6487 16.2974 19.6476 15.7063L19.6487 15.5898C19.6476 14.9996 19.1695 14.5229 18.5792 14.5229H18.3155H16.5861H16.3195C15.7292 14.5229 15.2525 15.0007 15.2525 15.5907V15.7091C15.2525 16.2977 15.7304 16.7775 16.3203 16.7775H17.1692V17.5008H7.43036V7.79877C7.91959 7.48851 8.37256 7.18995 8.63088 6.98987C9.93957 5.97774 11.1818 5.17169 11.3499 4.4407C11.5688 3.49222 10.8407 2.69302 9.57765 3.34922C9.17976 3.55587 8.36315 4.00885 7.43036 4.53261V2.14129L17.1692 2.14271V6.52205H16.5861V6.52319H16.3209C15.7304 6.52319 15.2511 7.001 15.2511 7.59269V7.70858C15.2511 8.29999 15.7303 8.77665 16.3195 8.77665H16.5846H18.3141H18.5798C19.1695 8.77665 19.6476 8.29884 19.6476 7.70858V7.58955C19.6487 7.00186 19.1709 6.52262 18.5804 6.52262ZM12.2986 17.9752C12.6731 17.9752 12.9751 18.2774 12.9751 18.6511C12.9751 19.0255 12.6728 19.3267 12.2986 19.3267C11.9256 19.3267 11.6242 19.0247 11.6242 18.6511C11.6247 18.2786 11.927 17.9752 12.2986 17.9752ZM13.7266 1.30098H10.8735C10.7839 1.30098 10.7097 1.2282 10.7097 1.13829C10.7097 1.04695 10.7839 0.974169 10.8735 0.974169H13.7266C13.8163 0.974169 13.8893 1.04667 13.8893 1.13829C13.8893 1.22792 13.8163 1.30098 13.7266 1.30098Z"></path><path d="M18.5788 11.8561H18.3151H16.3193C15.7302 11.8561 15.251 12.3353 15.251 12.9253V13.0423C15.251 13.6329 15.7291 14.1107 16.3193 14.1107H16.5845H18.3139H18.5782C19.1693 14.1107 19.646 13.6329 19.6474 13.0423V12.9253C19.6472 12.3353 19.1705 11.8561 18.5788 11.8561Z"></path></svg></i><b>Get the App</b></a>
+<a class="restaurant" href="#">Add restaurant</a>
+<a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Log in</a>
+<div id="login" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      
+      <div class="modal-content">
+        <div class="modal-body">
+          <!-- <button data-dismiss="modal" class="close">&times;</button> -->
+          <h4>Login</h4>
+          <form>
+              <h4 style="color:black; margin-top: -7%;">Login</h4>
+            <input type="text" name="Phone-number" class="phone-number form-control" placeholder="Phone number"/>
+             <div style="color:white; background-color: #EF4F5F; margin-top: 1%; border-radius:6px 6px 6px 6px; " class="otp"><p style = "color:#FFFBF7;padding:11px;"class="text-otp">Send OTP</p></div>
+          
+            
+             <div class="login-email"><p style="font-size: 20px; font-weight: 400; margin-top:-1px;color:#4F4F4F;" class="text-email"><i class="fa fa-envelope" style="font-size:25px; margin-top: 1%; margin-left:10%;color:#EF4f54;"></i>Continue with Email</p></div>
+             <!-- <div class="login-google"><p style="font-size: 20px;
+               color:grey;" class="text-email">
+              <img class="login-image" src="Images/google.png"
+               style="width:25px; height: 25px; margin-left:10%;">
+               Continue with Google</p></div>
+             -->
+             <div class="login-google" style="display: flex;height:45px;margin-top: -5%;">
+                <img class="login-image" src="Images/google.png"
+                style="width:25px; margin-top: 6px;height: 25px; margin-left:11%; ">
+                <p style="margin-left:4%; font-size: 20px; margin-top:3px; font-weight: 400;
+                color:#4F4F4F;">Continue with Google</p>
+             </div>
+             <hr style ="margin-top: 5%;">
+             <div class="new">
+                 <p style="color:#4F4F4F; margin-left: 2%; font-size: 20px; font-weight: 100;">New to Zomato? <span style="color:#FF7E8B; font-weight: 100;">Create account</span></p>
+             </div>
+            <!-- <input type="password" name="password" class="password form-control" placeholder="password"/> -->
+            <!-- <input class="btn login" type="submit" value="Login" /> -->
+          </form>
+        </div>
+      </div>
+    </div>  
+  </div>
+
+<a class="signup" href="#">Sign up</a>
+        </div>
+    </nav>
+<div class ="center">
+    <img id="logo" src="Images/Logo.png" alt="">
+</div>
+<div class="text">
+  <p>Discover the best food & drinks in &nbsp;<b><p class="city"></p></b></p>
+    
+    <!--Search box starts-->       
+<div class="wrapper">
+    <div class="search_box">
+         <div class="dropdown">
+            <div class="default_option"><i class='fas fa-map-marker-alt' style='font-size:20px;color:#E23744'></i></div>  
+ </div> 
+    <div class="search_field">
+        <i class="fas fa-search"></i>
+    <input type="text" class="input" placeholder="Search for restaurants, cuisine or a dish">
+          </div> 
+    </div>
+</div>
+</div>
+    </div>
+    </div>
+
+   
+
+        <div class="container">
+            <div class="order-cat">
+                <div class="hover">
+                    <img src="Images/Order Food Online.webp">
+                    <div class="order-title-bg">
+                        <p class="order-title">Order Food Online</p>
+                    </div>
+                </div>
+                <div class="hover">
+                    <img src="Images/Go out for a meal.webp">
+                    <div class="order-title-bg">
+                        <p class="order-title">Go out for a meal</p>
+                    </div>
+                </div>
+                <div class="hover">
+                    <img src="Images/Zomato Pro.webp">
+                    <div class="order-title-bg">
+                        <p class="order-title">Zomato Pro</p>
+                    </div>
+
+                </div>
+                <div class="hover">
+                    <img src="Images/night.png">
+                    <div class="order-title-bg">
+                        <p class="order-title">Nightlife & clubs</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="containerz">
+            <h1>Collections</h1>
+            <div class="collections">
+                <p>Explore curated lists of top restaurants, cafes, pubs, and bars in Delhi NCR, based on trends</p>
+                <a href="#">All collections in Delhi NCR <i class="fa fa-caret-right"></i></a>
+            </div>
+            <div class="collection-grid">
+                <div class="collection-box">
+                    <img src="Images/Live Sports Screenings.png">
+                    <div class="collection-title">
+                        <p>Live Sports Screening</p>
+                        <p class="sports">27 Places <i class="fa fa-caret-right"></i></p>
+                    </div>
+                </div>
+                <div class="collection-box">
+                    <img src="Images/Newly Opened.png">
+                    <div class="collection-title">
+                        <p>Newly Opened</p>
+                        <p class="sports">14 Places <i class="fa fa-caret-right"></i></p>
+                    </div>
+                </div>
+                <div class="collection-box">
+                    <img src="Images/Trending This Week.png">
+                    <div class="collection-title">
+                        <p>Trending this week</p>
+                        <p  class="sports">30 Places <i class="fa fa-caret-right"></i></p>
+                    </div>
+                </div>
+                <div class="collection-box">
+                    <img src="Images/best.png">
+                    <div class="collection-title">
+                        <p>Best of Delhi NCR</p>
+                        <p class="sports">163 Places <i class="fa fa-caret-right"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+       
+    
+    <div class="container2">
+        <h1 class="page_title">Popular localities in and around &nbsp;<b><p class="city"></p></b></h1>
+        </div>
+        
+    
+
+    <div class="container3">
+       <div class="container_a">
+           <img id="iphone" src="Images/get-zomato-app.png" alt="">
+       </div>
+       <div class="container_b">
+        <h1 class="Get">Get the Zomato App</h1>
+        <p>We will send you a link, open it on your phone to download the app</p>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">Email</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">Phone</label>
+          </div>
+          
+        <form>
+            <div class="form-group">
+              <input id="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+              <button id="danger" type="button" class="btn btn-danger">Share App Link</button>
+            </form>
+            </div>
+            <P>Download app from</P>
+            <a href="https://apps.apple.com/in/app/zomato-food-restaurant-finder/id434613896?_branch_match_id=975016708492842853&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT8pL1ssp0U%2FJL8%2FLyU9M0a3Kz00sydfNzC8GAFKYbuoiAAAA"><img class="store" src="Images/App Store.webp" alt=""></a>
+            <a href="https://play.google.com/store/apps/details?id=com.application.zomato&_branch_match_id=975016708492842853&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT8pL1ssp0U%2FJL8%2FLyU9M0a3STcxLKcrPTAEABp6kzyEAAAA%3D"><img class="store1" src="Images/Google Play.webp" alt=""></a> 
+       </div>
+    </div>
+
+    
+<div class="container4">
+       <h2>Explore other options for you here</h2>
+       <h3>Popular cuisines near me</h3>
+       <p>
+           Bakery food near me ・ Beverages food near me ・ Biryani food near me ・ Burger food near me ・ Chinese food near me ・ Continental food near me ・ Desserts food near me ・ Ice Cream food near me ・ Italian food near me ・ Kebab food near me ・ Mithai food near me ・ Momos food near me ・ Mughlai food near me ・ North Indian food near me ・ Pizza food near me ・ Rolls food near me ・ Sandwich food near me ・ Shake food near me ・ South Indian food near me ・ Street food near me
+       </p>
+       <h3 class="popular">Popular restaurant types near me</h3>
+       <p>
+           Bakeries near me ・ Bars near me ・ Beverage Shops near me ・ Bhojanalya near me ・ Cafés near me ・ Casual Dining near me ・ Clubs near me ・ Cocktail Bars near me ・ Confectioneries near me ・ Dessert Parlors near me ・ Dhabas near me ・ Fine Dining near me ・ Food Courts near me ・ Food Trucks near me ・ Irani Cafes near me ・ Kiosks near me ・ Lounges near me ・ Meat Shops near me near me ・ Microbreweries near me ・ Paan Shop near me ・ Pubs near me ・ Quick Bites near me ・ Sweet Shops near me
+       </p>
+       </div>
+       <div class="containerA">
+           <h3>Top Restaurant Chains</h3>
+       </div>
+       <div class="containerB">
+       <div class="containerB-1">
+           <table>
+               <tr>
+                   <td>
+                       Bikanervala<br>
+                       Domino's<br>
+                       Krispy Kreme<br>
+                       Pizza Hut<br>
+                   </td>
+               </tr>
+           </table>
+       </div>
+       <div class="containerB-2">
+           <table>
+               <tr>
+                   <td>
+                      Biryani Blues<br>
+                      Dunkin' Donuts<br>
+                      McDonalds<br>
+                      Sagar Ratna<br>
+                   </td>
+               </tr>
+           </table>
+       </div>
+       <div class="containerB-3">
+           <table>
+               <tr>
+                   <td>
+                       BTW<br>
+                       Faasos<br>
+                       Moti Mahal Delux<br>
+                       Subway<br>
+                   </td>
+               </tr>
+           </table>
+       </div>
+       <div class="containerB-4">
+           <table>
+               <tr>
+                   <td>
+                       Burger King<br>
+                       Haldiram's<br>
+                       Om Sweets & Snacks<br>
+                       WOW! Momo<br>
+                   </td>
+               </tr>
+           </table>
+       </div>
+       <div class="containerB-5">
+           <table>
+               <tr>
+                   <td>
+                       Burger Singh<br>
+                       KFC<br>
+                       Paradise Biryani<br>
+                   </td>
+               </tr>
+           </table>
+       </div>
+   </div>
+   <div class="containerC">
+       <h3>Cities We Deliver To</h3>
+   </div>
+   <div class="containerD">
+    <div class="containerD-1">
+        <table>
+            <tr>
+                <td>
+                    Delhi NCR<br>
+                    Hyderabad<br>
+                    Ahmedabad<br>
+                    Ooty<br>
+                    Kanpur<br>
+                    Visakhapatnam<br>
+                    Nagpur<br>
+                    Surat<br>
+                    Trivandrum<br>
+                    Madurai<br>
+                    Vijayawada<br>
+                    Rishikesh<br>
+                    Raipur<br>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="containerD-2">
+        <table>
+            <tr>
+                <td>
+                   Kolkata<br>
+                   Chennai<br>
+                   Chandigarh<br>
+                   Shimla<br>
+                   Allahabad<br>
+                   Bhubaneswar<br>
+                   Agra<br>
+                   Varanasi<br>
+                   Haridwar<br>
+                   Kozhikode<br>
+                   Jodhpur<br>
+                   Jalandhar<br>
+                   Gorakhpur<br>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="containerD-3">
+        <table>
+            <tr>
+                <td>
+                    Mumbai<br>
+                    Lucknow<br>
+                    Goa<br>
+                    Ludhiana<br>
+                    Aurangabad<br>
+                    Coimbatore<br>
+                    Dehradun<br>
+                    Patna<br>
+                    Leh<br>
+                    Alappuzha<br>
+                    Kota<br>
+                    Jammu<br>
+                    Palakkad<br>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="containerD-4">
+        <table>
+            <tr>
+                <td>
+                    Bengaluru<br>
+                    Kochi<br>
+                    Indore<br>
+                    Guwahati<br>
+                    Bhopal<br>
+                    Mangalore<br>
+                    Mysore<br>
+                    Udaipur<br>
+                    Pushkar<br>
+                    Thrissur<br>
+                    Ajmer<br>
+                    Manali<br>
+                    <u><b><a id="SeeMore" href="delivery-cities.html">See more</a></b></u><br>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="containerD-5">
+        <table>
+            <tr>
+                <td>
+                    Pune<br>
+                    Jaipur<br>
+                    Nashik<br>
+                    Amritsar<br>
+                    Ranchi<br>
+                    Vadodara<br>
+                    Puducherry<br>
+                    Cuttak<br>
+                    Rajkot<br>
+                    Manipal<br>
+                    Mussoorie<br>
+                    Dharamsala<br>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    <div class="container5">
+            <img class="footer_logo" src="Images/Zomato logo.webp" alt="zomato"> 
+            <span class="drop1">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle"
+                    style="width:122px; font-size:18px; font-family: 'Open Sans', sans-serif; font-weight: lighter;
+                    background-color: #FCFCFC; color:black; border: 1px solid #9fa3b1;"
+                    type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img id="India" src="Images/India.png" alt=""> &nbsp; India
+                    </button>
+                    <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                      <div class="dropdown-col">
+                        <a class="dropdown-item" href=""><img id="India" src="Images/India.png" alt="">&nbsp; India</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Chile.png" alt="">&nbsp; Chile</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Italy.png" alt="">&nbsp; Italy</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Philippines.png" alt="">&nbsp; Philippines</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Singapore.png" alt="">&nbsp; Singapore</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Turkey.png" alt="">&nbsp; Turkey</a>
+                      </div>
+                      <div class="dropdown-col">
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Australia.png" alt="">&nbsp; Australia</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Czech-Republic.png" alt="">&nbsp; CR</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Lebanon.png" alt="">&nbsp; Lebanon</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Poland.png" alt="">&nbsp; Poland</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Slovakia.png" alt="">&nbsp; Slovakia</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/UAE.png" alt="">&nbsp; UAE</a>
+                      </div>
+                      <div class="dropdown-col">
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Brazil.png" alt="">&nbsp; Brazil</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Indonesia.png" alt="">&nbsp; Indonesia</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Malaysia.png" alt="">&nbsp; Malaysia</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Portugal.png" alt="">&nbsp; Portugal</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/South-Africa.png" alt="">&nbsp; South Africa</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/UK.png" alt="">&nbsp; UK</a>
+                      </div>
+                      <div class="dropdown-col">
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Canada.png" alt="">&nbsp; Canada</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Ireland.png" alt="">&nbsp; Ireland</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/New-Zealand.png" alt="">&nbsp; NZ</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Qatar.png" alt="">&nbsp; Qatar</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/Sri-Lanka.png" alt="">&nbsp; Sri Lanka</a>
+                        <a class="dropdown-item" href=""><img id="India" src="Images/USA.png" alt="">&nbsp; USA</a>
+                      </div>
+                    </div>
+                  </div>
+            </span>
+            <span class="drop2">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle"
+                    style="width:130px; font-size:18px; font-family: 'Open Sans', sans-serif; font-weight: lighter;
+                    background-color: #FCFCFC; color:black; border: 1px solid #9fa3b1;"
+                     type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img id="language-globe" src="Images/language-globe.png" alt="">&nbsp; English
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="">English</a></li>
+                      <li><a class="dropdown-item" href="">Türkçe</a></li>
+                      <li><a class="dropdown-item" href="">हिंदी</a></li>
+                      <li><a class="dropdown-item" href="">Português (BR)</a></li>
+                      <li><a class="dropdown-item" href="">Indonesian</a></li>
+                      <li><a class="dropdown-item" href="">Português (PT)</a></li>
+                      <li><a class="dropdown-item" href="">Español</a></li>
+                      <li><a class="dropdown-item" href="">Čeština</a></li>
+                      <li><a class="dropdown-item" href="">Slovenčina</a></li>
+                      <li><a class="dropdown-item" href="">Polish</a></li>
+                      <li><a class="dropdown-item" href="">Italian</a></li>
+                      <li><a class="dropdown-item" href="">Vietnamese</a></li>                                         
+                    </ul>
+                  </div>
+            </span>
+    </div>
+    <div class="container6">
+        <div class="container6-1">
+        <table>
+        <tr>
+        <td>
+       <b class="l-space">COMPANY</b><br>
+        <a id="ent" href= "who-we-are.html">Who are we</a><br>
+        <a id="ent" href= "feeding-india.html">Feeding India</a><br>
+        Blog<br>
+        <a id="ent" href= "careers.html">Careers</a><br>
+        Report Fraud<br>
+        Contact<br>
+        <a id="ent" href="Investor-Relation.html">Investor Relation</a><br>
+        </td>
+        </tr>
+        </table>
+        </div>
+        <div class="container6-2">
+            <table>
+                <tr>
+                    <td>
+                 <b class="l-space">FOR FOODIES</b><br>
+                  Code of Conduct<br>
+                  Community<br>
+                  Blogger Help<br>
+                  Mobile Apps<br>
+                    </td>
+                 </tr>
+            </table>
+            </div>
+        <div class ="container6-3">
+            <table>
+        <tr>
+            <td>
+        <b class="l-space">FOR RESTAURANTS</b><br>
+        <a id="ent" href="add-restaurant.html">Add restaurant<br></a>
+        <div class="enterprises"><b>FOR ENTERPRISES</b><br>
+          <a id="ent" href="enterprise-solutions.html">Zomato for Work</a>
+        </div>
+        </td>
+            </tr>
+        </table>
+        </div>
+        <div class ="container6-4">
+            <table>
+         <tr>
+            <td>
+        <b class="l-space">FOR YOU</b><br>
+        Privacy<br>
+        Terms<br>
+        Security<br>
+        Sitemap<br>
+            </td>
+         </tr>
+        </table>
+         </div>
+        <div class="container6-5">
+        <table>
+         <tr>
+             <td>
+                 <b class="l-space">SOCIAL LINKS</b>
+                 <br>
+                 &emsp;&emsp;<img class="icons-footer" src="Images/favpng_facebook.png" alt="">
+                 <img class="icons-footer" src="Images/104461_twitter_icon.png" alt="">
+                 <img class="icons-footer" src="Images/1161954_instagram_icon.png" alt="">
+                 <br>
+                 <a href="https://apps.apple.com/in/app/zomato-food-restaurant-finder/id434613896?_branch_match_id=975016708492842853&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT8pL1ssp0U%2FJL8%2FLyU9M0a3Kz00sydfNzC8GAFKYbuoiAAAA"><img class="store-footer" src="Images/App Store.webp" alt=""></a> <br>
+                 <a href="https://play.google.com/store/apps/details?id=com.application.zomato&_branch_match_id=975016708492842853&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXT8pL1ssp0U%2FJL8%2FLyU9M0a3STcxLKcrPTAEABp6kzyEAAAA%3D"><img class="store-footer" src="Images/Google Play.webp" alt=""></a> 
+             </td>
+         </tr>
+        </table>
+        </div> 
+    </div>
+    <div class="container7">
+        <hr style="margin:0; margin-bottom: 20px;">
+    <p>
+    By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies.
+    All trademarks are properties of their respective owners. 2008-2021 © Zomato™ Ltd. All rights reserved.
+    </p>
+        </div>
+        <script src="index.js"></script>
+        <script>
+            var myVar;
+          
+            function myFunction() {
+            myVar = setTimeout(showPage, 1750);
+            }
+          
+            function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+            }
+          </script>
+</body>
+</html>
