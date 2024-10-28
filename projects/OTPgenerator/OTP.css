@@ -3,11 +3,13 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-}
-body {
+  }
+  
+  body {
     background-color: #246bf0;
-}
-.container {
+  }
+  
+  .container {
     background-color: #211650;
     width: min(37.5em, 90%);
     position: absolute;
@@ -16,13 +18,35 @@ body {
     left: 50%;
     padding: 3em;
     border-radius: 0.5em;
-}
-h1 {
+  }
+  
+  h1 {
     text-align: center;
     font-weight: 500;
+    font-size: 40px;
     color: #e0e0e0;
-}
-button {
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+  }
+  
+  label {
+    color: #e0e0e0;
+    margin-right: 1.2em;
+  }
+  
+  input[type="number"] {
+    width: 70px;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    border: none;
+  }
+  
+  button {
     font-size: 1em;
     background-color: #246bf0;
     display: block;
@@ -33,12 +57,17 @@ button {
     outline: none;
     border-radius: 0.3em;
     cursor: pointer;
-}
-#otpDisplay {
+  }
+  
+  #otpDisplay {
     font-size: 1em;
     background-color: #32303a;
     color: #e0e0e0;
     letter-spacing: 1em;
     text-align: center;
     padding: 1em 0;
-}
+    width: 20em;
+    margin: 0 auto;
+    border-radius: 0.3rem;
+  }
+  

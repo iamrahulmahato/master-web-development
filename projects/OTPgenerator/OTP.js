@@ -1,13 +1,14 @@
-let generateOTP = () => {
-    //Define the length of the OTP
-    const otpLength = 6;
-  
-    // Generate a random numeric OTP with exactly 6 digits
-    const otp = Math.floor(100000 + Math.random() * 900000);
-  
-    //Display the generated OTP
-    document.getElementById("otpDisplay").innerText = `${otp}`;
-  };
-  
-  document.getElementById("generateBtn").addEventListener("click", generateOTP);
-  window.addEventListener("load", generateOTP);
+document.getElementById("generateBtn").addEventListener("click", function () {
+  const otpLength = parseInt(document.getElementById("otpLength").value) || 4;
+  const otp = generateOTP(otpLength);
+  document.getElementById("otpDisplay").textContent = otp;
+});
+
+function generateOTP(length) {
+  let otp = '';
+  const characters = '0123456789';
+  for (let i = 0; i < length; i++) {
+    otp += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return otp;
+}
