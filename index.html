@@ -208,6 +208,9 @@ body {
 </head>
 
 <body>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+      </div>
     <div class="icon">
         <div class="icon2">
             <button id="toggle-mode-btn">
@@ -3761,7 +3764,15 @@ visitor
         </div>
       </div>
       <script src="popup.js"></script>
+      <script>
 
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
+        </script>
 
 </body>
 
