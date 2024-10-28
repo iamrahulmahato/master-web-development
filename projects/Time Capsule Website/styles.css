@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #e2e2e2, #ffffff); /* Gradient background */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4A90E2; /* Brand color for headings */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border: 1px solid #4A90E2; /* Highlight on focus */
+}
+
+input[type="file"] {
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 12px;
+    background-color: #4A90E2; /* Brand color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Adding transformation on hover */
+}
+
+button:hover {
+    background-color: #357ABD; /* Darker shade on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+.entries {
+    margin-top: 20px;
+}
+
+.entries h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.entry {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #f9f9f9; /* Light background for entries */
+    transition: transform 0.2s;
+}
+
+.entry:hover {
+    transform: scale(1.01); /* Slightly scale up on hover */
+}
+
+.entry img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    input[type="text"],
+    textarea {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}

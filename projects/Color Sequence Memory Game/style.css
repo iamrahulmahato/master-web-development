@@ -1,0 +1,48 @@
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 400px;
+    margin: 20px auto;
+  }
+  
+  .color-square {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+  }
+  
+  .color-square:hover {
+    opacity: 1;
+  }
+  
+  .red {
+    background-color: #FF4136;
+  }
+  
+  .blue {
+    background-color: #0074D9;
+  }
+  
+  .green {
+    background-color: #2ECC40;
+  }
+  
+  .yellow {
+    background-color: #FFDC00;
+  }
+  
+  .game-info {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #start-button {
+    display: block;
+    margin: 20px auto;
+    font-size: 18px;
+    padding: 10px 20px;
+  }
