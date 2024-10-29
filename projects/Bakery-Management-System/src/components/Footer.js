@@ -48,6 +48,7 @@ export default function Footer() {
             < a href="/">All Type Payments Accepted</a></div>
           
         </div>
+        
         <div className="copyright">
             <div className="mention"> <span>Copyright @bakery.toshankanwar.in</span> All Rights Reserved</div>
             <div className="design">Design and Developed By  <a href="https://www.linkedin.com/in/toshankanwar2005/" target='blank'><span>Toshan Kanwar</span></a></div>
