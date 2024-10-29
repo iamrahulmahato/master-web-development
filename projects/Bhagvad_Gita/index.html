@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhagavad Gita Quotes</title>
+  <style>
+    /* Container Styling */
+    .gitaApp-container {
+      text-align: center;
+      padding: 30px;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+      margin: auto;
+      margin-top: 10%;
+    }
+
+    /* Title */
+    .gitaApp-title {
+      font-size: 28px;
+      color: #4e342e;
+      margin-bottom: 20px;
+    }
+
+    /* Quote */
+    .gitaApp-quote {
+      font-size: 20px;
+      color: #3e2723;
+      margin: 20px 0;
+      font-style: italic;
+    }
+
+    /* Button */
+    .gitaApp-btn {
+      padding: 12px 24px;
+      font-size: 16px;
+      color: white;
+      background-color: #6d4c41;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .gitaApp-btn:hover {
+      background-color: #5d4037;
+    }
+
+    /* Background Image */
+    .gitaApp-bg-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.2;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <div class="gitaApp-container">
+    <h1 class="gitaApp-title">Bhagavad Gita Quotes</h1>
+    <p class="gitaApp-quote" id="gitaApp-quoteDisplay">"The mind acts like an enemy for those who do not control it." - Bhagavad Gita</p>
+    <button class="gitaApp-btn" onclick="gitaAppDisplayRandomQuote()">Get New Quote</button>
+  </div>
+
+  <script>
+    const gitaAppQuotes = [
+      "\"The mind acts like an enemy for those who do not control it.\" - Bhagavad Gita",
+      "\"Change is the law of the universe. You can be a millionaire, or a pauper in an instant.\" - Bhagavad Gita",
+      "\"We’re kept from our goal not by obstacles, but by a clear path to a lesser goal.\" - Bhagavad Gita",
+      "\"You have the right to work, but never to the fruit of work.\" - Bhagavad Gita",
+      "\"The soul is neither born, and nor does it die\" - Bhagavad Gita",
+      "\"A person can rise through the efforts of his own mind; or draw himself down, in the same manner.\" - Bhagavad Gita"
+    ];
+
+    function gitaAppDisplayRandomQuote() {
+      const randomIndex = Math.floor(Math.random() * gitaAppQuotes.length);
+      document.getElementById("gitaApp-quoteDisplay").innerText = gitaAppQuotes[randomIndex];
+    }
+  </script>
+
+</body>
+</html>
