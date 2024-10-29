@@ -9,6 +9,7 @@
     <link rel="stylesheet" href= "./css/style.css" />
     <link rel="preconnect" href= "https://fonts.googleapis.com" />
     <link rel="preconnect" href= "https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet"
@@ -32,45 +33,80 @@ body {
 #root {
     flex: 1;
 }
-
 .follow-us {
-    background-color: #f4f4f4;
-    padding: 20px;
-    text-align: center;
-    margin-top: auto; /* Keep this at the bottom */
-}
-
-.follow-us h2 {
-    color: grey; /* Grey color for the heading */
-    font-size: 28px; /* Increased size for the heading */
-    margin-bottom: 15px; /* Space between heading and icons */
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    
+   
+   
 }
 
 .follow-us a {
-    margin: 0 15px;
-    color: grey; /* Grey color for icons */
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 10px;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 5px;
     text-decoration: none;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-.follow-us a:hover {
-    color: #007bff; /* Change color on hover */
-}
-
-.follow-us a:focus {
-    outline: 2px solid #007bff;
-    outline-offset: 2px;
-}
-
-.follow-us img {
-    width: 50px; /* Set logo size */
-    height: 50px;
-    filter: grayscale(100%); /* Grey color for icons */
-    transition: filter 0.3s; /* Smooth transition effect */
+.follow-us a img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
 }
 
 .follow-us a:hover img {
-    filter: grayscale(0%); /* Color on hover */
-}</style>
+    filter: grayscale(0%);
+}
+
+/* Specific styles for each social media platform */
+.follow-us a.twitter {
+    background-color: #1DA1F2;
+    border-color: #1DA1F2;
+}
+
+.follow-us a.twitter:hover {
+    color: #1DA1F2;
+    background-color: #fff;
+}
+
+.follow-us a.facebook {
+    background-color: #1877F2;
+    border-color: #1877F2;
+}
+
+.follow-us a.facebook:hover {
+    color: #1877F2;
+    background-color: #fff;
+}
+
+.follow-us a.instagram {
+    background-color: #E4405F;
+    border-color: #E4405F;
+}
+
+.follow-us a.instagram:hover {
+    color: #E4405F;
+    background-color: #fff;
+}
+
+.follow-us a.linkedin {
+    background-color: #0077B5;
+    border-color: #0077B5;
+}
+
+.follow-us a.linkedin:hover {
+    color: #0077B5;
+    background-color: #fff;
+}
+
+</style>
 
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet" />
@@ -2644,18 +2680,7 @@ body {
     </a>
 <!-- =========================== ================================= -->
     </section>
-    <div class="follow-us">
-        <h2>Follow Us</h2>
-        <a href="https://www.linkedin.com/in/berajeevkumar/" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" />
-        </a>
-        <a href="https://x.com/be_rajeevkumar" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter Logo" />
-        </a>
-        <a href="https://github.com/beRajeevKumar" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" />
-        </a>
-    </div>
+    
     <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
 
             <!-- =========================== Recipe Book ================================= -->
@@ -3579,6 +3604,7 @@ body {
             <p>Empowering aspiring developers to master web development through hands-on, small-scale projects.</p>
         </div>
         
+
         <!-- Newsletter Section -->
         <div class="footer-section newsletter">
             <h3>Subscribe to Our Newsletter</h3>
@@ -3586,6 +3612,20 @@ body {
                 <input type="email" placeholder="Enter your email" required>
                 <button type="submit">Subscribe</button>
             </form>
+        </div>
+        <div class="follow-us">
+            <DIV>
+                <h3>Follow Us</h3>
+            <a href="https://www.linkedin.com/in/berajeevkumar/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" />
+            </a>
+            <a href="https://x.com/be_rajeevkumar" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter Logo" />
+            </a>
+            <a href="https://github.com/beRajeevKumar" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" />
+            </a>
+            </DIV>
         </div>
     </div><a href=""> <style>
         .share-section {
@@ -3643,7 +3683,7 @@ body {
             <li><a href="./contact.html">Contact Us</a></li>
             
         </ul>
-
+        
         <!-- Footer Bottom -->
         <div class="footer-bottom">
             <div class="social-icons">
