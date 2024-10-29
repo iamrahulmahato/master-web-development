@@ -111,6 +111,10 @@ footer {
 /* Footer bottom section */
 .footer-bottom {
     padding-top: 10px;
+    padding-bottom: 10px; /* Add some bottom padding */
+    background-color: #eaeaea; /* Background color for the footer bottom */
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Add margin to prevent overlap */
 }
 
 .footer-bottom .social-icons {
