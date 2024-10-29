@@ -10,11 +10,16 @@
     <link rel="preconnect" href= "https://fonts.googleapis.com" />
     <link rel="preconnect" href= "https://fonts.gstatic.com" crossorigin />
     <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
 <main>
 
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
 <style>
 body {
     font-family: 'Poppins', sans-serif;
@@ -67,7 +72,7 @@ body {
     filter: grayscale(0%); /* Color on hover */
 }</style>
 
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet" />
     <link rel="shortcut icon" href="./assets/image/favicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
@@ -208,6 +213,9 @@ body {
 </head>
 
 <body>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+      </div>
     <div class="icon">
         <div class="icon2">
             <button id="toggle-mode-btn">
@@ -233,8 +241,7 @@ body {
                     rel="noopener noreferrer" class="source-code-btn">View source code</a>
             </div>
             <br />
-            <input type="text" id="search-input" placeholder="Search games by Title/Description..."
-                oninput="filterCards()" style="margin-bottom: 10px;">
+            
         </div>
         <div class="container">
             <!-- <div class="btn-container">
@@ -247,12 +254,8 @@ body {
             </div> -->
             
             <div class="search-container">
-              <input 
-                type="text" 
-                id="search-input" 
-                placeholder="Search games by Title/Description..."
-                oninput="filterCards()"
-              >
+                <input type="text" id="search-input" placeholder="Search games by Title/Description..."
+                oninput="filterCards()" style="margin-bottom: 10px;">
               <button class="search-btn" onclick="filterCards()">
                 <span class="search-icon"></span>
                 Search
@@ -382,7 +385,7 @@ body {
                             <img src="./images/moon night.jpg" alt="">
                             </div>
         </div>
-
+<!--
         <div class="slider">
 
         <div class="list">
@@ -487,17 +490,12 @@ body {
     <button class="next"> > </button>
 </div>
 
-<div class="thumbnail">
-    <div class="item">
-        <img src="./images/air ballon game.jpg" alt="">
-    </div>
-</div>
 
             </div>
 
             </div>
 
-
+        
 
         
             <div class="nextPrevArrows">
@@ -628,6 +626,17 @@ body {
                     <h3 class="card-heading">Travel vlog website</h3>
                     <p class="card-description">
                         Adventure awaits, embrace the journey.
+                    </p>
+                </div>
+            </a>
+            <a href="./projects/InspoMap/index.html" class="card Websites " target="_blank">
+                <div class="card-cover">
+                    <img src="./assets/image/inspomap.jpg" alt="inspo">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">InspoMap: A Daily Inspiration Map</h3>
+                    <p class="card-description">
+                        Be Motivated.
                     </p>
                 </div>
             </a>
@@ -896,7 +905,101 @@ body {
                     </p>
                 </div>
             </a>
-            <a href="./projects/Password Generator/index.html" class="card Generators " target="_blank">
+
+<a href="./projects/3D room decorator/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-color">
+        <img src="https://roomtodo.com/public/files/seo/room_planer/mini/room_planner_1__380_prop.png" alt="3D Room Decorator">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">3D Room Decorator</h3>
+        <p class="card-description">
+            Design and decorate a 3D room layout to visualize your space.
+        </p>
+    </div>
+</a>
+
+<a href="./projects/Microblog/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-color">
+        <img src="https://miro.medium.com/v2/resize:fit:1200/1*df8EnrIPBYLB0rOWTFVIzQ.jpeg" alt="Microblog with Customizable Animated Text">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Microblog with Customizable Animated Text</h3>
+        <p class="card-description">
+            Create engaging microblogs with customizable animated text effects.
+        </p>
+    </div>
+</a>
+
+<a href="./projects/Generative Mandala Creator/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-color">
+        <img src="https://cdn.pixabay.com/photo/2020/05/17/06/26/mandala-5180247_1280.png" alt="Generative Mandala Creator">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Generative Mandala Creator</h3>
+        <p class="card-description">
+            Create intricate, generative mandala designs with this creative tool.
+        </p>
+    </div>
+</a>
+
+<a href="./projects/lofi room/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-color">
+        <img src="https://classicentouragemag.com/wp-content/uploads/2024/02/ai-generated-8274619_1280.png?w=1024" alt="Lofi Room Ambience Generator">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Customizable “Lofi Room” Ambience Generator</h3>
+        <p class="card-description">
+            Create a personalized ambiance with customizable sounds for relaxation and focus.
+        </p>
+    </div>
+</a>
+<a href="./projects/Quantum Themed Maze Game/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-color">
+        <img src="https://cdn.mos.cms.futurecdn.net/R8Bfi2Thwq7cnTabi4J2pE.jpg" alt="Quantum Themed Maze Game">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Quantum Themed Maze Game</h3>
+        <p class="card-description">
+            Navigate through a maze filled with quantum puzzles and challenges.
+        </p>
+    </div>
+</a>
+
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Quantum Themed Maze Game</h3>
+        <p class="card-description">
+            Quantum Themed Maze Game
+        </p>
+    </div>
+</a>
+
+<a href="./projects/virtual memory/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-color ">
+        <img src="https://platform.vox.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/23165626/memory2final.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400" alt="">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Virtual Memory Jar</h3>
+        <p class="card-description">
+
+            Virtual Memory Jar
+
+        </p>
+    </div>
+</a>
+
+<a href="./projects/Password Generator/index.html" class="card Generators" target="_blank">
+    <div class="card-cover counter-cover-color">
+        <img src="path/to/password-generator/image.jpg" alt="">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Password Generator</h3>
+        <p class="card-description">
+   Generate secure passwords easily!
+        </p>
+    </div>
+</a>
+
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/lock.png" alt="">
                 </div>
@@ -907,7 +1010,30 @@ body {
                     </p>
                 </div>
             </a>
-            <a href="./projects/memeGen/index.html" class="card Generators " target="_blank">
+<a href="./projects/Physics-Based Particle-sandbox/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="https://www.sandbox.game/img/00_General/seo/home.png" alt="">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Physics-Based Particle Sandbox</h3>
+        <p class="card-description">
+            Physics-Based Particle Sandbox
+        </p>
+    </div>
+</a>
+
+<a href="./projects/memeGen/index.html" class="card Generators" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="path/to/memeGen/image.jpg" alt="">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Meme Generator</h3>
+        <p class="card-description">
+            Create and share memes easily!
+        </p>
+    </div>
+</a>
+
                 <div class="card-cover counter-cover-colour">
                     <img src="./assets/image/images.png" alt="">
                 </div>
@@ -918,8 +1044,30 @@ body {
                     </p>
                 </div>
             </a>
-            <a href="./projects/Memory Tiles/index.html" class="card Games " target="_blank">
-                <div class="card-cover counter-cover-colour">
+<a href="./projects/Real-Time Heatmap with Mouse Interactions/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg3AyPZ2vwkck-Vgv59NJhxjXF5Tl6Wl4_0g&s" alt="Real-Time Heatmap">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Real-Time Heatmap with Mouse Interactions</h3>
+        <p class="card-description">
+            Create a real-time heatmap based on mouse movements!
+        </p>
+    </div>
+</a>
+
+<a href="./projects/Memory Tiles/index.html" class="card Games" target="_blank">
+    <div class="card-cover">
+        <img src="https://example.com/memory-tiles-image.jpg" alt="Memory Tiles">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Memory Tiles</h3>
+        <p class="card-description">
+            Test your memory with this fun game.
+        </p>
+    </div>
+</a>
+   <div class="card-cover counter-cover-colour">
                     <img src="./projects/Memory Tiles/flipassets/icon.png" alt="">
                 </div>
                 <div class="card-content">
@@ -938,26 +1086,10 @@ body {
         <h3 class="card-heading">Digital Scrapbook with Animated Stickers</h3>
         <p class="card-description">
             Create your digital scrapbook with fun, animated stickers!
+
         </p>
     </div>
 </a>
-
-<a href="./projects/Style picker/index.html" class="card" target="_blank">
-    <div class="card-cover counter-cover-colour">
-        <img src="https://www.panaprium.com/cdn/shop/articles/different_fashion_styles_up.jpg?v=1712222301" alt="AI-Powered Style Picker">
-    </div>
-    <div class="card-content">
-        <h3 class="card-heading">AI-Powered Style Picker</h3>
-        <p class="card-description">
-            Discover your unique fashion style with our AI-powered tool!
-        </p>
-    </div>
-</a>
-
-    </div>
-    <div class="card-content">
-        <h3 class="card-heading">AI-Powered Style Picker</h3>
-        <p class="card-description">
 <a href="./projects/Style picker/index.html" class="card" target="_blank">
     <div class="card-cover counter-cover-colour">
         <img src="https://www.panaprium.com/cdn/shop/articles/different_fashion_styles_up.jpg?v=1712222301" alt="AI-Powered Style Picker">
@@ -970,24 +1102,34 @@ body {
     </div>
 </a>
 
+
+<a href="./projects/Style picker/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour">
+        <img src="https://www.panaprium.com/cdn/shop/articles/different_fashion_styles_up.jpg?v=1712222301" alt="AI-Powered Style Picker">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">AI-Powered Style Picker</h3>
+        <p class="card-description">
+            Customize your style with AI-powered suggestions!
         </p>
     </div>
 </a>
 
 <a href="./projects/random user generator/index.html" class="card Generators" target="_blank">
-    <div class="card-cover">
+
+    <div class="card-cover counter-cover-colour">
         <img src="https://example.com/random-user-generator-image.jpg" alt="Random User Generator">
+
     </div>
     <div class="card-content">
         <h3 class="card-heading">Random User Generator</h3>
         <p class="card-description">
-            Generate random user profiles for testing and fun.
-
+            Generate random user profiles with this tool.
         </p>
     </div>
 </a>
 
-                <div class="card-cover">
+  <div class="card-cover">
                     <img src="./assets/image/screenshot.png" alt="">
                 </div>
                 <div class="card-content">
@@ -3190,21 +3332,60 @@ body {
 
         
         <div class="form-group">
-          <label for="rating">Rating</label>
-          <select id="rating" name="rating" required>
-            <option value="5">Excellent - 5 Stars</option>
-            <option value="4">Very Good - 4 Stars</option>
-            <option value="3">Good - 3 Stars</option>
-            <option value="2">Fair - 2 Stars</option>
-            <option value="1">Poor - 1 Star</option>
-          </select>
-        </div>
+          <label for="rating"></label>
+          
 
         
         <div class="form-group">
           <label for="feedback">Your Feedback</label>
           <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..." required></textarea>
         </div>
+        <div id="star-rating" class="stars">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+        <p id="rating-value">Rating: 0</p>
+    
+    
+        <style>
+            .stars {
+               
+                cursor: pointer;
+                font-size: 2rem;
+                color: gray;
+            }
+            .star {
+                transition: color 0.2s;
+            }
+            .star.selected {
+                color: gold;
+            }
+        </style>
+        
+       <script>document.addEventListener("DOMContentLoaded", () => {
+        const stars = document.querySelectorAll(".star");
+        const ratingValue = document.getElementById("rating-value");
+        let selectedRating = 0;
+    
+        stars.forEach(star => {
+            star.addEventListener("mouseover", () => highlightStars(star.dataset.value));
+            star.addEventListener("mouseout", () => highlightStars(selectedRating));
+            star.addEventListener("click", () => {
+                selectedRating = star.dataset.value;
+                ratingValue.innerText = `Rating: ${selectedRating}`;
+            });
+        });
+    
+        function highlightStars(rating) {
+            stars.forEach(star => {
+                star.classList.toggle("selected", star.dataset.value <= rating);
+            });
+        }
+    });
+    </script>
 
         
         <button type="submit">Submit Feedback</button>
@@ -3296,6 +3477,88 @@ body {
   }
    </style>
     <!-- Footer -->
+
+    <!-- Added FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">What is this website about?</h3>
+                <div class="faq-answer">
+                    <p>This website is dedicated to mastering web development through various projects and challenges.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">What projects are available on the website?</h3>
+                <div class="faq-answer">
+                    <p>There are several projects available on the website, including Tic Tac Toe, Counter, Love Calculator, 15 Puzzle, 8 Puzzle, Snake Game, Calculator, and more.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">How can I contribute?</h3>
+                <div class="faq-answer">
+                    <p>You can contribute by submitting your projects and participating in discussions in the comments.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Where can I find the source code?</h3>
+                <div class="faq-answer">
+                    <p>The source code for each project can be found in the GitHub repository linked in the respective project section.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        /* FAQ Section Styling */
+        #faq {
+            background-color: #f8f8f8;
+            padding: 50px 20px;
+        }
+        
+        #faq h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            padding: 15px 0;
+        }
+    
+        .faq-question {
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #333;
+            margin: 0;
+            padding: 10px;
+            transition: background 0.3s;
+        }
+    
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+    
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #666;
+        }
+    </style>
+    
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+    
+    
 <!-- Footer -->
 <footer>
     <div class="footer-content">
@@ -3303,11 +3566,11 @@ body {
         <div class="footer-section quick-links">
             <h3>Quick Links</h3>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">ChatBot</a></li>
-                <li><a href="#">Feedback</a></li>
-                <li><a href="#">FAQ's</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./chatbot.html">ChatBot</a></li>
+                <li><a href="./feedback.html">Feedback</a></li>
+                <li><a href="./faq.html">FAQ's</a></li>
+                <li><a href="./contact.html">Contact</a></li>
             </ul>
         </div>
         <!-- About Us Section -->
@@ -3373,11 +3636,11 @@ body {
             <li><a href="./welcometestimonials.html">Testimonials</a></li>
             <li><a href="#">Account</a></li>
             <li><a href="#">Media Centre</a></li>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Privacy</a></li>
+            <li><a href="./terms.html">Terms of Use</a></li>
+            <li><a href="./privacy.html">Privacy</a></li>
             
             <li><a href="#">Cookie Preferences</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
             
         </ul>
 
@@ -3410,8 +3673,6 @@ body {
     <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-visitor
-
     <script>
         // Function to redirect to quiz.html
         document.getElementById('quiz-button').onclick = function() {
@@ -3430,7 +3691,7 @@ visitor
 <script src="./assets/css/visitors.css"></script>
 <script src="visi.js"></script>
 
- main
+
  
 
     <!-- Newsletter pop-up -->
@@ -3635,7 +3896,15 @@ visitor
         </div>
       </div>
       <script src="popup.js"></script>
+      <script>
 
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
+        </script>
 
 </body>
 

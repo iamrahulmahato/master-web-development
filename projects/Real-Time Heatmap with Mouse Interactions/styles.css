@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0f7fa;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    color: #00796b;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+#heatmapCanvas {
+    width: 800px;
+    height: 600px;
+    border: 2px solid #00796b;
+    background-color: rgba(255, 255, 255, 0.8);
+    cursor: crosshair;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #00796b;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

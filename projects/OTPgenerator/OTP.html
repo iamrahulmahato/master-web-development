@@ -3,22 +3,22 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OTP Generator</title>
-   
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
       rel="stylesheet"
     />
-
-   
     <link rel="stylesheet" href="OTP.css" />
   </head>
   <body>
     <div class="container">
       <h1>OTP Generator</h1>
+      <div class="input-container">
+        <label for="otpLength">Enter OTP Length:</label>
+        <input type="number" id="otpLength" min="1" max="12" placeholder="0" />
+      </div>
       <button id="generateBtn">Generate OTP</button>
       <p id="otpDisplay"></p>
     </div>
-    
     <script src="OTP.js"></script>
   </body>
 </html>

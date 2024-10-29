@@ -31,7 +31,28 @@ html {
     
     
 }
+#progress-container {
+  position: fixed ;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  z-index: 99990;
+  /* background: #f3f3f3; */
+}
 
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 5px;
+  width: 0;
+  background: linear-gradient(90deg, rgb(255, 49, 52) 0%, rgb(255, 153, 153) 50%, rgb(250, 0, 0) 100%);
+  box-shadow: 0 0 4px rgba(255, 0, 21, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
+  transition: width 0.09s ease-in-out;
+  border-radius: 10px;
+}
 html {
     --bg: #f8fafc;
     --primary: #f43f5e;
@@ -48,7 +69,7 @@ html {
 
 }
 
-html[data-theme="dark"] {
+html [data-theme="dark"] {
     --bg: #1e293b;
     --btn-color: #fecdd3;
     --btn-text: #1e293b;
@@ -423,7 +444,7 @@ body {
   color: transparent;
   -webkit-text-stroke: 1px white;
   background: url(img/back.png);
-  -webkit-background-clip: text;
+  --webkit-background-clip: text;
   background-position: 0 0;
   filter: blur(20px);
   opacity: 0;
@@ -620,8 +641,8 @@ body {
     color: #000;
 }
 /* Dark mode styles */
-[data-theme="dark"] .card-heading {
-  color: #ffffff; /* white color for dark mode */
+[data-theme="dark"].card-heading {
+  color: #fff; /* white color for dark mode */
 }
 
 .card-description {
@@ -985,7 +1006,59 @@ body {
   input:checked + .slider:before {
     transform: translateX(30px); 
   }
-  
+  /* Feedback form css */
+
+    #feedback-section {
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding around the content */
+    max-width: 400px; /* Maximum width */
+    margin: 20px auto; /* Centering the section */
+    text-align: center; /* Center text */
+}
+
+#feedback-section h1 {
+    font-family: 'Arial', sans-serif; /* Font family */
+    color: #333; /* Dark gray color */
+    font-size: 24px; /* Font size */
+    margin-bottom: 15px; /* Space below heading */
+}
+
+#feedback-section span {
+    color: #007BFF; /* Blue color for emphasis */
+    font-weight: bold; /* Bold text */
+}
+
+#feedback-section textarea {
+    width: 100%; /* Full width */
+    height: 100px; /* Height of the textarea */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px; /* Inner padding */
+    resize: none; /* Disable resizing */
+    margin-bottom: 15px; /* Space below textarea */
+}
+
+#feedback-section button {
+    background-color: #007BFF; /* Blue button */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for button */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+#feedback-section button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#feedback-section a {
+    color: white; /* White text for link */
+    text-decoration: none; /* No underline */
+}
+
 /* ====================== Scroll to top ========================  */
 #scrollToTopBtn i {
     font-size: 24px;

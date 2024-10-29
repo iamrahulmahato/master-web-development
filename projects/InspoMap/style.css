@@ -1,0 +1,55 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #b9cadb;
+}
+
+h1 {
+    color: #34495e;
+}
+
+/* Map styling */
+.map {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(2, 150px);
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 320px;
+}
+
+.region {
+    background-color: #95a5a6;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.region.locked {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.region:hover:not(.locked) {
+    background-color: #2ecc71;
+}
+
+/* Inspiration display styling */
+.inspiration-display {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#inspiration-text {
+    color: #34495e;
+}
