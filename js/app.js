@@ -1,4 +1,4 @@
-const toggleModeBtn = document.getElementById("toggle-mode-btn");
+var toggleModeBtn = document.getElementById("toggle-mode-btn");
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 let nextBtn = document.querySelector(".next");
 let prevBtn = document.querySelector(".prev");
@@ -81,17 +81,17 @@ function setTheme(theme) {
 }
 
 const savedTheme = localStorage.getItem("theme");
-if (savedTheme) {
-  setTheme(savedTheme);
+if (savedTheme == "dark") {
+  setTheme("dark");
 } else if (prefersDarkScheme.matches) {
   setTheme("dark");
 } else {
   setTheme("light");
 }
 
-toggleModeBtn.onclick = () => {
+toggleModeBtn.onClick = () => {
   const currentTheme = document.documentElement.getAttribute("data-theme");
-  const newTheme = currentTheme === "light" ? "dark" : "light";
+  const newTheme = (currentTheme == "light" ? "dark" : "light");
 
   setTheme(newTheme);
 
