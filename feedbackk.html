@@ -2,10 +2,202 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    <title>Feedback form</title>
+    <style>
+        body, html {
+    height: 100%;
+    margin: 0;
+    font: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.bg-image{
+    background-image: url("https://images.unsplash.com/photo-1646649346217-7bec79d7ee0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=743&q=80");
+    filter: blur(8px);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.bg-text{
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+
+h1{
+    font: 1.5em;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+form{
+    margin: 0 auto;
+    width: 70%;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border: 1em;
+}
+
+fieldset{
+    border: 1px solid lightgray;
+    margin: 10px;
+}
+
+legend{
+    font-weight: 700;
+}
+
+div + div{
+    margin-top: 1em;
+}
+
+input, textarea{
+    width: 200px;
+    border: 1px solid #999;
+    
+}
+
+textarea{
+    vertical-align: top;
+    height: 12em;
+    resize: vertical;
+}
+
+button{
+    margin: .5em;
+    font-size: 1em;
+    text-transform: capitalize;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+#submitbutton{
+    display: flex;
+    justify-content: center;
+}
+    </style>
 </head>
 <body>
-    
+    <div class="bg-image"></div>
+
+    <div class="bg-text">
+        <form method="post" action="#">
+            <h1>Feedback Form</h1>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <table>
+                    <tr>
+                        <td><label for="name" id="name-label">Name:</label></td>
+                        <td><input type="text" id="name" name="user_name" placeholder="Enter Your Name" required></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="address">Address:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="user_address" id="address" placeholder="Enter your address">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="email">Email: </label>
+                        </td>
+                        <td>
+                            <input type="email" id="email" name="user_name" placeholder="Enter your email" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="phone">Phone: </label>
+                        </td>
+                        <td>
+                            <input type="tel" id="phone" name="user_phone" placeholder="Enter contact Number">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="gender">Gender:</label>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <input type="radio" name="gender" value="male" checked>
+                                    </td>
+                                    <td>
+                                        Male
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="radio" name="gender" value="female"
+                                    </td>
+                                    <td>
+                                        Female
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="radio" name="gender" value="other">
+                                    </td>
+                                    <td>
+                                        Other
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="dob">Date of Birth:</label>
+                        </td>
+                        <td>
+                            <input type="date" id="dob" name="bday">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>Your Feedback</legend>
+                <div>
+                    <textarea
+                    id="msg"
+                    name="user_msg"
+                    rows="8"
+                    cols="40"
+                    placeholder="Enter your message"></textarea>
+                </div>
+            </fieldset>
+               
+            <div id="submitbutton">
+                <button type="submit" id="submit">Submit your feedback</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
