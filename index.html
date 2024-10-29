@@ -9,6 +9,7 @@
     <link rel="stylesheet" href= "./css/style.css" />
     <link rel="preconnect" href= "https://fonts.googleapis.com" />
     <link rel="preconnect" href= "https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet"
@@ -3657,7 +3658,9 @@ body {
             <p>© 2024 Open Projects. All Rights Reserved. </p>
         </div>
     </footer>
-
+    <a href="#" class="back-to-top">
+		<span class="material-icons">arrow_upward</span>
+	</a>
 </body>
 </html>
 
@@ -3871,6 +3874,32 @@ body {
             text-align: center;
   
         }
+        .back-to-top {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #dc143c;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	text-decoration: none;
+	transition: 0.2s ease-out;
+}
+
+.back-to-top span {
+	color: #fff;
+	font-size: 3rem;
+	transition: 0.2s ease-out;
+}
+
+.back-to-top:hover {
+	background-color: #be1a3b;
+}
+.back-to-top:hover span {
+	transform: translateY(-4px);
+}
   
   
       </style>
