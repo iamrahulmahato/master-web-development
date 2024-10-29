@@ -1,24 +1,29 @@
-document.getElementById('flipButton').addEventListener('click', function() {
-    const coin = document.getElementById('coin');
-    const result = document.getElementById('result');
-    const flipButton = this;
-
-    // Disable the button during the animation
-    flipButton.disabled = true;
-
-    // Determine the result and set the coin's rotation
-    const isHeads = Math.random() < 0.5;
-    coin.style.transform = `rotateY(${isHeads ? 0 : 180}deg)`;
-
-    // Display the result after the animation
-    setTimeout(() => {
-        result.textContent = isHeads ? 'Heads' : 'Tails';
-        result.style.opacity = 1;
-
-        // Re-enable the button
-        flipButton.disabled = false;
-    }, 1000);
-
-    // Reset the result display
-    result.style.opacity = 0;
+const coinIcon = document.getElementById('coin');
+const tossBtn = 
+    document.getElementById('toss-button');
+const result = 
+    document.querySelector('.result');
+coinIcon.insertAdjacentElement('afterend', result);
+tossBtn.addEventListener('click', () => {
+    tossBtn.disabled = true;
+    tossCoinFunction();
 });
+function tossCoinFunction() {
+    const randomVal = Math.random();
+    const faceCoin = randomVal < 0.5 ? 'Heads' : 'Tails';
+    const imageUrl = faceCoin === 'Heads' ?
+'https://media.geeksforgeeks.org/wp-content/uploads/20231016151817/heads.png' :
+'https://media.geeksforgeeks.org/wp-content/uploads/20231016151806/tails.png';
+        
+    coinIcon.classList.add('flip');
+    setTimeout(() => {
+        coinIcon.innerHTML = 
+            `<img src="${imageUrl}" alt="${faceCoin}">`;
+        coinIcon.classList.remove('flip');
+        setTimeout(() => {
+            result.textContent = `Result: ${faceCoin}`;
+            result.style.opacity = 1;
+            tossBtn.disabled = false;
+        }, 500);
+    }, 1000);
+}
