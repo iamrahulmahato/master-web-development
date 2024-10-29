@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .container {
+    text-align: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 100%;
+    animation: fadeIn 1s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+  
+  p {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .input-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: #ff6347;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #e5533b;
+  }
+  
+  .recipe-container {
+    margin-top: 30px;
+  }
+  
+  .recipe {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .recipe:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .recipe h2 {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .recipe p {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .recipe img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    object-fit: cover;
+  }
+  
+  .recipe .rating {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ff6347;
+  }
+  
+  .recipe .ingredients,
+  .recipe .instructions {
+    margin-top: 10px;
+  }
+  

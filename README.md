@@ -26,12 +26,21 @@
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/iamrahulmahato/master-web-development?style=social">
 </div>
 
+## 📚 Table of Contents
+- [⚡️ Introduction](#introduction)
+- [💯 Open Source Programs](#open-source-programs)
+- [🎯 All Projects](#all-projects)
+- [🚀 Getting Started](#getting-started)
+- [🛠️ Git Instructions](#git-instructions)
+- [❤️ Contributors](#contributors)
+- [📜 Code of Conduct](#code-of-conduct)
+
 ## ⚡️  Introduction
 This repository contains frontend projects that will help you to become an ace Frontend Developer.
 
 The goal is to be well versed with HTML, CSS, JavaScript and Browser APIs such as localStorage, IndexDB, etc.
 
-## 💯open source programs this repo has been part of
+## 💯 Open Source Programs this repo has been part of
 <div align="center">
 <img width="576" alt="Hfest-Logo-2-Color-Void@2x" src="https://user-images.githubusercontent.com/49890655/193454110-793ede4b-6685-4b66-937a-97e03e390496.png">
 
@@ -54,14 +63,14 @@ The list of projects are given below -
 [ 09- BMI Calculator](https://masterwebdevelopment.netlify.app/projects/bmi%20calculator/index.html) 
 <br>
 [ 10- BookVerse-A Book Website](https://yourwebsite.com/projects/bookverse/)  
-[ 11- Box Connect Game](https://masterwebdevelopment.netlify.app/projects/box%20connet%20game/box.html) 
+[ 11- Box Connect Game](https://masterwebdevelopment.netlify.app/projects/box%20connect%20game/box.html) 
 <br>
 [ 12- Brick Breaker](https://masterwebdevelopment.netlify.app/projects/Brick%20Breaker/index.html) 
 <br>
 [ 13- Bubble Hit Game](https://masterwebdevelopment.netlify.app/projects/Bubble%20Hit%20%20Game/)  
 [ 14- Calculator](https://yourwebsite.com/projects/calculator/)  
 [ 15- Candy Game](https://masterwebdevelopment.netlify.app/projects/Candy%20Game/index.html)  
-[ 16- Chatbaot](https://masterwebdevelopment.netlify.app/projects/Christmas%20Bauble/index.html) <br>
+[ 16- Chatbot](https://masterwebdevelopment.netlify.app/projects/Christmas%20Bauble/index.html) <br>
 [ 17- Christmas Bauble](https://masterwebdevelopment.netlify.app/projects/Christmas%20Bauble/index.html)  
 [ 18- Coin Toss Game](https://yourwebsite.com/projects/coin_toss/)  
 [ 19- Color Guessing Game](https://masterwebdevelopment.netlify.app/projects/Color%20Guessing%20Game/index.html) 
@@ -142,7 +151,36 @@ The list of projects are given below -
 [ 89- Zombie Attack Game](https://masterwebdevelopment.netlify.app/projects/Stick%20Hero/index.html)  
 [ 90- Zero Line Game](https://masterwebdevelopment.netlify.app/projects/Zero%20Line%20Game/index.html) 
 
+<div align = "center">
+<br>
 
+<table align="center">
+    <thead align="center">
+        <tr border: 1px;>
+            <td><b>🌟 Stars</b></td>
+            <td><b>🍴 Forks</b></td>
+            <td><b>🐛 Issues</b></td>
+            <td><b>🔔 Open PRs</b></td>
+            <td><b>🔕 Close PRs</b></td>
+            <td><b>🛠️ Languages</b></td>
+            <td><b>🌐 Contributors </b></td>
+        </tr>
+     </thead>
+  <tbody>
+    <tr>
+        <td><img alt="Stars" src="https://img.shields.io/github/stars/iamrahulmahato/master-web-development?style=flat&logo=github"/></td>
+        <td><img alt="Forks" src="https://img.shields.io/github/forks/iamrahulmahato/master-web-development?style=flat&logo=github"/></td>
+        <td><img alt="Issues" src="https://img.shields.io/github/issues/iamrahulmahato/master-web-development?style=flat&logo=github"/></td>
+        <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/iamrahulmahato/master-web-development?style=flat&logo=github"/></td>
+        <td><img alt="Close Pull Requests" src="https://img.shields.io/github/issues-pr-closed/iamrahulmahato/master-web-development?style=flat&color=critical&logo=github"/></td>
+        <td><img alt="GitHub language count" src="https://img.shields.io/github/languages/count/iamrahulmahato/master-web-development?style=flat&color=critical&logo=github"/></td>
+        <td><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/iamrahulmahato/master-web-development?color=2b9348"/></td>
+    </tr>
+</tbody>
+
+</table>
+</div>
+<br>
 
 <center><h1 align="center">Getting Started  </h1></center>
 
@@ -214,19 +252,53 @@ git push
 
 [![](https://mermaid.ink/img/pako:eNpFUMtywjAM_BWNzvADOfRQWk5th0mPCQfhKI_iB1XsYRjg35EdpvVBlrQrraQrmtAxVtjbcDYjSYSPuvWgbxvk2GQDcWQ4SfhhE_ewXr_AQcibsdkIU2Qg-OIzvJbcfqldCIX73k2xyQb6yfITL3FGTXBO8U35ipAO4Qeen8QFz9TbdvJk7eUGpsju6n_9XbIWav5NPEctxBU6FkdTp4tdc6MWtbXjFit1O5Jji62_K49SDN8Xb7CKkniFEtIwYtWTnTVKp04F3iYahNxflnX4IJ_L3cr57g_ewG4o?type=png)](https://mermaid.live/edit#pako:eNpFUMtywjAM_BWNzvADOfRQWk5th0mPCQfhKI_iB1XsYRjg35EdpvVBlrQrraQrmtAxVtjbcDYjSYSPuvWgbxvk2GQDcWQ4SfhhE_ewXr_AQcibsdkIU2Qg-OIzvJbcfqldCIX73k2xyQb6yfITL3FGTXBO8U35ipAO4Qeen8QFz9TbdvJk7eUGpsju6n_9XbIWav5NPEctxBU6FkdTp4tdc6MWtbXjFit1O5Jji62_K49SDN8Xb7CKkniFEtIwYtWTnTVKp04F3iYahNxflnX4IJ_L3cr57g_ewG4o)
 
+# Contributors 🙋🏽
 
-
-
-<div align="center">
-  <h1><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" width="35" height="35"> Contributors</h1>
-
-  Big thanks to all the contributors! 🎉
-
-  <a href="https://github.com/iamrahulmahato/master-web-development/pulse"> <img align="center" src="https://contrib.rocks/image?max=100&repo=iamrahulmahato/master-web-development" /> </a> 
-  
-</div>
+<p align="center">
+      <a href="https://github.com/iamrahulmahato/master-web-development/graphs/contributors">
+         <img src="https://api.vaunt.dev/v1/github/entities/iamrahulmahato/repositories/master-web-development/contributors?format=svg&limit=54" width="700" height="250" /> 
+      </a>
+</p>
 
 <br>
+
+## Thank you for contributing 💗 
+We truly appreciate your time and effort to help improve our project. Happy coding! 🚀
+
+### Troubleshooting
+
+If you encounter any issues while setting up or using the project, please refer to the following troubleshooting steps:
+
+1. **Dependency Conflicts**: 
+   - Ensure that all required dependencies are installed with compatible versions. Run `npm install` or `yarn install` to reinstall dependencies.
+   - Check for peer dependency warnings, and if needed, update your dependencies using `npm update` or `yarn upgrade`.
+
+2. **Setup Issues**: 
+   - Double-check that you have followed the setup instructions correctly. Missing environment variables or misconfigurations are common issues.
+   - Ensure that you are using the correct Node.js version (check `.nvmrc` or `package.json` for version details). If you're not, you can switch versions using `nvm use`.
+
+3. **Platform-Specific Errors**: 
+   - On Windows, make sure you have proper permissions to execute scripts. You might need to run the terminal or IDE as an administrator.
+   - On Linux/macOS, ensure that all necessary permissions are set for running scripts with `chmod +x`.
+   - If you're facing file path issues, ensure your terminal or IDE is running in the correct directory by checking with `pwd` (Linux/macOS) or `cd` (Windows).
+
+4. **Common Errors**:
+   - **"Module not found"**: Run `npm install` or `yarn install` to make sure all required modules are installed.
+   - **"Permission denied"**: On Linux/macOS, you might need to use `sudo` for certain commands.
+   - **"EADDRINUSE"**: If you see this error, a port is already in use. Use `lsof -i :PORT_NUMBER` to check and kill the process.
+
+5. **Debugging & Logging**: 
+   - For more detailed error logs, run the application with the `DEBUG` environment variable set to `*` (e.g., `DEBUG=* npm start`).
+   - If using Node.js, add `--inspect` to enable the built-in debugger (e.g., `node --inspect index.js`).
+
+### Contact for Support
+
+If the above steps do not resolve your issue, feel free to open a GitHub issue:
+
+- GitHub Issues: [Submit an issue here](https://github.com/iamrahulmahato/master-web-development/issues)
+
+We’re happy to assist with any project-related queries!
+
 
   
 ## ❤️ Code of Conduct
@@ -247,4 +319,11 @@ Please note that Open Source Design has a [Contributor Code of Conduct](./CODE_O
 
 
 </div>
+
+## Connect with Us 🤝
+
+Thank you for exploring this project! We’d love to connect and hear from you. Reach out through any of the platforms below:
+
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:iamrahulmhto@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/iamrahulmahato)
 

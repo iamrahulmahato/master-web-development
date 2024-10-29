@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom Filter Animation</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: lightblue;
+
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .bit-array {
+            display: flex;
+            margin: 20px;
+        }
+
+        .bit {
+            width: 30px;
+            height: 30px;
+            margin: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+            background-color: #eee;
+            font-weight: bold;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .bit.active {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .controls {
+            margin: 20px;
+        }
+
+        .output {
+            margin: 20px;
+            font-family: monospace;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            text-align: left;
+        }
+
+        input {
+            padding: 10px;
+            width: 70%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bloom Filter Visualization</h1>
+    <div class="controls">
+        <input type="number" id="numberInput" placeholder="Enter a number">
+        <br>
+        <br>
+        <button onclick="addToBloomFilter()">Apply Filter</button>
+    </div>
+    <div class="bit-array" id="bitArray">
+        <!-- Bit array with 10 bits, initialized to 0 -->
+    </div>
+    <div class="output" id="output">
+        <!-- Output of calculations -->
+    </div>
+
+    <script>
+        const bitArraySize = 10;
+        const bitArray = document.getElementById('bitArray');
+        const output = document.getElementById('output');
+
+        // Initialize the bit array visually
+        function initializeBitArray() {
+            for (let i = 0; i < bitArraySize; i++) {
+                const bit = document.createElement('div');
+                bit.className = 'bit';
+                bit.textContent = '0';
+                bitArray.appendChild(bit);
+            }
+        }
+
+        // Example hash functions
+        function hash1(x) { return (x * 2) % bitArraySize; }
+        function hash2(x) { return (x * 3 + 1) % bitArraySize; }
+        function hash3(x) { return (x * 5 + 3) % bitArraySize; }
+
+        // Add a number to the Bloom filter and animate setting bits
+        function addToBloomFilter() {
+            const number = parseInt(document.getElementById('numberInput').value);
+            if (isNaN(number)) {
+                output.innerHTML = 'Please enter a valid number.';
+                return;
+            }
+
+            output.innerHTML = ''; // Clear previous output
+            const hashPositions = [hash1(number), hash2(number), hash3(number)];
+            
+            // Display initial state
+            output.innerHTML += `Initial Bit Array: [${Array(bitArraySize).fill(0).join(', ')}]<br>`;
+
+            // Animate setting each bit
+            hashPositions.forEach((pos, index) => {
+                setTimeout(() => {
+                    const bit = bitArray.children[pos];
+                    bit.classList.add('active');
+                    bit.textContent = '1';
+
+                    // Update output with calculations
+                    output.innerHTML += `
+                        Step ${index + 1}:<br>
+                        - Calculate hash function: ${index + 1}<br>
+                        - Position: ${pos}<br>
+                        - Update Bit Array: [${Array.from(bitArray.children).map(b => b.textContent).join(', ')}]<br><br>
+                    `;
+                }, index * 1000); // Delay each animation step by 1 second
+            });
+        }
+
+        // Initialize the bit array when the page loads
+        initializeBitArray();
+    </script>
+</body>
+</html>

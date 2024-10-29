@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Lofi Room Ambience Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Lofi Room</h1>
+        <h3>Ambience Generator</h3>
+        <p>Customize your soundscape for a perfect relaxing atmosphere.</p>
+        <div class="sound-controls">
+            <h2>Choose Your Sounds</h2>
+            <div class="sound-option">
+                <label>
+                    <input type="checkbox" id="rain" checked>
+                    Rain
+                </label>
+            </div>
+            <div class="sound-option">
+                <label>
+                    <input type="checkbox" id="fire" checked>
+                    Fire
+                </label>
+            </div>
+            <div class="sound-option">
+                <label>
+                    <input type="checkbox" id="music" checked>
+                    Lofi Music
+                </label>
+            </div>
+            <div class="sound-option">
+                <label>
+                    <input type="checkbox" id="birds">
+                    Birds
+                </label>
+            </div>
+        </div>
+        <div class="volume-control">
+            <h2>Volume</h2>
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
+        </div>
+        <button id="play">Play</button>
+        <button id="stop">Stop</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

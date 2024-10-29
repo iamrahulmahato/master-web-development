@@ -1,0 +1,128 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #b2f9fc, #69eacb);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    overflow: hidden;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    max-width: 750px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-10px);
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: #2c9676;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #444;
+    line-height: 1.6;
+}
+
+.plant-selection {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.plant-btn {
+    padding: 15px 25px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+}
+
+.plant-btn:hover {
+    background-color: #43A047;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+.plant-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 10px rgba(0, 123, 255, 0.2);
+}
+
+.plant-care-details {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    max-width: 100%;
+}
+
+.plant-care-details:hover {
+    background-color: #f0f8ff;
+}
+
+#care-info {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: #2c9676;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    .plant-btn {
+        padding: 12px 18px;
+        font-size: 1rem;
+    }
+
+    #care-info {
+        font-size: 1.1rem;
+    }
+}
