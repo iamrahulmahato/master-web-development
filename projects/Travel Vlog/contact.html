@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link href ="contact.css" rel="stylesheet">
-    <title>contact</title>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Round&family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css">
+    <title>Contact Us</title>
 </head>
 <body>
     <header class="my-3">
@@ -19,50 +17,79 @@
                 <li class="item"><a href="about.html">About</a></li>
                 <li class="item"><a href="contact.html">Contact Us</a></li>
             </ul>
-            </nav></header>
-
-
-        <section id="body">
-            <h1></h1>
-            <div class="grid">
-                <div id="left" class="box1">
-                    <h1>CONTACT US:</h1>
-                    <div>Name:<input type="text"name="myname" placeholder="Full Name"></div><br>
-                    <div>Email:<input type="email" placeholder="Email"> </div><br>
-                    <div>Phone Number:<input type="number"placeholder="Ph. no"></div><br>
-                    <div>Date of Birth:<input type="date"></div><br>
-                    <div>Nationality:<input type="text" placeholder="Country"></div>
-                    <div>Address:<input type="text"></div>
-                    
-                    <div>Gender:&nbsp;&nbsp;Male<input type="radio">
-                    Female<input type="radio"></div><br>
-                    <div> Destination In India<br>
-                    <select name="Destination In India">
-                        <option value="Agra">AGRA</option>
-                        <option value="Agra">KASHMIR</option>
-                        <option value="Agra">KERELA</option>
-                        <option value="Agra">JAIPUR</option>
-                    </select></div>
-                    <div> Destination In International<br>
-                    <select name="Destination In International">
-                        <option value="Agra">SINGAPORE</option>
-                        <option value="Agra">MALDIVES</option>
-                        <option value="Agra">NEW YORK</option>
-                        <option value="Agra">DUBAI</option>
-                    </select></div>
-                    <div>Your Message Here:<br><textarea rows="10"cols="105"></textarea></div>
-                    <div> <input type="submit" class="btn-success" value="Submit Now">
-                        <input type="reset"class="btn-secondary" value="reset now"></div>
-                
-            </div>
-        </section>
-        
         </nav>
-        <footer>
-            <div class="center">
-                Copyright &copy; www.theIndianTraveller.com All rights reserved!!
+    </header>
+
+    <section id="body" class="container my-5">
+        <h1 class="text-center mb-4">Contact Us</h1>
+        <div class="row">
+            <div id="left" class="col-md-8 offset-md-2 box1">
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="myname" placeholder="Full Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number:</label>
+                        <input type="number" class="form-control" id="phone" placeholder="Ph. No" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dob" class="form-label">Date of Birth:</label>
+                        <input type="date" class="form-control" id="dob" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nationality" class="form-label">Nationality:</label>
+                        <input type="text" class="form-control" id="nationality" placeholder="Country" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address:</label>
+                        <input type="text" class="form-control" id="address" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Gender:</label><br>
+                        <input type="radio" name="gender" value="male"> Male
+                        <input type="radio" name="gender" value="female"> Female
+                    </div>
+                    <div class="mb-3">
+                        <label for="destination-india" class="form-label">Destination in India:</label>
+                        <select class="form-select" id="destination-india" name="destination-india" required>
+                            <option value="agra">AGRA</option>
+                            <option value="kashmir">KASHMIR</option>
+                            <option value="kerela">KERELA</option>
+                            <option value="jaipur">JAIPUR</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="destination-international" class="form-label">Destination International:</label>
+                        <select class="form-select" id="destination-international" name="destination-international" required>
+                            <option value="singapore">SINGAPORE</option>
+                            <option value="maldives">MALDIVES</option>
+                            <option value="new-york">NEW YORK</option>
+                            <option value="dubai">DUBAI</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Your Message Here:</label>
+                        <textarea class="form-control" id="message" rows="4" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <input type="submit" class="btn btn-success" value="Submit Now">
+                        <input type="reset" class="btn btn-secondary" value="Reset Now">
+                    </div>
+                </form>
             </div>
-        </footer>
+        </div>
+    </section>
+
+    <footer>
+        <div class="center">
+            Copyright &copy; www.theIndianTraveller.com <br> Made by Kavish Paraswar
+        </div>
+    </footer>
     
 </body>
 </html>
