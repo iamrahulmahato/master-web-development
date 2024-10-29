@@ -1,5 +1,5 @@
 html{
-    font-family:'Nova Round', cursive;
+    font-family: 'Josefin Sans', sans-serif;
 
 }
 header{
@@ -37,10 +37,19 @@ header{
 #navbar ul li a:hover{
     color:white;
     background-color:  rgb(250, 166, 58);}
-    footer{
-        background: black;
-        color: white;
+    footer {
+        background: #333;
+        color: #F5D3A7;
         text-align: center;
-        padding: 2px;
+        padding: 1.5rem 0;
+        font-size: 1rem;
+        font-family: 'Oxanium', sans-serif;
+        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        margin-top: auto;
+    }
+    
+    footer .center {
+        font-size: 1rem;
+        padding-bottom: 10px;
     }
     
