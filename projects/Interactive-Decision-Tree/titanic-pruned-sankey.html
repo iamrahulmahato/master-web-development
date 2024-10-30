@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <style>
+        .node {
+            cursor: pointer;
+        }
+
+        .node text {
+            font: 12px helvetica;
+        }
+
+        .link {
+            fill: #eee;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script>
+
+        var margin = { top: 50, right: 50, bottom: 150, left: 50 };
+
+        // collect all inputs
+        var tree_depth = 5;
+        var rules = {"0": [], "1": ["Sex: 0"], "2": ["Sex: 0", "Age <= 3.5"], "3": ["Sex: 0", "Age <= 3.5", "Pclass <= 2"], "4": ["Sex: 0", "Age <= 3.5", "Pclass > 2"], "5": ["Sex: 0", "Age <= 3.5", "Pclass > 2", "Fare <= 24.85"], "6": ["Sex: 0", "Age <= 3.5", "Pclass > 2", "Fare > 24.85"], "7": ["Sex: 0", "Age > 3.5"], "8": ["Sex: 0", "Age > 3.5", "Pclass <= 1"], "9": ["Sex: 0", "Pclass <= 1", "3.5 < Age <= 43.0"], "10": ["Sex: 0", "Pclass <= 1", "Fare <= 127.817", "3.5 < Age <= 43.0"], "11": ["Sex: 0", "Pclass <= 1", "Fare > 127.817", "3.5 < Age <= 43.0"], "12": ["Sex: 0", "Age > 43.0", "Pclass <= 1"], "13": ["Sex: 0", "Pclass <= 1", "43.0 < Age <= 47.5"], "14": ["Sex: 0", "Age > 47.5", "Pclass <= 1"], "15": ["Sex: 0", "Age > 3.5", "Pclass > 1"], "16": ["Sex: 0", "Age > 3.5", "Pclass > 1", "Fare <= 51.698"], "17": ["Sex: 0", "Pclass > 1", "Fare <= 51.698", "3.5 < Age <= 32.25"], "18": ["Sex: 0", "Pclass > 1", "Age > 32.25", "Fare <= 51.698"], "19": ["Sex: 0", "Age > 3.5", "Pclass > 1", "Fare > 51.698"], "20": ["Sex: 0", "Age > 3.5", "Fare > 51.698", "1 < Pclass <= 2"], "21": ["Sex: 0", "Age > 3.5", "Pclass > 2", "Fare > 51.698"], "22": ["Sex: 1"], "23": ["Sex: 1", "Pclass <= 2"], "24": ["Sex: 1", "Age <= 2.5", "Pclass <= 2"], "25": ["Sex: 1", "Age <= 2.5", "Pclass <= 2", "Fare <= 88.775"], "26": ["Sex: 1", "Age <= 2.5", "Pclass <= 2", "Fare > 88.775"], "27": ["Sex: 1", "Age > 2.5", "Pclass <= 2"], "28": ["Sex: 1", "Age > 2.5", "Pclass <= 2", "Fare <= 28.856"], "29": ["Sex: 1", "Age > 2.5", "Pclass <= 2", "Fare <= 28.231"], "30": ["Sex: 1", "Age > 2.5", "Pclass <= 2", "28.231 < Fare <= 28.856"], "31": ["Sex: 1", "Age > 2.5", "Pclass <= 2", "Fare > 28.856"], "32": ["Sex: 1", "Pclass > 2"], "33": ["Sex: 1", "Pclass > 2", "Age <= 27.5"], "34": ["Sex: 1", "Pclass > 2", "Age <= 27.5", "Fare <= 23.087"], "35": ["Sex: 1", "Pclass > 2", "Age <= 16.5", "Fare <= 23.087"], "36": ["Sex: 1", "Pclass > 2", "Fare <= 23.087", "16.5 < Age <= 27.5"], "37": ["Sex: 1", "Pclass > 2", "Age <= 27.5", "Fare > 23.087"], "38": ["Sex: 1", "Pclass > 2", "Age <= 27.5", "23.087 < Fare <= 31.331"], "39": ["Sex: 1", "Pclass > 2", "Age <= 27.5", "Fare > 31.331"], "40": ["Sex: 1", "Pclass > 2", "Age > 27.5"], "41": ["Sex: 1", "Pclass > 2", "27.5 < Age <= 55.5"], "42": ["Sex: 1", "Pclass > 2", "27.5 < Age <= 38.5"], "43": ["Sex: 1", "Pclass > 2", "38.5 < Age <= 55.5"], "44": ["Sex: 1", "Pclass > 2", "Age > 55.5"]};
+        var num_node = 45;
+        var width = 1200, height = 1000;
+        var max_samples = 571;
+        var min_samples = 1;
+        var target_colors = ['red', 'green'];
+        var root = {"name": "HEAD", "parent": "null", "self": 0, "sample": 571, "impurity": 0.484, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "null", "children": [{"name": "Sex: 0", "parent": 0, "self": 1, "sample": 364, "impurity": 0.321, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "left", "children": [{"name": "Age <= 3.5", "parent": 1, "self": 2, "sample": 14, "impurity": 0.337, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "left", "children": [{"name": "Pclass <= 2", "parent": 2, "self": 3, "sample": 8, "impurity": 0.0, "value": [0, 1], "predict": "Survived", "color": "green", "pos": "left"}, {"name": "Pclass > 2", "parent": 2, "self": 4, "sample": 6, "impurity": 0.5, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "right", "children": [{"name": "Fare <= 24.85", "parent": 4, "self": 5, "sample": 3, "impurity": 0.0, "value": [0, 1], "predict": "Survived", "color": "green", "pos": "left"}, {"name": "Fare > 24.85", "parent": 4, "self": 6, "sample": 3, "impurity": 0.0, "value": [1, 0], "predict": "Not Survived", "color": "red", "pos": "right"}]}]}, {"name": "Age > 3.5", "parent": 1, "self": 7, "sample": 350, "impurity": 0.292, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "right", "children": [{"name": "Pclass <= 1", "parent": 7, "self": 8, "sample": 81, "impurity": 0.472, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "left", "children": [{"name": "Age <= 43.0", "parent": 8, "self": 9, "sample": 40, "impurity": 0.495, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "left", "children": [{"name": "Fare <= 127.817", "parent": 9, "self": 10, "sample": 34, "impurity": 0.472, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "left"}, {"name": "Fare > 127.817", "parent": 9, "self": 11, "sample": 6, "impurity": 0.278, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "right"}]}, {"name": "Age > 43.0", "parent": 8, "self": 12, "sample": 41, "impurity": 0.343, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "right", "children": [{"name": "Age <= 47.5", "parent": 12, "self": 13, "sample": 10, "impurity": 0.0, "value": [1, 0], "predict": "Not Survived", "color": "red", "pos": "left"}, {"name": "Age > 47.5", "parent": 12, "self": 14, "sample": 31, "impurity": 0.412, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "right"}]}]}, {"name": "Pclass > 1", "parent": 7, "self": 15, "sample": 269, "impurity": 0.204, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "right", "children": [{"name": "Fare <= 51.698", "parent": 15, "self": 16, "sample": 262, "impurity": 0.191, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "left", "children": [{"name": "Age <= 32.25", "parent": 16, "self": 17, "sample": 174, "impurity": 0.238, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "left"}, {"name": "Age > 32.25", "parent": 16, "self": 18, "sample": 88, "impurity": 0.087, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "right"}]}, {"name": "Fare > 51.698", "parent": 15, "self": 19, "sample": 7, "impurity": 0.49, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "right", "children": [{"name": "Pclass <= 2", "parent": 19, "self": 20, "sample": 4, "impurity": 0.0, "value": [1, 0], "predict": "Not Survived", "color": "red", "pos": "left"}, {"name": "Pclass > 2", "parent": 19, "self": 21, "sample": 3, "impurity": 0.0, "value": [0, 1], "predict": "Survived", "color": "green", "pos": "right"}]}]}]}]}, {"name": "Sex: 1", "parent": 0, "self": 22, "sample": 207, "impurity": 0.346, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "right", "children": [{"name": "Pclass <= 2", "parent": 22, "self": 23, "sample": 125, "impurity": 0.091, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "left", "children": [{"name": "Age <= 2.5", "parent": 23, "self": 24, "sample": 2, "impurity": 0.5, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "left", "children": [{"name": "Fare <= 88.775", "parent": 24, "self": 25, "sample": 1, "impurity": 0.0, "value": [0, 1], "predict": "Survived", "color": "green", "pos": "left"}, {"name": "Fare > 88.775", "parent": 24, "self": 26, "sample": 1, "impurity": 0.0, "value": [1, 0], "predict": "Not Survived", "color": "red", "pos": "right"}]}, {"name": "Age > 2.5", "parent": 23, "self": 27, "sample": 123, "impurity": 0.078, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "right", "children": [{"name": "Fare <= 28.856", "parent": 27, "self": 28, "sample": 50, "impurity": 0.18, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "left", "children": [{"name": "Fare <= 28.231", "parent": 28, "self": 29, "sample": 49, "impurity": 0.15, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "left"}, {"name": "Fare > 28.231", "parent": 28, "self": 30, "sample": 1, "impurity": 0.0, "value": [1, 0], "predict": "Not Survived", "color": "red", "pos": "right"}]}, {"name": "Fare > 28.856", "parent": 27, "self": 31, "sample": 73, "impurity": 0.0, "value": [0, 1], "predict": "Survived", "color": "green", "pos": "right"}]}]}, {"name": "Pclass > 2", "parent": 22, "self": 32, "sample": 82, "impurity": 0.5, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "right", "children": [{"name": "Age <= 27.5", "parent": 32, "self": 33, "sample": 58, "impurity": 0.471, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "left", "children": [{"name": "Fare <= 23.087", "parent": 33, "self": 34, "sample": 52, "impurity": 0.44, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "left", "children": [{"name": "Age <= 16.5", "parent": 34, "self": 35, "sample": 19, "impurity": 0.266, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "left"}, {"name": "Age > 16.5", "parent": 34, "self": 36, "sample": 33, "impurity": 0.489, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "right"}]}, {"name": "Fare > 23.087", "parent": 33, "self": 37, "sample": 6, "impurity": 0.278, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "right", "children": [{"name": "Fare <= 31.331", "parent": 37, "self": 38, "sample": 5, "impurity": 0.0, "value": [1, 0], "predict": "Not Survived", "color": "red", "pos": "left"}, {"name": "Fare > 31.331", "parent": 37, "self": 39, "sample": 1, "impurity": 0.0, "value": [0, 1], "predict": "Survived", "color": "green", "pos": "right"}]}]}, {"name": "Age > 27.5", "parent": 32, "self": 40, "sample": 24, "impurity": 0.375, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "right", "children": [{"name": "Age <= 55.5", "parent": 40, "self": 41, "sample": 23, "impurity": 0.34, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "left", "children": [{"name": "Age <= 38.5", "parent": 41, "self": 42, "sample": 14, "impurity": 0.459, "value": [0, 0], "predict": "Not Survived", "color": "red", "pos": "left"}, {"name": "Age > 38.5", "parent": 41, "self": 43, "sample": 9, "impurity": 0.0, "value": [1, 0], "predict": "Not Survived", "color": "red", "pos": "right"}]}, {"name": "Age > 55.5", "parent": 40, "self": 44, "sample": 1, "impurity": 0.0, "value": [0, 1], "predict": "Survived", "color": "green", "pos": "right"}]}]}]}]};
+
+        // calculate tree gap
+        var tree_gap = (width - margin['left'] - margin['right']) * 1.0 / tree_depth;
+
+        // node height scale based on number of samples
+        var h_node = d3.scale.linear()
+            .domain([parseInt(min_samples), parseInt(max_samples)])
+            .clamp(true)
+            .range([10, 350]);
+
+        // generate tree layout (horizonal)
+        var tree = d3.layout.tree().size([height, width])
+            .separation(function (a, b) {
+                var height = h_node(a.sample) + h_node(b.sample),
+                    // horizontal distance between nodes = 16
+                    distance = height / 2 + 16;
+                return distance;
+            });
+        var diagonal = d3.svg.diagonal()
+            .projection(function (d) {
+                return [d.y, d.x];
+            });
+
+        var svg = d3.select('body').append('svg')
+            .attr('width', width + margin.right + margin.left)
+            .attr('height', height + margin.top + margin.bottom)
+            .append('g')
+            .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+        var i = 0, duration = 750;
+        var rect_width = 15;
+        // height scale for each tree node
+        var y = d3.scale.linear();
+
+        root.x0 = height / 2;
+        root.y0 = 0;
+        // update tree
+        update(root);
+
+
+        function update(source) {
+
+            // compute the tree layout
+            var nodes = tree.nodes(root).reverse(),
+                links = tree.links(nodes);
+
+            // normalize for fixed-depth
+            nodes.forEach(function (d) {
+                d.y = d.depth * tree_gap;
+            });
+
+            // draw the nodes
+            var node = svg.selectAll('g.node')
+                .data(nodes, function (d) {
+                    return d.id || (d.id = ++i);
+                });
+
+            // enter any new nodes at the parent's previous position
+            var nodeEnter = node.enter().append('g')
+                .attr('class', 'node')
+                .on('click', click)
+                .attr('transform', function (d) {
+                    return 'translate(' + source.y0 + ',' + source.x0 + ')';
+                })
+                .on('mouseover', mouseover)
+                .on('mouseout', mouseout);
+
+            // draw tree nodes as a stacked bar
+            nodeEnter.append("g").selectAll("rect")
+                .data(function (d) {
+                    var y0 = 0;
+                    var node_samples = d.sample;
+                    y.rangeRound([h_node(node_samples), 0]).domain([0, node_samples]);
+                    d.values_info = d3.keys(target_colors).map(function (i, target_name) {
+                        // y0 will update 
+                        return { target_name: target_name, y0: y(y0), y1: y(y0 += d.value[i]) }
+                    })
+                    return d.values_info;
+                })
+                .enter().append("rect")
+                .attr("width", rect_width)
+                .attr("y", function (d) { return d.y1; })
+                .attr("height", function (d) { return d.y0 - d.y1; })
+                .style("fill", function (d) {
+                    return target_colors[d.target_name];
+                });
+
+            // add text on tree nodes
+            var text_gap = 15;
+            var text = nodeEnter.append('text')
+                .attr('x', 18)
+                .attr('y', function (d) {
+                    return h_node(d.sample) / 2 - text_gap + 3;
+                });
+
+            text.append('tspan')
+                .style('font-weight', 'bold')
+                .text(function (d) {
+                    return d.name;
+                });
+
+            text.append('tspan')
+                .attr('x', 18)
+                .attr('y', function (d) {
+                    return h_node(d.sample) / 2 + 3;
+                })
+                .style('font-size', '11px')
+                .style('fill', '#555')
+                .text(function (d) {
+                    return 'Values: [' + d.value + ']';
+                });
+
+            text.append('tspan')
+                .attr('x', 18)
+                .attr('y', function (d) {
+                    return h_node(d.sample) / 2 + text_gap + 3;
+                })
+                .style('font-size', '11px')
+                .style('fill', '#555')
+                .text(function (d) {
+                    return 'Predict: ' + d.predict;
+                });
+
+            nodeEnter.select('text').style('fill-opacity', 0);
+
+            var nodeUpdate = node.transition()
+                .duration(duration)
+                .attr('transform', function (d) {
+                    var height = h_node(+d.sample);
+                    var width = rect_width;
+                    return 'translate(' + (d.y - width / 2) + ',' + (d.x - height / 2) + ')';
+                });
+
+            nodeUpdate.select('text').style('fill-opacity', 1);
+
+            // transition exiting nodes to the parent's new position
+            var nodeExit = node.exit().transition()
+                .duration(duration)
+                .attr('transform', function (d) {
+                    return 'translate(' + source.y + ',' + source.x + ')';
+                })
+                .remove();
+
+            // hide nodes and texts
+            nodeExit.select('rect').attr('height', 1e-6);
+            nodeExit.select('text').style('fill-opacity', 0);
+
+            // draw the links
+            var link = svg.selectAll('path.link')
+                .data(links, function (d) {
+                    return d.target.id;
+                });
+
+            // enter any new links at the parent's previous position
+            link.enter().insert('path', 'g')
+                .attr('class', 'link')
+                .attr('d', function (d) {
+                    var o = { x: source.x0, y: source.y0 };
+                    d_new = { source: { x: o.y, y: o.x, sample: d.source.sample }, target: { x: o.y, y: o.x, sample: d.target.sample } };
+                    return sankey_link(d_new);
+                })
+                .style('stroke', '#eee');
+
+            // transition links to their new position
+            link.transition()
+                .duration(duration)
+                .attr('d', function (d) {
+                    var source_h = h_node(d.source.sample);
+                    var target_h = h_node(d.target.sample);
+                    // center the starting points 
+                    if (d.target.pos == "left") {
+                        var o = { x: d.source.x - (source_h - target_h) / 2., y: d.source.y };
+                    } else {
+                        var o = { x: d.source.x + (source_h - target_h) / 2., y: d.source.y };
+                    }
+                    d_new = {
+                        source: { x: o.y, y: o.x, sample: d.source.sample },
+                        target: { x: d.target.y, y: d.target.x, sample: d.target.sample }
+                    };
+                    return sankey_link(d_new);
+                });
+
+            // transition the existing links to the parent's new position
+            link.exit().transition()
+                .duration(duration)
+                .attr('d', function (d) {
+                    var o = { x: source.x, y: source.y };
+                    d_new = {
+                        source: { x: o.y, y: o.x, sample: d.source.sample },
+                        target: { x: o.y, y: o.x, sample: d.target.sample }
+                    };
+                    return sankey_link(d_new);
+                }).remove();
+
+            // stash the old positions for transition
+            nodes.forEach(function (d) {
+                d.x0 = d.x;
+                d.y0 = d.y;
+            });
+        }
+
+        function sankey_link(d_new) {
+            var source_h = h_node(d_new.source.sample);
+            var target_h = h_node(d_new.target.sample);
+
+            var curvature = .5;
+            var x0 = d_new.source.x,
+                x1 = d_new.target.x,
+                xi = d3.interpolateNumber(x0, x1),
+                x2 = xi(curvature),
+                x3 = xi(1 - curvature),
+                y0 = d_new.source.y - target_h / 2.,
+                y1 = d_new.target.y - target_h / 2.;
+            return "M" + x0 + "," + y0
+                + "C" + x2 + "," + y0
+                + " " + x3 + "," + y1
+                + " " + x1 + "," + y1
+                + "L" + x1 + "," + (y1 + target_h)
+                + "C" + x3 + "," + (y1 + target_h)
+                + " " + x2 + "," + (y0 + target_h)
+                + " " + x0 + "," + (y0 + target_h)
+                + "L" + x0 + "," + y0;
+        }
+
+        // recursively color the links when hovering on a tree node
+        function recurse(d, color) {
+            d3.selectAll('.link').each(function (l) {
+                if (l.target === d) {
+                    d3.select(this).style('fill', color);
+                }
+            });
+            if (d.parent) {
+                recurse(d.parent, color);
+            }
+        }
+
+        function mouseover(d) {
+            // if this node has no children nodes
+            if (!d.children) {
+                var rule = rules[d.self];
+                var append = ['Predict: ' + d.predict, 'Impurity: ' + d.impurity, ''];
+                rule = append.concat(rule);
+
+                var len = rule.length;
+                var info = d3.select(this).append('g').attr('class', 'hover');
+                var y0 = h_node(d.sample) + 20;
+                var rules_text = info.append('g').append('text').attr('y', y0);
+
+                for (var i = 1; i <= len; i++) {
+                    rules_text.append('tspan')
+                        .attr('x', 0)
+                        .attr('y', y0 + i * 15)
+                        .attr('text-anchor', 'left')
+                        .style('font-weight', function () {
+                            if (i <= 3) {
+                                return 'bold';
+                            } else {
+                                return null;
+                            }
+                        })
+                        .style('fill', function () {
+                            if (i <= 3) {
+                                return '#000';
+                            } else {
+                                return d.color;
+                            }
+                        })
+                        .text(function () {
+                            return rule[i - 1];
+                        });
+                }
+
+                // draw the box
+                var bbox = info.node().getBBox();
+                var padding = 10;
+                var rect = d3.select(this).insert('rect', 'g')
+                    .attr('class', 'info_bg')
+                    .attr('x', bbox.x - padding)
+                    .attr('y', bbox.y - padding)
+                    .attr('width', bbox.width + padding * 2)
+                    .attr('height', bbox.height + padding * 2)
+                    .style('fill', 'white')
+                    .style('stroke', d.color)
+                    .style('stroke-width', 2);
+
+                // make the rule infomation on the first layer
+                this.parentNode.appendChild(this);
+                recurse(d, d.color);
+
+            }
+        }
+
+        function mouseout(d) {
+            d3.select('.hover').remove();
+            d3.select('.info_bg').remove();
+
+            d3.select(this).style('stroke', function (d) {
+                if (d._children) {
+                    var stroke_color = '#000';
+                } else {
+                    var stroke_color = null;
+                }
+                d3.select(this).selectAll('rect').style('stroke-width', 2).style('stroke', stroke_color);
+                return null;
+            });
+
+            d3.selectAll('.link').style('fill', '#eee');
+        }
+
+        function click(d) {
+            if (d.children) {
+                d._children = d.children;
+                d.children = null;
+            } else {
+                d.children = d._children;
+                d._children = null;
+            }
+            update(d);
+        }
+
+    </script>
+</body>
+
+</html>
