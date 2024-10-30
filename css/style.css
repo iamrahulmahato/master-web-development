@@ -318,9 +318,7 @@ body {
     line-height: 1.3em;
 }
 
-.slider .list .item .type.h1{
-    color: #efefefcb;
-}
+
 .slider .list .item .button{
     display: grid;
     grid-template-columns: repeat(2, 130px);
@@ -444,7 +442,7 @@ body {
 {
   transform: translateY(50px);
   color: transparent;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 1px black;
   background: url(img/back.png);
   --webkit-background-clip: text;
   background-position: 0 0;
@@ -466,10 +464,10 @@ body {
 }
 
 .slider .list .item:nth-child(1) .content .title{
-    animation-delay: 0.4s !;
+    animation-delay: 0.4s !important;
 }
 .slider .list .item:nth-child(1) .content .type{
-    animation-delay: 0.6s ;
+    animation-delay: 0.6s !important;
 }
 .slider .list .item:nth-child(1) .content .description{
     animation-delay: 0.8s !important;
