@@ -1,6 +1,8 @@
 body {
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    justify-content: center;
     align-items: center;
     background-color: #000;
     color: #fff;
