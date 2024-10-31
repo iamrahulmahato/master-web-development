@@ -19,12 +19,11 @@
             padding: 2rem;
         }
         header {
-            /* background-color: #2c3e50; */
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: #ecf0f1;
             text-align: center;
-            padding: 10rem 0;
+            padding: 2rem 0;
             margin-bottom: 2rem;
-            margin-top: 10px;
         }
         h1, h2 {
             margin: 0;
@@ -44,18 +43,25 @@
             font-style: italic;
             margin-top: 0.5rem;
         }
-        .testimonial-grid, .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+        .stats, .testimonial-grid, .services-grid, .feature-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 3rem 0;
         }
-        .testimonial, .service {
+        .stat-item, .testimonial, .service, .feature-item {
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 1.5rem;
             transition: transform 0.3s ease;
+            text-align: center;
+            width: calc(33% - 2rem);
+        }
+        .stat-item {
+            color: #ecf0f1;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
         }
         .testimonial:hover, .service:hover {
             transform: translateY(-5px);
@@ -84,7 +90,7 @@
             text-align: center;
             margin-top: 3rem;
             padding: 2rem;
-            background-color: #3498db;
+            background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
             color: #fff;
             border-radius: 10px;
         }
@@ -101,102 +107,6 @@
         }
         .cta-button:hover {
             background-color: #1a252f;
-        }
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 3rem 0;
-            text-align: center;
-        }
-        .stat-item {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 1.5rem;
-            border-radius: 10px;
-            width: 200px;
-        }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        .features {
-            background-color: #ecf0f1;
-            padding: 3rem 0;
-            margin: 3rem 0;
-        }
-        .feature-list {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        .feature-item {
-            width: 30%;
-            min-width: 250px;
-            margin: 1rem;
-            text-align: center;
-        }
-        .feature-icon {
-            font-size: 3rem;
-            color: #3498db;
-            margin-bottom: 1rem;
-        }
-
-        .home-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .home-button:hover {
-            background-color: #34495e;
-        }
-        header {
-            position: relative;  /* Add this to ensure proper positioning of the home button */
-        }
-        /* body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            margin: 0;
-            padding: 0;
-        } */
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            color: #ecf0f1;
-            text-align: center;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-        }
-        h1, h2 {
-            margin: 0;
-            padding: 1rem 0;
-        }
-        h1 {
-            font-size: 2.5rem;
-        }
-        h2 {
-            font-size: 2rem;
-            color: #2c3e50;
-            text-align: center;
-            margin-top: 3rem;
-        }
-        .subtitle {
-            font-size: 1.2rem;
-            font-style: italic;
-            margin-top: 0.5rem;
         }
         .service-tabs {
             display: flex;
@@ -216,101 +126,24 @@
             background-color: #3498db;
             color: #fff;
         }
-        .services-grid, .scholarships-grid, .jobs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+        .circle-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
         }
-        .service-card {
-            background-color: #fff;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+        .circle {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
+            transition: transform 0.1s, left 0.1s, top 0.1s;
         }
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-        .scholarship-card {
-            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .job-card {
-            background-color: #fff;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .amount-badge {
-            background-color: #2ecc71;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-        .deadline-badge {
-            background-color: #e74c3c;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-        .job-type {
-            background-color: #3498db;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 3rem 0;
-        }
-        .stat-item {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            color: #ecf0f1;
-            padding: 1.5rem;
-            border-radius: 10px;
-            width: 200px;
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        .cta {
-            text-align: center;
-            margin-top: 3rem;
-            padding: 2rem;
-            background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
-            color: #fff;
-            border-radius: 10px;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #2c3e50;
-            color: #fff;
-            text-decoration: none;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            margin-top: 1rem;
-        }
-        .cta-button:hover {
-            background-color: #1a252f;
-        }
-    </style>
     </style>
 </head>
 <body>
@@ -318,7 +151,7 @@
         <h1>Welcome to Master Web Development!</h1>
         <p class="subtitle">Build, contribute, and enhance your skills by working on open-source projects! 💻</p>
     </header>
-    
+
     <div class="container">
         <section class="stats">
             <div class="stat-item">
@@ -338,31 +171,16 @@
         <h2>What Our Contributors Are Saying</h2>
         <div class="testimonial-grid">
             <div class="testimonial">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                </div>
                 <h3>Sarah P.</h3>
                 <div class="rating">★★★★★</div>
                 <p>"Contributing to open-source projects through this platform has helped me enhance my web development skills!"</p>
             </div>
             <div class="testimonial">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                </div>
                 <h3>David K.</h3>
                 <div class="rating">★★★★☆</div>
                 <p>"This platform is a must-join for anyone looking to contribute to real-world projects and gain valuable experience."</p>
             </div>
             <div class="testimonial">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                </div>
                 <h3>Alex J.</h3>
                 <div class="rating">★★★★★</div>
                 <p>"I love how this community promotes open-source collaboration. It has accelerated my learning in web development."</p>
@@ -372,29 +190,14 @@
         <h2>Features You’ll Love</h2>
         <div class="services-grid">
             <div class="service">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-                    </svg>
-                </div>
                 <h3>Real-World Projects</h3>
                 <p>Get hands-on experience by working on various web development projects from frontend to full-stack.</p>
             </div>
             <div class="service">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
-                    </svg>
-                </div>
                 <h3>Easy Onboarding Process</h3>
                 <p>Quickly set up your environment and start contributing to open-source projects with our step-by-step guides.</p>
             </div>
             <div class="service">
-                <div class="icon-container">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-                    </svg>
-                </div>
                 <h3>Comprehensive Learning Resources</h3>
                 <p>Learn HTML, CSS, JavaScript, and more while contributing to impactful projects.</p>
             </div>
@@ -435,143 +238,34 @@
             <div class="service-tab">Guides</div>
         </div>
 
-        <h2>Contribution Rules</h2>
-        <div class="rules-grid">
-            <div class="rule-card">
-                <h3>Contribute Meaningfully</h3>
-                <p>Make impactful contributions that enhance the project and help the community.</p>
+        <h2>Popular Services</h2>
+        <div class="services-grid">
+            <div class="service">
+                <h3>Frontend Development</h3>
+                <p>Enhance your skills in HTML, CSS, and JavaScript to create stunning user interfaces.</p>
             </div>
-            <div class="rule-card">
-                <h3>Follow Best Practices</h3>
-                <p>Ensure your code follows industry best practices and is well-documented.</p>
+            <div class="service">
+                <h3>Backend Development</h3>
+                <p>Learn server-side programming and database management.</p>
             </div>
-            <div class="rule-card">
-                <h3>Collaborate Effectively</h3>
-                <p>Work with other contributors to review, debug, and improve the project.</p>
+            <div class="service">
+                <h3>Full-Stack Development</h3>
+                <p>Become proficient in both frontend and backend technologies.</p>
             </div>
-        </div>
-
-        <div class="cta">
-            <h2>Start Your Contribution Journey Today!</h2>
-            <p>Contribute to open-source projects and grow your development skills.</p>
-            <a href="https://github.com/iamrahulmahato/master-web-development" class="cta-button">Get Started Now ➡</a>
         </div>
     </div>
-<script src="/scripts/componentLoader.js"></script>
-<script>
-    prependComponent("Navbar");
-   prependComponent('Cursor');
-   prependComponent("ScrollToTop");
-   appendComponent('Footer');
-   appendComponent('ChatBot');
-   waitTillComponentsLoaded();
- </script>
-<script>
-    window.embeddedChatbotConfig = {
-      chatbotId: "mFGdtw23Qrxjx4cWS-w19",
-      domain: "www.chatbase.co",
-    };
-  </script>
-  <script
-    src="https://www.chatbase.co/embed.min.js"
-    chatbotId="mFGdtw23Qrxjx4cWS-w19"
-    domain="www.chatbase.co"
-    defer
-  ></script>
-  
-  <div class="circle-container">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-  </div>
-  <style>
-    .circle {
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      pointer-events: none;
-      background: radial-gradient(circle, rgba(73, 232, 247, 0.466), rgba(141, 38, 172, 0.5));
-      transition: transform 0.1s, left 0.1s, top 0.1s;
-    }
-  
-    .circle-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9999;
-    }
-  </style>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const coords = { x: 0, y: 0 };
-      const circles = document.querySelectorAll(".circle");
-  
-      circles.forEach(function (circle) {
-        circle.x = 0;
-        circle.y = 0;
-      });
-  
-      window.addEventListener("mousemove", function (e) {
-        coords.x = e.pageX;
-        coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
-      });
-  
-      function animateCircles() {
-        let x = coords.x;
-        let y = coords.y;
-  
-        circles.forEach(function (circle, index) {
-          circle.style.left = `${x - 12}px`;
-          circle.style.top = `${y - 12}px`;
-          circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
-  
-          const nextCircle = circles[index + 1] || circles[0];
-          circle.x = x;
-          circle.y = y;
-  
-          x += (nextCircle.x - x) * 0.3;
-          y += (nextCircle.y - y) * 0.3;
-        });
-  
-        requestAnimationFrame(animateCircles);
-      }
-  
-      animateCircles();
-    });
-  
-  
-  </script>
-  </body>
-  </html>
+
+    <script>
+        // Add your JavaScript functionality here
+        const circleContainer = document.querySelector('.circle-container');
+
+        for (let i = 0; i < 10; i++) {
+            const circle = document.createElement('div');
+            circle.classList.add('circle');
+            circle.style.left = Math.random() * window.innerWidth + 'px';
+            circle.style.top = Math.random() * window.innerHeight + 'px';
+            circleContainer.appendChild(circle);
+        }
+    </script>
+</body>
+</html>

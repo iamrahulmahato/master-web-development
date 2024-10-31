@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Creative Canvas Tool</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -106,7 +106,6 @@
             outline: none;
         }
 
-        /* Circle styles */
         .circle {
             height: 24px;
             width: 24px;
@@ -119,42 +118,41 @@
             z-index: 99999999;
             transition: transform 0.1s ease-out;
         }
-        .counter-container {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        justify-content: center;
-        background: rgba(0, 0, 0, 0.7);
-        padding: 10px 20px;
-        border-radius: 8px;
-        z-index: 2; /* Ensures counters are on top */
-        color: #fff;
-        font-size: 1.2rem;
-        font-weight: bold;
-    }
 
-    .counter {
-        margin: 0 15px;
-        text-align: center;
-    }
+        .counter-container {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 8px;
+            z-index: 2;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .counter {
+            margin: 0 15px;
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
     <div class="gtranslate_wrapper"></div>
     <script>
-    window.gtranslateSettings = {
-      "default_language":"en",
-      "detect_browser_language":true,
-      "wrapper_selector":".gtranslate_wrapper"
-    }
+        window.gtranslateSettings = {
+            "default_language": "en",
+            "detect_browser_language": true,
+            "wrapper_selector": ".gtranslate_wrapper"
+        }
     </script>
-    <script 
-      src="https://cdn.gtranslate.net/widgets/latest/float.js"
-      defer
-    ></script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
     <!-- Circles -->
     <div class="circle"></div>
     <div class="circle"></div>
@@ -182,8 +180,8 @@
     <!-- Welcome Section -->
     <div class="welcome-container">
         <h1 class="welcome-title">Welcome to Master Web Development</h1>
-        <p class="welcome-text">Contribute to Opensource projects effortlessly and View the Reviews.</p>
-        <a href="./test.html" class="btn btn-start">Start Contibuting and Reading</a>
+        <p class="welcome-text">Contribute to open-source projects effortlessly and view the reviews.</p>
+        <a href="./test.html" class="btn btn-start">Start Contributing and Reading</a>
     </div>
 
     <div class="counter-container">
@@ -196,34 +194,36 @@
             <p>Users</p>
         </div>
     </div>
+
     <script>
         let registrationCount = 0;
-    let userCount = 0;
+        let userCount = 0;
 
-    // Start the interval and store its ID
-    const counterInterval = setInterval(incrementCounters, 50);
+        // Start the interval and store its ID
+        const counterInterval = setInterval(incrementCounters, 50);
 
-    function incrementCounters() {
-        if (registrationCount >= 500 && userCount >= 5000) {
-            // Stop the counter when both reach 500 or more
-            clearInterval(counterInterval);
-            return;
+        function incrementCounters() {
+            if (registrationCount >= 500 && userCount >= 5000) {
+                // Stop the counter when both reach the target
+                clearInterval(counterInterval);
+                return;
+            }
+
+            // Increment counts only if they haven't reached the target
+            if (registrationCount < 500) {
+                registrationCount += Math.floor(Math.random() * 10 + 1);
+                if (registrationCount > 500) registrationCount = 500; // Cap at 500
+            }
+
+            if (userCount < 5000) {
+                userCount += Math.floor(Math.random() * 15 + 1);
+                if (userCount > 5000) userCount = 5000; // Cap at 5000
+            }
+
+            document.getElementById('registration-count').textContent = `+${registrationCount}`;
+            document.getElementById('user-count').textContent = `+${userCount}`;
         }
 
-        // Increment counts only if they haven't reached 500 yet
-        if (registrationCount < 500) {
-            registrationCount += Math.floor(Math.random() * 10 + 1);
-            if (registrationCount > 500) registrationCount = 5000; // Cap at 500
-        }
-        
-        if (userCount < 500) {
-            userCount += Math.floor(Math.random() * 15 + 1);
-            if (userCount > 500) userCount = 500; // Cap at 500
-        }
-
-        document.getElementById('registration-count').textContent = `+${registrationCount}`;
-        document.getElementById('user-count').textContent = `+${userCount}`;
-    }
         // Generate random particles in the background
         const particleCount = 100;
 
@@ -240,7 +240,7 @@
             document.body.appendChild(particle);
         }
     </script>
-    
+
     <script>
         // Cursor tail effect
         const coords = { x: 0, y: 0 };

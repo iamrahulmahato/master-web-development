@@ -3,88 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>FAQ Page</title>
     <style>
-       body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-.faq-container {
-    width: 90%;
-    max-width: 800px;
-    margin: 60px auto;
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
-    font-size: 2.5em;
-    color: #222;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
-}
-
-.faq-item {
-    margin-bottom: 25px;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 15px;
-}
-
-.faq-question {
-    margin: 0;
-    padding: 20px;
-    background-color: #f57460f1;
-    color: white;
-    font-size: 1.2em;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.faq-question::after {
-    content: '\25BC';
-    font-size: 1.2em;
-    transition: transform 0.3s ease;
-}
-
-.faq-question.active::after {
-    transform: rotate(180deg);
-}
-
-.faq-question:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
-}
-
-.faq-answer {
-    display: none;
-    margin-top: 15px;
-    padding: 15px 20px;
-    background-color: #f9f9f9;
-    border-left: 15px solid #fbe11b;
-    border-right: 15px solid #fbe11b;;
-    border-radius: 6px;
-    font-size: 1em;
-    line-height: 1.6;
-    color: #555;
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .faq-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 60px auto;
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #222;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+        .faq-question {
+            margin: 0;
+            padding: 20px;
+            background-color: #f57460;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .faq-question::after {
+            content: '\25BC';
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+        .faq-question.active::after {
+            transform: rotate(180deg);
+        }
+        .faq-question:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        .faq-answer {
+            display: none;
+            margin-top: 15px;
+            padding: 15px 20px;
+            background-color: #f9f9f9;
+            border-left: 15px solid #fbe11b;
+            border-right: 15px solid #fbe11b;
+            border-radius: 6px;
+            font-size: 1em;
+            line-height: 1.6;
+            color: #555;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -92,39 +82,34 @@ h1 {
         <h1>Frequently Asked Questions</h1>
 
         <div class="faq-item">
-          <h3 class="faq-question">How do I create an account to start playing?</h3>
-          <p class="faq-answer">User don't need to create any account here.They can freely visit here and play the game they want.</p>
-      </div>
+            <h3 class="faq-question">How do I create an account to start playing?</h3>
+            <p class="faq-answer">Users don't need to create any account here. They can freely visit and play the games they want.</p>
+        </div>
 
-      <div class="faq-item">
-          <h3 class="faq-question">Can I play games anytime?</h3>
-          <p class="faq-answer">Yes, all the games on our site can be played anytime.</p>
-      </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Can I play games anytime?</h3>
+            <p class="faq-answer">Yes, all the games on our site can be played anytime.</p>
+        </div>
 
-      
+        <div class="faq-item">
+            <h3 class="faq-question">Do I need to purchase any games?</h3>
+            <p class="faq-answer">No, all the games on our site are free to play.</p>
+        </div>
 
-      <div class="faq-item">
-          <h3 class="faq-question">Do I need to purchase any games?</h3>
-          <p class="faq-answer">No,all the games on our site are free to play anytime.</p>
-      </div>
+        <div class="faq-item">
+            <h3 class="faq-question">What should I do if a game isn't loading properly?</h3>
+            <p class="faq-answer">If a game isn’t loading, try refreshing the page or clearing your browser cache.</p>
+        </div>
 
-      <div class="faq-item">
-          <h3 class="faq-question">What should I do if a game isn't loading properly?</h3>
-          <p class="faq-answer">If a game isn’t loading, try refreshing the page, clearing your browser cache.</p>
-      </div>
-      
-      
-            <div class="faq-item">
-                <h3 class="faq-question">Which kind of games are available here?
-                </h3>
-                <p class="faq-answer">You can get many beginner level games here along with iq games,puzzle solving, funny games etc.</p>
-            </div>
-      
-            <div class="faq-item">
-                <h3 class="faq-question">Can I play the games in any device?
-                </h3>
-                <p class="faq-answer">Yes,all the games are responsive here.So, you can play them in any device and enjoy yourself.</p>
-            </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Which kind of games are available here?</h3>
+            <p class="faq-answer">You can find many beginner-level games here, including IQ games, puzzle solving, funny games, etc.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 class="faq-question">Can I play the games on any device?</h3>
+            <p class="faq-answer">Yes, all the games are responsive, so you can play them on any device and enjoy yourself.</p>
+        </div>
     </div>
 
     <script>
@@ -135,7 +120,8 @@ h1 {
             question.addEventListener('click', () => {
                 // Toggle the visibility of the corresponding answer
                 const answer = question.nextElementSibling;
-                answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+                const isActive = question.classList.toggle('active');
+                answer.style.display = isActive ? 'block' : 'none';
             });
         });
     </script>   

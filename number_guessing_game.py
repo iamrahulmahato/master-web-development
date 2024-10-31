@@ -1,7 +1,7 @@
 import random
 
 def number_guessing_game():
-    #difficulty level
+    # Difficulty level
     print("\n🎯 Welcome to the Number Guessing Game!")
     print("Choose a difficulty level:")
     print("1. Easy (12 attempts)\n2. Medium (8 attempts)\n3. Hard (5 attempts)")
@@ -26,7 +26,7 @@ def number_guessing_game():
     low, high = 1, 100 
 
     print(f"\nI'm thinking of a number between 1 and 100. You have {max_attempts} attempts to guess it!")
-    
+
     while guesses < max_attempts:
         try:
             guess = int(input(f"Attempt {guesses + 1}/{max_attempts}: Enter your guess: "))
