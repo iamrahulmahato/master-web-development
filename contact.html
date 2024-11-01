@@ -1,126 +1,163 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us Page</title>
-    </head>
+    <title>Contact Us</title>
     <style>
+        body {
+            font-family: 'Arial', sans-serif; /* Clean font */
+            background-color: #f0f0f0; /* Light background for contrast */
+            color: #333; /* Default text color */
+            margin: 0; /* Reset margins */
+            padding: 0; /* Reset padding */
+            transition: background-color 0.3s; /* Smooth background transition */
+        }
+
         .card {
-           
-            width: 50%; /* Set a specific width */
-            margin: 10px auto; /* Center horizontally with automatic margins */
-            padding: 20px; /* Add padding */
-            margin-bottom: 70px;
-        
-        
-            border: 1px solid #ccc; /* Optional: Add a border */
-            border-radius: 8px; /* Optional: Add rounded corners */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
-           
-            background-color: #c2c4c7;
+            width: 50%; /* Original width */
+            margin: 10px auto; /* Center horizontally */
+            padding: 20px; /* Padding inside card */
+            margin-bottom: 70px; /* Space below the card */
+            border: 1px solid #ddd; /* Card border */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            background-color: #ffffff; /* White background */
+            transition: transform 0.3s; /* Card hover effect */
         }
+
+        .card:hover {
+            transform: translateY(-5px); /* Lift card on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+        }
+
         .card-header {
-             
-            color: #080808;
-            padding:1px 10px 1px 10px;
-            margin:1px 10px 6px 10px;
-           
-            text-align: center;
-            width: 90%;
-            border-bottom: px solid #ddd;
-            border-radius: 6px;
-          }
-          .card-header h1 {
-             
-           font-size: 40px;
-          }
+            text-align: center; /* Center header text */
+            padding: 10px; /* Header padding */
+            background-color: #fa2b4d; /* Header background color */
+            color: white; /* White text */
+            border-radius: 8px 8px 0 0; /* Round top corners */
+        }
+
+        .card-header h1 {
+            font-size: 32px; /* Original font size */
+            margin: 0; /* Remove default margin */
+        }
+
         .card-body {
-            display: flex;
-            justify-content: space-between; /* Form on the left and image on the right */
-            align-items: flex-start; /* Align content to the top */
-            background-color: #c2c4c7;
+            display: flex; /* Flexbox for layout */
+            justify-content: space-between; /* Space between form and image */
+            align-items: flex-start; /* Align items at the top */
+            padding: 20px; /* Body padding */
         }
-        
+
         .form-section {
-            width: 50%; /* Width for the form section */
+            width: 50%; /* Form section width */
+            padding-right: 10px; /* Space between form and image */
         }
-        
+
         .image-section {
-            width: 50%; /* Width for the image section */
-            display: flex;
+            width: 50%; /* Image section width */
+            display: flex; /* Flexbox for centering */
             justify-content: center; /* Center the image */
-            align-items: center;
+            align-items: center; /* Align image vertically */
         }
-        
+
         .image-section img {
-            max-width: 100%; /* Make sure image does not exceed its container width */
-            height: auto;
+            max-width: 90%; /* Responsive image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 5px; /* Slight rounding */
+            transition: transform 0.3s; /* Image hover effect */
         }
-        
+
+        .image-section img:hover {
+            transform: scale(1.05); /* Scale image on hover */
+        }
+
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* Space between form groups */
         }
-        
+
         label {
-            display: block;
-            margin-bottom: 10px;
+            display: block; /* Block for better layout */
+            margin-bottom: 5px; /* Space below label */
+            font-weight: bold; /* Bold labels for visibility */
+            color: #555; /* Slightly lighter color for labels */
+            transition: color 0.3s, transform 0.3s; /* Transition for label hover effect */
         }
-        
+
+        label:hover {
+            color: #fa2b4d; /* Change label color on hover */
+            transform: scale(1.05); /* Slightly scale label */
+        }
+
         input, textarea {
-            width: 100%; /* Adjust width for better alignment */
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            width: 100%; /* Full width inputs */
+            padding: 10px; /* Padding for inputs */
+            border: 1px solid #ccc; /* Border for inputs */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Font size for inputs */
+            transition: border-color 0.3s, box-shadow 0.3s; /* Transition for inputs */
         }
-        
+
+        input:focus, textarea:focus {
+            border-color: #fa2b4d; /* Change border color on focus */
+            box-shadow: 0 0 5px rgba(250, 43, 77, 0.5); /* Shadow on focus */
+            outline: none; /* Remove outline */
+        }
+
         textarea {
-            height: 100px; /* Adjust height for textarea */
+            height: 100px; /* Height for textarea */
+            resize: vertical; /* Allow vertical resizing only */
         }
-        
+
         button[type="submit"] {
-            background-color: fa2b4d;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            background-color: #fa2b4d; /* Button color */
+            color: #fff; /* White text */
+            padding: 10px 20px; /* Padding for button */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor */
+            font-size: 16px; /* Font size for button */
+            transition: background-color 0.3s, transform 0.2s; /* Button transitions */
         }
-        
+
         button[type="submit"]:hover {
-            background-color: #ff032d;
+            background-color: #ff032d; /* Darker shade on hover */
+            transform: translateY(-2px); /* Lift button on hover */
         }
     </style>
-    <body>
-        <section id="contact us" style="padding-top:30px">
-
-            <div class="card pb-5 pt-1">
-                <div class="card-header">
-                    <h1>Contact Us</h1>
+</head>
+<body>
+    <section id="contact" style="padding-top:30px;">
+        <div class="card">
+            <div class="card-header">
+                <h1>Contact Us</h1>
+            </div>
+            <div class="card-body">
+                <div class="form-section">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Your message" required></textarea>
+                        </div>
+                        <button type="submit">Send</button>
+                    </form>
                 </div>
-                <div class="card-body">
-                    <div class="form-section">
-                        <form>
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="Your email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" placeholder="Your message"></textarea>
-                            </div>
-                            <button type="submit">Send</button>
-                        </form>
-                    </div>
-                    <div class="image-section">
-                        <img src="./7725176.jpg" alt="Contact Image"style="max-width: 80%; height: auto; max-height: 500px;">
-                    </div>
+                <div class="image-section">
+                    <img src="./7725176.jpg" alt="Contact Image">
                 </div>
             </div>
-        </section>
-    </body>
-    </html>
+        </div>
+    </section>
+</body>
+</html>
