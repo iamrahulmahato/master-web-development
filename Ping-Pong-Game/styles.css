@@ -24,6 +24,7 @@ body {
     width: 10px;
     height: 80px;
     background-color: #fff;
+    transition: 0.1s ease;
 }
 
 #paddleLeft {
@@ -45,4 +46,22 @@ body {
 #scoreboard {
     margin-top: 10px;
     font-size: 24px;
+}
+
+#controls {
+    margin-top: 15px;
+}
+
+button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: none;
+    background-color: #5cb85c;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
 }
