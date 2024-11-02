@@ -15,7 +15,7 @@
     <link rel="preconnect" href= "https://fonts.googleapis.com" />
     <link rel="preconnect" href= "https://fonts.gstatic.com" crossorigin />
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -292,6 +292,34 @@ body {
             animation-timeline: view();
             animation-range: entry 0% cover 40%;
         }
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 2000px; /* Add some height to enable scrolling */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Scroll to Top Button Styles */
+        .top-btn {
+            display: none;
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            bottom: 23px;
+            right: 44px;
+            background-color: #ab45e7;
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .top-btn:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 
@@ -299,6 +327,24 @@ body {
     <div id="progress-container">
         <div id="progress-bar"></div>
       </div>
+      <button class="top-btn" id="goToTopBtn" onclick="goToTop()"> 
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script>
+         const goToTopBtn = document.getElementById("goToTopBtn");
+
+         window.onscroll = function () {
+            if (window.scrollY > 100) {
+                goToTopBtn.style.display = "flex"; // Use "flex" to center the icon
+            } else {
+                goToTopBtn.style.display = "none";
+            }
+        };
+        function goToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
     <div class="icon">
         <div class="icon2">
             <button id="toggle-mode-btn">
