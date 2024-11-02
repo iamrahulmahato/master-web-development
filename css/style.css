@@ -156,8 +156,8 @@ body {
   padding: 10px 20px;
   cursor:pointer;
   transition:all 0.3s ease;
-  /* background-color: #0066cc; */
-  color: white;
+   background-color: #5f25a7; 
+  color: rgb(255, 255, 255);
   text-decoration: none;
   border-radius: 5px;
   font-family: Arial, sans-serif;
@@ -165,8 +165,8 @@ body {
 }
 
 .source-code-btn:hover {
-  /* background-color: #0052a3; */
-  color: black;
+   background-color: #fa2b4d; 
+  color: rgb(241, 243, 239);
 }
 
 .search-container {
