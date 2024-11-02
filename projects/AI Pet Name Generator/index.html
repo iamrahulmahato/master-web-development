@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Pet Name Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Pet Name Generator</h1>
+        <label for="habit">Enter Pet Habit/Genre:</label>
+        <input type="text" id="habit" placeholder="e.g., Playful, Sleepy, Adventurous">
+
+        <label for="startLetter">Starting Letter:</label>
+        <input type="text" id="startLetter" maxlength="1" placeholder="A-Z">
+
+        <label for="endLetter">Ending Letter:</label>
+        <input type="text" id="endLetter" maxlength="1" placeholder="A-Z">
+
+        <button id="generateName">Generate Name</button>
+        <h2 id="suggestedName"></h2>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
