@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Swap Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Skill Swap Marketplace</h1>
+        </header>
+        
+        <main>
+            <div id="userInput">
+                <input type="text" id="userName" placeholder="Your Name" required>
+                <textarea id="userDescription" placeholder="Describe yourself..." required></textarea>
+                <input type="text" id="offerSkill" placeholder="I can offer..." required>
+                <input type="text" id="wantSkill" placeholder="I want to learn..." required>
+                <button id="postSwap">Post Swap</button>
+            </div>
+
+            <input type="text" id="filter" placeholder="Filter by skill...">
+
+            <section id="swaps">
+                <h2>Current Swaps</h2>
+                <ul id="swapList"></ul>
+            </section>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coin Toss Game</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" 
+        content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Coin Toss</title>
 </head>
+
 <body>
-    <h1>Flip the Coin!</h1>
+  <div class="coin-container">
+    <h1 class="title">Toss The Coin</h1>
+      
+    <br />
     <div class="coin" id="coin">
-        <div class="heads"></div>
-        <div class="tails"></div>
+      <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20231016151806/tails.png" 
+           alt="Heads" />
     </div>
-    <button id="flipButton">Flip Coin</button>
-    <div id="result"></div>
-    <script src="script.js"></script>
+    <button id="toss-button">
+      Toss Coin
+    </button>
+  </div>
+  <p class="result"></p>
+  <script src="script.js"></script>
 </body>
+
 </html>

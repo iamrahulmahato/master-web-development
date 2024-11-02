@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #FFF7D1; 
+    background: linear-gradient(135deg, #A8209F, #5A76C8); 
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight:bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #A8209F, #5A76C8); /* Gradient background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Fixed width */
+    height: 500px; /* Increased height */
+    overflow: hidden; /* Hide overflow text */
+    animation: fadeIn 1s ease-in-out; /* Animation */
+    transition: box-shadow 0.3s ease, border 0.3s ease; /* Transition for box-shadow and border */
+
+}
+.container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased box-shadow on hover */
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+    h1 {
+        margin-bottom: 20px;
+        color:  black; /* Updated font color */
+        animation: slideIn 1s ease-in-out; /* Animation */
+    }
+    
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fact {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+   
+   
+   
+}
+
+.fact.show {
+    opacity: 1;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color:  black; 
+    background: #F11A7B;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight:bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+   
+}
+
+button:hover {
+    background: #FFE7C1;
+    transform: scale(1.05);
+    
+
+}
+
+button:active {
+    background: #F11A7B;
+    transform: scale(1);
+}
+

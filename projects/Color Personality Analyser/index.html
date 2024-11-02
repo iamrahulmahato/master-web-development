@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Personality Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌈 Color Personality Analyzer</h1>
+        <p>Answer these questions to discover the color that reflects your personality!</p>
+        <form id="colorForm">
+            <div class="question">
+                <label>Pick your favorite time of the day:</label>
+                <div class="options">
+                    <label><input type="radio" name="timeOfDay" value="morning"> Morning 🌅</label>
+                    <label><input type="radio" name="timeOfDay" value="afternoon"> Afternoon 🌞</label>
+                    <label><input type="radio" name="timeOfDay" value="evening"> Evening 🌇</label>
+                    <label><input type="radio" name="timeOfDay" value="night"> Night 🌌</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Which activity do you prefer?</label>
+                <div class="options">
+                    <label><input type="radio" name="activity" value="reading"> Reading 📖</label>
+                    <label><input type="radio" name="activity" value="traveling"> Traveling 🌍</label>
+                    <label><input type="radio" name="activity" value="sports"> Sports 🏅</label>
+                    <label><input type="radio" name="activity" value="art"> Art 🎨</label>
+                </div>
+            </div>
+
+            <button type="button" onclick="analyzeColor()">Reveal My Color Personality</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

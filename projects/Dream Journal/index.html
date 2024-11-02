@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Dream Journal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dream Journal</h1>
+        <form id="dreamForm">
+            <textarea id="dreamEntry" placeholder="Describe your dream..." required></textarea>
+            <input type="date" id="dreamDate" required>
+            <button type="submit">Save Dream</button>
+        </form>
+        <h2>Your Dreams</h2>
+        <ul id="dreamList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

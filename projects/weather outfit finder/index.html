@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather & Outfit Recommender</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Weather & Outfit Recommender</h1>
+    <div class="weather-selector">
+      <label for="weather">Choose the Weather:</label>
+      <div class="icons">
+        <button class="weather-option" onclick="getOutfit('sunny')" id="sunny">
+          <img src="https://img.icons8.com/color/48/000000/sun.png" alt="Sunny Icon">
+          <span>Sunny</span>
+        </button>
+        <button class="weather-option" onclick="getOutfit('rainy')" id="rainy">
+          <img src="https://img.icons8.com/color/48/000000/rain.png" alt="Rainy Icon">
+          <span>Rainy</span>
+        </button>
+        <button class="weather-option" onclick="getOutfit('cold')" id="cold">
+          <img src="https://img.icons8.com/color/48/000000/snow.png" alt="Cold Icon">
+          <span>Cold</span>
+        </button>
+        <button class="weather-option" onclick="getOutfit('snowy')" id="snowy">
+          <img src="https://img.icons8.com/color/48/000000/snowflake.png" alt="Snowy Icon">
+          <span>Snowy</span>
+        </button>
+      </div>
+    </div>
+    <div class="result" id="result">Select a weather option above to get started.</div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

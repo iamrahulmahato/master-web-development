@@ -1,70 +1,86 @@
-html{
-    font-family:'Nova Round', cursive;
+html {
+    font-family: 'Josefin Sans', sans-serif;
+}
 
-}
-header{
+header {
     size: 2rem;
-   
 }
-#navbar #media{
-    justify-content: right;
-    display:flex;
-    height:0.1px;
-    /* width: 1px; */
-    background-color: rgb(215, 145, 99);
-    
-}
-#navbar ul{
-    display:flex;
+
+#navbar ul {
+    display: flex;
     justify-content: center;
-    /* background-color: rgb(215, 145, 99); */
-    
+    padding: 0;
 }
-#navbar ul li{
+
+#navbar ul li {
     font-size: 1rem;
     list-style: none;
     text-align: center;
 }
-#navbar ul li a{
-    display:block;
+
+#navbar ul li a {
+    display: block;
     padding: 3px 20px;
     text-decoration: none;
-    color:black;
+    color: black;
     border-radius: 20px;
-    
-    
 }
-#navbar ul li a:hover{
-    color:white;
-    background-color:  rgb(250, 166, 58);}
 
-#body{
-    background: url(image/contact.jpg) no-repeat center center/cover;
-    
-    justify-content: center;
-  align-content: center;
+#navbar ul li a:hover {
+    color: white;
+    background-color: rgb(250, 166, 58);
 }
-.grid{
-    
-       
-        grid-template-columns: repeat(2, 2fr);
-        width: 800px;
-        height: 800px;
-        margin-left: 19%;
-        box-shadow: 2px beige;
-       
-      }
-      #left {
-        background-color: rgb(137, 203, 231);
-        border: 4px solid black;
-        border-radius: 2px;
-        box-shadow: 2px beige;
-      }
-      footer{
-        background: black;
-        color: white;
-        text-align: center;
-        padding: 2px;
-    }
-    
-     
+
+#body {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(137, 203, 231, 0.8)), url(image/contact.jpg) no-repeat center center/cover;
+    padding: 2rem 0;
+}
+
+.box1 {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 4px solid black;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+}
+
+input[type="text"], input[type="email"], input[type="number"], input[type="date"], textarea, select {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+}
+
+input[type="submit"], input[type="reset"] {
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+input[type="submit"] {
+    background-color: rgb(250, 166, 58);
+    color: white;
+    border: none;
+}
+
+input[type="reset"] {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+
+footer {
+    background: #333;
+    color: #F5D3A7;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 1rem;
+    font-family: 'Oxanium', sans-serif;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: auto;
+}
+
+footer .center {
+    font-size: 1rem;
+    padding-bottom: 10px;
+}

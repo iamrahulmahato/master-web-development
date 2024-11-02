@@ -26,6 +26,9 @@ function checkGuess() {
             document.querySelector('.high_score').textContent = highScore;
         }
         celebrate();
+        setTimeout(() => {
+            resetGame();
+        }, 4000);
     } else {
         if (score > 1) {
             document.querySelector('.message').textContent = guess > secretNumber ? 'Too High!' : 'Too Low!';
