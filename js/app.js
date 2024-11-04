@@ -6,6 +6,15 @@ const savedTheme = localStorage.getItem("theme");
 function setTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   localStorage.setItem("theme", theme);
+
+const footer = document.getElementById("footer1");
+  if (theme === "dark") {
+    // footerBottom.classList.add("dark-change");
+    footer.classList.add("dark-change");
+  } else {
+    // footerBottom.classList.remove("dark-change");
+    footer.classList.remove("dark-change");
+  }
 }
 
 if (savedTheme == "dark") {
@@ -15,6 +24,7 @@ if (savedTheme == "dark") {
 } else {
   setTheme("light");
 }
+
 
 toggleModeBtn.onclick = () => {
   const currentTheme = document.documentElement.getAttribute("data-theme");
