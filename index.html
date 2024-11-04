@@ -338,6 +338,49 @@ body {
     border-color: #c1c17d;
     transform: translateY(-2px);
 }
+.btn-container {
+    text-align: center; /* Center the buttons */
+    margin: 20px 0;    /* Add some margin for spacing */
+}
+
+.source-code-btn {
+    background: linear-gradient(45deg, #ff4d4d, #ff7f50); /* Gradient from red to coral */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for button size */
+    margin: 5px; /* Spacing between buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background 0.3s ease; /* Smooth transition for background color */
+}
+
+.source-code-btn:hover {
+    background: linear-gradient(45deg, #ff3333, #ff6347); /* Darker gradient on hover */
+}
+
+.nextPrevArrows {
+    display: flex; /* Use flexbox for next/prev buttons */
+    justify-content: center; /* Center the arrows */
+    margin-top: 10px; /* Margin for spacing */
+}
+
+.nextPrevArrows button {
+    background: #ff4d4d; /* Red background */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding for size */
+    margin: 0 5px; /* Spacing between arrows */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background 0.3s ease; /* Smooth transition */
+}
+
+.nextPrevArrows button:hover {
+    background: #ff3333; /* Darker red on hover */
+}
+
     </style>
 </head>
 
@@ -578,7 +621,6 @@ body {
 
 
 
-            <!-- Category Buttons -->
             <div class="btn-container">
                 <button class="source-code-btn" onclick="filterCategory('All')">All</button>
                 <button class="source-code-btn" onclick="filterCategory('Games')">Games</button>
@@ -587,17 +629,14 @@ body {
                 <button class="source-code-btn" onclick="filterCategory('Mathematical')">Mathematical</button>
                 <button class="source-code-btn" onclick="filterCategory('Security')">Security Tools</button>
                 <button class="source-code-btn" onclick="filterCategory('Miscellaneous')">Miscellaneous</button>
-
-        
-
-        
-            <div class="nextPrevArrows">
-                <button class="prev"> < </button>
-                <button class="next"> > </button>
-
+            
+                <div class="nextPrevArrows">
+                    <button class="prev"> < </button>
+                    <button class="next"> > </button>
+                </div>
+                <br />
             </div>
-            <br />
-        </div>
+            
 
 
         <div class="projects-container">
