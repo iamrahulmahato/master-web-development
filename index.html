@@ -3333,7 +3333,7 @@ body {
             <div class="container">
                 <h2>We Value Your Feedback!</h2>
                 <p>Your input helps us improve our services. Please share your thoughts with us below.</p>
-                <form>
+                <form id="feedbackForm">
 
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -3416,20 +3416,32 @@ body {
                         </select>
                     </div>
 
-
-                    <div class="form-group">
-                        <label for="feedback">Your Feedback</label>
-                        <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..."
-                            required></textarea>
-                    </div>
-
-
                     <button type="submit">Submit Feedback</button>
                 </form>
             </div>
         </section>
     </div>
-
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+    
+            // Show an alert message
+            alert('Your feedback has been submitted! Thank you!');
+    
+            // clear the form fields after submission
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('feedback').value = '';
+            document.getElementById('rating').selectedIndex = 0; // Reset the rating dropdown
+            document.getElementById("rating-value").innerText = "Rating: 0"; // Reset the rating display
+            // Reset star selection
+        const stars = document.querySelectorAll(".star");
+        stars.forEach(star => {
+            star.classList.remove("selected");
+        });
+        });
+    </script>
     <style>
         /* Feedback Form Section */
         #feedback {
@@ -3439,7 +3451,7 @@ body {
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            color: #fff;
+            color: black;
         }
 
         #feedback h2 {
