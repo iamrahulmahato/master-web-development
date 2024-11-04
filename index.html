@@ -373,6 +373,44 @@ body {
             </button>
         </div>
 
+        
+        <!-- Profile Icon -->
+        <li class="nav-item no-underline">
+            <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon" style="width: 50px; height: 50px; border-radius: 50%; margin-top: -17px;">
+        </a>
+        </li>
+
+        <style>
+
+        /* Override the existing hover styles */
+        .navbar-nav .nav-item .profile-link:hover {
+            background-color: transparent !important; /* Remove background color */
+            border-radius: 0 !important; /* Reset border radius */
+            transform: none !important; /* Prevent scaling */
+        }
+
+        </style>
+
+        <script>
+
+            function toggleMenu() {
+                const menu = document.getElementById('profileMenu');
+                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+                if (!event.target.matches('.profile-icon img')) {
+                    const menu = document.getElementById('profileMenu');
+                    if (menu.style.display === 'block') {
+                        menu.style.display = 'none';
+                    }
+                }
+            }
+
+        </script>
+
     </div>
 
     <section id="projects">
