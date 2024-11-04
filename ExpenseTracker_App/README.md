@@ -22,13 +22,8 @@ A responsive web-based expense tracking application that helps users manage thei
 ## Installation and Setup ⬇
 
 1.**Clone the repository:**
-```
-git clone https://github.com/yourusername/expense-tracker.git
-```
+
 2.**Navigate to the project directory:**
-```
-cd webapp
-```
 
 3.**Open the index.html File:**
 Open index.html in your preferred web browser
@@ -40,7 +35,7 @@ Open index.html in your preferred web browser
 - Edge (latest)
 
 ### Preview of webapp:
-![expense-tracker](preview.png)
+![expense-tracker](demo.png)
 
 
 ## Usage
