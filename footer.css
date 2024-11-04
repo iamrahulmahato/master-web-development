@@ -9,7 +9,7 @@ footer {
 
 .footer-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* Use space-between for horizontal alignment */
     align-items: flex-start;
     padding-bottom: 20px;
     border-bottom: 1px solid #eaeaea;
@@ -25,8 +25,6 @@ footer {
     color: #000;
     font-size: 18px;
     font-weight: bold;
-    position: relative;
-    transition: text-shadow 0.3s ease, color 0.3s ease;
 }
 
 .footer-section p {
@@ -38,10 +36,13 @@ footer {
 .footer-section ul {
     list-style: none;
     padding: 0;
+    display: flex; /* Change to flex for horizontal layout */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: space-between; /* Space items evenly */
 }
 
 .footer-section ul li {
-    margin-bottom: 8px;
+    margin: 0 10px; /* Horizontal margin between links */
 }
 
 .footer-section ul li a {
@@ -79,33 +80,14 @@ footer {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transform: translateY(-8px);
     transition: background-color 0.3s ease;
 }
 
 /* Hover effect on the subscribe button */
 .newsletter button:hover {
-    background-color: #e39a9a;
-}
-
-/* Footer bottom links */
-.footer-links-bottom {
-    display: flex;
-    justify-content: space-around;
-    padding: 15px 0;
-    background-color: #eaeaea;
-}
-
-.footer-links-bottom a {
-    text-decoration: none;
-    color: #00b894;
-    font-size: 14px;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-/* Hover effect on footer bottom links */
-.footer-links-bottom a:hover {
-    color: #0984e3;
+    background-color: #e59e9e; /* A darker shade for hover effect */
+    
 }
 
 /* Footer bottom section */
@@ -117,20 +99,11 @@ footer {
     margin-top: 20px; /* Add margin to prevent overlap */
 }
 
-.footer-bottom .social-icons {
-    margin: 10px 0;
-}
-
-.footer-bottom .social-icons a {
-    margin: 0 8px;
-    color: #000;
-    font-size: 20px;
-    transition: color 0.3s ease;
-}
-
-/* Hover effect on social icons */
-.footer-bottom .social-icons a:hover {
-    color: #f8c5c5;
+.footer-bottom p {
+    margin: 0; /* Remove default margin */
+    color: #666; /* Dark gray color for the text */
+    font-size: 14px; /* Font size */
+    font-family: Arial, sans-serif; /* Font family */
 }
 
 /* Mobile view adjustments */
@@ -139,76 +112,12 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-}
-    .newsletter input[type="email"], .newsletter button {
-        width: 100%;
-        margin-bottom: 10px;
+    .footer-section ul {
+        flex-direction: column; /* Stack links vertically on smaller screens */
     }
-    /* Hover effect on the subscribe button */
-.newsletter button:hover {
-    background-color: #e39a9a;
-    transform: scale(1.05); /* Slightly enlarge the button */
-}
-/* Footer bottom section */
-.footer-bottom {
-    padding-top: 10px;
-    padding-bottom: 10px; /* Add some bottom padding */
-    background-color: #eaeaea; /* Background color for the footer bottom */
-    text-align: center; /* Center the text */
-}
-
-.footer-bottom p {
-    margin: 0; /* Remove default margin */
-    color: #666; /* Dark gray color for the text */
-    font-size: 14px; /* Font size */
-    font-family: Arial, sans-serif; /* Font family */
-}
-
-/* Media Query for responsive design */
-@media (max-width: 768px) {
-    .footer-bottom p {
-        font-size: 12px; /* Adjust font size for smaller screens */
+    .footer-section ul li {
+        margin: 5px 0; /* Adjust margin for vertical alignment */
     }
-}
-.footer-bottom .social-icons a {
-    margin: 0 8px;
-    color: #000; /* Default color */
-    font-size: 20px;
-    transition: color 0.3s ease;
-}
-
-/* Hover effects for each social media icon */
-.footer-bottom .social-icons a:hover {
-    color: #000; /* Default hover color */
-}
-
-/* Specific hover colors for each icon */
-.footer-bottom .social-icons a:hover .fab.fa-facebook-f {
-    color: #3b5998; /* Facebook Blue */
-}
-
-.footer-bottom .social-icons a:hover .fab.fa-twitter {
-    color: #1da1f2; /* Twitter Blue */
-}
-
-.footer-bottom .social-icons a:hover .fab.fa-instagram {
-    color: #e1306c; /* Instagram Red */
-}
-
-.footer-bottom .social-icons a:hover .fab.fa-linkedin-in {
-    color: #0077b5; /* LinkedIn Blue */
-}
-
-.footer-bottom .social-icons a:hover .fab.fa-youtube {
-    color: #ff0000; /* YouTube Red */
-}
-
-.footer-bottom .social-icons a:hover .fab.fa-pinterest {
-    color: #e60023; /* Pinterest Red */
-}
-
-.footer-bottom .social-icons a:hover .fab.fa-snapchat-ghost {
-     color: #fffc00;; /* Snapchat Yellow */
 }
 .gridbox {
     list-style: none; /* Remove bullet points */
@@ -234,3 +143,48 @@ footer {
     color: #f8c5c5; /* Change color on hover */
     text-decoration: underline; /* Add underline on hover */
 }
+
+
+
+.social-media a {
+    margin: 0 10px; /* Adjusts horizontal spacing between icons */
+}
+
+.social-media {
+    display: flex; /* Aligns icons in a row */
+    justify-content: center; /* Centers the icons */
+}
+
+.social-media a {
+    margin: 0 10px; /* Adjusts horizontal spacing between icons */
+    color: white; /* Change color as needed */
+    text-decoration: none; /* Removes underline from links */
+}
+
+.social-media a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+.share-section {
+    display: flex; /* Align buttons in a row */
+    justify-content: center; /* Center the buttons */
+    margin-top: 20px; /* Space above the buttons */
+}
+
+button {
+    background-color: #007bff; /* Blue background for buttons */
+    color: white; /* Text color */
+    border: none; /* Removes border */
+    border-radius: 5px; /* Rounds corners */
+    padding: 10px 20px; /* Padding for buttons */
+    margin: 0 10px; /* Space between buttons */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+
