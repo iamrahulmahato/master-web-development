@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Georgia', serif;
+    background-image: url('https://images.unsplash.com/photo-1533656008771-4ae2fbb4b737'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  }
+  
+  .story-container {
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    animation: fadeIn 1s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #ff6347; /* Tomato color */
+  }
+  
+  .story-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .choices-container {
+    margin-top: 20px;
+  }
+  
+  .choice-button {
+    display: block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 80%;
+  }
+  
+  .choice-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  .choice-button:active {
+    transform: scale(0.95);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @media (max-width: 600px) {
+    .story-container {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .choice-button {
+      font-size: 1rem;
+    }
+  
+    .story-text {
+      font-size: 1rem;
+    }
+  }
+  

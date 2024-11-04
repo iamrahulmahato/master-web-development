@@ -1,0 +1,90 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9f5ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    color: #3c3c3c;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 70%;
+    padding: 12px;
+    border: 2px solid #5cb85c;
+    border-radius: 10px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border-color: #4cae4c;
+}
+
+button {
+    padding: 12px 15px;
+    margin-left: 5px;
+    border: none;
+    background-color: #5cb85c;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #4cae4c;
+    transform: translateY(-2px);
+}
+
+.memory-list {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.memory-item {
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    padding: 12px;
+    margin: 5px 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.memory-item:hover {
+    background-color: #f1f1f1;
+}
+
+.memory-item button {
+    background-color: #d9534f;
+    border-radius: 8px;
+    padding: 6px 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.memory-item button:hover {
+    background-color: #c9302c;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,83 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a; /* Dark background for contrast */
+    color: #f0f0f0; /* Light text for readability */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: rgba(30, 30, 30, 0.9); /* Semi-transparent dark background */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 90%;
+    max-width: 600px; /* Increased width for better layout */
+}
+
+h1 {
+    font-size: 28px; /* Larger font size */
+    color: #ffcc00; /* Gold color for title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Increased margin for better spacing */
+}
+
+label {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #ffcc00; /* Gold color for labels */
+}
+
+input[type="text"],
+input[type="date"] {
+    padding: 12px; /* Increased padding */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: calc(100% - 24px);
+    transition: border-color 0.3s ease; /* Transition effect for focus */
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+    border-color: #ffcc00; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #ffcc00; /* Gold button */
+    color: #1a1a1a; /* Dark text on button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform */
+}
+
+button:hover {
+    background-color: #e6b800; /* Slightly darker gold */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff; /* White text for result */
+    padding: 10px; /* Padding around result */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for result */
+    border-radius: 5px; /* Rounded corners for result box */
+}
+
+.star-map {
+    border: 1px solid #ccc;
+    background-color: #000; /* Black background for star map */
+    margin-top: 20px;
+    border-radius: 5px;
+}
