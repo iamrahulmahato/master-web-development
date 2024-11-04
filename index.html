@@ -3350,12 +3350,6 @@ body {
         <div class="form-group">
           <label for="rating"></label>
           
-
-        
-        <div class="form-group">
-          <label for="feedback">Your Feedback</label>
-          <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..." required></textarea>
-        </div>
         <div id="star-rating" class="stars">
             <span class="star" data-value="1">&#9733;</span>
             <span class="star" data-value="2">&#9733;</span>
@@ -3365,6 +3359,10 @@ body {
         </div>
         <p id="rating-value">Rating: 0</p>
     
+        <div class="form-group">
+            <label for="feedback">Your Feedback</label>
+            <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..." required></textarea>
+          </div>
     
         <style>
             .stars {
@@ -3403,16 +3401,7 @@ body {
     });
     </script>
 
-                    <div class="form-group">
-                        <label for="rating">Rating</label>
-                        <select id="rating" name="rating" required>
-                            <option value="5">Excellent - 5 Stars</option>
-                            <option value="4">Very Good - 4 Stars</option>
-                            <option value="3">Good - 3 Stars</option>
-                            <option value="2">Fair - 2 Stars</option>
-                            <option value="1">Poor - 1 Star</option>
-                        </select>
-                    </div>
+
 
                     <button type="submit">Submit Feedback</button>
                 </form>
