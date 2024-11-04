@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="Header">
+                Track your expenses with whole clarity
+        </div>
+    </header>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        
+        <!-- Monthly Limit Section -->
+        <div class="limit-container">
+            <input type="number" id="monthlyLimit" placeholder="Set Monthly Limit">
+            <button id="setLimit">Set Limit</button>
+        </div>
+        
+        <!-- Current Status Section -->
+        <div class="status-container">
+            <div class="status-item">
+                <h3>Monthly Limit:</h3>
+                <p id="limitAmount">₹0.00</p>
+            </div>
+            <div class="status-item">
+                <h3>Total Expenses:</h3>
+                <p id="totalExpenses">₹0.00</p>
+            </div>
+            <div class="status-item">
+                <h3>Remaining:</h3>
+                <p id="remainingAmount">₹0.00</p>
+            </div>
+        </div>
+
+        <!-- Add Expense Form -->
+        <div class="form-container">
+            <input type="text" id="expenseName" placeholder="Expense Name">
+            <input type="number" id="expenseAmount" placeholder="Amount">
+            <input type="date" id="expenseDate">
+            <button id="addExpense">Add Expense</button>
+        </div>
+
+        <!-- Expenses List -->
+        <div class="expense-list">
+            <h2>Expenses</h2>
+            <ul id="expensesList"></ul>
+        </div>
+
+        <!-- Chart -->
+        <div class="chart-container">
+            <canvas id="expenseChart"></canvas>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <p 
+            style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-left: 20px; 
+            ">Created by Jivan with ❤</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
