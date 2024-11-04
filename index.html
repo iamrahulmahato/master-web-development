@@ -15,7 +15,7 @@
     <link rel="preconnect" href= "https://fonts.googleapis.com" />
     <link rel="preconnect" href= "https://fonts.gstatic.com" crossorigin />
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -292,6 +292,52 @@ body {
             animation-timeline: view();
             animation-range: entry 0% cover 40%;
         }
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 2000px; /* Add some height to enable scrolling */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Scroll to Top Button Styles */
+        .top-btn {
+            display: none;
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            bottom: 23px;
+            right: 44px;
+            background-color: #ab45e7;
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .top-btn:hover {
+            background-color: #c91e57;
+        }
+        .source-code-btn {
+    color: #333;
+    background-color: #f5f5dc;
+    padding: 10px 20px;
+    border: 2px solid #d4d4aa;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.source-code-btn:hover {
+    background-color: #e0e0c1;
+    color: #222;
+    border-color: #c1c17d;
+    transform: translateY(-2px);
+}
     </style>
 </head>
 
@@ -299,6 +345,24 @@ body {
     <div id="progress-container">
         <div id="progress-bar"></div>
       </div>
+      <button class="top-btn" id="goToTopBtn" onclick="goToTop()"> 
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script>
+         const goToTopBtn = document.getElementById("goToTopBtn");
+
+         window.onscroll = function () {
+            if (window.scrollY > 100) {
+                goToTopBtn.style.display = "flex"; // Use "flex" to center the icon
+            } else {
+                goToTopBtn.style.display = "none";
+            }
+        };
+        function goToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
     <div class="icon">
         <div class="icon2">
             <button id="toggle-mode-btn">
@@ -308,6 +372,44 @@ body {
                 </svg>
             </button>
         </div>
+
+        
+        <!-- Profile Icon -->
+        <li class="nav-item no-underline">
+            <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon" style="width: 50px; height: 50px; border-radius: 50%; margin-top: -17px;">
+        </a>
+        </li>
+
+        <style>
+
+        /* Override the existing hover styles */
+        .navbar-nav .nav-item .profile-link:hover {
+            background-color: transparent !important; /* Remove background color */
+            border-radius: 0 !important; /* Reset border radius */
+            transform: none !important; /* Prevent scaling */
+        }
+
+        </style>
+
+        <script>
+
+            function toggleMenu() {
+                const menu = document.getElementById('profileMenu');
+                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+                if (!event.target.matches('.profile-icon img')) {
+                    const menu = document.getElementById('profileMenu');
+                    if (menu.style.display === 'block') {
+                        menu.style.display = 'none';
+                    }
+                }
+            }
+
+        </script>
 
     </div>
 
@@ -320,7 +422,7 @@ body {
             <div class="btn-container">
            
             <div class="btn-container hero-btn-container">
-                <button id="quiz-button" class="source-code-btn">Go to Challenges</button>
+                
 
                 <a href="http://github.com/iamrahulmahato/master-web-development" target="_blank"
                     rel="noopener noreferrer" class="source-code-btn">View source code</a>
@@ -351,18 +453,7 @@ body {
         
         <div class="slider">
 
-        <div class="list">
-
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search games by Title/Description..."
-                    oninput="filterCards()">
-                <button class="search-btn" onclick="filterCards()">
-                    <span class="search-icon"></span>
-                    Search
-                </button>
-            </div>
-        </div>
-
+       
         <div class="slider">
 
             <div class="list">
@@ -372,13 +463,13 @@ body {
 
                     <div class="content">
                         <div class="title">
-                            Air Ballon
+                            Air Balloon
                         </div>
                         <div class="type">
                             Game
                         </div>
                         <div class="description">
-                            A simple air ballon game.......
+                            A simple air balloon game.......
                         </div>
                         <div class="button">
                             <button>SLIDE MORE</button>
@@ -477,7 +568,7 @@ body {
             <p>Master web development</p>
             <h3><span>Organize</span> Projects</h3>
 <div class="nextPrevArrows">
-    <button class="prev"></button>
+    <button class="prev"> < </button>
     <button class="next"> > </button>
 </div>
 
@@ -970,6 +1061,17 @@ body {
                     <h3 class="card-heading">Password Generator</h3>
                     <p class="card-description">
             Generate secure passwords easily!
+                    </p>
+                </div>
+       </a>
+            <a href="./projects/memeGen/index.html" class="card" target="_blank">
+                <div class="card-cover counter-cover-colour">
+                    <img src="./assets/image/images.png" alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">Meme Generator</h3>
+                    <p class="card-description">
+                        A meme generator.
                     </p>
                 </div>
             </a>
@@ -3720,7 +3822,9 @@ align-items: center; /* Center the popup */
 z-index: 1000; /* Sit on top */
 
 }
-
+.source-code-btn {
+    background-color:#f74b67 ;
+}
 .popup-content {
 
 background: linear-gradient(#f74b67, #e7d3d7), url(your-image-url.jpg);
