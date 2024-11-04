@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Shoot Easter Bunny</title>
+</head>
+
+<body>
+    <nav>
+        <div class="pull-left"><img src="https://s10.postimg.org/7jxzp3zut/score.png" /><span class="myTopScore">0
+            </span><img src="https://s10.postimg.org/i2xzea2it/shots.png" /><span class="hits">0</span></div>
+        <div class="pull-right"><img src="https://s12.postimg.org/jkvpa0pw9/gun_01.png" class="active gun-2" /><img
+                src="https://s10.postimg.org/fmw60fkg5/gun_02.png" class="gun-1" />
+            <button class="btn btn-stop">Stop</button>
+            <button class="btn btn-start">start</button>
+        </div>
+        <div class="time">45</div>
+    </nav>
+    <div class="holder">
+        <div class="egg"></div>
+        <div class="egg"></div>
+        <div class="egg"></div>
+        <div class="egg"></div>
+        <div class="egg"></div>
+        <div class="egg"></div>
+        <div class="egg"></div>
+        <div class="egg"></div>
+        <div class="egg"></div>
+    </div>
+    <!-- Game-->
+    <div class="overlay show">
+        <div class="popup text-center">
+            <div class="pop-header"><a class="close pop-close">x</a></div>
+            <h3>Shoot easter bunny..!</h3>
+            <button class="btn mtl pop-close btn-start">Start</button>
+        </div>
+    </div>
+    <!-- Game Over-->
+    <div id="gameOver" class="overlay">
+        <div class="popup">
+            <div class="pop-header"><a class="close pop-close">x</a></div>
+            <h4>Top Score<span class="pull-right myTopScore">0</span></h4>
+            <h4>Score<span class="pull-right hits">0</span></h4>
+            <div class="text-center">
+                <button class="btn pop-close btn-start">Restart</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+</body>
+
+</html>
