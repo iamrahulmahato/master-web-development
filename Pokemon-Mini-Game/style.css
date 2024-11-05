@@ -1,0 +1,288 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.loader{
+  height:100%;
+  width:100%;
+ position: fixed;
+  z-index: 100;
+  background-color: #27313d;
+}
+.forLoadingBody{
+  height:100vh;
+  width:100vw;
+  position: fixed;
+  z-index: 99;
+  background-color: #27313d;
+  margin:0px;
+}
+.removeLoader{
+  visibility: hidden;
+}
+
+body{
+  transition: all 1s ease;
+}
+div{
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px; 
+}
+#result{
+  margin:0;
+}
+
+#welcome{
+  text-align: center;
+}
+
+#wel{
+  color:black;
+   display: inline-block;
+   text-align: center; 
+  padding: 40px;
+  padding-top: 10px;
+  padding-bottom: 35px;
+    border: 1px solid black;
+background-image: url("pokemon-icon-vector-free.jpg");
+  background-size: cover;
+   border-radius: 20px;
+margin-top: 10px;
+  position:relative;
+transition: all .5s ease;
+}
+#wel:hover{
+  text-shadow: 0 0 4px cyan,0 0 3px cyan,0 0 2px cyan,0 0 1px cyan;
+}
+
+#mode{
+  padding: 10px;
+  border-radius: 13px;
+  font-size: 20px;
+   position: fixed; 
+  top:15px;
+  right:15px;
+}
+button:hover{
+  background-color: gray; 
+  color:whitesmoke;
+  transform: scale(1.08);
+  cursor:pointer;
+}
+button:focus {
+  background-color: #969695; 
+  color:whitesmoke;
+ transform: scale(1.04);
+}
+button:active {
+  background-color: #5c5c5b; 
+  color: white;
+  transform:scale(0.9);
+}
+ 
+
+.choices{
+  display: flex; 
+  /* position: relative;
+  top:100px; */
+   justify-content: space-around;
+  gap:50px;
+}
+.choice{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  
+}
+.choice img{
+  height: 150px;
+  width:150px;
+border-radius: 50%;
+  transition: all 0.1s ease;
+}
+
+ .choice :hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  filter:brightness(110%);
+   
+ }
+
+.choices:has(img:hover) img:not(:hover){
+  opacity: 50%;
+   transform: scale(0.9);
+  filter:grayscale(5%);
+}
+
+.choices:has(img:active) img:not(:active){
+  opacity: 80%;
+   transform: scale(0.9);
+  filter:blur(1px);
+}
+.choice :active{
+  cursor: pointer;
+   transform: scale(0.85);
+  filter:brightness(110%) sepia(10%) contrast(10px);
+  transition: all 0.1s ease;
+}
+#ground :hover{
+  box-shadow: 0px 0px 25px 10px #795548;
+  
+}
+#water :hover{
+  box-shadow: 0px 0px 25px 5px #03a9f4;
+}
+#fire :hover{
+  box-shadow: 0px 0px 25px 5px#ff9800;
+}
+#grass :hover{
+  box-shadow: 0px 0px 25px 5px #8bc34a;
+}
+#flying :hover{
+  box-shadow: 0px 0px 25px 10px #607d8b;
+}
+
+
+
+
+
+#fight{
+   display: block; 
+  text-align: center;
+padding:10px;
+   border: 1px solid black;
+  background-color: #808080;
+ }
+#result{
+  display: flex;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px;
+  justify-content: center;
+  gap:50px;
+  text-align: center;
+border: 1px solid black;
+  margin-top: 20px;
+  background-color: #808080;
+}
+
+#choose{
+   display: block; 
+    text-align: center;
+  padding:10px;
+     border: 1px solid black;
+    background-color: #808080;
+  margin-bottom: 20px;
+  font-size: 25px;;
+}
+
+#rules,#choose_your_pokemon{
+  margin-left: 5px;
+}
+#rules p{
+   font-family: 'Times New Roman', Times, serif; 
+}
+
+#aboutMe{
+margin: 10px;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+ 
+ #aboutMe a{
+   color:#aef2f5; 
+  text-decoration: dotted underline;
+  
+  text-decoration-color: #e34646;
+  text-decoration-thickness: 3px;;
+} 
+ #aboutMe p{
+margin: 20px;
+}
+
+
+
+
+#scaledFrame{
+  height: 600px;
+  width: 599px;
+  border: 1px solid black;
+  background-color: #808080;
+}
+
+@media(max-width:600px){
+  body{
+    width:600px;
+  }
+  
+  .choice :active{
+    opacity: 100%;
+    cursor: pointer;
+     transform: scale(0.9);
+  }
+  .choice :hover{
+    opacity: 100%;
+    cursor: pointer;
+     transform: scale(1);
+  }
+  
+.choices{
+  display: flex;
+  justify-content: space-around;
+  gap:50px;
+  flex-wrap: wrap;
+}
+  #rules{
+    font-size: 16px;
+  }
+}
+
+@media(min-width:600px)and (max-width:1000px){
+  body{
+    width:900px;
+  }
+  .choices{
+  display: flex;
+  justify-content: space-around;
+  gap:50px;
+  flex-wrap: wrap;
+} 
+  .choice :active{
+    opacity: 100%;
+    cursor: pointer;
+     transform: scale(0.9);
+  }
+  .choice :hover{
+    opacity: 100%;
+    cursor: pointer;
+     transform: scale(1);
+  }
+  
+} 
+/* @media(min-width:900px)and (max-width:1024px){
+body{
+  width:1024px;
+}
+} */
+
+
+
+.removeFrame{
+  display:none;
+}
+
+
+
+body ::selection{
+  background-color:#7f98b5;
+}
+body :not(a)::selection{
+  color: #b52a48;
+}
+.choices ::selection, button::selection, br::selection, #mode ::selection, a::selection, iframe::selection{
+  background-color: transparent;
+}
+
