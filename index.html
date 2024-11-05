@@ -73,7 +73,20 @@ body {
 
 .follow-us a:hover img {
     filter: grayscale(0%);
+    animation-name: spin;
+  animation-duration: 2500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
+@keyframes spin {
+  from {
+    transform: rotate(0deg) scale(1.3);
+  }
+  to {
+    transform: rotate(360deg) scale(1.3);
+  }
+}
+
 
 /* Specific styles for each social media platform */
 .follow-us a.twitter {
