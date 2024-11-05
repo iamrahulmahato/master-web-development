@@ -321,7 +321,7 @@ body {
             background-color: #c91e57;
         }
         .source-code-btn {
-    color: #333;
+    color: white;
     background-color: #f5f5dc;
     padding: 10px 20px;
     border: 2px solid #d4d4aa;
@@ -513,7 +513,7 @@ body {
                             A simple air balloon game.......
                         </div>
                         <div class="button">
-                            <button>SLIDE MORE</button>
+                            <button  style="color:white;">SLIDE MORE</button>
                         </div>
                     </div>
                 </div>
@@ -608,11 +608,12 @@ body {
         <div class="projects-heading">
             <p>Master web development</p>
             <h3><span>Organize</span> Projects</h3>
+            <!--
 <div class="nextPrevArrows">
     <button class="prev"> < </button>
     <button class="next"> > </button>
 </div>
-
+-->
 
             </div>
 
@@ -629,6 +630,7 @@ body {
                 <button class="source-code-btn" onclick="filterCategory('Mathematical')">Mathematical</button>
                 <button class="source-code-btn" onclick="filterCategory('Security')">Security Tools</button>
                 <button class="source-code-btn" onclick="filterCategory('Miscellaneous')">Miscellaneous</button>
+
             
                 <div class="nextPrevArrows">
                     <button class="prev"> < </button>
@@ -639,7 +641,19 @@ body {
             
 
 
+
         <div class="projects-container">
+            <a href="./projects/Diwali_Wish/index.html" class="card Generators" target="_blank">
+                <div class="card-cover">
+                    <img src="./projects/Diwali_Wish/image.png" alt="Diwali Wish">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">Animated Diwali Wish</h3>
+                    <p class="card-description">
+                        An animated website to wish Happy Diwali.
+                    </p>
+                </div>
+            </a>
             <a href="./projects/GenerateGradientColor/index.html" class="card Generators" target="_blank">
                 <div class="card-cover">
                     <img src="https://cssgradient.io/images/css-gradient-examples-ba7f335a.svg" alt="Generate Gradient">
@@ -3346,6 +3360,18 @@ body {
     </a>
 
 
+   
+  <!-- =========================== Fund tracking ================================= -->
+<a href="projects/Fund-tracking/index.html" class="card" target="_blank">
+    <div class="card-cover counter-cover-colour" style="background-image: url('projects/Fund-tracking/design/desktop-design.jpg'); background-size: cover; background-position: center; height: 10rem;">
+    </div>
+    <div class="card-content">
+        <h3 class="card-heading">Fund Tracking</h3>
+        <p class="card-description">
+            This project helps visually represent government funding and tracking.
+        </p>
+    </div>
+</a>
 
     <a href="projects/Eigen Value and Vector Calculator/index.html" class="card" target="_blank">
         <div class="card-cover counter-cover-colour">
@@ -3364,7 +3390,7 @@ body {
     <!--============================== End =========================================== -->
 
     <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
-    <div>
+    <div class="feedback-form">
 
         <section id="feedback">
             <div class="container">
@@ -3553,12 +3579,10 @@ body {
             padding: 0;
         }
     </style>
-    <!-- Footer -->
-
-    <!-- Footer -->
-    <footer>
+  
+    <!-- <footer>
         <div class="footer-content">
-            <!-- Quick Links Section -->
+            Quick Links Section
             <div class="footer-section quick-links">
                 <h3>Quick Links</h3>
                 <ul>
@@ -3569,12 +3593,13 @@ body {
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
-            <!-- About Us Section -->
+            About Us Section
+
             <div class="footer-section about-us">
                 <h3>About Us</h3>
                 <p>Empowering aspiring developers to master web development through hands-on, small-scale projects.</p>
             </div>
-            <!-- Newsletter Section -->
+            Newsletter Section
             <div class="footer-section newsletter">
                 <h3>Subscribe to Our Newsletter</h3>
                 <form>
@@ -3582,9 +3607,9 @@ body {
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
-        </div>
+        </div> -->
 
-
+    </footer>  -->
 
     <!-- Added FAQ Section -->
     <section id="faq">
@@ -3629,6 +3654,9 @@ body {
             margin-bottom: 20px;
             font-size: 2rem;
         }
+
+        /*Dark Mode theme styling adjustments*/
+        
         
         .faq-item {
             margin-bottom: 15px;
@@ -3669,10 +3697,10 @@ body {
     
 
 <!-- Footer -->
-<footer>
-    <div class="footer-content">
+<footer id="footer1">
+    <div class="footer-content" id="footer-content">
         <!-- Quick Links Section -->
-        <div class="footer-section quick-links">
+        <div class="footer-section quick-links" id="footer-section">
             <h3>Quick Links</h3>
             <ul>
                 <li><a href="./index.html">Home</a></li>
@@ -3682,22 +3710,74 @@ body {
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
         </div>
+
         <!-- About Us Section -->
-        <div class="footer-section about-us">
+        <div class="footer-section about-us" id="footer-section">
             <h3>About Us</h3>
             <p>Empowering aspiring developers to master web development through hands-on, small-scale projects.</p>
         </div>
-        
 
         <!-- Newsletter Section -->
-        <div class="footer-section newsletter">
+        <div class="footer-section newsletter" id="footer-section">
             <h3>Subscribe to Our Newsletter</h3>
             <form>
                 <input type="email" placeholder="Enter your email" required>
                 <button type="submit">Subscribe</button>
             </form>
         </div>
-        <div class="follow-us">
+
+    </div>
+
+    <div class="share-section">
+        <button id="shareBtn">Share Us</button>
+    </div>
+
+    <!-- Bottom Links Section -->
+    <ul class="gridbox">
+        <li><a href="#">Help Centre</a></li>
+        <li><a href="./welcometestimonials.html">Testimonials</a></li>
+        <li><a href="#">Account</a></li>
+        <li><a href="#">Media Centre</a></li>
+        <li><a href="./terms.html">Terms of Use</a></li>
+        <li><a href="./privacy.html">Privacy</a></li>
+        <li><a href="#">Cookie Preferences</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+    </ul>
+
+    <!-- Social Media Icons -->
+    <div class="social-media">
+        <a class="spaced-item" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a class="spaced-item" href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a class="spaced-item" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a class="spaced-item" href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a class="spaced-item" href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest"></i></a>
+        <a class="spaced-item" href="https://www.snapchat.com" target="_blank"><i class="fab fa-snapchat-ghost"></i></a>
+        <a class="spaced-item" href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+    
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>© 2024 Open Projects. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('shareBtn').addEventListener('click', function () {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Contact Us',
+                text: 'Check out this Contact Us page!',
+                url: window.location.href
+            }).then(() => {
+                console.log('Thanks for sharing!');
+            }).catch((error) => {
+                console.error('Error sharing:', error);
+            });
+        } else {
+            alert('Web Share API is not supported in your browser.');
+
+        <div class="footer-section follow-us" id="footer-section">
             <DIV>
                 <h3>Follow Us</h3>
             <a href="https://www.linkedin.com/in/berajeevkumar/" target="_blank">
@@ -3711,7 +3791,9 @@ body {
             </a>
             </DIV>
         </div>
-    </div><a href=""> <style>
+
+    </div>
+    <style>
         .share-section {
             text-align: center;
             margin-top: 20px;
@@ -3723,18 +3805,40 @@ body {
             border: none;
             border-radius: 5px;
             cursor: pointer;
+
         }
-        #shareBtn:hover {
-            background-color: #f8bab5;
+    });
+</script>
+
+
+<script>
+    document.getElementById('shareBtn').addEventListener('click', function () {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Contact Us',
+                text: 'Check out this Contact Us page!',
+                url: window.location.href
+            }).then(() => {
+                console.log('Thanks for sharing!');
+            }).catch((error) => {
+                console.error('Error sharing:', error);
+            });
+        } else {
+            alert('Web Share API is not supported in your browser.');
         }
+
+    });
+</script>
+
+
+
+
     </style>
-</head>
-<body>
-            <div class="share-section">
-                <button id="shareBtn">Share Us</button>
-            </div>
+    <a href=""> 
+        <div class="share-section">
+            <button id="shareBtn">Share Us</button>
         </div>
-    </section>
+    </a>
     <script>
         document.getElementById('shareBtn').addEventListener('click', function() {
             if (navigator.share) {
@@ -3752,7 +3856,6 @@ body {
             }
         });
     </script>
-</a></li>
 
         <!-- Bottom Links Section -->
         <ul class="gridbox">
@@ -3769,7 +3872,7 @@ body {
         </ul>
         
         <!-- Footer Bottom -->
-        <div class="footer-bottom">
+        <div class="footer-bottom" id="footer-bottom">
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -3781,14 +3884,8 @@ body {
             </div>
             <p>© 2024 Open Projects. All Rights Reserved. </p>
         </div>
-    </footer>
+</footer>
 
-</body>
-
-</html>
-
-
-</section>
 
 <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
 
@@ -3798,8 +3895,8 @@ body {
 <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
+<!-- visitor -->
 
-visitor
 
 <script>
     // Function to redirect to quiz.html
@@ -3828,20 +3925,17 @@ visitor
 <script src="./assets/css/visitors.css"></script>
 <script src="visi.js"></script>
 
-
-main
- main
-
-
+<!-- main
+ main -->
 
  
 
   
-    <style>
+<style>
 
 body {
-
 font-family: Arial, sans-serif;
+height: auto;
 
 }
 
@@ -3861,7 +3955,7 @@ z-index: 1000; /* Sit on top */
 
 }
 .source-code-btn {
-    background-color:#f74b67 ;
+    background-color:#f02647 ;
 }
 .popup-content {
 
@@ -4115,7 +4209,7 @@ font-size: 15px;
         }
   
   
-      </style>
+</style>
       <div id="popup-nl" class="popup-nl">
         <div class="popup-content-nl">
             <div class="popup-left-nl">
@@ -4251,8 +4345,6 @@ font-size: 15px;
     console.log("Poll script initialized and ready!");
 
 </script>
-
-
       <script>
 
         window.addEventListener('scroll', function() {
