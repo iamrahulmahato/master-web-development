@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poki-World</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="pokeball.jpg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  
+</head>
+<body >
+ 
+<div class="forLoadingBody">
+  
+  <l-quantum class="loader"
+    size="100"
+    speed="2"
+    color="white" 
+  ></l-quantum>
+ 
+  
+  <div id=welcome>
+ <h1 id="wel"><i>Welcome to Poki-verse</i></h1>
+  </div>
+
+  
+  <button id="mode"><i class="fa-regular fa-lightbulb"></i> <span id="modeText"> Light mode</span></button>
+  
+<br>
+  <br>
+  <h1 id="choose_your_pokemon"> <pre>Choose your 
+    pokemon:-</pre></h1>
+<br>
+<div class="choices">
+   
+  <div class="choice" id="ground"><img src="ground-removebg-preview.png" alt="ground"> <br> <i class="fa-solid fa-map-pin"></i> 
+   Ground-type</div>
+  <div class="choice" id="water"><img src="water-removebg-preview (1).png" alt="water"><br> <i class="fa-solid fa-droplet"></i> 
+   Water-type</div>
+  <div class="choice" id="fire"><img src="fire-removebg-preview-removebg-preview.png" alt="fire"><br> <i class="fa-solid fa-fire"></i> 
+   Fire-type</div>
+  <div class="choice" id="grass"><img src="grass-removebg-preview.png" alt="grass"><br><i class="fa-brands fa-pagelines"></i>  
+   Grass-type</div>
+  <div class="choice" id="flying"><img src="flying-removebg-preview-removebg-preview.png" alt="flying"><br> <i class="fa-solid fa-dove"></i> 
+   Flying-type</div>
+
+</div>
+ <br>
+  <br>
+  <h1 id="choose"><i class="fa-solid fa-user-ninja"></i> <span id="chooseText">Choose a Pokemon</span></h1>
+  
+<h2 id="fight"><i class="fa-brands fa-free-code-camp"></i> <span id="fightText" >Fight</span></h2> 
+
+
+  
+<div id="result">
+  
+  <div id=y_score>
+  <h4> <i class="fa-regular fa-user"></i> Your Score</h4>
+    <h4 id="yourScore">0</h4>
+  </div>
+  
+  <div id="c_score">
+  <h4><i class="fa-solid fa-computer"></i> Computer Score</h4>
+  <h4 id="computerScore">0</h4>
+  </div>
+</div>
+  <br>
+
+
+
+  <details id="rules">
+    <summary><h3 style="display: inline;"> <i class="fa-solid fa-scale-balanced"></i> Rules</h3> </summary>
+    <p><span style="font-size:16px;font-weight: bold;">Rules:-</span>
+    1. Fire type pokemon weakness is Water and Ground type pokemon. <br>
+    2. Water type pokemon weakness is Grass and Flying type pokemon. <br>
+    3. Grass type pokemon weakness is Fire and Flying type pokemon. <br>
+    4. Flying type pokemon weakness is Fire and Ground type pokemon. <br>
+    5. Ground type pokemon weakness is Water and Grass type pokemon. <br>
+    6. Fire type pokemon is strong against Flying and Grass type pokemon. <br>
+    7. Water type pokemon is strong against Fire and Ground type pokemon. <br>
+    8. Grass type pokemon is strong against Water and Ground type pokemon. <br>
+    9. Flying type pokemon is strong against Water and Grass type pokemon. <br>
+    10. Ground type pokemon is strong against Flying and Fire type pokemon. <br>
+      
+  </p>
+    </details>
+
+  
+
+
+
+  <footer id="copyright"> 
+  <p>&copy; 2024 GSSOC. All Rights Reserved.</p>
+   
+  </footer>
+
+
+
+
+
+
+   </div>
+
+  <script src="script.js"></script>
+   <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/quantum.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+@import "compass";
+*, *:after, *:before{
+  @include box-sizing(border-box);
+}
+body{
+background: url(https://stutzmansfinest.com/wp-content/uploads/2015/09/wood-background-design-decorating-7.jpg);
+    background-size: cover;
+    padding: 0;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  @include user-select(none);
+}
+
+
+
+nav{
+  overflow-y: auto;
+  padding: 10px 15px 5px;
+  background: #ffd54f;
+  margin: 0 0 35px;
+  color: #000;
+  display: block;
+  position: relative;
+  overflow: visible;
+  height: 55px;
+  vertical-align: middle;
+  min-width: 600px;
+  
+  
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+   span {
+      padding: 0 24px;
+      font-size: 30px;
+      vertical-align: middle;
+  }
+  img{
+    vertical-align: middle;
+  }
+  
+  .btn{
+    margin-left: 15px;
+  }
+  .pull-right{
+    img{
+      margin:0 10px;
+      cursor: pointer;
+      opacity: .5;
+      &.active{
+        opacity: 1;
+        cursor: auto;
+      }
+    }
+  }
+  
+}
+
+.pull-left{float: left;}
+.pull-right{float: right;}
+.text-center{text-align: center;}
+.overlay {
+    position: fixed;
+    background:rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    z-index: 1000;
+  left: 0;top: 0;right: 0;bottom: 0;
+  
+}
+.overlay.show {
+  visibility: visible;
+}
+.btn{
+  border:none;
+  height: 40px;
+  color: #fff;
+  width: 120px;
+  background:#1565C0;
+  text-transform: uppercase;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.btn-stop{
+  display: none;
+}
+.popup {
+    position: absolute;
+    max-width: 500px;
+    background: #fff;
+    padding: 25px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0px;
+    transition: .3s;
+    opacity: 0;
+}
+.show > .popup {
+  top: 150px;
+  opacity: 1;
+}
+
+.popup h4{
+    text-align: left;
+    background: #E5FBFA;
+    padding: 6px 10px;
+    color: #333;
+}
+.pop-header {
+    position: absolute;
+    top: -120px;
+    text-align: center;
+    width: 100%;
+    height: 150px;
+    left: 0;
+    z-index: 5;
+  background: url('https://s10.postimg.org/67gan82f9/bunni_popup.png') no-repeat;
+  background-position: center 0;
+      
+}
+.pop-header .close{
+  position: absolute;
+  color: #000;
+  right: 0;
+  bottom: -8px;
+  font-size: 22px;
+  cursor: pointer;
+  width: 30px;
+  text-align: center;
+}
+.pop-body {
+    max-height: 300px;
+    overflow-y: auto;
+}
+.time{
+  display: block;
+  position: absolute;
+  background: #ffd54f;
+  left: 0;
+  right: 0;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  line-height: 47px;
+  font-size: 22px;
+  margin: auto;
+  bottom: -5px;
+  box-shadow: 0 0 0 10px #FFD54F;
+  text-align: center;
+  
+  &::after{
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    @extend .time;
+    background: none;
+    border-top-color: #000;
+  }
+  &.start::after{
+    @include  animation(rotate 1s linear infinite );
+  }
+}
+
+
+
+
+.holder{
+  width: 600px;
+  margin: auto;
+  cursor: url(http://www.presentation-assistant.com/resources/pointers/target.png), cell;
+  text-align: center;
+  
+  &.gun-1{
+    cursor: url(http://static.wixstatic.com/media/d37920_ef1a27f43851431d9c51d82fc164afd1.png_srz_43_44_85_22_0.50_1.20_0.00_png_srz), crosshair;
+  }
+  
+}
+.egg {
+	position: relative;
+	display: inline-block;
+	width:120px;
+  height:160px;
+  margin:20px 25px;
+  position: relative;
+  &::after{
+    content: '';
+    position: absolute;
+    z-index: 50;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background:#f7f7f7;
+  @include  border-radius(50% / 55% 55% 45% 45%);
+  @include box-shadow(1em 1em 2em -1em rgba(0, 0, 0, .1),
+    					.1em .2em .7em -.1em rgba(0, 0, 0, .2),
+    					-.5em -1.5em 3em rgba(0, 0, 0, .15) inset,
+    					-.1em -.1em 1.5em rgba(0, 0, 0, .2) inset);
+  }
+
+  
+  &:nth-child(1)::after{ background: #05C1C3; }  
+  &:nth-child(2)::after{ background: #FD5151; }  
+  &:nth-child(3)::after{ background: #FEF049; }  
+  &:nth-child(4)::after{ background: #FC8637; }  
+  &:nth-child(5)::after{ background: #A6ED95; }  
+  &:nth-child(6)::after{ background: #6196CA; }  
+  &:nth-child(7)::after{ background: #F91C5C; }  
+  &:nth-child(8)::after{ background: #EF8702; }  
+  &:nth-child(9)::after{ background: #F76AB7; } 
+  
+}
+
+.bunny , .bunny-out{
+  position: absolute;
+  width: 100px;
+  height: 127px;
+  left: -70px;
+  margin: auto;
+  top: -50px;
+  z-index: 5;
+  &::after{
+      content: '';
+      background: url("https://s10.postimg.org/p8pqgqbm1/bunni_1.png") no-repeat;
+      width: 100px;
+      height: 127px;
+      display: block;
+      left:0;
+      right:0;
+      background-size: 100% auto;
+      @include rotate(-35deg);
+    }
+}
+
+
+
+.bunny-out {
+  opacity: 0;
+  -webkit-animation: headOut 0.5s ease-in;
+  animation: headOut 0.5s ease-in;
+
+  
+  &::after{
+  background-image: url("https://s10.postimg.org/pb9m3kf9l/bunni_2.png");
+}
+}
+
+
+
+
+
+
+
+
+.shot{
+  background: url(http://cliparts.co/cliparts/gie/qBd/gieqBd8id.png);
+  z-index: 150;
+  height: 100px;
+  width: 100px;
+  background-size: 100% auto;
+  position: absolute;
+  @include animation( shot .3s );
+  opacity: 0;
+}
+
+@include keyframes(shot){
+  0%{@include scale(0); opacity: 1;}
+  50%{@include scale(1.5)}
+}
+
+@include keyframes(headOut){
+    
+0% , 25%{ @include transform(translate(0 , 0)  rotate(-35deg)); opacity: 1; }
+25%{ @include transform(translate(-25px, -15px) rotate(-35deg))}
+100%{ @include transform(translate(-50px, 150px)  rotate(-170deg)); opacity: 0;}
+  
+}
+
+@include keyframes(rotate){
+    from {@include rotate(0deg);}
+    to {@include rotate(360deg);}
+}
