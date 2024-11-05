@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Flames compatibility calculator">
+    <meta name="author" content="Vansh Garg">
+    <meta name="keywords" content="Flames, Flames calculator">
+    <meta name="robots" content="index">
+    <meta http-equiv="refresh" content="120">
+    <style>
+        *{
+        margin:0;
+        padding:0;
+    }
+
+    main{
+        height: 100vh;
+        width:100vw;
+        overflow: hidden;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(227,100,216);
+        background: linear-gradient(205deg,rgb(191, 122, 191) 5%,   rgba(227,100,216,1) 7%, rgba(240,115,237,1) 16%, rgba(246,151,177,1) 37%, rgba(246,151,177,1) 54%, rgba(245,253,45,1) 100%);
+    }
+
+    .section{
+        width:500px;
+        z-index:10;
+        height:500px;
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        gap:30px;
+        background-color:blanchedalmond;
+        box-shadow: 2px 2px 5px white,0px 0px white,2px 2px 5px grey,0px 0px white;
+        border-radius:20px;
+    }   
+
+    h1{
+        display:block;
+        font-size:35px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color:crimson;
+        text-shadow:2px 2px 5px crimson;
+        text-align:center;
+    }
+
+    form{
+        height:400px;
+    }
+
+    label{
+        display:block;
+        text-align:center;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size:24px;
+        margin:10px;
+    }
+
+    .first-name,.second-name{
+        width:300px;
+        text-align:center;
+        font-size:18px;
+        margin:auto;
+        height:50px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        display:block;
+    }
+
+    .check-button{
+        display:block;
+        width:300px;
+        height:50px;
+        font-size:25px;
+        margin:auto;
+        margin-top:50px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border-radius:10px;
+        background-color: rgb(172, 166, 166);
+        border:none;
+        color:white;
+        z-index:18;
+    }
+
+    i{
+        position:absolute;
+        inset:-2px;
+        display: block;
+        border-radius: 10px;
+        width:302px;
+        height:55px;
+        top:440px;
+        left:617px;
+        z-index:-1;
+    }
+
+    i,i:nth-child(2){
+        background:linear-gradient(45deg,#00ccff,#575859,#4c4c4e,#d400d4);
+    }
+
+    i:nth-child(2){
+        filter:blur(10px);
+    }
+
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+
+    .main1{
+        height: 100vh;
+        width:100vw;
+        overflow: hidden;
+        display:none;
+        justify-content: center;
+        align-items: center;
+        background: rgb(227,100,216);
+        background: linear-gradient(205deg,rgb(191, 122, 191) 5%,   rgba(227,100,216,1) 7%, rgba(240,115,237,1) 16%, rgba(246,151,177,1) 37%, rgba(246,151,177,1) 54%, rgba(245,253,45,1) 100%);
+    }
+
+    .section1{
+        width:500px;
+        z-index:10;
+        height:500px;
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        gap:30px;
+        background-color:blanchedalmond;
+        box-shadow: 2px 2px 5px white,0px 0px white,2px 2px 5px grey,0px 0px white;
+        border-radius:20px;
+    }   
+
+    h1{
+        display:block;
+        font-size:35px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color:crimson;
+        text-shadow:2px 2px 5px crimson;
+        text-align:center;
+    }
+
+    p{
+        font-size:20px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bolder;
+        margin-left:200px;
+    }
+
+    .resultant{
+        font-size:28px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-shadow:1px 1px 3px black;
+        text-align:center;
+        margin:0;
+    }
+
+    .result-head{
+        text-align:center;
+        margin:0;
+    }
+    </style>
+    <title>Flames Calculator</title>
+</head>
+<body>
+    <main>
+        <div class="section">
+            <h1>FLAMES</h1>
+            <form action="" method="post" id="flames-form">
+                <label for="first-name">First Name:</label>
+                <input type="text" name="first-name" class="first-name" id="first-name" placeholder="Enter Your First Beloved Name" />
+                <label for="second-name">Second Name:</label>
+                <input type="text" name="second-name" class="second-name" id="second-name" placeholder="Enter Your Second Beloved Name" />
+
+                <button type="button" class="check-button" id="check-button">Check Compatibility</button><i></i>
+                
+            </form>
+        </div>
+    </main>
+
+    <div class="main1" id="main1">
+        <div class="section1">
+            <h1>Results</h1>
+            <p class="result-head" id="result-head">Your Relationship:</p>
+            <p class="resultant" id="resultant"></p>
+    
+            <p class="options">F - Friend</p>
+            <p class="options">L - Love</p>
+            <p class="options">A - Affection</p>
+            <p class="options">M - Marriage</p>
+            <p class="options">E - Enemy</p>
+            <p class="options">S - Sister</p>
+        </div>
+    </div>
+    <script>
+        var name1;
+var name2;
+const button = document.getElementById('check-button');
+if(button){
+    button.addEventListener('click',function(event){
+        event.preventDefault();
+        name1 = document.getElementById("first-name").value;
+        name2 = document.getElementById("second-name").value;
+        name1 = name1.trim();
+        name1 = name1.toLowerCase();
+        name2 = name2.trim();
+        name2 = name2.toLowerCase();
+        name1 = name1.replace(' ','');
+        name2 = name2.replace(' ','');
+        name1 = Array.from(new Set(name1)).join('');
+        name2 = Array.from(new Set(name2)).join('');
+        console.log(name1);
+        console.log(name2);
+        const flames = ['Sister','Friend','Love','Affection','Marriage','Enemy'];
+        if (name1 == '' || name2 == '') {
+            alert("Please enter both names.");
+            return;
+        }
+        var counter=0;
+        for(let i=0;i<name1.length;i++){
+
+            for(let j=0;j<name2.length;j++)
+            {
+                if(name1[i] == name2[j]){
+                    counter+=1;
+                }
+            }
+        }
+        const index = (counter+1)%6;
+        const result = flames[index];
+        document.getElementById("resultant").innerText = result;
+        document.getElementById("main1").style.display = "flex";
+    });
+}
+else{
+    console.error('Element not found');
+}
+    </script>
+</body>
+</html>
