@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escape Room Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"
+      defer
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main id="game-container">
+      <h1>Escape Room Game</h1>
+      <p>You find yourself in a locked room. Solve the puzzles to escape!</p>
+
+      <!-- Difficulty Selection Buttons -->
+      <section id="difficulty-selection">
+        <button
+          onclick="setDifficulty('easy')"
+          aria-label="Select Easy Difficulty"
+        >
+          Easy
+        </button>
+        <button
+          onclick="setDifficulty('medium')"
+          aria-label="Select Medium Difficulty"
+        >
+          Medium
+        </button>
+        <button
+          onclick="setDifficulty('hard')"
+          aria-label="Select Hard Difficulty"
+        >
+          Hard
+        </button>
+      </section>
+
+      <!-- Puzzle Section -->
+      <section id="puzzle-section" hidden>
+        <p id="puzzle"></p>
+        <div id="options"></div>
+        <div id="result-section"></div>
+      </section>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
