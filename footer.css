@@ -1,22 +1,38 @@
 /* General styles for the footer */
 footer {
     background-color: #f7f7f7; /* Light gray background */
-    padding: 30px 15px;
+    /* padding: 30px 15px; */
     text-align: center;
     color: #000;
     font-family: Arial, sans-serif;
+    width: 100vw;
+    /* border: 1px solid black; */
+    height: 70vh;
+    margin: 0;
+}
+
+.dark-change{
+    color:white !important;
+    background-color: black;
 }
 
 .footer-content {
     display: flex;
+
     justify-content: space-between; /* Use space-between for horizontal alignment */
+
+    justify-content: space-evenly;
+
     align-items: flex-start;
     padding-bottom: 20px;
     border-bottom: 1px solid #eaeaea;
+    /* border:1px solid black; */
+    width:100%;
 }
 
 .footer-section {
     flex: 1;
+    /* border:1px solid black; */
     margin: 0 15px;
 }
 
@@ -97,6 +113,8 @@ footer {
     background-color: #eaeaea; /* Background color for the footer bottom */
     text-align: center; /* Center the text */
     margin-top: 20px; /* Add margin to prevent overlap */
+    /* border:5px solid red; */
+    color:white;
 }
 
 .footer-bottom p {
@@ -119,6 +137,50 @@ footer {
         margin: 5px 0; /* Adjust margin for vertical alignment */
     }
 }
+
+
+.footer-bottom .social-icons a {
+    margin: 0 8px;
+    color: #000; /* Default color */
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+/* Hover effects for each social media icon */
+.footer-bottom .social-icons a:hover {
+    color: #000; /* Default hover color */
+}
+
+/* Specific hover colors for each icon */
+.footer-bottom .social-icons .fab.fa-facebook-f:hover {
+    color: #3b5998; /* Facebook Blue */
+}
+
+.footer-bottom .social-icons a:hover .fab.fa-twitter {
+    color: #1da1f2; /* Twitter Blue */
+}
+
+.footer-bottom .social-icons a:hover .fab.fa-instagram {
+    color: #e1306c; /* Instagram Red */
+}
+
+.footer-bottom .social-icons a:hover .fab.fa-linkedin-in {
+    color: #0077b5; /* LinkedIn Blue */
+}
+
+.footer-bottom .social-icons a:hover .fab.fa-youtube {
+    color: #ff0000; /* YouTube Red */
+}
+
+.footer-bottom .social-icons a:hover .fab.fa-pinterest {
+    color: #e60023; /* Pinterest Red */
+}
+
+.footer-bottom .social-icons a:hover .fab.fa-snapchat-ghost {
+     color: #fffc00;; /* Snapchat Yellow */
+     
+}
+
 .gridbox {
     list-style: none; /* Remove bullet points */
     padding: 0; /* Remove default padding */
@@ -143,6 +205,7 @@ footer {
     color: #f8c5c5; /* Change color on hover */
     text-decoration: underline; /* Add underline on hover */
 }
+
 
 
 
@@ -187,4 +250,56 @@ button:hover {
 }
 
 
+
+
+
+
+
+
+/* =========================================FOOTER DARK THEME=============================================*/
+
+/* Footer content and footer bottom for dark theme */
+[data-theme="dark"] .footer-content,
+[data-theme="dark"] .footer-bottom {
+    background-color: #121212; 
+    color: white; 
+    /* border-top: 1px solid #333;  */
+}
+
+[data-theme="dark"] .footer-content{
+    border-top:1px solid #333;
+}
+
+/*Footer content heading color */
+[data-theme="dark"] .footer-content h3,
+[data-theme="dark"] .footer-section h3 {
+    background-color: #121212; 
+    color: white; 
+    /* border-top: 1px solid #333;  */
+}
+
+[data-theme="dark"] .footer-section img{
+    filter: invert(100%);
+}
+
+/* Dark theme specific link colors */
+[data-theme="dark"] .footer-section ul li a,
+[data-theme="dark"] .footer-links-bottom a,
+[data-theme="dark"] .footer-bottom p {
+    color: #aaa; 
+}
+
+[data-theme="dark"] .footer-section ul li a:hover,
+[data-theme="dark"] .footer-links-bottom a:hover {
+    color: #f8c5c5; 
+}
+
+/* Dark mode styling for social icons */
+[data-theme="dark"] .social-icons a {
+    color: #aaa; 
+}
+
+[data-theme="dark"] .social-icons a:hover {
+    color: #f8c5c5;
+}
 
