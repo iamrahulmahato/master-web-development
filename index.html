@@ -321,7 +321,7 @@ body {
             background-color: #c91e57;
         }
         .source-code-btn {
-    color: #333;
+    color: white;
     background-color: #f5f5dc;
     padding: 10px 20px;
     border: 2px solid #d4d4aa;
@@ -470,7 +470,7 @@ body {
                             A simple air balloon game.......
                         </div>
                         <div class="button">
-                            <button>SLIDE MORE</button>
+                            <button  style="color:white;">SLIDE MORE</button>
                         </div>
                     </div>
                 </div>
@@ -565,11 +565,12 @@ body {
         <div class="projects-heading">
             <p>Master web development</p>
             <h3><span>Organize</span> Projects</h3>
+            <!--
 <div class="nextPrevArrows">
     <button class="prev"> < </button>
     <button class="next"> > </button>
 </div>
-
+-->
 
             </div>
 
@@ -590,13 +591,14 @@ body {
 
         
 
-        
+        <!--
             <div class="nextPrevArrows">
                 <button class="prev"> < </button>
                 <button class="next"> > </button>
 
             </div>
             <br />
+            -->
         </div>
 
 
@@ -3325,7 +3327,7 @@ body {
     <!--============================== End =========================================== -->
 
     <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
-    <div>
+    <div class="feedback-form">
 
         <section id="feedback">
             <div class="container">
@@ -3514,12 +3516,11 @@ body {
             padding: 0;
         }
     </style>
-    <!-- Footer -->
+  
 
-    <!-- Footer -->
-    <footer>
+    <!-- <footer>
         <div class="footer-content">
-            <!-- Quick Links Section -->
+            Quick Links Section
             <div class="footer-section quick-links">
                 <h3>Quick Links</h3>
                 <ul>
@@ -3530,12 +3531,12 @@ body {
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
-            <!-- About Us Section -->
+            About Us Section
             <div class="footer-section about-us">
                 <h3>About Us</h3>
                 <p>Empowering aspiring developers to master web development through hands-on, small-scale projects.</p>
             </div>
-            <!-- Newsletter Section -->
+            Newsletter Section
             <div class="footer-section newsletter">
                 <h3>Subscribe to Our Newsletter</h3>
                 <form>
@@ -3545,7 +3546,7 @@ body {
             </div>
         </div>
 
-
+    </footer>  -->
 
     <!-- Added FAQ Section -->
     <section id="faq">
@@ -3590,6 +3591,9 @@ body {
             margin-bottom: 20px;
             font-size: 2rem;
         }
+
+        /*Dark Mode theme styling adjustments*/
+        
         
         .faq-item {
             margin-bottom: 15px;
@@ -3630,10 +3634,10 @@ body {
     
 
 <!-- Footer -->
-<footer>
-    <div class="footer-content">
+<footer id="footer1">
+    <div class="footer-content" id="footer-content">
         <!-- Quick Links Section -->
-        <div class="footer-section quick-links">
+        <div class="footer-section quick-links" id="footer-section">
             <h3>Quick Links</h3>
             <ul>
                 <li><a href="./index.html">Home</a></li>
@@ -3644,21 +3648,21 @@ body {
             </ul>
         </div>
         <!-- About Us Section -->
-        <div class="footer-section about-us">
+        <div class="footer-section about-us" id="footer-section">
             <h3>About Us</h3>
             <p>Empowering aspiring developers to master web development through hands-on, small-scale projects.</p>
         </div>
         
 
         <!-- Newsletter Section -->
-        <div class="footer-section newsletter">
+        <div class="footer-section newsletter" id="footer-section">
             <h3>Subscribe to Our Newsletter</h3>
             <form>
                 <input type="email" placeholder="Enter your email" required>
                 <button type="submit">Subscribe</button>
             </form>
         </div>
-        <div class="follow-us">
+        <div class="footer-section follow-us" id="footer-section">
             <DIV>
                 <h3>Follow Us</h3>
             <a href="https://www.linkedin.com/in/berajeevkumar/" target="_blank">
@@ -3730,7 +3734,7 @@ body {
         </ul>
         
         <!-- Footer Bottom -->
-        <div class="footer-bottom">
+        <div class="footer-bottom" id="footer-bottom">
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -3788,10 +3792,6 @@ visitor
 <script src="path/to/visitorCounter.js"></script>
 <script src="./assets/css/visitors.css"></script>
 <script src="visi.js"></script>
-
-
-main
- main
 
 
 
