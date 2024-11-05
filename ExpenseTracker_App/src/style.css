@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.limit-container, .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.status-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.status-item {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.status-item h3 {
+    margin: 0;
+    color: #666;
+}
+
+.status-item p {
+    margin: 5px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #45a049;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #3d8b41;
+}
+
+.expense-list {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+.chart-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    left: 20px;
+    z-index: 1000;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    background-color: #da190b;
+}
+
+.Header {
+    display: flex; 
+    background-color: black; 
+    height: 40px;
+    color: white; 
+    font-size: 20px; 
+    font-family:'Courier New', Courier, monospace;
+    text-align: center; 
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+@media (min-width: 768px) {
+    .limit-container, .form-container {
+        flex-direction: row;
+    }
+
+    .status-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .status-item {
+        margin-bottom: 0;
+    }
+}

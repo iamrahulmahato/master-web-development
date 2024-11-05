@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Beautifier</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="shortcut icon" href="./assets/image/favicon.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+        }
+
+        .controls {
+            background: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        .control-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 0.5rem;
+            background: #3a3a3a;
+            border: 1px solid #4a4a4a;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background: #4a9eff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #3a8eef;
+        }
+
+        .preview {
+            background: #2a2a2a;
+            padding: 2rem;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        #code-input {
+            width: 100%;
+            height: 300px;
+            background: #1a1a1a;
+            color: #fff;
+            border: 1px solid #3a3a3a;
+            padding: 1rem;
+            font-family: 'Fira Code', monospace;
+            resize: vertical;
+            margin-bottom: 1rem;
+        }
+
+        #code-display {
+            padding: 2rem;
+            border-radius: 8px;
+            overflow: auto;
+        }
+
+        .hljs {
+            background: transparent !important;
+            padding: 0 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <div class="control-group">
+                <label for="theme">Theme</label>
+                <select id="theme">
+                    <option value="atom-one-dark">Atom Dark</option>
+                    <option value="github">GitHub</option>
+                    <option value="monokai">Monokai</option>
+                    <option value="dracula">Dracula</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="language">Language</label>
+                <select id="language">
+                    <option value="javascript">JavaScript</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="background">Background Color</label>
+                <input type="color" id="background" value="#2a2a2a">
+            </div>
+            <div class="control-group">
+                <label for="padding">Padding (px)</label>
+                <input type="number" id="padding" value="32" min="0" max="100">
+            </div>
+            <button id="export-btn">Export as Image</button>
+        </div>
+        <div class="preview">
+            <textarea id="code-input" placeholder="Enter your code here..."></textarea>
+            <div id="code-display"></div>
+        </div>
+    </div>
+
+    <script>
+        // Load additional languages
+        hljs.highlightAll();
+
+        const themeSelect = document.getElementById('theme');
+        const languageSelect = document.getElementById('language');
+        const backgroundInput = document.getElementById('background');
+        const paddingInput = document.getElementById('padding');
+        const codeInput = document.getElementById('code-input');
+        const codeDisplay = document.getElementById('code-display');
+        const exportBtn = document.getElementById('export-btn');
+
+        // Function to update code display
+        function updateCodeDisplay() {
+            const code = codeInput.value;
+            const language = languageSelect.value;
+            
+            codeDisplay.innerHTML = `<pre><code class="language-${language}">${code}</code></pre>`;
+            hljs.highlightElement(codeDisplay.querySelector('code'));
+            
+            // Apply styles
+            codeDisplay.style.backgroundColor = backgroundInput.value;
+            codeDisplay.style.padding = `${paddingInput.value}px`;
+        }
+
+        // Load theme
+        function loadTheme(themeName) {
+            const link = document.querySelector('link[rel="stylesheet"]');
+            link.href = `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/${themeName}.min.css`;
+        }
+
+        // Event listeners
+        themeSelect.addEventListener('change', () => loadTheme(themeSelect.value));
+        languageSelect.addEventListener('change', updateCodeDisplay);
+        backgroundInput.addEventListener('input', updateCodeDisplay);
+        paddingInput.addEventListener('input', updateCodeDisplay);
+        codeInput.addEventListener('input', updateCodeDisplay);
+
+        // Export functionality
+        exportBtn.addEventListener('click', () => {
+            html2canvas(codeDisplay).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'code-snippet.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        });
+
+        // Initial render
+        updateCodeDisplay();
+    </script>
+</body>
+</html>
