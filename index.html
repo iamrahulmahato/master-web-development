@@ -3658,12 +3658,12 @@ body {
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
         </div>
+
         <!-- About Us Section -->
         <div class="footer-section about-us" id="footer-section">
             <h3>About Us</h3>
             <p>Empowering aspiring developers to master web development through hands-on, small-scale projects.</p>
         </div>
-        
 
         <!-- Newsletter Section -->
         <div class="footer-section newsletter" id="footer-section">
@@ -3673,6 +3673,58 @@ body {
                 <button type="submit">Subscribe</button>
             </form>
         </div>
+
+    </div>
+
+    <div class="share-section">
+        <button id="shareBtn">Share Us</button>
+    </div>
+
+    <!-- Bottom Links Section -->
+    <ul class="gridbox">
+        <li><a href="#">Help Centre</a></li>
+        <li><a href="./welcometestimonials.html">Testimonials</a></li>
+        <li><a href="#">Account</a></li>
+        <li><a href="#">Media Centre</a></li>
+        <li><a href="./terms.html">Terms of Use</a></li>
+        <li><a href="./privacy.html">Privacy</a></li>
+        <li><a href="#">Cookie Preferences</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+    </ul>
+
+    <!-- Social Media Icons -->
+    <div class="social-media">
+        <a class="spaced-item" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a class="spaced-item" href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a class="spaced-item" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a class="spaced-item" href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a class="spaced-item" href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest"></i></a>
+        <a class="spaced-item" href="https://www.snapchat.com" target="_blank"><i class="fab fa-snapchat-ghost"></i></a>
+        <a class="spaced-item" href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+    
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>© 2024 Open Projects. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('shareBtn').addEventListener('click', function () {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Contact Us',
+                text: 'Check out this Contact Us page!',
+                url: window.location.href
+            }).then(() => {
+                console.log('Thanks for sharing!');
+            }).catch((error) => {
+                console.error('Error sharing:', error);
+            });
+        } else {
+            alert('Web Share API is not supported in your browser.');
+
         <div class="footer-section follow-us" id="footer-section">
             <DIV>
                 <h3>Follow Us</h3>
@@ -3699,10 +3751,34 @@ body {
             border: none;
             border-radius: 5px;
             cursor: pointer;
+
         }
-        #shareBtn:hover {
-            background-color: #f8bab5;
+    });
+</script>
+
+
+<script>
+    document.getElementById('shareBtn').addEventListener('click', function () {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Contact Us',
+                text: 'Check out this Contact Us page!',
+                url: window.location.href
+            }).then(() => {
+                console.log('Thanks for sharing!');
+            }).catch((error) => {
+                console.error('Error sharing:', error);
+            });
+        } else {
+            alert('Web Share API is not supported in your browser.');
         }
+
+    });
+</script>
+
+
+
+
     </style>
 </head>
 <body>
@@ -3759,6 +3835,7 @@ body {
         </div>
     </footer>
 
+
 </body>
 
 </html>
@@ -3775,7 +3852,7 @@ body {
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
 
-visitor
+
 
 <script>
     // Function to redirect to quiz.html
