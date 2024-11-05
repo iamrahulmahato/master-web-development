@@ -1,22 +1,39 @@
 /* General styles for the footer */
 footer {
     background-color: #f7f7f7; /* Light gray background */
-    padding: 30px 15px;
+    /* padding: 30px 15px; */
     text-align: center;
     color: #000;
     font-family: Arial, sans-serif;
+    height: auto;
+    width: 100vw;
+    /* border: 1px solid black; */
+    height: 70vh;
+    margin: 0;
+}
+
+.dark-change{
+    color:white !important;
+    background-color: black;
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-around;
+
+    justify-content: space-between; /* Use space-between for horizontal alignment */
+
+    justify-content: space-evenly;
+
     align-items: flex-start;
     padding-bottom: 20px;
     border-bottom: 1px solid #eaeaea;
+    /* border:1px solid black; */
+    width:100%;
 }
 
 .footer-section {
     flex: 1;
+    /* border:1px solid black; */
     margin: 0 15px;
 }
 
@@ -25,8 +42,6 @@ footer {
     color: #000;
     font-size: 18px;
     font-weight: bold;
-    position: relative;
-    transition: text-shadow 0.3s ease, color 0.3s ease;
 }
 
 .footer-section p {
@@ -38,10 +53,13 @@ footer {
 .footer-section ul {
     list-style: none;
     padding: 0;
+    display: flex; /* Change to flex for horizontal layout */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: space-between; /* Space items evenly */
 }
 
 .footer-section ul li {
-    margin-bottom: 8px;
+    margin: 0 10px; /* Horizontal margin between links */
 }
 
 .footer-section ul li a {
@@ -79,33 +97,14 @@ footer {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transform: translateY(-8px);
     transition: background-color 0.3s ease;
 }
 
 /* Hover effect on the subscribe button */
 .newsletter button:hover {
-    background-color: #e39a9a;
-}
-
-/* Footer bottom links */
-.footer-links-bottom {
-    display: flex;
-    justify-content: space-around;
-    padding: 15px 0;
-    background-color: #eaeaea;
-}
-
-.footer-links-bottom a {
-    text-decoration: none;
-    color: #00b894;
-    font-size: 14px;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-/* Hover effect on footer bottom links */
-.footer-links-bottom a:hover {
-    color: #0984e3;
+    background-color: #e59e9e; /* A darker shade for hover effect */
+    
 }
 
 /* Footer bottom section */
@@ -115,46 +114,8 @@ footer {
     background-color: #eaeaea; /* Background color for the footer bottom */
     text-align: center; /* Center the text */
     margin-top: 20px; /* Add margin to prevent overlap */
-}
-
-.footer-bottom .social-icons {
-    margin: 10px 0;
-}
-
-.footer-bottom .social-icons a {
-    margin: 0 8px;
-    color: #000;
-    font-size: 20px;
-    transition: color 0.3s ease;
-}
-
-/* Hover effect on social icons */
-.footer-bottom .social-icons a:hover {
-    color: #f8c5c5;
-}
-
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-    .newsletter input[type="email"], .newsletter button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    /* Hover effect on the subscribe button */
-.newsletter button:hover {
-    background-color: #e39a9a;
-    transform: scale(1.05); /* Slightly enlarge the button */
-}
-/* Footer bottom section */
-.footer-bottom {
-    padding-top: 10px;
-    padding-bottom: 10px; /* Add some bottom padding */
-    background-color: #eaeaea; /* Background color for the footer bottom */
-    text-align: center; /* Center the text */
+    /* border:5px solid red; */
+    color:white;
 }
 
 .footer-bottom p {
@@ -164,12 +125,21 @@ footer {
     font-family: Arial, sans-serif; /* Font family */
 }
 
-/* Media Query for responsive design */
+/* Mobile view adjustments */
 @media (max-width: 768px) {
-    .footer-bottom p {
-        font-size: 12px; /* Adjust font size for smaller screens */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section ul {
+        flex-direction: column; /* Stack links vertically on smaller screens */
+    }
+    .footer-section ul li {
+        margin: 5px 0; /* Adjust margin for vertical alignment */
     }
 }
+
+
 .footer-bottom .social-icons a {
     margin: 0 8px;
     color: #000; /* Default color */
@@ -183,7 +153,7 @@ footer {
 }
 
 /* Specific hover colors for each icon */
-.footer-bottom .social-icons a:hover .fab.fa-facebook-f {
+.footer-bottom .social-icons .fab.fa-facebook-f:hover {
     color: #3b5998; /* Facebook Blue */
 }
 
@@ -209,7 +179,9 @@ footer {
 
 .footer-bottom .social-icons a:hover .fab.fa-snapchat-ghost {
      color: #fffc00;; /* Snapchat Yellow */
+     
 }
+
 .gridbox {
     list-style: none; /* Remove bullet points */
     padding: 0; /* Remove default padding */
@@ -234,3 +206,101 @@ footer {
     color: #f8c5c5; /* Change color on hover */
     text-decoration: underline; /* Add underline on hover */
 }
+
+
+
+
+.social-media a {
+    margin: 0 10px; /* Adjusts horizontal spacing between icons */
+}
+
+.social-media {
+    display: flex; /* Aligns icons in a row */
+    justify-content: center; /* Centers the icons */
+}
+
+.social-media a {
+    margin: 0 10px; /* Adjusts horizontal spacing between icons */
+    color: white; /* Change color as needed */
+    text-decoration: none; /* Removes underline from links */
+}
+
+.social-media a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+.share-section {
+    display: flex; /* Align buttons in a row */
+    justify-content: center; /* Center the buttons */
+    margin-top: 20px; /* Space above the buttons */
+}
+
+button {
+    background-color: #007bff; /* Blue background for buttons */
+    color: white; /* Text color */
+    border: none; /* Removes border */
+    border-radius: 5px; /* Rounds corners */
+    padding: 10px 20px; /* Padding for buttons */
+    margin: 0 10px; /* Space between buttons */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+
+
+
+
+
+
+/* =========================================FOOTER DARK THEME=============================================*/
+
+/* Footer content and footer bottom for dark theme */
+[data-theme="dark"] .footer-content,
+[data-theme="dark"] .footer-bottom {
+    background-color: #121212; 
+    color: white; 
+    /* border-top: 1px solid #333;  */
+}
+
+[data-theme="dark"] .footer-content{
+    border-top:1px solid #333;
+}
+
+/*Footer content heading color */
+[data-theme="dark"] .footer-content h3,
+[data-theme="dark"] .footer-section h3 {
+    background-color: #121212; 
+    color: white; 
+    /* border-top: 1px solid #333;  */
+}
+
+[data-theme="dark"] .footer-section img{
+    filter: invert(100%);
+}
+
+/* Dark theme specific link colors */
+[data-theme="dark"] .footer-section ul li a,
+[data-theme="dark"] .footer-links-bottom a,
+[data-theme="dark"] .footer-bottom p {
+    color: #aaa; 
+}
+
+[data-theme="dark"] .footer-section ul li a:hover,
+[data-theme="dark"] .footer-links-bottom a:hover {
+    color: #f8c5c5; 
+}
+
+/* Dark mode styling for social icons */
+[data-theme="dark"] .social-icons a {
+    color: #aaa; 
+}
+
+[data-theme="dark"] .social-icons a:hover {
+    color: #f8c5c5;
+}
+
