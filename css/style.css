@@ -1017,6 +1017,20 @@ body {
     margin: 20px auto; /* Centering the section */
     text-align: center; /* Center text */
 }
+.container [data-theme="dark"] {
+    --bg: #1e293b;
+    --btn-color: #fecdd3;
+    --btn-text: #1e293b;
+    --head: #fff;
+    --card: #192333;
+    --p: #94A3B8;
+
+    --input-bg: #2c3a4b;  /* Input background color */
+    --input-border: #3b4a5a;  /* Input border color */
+    --input-text: #ffffff;  /* Input text color */
+    --input-placeholder: #fffff0; /* Placeholder text color */
+}
+
 
 #feedback-section h1 {
     font-family: 'Arial', sans-serif; /* Font family */
