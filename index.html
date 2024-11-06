@@ -497,14 +497,7 @@ body {
             </div> -->
 
             
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search games by Title/Description..."
-                oninput="filterCards()" style="margin-bottom: 10px;">
-              <button class="search-btn" onclick="filterCards()">
-                <span class="search-icon"></span>
-                Search
-              </button>
-            </div>
+
           </div>
 
        
@@ -652,7 +645,14 @@ body {
                 <br />
             </div>
 
-
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search games by Title/Description..."
+                oninput="filterCards()" style="margin-bottom: 10px;">
+              <button class="search-btn" onclick="filterCards()">
+                <span class="search-icon"></span>
+                Search
+              </button>
+            </div>
 
 
         <div class="projects-container">
@@ -5275,14 +5275,25 @@ body {
         [data-theme="dark"] .feedback-form textarea,
         [data-theme="dark"] .form-group textarea
         [data-theme="dark"] .form-group #feedback-content{
-            background-color:black;
+            background-color:#000327;
             color:white;
         }
         
         [data-theme="dark"] #feedback{
-            background:#000000;
+            background:#000327;
             border-top:1px solid #333;
         }
+
+        [data-theme="dark"] .dark-change{
+            color:white !important;;
+            background-color: #000327;
+        }
+
+        [data-theme="dark"] .quickLinks{
+            color:white !important;;
+            background-color: #000327;
+        }
+
 
 
 
@@ -5408,7 +5419,7 @@ body {
         /*Dark Mode theme styling adjustments*/
         [data-theme="dark"] #faq,
         [data-theme="dark"] #faq h2{
-            background-color:black;
+            background-color:#000327;
             color:white;
         }
 
@@ -5457,10 +5468,10 @@ body {
 
 <!-- Footer -->
 <footer id="footer1">
-    <div class="footer-content" id="footer-content">
+    <div class="footer-content">
         <!-- Quick Links Section -->
-        <div class="footer-section quick-links" id="footer-section">
-            <h3>Quick Links</h3>
+        <div class="footer-section quick-links">
+            Quick Links
             <ul>
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="chatbot.html">ChatBot</a></li>
@@ -5471,25 +5482,22 @@ body {
         </div>
 
         <!-- About Us Section -->
-        <div class="footer-section about-us" id="footer-section">
-            <h3>About Us</h3>
+        <div class="footer-section about-us">
+            About Us
             <p>Empowering aspiring developers to master web development through hands-on, small-scale projects.</p>
         </div>
 
         <!-- Newsletter Section -->
-        <div class="footer-section newsletter" id="footer-section">
-            <h3>Subscribe to Our Newsletter</h3>
+        <div class="footer-section newsletter">
+            Subscribe to Our Newsletter
             <form>
                 <input type="email" placeholder="Enter your email" required>
                 <button type="submit">Subscribe</button>
             </form>
         </div>
-
     </div>
 
-    <div class="share-section">
-        <button id="shareBtn">Share Us</button>
-    </div>
+
 
     <!-- Bottom Links Section -->
     <ul class="gridbox">
@@ -5502,7 +5510,10 @@ body {
         <li><a href="#">Cookie Preferences</a></li>
         <li><a href="./contact.html">Contact Us</a></li>
     </ul>
-
+    <!-- Share Section -->
+    <div class="share-section">
+        <button id="shareBtn">Share Us</button>
+    </div>
     <!-- Social Media Icons -->
     <div class="social-media">
         <a class="spaced-item" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -5513,13 +5524,25 @@ body {
         <a class="spaced-item" href="https://www.snapchat.com" target="_blank"><i class="fab fa-snapchat-ghost"></i></a>
         <a class="spaced-item" href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
     </div>
-    
 
     <!-- Footer Bottom -->
     <div class="footer-bottom">
         <p>© 2024 Open Projects. All Rights Reserved.</p>
     </div>
+
+    <link rel="stylesheet" href="visi.css">
+<!-- ############### Footer ############### -->
+<!-- Footer Visitor Counter -->
+<div class="visitor-counter-container">
+    <div class="visitor-counter">
+        <div>Visitor Counter</div>
+        <div class="website-counter">12345</div>
+    </div>
+</div>
+
+<script src="visi.js"></script>
 </footer>
+
 
 <script>
     document.getElementById('shareBtn').addEventListener('click', function () {
@@ -5538,25 +5561,9 @@ body {
         }
     });
 </script>
-        <div class="footer-section follow-us" id="footer-section">
-            <DIV>
-                <h3>Follow Us</h3>
-            <a href="https://www.linkedin.com/in/berajeevkumar/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" />
-            </a>
-            <a href="https://x.com/be_rajeevkumar" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter Logo" />
-            </a>
-            <a href="https://github.com/beRajeevKumar" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" />
-            </a>
-            </DIV>
-        </div>
-
     <style>
         .share-section {
             text-align: center;
-            margin-top: 20px;
         }
         #shareBtn {
             background-color: #f71257;
@@ -5568,57 +5575,7 @@ body {
 
         }
     </style>
-    <a href=""> 
-        <div class="share-section">
-            <button id="shareBtn">Share Us</button>
-        </div>
-    </a>
-    <script>
-        document.getElementById('shareBtn').addEventListener('click', function() {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Contact Us',
-                    text: 'Check out this Contact Us page!',
-                    url: window.location.href
-                }).then(() => {
-                    console.log('Thanks for sharing!');
-                }).catch((error) => {
-                    console.error('Error sharing:', error);
-                });
-            } else {
-                alert('Web Share API is not supported in your browser.');
-            }
-        });
-    </script>
-
-        <!-- Bottom Links Section -->
-        <ul class="gridbox">
-            <li><a href="#">Help Centre</a></li>
-            <li><a href="./welcometestimonials.html">Testimonials</a></li>
-            <li><a href="#">Account</a></li>
-            <li><a href="#">Media Centre</a></li>
-            <li><a href="./terms.html">Terms of Use</a></li>
-            <li><a href="./privacy.html">Privacy</a></li>
-            
-            <li><a href="#">Cookie Preferences</a></li>
-            <li><a href="./contact.html">Contact Us</a></li>
-            
-        </ul>
-        
-        <!-- Footer Bottom -->
-        <div class="footer-bottom" id="footer-bottom">
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a> <!-- LinkedIn -->
-                <a href="#"><i class="fab fa-youtube"></i></a> <!-- YouTube -->
-                <a href="#"><i class="fab fa-pinterest"></i></a> <!-- Pinterest -->
-                <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
-            </div>
-            <p>© 2024 Open Projects. All Rights Reserved. </p>
-        </div>
-</footer>
+    
 
 
 <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
@@ -5649,13 +5606,7 @@ body {
     
 
 <br /><br />
-<link rel="stylesheet" href="visi.css">
-<!-- ############### Footer ############### -->
-<div class="visitor-counter">
-    <div>Visitors Count:</div>
-    <div class="website-counter"></div>
-</div>
-<script src="visi.js"></script>
+
  
 
   
