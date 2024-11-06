@@ -1,24 +1,20 @@
 .visitor-counter {
-
-    position: fixed;
-    top: 680px;
-    left: 1620px;
     background-color: rgb(244 244 249); /* Slightly opaque background for better visibility */
     height: 60px;
-    width: 100px;
+    width: 250px;
     color: #333; /* Darker text for better contrast */
     font-weight: 700;
-    font-size: 18px;
+    margin-left:45%;
+    font-size: 20px;
     text-align: center;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     border-radius: 12px; /* Softer corners */
     backdrop-filter: blur(10px); /* Increased blur for a modern touch */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), /* Slightly more pronounced shadow */
                 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
     transition: all 0.3s ease; /* Smooth transition for hover effect */
 
   }
@@ -33,7 +29,7 @@
   .visitor-counter div:first-child {
 
     margin-bottom: -5px;
-    font-size: 14px; /* Adjusted for clarity */
+    font-size: 22px; /* Adjusted for clarity */
     letter-spacing: 1px; /* Increased spacing for readability */
 
   }
@@ -81,22 +77,14 @@
 
   }
 
-  .dark-mode .visitor-counter div {
-
-    color: #f0f0f0; /* Lighter text for dark mode */
-
+  [data-theme="dark"] .visitor-counter div,
+  [data-theme="dark"] .visitor-counter .website-counter
+  {
+    color: #f0f0f0;
   }
 
-  .dark-mode .visitor-counter .website-counter {
-
-    color: #f0f0f0; /* Lighter color for consistency */
-
-  }
-
-  .dark-mode .visitor-counter {
-
+  [data-theme="dark"] .visitor-counter{
     background-color: rgba(0, 0, 0, 0.7); /* Darker background for dark mode */
-    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1),
-                0 2px 4px rgba(255, 255, 255, 0.05);
-
+    box-shadow: 0 6px 12px grey,
+                0 2px 4px grey;
   }
