@@ -5534,7 +5534,9 @@ body {
             });
         } else {
             alert('Web Share API is not supported in your browser.');
-
+        }
+    });
+</script>
         <div class="footer-section follow-us" id="footer-section">
             <DIV>
                 <h3>Follow Us</h3>
@@ -5550,7 +5552,6 @@ body {
             </DIV>
         </div>
 
-    </div>
     <style>
         .share-section {
             text-align: center;
@@ -5565,32 +5566,6 @@ body {
             cursor: pointer;
 
         }
-    });
-</script>
-
-
-<script>
-    document.getElementById('shareBtn').addEventListener('click', function () {
-        if (navigator.share) {
-            navigator.share({
-                title: 'Contact Us',
-                text: 'Check out this Contact Us page!',
-                url: window.location.href
-            }).then(() => {
-                console.log('Thanks for sharing!');
-            }).catch((error) => {
-                console.error('Error sharing:', error);
-            });
-        } else {
-            alert('Web Share API is not supported in your browser.');
-        }
-
-    });
-</script>
-
-
-
-
     </style>
     <a href=""> 
         <div class="share-section">
@@ -5676,16 +5651,10 @@ body {
 <link rel="stylesheet" href="visi.css">
 <!-- ############### Footer ############### -->
 <div class="visitor-counter">
-    <div>Visitor</div>
+    <div>Visitors Count:</div>
     <div class="website-counter"></div>
 </div>
-<script src="path/to/visitorCounter.js"></script>
-<script src="./assets/css/visitors.css"></script>
 <script src="visi.js"></script>
-
-<!-- main
- main -->
-
  
 
   
@@ -5855,8 +5824,9 @@ font-size: 15px;
   
             font-size: 24px;
             background: linear-gradient(to right, #913700, #ff6000, #913700); 
-            -webkit-text-fill-color: transparent; 
-            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+            background-clip: text; 
+            -webkit-background-clip: text;
             text-align: center;
             margin-bottom: 12px;
             margin-top: 35px;
