@@ -651,7 +651,7 @@ body {
     flex-grow: 1;
 }
 [data-theme="dark"] .card-description {
-  color: #cdd2d8;
+  color: #1e2c3c;
 }
 .counter-cover-color {
     background: rgba(255, 206, 0, 0.2);
