@@ -73,19 +73,23 @@ body {
 
 .follow-us a:hover img {
     filter: grayscale(0%);
-    animation-name: spin;
+    /* animation-name: spin;
   animation-duration: 2500ms;
   animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation-timing-function: linear; */
 }
-@keyframes spin {
+
+.follow-us a:hover img:nth-child(3) {
+    filter: grayscale(100%);
+}
+/* @keyframes spin {
   from {
     transform: rotate(0deg) scale(1.3);
   }
   to {
     transform: rotate(360deg) scale(1.3);
   }
-}
+} */
 
 
 /* Specific styles for each social media platform */
@@ -5282,6 +5286,21 @@ body {
             </form>
         </div>
 
+        <div class="footer-section follow-us" id="footer-section">
+            <DIV>
+                <h3>Follow Us</h3>
+            <a href="https://www.linkedin.com/in/berajeevkumar/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" />
+            </a>
+            <a href="https://x.com/be_rajeevkumar" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter Logo" />
+            </a>
+            <a href="https://github.com/beRajeevKumar" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" />
+            </a>
+            </DIV>
+        </div>
+
     </div>
     <!-- Cutted from here by VG -->
 
@@ -5302,20 +5321,7 @@ body {
         }
     });
 </script>
-        <div class="footer-section follow-us" id="footer-section">
-            <DIV>
-                <h3>Follow Us</h3>
-            <a href="https://www.linkedin.com/in/berajeevkumar/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" />
-            </a>
-            <a href="https://x.com/be_rajeevkumar" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter Logo" />
-            </a>
-            <a href="https://github.com/beRajeevKumar" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" />
-            </a>
-            </DIV>
-        </div>
+        
 
     <style>
         .share-section {
