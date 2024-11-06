@@ -24,8 +24,13 @@ body {
     position: absolute;
     width: 10px;
     height: 80px;
+
+    background-color: #fff;
+    transition: 0.1s ease;
+
     background: linear-gradient(135deg, #00ffcc, #0055ff);
     border-radius: 5px;
+
 }
 
 #paddleLeft {
@@ -83,4 +88,22 @@ body {
 
 .controlButton:hover {
     background-color: #00ffcc;
+}
+
+#controls {
+    margin-top: 15px;
+}
+
+button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: none;
+    background-color: #5cb85c;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
 }
