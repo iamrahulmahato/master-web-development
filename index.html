@@ -5444,12 +5444,34 @@ body {
     </style>
     
     <script>
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        document.addEventListener('DOMContentLoaded', function () {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', (event) => {
+            // Prevent event from bubbling up to the document click handler
+            event.stopPropagation();
+
+            // Close all answers
+            faqQuestions.forEach(q => {
+                const answer = q.nextElementSibling;
+                answer.style.display = 'none'; // Hide all answers
             });
+
+            // Toggle the clicked question's answer
+            const answer = question.nextElementSibling;
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
         });
+    });
+
+    // Close answers when clicking outside
+    document.addEventListener('click', () => {
+        faqQuestions.forEach(q => {
+            const answer = q.nextElementSibling;
+            answer.style.display = 'none'; // Hide all answers
+        });
+    });
+});
     </script>
     
     
