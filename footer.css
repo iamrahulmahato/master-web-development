@@ -7,14 +7,6 @@ footer {
   font-family: Arial, sans-serif;
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eaeaea;
-}
-
 .footer-section {
   flex: 1;
   margin: 0 15px;
@@ -27,6 +19,31 @@ footer {
   font-weight: bold;
   position: relative;
   transition: text-shadow 0.3s ease, color 0.3s ease;
+    background-color: #f7f7f7; /* Light gray background */
+    /* padding: 30px 15px; */
+    text-align: center;
+    color: #000;
+    font-family: Arial, sans-serif;
+    height: auto;
+    width: 100vw;
+    /* border: 1px solid black; */
+    height: 70vh;
+    margin: 0;
+}
+
+.dark-change{
+    color:white !important;
+    background-color: black;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Use space-between for horizontal alignment */
+   align-items: flex-strt;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eaeaea;
+    /* border:1px solid black; */
+    width:100%;
 }
 
 .footer-section p {
@@ -42,6 +59,12 @@ footer {
 
 .footer-section ul li {
   margin-bottom: 8px;
+  margin: 0 10px;
+    list-style: none;
+    padding: 0;
+    display: flex; /* Change to flex for horizontal layout */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: space-between; /* Space items evenly */
 }
 
 .footer-section ul li a {
@@ -73,13 +96,14 @@ footer {
 }
 
 .newsletter button {
-  padding: 10px 20px;
-  background-color: #f8c5c5;
-  color: #000;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    padding: 10px 20px;
+    background-color: #f8c5c5;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: translateY(-8px);
+    transition: background-color 0.3s ease;
 }
 
 /* Hover effect on the subscribe button */
@@ -106,6 +130,8 @@ footer {
 /* Hover effect on footer bottom links */
 .footer-links-bottom a:hover {
   color: #0984e3;
+    background-color: #e59e9e; /* A darker shade for hover effect */
+   
 }
 
 /* Footer bottom section */
@@ -145,6 +171,12 @@ footer {
   to {
     transform: rotate(360deg) scale(1.3);
   }
+
+.footer-bottom p {
+    margin: 0; /* Remove default margin */
+    color: #666; /* Dark gray color for the text */
+    font-size: 14px; /* Font size */
+    font-family: Arial, sans-serif; /* Font family */
 }
 
 /* Mobile view adjustments */
@@ -154,6 +186,7 @@ footer {
     align-items: center;
   }
 }
+  
 .newsletter input[type="email"],
 .newsletter button {
   width: 100%;
@@ -185,6 +218,7 @@ footer {
     font-size: 12px; /* Adjust font size for smaller screens */
   }
 }
+  
 .footer-bottom .social-icons a {
   margin: 0 8px;
   color: #000; /* Default color */
@@ -203,7 +237,7 @@ footer {
   border: 2px solid #3b5998;
   border-radius: 50%;
   padding: 5px;
-}
+  }
 
 .footer-bottom .social-icons a:hover .fab.fa-twitter {
   color: #1da1f2; /* Twitter Blue */
@@ -246,6 +280,7 @@ footer {
   border-radius: 50%;
   padding: 5px;
 }
+
 .gridbox {
   list-style: none; /* Remove bullet points */
   padding: 0; /* Remove default padding */
@@ -272,4 +307,95 @@ footer {
 .gridbox a:hover {
   color: #f8c5c5; /* Change color on hover */
   text-decoration: underline; /* Add underline on hover */
+} 
+
+
+.social-media {
+    display: flex; /* Aligns icons in a row */
+    justify-content: center; /* Centers the icons */
+}
+
+.social-media a {
+    margin: 0 10px; /* Adjusts horizontal spacing between icons */
+    color: white; /* Change color as needed */
+    text-decoration: none; /* Removes underline from links */
+}
+
+.social-media a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+.share-section {
+    display: flex; /* Align buttons in a row */
+    justify-content: center; /* Center the buttons */
+    margin-top: 20px; /* Space above the buttons */
+}
+
+button {
+    background-color: #007bff; /* Blue background for buttons */
+    color: white; /* Text color */
+    border: none; /* Removes border */
+    border-radius: 5px; /* Rounds corners */
+    padding: 10px 20px; /* Padding for buttons */
+    margin: 0 10px; /* Space between buttons */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+
+
+
+
+
+
+/* =========================================FOOTER DARK THEME=============================================*/
+
+/* Footer content and footer bottom for dark theme */
+[data-theme="dark"] .footer-content,
+[data-theme="dark"] .footer-bottom {
+    background-color: #121212; 
+    color: white; 
+    /* border-top: 1px solid #333;  */
+}
+
+[data-theme="dark"] .footer-content{
+    border-top:1px solid #333;
+}
+
+/*Footer content heading color */
+[data-theme="dark"] .footer-content h3,
+[data-theme="dark"] .footer-section h3 {
+    background-color: #121212; 
+    color: white; 
+    /* border-top: 1px solid #333;  */
+}
+
+[data-theme="dark"] .footer-section img{
+    filter: invert(100%);
+}
+
+/* Dark theme specific link colors */
+[data-theme="dark"] .footer-section ul li a,
+[data-theme="dark"] .footer-links-bottom a,
+[data-theme="dark"] .footer-bottom p {
+    color: #aaa; 
+}
+
+[data-theme="dark"] .footer-section ul li a:hover,
+[data-theme="dark"] .footer-links-bottom a:hover {
+    color: #f8c5c5; 
+}
+
+/* Dark mode styling for social icons */
+[data-theme="dark"] .social-icons a {
+    color: #aaa; 
+}
+
+[data-theme="dark"] .social-icons a:hover {
+    color: #f8c5c5;
 }
