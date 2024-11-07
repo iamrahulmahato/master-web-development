@@ -24,11 +24,11 @@
         rel="stylesheet"
     />
     <link
-        href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+        href="https://cdn.jsdelivr.net/npm/remix@4.3.0/fonts/remixicon.css"
         rel="stylesheet"
     />
 
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remix.css" rel="stylesheet" />
 
 
 <style>
@@ -127,6 +127,14 @@ body {
 .follow-us a.linkedin:hover {
     color: #0077B5;
     background-color: #fff;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
 }
 
 </style>
@@ -319,6 +327,8 @@ body {
             height: 50px;
             position: fixed;
             bottom: 23px;
+            bottom: 80px !important; 
+            right: 80px !important; 
             right: 44px;
             background-color: #ab45e7;
             color: #ffffff;
@@ -351,25 +361,97 @@ body {
     border-color: #c1c17d;
     transform: translateY(-2px);
 }
+
+:root {
+    /* Light theme colors */
+    --bg-color-light: #ffffff;
+    --text-color-light: #333;
+    --accent-color-light: #ffa500; /* light orange */
+    /* Dark theme colors */
+    --bg-color-dark: #1c1c1c;
+    --text-color-dark: #f5f5f5;
+    --accent-color-dark: #ffcc80; /* lighter orange */
+    /* Default theme */
+    --bg-color: var(--bg-color-light);
+    --text-color: var(--text-color-light);
+    --accent-color: var(--accent-color-light);
+}
+/* Theme styles based on data-theme attribute */
+[data-theme="dark"] {
+    --bg-color: var(--bg-color-dark);
+    --text-color: var(--text-color-dark);
+    --accent-color: var(--accent-color-dark);
+}
+/* Navbar container */
+.navbar {
+    width: 100%;
+    padding: 15px 0;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--accent-color);
+}
+/* Navbar list */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+/* Navbar items */
+.navbar ul li {
+    position: relative;
+}
+/* Navbar links */
+.navbar ul li a {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 8px 16px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+/* Hover effect with futuristic line animation */
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+    width: 0%;
+}
+.navbar ul li a:hover {
+    color: var(--accent-color);
+    transform: scale(1.05);
+}
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+/* Toggle theme button */
+.theme-toggle {
+    position: absolute;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+.theme-toggle:hover {
+    transform: scale(1.1);
+
 .btn-container {
     text-align: center; /* Center the buttons */
     margin: 20px 0;    /* Add some margin for spacing */
-}
-
-.source-code-btn {
-    background: linear-gradient(45deg, #ff4d4d, #ff7f50); /* Gradient from red to coral */
-    color: white; /* Button text color */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 20px; /* Padding for button size */
-    margin: 5px; /* Spacing between buttons */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Font size */
-    transition: background 0.3s ease; /* Smooth transition for background color */
-}
-
-.source-code-btn:hover {
-    background: linear-gradient(45deg, #ff3333, #ff6347); /* Darker gradient on hover */
 }
 
 .nextPrevArrows {
@@ -392,12 +474,28 @@ body {
 
 .nextPrevArrows button:hover {
     background: #ff3333; /* Darker red on hover */
+
 }
 
     </style>
 </head>
 
 <body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#home" class="navbar-logo">
+                <img src="./images/home_logo.png" alt="Logo" class="logo-image"> Master Web Dev
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#footer1">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
     <div id="progress-container">
         <div id="progress-bar"></div>
       </div>
@@ -433,40 +531,30 @@ body {
         <!-- Profile Icon -->
         <li class="nav-item no-underline">
             <a href="./profile.html" class="profile-link" style="display: flex; align-items: center; text-decoration: none;">
-            <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Icon" style="width: 50px; height: 50px; border-radius: 50%; margin-top: -17px;">
-        </a>
+                <img id="homeProfileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" 
+                    alt="Profile Icon" 
+                    style="width: 50px; height: 50px; border-radius: 50%; margin-top: -17px;">
+            </a>
         </li>
 
-        <style>
-
-        /* Override the existing hover styles */
-        .navbar-nav .nav-item .profile-link:hover {
-            background-color: transparent !important; /* Remove background color */
-            border-radius: 0 !important; /* Reset border radius */
-            transform: none !important; /* Prevent scaling */
-        }
-
-        </style>
-
         <script>
+            
+            document.addEventListener("DOMContentLoaded", function() {
+            // Retrieve the saved avatar from localStorage
+            const savedAvatar = localStorage.getItem("selectedAvatar");
 
-            function toggleMenu() {
-                const menu = document.getElementById('profileMenu');
-                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-            }
-
-            // Close the dropdown if the user clicks outside of it
-            window.onclick = function(event) {
-                if (!event.target.matches('.profile-icon img')) {
-                    const menu = document.getElementById('profileMenu');
-                    if (menu.style.display === 'block') {
-                        menu.style.display = 'none';
-                    }
+            // If an avatar is saved, update the profile image
+            if (savedAvatar) {
+                const homeProfileImage = document.getElementById("homeProfileImage");
+                if (homeProfileImage) {
+                    homeProfileImage.src = savedAvatar;
                 }
             }
+        });
 
         </script>
 
+        
     </div>
 
     <section id="projects">
@@ -497,14 +585,7 @@ body {
             </div> -->
 
             
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search games by Title/Description..."
-                oninput="filterCards()" style="margin-bottom: 10px;">
-              <button class="search-btn" onclick="filterCards()">
-                <span class="search-icon"></span>
-                Search
-              </button>
-            </div>
+
           </div>
 
        
@@ -645,14 +726,21 @@ body {
                 <button class="source-code-btn" onclick="filterCategory('Miscellaneous')">Miscellaneous</button>
 
             
-                <div class="nextPrevArrows">
+                <!-- <div class="nextPrevArrows">
                     <button class="prev"> < </button>
                     <button class="next"> > </button>
-                </div>
+                </div> -->
                 <br />
             </div>
 
-
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search games by Title/Description..."
+                oninput="filterCards()" style="margin-bottom: 10px;">
+              <button class="search-btn" onclick="filterCards()">
+                <span class="search-icon"></span>
+                Search
+              </button>
+            </div>
 
 
         <div class="projects-container">
@@ -687,6 +775,30 @@ body {
                     <h3 class="card-heading">iRadio</h3>
                     <p class="card-description">
                         A playstation where everyone can listen songs and news.
+                    </p>
+                </div>
+            </a>
+
+            <a href="./mindful-breating.html" class="card Generators" target="_blank">
+                <div class="card-cover">
+                    <img src="assets/image/mindful-breathing.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">Mindfulness Breathing App</h3>
+                    <p class="card-description">
+                        Lets inhale positivity and exhale negativty.
+                    </p>
+                </div>
+            </a>
+
+            <a href="./sketchpad.html" class="card Generators" target="_blank">
+                <div class="card-cover">
+                    <img src="assets/image/sketch-pad-img.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-heading">Digital Sketchpad with Colors & Brushes</h3>
+                    <p class="card-description">
+                        Lets explore world of artistic creativity.
                     </p>
                 </div>
             </a>
@@ -1307,17 +1419,7 @@ body {
                     </p>
                 </div>
             </a>
-            <a href="./projects/Style picker/index.html" class="card" target="_blank">
-                <div class="card-cover counter-cover-colour">
-                    <img src="https://www.panaprium.com/cdn/shop/articles/different_fashion_styles_up.jpg?v=1712222301" alt="AI-Powered Style Picker">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">AI-Powered Style Picker</h3>
-                    <p class="card-description">
-                        Customize your style with AI-powered suggestions!
-                    </p>
-                </div>
-            </a>
+            
             <a href="./projects/random user generator/index.html" class="card Generators" target="_blank">
 
                 <div class="card-cover counter-cover-colour">
@@ -1569,28 +1671,7 @@ body {
                         </p>
                     </div>
                 </a>
-                                                                <!-- <a href="./projects/Style picker/index.html" class="card" target="_blank">
-                                                                    <div class="card-cover counter-cover-colour">
-                                                                        <img src="https://www.panaprium.com/cdn/shop/articles/different_fashion_styles_up.jpg?v=1712222301" alt="AI-Powered Style Picker">
-                                                                    </div>
-                                                                    <div class="card-content">
-                                                                        <h3 class="card-heading">AI-Powered Style Picker</h3>
-                                                                        <p class="card-description">
-                                                                            Customize your style with AI-powered suggestions!
-                                                                        </p>
-                                                                    </div>
-                                                                </a> -->
-                <a href="./projects/Style picker/index.html" class="card" target="_blank">
-                    <div class="card-cover counter-cover-colour">
-                        <img src="https://www.panaprium.com/cdn/shop/articles/different_fashion_styles_up.jpg?v=1712222301" alt="AI-Powered Style Picker">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-heading">AI-Powered Style Picker</h3>
-                        <p class="card-description">
-                            Customize your style with AI-powered suggestions!
-                        </p>
-                    </div>
-                </a>
+                                                        
                 <a href="./projects/random user generator/index.html" class="card Generators" target="_blank">
 
                     <div class="card-cover counter-cover-colour">
@@ -2400,32 +2481,6 @@ body {
                     </p>
                 </div>
             </a>
-        
-            <!-- <a href="./projects/Random-QR-generator/index.html" class="card" target="_blank">
-                <div class="card-cover">
-                    <img src="path/to/qr-generator-image" alt="QR Generator logo">
-                    === Add a valid image source here ===
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Random QR Generator</h3>
-                    <p class="card-description">
-                        Generate random QR codes quickly!
-                    </p>
-                </div>
-            </a> -->
-            <a href="./projects/QR-generator/index.html" class="card" target="_blank">
-                <div class="card-cover">
-                    <img src="path/to/qr-generator-image" alt="QR Generator logo">
-                    <!-- Ensure to provide a valid image source -->
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Random QR Generator</h3>
-                    <p class="card-description">
-                        Generate random QR codes quickly!
-                    </p>
-                </div>
-            </a>
-
 
             <a href="./projects/QR-generator/index.html" class="card" target="_blank">
                 <div class="card-cover">
@@ -3688,17 +3743,7 @@ body {
 
 
 
-        <a href="./projects/Among Us/index.html" class="card Games ">
-            <div class="card-cover counter-cover-colour">
-                <img src="assets/image/amongus.png" alt="Among Us">
-            </div>
-            <div class="card-content">
-                <h3 class="card-heading">Among Us</h3>
-                <p class="card-description">
-                    Find who is imposter.
-                </p>
-            </div>
-        </a>
+        <!--  -->
         <a href="./projects/Joke Generator/index.html" class="card Generators ">
             <div class="card-cover counter-cover-colour">
                 <img src="assets/image/jokeGenerator.jpeg" alt="Joke Generator">
@@ -4014,17 +4059,6 @@ body {
                 </div>
             </a>
             <!--============================== End =========================================== -->
-            <a href="./projects/Random Image Gen/index.html" class="card Generators ">
-                <div class="card-cover counter-cover-colour">
-                    <img src="assets/image/randomi.png" alt="Brick Breaker">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Random Image Generator</h3>
-                    <p class="card-description">
-                        A Random Image Generator Website
-                    </p>
-                </div>
-            </a>
             <!-- =========================== Shooter Game ================================= -->
             <a href="./projects/Shooter_Game/index.html" class="card Games ">
                 <div class="card-cover counter-cover-colour">
@@ -4242,15 +4276,7 @@ body {
             </a>
 
 
-            <a href="./projects/Among Us Game/index.html" class="card Games">
-                <div class="card-cover counter-cover-colour">
-                    <img src="assets/image/amongus.png" alt="Flappy Bird" />
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Among us</h3>
-                    <p class="card-description">Find who is imposter.</p>
-                </div>
-            </a>
+            
 
 <!-- =========================== Shooter Game ================================= -->
 <a href="./projects/Shooter_Game/index.html" class="card Games ">
@@ -4277,43 +4303,6 @@ body {
                 </p>
             </div>
         </a>
-
-        <a href="./projects/leet_code/index.html" class="card Generators " target="_blank">
-            <div class="card-cover counter-cover-colour">
-                <img src="./assets/image/leetcode.png" alt="LeetCode Question Generator">
-            </div>
-            <div class="card-content">
-                <h3 class="card-heading">LeetCode Question Generator</h3>
-                <p class="card-description">
-                    Generate random LeetCode questions for practice.
-                </p>
-            </div>
-        </a>
-
-        <a href="./projects/Photo Gallery/index.html" class="card Miscellaneous ">
-            <div class="card-cover counter-cover-colour">
-                <img src="./assets/image/photo-gallery.jpg" alt="chatbot">
-            </div>
-            <div class="card-content">
-                <h3 class="card-heading">Photo Gallery</h3>
-                <p class="card-description">
-                    List all the random Photos.
-                </p>
-            </div>
-        </a>
-
-        <a href="./projects/netflix-clone/index.html" class="card Websites " target="_blank">
-            <div class="card-cover counter-cover-colour">
-                <img src="./assets/image/netflix-clone.jpg" alt="chatbot">
-            </div>
-            <div class="card-content">
-                <h3 class="card-heading">Netflix Clone</h3>
-                <p class="card-description">
-                    A UI-based Clone of the popular mainstream service "NETFLIX".
-                </p>
-            </div>
-        </a>
-                
 
     
  <!-- =========================== Recipe Book ================================= -->
@@ -4561,15 +4550,6 @@ body {
                 </div>
             </a>
 
-            <a href="./projects/Among Us/index.html" class="card Games">
-                <div class="card-cover counter-cover-colour">
-                    <img src="assets/image/amongus.png" alt="Among Us" />
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Among Us</h3>
-                    <p class="card-description">Find who is imposter.</p>
-                </div>
-            </a>
             <a href="./projects/Joke Generator/index.html" class="card Games">
                 <div class="card-cover counter-cover-colour">
                     <img src="assets/image/jokeGenerator.jpeg" alt="Joke Generator" />
@@ -4845,40 +4825,6 @@ body {
                 </div>
             </a>
 
-            <a href="./projects/leet_code/index.html" class="card" target="_blank">
-                <div class="card-cover counter-cover-colour">
-                    <img src="./assets/image/leetcode.png" alt="LeetCode Question Generator" />
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">LeetCode Question Generator</h3>
-                    <p class="card-description">
-                        Generate random LeetCode questions for practice.
-                    </p>
-                </div>
-            </a>
-
-
-            <a href="./projects/Photo Gallery/index.html" class="card">
-                <div class="card-cover counter-cover-colour">
-                    <img src="./assets/image/photo-gallery.jpg" alt="chatbot" />
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Photo Gallery</h3>
-                    <p class="card-description">List all the random Photos.</p>
-                </div>
-            </a>
-
-            <a href="./projects/netflix-clone/index.html" class="card" target="_blank">
-                <div class="card-cover counter-cover-colour">
-                    <img src="./assets/image/netflix-clone.jpg" alt="chatbot" />
-                </div>
-                <div class="card-content">
-                    <h3 class="card-heading">Netflix Clone</h3>
-                    <p class="card-description">
-                        A UI-based Clone of the popular mainstream service "NETFLIX".
-                    </p>
-                </div>
-            </a>
             <a href="projects/TESLA-clone/tesla.html" class="card" target="_blank">
                 <div class="card-cover counter-cover-colour">
                     <img src="assets/image/Tesla_T_symbol.svg.png" alt="chatbot" />
@@ -5275,14 +5221,25 @@ body {
         [data-theme="dark"] .feedback-form textarea,
         [data-theme="dark"] .form-group textarea
         [data-theme="dark"] .form-group #feedback-content{
-            background-color:black;
+            background-color:#000327;
             color:white;
         }
         
         [data-theme="dark"] #feedback{
-            background:#000000;
+            background:#000327;
             border-top:1px solid #333;
         }
+
+        [data-theme="dark"] .dark-change{
+            color:white !important;;
+            background-color: #000327;
+        }
+
+        [data-theme="dark"] .quickLinks{
+            color:white !important;;
+            background-color: #000327;
+        }
+
 
 
 
@@ -5359,7 +5316,7 @@ body {
             padding: 0;
         }
     </style>
-  
+
 
     <!-- Added FAQ Section -->
     <section id="faq">
@@ -5408,7 +5365,7 @@ body {
         /*Dark Mode theme styling adjustments*/
         [data-theme="dark"] #faq,
         [data-theme="dark"] #faq h2{
-            background-color:black;
+            background-color:#000327;
             color:white;
         }
 
@@ -5442,25 +5399,50 @@ body {
             font-size: 1rem;
             color: #666;
         }
-    </style>
+        .subscribe{
+        z-index:-100;
+        }
+        </style>
     
     <script>
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        document.addEventListener('DOMContentLoaded', function () {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', (event) => {
+            // Prevent event from bubbling up to the document click handler
+            event.stopPropagation();
+
+            // Close all answers
+            faqQuestions.forEach(q => {
+                const answer = q.nextElementSibling;
+                answer.style.display = 'none'; // Hide all answers
             });
+
+            // Toggle the clicked question's answer
+            const answer = question.nextElementSibling;
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
         });
+    });
+
+    // Close answers when clicking outside
+    document.addEventListener('click', () => {
+        faqQuestions.forEach(q => {
+            const answer = q.nextElementSibling;
+            answer.style.display = 'none'; // Hide all answers
+        });
+    });
+});
     </script>
     
     
 
 <!-- Footer -->
 <footer id="footer1">
-    <div class="footer-content" id="footer-content">
+    <div class="footer-content">
         <!-- Quick Links Section -->
-        <div class="footer-section quick-links" id="footer-section">
-            <h3>Quick Links</h3>
+        <div class="footer-section quick-links">
+            Quick Links
             <ul>
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="chatbot.html">ChatBot</a></li>
@@ -5471,28 +5453,24 @@ body {
         </div>
 
         <!-- About Us Section -->
-        <div class="footer-section about-us" id="footer-section">
-            <h3>About Us</h3>
+        <div class="footer-section about-us">
+            About Us
             <p>Empowering aspiring developers to master web development through hands-on, small-scale projects.</p>
         </div>
 
         <!-- Newsletter Section -->
-        <div class="footer-section newsletter" id="footer-section">
-            <h3>Subscribe to Our Newsletter</h3>
+        <div class="footer-section newsletter">
+            Subscribe to Our Newsletter
             <form>
                 <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
+                <button type="submit" class="subscribe">Subscribe</button>
             </form>
         </div>
-
     </div>
 
-    <div class="share-section">
-        <button id="shareBtn">Share Us</button>
-    </div>
 
     <!-- Bottom Links Section -->
-    <ul class="gridbox">
+    <!-- <ul class="gridbox">
         <li><a href="#">Help Centre</a></li>
         <li><a href="./welcometestimonials.html">Testimonials</a></li>
         <li><a href="#">Account</a></li>
@@ -5501,10 +5479,11 @@ body {
         <li><a href="./privacy.html">Privacy</a></li>
         <li><a href="#">Cookie Preferences</a></li>
         <li><a href="./contact.html">Contact Us</a></li>
-    </ul>
+
+    </ul> -->
 
     <!-- Social Media Icons -->
-    <div class="social-media">
+    <!-- <div class="social-media">
         <a class="spaced-item" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a class="spaced-item" href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
         <a class="spaced-item" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -5512,14 +5491,17 @@ body {
         <a class="spaced-item" href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest"></i></a>
         <a class="spaced-item" href="https://www.snapchat.com" target="_blank"><i class="fab fa-snapchat-ghost"></i></a>
         <a class="spaced-item" href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
-    </div>
+    </div> -->
     
 
     <!-- Footer Bottom -->
-    <div class="footer-bottom">
+    <!-- <div class="footer-bottom">
         <p>© 2024 Open Projects. All Rights Reserved.</p>
-    </div>
+    </div> -->
+
 </footer>
+
+
 
 <script>
     document.getElementById('shareBtn').addEventListener('click', function () {
@@ -5538,7 +5520,8 @@ body {
         }
     });
 </script>
-        <div class="footer-section follow-us" id="footer-section">
+
+        <!-- <div class="footer-section follow-us" id="footer-section">
             <DIV>
                 <h3>Follow Us</h3>
             <a href="https://www.linkedin.com/in/berajeevkumar/" target="_blank">
@@ -5551,12 +5534,11 @@ body {
                 <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" />
             </a>
             </DIV>
-        </div>
+        </div> -->
 
     <style>
         .share-section {
             text-align: center;
-            margin-top: 20px;
         }
         #shareBtn {
             background-color: #f71257;
@@ -5568,57 +5550,7 @@ body {
 
         }
     </style>
-    <a href=""> 
-        <div class="share-section">
-            <button id="shareBtn">Share Us</button>
-        </div>
-    </a>
-    <script>
-        document.getElementById('shareBtn').addEventListener('click', function() {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Contact Us',
-                    text: 'Check out this Contact Us page!',
-                    url: window.location.href
-                }).then(() => {
-                    console.log('Thanks for sharing!');
-                }).catch((error) => {
-                    console.error('Error sharing:', error);
-                });
-            } else {
-                alert('Web Share API is not supported in your browser.');
-            }
-        });
-    </script>
-
-        <!-- Bottom Links Section -->
-        <ul class="gridbox">
-            <li><a href="#">Help Centre</a></li>
-            <li><a href="./welcometestimonials.html">Testimonials</a></li>
-            <li><a href="#">Account</a></li>
-            <li><a href="#">Media Centre</a></li>
-            <li><a href="./terms.html">Terms of Use</a></li>
-            <li><a href="./privacy.html">Privacy</a></li>
-            
-            <li><a href="#">Cookie Preferences</a></li>
-            <li><a href="./contact.html">Contact Us</a></li>
-            
-        </ul>
-        
-        <!-- Footer Bottom -->
-        <div class="footer-bottom" id="footer-bottom">
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a> <!-- LinkedIn -->
-                <a href="#"><i class="fab fa-youtube"></i></a> <!-- YouTube -->
-                <a href="#"><i class="fab fa-pinterest"></i></a> <!-- Pinterest -->
-                <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
-            </div>
-            <p>© 2024 Open Projects. All Rights Reserved. </p>
-        </div>
-</footer>
+    
 
 
 <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
@@ -5649,13 +5581,7 @@ body {
     
 
 <br /><br />
-<link rel="stylesheet" href="visi.css">
-<!-- ############### Footer ############### -->
-<div class="visitor-counter">
-    <div>Visitors Count:</div>
-    <div class="website-counter"></div>
-</div>
-<script src="visi.js"></script>
+
  
 
   

@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="testp.css"> <!-- Link to your CSS file -->
-    <link rel="shortcut icon" href="./faviconicon.png" type="image/x-icon">
+ edit
+=======
+
+ main
     <script src="testp.js" defer></script>
-
     <title>Profile Page</title>
-
 </head>
 
 <body>
@@ -19,32 +19,37 @@
     <div class="profile-container">
 
         <div class="content-section">
-            <h2>Your Profile</h2>
+            <h2>Your Profile</h2> 
             <a href="index.html">
                 <i class="fas fa-home"></i>
             </a>
             <div class="profile-card">
                 <div class="profile-header">
-                    <img src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Image" class="profile-image">
+edit
+                    <!-- Profile image will be set dynamically -->
+                    <img id="profileImage" src="https://i.postimg.cc/NFFmtc9K/xnz-Mst5-V-400x400.jpg" alt="Profile Image" class="profile-image">
+ main
 
                     <div class="profile-info">
-                        <h3 class="profile-name">Skylar Reed</h3>
-                        <p class="profile-email">Email: skylar.reed@example.com</p>
-                        <p class="profile-phone">Phone: +987 654 3210</p>
-                        <p class="profile-bio">Joined: October 31, 2024</p>
-                        <p class="profile-bio">About Me: Hello!🙋🏻‍♂️ Feel free to reach out to me at skylar.reed@example.com 😎</p>
-                        <p id="last-active">Last active: 31/10/2024, 11:12 PM</p>
-
+                        <!-- Profile info will be set dynamically -->
+                        <h3 id="profileName" class="profile-name">Skylar Reed</h3>
+                        <p id="profileEmail" class="profile-email">Email: skylar.reed@example.com</p>
+                        <p id="profilePhone" class="profile-phone">Phone: +987 654 3210</p>
+                        <p id="profileBio" class="profile-bio">About Me: Hello!🙋🏻‍♂️ Feel free to reach out to me at skylar.reed@example.com 😎</p>
+                        <p id="aboutMe" class="profile-bio">Joined: October 31, 2024</p>
+                        <p id="last-active" class="profile-bio">Last active: </p>
                     </div>
-
                 </div>
+ edit
+                <a href="profileedit.html">
                     <button class="edit-profile-btn edit_profiled">Edit Profile</button>
+ main
                 </a>
             </div>
         </div>
 
+        <!-- Account Details and other sections remain the same -->
         <div class="content-section">
-
             <h2>Account Details</h2>
             <div class="profile-details">
                 <div class="profile-detail-card" id="profileCard">
@@ -56,41 +61,72 @@
                 <div class="profile-detail-card">
                     <h3>Change Password</h3>
                     <p>*********63</p>
-                    <button class="edit-profile-btn">Change</button></a>
+                    <button class="edit-profile-btn">Change</button>
                 </div>
 
                 <div class="profile-detail-card">
                     <h3>Privacy Settings</h3>
                     <p>Visibility Status: Public</p>
                     <a href="#">
-                    <button class="edit-profile-btn">Edit</button></a>
+                        <button class="edit-profile-btn">Edit</button>
+                    </a>
                 </div>
 
                 <div class="profile-detail-card">
                     <h3>Recent Activity</h3>
+ edit
                     <p>Updated profile information</p>
                     <a href="#">
-                    <button class="edit-profile-btn">View</button></a>
+                        <button class="edit-profile-btn">View</button>
+                    </a>
+main
                 </div>
 
             </div>
         </div>
 
         <section class="content-section">
-
             <h2>Notifications</h2>
             <div class="card">
                 <p>Your profile has been updated successfully!</p>
-
                 <button class="edit-profile-btn">View Notification</button>
             </div>
             <div class="card">
                 <p>Joshef Roy has sent you a friend request. Accept or decline?</p>
-
                 <button class="edit-profile-btn">View Notification</button>
             </div>
-
         </section>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Load saved profile information from localStorage
+            const savedName = localStorage.getItem("profileName");
+            const savedEmail = localStorage.getItem("profileEmail");
+            const savedPhone = localStorage.getItem("profilePhone");
+            const savedBio = localStorage.getItem("profileBio");
+            const savedAvatar = localStorage.getItem("selectedAvatar");
+
+            // Update profile information if it exists in localStorage
+            if (savedName) {
+                document.getElementById("profileName").textContent = savedName;
+            }
+            if (savedEmail) {
+                document.getElementById("profileEmail").textContent = `Email: ${savedEmail}`; // Corrected template literal
+            }
+            if (savedPhone) {
+                document.getElementById("profilePhone").textContent = `Phone: ${savedPhone}`; // Corrected template literal
+            }
+            if (savedBio) {
+                document.getElementById("profileBio").textContent = `About Me: ${savedBio}`; // Corrected template literal
+            }
+
+            if (savedAvatar) {
+                document.getElementById("profileImage").src = savedAvatar;
+            }
+        });
+    </script>
 
 </body>
 
