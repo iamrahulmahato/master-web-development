@@ -1,0 +1,410 @@
+body {
+  font-family: Arial, sans-serif;
+  height: auto;
+}
+
+/* Popup Styles */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  justify-content: center; /* Center the popup */
+  align-items: center; /* Center the popup */
+  z-index: 1000; /* Sit on top */
+}
+.source-code-btn {
+  background-color: #f02647;
+}
+.popup-content {
+  background: linear-gradient(#f74b67, #e7d3d7), url(your-image-url.jpg);
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Set poll options to stack vertically */
+#pollOptions {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: center; /* Center the buttons */
+}
+
+.poll-button {
+  display: block; /* Change to block for full-width */
+  margin: 5px 0; /* Add vertical margin */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50; /* Green */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%; /* Full width */
+}
+
+.poll-button:hover {
+  background-color: #45a049; /* Darker green */
+}
+
+.poll-button.selected {
+  background-color: #2196f3; /* Blue for selected */
+}
+
+/* New Vote Button Styles */
+.vote-button {
+  display: block; /* Change to block for full-width */
+  margin: 5px 0; /* Add vertical margin */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f44336; /* Red */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%; /* Full width */
+}
+
+.vote-button:hover {
+  background-color: #d32f2f; /* Darker red */
+}
+
+.uppercase {
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.popup-nl {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1009;
+}
+
+.popup-content-nl {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  max-width: 800px;
+  height: 450px;
+  width: 700px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.close1-btn-nl {
+  width: 20px;
+  cursor: pointer;
+  margin: 18px 10px;
+  position: absolute;
+  top: -4px;
+  right: 12px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.popup-left-nl img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.popup-right-nl {
+  padding: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-nl h1 {
+  font-size: 24px;
+  background: linear-gradient(to right, #913700, #ff6000, #913700);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
+  margin-bottom: 12px;
+  margin-top: 35px;
+}
+
+.h2-nl {
+  font-size: 18px;
+  margin-bottom: 8px;
+  text-align: center;
+  color: #333;
+}
+
+.pop_up-nl {
+  margin-bottom: 15px;
+  font-weight: bold;
+  background: -webkit-linear-gradient(left, #007d39, #44f899, #005f2b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 12.7px;
+}
+
+.bold {
+  font-size: 13.1px;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.signup-btn1-nl {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  background: linear-gradient(to right, #febd1b, #ffdb80, #febd1b);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.signup-btn1-nl:hover {
+  background-color: #4682b4;
+}
+
+.no-thanks-nl {
+  display: block;
+  margin-top: 10px;
+  color: #888;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
+.no-thanks-nl:hover {
+  color: #000000;
+  font-size: 14px;
+}
+
+.terms-nl {
+  margin-top: 15px;
+  font-size: 10px;
+  color: #888;
+}
+
+.terms-nl a {
+  display: inline;
+}
+
+.terms-nl a:hover {
+  text-decoration: underline;
+}
+
+.popup-right-nl p {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.share-section {
+  text-align: center;
+}
+#shareBtn {
+  background-color: #f71257;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#faq {
+  background-color: #f8f8f8;
+  padding: 50px 20px;
+}
+
+#faq h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/*Dark Mode theme styling adjustments*/
+[data-theme="dark"] #faq,
+[data-theme="dark"] #faq h2 {
+  background-color: #000327;
+  color: white;
+}
+
+[data-theme="dark"] .faq-item h3,
+[data-theme="dark"] .faq-item p {
+  color: white;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  padding: 15px 0;
+}
+
+.faq-question {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background-color: #f0f0f0;
+}
+
+.faq-answer {
+  display: none;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #666;
+}
+.subscribe {
+  z-index: -100;
+}
+
+#feedback {
+  background: linear-gradient(to right, #faf9fa, #fefefe);
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+}
+
+/* Dark theme of the Fedback Section */
+[data-theme="dark"] .feedback-form input,
+[data-theme="dark"] .feedback-form textarea,
+[data-theme="dark"]
+  .form-group
+  textarea
+  [data-theme="dark"]
+  .form-group
+  #feedback-content {
+  background-color: #000327;
+  color: white;
+}
+
+[data-theme="dark"] #feedback {
+  background: #000327;
+  border-top: 1px solid #333;
+}
+
+[data-theme="dark"] .dark-change {
+  color: white !important;
+  background-color: #000327;
+}
+
+[data-theme="dark"] .quickLinks {
+  color: white !important;
+  background-color: #000327;
+}
+
+#feedback h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#feedback p {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Form Container */
+#feedback .container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(to right, #f8bab5, #f38787);
+}
+
+.container h2,
+.container p {
+  color: #333;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #333;
+  display: block;
+}
+
+/* General Body Styling */
+#feedback .form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#feedback button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--btn-color);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* feedback */
+.stars {
+               
+    cursor: pointer;
+    font-size: 2rem;
+    color: gray;
+}
+.star {
+    transition: color 0.2s;
+}
+.star.selected {
+    color: gold;
+}
