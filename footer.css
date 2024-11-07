@@ -8,7 +8,7 @@ footer {
   height: auto;
   width: 100vw;
   /* border: 1px solid black; */
-  height: 70vh;
+  height: 100vh;
   margin: 0;
 }
 
@@ -118,10 +118,11 @@ footer {
   margin-top: 20px; /* Add margin to prevent overlap */
   /* border:5px solid red; */
   color:white;
+  height:10rem;
 }
 
 .footer-bottom p {
-  margin: 0; /* Remove default margin */
+  margin-top:20px; /* Remove default margin */
   color: #666; /* Dark gray color for the text */
   font-size: 14px; /* Font size */
   font-family: Arial, sans-serif; /* Font family */
@@ -141,6 +142,9 @@ footer {
   }
 }
 
+.footer-bottom .social-icons{
+  margin-top:20px;
+}
 
 .footer-bottom .social-icons a {
   margin: 0 8px;
@@ -213,6 +217,8 @@ footer {
 
 
 .social-media a {
+  border:1px solid black;
+  color: black;
   margin: 0 10px; /* Adjusts horizontal spacing between icons */
 }
 
@@ -261,6 +267,10 @@ button:hover {
 
 .quick-links ul li{
   margin-bottom:10px;
+}
+
+.footer-main-bottom{
+  
 }
 
 
