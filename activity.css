@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin-left: 5px;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    background-attachment: fixed;
+    background-size: cover;
+    /* color: #333; */
+    background-color:#040423;
+  }
+  
+  header {
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header nav a {
+    color: #d0defa;
+    text-decoration: none;
+    font-size: 25px;
+    transition: color 0.3s;
+  }
+  
+  header nav a:hover {
+    color: #534141;
+  }
+  
+  .fa-home,
+  .fa-arrow-left {
+    color: #ffffff; 
+    padding: 0 15px;
+  }
+  
+  .fa-home:hover {
+    color: #be8f8f;
+  }
+  
+  .fa-arrow-left:hover {
+    color: #be8f8f;
+  }
+  
+  .fa-arrow-left {
+    position: absolute;
+    right: 5px;
+  }
+
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 0;
+    color: #4b4646;
+  }
+  
+  h1 {
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 1em;
+  }
+  
+  .activity-feed {
+    background-color: #4a4444;
+    padding: 1.5em;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 850px;
+  }
+  
+  .activity-feed ul {
+    list-style: none;
+  }
+  
+  .activity-feed li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    padding: 1em;
+    background-color: #d0defa;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .activity-feed li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .activity-feed i {
+    font-size: 1.5em;
+    margin-right: 15px;
+    color: #514f4f;
+  }
+  
+  .activity-feed p {
+    font-size: 1em;
+    color: #333;
+  }
+  
+  .fa-shopping-cart,
+  .fa-truck,
+  .fa-check {
+    color: #e74c3c;
+  }
+  
+  .fa-envelope {
+    color: #3498db;
+  }
+  
+  .fa-book,
+  .fa-exchange {
+    color: #f1c40f;
+  }
+  
+ 
+
+  
+  /* Responsive Design */
+  @media only screen and (max-width: 768px) {
+    main {
+      padding: 1em;
+    }
+    .activity-feed {
+      width: 90%;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    header nav a {
+      font-size: 20px;
+    }
+    .activity-feed {
+      width: 100%;
+    }
+  }
