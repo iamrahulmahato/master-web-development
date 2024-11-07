@@ -32,6 +32,73 @@ html {
     
     
 }
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-menu li {
+  display: inline;
+}
+
+.navbar-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-menu a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+      display: none;
+  }
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  height: 40px;         /* Adjust the size as needed */
+  width: auto;           /* Keep aspect ratio */
+  margin-right: 10px;    /* Add some space between logo and text */
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
 #progress-container {
   position: fixed ;
   top: 0px;
