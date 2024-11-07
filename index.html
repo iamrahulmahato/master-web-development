@@ -5573,7 +5573,10 @@ p {
             font-size: 1rem;
             color: #666;
         }
-    </style>
+        .subscribe{
+        z-index:-100;
+        }
+        </style>
     
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -5634,7 +5637,7 @@ p {
             <h3>Subscribe to Our Newsletter</h3>
             <form>
                 <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
+                <button type="submit" class="subscribe">Subscribe</button>
             </form>
         </div>
 
