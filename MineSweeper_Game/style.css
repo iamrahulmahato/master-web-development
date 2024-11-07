@@ -1,0 +1,111 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --cell-revealed: #ecf0f1;
+    --cell-unrevealed: #34495e;
+    --mine-color: #e74c3c;
+    --flag-color: #f1c40f;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--secondary-color);
+}
+
+#game-container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 80px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+#game-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#game-board {
+    display: grid;
+    padding: 100px;
+    grid-template-columns: repeat(10, 30px);
+    grid-gap: 1px;
+    background-color: #bdc3c7;
+    border: 1px solid #95a5a6;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--cell-unrevealed);
+    transition: background-color 0.3s;
+}
+
+.cell.revealed {
+    background-color: var(--cell-revealed);
+}
+
+.cell.mine {
+    background-color: var(--mine-color);
+}
+
+.cell.flagged::after {
+    content: '🚩';
+}
+
+#new-game-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#play-again-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
