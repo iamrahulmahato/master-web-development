@@ -19,6 +19,7 @@
 html {
   scrollbar-width: thin;
   scrollbar-color: #08ecbb #3c0751;
+  scroll-behavior: smooth;
 }
 
 * {
