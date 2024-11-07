@@ -105,18 +105,30 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
-        .home{
-            border: 2px solid black;
-            background-color:skyblue ;
-            color: beige;
-            padding: 5px;
-            width: 200px;
-            height: 50px;
-            font-size: 30px;
+        .home {
+            display: inline-block;
+            background-color: #007acc; /* Vibrant blue */
+            color: #ffffff; /* White text */
+            padding: 10px 20px;
+            font-size: 20px;
+            font-weight: bold;
             font-style: italic;
+            border-radius: 8px;
             text-decoration: none;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
+        
+        .home:hover {
+
+            background-color: #03446f; /* Darker blue on hover */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+        }
+
         .home a{
+            color: #ffffff;
             text-decoration: none;
         }
     </style>
