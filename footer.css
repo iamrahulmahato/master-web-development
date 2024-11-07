@@ -170,7 +170,7 @@ footer {
 
 [data-theme="dark"] .footer-bottom{
   background-color: #000327;
-  color:white;
+  color:white !important;
 }
 
 /* Hover effect on social icons */
