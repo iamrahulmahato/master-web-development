@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Tarot Card Reading</title>
+    <style>
+        /* Basic reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #570261;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+           
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .tarot-card {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            color: #444;
+        }
+
+        .tarot-card img {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .reading-text {
+            margin: 15px 0;
+            color: #666;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #7f53ac;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #684a9b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Virtual Tarot Card Reading</h1>
+        <div class="tarot-card" id="tarotCard">
+            <img src="" alt="Tarot Card" id="cardImage" style="display: none;">
+            <p id="cardName"></p>
+            <p class="reading-text" id="cardDescription"></p>
+        </div>
+        <button onclick="drawCard()">Draw a Card</button>
+    </div>
+
+    <script>
+        const tarotDeck = [
+            {
+                name: "The Fool",
+                description: "New beginnings, optimism, and trust in life.",
+                image: "assets/image/The-Fool-tarot.jpg"
+            },
+            {
+                name: "The Magician",
+                description: "Manifestation, resourcefulness, and power.",
+                image: "assets/image/The-Magician-tarot.jpg"
+            },
+            {
+                name: "The High Priestess",
+                description: "Intuition, wisdom, and mystery.",
+                image: "assets/image/High_Priestess-tarot.jpg"
+            },
+            {
+                name: "The Empress",
+                description: "Creativity, abundance, and nurturing.",
+                image: "assets/image/the-Empress-tarot.jpg"
+            },
+            {
+                name: "The Emperor",
+                description: "Authority, structure, and control.",
+                image: "assets/image/the-emperor-tarot.jpg"
+            },
+            // Add more cards as needed
+        ];
+
+        function drawCard() {
+            const randomIndex = Math.floor(Math.random() * tarotDeck.length);
+            const card = tarotDeck[randomIndex];
+            
+            // Update the card display
+            document.getElementById("cardImage").src = card.image;
+            document.getElementById("cardImage").style.display = "block";
+            document.getElementById("cardName").innerText = card.name;
+            document.getElementById("cardDescription").innerText = card.description;
+        }
+    </script>
+</body>
+</html>
