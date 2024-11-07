@@ -36,6 +36,7 @@ footer {
     background-color: black;
 }
 
+
 .footer-content {
     display: flex;
     justify-content: space-between; /* Use space-between for horizontal alignment */
@@ -66,8 +67,16 @@ footer {
   transition: color 0.3s;          /* Smooth transition on hover */
 }
 
-.footer-section ul li a:hover {
-  color: #ff007f;                  /* Change color on hover */
+/* Hover effect on links */
+[data-theme="dark"] .footer-section ul li a:hover {
+  color: #f8c5c5;
+}
+
+[data-theme="dark"] .footer-section ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: color 0.3s ease;
 }
 
 
@@ -132,7 +141,6 @@ footer {
   padding-bottom: 10px; /* Add some bottom padding */
   background-color: #eaeaea; /* Background color for the footer bottom */
   text-align: center; /* Center the text */
-  margin-top: 20px; /* Add margin to prevent overlap */
 }
 
 .footer-bottom .social-icons {
@@ -147,6 +155,11 @@ footer {
   border-radius: 50%;
 }
 
+[data-theme="dark"] .footer-bottom{
+  background-color: #000327;
+  color:white;
+}
+
 /* Hover effect on social icons */
 .footer-bottom .social-icons a:hover {
   color: #f8c5c5;
@@ -155,6 +168,24 @@ footer {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
+.social-media {
+  display: flex;
+  justify-content: center; /* Center the icons horizontally */
+  gap: 15px; /* Adds space between each icon */
+  padding: 20px 0; /* Adds some padding above and below the icons */
+}
+
+.spaced-item {
+  font-size: 24px; /* Adjust icon size if necessary */
+  color: #333; /* Icon color */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.spaced-item:hover {
+  color: #007bff; /* Change color on hover */
+}
+
 
 @keyframes spin {
   from {
