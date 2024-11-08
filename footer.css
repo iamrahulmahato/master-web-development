@@ -305,14 +305,18 @@ footer {
 }
 
 .gridbox {
-  list-style: none; /* Remove bullet points */
-  padding: 0; /* Remove default padding */
-  display: grid; /* Use grid for layout */
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(150px, 1fr)
-  ); /* Responsive columns */
-  gap: 15px; /* Space between items */
+  list-style: none;
+    padding: 0;
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    /* margin-left: 96px; */
+    /* margin-top: 30px; */
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-end;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .gridbox li {
@@ -340,8 +344,13 @@ footer {
 
 .social-media a {
     margin: 0 10px; /* Adjusts horizontal spacing between icons */
-    color: white; /* Change color as needed */
+    color: #030202;/* Change color as needed */
     text-decoration: none; /* Removes underline from links */
+}
+[data-theme="dark"] .social-media a {
+  margin: 0 10px; /* Adjusts horizontal spacing between icons */
+  color: #fff;/* Change color as needed */
+  text-decoration: none; /* Removes underline from links */
 }
 
 .social-media a:hover {
