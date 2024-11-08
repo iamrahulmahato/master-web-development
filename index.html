@@ -3326,109 +3326,119 @@ body {
 
     <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
     <div>
-
         <section id="feedback">
             <div class="container">
                 <h2>We Value Your Feedback!</h2>
                 <p>Your input helps us improve our services. Please share your thoughts with us below.</p>
                 <form id="feedbackForm">
-
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
                             oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
                             oninput="this.setCustomValidity('')">
                     </div>
-
-
+    
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
-
-        
-        <div class="form-group">
-          <label for="rating"></label>
-          
-        <div id="star-rating" class="stars">
-            <span class="star" data-value="1">&#9733;</span>
-            <span class="star" data-value="2">&#9733;</span>
-            <span class="star" data-value="3">&#9733;</span>
-            <span class="star" data-value="4">&#9733;</span>
-            <span class="star" data-value="5">&#9733;</span>
-        </div>
-        <p id="rating-value">Rating: 0</p>
     
-        <div class="form-group">
-            <label for="feedback">Your Feedback</label>
-            <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..." required></textarea>
-          </div>
+                    <div class="form-group">
+                        <label for="rating"></label>
+                        <div id="star-rating" class="stars">
+                            <span class="star" data-value="1">&#9733;</span>
+                            <span class="star" data-value="2">&#9733;</span>
+                            <span class="star" data-value="3">&#9733;</span>
+                            <span class="star" data-value="4">&#9733;</span>
+                            <span class="star" data-value="5">&#9733;</span>
+                        </div>
+                        <p id="rating-value">Rating: 0</p>
+                    </div>
     
-        <style>
-            .stars {
-               
-                cursor: pointer;
-                font-size: 2rem;
-                color: gray;
-            }
-            .star {
-                transition: color 0.2s;
-            }
-            .star.selected {
-                color: gold;
-            }
-        </style>
-        
-       <script>document.addEventListener("DOMContentLoaded", () => {
-        const stars = document.querySelectorAll(".star");
-        const ratingValue = document.getElementById("rating-value");
-        let selectedRating = 0;
+                    <div class="form-group">
+                        <label for="userFeedback">Your Feedback</label>
+                        <textarea id="userFeedback" name="feedback" rows="5" placeholder="Tell us about your experience..."
+                            required></textarea>
+                    </div>
     
-        stars.forEach(star => {
-            star.addEventListener("mouseover", () => highlightStars(star.dataset.value));
-            star.addEventListener("mouseout", () => highlightStars(selectedRating));
-            star.addEventListener("click", () => {
-                selectedRating = star.dataset.value;
-                ratingValue.innerText = `Rating: ${selectedRating}`;
-            });
-        });
-    
-        function highlightStars(rating) {
-            stars.forEach(star => {
-                star.classList.toggle("selected", star.dataset.value <= rating);
-            });
-        }
-    });
-    </script>
-
-
-
                     <button type="submit">Submit Feedback</button>
                 </form>
             </div>
         </section>
     </div>
+    
+    <style>
+        .stars {
+            cursor: pointer;
+            font-size: 2rem;
+            color: gray;
+        }
+        .star {
+            transition: color 0.2s;
+        }
+        .star.selected {
+            color: gold;
+        }
+    </style>
+    
     <script>
-        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-            // Prevent the default form submission behavior
-            event.preventDefault();
+        // JavaScript for star rating interaction
+        document.addEventListener("DOMContentLoaded", () => {
+            const stars = document.querySelectorAll(".star");
+            const ratingValue = document.getElementById("rating-value");
+            let selectedRating = 0;
     
-            // Show an alert message
-            alert('Your feedback has been submitted! Thank you!');
+            stars.forEach(star => {
+                star.addEventListener("mouseover", () => highlightStars(star.dataset.value));
+                star.addEventListener("mouseout", () => highlightStars(selectedRating));
+                star.addEventListener("click", () => {
+                    selectedRating = star.dataset.value;
+                    ratingValue.innerText = `Rating: ${selectedRating}`;
+                });
+            });
     
-            // clear the form fields after submission
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('feedback').value = '';
-            document.getElementById('rating').selectedIndex = 0; // Reset the rating dropdown
-            document.getElementById("rating-value").innerText = "Rating: 0"; // Reset the rating display
-            // Reset star selection
-        const stars = document.querySelectorAll(".star");
-        stars.forEach(star => {
-            star.classList.remove("selected");
-        });
+            function highlightStars(rating) {
+                stars.forEach(star => {
+                    star.classList.toggle("selected", star.dataset.value <= rating);
+                });
+            }
         });
     </script>
+    
+    <script>
+        // JavaScript for form submission and clearing fields
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+    
+                // Show an alert message
+                alert('Your feedback has been submitted! Thank you!');
+    
+                // Clear form fields after submission
+                const nameField = document.getElementById('name');
+                const emailField = document.getElementById('email');
+                const feedbackField = document.getElementById('userFeedback'); // Updated ID
+                const ratingValueDisplay = document.getElementById("rating-value");
+    
+                if (nameField && emailField && feedbackField && ratingValueDisplay) {
+                    nameField.value = '';
+                    emailField.value = '';
+                    feedbackField.value = ''; // Clear feedback field
+                    ratingValueDisplay.innerText = "Rating: 0";
+                    console.log('Form fields cleared');
+                } else {
+                    console.error('One or more form elements were not found.');
+                }
+    
+                // Reset star selection
+                const stars = document.querySelectorAll(".star");
+                stars.forEach(star => {
+                    star.classList.remove("selected");
+                });
+            });
+        });
+    </script>
+    
     <style>
         /* Feedback Form Section */
         #feedback {
