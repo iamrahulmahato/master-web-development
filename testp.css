@@ -1,255 +1,142 @@
+/* Global Styles */
 body {
-
     font-family: 'Arial', sans-serif;
-    background: #040423; 
+    background: #040423; /* Dark background */
+    color: #fff;
     margin: 0;
     padding: 0;
-    /*background-image: url(./assets/images/banner-bg.svg);*/
-
+    box-sizing: border-box;
 }
 
-.fa-home {
-
-    position: absolute;
-    right: 190px;
-    top: 40px;
-    font-size: 25px;
-    color: #fa2b4d;
-
-}
-
-.fa-home:hover {
-
-    color:rgb(191 96 143); 
-
-}
-
+/* Profile Container */
 .profile-container {
-
-    max-width: 1200px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    background: #040423; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 10px rgb(0 0 0 / 40%); 
-    /*background-image: url(./assets/images/banner-bg.svg);*/
-
+    width: 100%;
+    max-width: 1200px; /* Limit width for laptops and larger screens */
+    margin: auto;
 }
 
-.navbar a:hover {
-
-    color: #0056b3; 
-
-}
-
-.profile-card {
-
-    text-align: left;
-    margin: 20px 0;
-    padding: 20px;
-    /*border: 1px solid #ddd;*/ /* Border for the card */
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background: #d0defa;
-
-}
-
-.profile-image {
-
-    border-radius: 50%; 
-    width: 170px;
-    height: 170px;
-    object-fit: cover;
-
-}
-
-.profile-name {
-
-    font-size: 24px;
-    margin: 10px 0;
-
-}
-
-.profile-bio {
-
-    font-size: 16px;
-    color: black; 
-
-}
-
-.edit-profile-btn {
-
-    background: #fa2b4d; 
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s, transform 0.3s;
-
-}
-
-.edit-profile-btn:hover {
-
-    background-color: rgb(191 96 143); 
-    transform: scale(1.05); 
-
-}
-
-.edit_profiled{
-
-    background: #fa2b4d; 
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s, transform 0.3s;
-    position: relative;
-    right: 40%;
-    left: 290px;
-
-}
-
+/* Content Sections */
 .content-section {
-
+    width: 100%;
     margin: 20px 0;
-
-}
-
-.content-section h2 {
-
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: white;
-
-}
-
-.card {
-
-    background: #f9f9f9; 
-    margin-bottom: 15px;
     padding: 15px;
+    background: #1c1c3c;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background: #d0defa; 
-
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: left;
 }
 
-.card h3 {
-
-    font-size: 18px;
-    margin: 5px 0;
-
-}
-
-.card p {
-
-    font-size: 14px;
-    color: black;
-
-}
-
-
-.profile-details {
-
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: 20px; 
-
-}
-
+/* Profile Details Card */
 .profile-detail-card {
-
-    flex: 1; /* Allow cards to grow and fill space */
-    min-width: 200px; 
-    background: #f9f9f9; 
+    background: #344565;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center; 
-    background: #d0defa; 
-
+    text-align: left;
+    margin: 10px 0;
+    transition: transform 0.3s;
 }
 
-.nav-links {
-
-    list-style-type: none; 
-    padding: 0; 
-    margin: 0;
-    text-align: right; 
-
+/* Hover Effect for Cards */
+.profile-detail-card:hover {
+    transform: scale(1.03);
 }
 
-.home-link {
-
-    float: right; 
-
+/* Buttons */
+button, .button {
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.profile-header {
-
-    display: flex; 
-    align-items: center; 
-
+button:hover, .button:hover {
+    background-color: #d62839;
+    transform: scale(1.05);
 }
 
-.profile-image {
-    margin-right: 20px; 
-    margin-left: 50px;
-    margin-top: 30px;
+/* Account Details and Notification Cards */
+.account-card, .notification-card {
+    background: #6c757d;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    text-align: left;
+    align-items: flex-end;
+    transition: transform 0.3s;
 }
 
-.profile-info {
-
-    flex: 1; /* Allow this section to take the remaining space */
-    margin-left: 50px;
-
+/* Hover Effect for Account/Notification Cards */
+.account-card:hover{
+    transform: translateY(-3px);
+}
+.notification-card:hover {
+    transform: translateY(-3px);
 }
 
+/* Responsive Adjustments */
 
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-
-    .navbar ul {
-
-        flex-direction: column; /* Stack navbar items on smaller screens */
-        align-items: center;
-
-    }
-
+/* Laptop and larger screens */
+@media (max-width: 1200px) {
     .profile-container {
-
-        padding: 10px; /* Reduce padding on smaller screens */
-
+        max-width: 100%;
+        padding: 15px;
     }
 
-    .profile-card {
-
-        margin: 10px 0; /* Reduce margin for smaller screens */
-
+    .content-section {
+        margin: 15px 0;
+        padding: 10px;
     }
-
-    .content-section h2 {
-
-        font-size: 20px; /* Smaller headings */
-
-    }
-
-    .edit-profile-btn, .view-order-btn {
-
-        width: 100%; /* Full width buttons */
-        padding: 12px; /* Increase padding for easier tapping */
-
-    }
-
-    .footer {
-
-        font-size: 14px; /* Smaller footer text */
-
-    }
-
 }
 
+/* Tablet screens */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 10px;
+    }
 
+    .content-section {
+        margin: 10px 0;
+        padding: 8px;
+    }
+
+    .profile-detail-card, .account-card, .notification-card {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    button, .button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+    .profile-container {
+        padding: 5px;
+    }
+
+    .content-section {
+        padding: 8px;
+        margin: 10px 0;
+    }
+
+    .profile-detail-card, .account-card, .notification-card {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+
+    button, .button {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+}

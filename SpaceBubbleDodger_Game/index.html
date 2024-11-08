@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Bubble Dodger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="score">Score: <span id="scoreValue">0</span></div>
+        <div id="game-over" class="hidden">
+            <h2>Game Over!</h2>
+            <p>Your final score: <span id="finalScore"></span></p>
+            <button id="restartButton">Play again</button>
+        </div>
+    </div>
+    <div id="level-up-popup" class="popup hidden"></div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,75 +1,99 @@
 /* General styles for the footer */
 footer {
-    background-color: #f7f7f7; /* Light gray background */
-    padding: 30px 15px;
-    text-align: center;
-    color: #000;
-    font-family: Arial, sans-serif;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eaeaea;
+  background-color: #f7f7f7; /* Light gray background */
+  padding: 30px 15px;
+  text-align: center;
+  color: #000;
+  font-family: Arial, sans-serif;
 }
 
 .footer-section {
-    flex: 1;
-    margin: 0 15px;
+  flex: 1;
+  margin: 0 15px;
 }
 
 .footer-section h3 {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+    background-color: #f7f7f7; /* Light gray background */
+    /* padding: 30px 15px; */
+    text-align: center;
     color: #000;
-    font-size: 18px;
-    font-weight: bold;
-    position: relative;
-    transition: text-shadow 0.3s ease, color 0.3s ease;
+    font-family: Arial, sans-serif;
+    height: auto;
+    width: 100vw;
+    /* border: 1px solid black; */
+    height: 20vh;
+    margin: 0;
+}
+
+.dark-change{
+    color:white !important;
+    background-color: black;
+}
+
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Use space-between for horizontal alignment */
+   align-items: flex-strt;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eaeaea;
+    /* border:1px solid black; */
+    width:100%;
 }
 
 .footer-section p {
-    color: #666;
-    font-size: 14px;
+  color: #666;
+  font-size: 14px;
 }
-
-/* Quick Links styling */
 .footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 8px;
+  display: flex;                  /* Arrange items in a row */
+  justify-content: center;         /* Center-align the links */
+  gap: 30px;                       /* Space between each link */
+  list-style: none;                /* Remove bullet points */
+  padding: 0;                      /* Remove padding for cleaner alignment */
+  margin: 20px 0;                  /* Add vertical spacing around the links */
 }
 
 .footer-section ul li a {
-    text-decoration: none;
-    color: #000;
-    font-size: 14px;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #00FFFF;                  /* Set link color */
+  font-size: 14px;                 /* Adjust font size */
+  transition: color 0.3s;          /* Smooth transition on hover */
 }
 
 /* Hover effect on links */
-.footer-section ul li a:hover {
-    color: #f8c5c5;
+[data-theme="dark"] .footer-section ul li a:hover {
+  color: #f8c5c5;
 }
+
+[data-theme="dark"] .footer-section ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
 
 /* Subscribe form */
 .newsletter form {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .newsletter input[type="email"] {
-    padding: 10px;
-    width: 70%;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-right: 10px;
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 .newsletter button {
@@ -79,83 +103,97 @@ footer {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transform: translateY(-8px);
     transition: background-color 0.3s ease;
 }
 
 /* Hover effect on the subscribe button */
 .newsletter button:hover {
-    background-color: #e39a9a;
+  background-color: #e39a9a;
 }
 
 /* Footer bottom links */
 .footer-links-bottom {
-    display: flex;
-    justify-content: space-around;
-    padding: 15px 0;
-    background-color: #eaeaea;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+  background-color: #eaeaea;
 }
 
 .footer-links-bottom a {
-    text-decoration: none;
-    color: #00b894;
-    font-size: 14px;
-    margin: 0 10px;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #00b894;
+  font-size: 14px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
 }
 
 /* Hover effect on footer bottom links */
 .footer-links-bottom a:hover {
-    color: #0984e3;
+  color: #0984e3;
+    background-color: #e59e9e; /* A darker shade for hover effect */
+   
 }
 
 /* Footer bottom section */
 .footer-bottom {
-    padding-top: 10px;
-    padding-bottom: 10px; /* Add some bottom padding */
-    background-color: #eaeaea; /* Background color for the footer bottom */
-    text-align: center; /* Center the text */
-    margin-top: 20px; /* Add margin to prevent overlap */
+  padding-top: 10px;
+  padding-bottom: 10px; /* Add some bottom padding */
+  background-color: #eaeaea; /* Background color for the footer bottom */
+  text-align: center; /* Center the text */
 }
 
 .footer-bottom .social-icons {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .footer-bottom .social-icons a {
-    margin: 0 8px;
-    color: #000;
-    font-size: 20px;
-    transition: color 0.3s ease;
+  margin: 0 8px;
+  color: #000;
+  font-size: 20px;
+  transition: color 0.3s ease;
+  border-radius: 50%;
+}
+
+[data-theme="dark"] .footer-bottom{
+  background-color: #000327;
+  color:white !important;
 }
 
 /* Hover effect on social icons */
 .footer-bottom .social-icons a:hover {
-    color: #f8c5c5;
+  color: #f8c5c5;
+  animation-name: spin;
+  animation-duration: 2500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
+.social-media {
+  display: flex;
+  justify-content: center; /* Center the icons horizontally */
+  gap: 15px; /* Adds space between each icon */
+  padding: 20px 0; /* Adds some padding above and below the icons */
 }
-    .newsletter input[type="email"], .newsletter button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    /* Hover effect on the subscribe button */
-.newsletter button:hover {
-    background-color: #e39a9a;
-    transform: scale(1.05); /* Slightly enlarge the button */
+
+.spaced-item {
+  font-size: 24px; /* Adjust icon size if necessary */
+  color: #333; /* Icon color */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
 }
-/* Footer bottom section */
-.footer-bottom {
-    padding-top: 10px;
-    padding-bottom: 10px; /* Add some bottom padding */
-    background-color: #eaeaea; /* Background color for the footer bottom */
-    text-align: center; /* Center the text */
+
+.spaced-item:hover {
+  color: #007bff; /* Change color on hover */
 }
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg) scale(1.3);
+  }
+  to {
+    transform: rotate(360deg) scale(1.3);
+  }}
 
 .footer-bottom p {
     margin: 0; /* Remove default margin */
@@ -164,73 +202,232 @@ footer {
     font-family: Arial, sans-serif; /* Font family */
 }
 
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+  
+.newsletter input[type="email"],
+.newsletter button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+/* Hover effect on the subscribe button */
+.newsletter button:hover {
+  background-color: #e39a9a;
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+/* Footer bottom section */
+.footer-bottom {
+  padding-top: 10px;
+  padding-bottom: 10px; /* Add some bottom padding */
+  background-color: #eaeaea; /* Background color for the footer bottom */
+  text-align: center; /* Center the text */
+}
+
+.footer-bottom p {
+  margin: 0; /* Remove default margin */
+  color: #666; /* Dark gray color for the text */
+  font-size: 14px; /* Font size */
+  font-family: Arial, sans-serif; /* Font family */
+}
+
 /* Media Query for responsive design */
 @media (max-width: 768px) {
-    .footer-bottom p {
-        font-size: 12px; /* Adjust font size for smaller screens */
-    }
+  .footer-bottom p {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
 }
+  
 .footer-bottom .social-icons a {
-    margin: 0 8px;
-    color: #000; /* Default color */
-    font-size: 20px;
-    transition: color 0.3s ease;
+  margin: 0 8px;
+  color: #000; /* Default color */
+  font-size: 20px;
+  transition: color 0.3s ease;
 }
 
 /* Hover effects for each social media icon */
 .footer-bottom .social-icons a:hover {
-    color: #000; /* Default hover color */
+  color: #000; /* Default hover color */
 }
 
 /* Specific hover colors for each icon */
 .footer-bottom .social-icons a:hover .fab.fa-facebook-f {
-    color: #3b5998; /* Facebook Blue */
-}
+  color: #3b5998; /* Facebook Blue */
+  border: 2px solid #3b5998;
+  border-radius: 50%;
+  padding: 5px;
+  }
 
 .footer-bottom .social-icons a:hover .fab.fa-twitter {
-    color: #1da1f2; /* Twitter Blue */
+  color: #1da1f2; /* Twitter Blue */
+  border: 2px solid #1da1f2;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 .footer-bottom .social-icons a:hover .fab.fa-instagram {
-    color: #e1306c; /* Instagram Red */
+  color: #e1306c; /* Instagram Red */
+  border: 2px solid #e1306c;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 .footer-bottom .social-icons a:hover .fab.fa-linkedin-in {
-    color: #0077b5; /* LinkedIn Blue */
+  color: #0077b5; /* LinkedIn Blue */
+  border: 2px solid #0077b5;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 .footer-bottom .social-icons a:hover .fab.fa-youtube {
-    color: #ff0000; /* YouTube Red */
+  color: #ff0000; /* YouTube Red */
+  border: 2px solid #ff0000;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 .footer-bottom .social-icons a:hover .fab.fa-pinterest {
-    color: #e60023; /* Pinterest Red */
+  color: #e60023; /* Pinterest Red */
+  border: 2px solid #e60023;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 .footer-bottom .social-icons a:hover .fab.fa-snapchat-ghost {
-     color: #fffc00;; /* Snapchat Yellow */
+  color: #fffc00; /* Snapchat Yellow */
+  border: 2px solid #fffc00;
+  border-radius: 50%;
+  padding: 5px;
 }
+
 .gridbox {
-    list-style: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
-    display: grid; /* Use grid for layout */
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
-    gap: 15px; /* Space between items */
+  list-style: none;
+    padding: 0;
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    /* margin-left: 96px; */
+    /* margin-top: 30px; */
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-end;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .gridbox li {
-    text-align: center; /* Center text */
+  text-align: center; /* Center text */
 }
 
 .gridbox a {
-    text-decoration: none; /* Remove underline */
-    color: #000; /* Default text color */
-    font-size: 14px; /* Adjust font size */
-    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transition effects */
+  text-decoration: none; /* Remove underline */
+  color: #000; /* Default text color */
+  font-size: 14px; /* Adjust font size */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Transition effects */
 }
 
 /* Hover effect for links */
 .gridbox a:hover {
-    color: #f8c5c5; /* Change color on hover */
-    text-decoration: underline; /* Add underline on hover */
+  color: #f8c5c5; /* Change color on hover */
+  text-decoration: underline; /* Add underline on hover */
+} 
+
+
+.social-media {
+    display: flex; /* Aligns icons in a row */
+    justify-content: center; /* Centers the icons */
+}
+
+.social-media a {
+    margin: 0 10px; /* Adjusts horizontal spacing between icons */
+    color: #030202;/* Change color as needed */
+    text-decoration: none; /* Removes underline from links */
+}
+[data-theme="dark"] .social-media a {
+  margin: 0 10px; /* Adjusts horizontal spacing between icons */
+  color: #fff;/* Change color as needed */
+  text-decoration: none; /* Removes underline from links */
+}
+
+.social-media a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+.share-section {
+    display: flex; /* Align buttons in a row */
+    justify-content: center; /* Center the buttons */
+    margin-top: 20px; /* Space above the buttons */
+}
+
+button {
+    background-color: #007bff; /* Blue background for buttons */
+    color: white; /* Text color */
+    border: none; /* Removes border */
+    border-radius: 5px; /* Rounds corners */
+    padding: 10px 20px; /* Padding for buttons */
+    margin: 0 10px; /* Space between buttons */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+
+
+
+
+
+
+/* =========================================FOOTER DARK THEME=============================================*/
+
+/* Footer content and footer bottom for dark theme */
+[data-theme="dark"] .footer-content,
+[data-theme="dark"] .footer-bottom {
+    background-color: #121212; 
+    color: white; 
+    /* border-top: 1px solid #333;  */
+}
+
+[data-theme="dark"] .footer-content{
+    border-top:1px solid #333;
+}
+
+/*Footer content heading color */
+[data-theme="dark"] .footer-content h3,
+[data-theme="dark"] .footer-section h3 {
+    background-color: #121212; 
+    color: white; 
+    /* border-top: 1px solid #333;  */
+}
+
+[data-theme="dark"] .footer-section img{
+    filter: invert(100%);
+}
+
+/* Dark theme specific link colors */
+[data-theme="dark"] .footer-section ul li a,
+[data-theme="dark"] .footer-links-bottom a,
+[data-theme="dark"] .footer-bottom p {
+    color: #aaa; 
+}
+
+[data-theme="dark"] .footer-section ul li a:hover,
+[data-theme="dark"] .footer-links-bottom a:hover {
+    color: #f8c5c5; 
+}
+
+/* Dark mode styling for social icons */
+[data-theme="dark"] .social-icons a {
+    color: #aaa; 
+}
+
+[data-theme="dark"] .social-icons a:hover {
+    color: #f8c5c5;
 }

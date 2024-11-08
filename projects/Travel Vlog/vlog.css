@@ -61,6 +61,12 @@ header {
     margin-bottom: 1rem;
     color: #444; /* Lighter heading color */
 }
+[data-theme="dark"] #page1 h1 {
+    font-size: 2.5vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #a16d6d;
+}
 
 video {
     width: 60%;
