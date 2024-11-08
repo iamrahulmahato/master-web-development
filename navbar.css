@@ -1,0 +1,317 @@
+@media (max-width: 1200px) {
+  .footer-container {
+    padding: 20px;
+  }
+
+  .mwd-footer-content {
+    text-align: center;
+  }
+
+  .tags.social {
+    justify-content: center;
+  }
+
+  .btn {
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+  .btn-secondary:hover {
+    background-color: #6c757d;
+  }
+}
+
+.circle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgb(244, 63, 94), rgb(253, 91, 118));
+  transition: transform 0.1s, left 0.1s, top 0.1s;
+  background-color: #f43f5e;
+}
+
+.circle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Chatbot Container */
+
+.chatbot-container {
+  position: fixed;
+  bottom: 34px;
+  /* Adjust as needed */
+  right: 100px;
+  /* Adjust as needed */
+  z-index: 1000;
+  /* Ensure it appears above other elements */
+}
+
+/* Chatbot Button */
+.chatbot-button {
+  background-color: #007bff;
+  /* Change to your preferred color */
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  /* Smaller padding */
+  cursor: pointer;
+  position: relative;
+  width: 50px;
+  /* Adjusted size */
+  height: 50px;
+  /* Adjusted size */
+}
+
+/* Button Image */
+.chatbot-button img {
+  width: 30px;
+  /* Adjusted image size */
+  height: 30px;
+  /* Adjusted image size */
+}
+
+/* Tooltip Text */
+.tooltip-text {
+  display: none;
+  /* Hide by default */
+  position: absolute;
+  bottom: 100%;
+  /* Position above the button */
+  right: 50%;
+  transform: translateX(50%);
+  background-color: #333;
+  /* Background color for tooltip */
+  color: #fff;
+  /* Tooltip text color */
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  /* Prevent text from wrapping */
+}
+
+/* Show Tooltip on Hover */
+.chatbot-button:hover .tooltip-text {
+  display: block;
+  /* Show on hover */
+}
+
+/* Chat Window Styles */
+.chat-window {
+  position: fixed;
+  bottom: 90px;
+  /* Adjust based on the button size */
+  right: 20px;
+  /* Same as the button */
+  width: 400px;
+  /* Smaller width */
+  height: 500px;
+  /* Fixed height for compactness */
+  border: 1px solid #ccc;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  /* Hidden by default */
+  z-index: 1000;
+  /* Ensure it appears above other elements */
+}
+
+/* Iframe for Chatbot HTML */
+#chat-iframe {
+  width: 100%;
+  /* Full width of the chat window */
+  height: calc(100% - 40px);
+  /* Height minus header */
+  border: none;
+  /* Remove border */
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.4;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.card {
+  animation: appear 5s linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 2000px; /* Add some height to enable scrolling */
+  margin: 0;
+  padding: 0;
+}
+
+/* Scroll to Top Button Styles */
+.top-btn {
+  display: none;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 23px;
+  right: 44px;
+  background-color: #ab45e7;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-btn:hover {
+  background-color: #c91e57;
+}
+.source-code-btn {
+  color: white;
+  background-color: #f5f5dc;
+  padding: 10px 20px;
+  border: 2px solid #d4d4aa;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.source-code-btn:hover {
+  background-color: #e0e0c1;
+  color: #222;
+  border-color: #c1c17d;
+  transform: translateY(-2px);
+}
+
+:root {
+  /* Light theme colors */
+  --bg-color-light: #ffffff;
+  --text-color-light: #333;
+  --accent-color-light: #ffa500; /* light orange */
+  /* Dark theme colors */
+  --bg-color-dark: #1c1c1c;
+  --text-color-dark: #f5f5f5;
+  --accent-color-dark: #ffcc80; /* lighter orange */
+  /* Default theme */
+  --bg-color: var(--bg-color-light);
+  --text-color: var(--text-color-light);
+  --accent-color: var(--accent-color-light);
+}
+/* Theme styles based on data-theme attribute */
+[data-theme="dark"] {
+  --bg-color: var(--bg-color-dark);
+  --text-color: var(--text-color-dark);
+  --accent-color: var(--accent-color-dark);
+}
+/* Navbar container */
+.navbar {
+  width: 100%;
+  padding: 15px 0;
+  background-color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--accent-color);
+}
+/* Navbar list */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+/* Navbar items */
+.navbar ul li {
+  position: relative;
+}
+/* Navbar links */
+.navbar ul li a {
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+/* Hover effect with futuristic line animation */
+.navbar ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+  width: 0%;
+}
+.navbar ul li a:hover {
+  color: var(--accent-color);
+  transform: scale(1.05);
+}
+.navbar ul li a:hover::after {
+  width: 100%;
+}
+/* Toggle theme button */
+.theme-toggle {
+  position: absolute;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--accent-color);
+  transition: transform 0.3s ease;
+}
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.btn-container {
+  text-align: center; /* Center the buttons */
+  margin: 20px 0; /* Add some margin for spacing */
+}
+
+.nextPrevArrows {
+  display: flex; /* Use flexbox for next/prev buttons */
+  justify-content: center; /* Center the arrows */
+  margin-top: 10px; /* Margin for spacing */
+}
+
+.nextPrevArrows button {
+  background: #ff4d4d; /* Red background */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Padding for size */
+  margin: 0 5px; /* Spacing between arrows */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  transition: background 0.3s ease; /* Smooth transition */
+}
+
+.nextPrevArrows button:hover {
+  background: #ff3333; /* Darker red on hover */
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>Minesweeper</h1>
+        </header>
+        <div id="game-info">
+            <div id="mine-count">Mines: 10</div>
+            <div id="timer">Time: 0s</div>
+        </div>
+        <div id="game-board"></div>
+        <button id="new-game-btn">New Game</button>
+    </div>
+    <div id="game-over-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="game-over-message"></h2>
+            <p id="game-over-stats"></p>
+            <button id="play-again-btn">Play Again</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

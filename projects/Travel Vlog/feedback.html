@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://fonts.googleapis.com/css2?family=Nova+Round&family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="contact.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ 
+    <title>Feedback form</title>
+   
+    <style>
+        :root { /* Light theme colors */ --background-color: #ffffff; --text-color: #000000; --navbar-background: #f8f9fa; --navbar-text: #000000; --link-color: #1a73e8; --button-background: #008cba; --button-text: #ffffff; } [data-theme="dark"] { /* Dark theme colors */ --background-color: #121212; --text-color: #ffffff; --navbar-background: #333333; --navbar-text: #ffffff; --link-color: #bb86fc; --button-background: #3d3d3d; --button-text: #ffffff; } * { padding: 0; margin: 0; box-sizing: border-box; } body { font-family: "Poppins", sans-serif; background-color: var(--background-color); color: var(--text-color); } header { background-color: var(--navbar-background); } #navbar ul { list-style: none; padding: 0; } #navbar ul li { display: inline; margin-right: 10px; } #navbar ul li a { color: var(--navbar-text); text-decoration: none; } button 
+       { border: none;
+       display: inline-flex;
+       appearance: none;
+       align-items: center;
+       justify-content: center;
+       border-radius: 9999px;
+       padding: 8px;
+       align-items: center;
+       background-color: #f43f5e;
+       color: #ffffff;
+       cursor: pointer;
+   }
+         #theme-toggle { position: fixed; top: 10px; right: 10px; } </style> </head> <body data-theme="light"> <header> <nav id="navbar"> <ul> <li class="item"><a href="home.html">Home</a></li> <li class="item"><a href="vlog.html">Vlog</a></li> <li class="item"><a href="about.html">About</a></li> <li class="item"><a href="contact.html">Contact Us</a></li> <li class="item"><a href="feedback.html">Feedback</a></li> </ul> </nav> </header> <button id="theme-toggle"> <i class="fas fa-sun"></i> </button> <!-- Add your content here --> <section id="content"> <!-- Content will go here --> </section> <script> const toggleButton = document.getElementById('theme-toggle'); const body = document.body; toggleButton.addEventListener('click', () => { if (body.getAttribute('data-theme') === 'light') { body.setAttribute('data-theme', 'dark'); toggleButton.innerHTML = '<i class="fas fa-moon"></i>'; } else { body.setAttribute('data-theme', 'light'); toggleButton.innerHTML = '<i class="fas fa-sun"></i>'; } }); </script>
+  
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins',sans-serif;
+            box-sizing: border-box;
+            outline: none;
+        }
+        header {
+    size: 2rem;
+    position: absolute;
+    top: 10px;
+}
+  
+    body{
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(137, 203, 231, 0.8)), url(image/contact.jpg) no-repeat center center/cover  ;
+       
+        
+    }  
+    .container{
+     width:360px ;
+     background: #000;
+     box-shadow: 0 0 8px rgba(250,250,250,0.6); 
+     opacity: 0.6;  
+    } 
+    .container form{
+        width:100% ;
+        text-align: center;
+        padding:25px 20px ;
+    } 
+    form h1{
+        padding:10px 0;
+        color: #fff;
+    }
+    form .id{
+        position:relative;
+    }
+    .id i{
+        position: absolute;
+        font-size: 20px;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+
+    }
+    form input{
+      width: 100%;
+      height: 50px;
+      margin: 4px 0;  
+      border: 1px solid #5c5c5c;
+      border-radius: 3px;
+      padding: 0 15px;
+      padding-right:45px ;
+      font-size: 20px;
+    }
+    form textarea{
+     padding: 5px 15px;
+     border: 1px solid #5c5c5c;
+     border-radius: 3px;
+     background: #fffafa;
+     font-size: 20px;
+     width: 100%;   
+     margin: 4px 0;
+    }
+    form button{
+        margin-top: 5px;
+        border: none;
+        background: rgb(250, 166, 58);
+        color: #222;
+        padding: 10px 0;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 800;
+        cursor: pointer;
+        border-radius:3px;
+
+
+    }
+    form input:focus::placeholder,
+    form textarea:focus::placeholder{
+        padding-left: 4px;
+        border: 1ppx solid rgb(250, 166, 58);
+        color:rgb(250, 166, 58);
+        transition: all 0.3% ease;
+    }
+    form input:focus + i{
+        color:rgb(250, 166, 58);
+        transition: all 0.3% ease; 
+    }
+
+
+    </style>
+      <header class="my-3">
+        <nav id="navbar">
+            <ul>
+                <li class="item"><a href="home.html">Home</a></li>
+                <li class="item"><a href="vlog.html">Vlog</a></li>
+                <li class="item"><a href="about.html">About</a></li>
+                <li class="item"><a href="contact.html">Contact Us</a></li>
+                <li class="item"><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+     
+  
+    <div class="container">
+        <form>
+            <h1>Give your Feedback </h1>
+                <div class="id">
+                    <input type="text" placeholder="Full name">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="id">
+                    <input type="email" placeholder="Email address">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <textarea cols="15" rows="5" placeholder="Enter your opinion here..">
+
+                </textarea>
+                <button>Send</button>
+        </form>
+     
+    </div>
+   
+    
+</body>
+</html>
