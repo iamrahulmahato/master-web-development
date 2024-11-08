@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Country Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Guess the Country Game</h1>
+        <div id="hints">
+            <p id="hint1">Hint 1: This country has the world's largest democracy.</p>
+            <p id="hint2" style="display:none;">Hint 2: It is known for its diverse cultures, languages, and cuisines.</p>
+            <p id="hint3" style="display:none;">Hint 3: It is the birthplace of major religions like Hinduism, Buddhism, Jainism, and Sikhism.</p>
+            <p id="hint4" style="display:none;">Hint 4: It has the Taj Mahal, one of the Seven Wonders of the World.</p>
+        </div>
+        <input type="text" id="guess" placeholder="Enter your guess here">
+        <button onclick="checkGuess()">Submit Guess</button>
+        <p id="result"></p>
+        <button onclick="revealHint()" id="hintButton">Reveal Next Hint</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
