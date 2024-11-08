@@ -1,0 +1,191 @@
+/* author: https://codepen.io/kitjenson/pen/MWMGEaE
+Kit Jenson
+ */
+
+
+:root {
+    --green: #1fb24c;
+    --red: #be1e2d;
+  }
+  html {
+    min-height: 100vh;
+    display: grid;
+    background: black;
+    font-family: system-ui;
+    text-align: center;
+    font-size: .75rem;
+  }
+  
+  body {
+    max-width: 1200px;
+    background: 
+      linear-gradient(to right, black 57px, transparent 57px calc(100% - 57px), black calc(100% - 57px)),
+      linear-gradient(to bottom, black 450px, var(--green) 450px);
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-size: 10rem;
+    margin: 0;
+    position: absolute;
+    font-weight: 900;
+    color: gold;
+    text-shadow: 5px 5px black;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%,-50%);
+    opacity: 0;  
+    pointer-events: none;
+    user-select: none;
+  }
+  #failure {
+    color: var(--red) !important;
+  }
+  
+  .show_result {
+    transition: .75s;
+    transition-delay: 1s;
+    opacity: 1;
+  }
+  
+  #game_field {
+    width: 100vw;
+    max-width: 1200px;
+    height: 450px;
+    background: url('https://contentservice.mc.reyrey.net/image_v1.0.0/?id=26107e19-02ae-5a04-bc21-88b57bc22ced&638600304193604811');
+    position: relative;
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+  }
+  #game_field:before {
+    content: '';
+    width: 100%;
+    height: 400px;
+  /*   background: var(--red); */
+    position: absolute;
+    left: 0;
+    top: -28px;
+    mix-blend-mode: multiply;
+  }
+  
+  #goal {
+    height: 250px;
+    aspect-ratio: 2/1;
+    margin: 0 auto;
+    background: url('https://contentservice.mc.reyrey.net/image_v1.0.0/?id=f4278541-20df-568f-baea-e387ee22937c&638600307412335028');
+    background-size: 100% 100% !important;
+    box-sizing: border-box;
+    cursor: crosshair;
+    position: absolute;
+    left: calc(50% - 250px);
+    top: 30px;
+    animation: shake .25s linear infinite;
+    transform-origin: 50% 100%;
+  /*   filter: brightness(15); */
+  }
+  @keyframes shake {
+    25% { transform: rotate(1deg); }
+    75% { transform: rotate(-1deg); }
+  }
+  
+  .hitbox {
+    /*   outline: 1px solid red; */
+  }
+  .hitbox[box="0"] {
+    width:175px;
+    height: 125px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .hitbox[box="1"] {
+    width:175px;
+    height: 125px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .hitbox[box="2"] {
+    width:140px;
+    height: 175px;
+    position: absolute;
+    left: calc(50% - 70px);
+    top: 0;
+  }
+  .hitbox[box="3"] {
+    width:175px;
+    height: 125px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .hitbox[box="4"] {
+    width:175px;
+    height: 125px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  
+  #ball {
+    --ani: roll 1s linear infinite;
+    width: 40px;
+    aspect-ratio: 1/1;
+    background-size: 100% 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(100% - 50px);
+    left: calc(50% - 20px);    
+    pointer-events: none;
+  }
+  #ball:before{
+    content: '';
+    width: 40px;
+    aspect-ratio: 1/1;
+  /*   background: var(--red); */
+    background-size: 100% 100%;
+    border-radius: 50%;
+    position: absolute; 
+    left: 0%;
+    top: 50%;
+    mix-blend-mode: multiply;
+  }
+  #ball:after{
+    content: '';
+    width: 40px;
+    aspect-ratio: 1/1;
+    background:
+      url(http://upload.wikimedia.org/wikipedia/en/e/ec/Soccer_ball.svg);
+    background-size: 100% 100%;
+    border-radius: 50%;
+    position: absolute; 
+    left: 0;
+    top: 0;
+  }
+  @keyframes roll {
+    100% {
+      transform: rotate(1080deg);
+    }
+  }
+  
+  .kicked:after {
+    animation: var(--ani);
+  }
+  
+  .fall {
+    animation: fall .5s linear .5s forwards;
+  }
+  @keyframes fall {
+    100% {
+      top: 250px;
+    }
+  }
+  .goal {
+    animation: score .5s linear .5s forwards
+  }
+  @keyframes score {
+    100% {
+      top: 200px;
+    }
+  }
