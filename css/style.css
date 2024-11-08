@@ -49,9 +49,18 @@ html {
 }
 
 .navbar-logo {
-  font-size: 1.5rem;
-  color: #fff;
+  display: flex;
+  align-items: flex-start;
+  color: #f43f5e;
   text-decoration: none;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-left: -161px;
+  margin-right: 182px;
+ justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
 }
 
 .navbar-menu {
@@ -91,13 +100,13 @@ html {
   margin-right: 10px;    /* Add some space between logo and text */
 }
 
-.navbar-logo {
+/* .navbar-logo {
   display: flex;
   align-items: center;
   color: #fff;
   text-decoration: none;
   font-size: 1.5rem;
-}
+} */
 
 #progress-container {
   position: fixed ;
