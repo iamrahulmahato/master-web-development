@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1>Task Planner</h1>
+        <form id="task-form">
+            <label for="task-title">Task Title</label>
+            <input type="text" id="task-title" placeholder="Enter your task title" required>
+
+            <label for="task-desc">Description</label>
+            <textarea id="task-desc" placeholder="Task description (optional)"></textarea>
+
+            <label for="task-date">Due Date</label>
+            <input type="date" id="task-date" required>
+
+            <label for="task-time">Alarm Time</label>
+            <input type="time" id="task-time" placeholder="Set alarm time (optional)">
+
+            <button type="submit">Add Task</button>
+        </form>
+
+        <div id="task-list"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
