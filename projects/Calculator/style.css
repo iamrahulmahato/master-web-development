@@ -45,6 +45,20 @@ table {
     margin-bottom: 30px; /* Space between calculator and sections */
     width: 100%;
     max-width: 400px;
+    box-shadow: 0px 0px 20px 8px rgb(103 92 92 / 65%);
+}
+/* dark theme */
+ [data-theme="dark"] table {
+    background-color: #333;
+    border-collapse: separate;
+    border-spacing: 5px;
+    padding: 10px;
+    border: 2px solid #999;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0px 0px 20px 8px rgb(103 92 92 / 65%);
 }
 
 input[type="text"] {
@@ -52,7 +66,7 @@ input[type="text"] {
     padding: 10px;
     font-size: 24px;
     text-align: right;
-    background-color: #000;
+    background-color: #222;
     color: white;
     border: 1px solid #666;
     border-radius: 5px;
@@ -63,8 +77,20 @@ input[type="button"] {
     width: 60px; /* Fixed width */
     height: 60px; /* Fixed height */
     font-size: 18px;
-    background-color: blue;
+    background-color:#5757f1;
     color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+/* dark theme */
+[data-theme="dark"] 
+input[type="button"] {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+    background-color: #121212;
+    color: #f8f9fa;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -76,7 +102,7 @@ input[type="button"]:hover {
 
 /* Special styling for AC button */
 input[type="button"][value="AC"] {
-    background-color: red;
+    background-color: #f43f5e;
 }
 
 input[type="button"][value="AC"]:hover {
@@ -96,8 +122,23 @@ input[type="button"][value="AC"]:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0px 0px 20px 8px rgb(103 92 92 / 65%);
 }
-
+/* dark theme */
+[data-theme="dark"] .section {
+    background-color: #333;
+    border: 2px solid #999;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 400px;
+    width: 100%;
+    /* Center the sections within the flex container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 20px 8px rgb(103 92 92 / 65%);
+}
 .section h2 {
     margin-top: 0;
     text-align: center;
