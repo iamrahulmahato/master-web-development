@@ -3326,109 +3326,119 @@ body {
 
     <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
     <div>
-
         <section id="feedback">
             <div class="container">
                 <h2>We Value Your Feedback!</h2>
                 <p>Your input helps us improve our services. Please share your thoughts with us below.</p>
                 <form id="feedbackForm">
-
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
                             oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
                             oninput="this.setCustomValidity('')">
                     </div>
-
-
+    
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
-
-        
-        <div class="form-group">
-          <label for="rating"></label>
-          
-        <div id="star-rating" class="stars">
-            <span class="star" data-value="1">&#9733;</span>
-            <span class="star" data-value="2">&#9733;</span>
-            <span class="star" data-value="3">&#9733;</span>
-            <span class="star" data-value="4">&#9733;</span>
-            <span class="star" data-value="5">&#9733;</span>
-        </div>
-        <p id="rating-value">Rating: 0</p>
     
-        <div class="form-group">
-            <label for="feedback">Your Feedback</label>
-            <textarea id="feedback" name="feedback" rows="5" placeholder="Tell us about your experience..." required></textarea>
-          </div>
+                    <div class="form-group">
+                        <label for="rating"></label>
+                        <div id="star-rating" class="stars">
+                            <span class="star" data-value="1">&#9733;</span>
+                            <span class="star" data-value="2">&#9733;</span>
+                            <span class="star" data-value="3">&#9733;</span>
+                            <span class="star" data-value="4">&#9733;</span>
+                            <span class="star" data-value="5">&#9733;</span>
+                        </div>
+                        <p id="rating-value">Rating: 0</p>
+                    </div>
     
-        <style>
-            .stars {
-               
-                cursor: pointer;
-                font-size: 2rem;
-                color: gray;
-            }
-            .star {
-                transition: color 0.2s;
-            }
-            .star.selected {
-                color: gold;
-            }
-        </style>
-        
-       <script>document.addEventListener("DOMContentLoaded", () => {
-        const stars = document.querySelectorAll(".star");
-        const ratingValue = document.getElementById("rating-value");
-        let selectedRating = 0;
+                    <div class="form-group">
+                        <label for="userFeedback">Your Feedback</label>
+                        <textarea id="userFeedback" name="feedback" rows="5" placeholder="Tell us about your experience..."
+                            required></textarea>
+                    </div>
     
-        stars.forEach(star => {
-            star.addEventListener("mouseover", () => highlightStars(star.dataset.value));
-            star.addEventListener("mouseout", () => highlightStars(selectedRating));
-            star.addEventListener("click", () => {
-                selectedRating = star.dataset.value;
-                ratingValue.innerText = `Rating: ${selectedRating}`;
-            });
-        });
-    
-        function highlightStars(rating) {
-            stars.forEach(star => {
-                star.classList.toggle("selected", star.dataset.value <= rating);
-            });
-        }
-    });
-    </script>
-
-
-
                     <button type="submit">Submit Feedback</button>
                 </form>
             </div>
         </section>
     </div>
+    
+    <style>
+        .stars {
+            cursor: pointer;
+            font-size: 2rem;
+            color: gray;
+        }
+        .star {
+            transition: color 0.2s;
+        }
+        .star.selected {
+            color: gold;
+        }
+    </style>
+    
     <script>
-        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-            // Prevent the default form submission behavior
-            event.preventDefault();
+        // JavaScript for star rating interaction
+        document.addEventListener("DOMContentLoaded", () => {
+            const stars = document.querySelectorAll(".star");
+            const ratingValue = document.getElementById("rating-value");
+            let selectedRating = 0;
     
-            // Show an alert message
-            alert('Your feedback has been submitted! Thank you!');
+            stars.forEach(star => {
+                star.addEventListener("mouseover", () => highlightStars(star.dataset.value));
+                star.addEventListener("mouseout", () => highlightStars(selectedRating));
+                star.addEventListener("click", () => {
+                    selectedRating = star.dataset.value;
+                    ratingValue.innerText = `Rating: ${selectedRating}`;
+                });
+            });
     
-            // clear the form fields after submission
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('feedback').value = '';
-            document.getElementById('rating').selectedIndex = 0; // Reset the rating dropdown
-            document.getElementById("rating-value").innerText = "Rating: 0"; // Reset the rating display
-            // Reset star selection
-        const stars = document.querySelectorAll(".star");
-        stars.forEach(star => {
-            star.classList.remove("selected");
-        });
+            function highlightStars(rating) {
+                stars.forEach(star => {
+                    star.classList.toggle("selected", star.dataset.value <= rating);
+                });
+            }
         });
     </script>
+    
+    <script>
+        // JavaScript for form submission and clearing fields
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+    
+                // Show an alert message
+                alert('Your feedback has been submitted! Thank you!');
+    
+                // Clear form fields after submission
+                const nameField = document.getElementById('name');
+                const emailField = document.getElementById('email');
+                const feedbackField = document.getElementById('userFeedback'); // Updated ID
+                const ratingValueDisplay = document.getElementById("rating-value");
+    
+                if (nameField && emailField && feedbackField && ratingValueDisplay) {
+                    nameField.value = '';
+                    emailField.value = '';
+                    feedbackField.value = ''; // Clear feedback field
+                    ratingValueDisplay.innerText = "Rating: 0";
+                    console.log('Form fields cleared');
+                } else {
+                    console.error('One or more form elements were not found.');
+                }
+    
+                // Reset star selection
+                const stars = document.querySelectorAll(".star");
+                stars.forEach(star => {
+                    star.classList.remove("selected");
+                });
+            });
+        });
+    </script>
+    
     <style>
         /* Feedback Form Section */
         #feedback {
@@ -3516,37 +3526,7 @@ body {
     </style>
     <!-- Footer -->
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <!-- Quick Links Section -->
-            <div class="footer-section quick-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">ChatBot</a></li>
-                    <li><a href="#">Feedback</a></li>
-                    <li><a href="#">FAQ's</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <!-- About Us Section -->
-            <div class="footer-section about-us">
-                <h3>About Us</h3>
-                <p>Empowering aspiring developers to master web development through hands-on, small-scale projects.</p>
-            </div>
-            <!-- Newsletter Section -->
-            <div class="footer-section newsletter">
-                <h3>Subscribe to Our Newsletter</h3>
-                <form>
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-
-
-
+  
     <!-- Added FAQ Section -->
     <section id="faq">
         <div class="container">
@@ -3629,73 +3609,192 @@ body {
     
     
 
-<!-- Footer -->
-<footer>
-    <div class="footer-content">
-        <!-- Quick Links Section -->
-        <div class="footer-section quick-links">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="chatbot.html">ChatBot</a></li>
-                <li><a href="./feedback.html">Feedback</a></li>
-                <li><a href="./faq.html">FAQ's</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <!-- About Us Section -->
-        <div class="footer-section about-us">
-            <h3>About Us</h3>
-            <p>Empowering aspiring developers to master web development through hands-on, small-scale projects.</p>
-        </div>
-        
-
-        <!-- Newsletter Section -->
-        <div class="footer-section newsletter">
-            <h3>Subscribe to Our Newsletter</h3>
-            <form>
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-        <div class="follow-us">
-            <DIV>
+    <footer>
+        <div class="footer-content">
+            <!-- Quick Links Section -->
+            <div class="footer-section quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="chatbot.html">ChatBot</a></li>
+                    <li><a href="./feedback.html">Feedback</a></li>
+                    <li><a href="./faq.html">FAQ's</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+    
+            <!-- About Us Section -->
+            <div class="footer-section about-us">
+                <h3>About Us</h3>
+                <p>Empowering aspiring developers to master web development through hands-on, small-scale projects.</p>
+            </div>
+    
+            <!-- Newsletter Section -->
+            <div class="footer-section newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="subscribe-btn">Subscribe</button>
+                </form>
+            </div>
+    
+            <!-- Social Media Section -->
+            <div class="follow-us">
                 <h3>Follow Us</h3>
-            <a href="https://www.linkedin.com/in/berajeevkumar/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" />
-            </a>
-            <a href="https://x.com/be_rajeevkumar" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter Logo" />
-            </a>
-            <a href="https://github.com/beRajeevKumar" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" />
-            </a>
-            </DIV>
-        </div>
-    </div><a href=""> <style>
-        .share-section {
-            text-align: center;
-            margin-top: 20px;
-        }
-        #shareBtn {
-            background-color: #f71257;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #shareBtn:hover {
-            background-color: #f8bab5;
-        }
-    </style>
-</head>
-<body>
-            <div class="share-section">
-                <button id="shareBtn">Share Us</button>
+                <a href="https://www.linkedin.com/in/berajeevkumar/" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" />
+                </a>
+                <a href="https://x.com/be_rajeevkumar" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter Logo" />
+                </a>
+                <a href="https://github.com/beRajeevKumar" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" />
+                </a>
             </div>
         </div>
-    </section>
+    
+        <!-- Share Button -->
+        <div class="share-section">
+            <button id="shareBtn" class="share-btn">Share Us</button>
+        </div>
+    
+        <!-- Bottom Links Section -->
+        <ul class="gridbox">
+            <li><a href="#">Help Centre</a></li>
+            <li><a href="./welcometestimonials.html">Testimonials</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Media Centre</a></li>
+            <li><a href="./terms.html">Terms of Use</a></li>
+            <li><a href="./privacy.html">Privacy</a></li>
+            <li><a href="#">Cookie Preferences</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+        </ul>
+    
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
+            </div>
+            <p>© 2024 Open Projects. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Styles -->
+    <style>
+        /* Footer Section Styling */
+        footer {
+            background: #040423;
+            color: #eee;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+    
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+    
+        .footer-section h3 {
+            color: #f8b400;
+        }
+    
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+    
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+        }
+    
+        .footer-section ul li a:hover {
+            color: #f8b400;
+            transition: color 0.3s;
+        }
+    
+        /* Newsletter and Share Button */
+        .subscribe-btn, .share-btn {
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+    
+        .subscribe-btn:hover, .share-btn:hover {
+            background: linear-gradient(45deg, #feb47b, #ff7e5f);
+            transform: scale(1.05);
+        }
+    
+        /* Follow Us Icons */
+        .follow-us a img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+    
+        .follow-us a img:hover {
+            transform: scale(1.2);
+        }
+    
+        /* Social Icons */
+        .social-icons a {
+            color: #eee;
+            font-size: 20px;
+            margin-right: 15px;
+            transition: color 0.3s, transform 0.3s;
+        }
+    
+        .social-icons a:hover {
+            color: #f8b400;
+            transform: scale(1.1);
+        }
+    
+        /* Gridbox Links */
+        .gridbox {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            list-style: none;
+        }
+    
+        .gridbox li {
+            margin: 0 10px;
+        }
+    
+        .gridbox a {
+            color: #ccc;
+            text-decoration: none;
+        }
+    
+        .gridbox a:hover {
+            color: #f8b400;
+        }
+    
+        /* Footer Bottom */
+        .footer-bottom {
+            text-align: center;
+            padding-top: 10px;
+            border-top: 1px solid #040423;
+        }
+    
+        .footer-bottom p {
+            color:#040423;
+        }
+    </style>
+    
+    <!-- Share Button Script -->
     <script>
         document.getElementById('shareBtn').addEventListener('click', function() {
             if (navigator.share) {
@@ -3713,36 +3812,7 @@ body {
             }
         });
     </script>
-</a></li>
-
-        <!-- Bottom Links Section -->
-        <ul class="gridbox">
-            <li><a href="#">Help Centre</a></li>
-            <li><a href="./welcometestimonials.html">Testimonials</a></li>
-            <li><a href="#">Account</a></li>
-            <li><a href="#">Media Centre</a></li>
-            <li><a href="./terms.html">Terms of Use</a></li>
-            <li><a href="./privacy.html">Privacy</a></li>
-            
-            <li><a href="#">Cookie Preferences</a></li>
-            <li><a href="./contact.html">Contact Us</a></li>
-            
-        </ul>
-        
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a> <!-- LinkedIn -->
-                <a href="#"><i class="fab fa-youtube"></i></a> <!-- YouTube -->
-                <a href="#"><i class="fab fa-pinterest"></i></a> <!-- Pinterest -->
-                <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
-            </div>
-            <p>© 2024 Open Projects. All Rights Reserved. </p>
-        </div>
-    </footer>
+    
 
 </body>
 
