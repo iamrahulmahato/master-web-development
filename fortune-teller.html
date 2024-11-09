@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Fortune Teller</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #121212;
+            color: #ffffff;
+        }
+        .fortune-teller-container {
+            width: 90%;
+            max-width: 500px;
+            background: #282828;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        h2 {
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #000;
+            outline: none;
+        }
+        .generate-btn {
+            padding: 12px 20px;
+            background: #ffd700;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .generate-btn:hover {
+            background: #ffae42;
+        }
+        .fortune-display {
+            margin-top: 20px;
+            padding: 15px;
+            background: #333333;
+            border-radius: 5px;
+            color: #ffffff;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="fortune-teller-container">
+        <h2>Digital Fortune Teller</h2>
+        <div class="input-group">
+            <input type="text" id="question" placeholder="Ask your question...">
+        </div>
+        <button class="generate-btn" onclick="tellFortune()">Reveal My Fortune</button>
+        
+        <div class="fortune-display" id="fortuneDisplay">
+            <!-- Fortune will appear here -->
+        </div>
+    </div>
+
+    <script>
+        function tellFortune() {
+            const fortunes = [
+                "Good things are coming your way!",
+                "Be prepared for a pleasant surprise.",
+                "Challenges may come, but you will overcome them.",
+                "A fresh start will bring you happiness.",
+                "You will find joy in the simplest of things.",
+                "Success is just around the corner.",
+                "Take a leap of faith and good fortune will follow.",
+                "An old friend will bring you new opportunities.",
+                "Expect a journey full of growth and learning.",
+                "Trust your intuition, it will guide you well."
+            ];
+            
+            const question = document.getElementById('question').value;
+            const fortuneDisplay = document.getElementById('fortuneDisplay');
+
+            if (question.trim()) {
+                const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+                fortuneDisplay.innerHTML = `<p>${randomFortune}</p>`;
+            } else {
+                fortuneDisplay.innerHTML = "<p>Please ask a question to reveal your fortune!</p>";
+            }
+        }
+    </script>
+</body>
+</html>
