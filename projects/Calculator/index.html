@@ -2,12 +2,78 @@
 <html>
 <head>
     <title>Enhanced JavaScript Scientific Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="style.css">
     <!-- Include math.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.5.0/math.min.js"></script>
-</head>
-<body>
+    <style>
+        :root { /* Light theme colors */ 
+            --background-color: #e6d7e6;
+            --text-color: #000000; 
+            --navbar-background: #f8f9fa; 
+            --navbar-text: #000000; 
+            --link-color: #1a73e8; 
+            --button-background: #008cba; 
+            --button-text: #ffffff; 
+        } [data-theme="dark"] { /* Dark theme colors */ 
+            --background-color: #121212; 
+            --text-color: #ffffff;
+             --navbar-background: #333333; 
+             --navbar-text: #ffffff; 
+             --link-color: #bb86fc;
+              --button-background: #3d3d3d; 
+              --button-text: #ffffff;
+             }
+             
+             * {
+                 padding: 0;
+                  margin: 0; box-sizing: 
+                  border-box; 
+                } body { font-family: "Poppins", sans-serif;
+                 background-color: var(--background-color);
+                  color: var(--text-color); 
+                } #navbar ul { list-style: none;
+                     padding: 0;
+                     } #navbar ul li { 
+                        display: inline;
+                         margin-right: 10px; 
+                        } 
+                        #navbar ul li a { 
+                            color: var(--navbar-text); 
+                            text-decoration: none; 
+                        } 
+                        button   {
+                             border: none;
+       display: inline-flex;
+       appearance: none;
+       align-items: center;
+       justify-content: center;
+       border-radius: 9999px;
+       padding: 8px;
+       align-items: center;
+       background-color: #f43f5e;
+       color: #ffffff;
+       cursor: pointer;
+   }
+         #theme-toggle 
+         { position: fixed;
+             top: 10px; 
+             right: 10px;
+          } </style>
+           </head>
+            <body data-theme="light"> 
+                            <button id="theme-toggle"> <i class="fas fa-sun"></i> </button> 
+                             <section id="content">  </section> 
+                             <script> const toggleButton = document.getElementById('theme-toggle'); 
+                             const body = document.body; 
+                             toggleButton.addEventListener('click', () => { if (body.getAttribute('data-theme') === 'light') { body.setAttribute('data-theme', 'dark'); 
+                             toggleButton.innerHTML = '<i class="fas fa-moon"></i>'; 
+                             } else { 
+                                body.setAttribute('data-theme', 'light'); 
+                                toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+                                 } }); 
+                                 </script>
     <div class="title">
         <a href="#">JavaScript Scientific Calculator</a>
     </div>

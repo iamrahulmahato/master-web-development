@@ -257,23 +257,36 @@ body {
 
 /* Hover effect with futuristic line animation */
 .navbar ul li a::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   right: 0;
   bottom: -5px;
   height: 2px;
   background-color: var(--accent-color);
-  transition: width 0.3s ease;
   width: 0%;
+  transition: width 0.3s ease;
 }
+
 .navbar ul li a:hover {
   color: var(--accent-color);
   transform: scale(1.05);
 }
+
 .navbar ul li a:hover::after {
   width: 100%;
+  animation: underlineAnimation 0.3s forwards;
 }
+
+@keyframes underlineAnimation {
+  from {
+      width: 0%;
+  }
+  to {
+      width: 100%;
+  }
+}
+
 /* Toggle theme button */
 .theme-toggle {
   position: absolute;

@@ -37,6 +37,15 @@ button{
     color: #fff;
     cursor: pointer;
 }
+[data-theme="dark"] 
+input {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    color: #dedede;
+    background-color: #3d3d3d;
+}
 
 #home-btn{
     color: #f1f1f1;

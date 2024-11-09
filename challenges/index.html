@@ -11,35 +11,31 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 50px;
+            margin: 0;
             padding: 0;
-            background-color: #db1939;
-            
+            background-color: #040423;
+            overflow-x: hidden;
         }
 
-        .container{
+        .container {
             background-color: #161d2a;
-            padding: 30px;
-            overflow: hidden;
+            padding: 40px;
+            max-width: 1300px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
 
         h1 {
-            font-size: 70px;
-            text-align: center;
-            margin-bottom: 40px;
-            font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-            color: transparent; 
-            -webkit-text-stroke: 1px rgb(255, 255, 255); 
+            font-size: 60px;
+            color: transparent;
+            -webkit-text-stroke: 1px #ffffff;
             animation: slideIn 15s linear infinite;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
-        /* use to make the title sliding from right to left */
+
         @keyframes slideIn {
-            0% {
-                transform: translateX(100%); 
-            }
-            100% {
-                transform: translateX(-100%); 
-            }
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
 
         .quiz-container {
@@ -48,62 +44,78 @@
             gap: 30px;
             justify-content: center;
             padding: 20px;
-            max-width: 1250px;
         }
 
         .quiz-card {
             width: 250px;
-            height: 310px;
-            border-radius: 2px;
+            height: 330px;
+            border-radius: 8px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
             align-items: center;
             text-align: center;
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(250, 247, 247, 0.14);
-            overflow: hidden;
-            position: relative;
-            transition: transform 0.1s ease, box-shadow 0.3s ease;
+            background: linear-gradient(135deg, #fff 40%, #db1939);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
         }
 
         .quiz-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px) rotate(1deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         .quiz-card h2 {
-            font-size: 20px;
-            margin-bottom:5px;
-            color: #161d2a;
-            border: 1px solid #db1939;
-            border-radius: 4px;
-            padding: 10px;
-            box-shadow: inset 0px 0px 10px rgba(255, 0, 0, 0.2);
-        }
-
-        img {
-            width: 100%;
-            height: 70%;
-            object-fit: cover;
-        }
-
-        button {
-            margin: 15px 0;
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-            background-color: #db1939;
+            font-size: 22px;
+            margin: 15px;
             color: #fff;
-            border: none;
+            padding: 10px;
+            background: #161d2a;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
 
+        .quiz-card h2:hover {
+            background: #db1939;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        img {
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+            border-bottom: 2px solid #db1939;
+        }
+
+        button {
+            margin: 15px 0;
+            padding: 12px 25px;
+            font-size: 1em;
+            cursor: pointer;
+            background: linear-gradient(135deg, #db1939, #4a030f);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
         button:hover {
-            background-color: #4a030f ;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+            background: linear-gradient(135deg, #4a030f, #db1939);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            background: linear-gradient(135deg, #040423, #db1939);
+            background-size: 400% 400%;
+            animation: backgroundAnimation 20s ease infinite;
         }
         .home {
             display: inline-block;
@@ -138,40 +150,39 @@
     <button class="home"><a href="/index.html">Home</a></button>
     <div class="container">
         <h1>------ Web Development Challenges ------</h1>
-        <br>
         <div class="quiz-container">
             <div class="quiz-card">
-                <img src="html1.png" alt="Image 1">
+                <img src="html1.png" alt="HTML Quiz">
                 <h2>HTML Quiz</h2>
                 <button onclick="startQuiz()">Start</button>
             </div>
             <div class="quiz-card">
-                <img src="css1.png" alt="Image 1">
+                <img src="css1.png" alt="CSS Noob">
                 <h2>CSS Noob</h2>
                 <button onclick="csseasy()">Start</button>
             </div>
             <div class="quiz-card">
-                <img src="css2.png" alt="Image 1">
+                <img src="css2.png" alt="CSS Pro">
                 <h2>CSS Pro</h2>
                 <button onclick="cssmed()">Start</button>
             </div>
             <div class="quiz-card">
-                <img src="css3.png" alt="Image 1">
+                <img src="css3.png" alt="CSS Ultimate">
                 <h2>CSS Ultimate</h2>
                 <button onclick="csshard()">Start</button>
             </div>
             <div class="quiz-card">
-                <img src="js1.png" alt="Image 1">
+                <img src="js1.png" alt="JavaScript Noob">
                 <h2>JavaScript Noob</h2>
                 <button onclick="alert('Quiz not implemented yet')">Start</button>
             </div>
             <div class="quiz-card">
-                <img src="js2.png" alt="Image 1">
+                <img src="js2.png" alt="JavaScript Pro">
                 <h2>JavaScript Pro</h2>
                 <button onclick="alert('Quiz not implemented yet')">Start</button>
             </div>
             <div class="quiz-card">
-                <img src="js3.png" alt="Image 1">
+                <img src="js3.png" alt="JavaScript Ultimate">
                 <h2>JavaScript Ultimate</h2>
                 <button onclick="alert('Quiz not implemented yet')">Start</button>
             </div>
@@ -180,16 +191,16 @@
 
     <script>
         function startQuiz() {
-            window.location.href = 'challengehtml.html'; // Redirect to the quiz page
+            window.location.href = 'challengehtml.html';
         }
         function csseasy() {
-            window.location.href = 'easycss.html'; // Redirect to the quiz page
+            window.location.href = 'easycss.html';
         }
         function cssmed() {
-            window.location.href = 'medcss.html'; // Redirect to the quiz page
+            window.location.href = 'medcss.html';
         }
         function csshard() {
-            window.location.href = 'hardcss.html'; // Redirect to the quiz page
+            window.location.href = 'hardcss.html';
         }
     </script>
 </body>
