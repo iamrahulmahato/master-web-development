@@ -1,0 +1,227 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: #333;
+    overflow-x: hidden;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 480px;
+    max-width: 95%;
+    text-align: center;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #4e54c8;
+    text-transform: uppercase;
+  }
+  
+  h2 {
+    font-size: 1.2em;
+    margin: 15px 0;
+    color: #8f94fb;
+  }
+  
+  h3 {
+    font-size: 1.1em;
+    margin-top: 20px;
+    color: #4e54c8;
+    display: none;
+  }
+  
+  label {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #555;
+    margin-top: 10px;
+    display: block;
+    text-align: left;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  textarea {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    outline: none;
+    transition: border 0.3s ease;
+    background: #f8f8ff;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #4e54c8;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #4e54c8;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #8f94fb;
+  }
+  
+  #calculateBtn {
+    display: none;
+    margin-top: 20px;
+  }
+  
+  .expense-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #expenseList {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+  }
+  
+  .expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #f4f4f4;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .expense-item:hover {
+    transform: scale(1.02);
+    background-color: #eaeaff;
+  }
+  
+  .expense-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .expense-details strong {
+    font-weight: bold;
+    color: #4e54c8;
+  }
+  
+  .expense-details span,
+  .expense-details p {
+    font-size: 0.9em;
+    color: #555;
+  }
+  
+  .expense-details .expense-amount {
+    font-weight: bold;
+    color: #4e54c8;
+  }
+  
+  .expense-actions button {
+    padding: 6px 10px;
+    background-color: #4e54c8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .expense-actions button:hover {
+    background-color: #8f94fb;
+  }
+  
+  .expense-actions {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .result {
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    padding: 15px;
+    background-color: #f8f8ff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 20px;
+    }
+  }
+  
+
+  .popup {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4e54c8;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1em;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeInOut 3s ease;
+    pointer-events: none;
+    z-index: 1000;
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(10px);
+    }
+    10%, 90% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+  
