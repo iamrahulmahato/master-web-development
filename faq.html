@@ -136,6 +136,9 @@ h1 {
                 // Toggle the visibility of the corresponding answer
                 const answer = question.nextElementSibling;
                 answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+
+                // Toggle active class for rotation of the arrow
+                question.classList.toggle('active');
             });
         });
     </script>   
