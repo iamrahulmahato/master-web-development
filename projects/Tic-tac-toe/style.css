@@ -147,7 +147,7 @@ border-right: 0;
 }
 #multiplayer:hover{
   background-color: #144552; /* Darker green on hover */
-  transform: scale(1.01); /* Slightly enlarge on hover */
+  transform: scale(1.02); /* Slightly enlarge on hover */
 }
 /* Winning line styling */
 #winning-line {
