@@ -16,7 +16,7 @@
     "@clerk/clerk-sdk-node": "^5.0.12",
     "@clerk/nextjs": "^5.1.6",
     "dotenv": "^16.4.5",
-    "ejs": "^3.1.9",
+    "ejs": "^3.1.10",
     "express": "^4.19.2",
     "express-fileupload": "^1.4.0",
     "express-session": "^1.18.0",
