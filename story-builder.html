@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Story Builder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: pink;
+        }
+        .story-builder-container {
+            width: 90%;
+            max-width: 700px;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #ff6f61;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .story-display {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fffcf7;
+            border: 1px solid #ffd6c1;
+            border-radius: 5px;
+            color: #333;
+            line-height: 1.6;
+        }
+        .story-display p {
+            margin-bottom: 10px;
+        }
+        .generate-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .generate-btn:hover {
+            background: #ff5037;
+        }
+    </style>
+</head>
+<body>
+    <div class="story-builder-container">
+        <h2>Interactive Story Builder</h2>
+        <div class="input-group">
+            <label for="character">Main Character</label>
+            <input type="text" id="character" placeholder="Enter character's name">
+        </div>
+        <div class="input-group">
+            <label for="setting">Setting</label>
+            <input type="text" id="setting" placeholder="Enter setting (e.g., enchanted forest)">
+        </div>
+        <div class="input-group">
+            <label for="plot">Plot</label>
+            <textarea id="plot" rows="4" placeholder="Describe the plot..."></textarea>
+        </div>
+        <button class="generate-btn" onclick="generateStory()">Generate Story</button>
+        
+        <div class="story-display" id="storyDisplay">
+            <!-- Generated story will appear here -->
+        </div>
+    </div>
+
+    <script>
+        function generateStory() {
+            const character = document.getElementById('character').value;
+            const setting = document.getElementById('setting').value;
+            const plot = document.getElementById('plot').value;
+
+            if (character && setting && plot) {
+                const story = `
+                    <p>Once upon a time, in a place called <strong>${setting}</strong>, there was a character named <strong>${character}</strong>.</p>
+                    <p>${character} had an incredible journey filled with adventures and challenges.</p>
+                    <p>Their story begins: ${plot}</p>
+                `;
+                document.getElementById('storyDisplay').innerHTML = story;
+            } else {
+                document.getElementById('storyDisplay').innerHTML = "<p>Please fill in all fields to generate your story!</p>";
+            }
+        }
+    </script>
+</body>
+</html>
