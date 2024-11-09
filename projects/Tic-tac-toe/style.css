@@ -27,7 +27,7 @@ height: 5vh;
   position: absolute;
   height: 100%; /* Full height of the slider */
   width: 50%; /* Half width for highlighting X or O */
-  background-color: #4caf50; /* Green color for the active player */
+  background-color: #4d194d; /* Green color for the active player */
   border-radius: 20px; /* Rounded edges */
   transition: left 0.3s ease; /* Smooth transition */
   border: none; /* Remove default button border */
@@ -44,7 +44,7 @@ height: 5vh;
   text-align: center;
   font-size: 1rem;
   font-weight: bold;
-  color: #333; /* Text color */
+  color: #fde4cf; /* Text color */
   background: none; /* Remove default button background */
   border: none; /* Remove default button border */
   outline: none; /* Remove default button outline */
@@ -63,7 +63,7 @@ height: 5vh;
   left: 50%;
   transform: translate(-50%, -50%); /* Center the message */
   background-color: whitesmoke; /* Blue background */
-  color: #2777b8; /* White text */
+  color: #a4133c; /* White text */
   padding: 20px;
   border-radius: 10px;
   font-size: 2rem;
@@ -124,12 +124,12 @@ border-right: 0;
   cursor: pointer;
   border-radius: 5px; /* Rounded corners */
   border: none; /* Remove border */
-  background-color: #4CAF50; /* Green background */
-  color: white; /* White text color */
+  background-color:#065a60; /* aesthetic cobalish background */
+  color:  #faf0ca; /* creamy text color */
   transition: background-color 0.3s, transform 0.3s; /* Transition effects */
 }
 #reset:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color:#144552; /* Darker green on hover */
   transform: scale(1.01); /* Slightly enlarge on hover */
 }
 #multiplayer{
@@ -141,12 +141,12 @@ border-right: 0;
   cursor: pointer;
   border-radius: 5px; /* Rounded corners */
   border: none; /* Remove border */
-  background-color: #4CAF50; /* Green background */
-  color: white; /* White text color */
+  background-color: #065a60; /* aesthetic cobaltish background */
+  color: #faf0ca; /* creamy text color */
   transition: background-color 0.3s, transform 0.3s; /* Transition effects */
 }
 #multiplayer:hover{
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #144552; /* Darker green on hover */
   transform: scale(1.01); /* Slightly enlarge on hover */
 }
 /* Winning line styling */
@@ -154,7 +154,7 @@ border-right: 0;
   position: absolute;
   height: 10px;
   width: 300px;
-  background-color: #45a049; /* Red line to indicate win */
+  background-color: #028090; /* Red line to indicate win */
   display: none; /* Hidden initially */
   z-index: 10;
   transition: all 0.5s ease; /* Smooth transition */
