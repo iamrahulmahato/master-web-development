@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js" defer></script>
+    <script type="module" src="chart.js" defer></script>
+    <script type="module" src="app.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Personal Finance Dashboard</h1>
+    </header>
+
+    <section id="budget-section">
+        <h2>Budgeting</h2>
+        <div>
+            <input type="number" id="budget-input" placeholder="Enter monthly budget">
+            <button onclick="setBudget()">Set Budget</button>
+        </div>
+        <div id="budget-progress">
+            <p>Budget Status:</p>
+            <canvas id="budgetChart"></canvas>
+        </div>
+    </section>
+
+    <section id="expense-section">
+        <h2>Expense Tracking</h2>
+        <input type="text" id="expense-category" placeholder="Category">
+        <input type="number" id="expense-amount" placeholder="Amount">
+        <button onclick="addExpense()">Add Expense</button>
+        <div>
+            <canvas id="expenseChart"></canvas>
+        </div>
+    </section>
+
+    <section id="savings-section">
+        <h2>Savings Goals</h2>
+        <input type="text" id="goal-name" placeholder="Goal">
+        <input type="number" id="goal-amount" placeholder="Amount">
+        <button onclick="setGoal()">Add Goal</button>
+        <canvas id="goalChart"></canvas>
+    </section>
+
+    <section id="investment-section">
+        <h2>Investment Tracking</h2>
+        <canvas id="investmentChart"></canvas>
+    </section>
+
+    <section id="insights">
+        <h2>Financial Insights</h2>
+    </section>
+
+</body>
+</html>
