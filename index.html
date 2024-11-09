@@ -4710,28 +4710,27 @@
     <!--============================== End =========================================== -->
 
     <button id="scrollToTopBtn" title="Go to top"><i class="ri-arrow-up-double-fill"></i></button>
-    <div class="feedback-form">
+
+    <div>
 
         <section id="feedback">
             <div class="container">
                 <h2>We Value Your Feedback!</h2>
                 <p>Your input helps us improve our services. Please share your thoughts with us below.</p>
                 <form id="feedbackForm">
-
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+"
                             oninvalid="this.setCustomValidity('Numbers and Symbols are not allowed')"
                             oninput="this.setCustomValidity('')">
                     </div>
-
-
+    
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
 
-        
+                  
         <div class="form-group">
           <label for="rating"></label>
           
@@ -4753,16 +4752,6 @@
         const stars = document.querySelectorAll(".star");
         const ratingValue = document.getElementById("rating-value");
         let selectedRating = 0;
-    
-        stars.forEach(star => {
-            star.addEventListener("mouseover", () => highlightStars(star.dataset.value));
-            star.addEventListener("mouseout", () => highlightStars(selectedRating));
-            star.addEventListener("click", () => {
-                selectedRating = star.dataset.value;
-                ratingValue.innerText = `Rating: ${selectedRating}`;
-            });
-        });
-    
         function highlightStars(rating) {
             stars.forEach(star => {
                 star.classList.toggle("selected", star.dataset.value <= rating);
@@ -4774,34 +4763,201 @@
 
     </script>
 
-
-
                     <button type="submit">Submit Feedback</button>
                 </form>
             </div>
         </section>
     </div>
+    
+    <style>
+        .stars {
+            cursor: pointer;
+            font-size: 2rem;
+            color: gray;
+        }
+        .star {
+            transition: color 0.2s;
+        }
+        .star.selected {
+            color: gold;
+        }
+    </style>
+    
     <script>
-        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-            // Prevent the default form submission behavior
-            event.preventDefault();
+        // JavaScript for star rating interaction
+        document.addEventListener("DOMContentLoaded", () => {
+            const stars = document.querySelectorAll(".star");
+            const ratingValue = document.getElementById("rating-value");
+            let selectedRating = 0;
     
-            // Show an alert message
-            alert('Your feedback has been submitted! Thank you!');
+            stars.forEach(star => {
+                star.addEventListener("mouseover", () => highlightStars(star.dataset.value));
+                star.addEventListener("mouseout", () => highlightStars(selectedRating));
+                star.addEventListener("click", () => {
+                    selectedRating = star.dataset.value;
+                    ratingValue.innerText = `Rating: ${selectedRating}`;
+                });
+            });
     
-            // clear the form fields after submission
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('feedback').value = '';
-            document.getElementById('rating').selectedIndex = 0; // Reset the rating dropdown
-            document.getElementById("rating-value").innerText = "Rating: 0"; // Reset the rating display
-            // Reset star selection
-        const stars = document.querySelectorAll(".star");
-        stars.forEach(star => {
-            star.classList.remove("selected");
-        });
+            function highlightStars(rating) {
+                stars.forEach(star => {
+                    star.classList.toggle("selected", star.dataset.value <= rating);
+                });
+            }
         });
     </script>
+    
+    <script>
+        // JavaScript for form submission and clearing fields
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+    
+                // Show an alert message
+                alert('Your feedback has been submitted! Thank you!');
+    
+                // Clear form fields after submission
+                const nameField = document.getElementById('name');
+                const emailField = document.getElementById('email');
+                const feedbackField = document.getElementById('userFeedback'); // Updated ID
+                const ratingValueDisplay = document.getElementById("rating-value");
+    
+                if (nameField && emailField && feedbackField && ratingValueDisplay) {
+                    nameField.value = '';
+                    emailField.value = '';
+                    feedbackField.value = ''; // Clear feedback field
+                    ratingValueDisplay.innerText = "Rating: 0";
+                    console.log('Form fields cleared');
+                } else {
+                    console.error('One or more form elements were not found.');
+                }
+    
+                // Reset star selection
+                const stars = document.querySelectorAll(".star");
+                stars.forEach(star => {
+                    star.classList.remove("selected");
+                });
+            });
+        });
+    </script>
+
+    
+    <style>
+        /* Feedback Form Section */
+        #feedback {
+            background: linear-gradient(to right, #faf9fa, #fefefe);
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: black;
+        }
+
+        #feedback h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        #feedback p {
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        /* Form Container */
+        #feedback .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+            background: linear-gradient(to right, #f8bab5, #f38787);
+        }
+
+        .container h2,
+        .container p {
+            color: #333;
+        }
+
+        /* Form Group */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 1rem;
+            color: #333;
+            display: block;
+        }
+
+        /* General Body Styling */
+        #feedback .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-top: 5px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #feedback button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--btn-color);
+            color: var(--btn-text);
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- Quick Links Section -->
+            <div class="footer-section quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">ChatBot</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">FAQ's</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <!-- About Us Section -->
+            <div class="footer-section about-us">
+                <h3>About Us</h3>
+                <p>Empowering aspiring developers to master web development through hands-on, small-scale projects.</p>
+            </div>
+            <!-- Newsletter Section -->
+            <div class="footer-section newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
 
 
     <!-- Added FAQ Section -->
