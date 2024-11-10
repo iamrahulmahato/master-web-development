@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Historic Movements Timeline</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f2f5;
+        }
+        .timeline-container {
+            width: 90%;
+            max-width: 800px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            border-left: 4px solid #007bff;
+        }
+        .timeline-event {
+            position: relative;
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: #007bff;
+            border-radius: 50%;
+        }
+        .year {
+            font-weight: bold;
+            color: #007bff;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        .description {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .filter-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .filter-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline-container">
+        <h1>Historic Movements in India</h1>
+        <div class="filter-container">
+            <button class="filter-btn" onclick="filterTimeline('all')">All</button>
+            <button class="filter-btn" onclick="filterTimeline('independence')">Independence Movements</button>
+            <button class="filter-btn" onclick="filterTimeline('social')">Social Reforms</button>
+        </div>
+        <div class="timeline" id="timeline"></div>
+    </div>
+
+    <script>
+        const events = [
+            { year: "1857", title: "First War of Indian Independence", type: "independence", description: "The Indian Rebellion of 1857, also known as the First War of Independence, was a major uprising against British rule." },
+            { year: "1885", title: "Formation of the Indian National Congress", type: "independence", description: "The INC was founded to address political issues and would become a central organization in the fight for independence." },
+            { year: "1915", title: "Return of Mahatma Gandhi", type: "independence", description: "Gandhi returned from South Africa, eventually becoming a major leader in the Indian independence movement." },
+            { year: "1917", title: "Champaran Satyagraha", type: "independence", description: "Mahatma Gandhi led the first Satyagraha movement in Champaran to address the plight of farmers." },
+            { year: "1920", title: "Non-Cooperation Movement", type: "independence", description: "A mass protest led by Gandhi against British rule, encouraging Indians to boycott British goods and institutions." },
+            { year: "1929", title: "Purna Swaraj Declaration", type: "independence", description: "INC declared the goal of complete independence from British rule." },
+            { year: "1930", title: "Dandi Salt March", type: "independence", description: "Gandhi's 240-mile march to Dandi to protest the British salt tax marked a pivotal moment in the independence movement." },
+            { year: "1942", title: "Quit India Movement", type: "independence", description: "A call for immediate independence by the INC, leading to mass arrests and protests." },
+            { year: "1947", title: "India Gains Independence", type: "independence", description: "On August 15, 1947, India gained independence from British rule." },
+            { year: "1828", title: "Brahmo Samaj", type: "social", description: "Founded by Raja Ram Mohan Roy, the Brahmo Samaj worked towards social reforms, including women's rights and ending Sati." },
+            { year: "1875", title: "Arya Samaj", type: "social", description: "Founded by Swami Dayananda Saraswati to promote social reform and return to Vedic principles." },
+            { year: "1929", title: "Child Marriage Restraint Act", type: "social", description: "The Act aimed to prevent child marriages and improve the social condition of young girls." }
+        ];
+
+        function loadTimeline(filterType = "all") {
+            const timeline = document.getElementById("timeline");
+            timeline.innerHTML = "";
+
+            const filteredEvents = events.filter(event => filterType === "all" || event.type === filterType);
+
+            filteredEvents.forEach(event => {
+                const eventElement = document.createElement("div");
+                eventElement.classList.add("timeline-event");
+
+                eventElement.innerHTML = `
+                    <div class="year">${event.year}</div>
+                    <div class="description">
+                        <strong>${event.title}</strong><br>${event.description}
+                    </div>
+                `;
+                timeline.appendChild(eventElement);
+            });
+        }
+
+        function filterTimeline(type) {
+            loadTimeline(type);
+        }
+
+        // Load all events by default
+        window.onload = () => loadTimeline();
+    </script>
+</body>
+</html>
