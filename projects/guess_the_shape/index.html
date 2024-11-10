@@ -5,8 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess the Shape!</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
-<body>
+<body data-theme="light"> 
+                <button id="theme-toggle"> <i class="fas fa-sun"></i> </button> 
+                 <section id="content">  </section> 
+                 <script> const toggleButton = document.getElementById('theme-toggle'); 
+                 const body = document.body; 
+                 toggleButton.addEventListener('click', () => { if (body.getAttribute('data-theme') === 'light') { body.setAttribute('data-theme', 'dark'); 
+                 toggleButton.innerHTML = '<i class="fas fa-moon"></i>'; 
+                 } else { 
+                    body.setAttribute('data-theme', 'light'); 
+                    toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+                     } }); 
+                     </script>
+
     <div class="game-container">
         <h1>Guess the Shape!</h1>
         <div id="shape-display" class="shape"></div>
