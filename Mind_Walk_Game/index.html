@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>MindMaze Challenge</h1>
+        <p>Try and guess a random number between 1 and 100 <br>
+            <span>You have 10 attempts to guess the right number.</span>
+        </p>
+    <form class="form">
+        <label for="guess-field" id="guess">Guess A Number</label> <br>
+        <input type="number" id="guess-field" class="guess-field"> <br>
+        <input type="submit" id="subt" class="guess-submit" value="Submit guess">
+    </form>
+
+    <div class="resultParas"> 
+        <p>Previous Guesses: <span class="guesses"></span></p> <!-- The number which was guess by an user store in array -->
+        <p>Guesses Remaining:<span class="lastResult">10</span></p>
+        <p class="lowOrHi"></p>  <!--This low or high value indicator -->
+    </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
