@@ -230,7 +230,9 @@ body {
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid var(--accent-color);
+  margin-top: -18px;
 }
+
 /* Navbar list */
 .navbar ul {
   list-style: none;
