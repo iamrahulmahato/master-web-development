@@ -4044,16 +4044,59 @@ body {
             <li><a href="#">Media Centre</a></li>
             <li><a href="./terms.html">Terms of Use</a></li>
             <li><a href="./privacy.html">Privacy</a></li>
-            
             <li><a href="#">Cookie Preferences</a></li>
             <li><a href="./contact.html">Contact Us</a></li>
-            
         </ul>
+        
+        <style>
+            /* Bottom Links Container */
+            .gridbox {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 15px;
+                list-style: none;
+                padding: 20px;
+                margin: 0;
+                background-color: #196cbf;  /* Dark blue-grey background */
+                color: #ecf0f1;  /* Light grey text */
+                width: 90%;
+                max-width: 800px;
+                border-radius: 8px;
+                text-align: center;
+                margin-left: 18rem;
+            }
+        
+            /* Individual Link Styles */
+            .gridbox li {
+                padding: 10px 0;
+            }
+            .gridbox a {
+                color: #ecf0f1;  /* Light grey text */
+                text-decoration: none;
+                font-size: 16px;
+                transition: color 0.3s ease, transform 0.3s ease;
+            }
+        
+            /* Hover Effects */
+            .gridbox a:hover {
+                color: #e74c3c;  /* Red color on hover */
+                transform: scale(1.05);  /* Slight zoom effect */
+            }
+        
+            /* Responsive Design */
+            @media (max-width: 600px) {
+                .gridbox {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        </style>
+        
         
         <!-- Footer Bottom -->
         <div class="footer-bottom">
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
+
                 <a href="#" class="x-icon" aria-label="X">
                     X
                 </a>
@@ -4067,8 +4110,7 @@ body {
                     font-family: Arial, sans-serif;
                 }
                 </style>
-                
-                <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a> <!-- LinkedIn -->
                 <a href="#"><i class="fab fa-youtube"></i></a> <!-- YouTube -->
                 <a href="#"><i class="fab fa-pinterest"></i></a> <!-- Pinterest -->
