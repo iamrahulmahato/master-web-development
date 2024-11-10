@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt-a-Pet Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f3f4f6;
+            color: #333;
+        }
+        .gallery-container {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        .pet-card {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .pet-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #007bff;
+        }
+        .pet-info {
+            flex-grow: 1;
+        }
+        .pet-name {
+            font-size: 1.3em;
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+        .pet-details {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .adopt-btn {
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .adopt-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <h1>Adopt-a-Pet Gallery</h1>
+        <div id="petGallery"></div>
+    </div>
+
+    <script>
+        const pets = [
+            {
+                name: "Bella",
+                type: "Dog",
+                age: "2 years",
+                description: "A friendly Labrador who loves playing fetch.",
+                image: "./assets/image/bella-dog.jpg"
+            },
+            {
+                name: "Whiskers",
+                type: "Cat",
+                age: "3 years",
+                description: "A calm and cuddly Persian cat.",
+                image: "./assets/image/3year-cat.jpg"
+            },
+            {
+                name: "Charlie",
+                type: "Dog",
+                age: "4 years",
+                description: "An energetic Beagle with a big heart.",
+                image: "./assets/image/4 year dog.jpg"
+            },
+            {
+                name: "Polly",
+                type: "Parrot",
+                age: "1 year",
+                description: "A chatty parrot who loves company.",
+                image: "./assets/image/1-yr-parrot.jpg"
+            }
+        ];
+
+        function loadPets() {
+            const gallery = document.getElementById("petGallery");
+
+            pets.forEach((pet) => {
+                const petCard = document.createElement("div");
+                petCard.classList.add("pet-card");
+
+                petCard.innerHTML = `
+                    <img src="${pet.image}" alt="${pet.name}" class="pet-image">
+                    <div class="pet-info">
+                        <h2 class="pet-name">${pet.name}</h2>
+                        <p class="pet-details">Type: ${pet.type} | Age: ${pet.age}</p>
+                        <p>${pet.description}</p>
+                    </div>
+                    <button class="adopt-btn" onclick="adoptPet('${pet.name}')">Adopt Me!</button>
+                `;
+
+                gallery.appendChild(petCard);
+            });
+        }
+
+        function adoptPet(name) {
+            alert(`Thank you for showing interest in adopting ${name}!`);
+        }
+
+        window.onload = loadPets;
+    </script>
+</body>
+</html>

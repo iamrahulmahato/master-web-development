@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Budget 2024</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">India Budget 2024</div>
+            <div class="nav-links">
+                <a href="#overview">Overview</a>
+                <a href="#distribution">Distribution</a>
+                <a href="#departments">Departments</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Government of India Budget 2024</h1>
+                <p>Empowering Growth and Development</p>
+                <div class="budget-card" data-aos="fade-up">
+                    <h2>Total Budget</h2>
+                    <div class="budget-amount">₹45,03,097 Cr</div>
+                    <div class="budget-details">
+                        <p>Loan: ₹18,08,080 Cr</p>
+                        <p>Tax Revenue: ₹23,30,575 Cr</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="main-content" class="container">
+            <section id="distribution" class="charts">
+                <div class="chart-container" data-aos="fade-right">
+                    <canvas id="distributionChart"></canvas>
+                </div>
+                <div class="chart-container" data-aos="fade-left">
+                    <canvas id="gdpChart"></canvas>
+                </div>
+            </section>
+
+            <section id="departments" class="departments">
+                <div class="department-card" data-aos="zoom-in">
+                    <img src="./img/defence.jpg" alt="Defence">
+                    <div class="department-info">
+                        <h3>Defence</h3>
+                        <p>₹5,93,537 Cr</p>
+                    </div>
+                </div>
+                <div class="department-card" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="./img/agriculture.jpg" alt="Agriculture">
+                    <div class="department-info">
+                        <h3>Agriculture</h3>
+                        <p>₹1,15,531 Cr</p>
+                    </div>
+                </div>
+                <div class="department-card" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="./img/education.jpg" alt="Education">
+                    <div class="department-info">
+                        <h3>Education</h3>
+                        <p>₹1,12,899 Cr</p>
+                    </div>
+                </div>
+                <div class="department-card" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="./img/health.jpg" alt="Health">
+                    <div class="department-info">
+                        <h3>Health</h3>
+                        <p>₹89,155 Cr</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#distribution">Distribution</a></li>
+                    <li><a href="#departments">Departments</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Budget Documents</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Government of India. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/faviconicon.png" type="image/x-icon">
     <title>CSS EASY Quiz</title>
+    <link rel="shortcut icon" href="./assets/image/favicon.png" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #08114c;
+            background-color: #e0e7ff;
+            color: #333;
             margin: 0;
             padding: 20px;
             display: flex;
@@ -17,21 +20,26 @@
         }
 
         .quiz-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            background-color: #fdfbff;
+            color: #333;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             width: 100%;
         }
 
         h1 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            color: #5a189a;
+            font-size: 1.8em;
         }
 
         .question {
+            font-weight: bold;
             margin-bottom: 15px;
+            color: #333;
         }
 
         .options {
@@ -40,38 +48,42 @@
         }
 
         .option {
-            background-color: #e7f3fe;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 5px 0;
+            background-color: #f1faff;
+            color: #333;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 8px 0;
             cursor: pointer;
-            transition: background-color 0.3s;
-            border: 2px solid transparent; /* Default border */
+            transition: background-color 0.3s, transform 0.2s;
+            border: 2px solid transparent;
         }
 
         .option:hover {
-            background-color: #d1e7fd;
+            background-color: #e0f7fa;
+            transform: scale(1.02);
         }
 
         .selected {
-            background-color: #b3e5fc;
-            border: 2px solid #007bff; /* Selected border color */
+            background-color: #ffccd5;
+            border: 2px solid #ff577f;
+            color: #ff577f;
         }
 
         button {
-            background-color: #007bff;
+            background-color: #5a189a;
             color: white;
             border: none;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 12px;
+            border-radius: 6px;
             cursor: pointer;
-            display: block;
             width: 100%;
-            margin-top: 10px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            margin-top: 15px;
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #4e148c;
         }
 
         .hidden {
@@ -134,7 +146,7 @@
                 options: [
                     "django",
                     "rails",
-                    "larawell",
+                    "laravel",
                     "bootstrap"
                 ],
                 answer: 3
@@ -237,10 +249,10 @@
 
         function submitAnswers() {
             alert(`You scored ${score} out of ${questions.length}`);
-            window.location.href = 'index.html'; // Redirect to main page after submitting
+            window.location.href = 'index.html';
         }
 
-        window.onload = showQuestion; // Show the first question when the page loads
+        window.onload = showQuestion;
     </script>
 </body>
 </html>

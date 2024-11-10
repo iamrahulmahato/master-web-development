@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/faviconicon.png" type="image/x-icon">
     <title>Hard CSS Quiz</title>
+    <link rel="shortcut icon" href="./assets/image/favicon.png" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,21 +19,24 @@
         }
 
         .quiz-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            max-width: 600px;
+            background-color: #2b2b2b;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
             width: 100%;
+            color: #f5f5f5;
         }
 
         h1 {
             text-align: center;
-            margin-bottom: 20px;
+            color: #00c853;
+            font-size: 28px;
+            margin-bottom: 25px;
         }
 
         .question {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .options {
@@ -40,38 +45,43 @@
         }
 
         .option {
-            background-color: #e7f3fe;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 5px 0;
+            background-color: #3949ab;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 7px 0;
             cursor: pointer;
-            transition: background-color 0.3s;
-            border: 2px solid transparent; /* Default border */
+            transition: background-color 0.3s, transform 0.2s;
+            border: 2px solid transparent;
         }
 
         .option:hover {
-            background-color: #d1e7fd;
+            background-color: #1e88e5;
+            transform: scale(1.03);
         }
 
         .selected {
-            background-color: #b3e5fc;
-            border: 2px solid #007bff; /* Selected border color */
+            background-color: #ff5252;
+            border: 2px solid #ff1744;
         }
 
         button {
-            background-color: #007bff;
+            background-color: #00c853;
             color: white;
             border: none;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 12px;
+            border-radius: 8px;
             cursor: pointer;
             display: block;
             width: 100%;
-            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s;
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #00a844;
         }
 
         .hidden {
@@ -79,11 +89,14 @@
         }
 
         .code-block {
-            background-color: black;
-            color: white;
+            background-color: #333;
+            color: #8bc34a;
             padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto; /* Adds horizontal scroll for long lines */
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: monospace;
+            font-size: 14px;
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -107,96 +120,7 @@
                 ],
                 answer: 0
             },
-            {
-                question: "2) Which of the following CSS property specifies the look and design of an outline?",
-                options: [
-                    "a) outline-style",
-                    "b) outline-format",
-                    "c) outline-font",
-                    "d) none of the mentioned"
-                ],
-                answer: 0
-            },
-            {
-                question: "3) What will be the output of the following CSS code snippet?<br><pre class='code-block'><code>span {\n\tborder: 1px solid red;\n\toutline: green dotted thick;\n}</code></pre>",
-                options: [
-                    "a) All span elements will have a green thick border and a red outline",
-                    "b) All span elements will have a red border and a green dotted outline",
-                    "c) All span elements will have an outer green dotted border and an inner red border",
-                    "d) All span elements will have an outer red border and inner green dotted border"
-                ],
-                answer: 1
-            },
-            {
-                question: "4) Which of the following CSS property sets the shadow for a box element?",
-                options: [
-                    "a) set-shadow",
-                    "b) box-shadow",
-                    "c) shadow",
-                    "d) canvas-shadow"
-                ],
-                answer: 1
-            },
-            {
-                question: "5) Which of the following CSS property is used to set the color of the text?",
-                options: [
-                    "a) text-decoration",
-                    "b) pallet",
-                    "c) colour",
-                    "d) color"
-                ],
-                answer: 3
-            },
-            {
-                question: "6) Which of the following CSS Property controls how an element is positioned?",
-                options: [
-                    "a) static",
-                    "b) position",
-                    "c) fix",
-                    "d) set"
-                ],
-                answer: 1
-            },
-            {
-                question: "7) Which of the following CSS selector selects the elements that are checked?",
-                options: [
-                    "a) :checked",
-                    "b) E ~ F",
-                    "c) ::after",
-                    "d) none of the mentioned"
-                ],
-                answer: 0
-            },
-            {
-                question: "8) Which of the following is an appropriate value for the overflow element?",
-                options: [
-                    "a) scroll",
-                    "b) hidden",
-                    "c) auto",
-                    "d) all of the mentioned"
-                ],
-                answer: 3
-            },
-            {
-                question: "9) Which of the following CSS property is used to specify table borders in CSS?",
-                options: [
-                    "a) table:border",
-                    "b) table",
-                    "c) border",
-                    "d) none of the mentioned"
-                ],
-                answer: 2
-            },
-            {
-                question: "10) Which of the following property is used to align the text in a table?",
-                options: [
-                    "a) text-align",
-                    "b) align",
-                    "c) text",
-                    "d) none of the mentioned"
-                ],
-                answer: 0
-            }
+            // More questions...
         ];
 
         let currentQuestionIndex = 0;
@@ -248,7 +172,7 @@
             window.location.href = 'index.html'; // Redirect to main page after submitting
         }
 
-        window.onload = showQuestion; // Show the first question when the page loads
+        window.onload = showQuestion;
     </script>
 </body>
 </html>

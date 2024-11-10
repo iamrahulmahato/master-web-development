@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box clock</title>
+  <style>
+    body[data-theme="dark"] {
+      background-color: #333;
+      color: white;
+    }
+
+    .ticker__box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ticker__number {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body data-theme="dark">
+
+  <button class="theme-toggle" data-state="dark">
+    <svg class="theme-toggle__icon --dark" viewbox="0 0 24 24">
+      <path
+        d="M15.77,3.24a10.66,10.66,0,0,0-2.84-1.09,9.84,9.84,0,0,1-.72,14.07,9.84,9.84,0,0,1-8.9,2.32A10,10,0,0,0,18.11,5.19,11,11,0,0,0,15.77,3.24Z" />
+    </svg>
+    <svg class="theme-toggle__icon --light" viewbox="0 0 24 24">
+      <path
+        d="M3.55,18.54L4.96,19.95L6.76,18.16L5.34,16.74M11,22.45C11.32,22.45 13,22.45 13,22.45V19.5H11M12,5.5A6,6 0 0,0 6,11.5A6,6 0 0,0 12,17.5A6,6 0 0,0 18,11.5C18,8.18 15.31,5.5 12,5.5M20,12.5H23V10.5H20M17.24,18.16L19.04,19.95L20.45,18.54L18.66,16.74M20.45,4.46L19.04,3.05L17.24,4.84L18.66,6.26M13,0.55H11V3.5H13M4,10.5H1V12.5H4M6.76,4.84L4.96,3.05L3.55,4.46L5.34,6.26L6.76,4.84Z" />
+    </svg>
+  </button>
+
+  <div class="ticker__block --hr">
+    <div class="ticker__box">
+      <div class="ticker">
+        <p class="ticker__number">0</p>
+        <p class="ticker__number">1</p>
+        <p class="ticker__number">2</p>
+      </div>
+    </div>
+    <div class="ticker__box">
+      <div class="ticker">
+        <p class="ticker__number">0</p>
+        <p class="ticker__number">1</p>
+        <p class="ticker__number">2</p>
+        <p class="ticker__number">3</p>
+        <p class="ticker__number">4</p>
+        <p class="ticker__number">5</p>
+        <p class="ticker__number">6</p>
+        <p class="ticker__number">7</p>
+        <p class="ticker__number">8</p>
+        <p class="ticker__number">9</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker__block --min">
+    <div class="ticker__box">
+      <div class="ticker">
+        <p class="ticker__number">0</p>
+        <p class="ticker__number">1</p>
+        <p class="ticker__number">2</p>
+        <p class="ticker__number">3</p>
+        <p class="ticker__number">4</p>
+        <p class="ticker__number">5</p>
+      </div>
+    </div>
+    <div class="ticker__box">
+      <div class="ticker">
+        <p class="ticker__number">0</p>
+        <p class="ticker__number">1</p>
+        <p class="ticker__number">2</p>
+        <p class="ticker__number">3</p>
+        <p class="ticker__number">4</p>
+        <p class="ticker__number">5</p>
+        <p class="ticker__number">6</p>
+        <p class="ticker__number">7</p>
+        <p class="ticker__number">8</p>
+        <p class="ticker__number">9</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker__block --sec">
+    <div class="ticker__box">
+      <div class="ticker">
+        <p class="ticker__number">0</p>
+        <p class="ticker__number">1</p>
+        <p class="ticker__number">2</p>
+        <p class="ticker__number">3</p>
+        <p class="ticker__number">4</p>
+        <p class="ticker__number">5</p>
+      </div>
+    </div>
+    <div class="ticker__box">
+      <div class="ticker">
+        <p class="ticker__number">0</p>
+        <p class="ticker__number">1</p>
+        <p class="ticker__number">2</p>
+        <p class="ticker__number">3</p>
+        <p class="ticker__number">4</p>
+        <p class="ticker__number">5</p>
+        <p class="ticker__number">6</p>
+        <p class="ticker__number">7</p>
+        <p class="ticker__number">8</p>
+        <p class="ticker__number">9</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js">
+
+
+  </script>
+</body>
+
+</html>

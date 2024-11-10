@@ -1,0 +1,236 @@
+.card.open {
+	background-color: #FFF;
+	background-repeat: no-repeat;
+	background-clip: padding-box;
+	background-position: 80px 120px; /* clear */
+	width: 81px;	
+	height: 114px;
+}
+
+
+body::after {/* preload img */
+	content: '';
+	position: absolute;
+	z-index: -1;
+	top: -1px;
+	left: -1px;
+	width: 0;
+	height: 0;
+	background-repeat: no-repeat;
+} 
+
+/*Clubs*/
+.card.open.c101 {
+	background: url('../images/clubs/clubs_01.png');
+}
+
+.card.open.c102 {
+	background: url('../images/clubs/clubs_02.png');
+}
+
+.card.open.c103 {
+	background: url('../images/clubs/clubs_03.png');
+}
+
+.card.open.c104 {
+	background: url('../images/clubs/clubs_04.png');
+}
+
+.card.open.c105 {
+	background: url('../images/clubs/clubs_05.png');
+}
+
+.card.open.c106 {
+	background: url('../images/clubs/clubs_06.png');}
+
+.card.open.c107 {
+	background: url('../images/clubs/clubs_07.png');
+}
+
+.card.open.c108 {
+	background: url('../images/clubs/clubs_08.png');
+}
+
+.card.open.c109 {
+	background: url('../images/clubs/clubs_09.png');
+}
+
+.card.open.c110 {
+	background: url('../images/clubs/clubs_10.png');
+}
+
+.card.open.c111 {
+	background: url('../images/clubs/clubs_11.png');
+}
+
+.card.open.c112 {
+	background: url('../images/clubs/clubs_12.png');
+}
+
+.card.open.c113 {
+	background: url('../images/clubs/clubs_13.png');
+}
+
+
+/*Diamonds*/
+.card.open.d101 {
+	background: url('../images/diamonds/diamonds_01.png');
+}
+
+.card.open.d102 {
+	background: url('../images/diamonds/diamonds_02.png');
+}
+
+.card.open.d103 {
+	background: url('../images/diamonds/diamonds_03.png');
+}
+
+.card.open.d104 {
+	background: url('../images/diamonds/diamonds_04.png');
+}
+
+.card.open.d105 {
+	background: url('../images/diamonds/diamonds_05.png');
+}
+
+.card.open.d106 {
+	background: url('../images/diamonds/diamonds_06.png');
+}
+
+.card.open.d107 {
+	background: url('../images/diamonds/diamonds_07.png');
+}
+
+.card.open.d108 {
+	background: url('../images/diamonds/diamonds_08.png');
+}
+
+.card.open.d109 {
+	background: url('../images/diamonds/diamonds_09.png');
+}
+
+.card.open.d110 {
+	background: url('../images/diamonds/diamonds_10.png');
+}
+
+.card.open.d111 {
+	background: url('../images/diamonds/diamonds_11.png');
+}
+
+.card.open.d112 {
+	background: url('../images/diamonds/diamonds_12.png');
+}
+
+.card.open.d113 {
+	background: url('../images/diamonds/diamonds_13.png');
+}
+
+
+/*HEARTS*/
+.card.open.h101 {
+	background: url('../images/hearts/hearts_01.png');
+}
+
+.card.open.h102 {
+	background: url('../images/hearts/hearts_02.png');
+}
+
+.card.open.h103 {
+	background: url('../images/hearts/hearts_03.png');
+}
+
+.card.open.h104 {
+	background: url('../images/hearts/hearts_04.png');
+}
+
+.card.open.h105 {
+	background: url('../images/hearts/hearts_05.png');
+}
+
+.card.open.h106 {
+	background: url('../images/hearts/hearts_06.png');
+}
+
+.card.open.h107 {
+	background: url('../images/hearts/hearts_07.png');
+}
+
+.card.open.h108 {
+	background: url('../images/hearts/hearts_08.png');
+}
+
+.card.open.h109 {
+	background: url('../images/hearts/hearts_09.png');
+}
+
+.card.open.h110 {
+	background: url('../images/hearts/hearts_10.png');
+}
+
+.card.open.h111 {
+	background: url('../images/hearts/hearts_11.png');
+}
+
+.card.open.h112 {
+	background: url('../images/hearts/hearts_12.png');
+}
+
+.card.open.h113 {
+	background: url('../images/hearts/hearts_13.png');
+}
+
+
+/*SPADES*/
+.card.open.s101 {
+	background: url('../images/spades/spades_01.png');
+}
+
+.card.open.s102 {
+	background: url('../images/spades/spades_02.png');
+}
+
+.card.open.s103 {
+	background: url('../images/spades/spades_03.png');
+}
+
+.card.open.s104 {
+	background: url('../images/spades/spades_04.png');
+}
+
+.card.open.s105 {
+	background: url('../images/spades/spades_05.png');
+}
+
+.card.open.s106 {
+	background: url('../images/spades/spades_06.png');
+}
+
+.card.open.s107 {
+	background: url('../images/spades/spades_07.png');
+}
+
+.card.open.s108 {
+	background: url('../images/spades/spades_08.png');
+}
+
+.card.open.s109 {
+	background: url('../images/spades/spades_09.png');
+}
+
+.card.open.s110 {
+	background: url('../images/spades/spades_10.png');
+}
+
+.card.open.s111 {
+	background: url('../images/spades/spades_11.png');
+}
+
+.card.open.s112 {
+	background: url('../images/spades/spades_12.png');
+}
+
+.card.open.s113 {
+	background: url('../images/spades/spades_13.png');
+}
+
+
