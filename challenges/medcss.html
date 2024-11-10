@@ -8,20 +8,20 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #0a153e;
+            color: #f0f0f0;
             margin: 0;
             padding: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            color: #f0f0f0;
         }
 
         .quiz-container {
             background-color: #ffffff;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             max-width: 600px;
             width: 100%;
         }
@@ -30,14 +30,7 @@
             text-align: center;
             color: #333;
             font-size: 1.8em;
-            margin-bottom: 15px;
-        }
-
-        .progress {
-            text-align: center;
-            margin: 10px 0;
-            font-size: 0.9em;
-            color: #666;
+            margin-bottom: 20px;
         }
 
         .question {
@@ -52,20 +45,17 @@
         }
 
         .option {
-            background-color: #e9f3ff;
-            padding: 15px;
+            background-color: #1e1e1e;
+            padding: 12px;
             border-radius: 6px;
             margin: 8px 0;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             border: 2px solid transparent;
         }
 
         .option:hover {
-            background-color: #d4e8ff;
+            background-color: #e76705;
             transform: scale(1.02);
         }
 
@@ -75,12 +65,6 @@
             color: #007bff;
         }
 
-        .option.selected::after {
-            content: '✔';
-            color: #007bff;
-            font-size: 1.2em;
-        }
-
         button {
             background-color: #007bff;
             color: #fff;
@@ -88,11 +72,10 @@
             padding: 12px;
             border-radius: 6px;
             cursor: pointer;
-            display: block;
             width: 100%;
-            margin-top: 10px;
             font-size: 1em;
             transition: background-color 0.3s;
+            margin-top: 10px;
         }
 
         button:hover {
@@ -111,44 +94,123 @@
             overflow-x: auto;
             font-family: monospace;
         }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            z-index: 10;
-        }
-
-        .modal.show {
-            display: block;
-        }
     </style>
 </head>
 <body>
     <div class="quiz-container">
         <h1>CSS Medium Challenge</h1>
-        <div class="progress" id="progress">Question 1 of 10</div>
         <div id="question-container"></div>
         <button id="next-button" class="hidden" onclick="nextQuestion()">Next Question</button>
         <button id="submit-button" class="hidden" onclick="submitAnswers()">Submit Answers</button>
     </div>
 
-    <div class="modal" id="score-modal">
-        <h2>Quiz Completed!</h2>
-        <p id="final-score"></p>
-        <button onclick="closeModal()">Close</button>
-    </div>
-
     <script>
         const questions = [
-            // Questions Array
+            {
+                question: "1) What will be the output of the following CSS code snippet?",
+                code: `h1 {
+    color: red;
+    text-decoration: underline;
+    font-style: italic;
+}`,
+                options: [
+                    "a) color: red, text-decoration: underline works",
+                    "b) only font-style: italic works",
+                    "c) color: red, text-decoration: underline and font-style: italic all works",
+                    "d) text-decoration: underline and font-style: italic works"
+                ],
+                answer: 2
+            },
+            {
+                question: "2) Which of the following are the CSS Extension Prefixes for Webkit?",
+                options: [
+                    "a) -chrome",
+                    "b) -web",
+                    "c) -o-",
+                    "d) -webkit"
+                ],
+                answer: 3
+            },
+            {
+                question: "3) Which of the following CSS property defines the space between cells in a table?",
+                options: [
+                    "a) border-spacing",
+                    "b) border-style",
+                    "c) border",
+                    "d) none of the mentioned"
+                ],
+                answer: 0
+            },
+            {
+                question: "4) Which of the following is the first CSS specification to become an official W3C Recommendation?",
+                options: [
+                    "a) CSS level 2",
+                    "b) (X)HTML CSS",
+                    "c) CSS level 1",
+                    "d) CSS level 2.1"
+                ],
+                answer: 2
+            },
+            {
+                question: "5) Which of the following function defines a linear gradient as a CSS image?",
+                options: [
+                    "a) gradient()",
+                    "b) linear-gradient()",
+                    "c) grayscale()",
+                    "d) image()"
+                ],
+                answer: 1
+            },
+            {
+                question: "6) Which of the following CSS property can be used to set the image as a border instead of the border style?",
+                options: [
+                    "a) background-image-source",
+                    "b) background-image",
+                    "c) border-image-source",
+                    "d) border-image"
+                ],
+                answer: 3
+            },
+            {
+                question: "7) Which of the following CSS property defines the different properties of all four sides of an element’s border in a single declaration?",
+                options: [
+                    "a) border-collapse",
+                    "b) border-width",
+                    "c) padding",
+                    "d) border"
+                ],
+                answer: 3
+            },
+            {
+                question: "8) Which of the following is the correct way to apply CSS Styles?",
+                options: [
+                    "a) in an external CSS file",
+                    "b) inside an HTML element",
+                    "c) inside the <head> section of an HTML page",
+                    "d) all of the mentioned"
+                ],
+                answer: 3
+            },
+            {
+                question: "9) Which of the following CSS property sets the font size of text?",
+                options: [
+                    "a) font-size",
+                    "b) text-size",
+                    "c) text",
+                    "d) size"
+                ],
+                answer: 0
+            },
+            {
+                question: "10) Which of the following is not the property of the CSS box model?",
+                options: [
+                    "a) margin",
+                    "b) color",
+                    "c) width",
+                    "d) height"
+                ],
+                answer: 1
+            }
         ];
 
         let currentQuestionIndex = 0;
@@ -157,8 +219,6 @@
         function showQuestion() {
             const questionContainer = document.getElementById('question-container');
             const question = questions[currentQuestionIndex];
-            document.getElementById('progress').innerText = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
-
             questionContainer.innerHTML = `
                 <div class="question">${question.question}</div>
                 ${question.code ? `<pre class="code-block"><code>${question.code}</code></pre>` : ''}
@@ -193,17 +253,12 @@
             } else {
                 document.getElementById('next-button').classList.add('hidden');
                 document.getElementById('submit-button').classList.remove('hidden');
-                document.getElementById('question-container').innerHTML = `<h3>Well Done! Ready to submit?</h3>`;
+                document.getElementById('question-container').innerHTML = `<h3>Quiz Complete! Your score is ${score} out of ${questions.length}</h3>`;
             }
         }
 
         function submitAnswers() {
-            document.getElementById('final-score').innerText = `You scored ${score} out of ${questions.length}`;
-            document.getElementById('score-modal').classList.add('show');
-        }
-
-        function closeModal() {
-            document.getElementById('score-modal').classList.remove('show');
+            alert(`You scored ${score} out of ${questions.length}`);
             window.location.href = 'index.html';
         }
 
