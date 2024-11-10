@@ -8,7 +8,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #08114c;
+            background-color: #1a1a2e;
+            color: #f5f5f5;
             margin: 0;
             padding: 20px;
             display: flex;
@@ -18,21 +19,32 @@
         }
 
         .quiz-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(145deg, #162447, #1f4068, #1b1b2f);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
             max-width: 600px;
             width: 100%;
+            color: #ffffff;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .quiz-container:hover {
+            transform: scale(1.02);
         }
 
         h1 {
             text-align: center;
             margin-bottom: 20px;
+            color: #e94560;
+            font-size: 2em;
+            text-shadow: 2px 2px #000;
         }
 
         .question {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            color: #f0f0f0;
         }
 
         .options {
@@ -41,38 +53,44 @@
         }
 
         .option {
-            background-color: #e7f3fe;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 5px 0;
+            background-color: #222831;
+            color: #f5f5f5;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 8px 0;
             cursor: pointer;
-            transition: background-color 0.3s;
-            border: 2px solid transparent; /* Default border */
+            transition: background-color 0.3s, color 0.3s;
+            border: 2px solid transparent;
+            font-size: 1.1em;
         }
 
         .option:hover {
-            background-color: #d1e7fd;
+            background-color: #393e46;
         }
 
         .selected {
-            background-color: #b3e5fc;
-            border: 2px solid #007bff; /* Selected border color */
+            background-color: #e94560;
+            border: 2px solid #0f4c75;
+            color: #ffffff;
         }
 
         button {
-            background-color: #007bff;
+            background-color: #0f4c75;
             color: white;
             border: none;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 12px;
+            border-radius: 8px;
             cursor: pointer;
             display: block;
             width: 100%;
-            margin-top: 10px;
+            margin-top: 15px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #3282b8;
         }
 
         .hidden {
@@ -90,86 +108,16 @@
 
     <script>
         const questions = [
-            {
-                question: "1) HTML is used to create",
-                options: [
-                    "Web server",
-                    "Word document",
-                    "Web page",
-                    "Database"
-                ],
-                answer: 2
-            },
-            {
-                question: "2) Which attribute is used with <td> tag to merge two cells horizontally?",
-                options: [
-                    "Colspan = 2",
-                    "Rowspan = 2",
-                    "Mergerows",
-                    "mergecols"
-                ],
-                answer: 0
-            },
-            {
-                question: "3) What does the <tt> tag in HTML do?",
-                options: [
-                    "It renders fonts as teletype text font style",
-                    "It renders fonts as truetype text font style",
-                    "It renders fonts as truncate text font style",
-                    "None of these"
-                ],
-                answer: 0
-            },
-            {
-                question: "4) How many heading tags are supported by HTML?",
-                options: ["3", "4", "5", "6"],
-                answer: 3
-            },
-            {
-                question: "5) HTML supports",
-                options: [
-                    "Ordered list",
-                    "Unordered list",
-                    "Both type lists",
-                    "Does not support those types"
-                ],
-                answer: 2
-            },
-            {
-                question: "6) HTML is derived from",
-                options: ["URL", "SGML", "TCP/IP", "Browsers"],
-                answer: 1
-            },
-            {
-                question: "7) What is the meaning of increasing the cell padding?",
-                options: [
-                    "Increase the thickness of table border",
-                    "Increase the space between cells",
-                    "Increase the distance between cell and content",
-                    "Increase the number of cells"
-                ],
-                answer: 2
-            },
-            {
-                question: "8) Which property of cells defines how many rows a cell should span?",
-                options: [
-                    "Colspan = 5",
-                    "Rowspan = 5",
-                    "Cellspan = 5",
-                    "Span = 5"
-                ],
-                answer: 1
-            },
-            {
-                question: "9) What are the two main parts available in an HTML document?",
-                options: ["Title and Body", "Head and Title", "Head and Body", "Head and Document"],
-                answer: 2
-            },
-            {
-                question: "10) Which character in HTML is used to indicate an end tag?",
-                options: ["\\", "/", "!", "<#"],
-                answer: 1
-            }
+            { question: "1) HTML is used to create", options: ["Web server", "Word document", "Web page", "Database"], answer: 2 },
+            { question: "2) Which attribute is used with <td> tag to merge two cells horizontally?", options: ["Colspan = 2", "Rowspan = 2", "Mergerows", "mergecols"], answer: 0 },
+            { question: "3) What does the <tt> tag in HTML do?", options: ["It renders fonts as teletype text font style", "It renders fonts as truetype text font style", "It renders fonts as truncate text font style", "None of these"], answer: 0 },
+            { question: "4) How many heading tags are supported by HTML?", options: ["3", "4", "5", "6"], answer: 3 },
+            { question: "5) HTML supports", options: ["Ordered list", "Unordered list", "Both type lists", "Does not support those types"], answer: 2 },
+            { question: "6) HTML is derived from", options: ["URL", "SGML", "TCP/IP", "Browsers"], answer: 1 },
+            { question: "7) What is the meaning of increasing the cell padding?", options: ["Increase the thickness of table border", "Increase the space between cells", "Increase the distance between cell and content", "Increase the number of cells"], answer: 2 },
+            { question: "8) Which property of cells defines how many rows a cell should span?", options: ["Colspan = 5", "Rowspan = 5", "Cellspan = 5", "Span = 5"], answer: 1 },
+            { question: "9) What are the two main parts available in an HTML document?", options: ["Title and Body", "Head and Title", "Head and Body", "Head and Document"], answer: 2 },
+            { question: "10) Which character in HTML is used to indicate an end tag?", options: ["\\", "/", "!", "<#"], answer: 1 }
         ];
 
         let currentQuestionIndex = 0;
@@ -182,9 +130,7 @@
                 <div class="question">
                     <h3>${question.question}</h3>
                     <ul class="options">
-                        ${question.options.map((option, i) => `
-                            <li class="option" onclick="selectOption(this, ${i})">${option}</li>
-                        `).join('')}
+                        ${question.options.map((option, i) => `<li class="option" onclick="selectOption(this, ${i})">${option}</li>`).join('')}
                     </ul>
                 </div>
             `;
