@@ -4077,28 +4077,52 @@ font-size: 15px;
   
   
       </style>
+ 
       <div id="popup-nl" class="popup-nl">
         <div class="popup-content-nl">
-            <div class="popup-left-nl">
-                <img src="popup.jpg" alt="finance">
-            </div>
-  
-            <div class="popup-right-nl">
-                <a href="# " class="close1-btn-nl close-nl">X</a>
-                <h1>Subscribe to Newsletter!</h1>
-                <h2 class="h2-nl">Join our web development community!</h2>
-                <p class="pop_up-nl">Subscribe for valuable insights, coding tips, latest trends, resources and updates on the latest tools and technologies</p>
-                <form id="emailForm-nl">
-                    <input type="email" id="email-nl" placeholder="Enter your email" required>
-                    <button type="submit" class="signup-btn1-nl">Subscribe</button>
-                </form>
-                <a href="#" class="no-thanks-nl close-nl">No thanks</a>
-                <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a href="terms&cond.html">Terms of Service</a> and <a href="privacynotice.html">Privacy Policy</a>.</p>
-            </div>
+          <div class="popup-left-nl">
+            <img src="popup.jpg" alt="finance">
+          </div>
+      
+          <div class="popup-right-nl">
+            <a href="#" class="close1-btn-nl close-nl">X</a>
+            <h1>Subscribe to Newsletter!</h1>
+            <h2 class="h2-nl">Join our web development community!</h2>
+            <p class="pop_up-nl">Subscribe for valuable insights, coding tips, latest trends, resources, and updates on the latest tools and technologies</p>
+            <form id="emailForm-nl">
+              <input type="email" id="email-nl" placeholder="Enter your email" required>
+              <button type="submit" class="signup-btn1-nl">Subscribe</button>
+            </form>
+            <a href="#" class="no-thanks-nl close-nl">No thanks</a>
+            <p class="terms-nl" style="white-space: nowrap;">By subscribing to newsletters, you agree to our <br><a href="terms&cond.html">Terms of Service</a> and <a href="privacynotice.html">Privacy Policy</a>.</p>
+          </div>
         </div>
       </div>
+      
       <script src="popup.js"></script>
-
+      
+      <script>
+        document.getElementById('emailForm-nl').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the default form submission behavior
+      
+          // Get the email value
+          const email = document.getElementById('email-nl').value;
+      
+          if (email) {
+            // Show success message after submission
+            alert('Thank you for subscribing to our newsletter!');
+      
+            // Clear the input field
+            document.getElementById('email-nl').value = '';
+      
+            // Close the popup (optional)
+            document.getElementById('popup-nl').style.display = 'none'; // Assuming the popup should close after submission
+          } else {
+            alert('Please enter a valid email address.');
+          }
+        });
+      </script>
+      
         <!-- Poll Pop-up -->
 <div class="popup" id="pollPopup">
     <div class="popup-content">
