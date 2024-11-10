@@ -254,7 +254,18 @@ body {
   align-items: center; 
   justify-content: center;
 }
-
+h1{
+  color: black;
+}
+p{
+  color: #333;
+}
+.nam-section{
+  color: black;
+}
+#feedback-section span {
+  color: #333;
+}
 #search-input {
   flex: 1;
   height: 44px;
