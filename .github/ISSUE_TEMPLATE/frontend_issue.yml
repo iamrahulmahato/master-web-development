@@ -1,0 +1,51 @@
+name: "🌐 Frontend Issue Report"
+description: "Create a detailed report to help us improve the frontend user experience."
+title: "FRONTEND ISSUE:"
+labels: ["Frontend", "Bug"]
+body:
+  - type: checkboxes
+    attributes:
+      label: "Preliminary Checks"
+      description: "Please confirm the following before reporting a frontend issue."
+      options:
+        - label: "I have checked the browser console for errors"
+          required: true
+        - label: "I have searched the existing issues"
+          required: true
+        - label: "I have included my browser name and version"
+          required: true
+        - label: "I have included my operating system"
+          required: true
+        - label: "I have included my device type (desktop/mobile/tablet)"
+          required: true
+  - type: textarea
+    attributes:
+      label: "Issue Summary"
+      description: "Provide a concise summary of the issue, including what you expected to happen and what actually happened."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Steps to Reproduce"
+      description: "List the steps to reproduce the issue, including which pages or components are affected."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Expected vs Actual Behavior"
+      description: "What did you expect to happen instead of the current behavior?"
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: "Screenshots/Recordings"
+      description: "If applicable, attach screenshots or recordings that illustrate the issue."
+    validations:
+      required: false
+  - type: checkboxes
+    attributes:
+      label: "Additional Information"
+      options:
+        - label: "I agree to follow this project's Code of Conduct"
+          required: true
+        - label: "I can provide more details if needed"

@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "tailwind-css": "file:",
     "vite": "^5.4.8"
   },
   "devDependencies": {

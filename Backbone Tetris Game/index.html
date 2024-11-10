@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>TetNet</title>
+ <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+ <style>
+   
+</style>
+<script src="lib/cerebrum.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="output" class="text"></div>
+  <div id="score" class="text"></div>
+  <div id="instructions" class="text"><br /><b>[Key Commands]</b><br />Load Fully Evolved Archive: [CTRL]<br />Speed Up: [E]<br />Slow Down: [D]<br />Toggle AI: [A]<br />Move Shape: [Arrow Keys]<br />Rotate Shape: [Up Arrow]<br />Drop Shape: [Down Arrow]<br />Save State: [Q]<br />Load State: [W]<br />Get Archive: [G]<br />Load Archive: [R]<br />Pick Shape: [I,O,T,S,Z,J,L]</div>
+  <div id="signature" class="text">Created By Idrees Hassan<br />Questions? Just ask!<br /><a href="mailto:&#105;&#100;&#114;&#101;&#101;&#115;&#064;&#105;&#100;&#114;&#101;&#101;&#115;&#105;&#110;&#099;&#046;&#099;&#111;&#109;" target="_top">&#105;&#100;&#114;&#101;&#101;&#115;&#064;&#105;&#100;&#114;&#101;&#101;&#115;&#105;&#110;&#099;&#046;&#099;&#111;&#109;</a></div>
+  <script src="./tetnet.js"></script>
+  <script>
+    $(window).keydown(function (e){
+      if (e.ctrlKey) {
+        var archiveJSON = $.ajax({
+          url: "./archive.json",
+          async: false
+        }).responseText;
+        loadArchive(archiveJSON);
+        alert("Archive loaded successfully!");
+      }
+    });
+  </script>
+  <script type="text/javascript">
+  </script>
+</body>
+</html>

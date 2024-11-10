@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nutritional Data</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            /* ADNAN RIZVI*/
+        /* body {
+            ADNAN RIZVI
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to right, #ffcccb, #ffebcd); /* Gradient background */
+            background: linear-gradient(to right, #ffcccb, #ffebcd);  Gradient background 
             margin: 0;
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh; /* Full height */
-        }
+        
 
         #container {
             background-color: #ffffff;
@@ -75,9 +76,113 @@
         tr:hover {
             background-color: #f1f1f1; /* Highlight row on hover */
         }
-    </style>
-</head>
-<body>
+        [data-theme="dark"]  tr:hover {
+            background-color: #333; /* Highlight row on hover */
+        }
+      
+        :root { /* Light theme colors */ 
+            --background-color: linear-gradient(to right, #ffcccb, #ffebcd);
+            --text-color: #000000; 
+            --navbar-background: #f8f9fa; 
+            --navbar-text: #000000; 
+            --link-color: #1a73e8; 
+            --button-background: #008cba; 
+            --button-text: #ffffff; 
+        } [data-theme="dark"] { /* Dark theme colors */ 
+            --background-color: #121212; 
+            --text-color: #ffffff;
+             --navbar-background: #333333; 
+             --navbar-text: #ffffff; 
+             --link-color: #bb86fc;
+              --button-background: #3d3d3d; 
+              --button-text: #ffffff;
+             }
+             [data-theme="dark"] #container {
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px #f1f1f15c;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+}
+[data-theme="dark"]         
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    color: #ddd;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #333;
+}
+[data-theme="dark"] 
+th {
+    background-color: #222;
+}
+
+[data-theme="dark"] 
+h1 {
+    margin-bottom: 20px;
+    color: #f1f1f1;
+}
+             * {
+                 padding: 0;
+                  margin: 0; box-sizing: 
+                  border-box; 
+                }
+                 body {
+             font-family: "Poppins", sans-serif;
+                 /* background-color: var(--background-color); */
+              color: var(--text-color); 
+             font-family: 'Roboto', sans-serif;
+             background:  var(--background-color); 
+             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height */
+                }
+                 #navbar ul { list-style: none;
+                     padding: 0;
+                     } #navbar ul li { 
+                        display: inline;
+                         margin-right: 10px; 
+                        } 
+                        #navbar ul li a { 
+                            color: var(--navbar-text); 
+                            text-decoration: none; 
+                        } 
+                        button   {
+                             border: none;
+       display: inline-flex;
+       appearance: none;
+       align-items: center;
+       justify-content: center;
+       border-radius: 9999px;
+       padding: 8px;
+       align-items: center;
+       background-color: #f43f5e;
+       color: #ffffff;
+       cursor: pointer;
+   }
+         #theme-toggle 
+         { position: fixed;
+             top: 10px; 
+             right: 10px;
+          } </style>
+           </head>
+            <body data-theme="light"> 
+                            <button id="theme-toggle"> <i class="fas fa-sun"></i> </button> 
+                             <section id="content">  </section> 
+                             <script> const toggleButton = document.getElementById('theme-toggle'); 
+                             const body = document.body; 
+                             toggleButton.addEventListener('click', () => { if (body.getAttribute('data-theme') === 'light') { body.setAttribute('data-theme', 'dark'); 
+                             toggleButton.innerHTML = '<i class="fas fa-moon"></i>'; 
+                             } else { 
+                                body.setAttribute('data-theme', 'light'); 
+                                toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+                                 } }); 
+                                 </script>
 
 <div id="container">
     <h1>Recipe Nutrition Search</h1>

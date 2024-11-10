@@ -1,0 +1,6 @@
+body{color: #fff;}
+.wrapper{background-color: #212121;text-align: center; border: 1px solid black;}
+.form{line-height: 2rem;}
+#guess-field{width: 20%; text-align: center;}
+h1{color: chartreuse;}
+#subt{    background-color: chartreuse;padding: 10px 15px 10px 15px;border: 1px solid white;border-radius: 30px;}

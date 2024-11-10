@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Pair Matching Game</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js"></script>
+        <link rel="icon" type="image/x-icon" href="/assets/card.ico">
+        
+    </head>
+    <body onload="init()">
+        <h1 id="title">Animal Match</h1>
+        <h2 id="subtitle">Turn over sets of cards and try to find all the matching animals!</h2>
+        <p id="attempts"></p>
+        <label for="leaderboardname" id="label-leaderboardname" class="hidden">Enter a name for the leaderboard (3 letters, save with Enter)</label>
+        <input type="text" maxlength="3" id="leaderboardname" class="hidden">
+        <div id="leaderboard-div" hidden>
+            <p id="easymodelabel">Easy mode</p>
+            <table id="leaderboard">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+                <tr class="gold">
+                    <td>1</td><td id="name1"></td><td id="score1"></td>
+                </tr>
+                <tr class="silver">
+                    <td>2</td><td id="name2"></td><td id="score2"></td>
+                </tr>
+                <tr class="bronze">
+                    <td>3</td><td id="name3"></td><td id="score3"></td>
+                </tr>
+                <tr>
+                    <td>4</td><td id="name4"></td><td id="score4"></td>
+                </tr>
+                <tr>
+                    <td>5</td><td id="name5"></td><td id="score5"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="startbuttons">
+            <button type="button" class="button start" id="start2" onclick="startGame(2)">Play Animal Match (Original)</button>
+            <button type="button" class="button start" id="start1v1" onclick="start1v1()">Play Competitive (2 player)</button>
+            
+            <button type="button" class="button start" id="start3" onclick="startGame(3)">Play 3-match</button>
+            <button type="button" class="button start" id="start4" onclick="startGame(4)">Play 4-match</button>
+            <button type="button" class="button start" id="start6" onclick="startGame(6)">Play 6-match</button>
+            
+            <div class="align">
+                <label for="snaptogrid">Align cards:</label>
+                <input type="checkbox" id="snaptogrid" onchange="flipAlignToGrid()">
+            </div>
+            <div class="easy">
+                <label for="easymode">Easy Mode:</label>
+                <input type="checkbox" id="easymode" onchange="flipEasyMode()">
+            </div>
+        </div>
+        
+        <button type="button" class="button hidden" id="playagain" onclick="resetGame()">Play Again</button>
+        <button type="button" class="button hidden" id="menu" onclick="showMenu()">Menu</button>
+        
+        <div id="animals"></div>
+        <div id="cards"></div>
+        <span id="progress"></span>
+
+        <div id="background" class="left"></div>
+        <div id="background" class="right"></div>
+    </body>
+    
+    </html>
+    

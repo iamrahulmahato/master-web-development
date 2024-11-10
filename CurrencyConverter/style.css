@@ -1,0 +1,88 @@
+body {
+    font-family:'Courier New', Courier, monospace;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+h1
+{
+    display: flex;
+    font-size: 50px;
+    margin-bottom: 400px;
+    margin-left: 200px;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 70px;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+input
+{
+    width: 260px;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: rgb(241, 239, 239);
+    border: none;
+    
+}
+ select, button {
+    width: 300px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.result {
+    margin-top: 20px;
+    transition: opacity 0.3s;
+}
+
+.result h2 {
+    margin: 0;
+}
+
+.result p {
+    font-size: 1.2em;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.result p.show {
+    opacity: 1;
+}
