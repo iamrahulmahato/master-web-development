@@ -739,9 +739,14 @@ body {
 }
 
 .icon {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
+  position: absolute;
+  right: 0rem;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 #toggle-mode-btn {
