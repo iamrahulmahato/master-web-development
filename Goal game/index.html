@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id='game_field'>
+        <div id='goal'>
+          <div class='hitbox' box="0"></div>
+          <div class='hitbox' box="1"></div>
+          <div class='hitbox' box="2"></div>
+          <div class='hitbox' box="3"></div>
+          <div class='hitbox' box="4"></div>
+        </div>
+        <div id='ball'></div>
+        <svg viewBox="0 0 10 10" id="svg" xmlns="http://www.w3.org/2000/svg">
+          <path id="path" d="M 10 10 C 20 20, 40 20, 50 10" stroke="rgba(0,0,0,0)" fill="transparent"/>
+      
+          <circle id='circle' r="5" fill="rgba(255,0,0,0)">
+            <animateMotion
+                           id="bally"
+                           dur="1s"
+                           repeatCount="1"
+                           begin="goal.click"
+                           fill="freeze"
+                           path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+          </circle>
+        </svg>
+        
+        <h1 id='success'>GOAL!</h1>
+        <h1 id='failure'>FAIL</h1>
+      </div>
+      <p>Click inside the goal to kick, then move cursor to curve shot.</p>
+</body>
+</html>

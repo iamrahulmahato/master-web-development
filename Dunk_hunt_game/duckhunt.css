@@ -1,0 +1,45 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-image: url(images/background.png);
+  background-size: cover;
+  background-position: center;
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: bicubic;
+  overflow: hidden;
+}
+
+.duck {
+  position: absolute;
+  background-image: url(images/duckhunt.png);
+  background-position: -100px -160px;
+  width: 110px;
+  height: 115px;
+  top: 100px;
+  left: 100px;
+  transition: top 2s, left 2s;
+  transition-timing-function: linear;
+  background-repeat: no-repeat;
+}
+
+.duck.right {
+  background-position: -200px -160px;
+}
+.duck.right.flap {
+  background-position: -300px -160px;
+}
+.duck {
+  background-position: -100px -160px;
+}
+.duck.flap {
+  background-position: -430px -160px;
+}
+.duck.shot {
+  background-position: center;
+  background-image: url(images/shot.png);
+}

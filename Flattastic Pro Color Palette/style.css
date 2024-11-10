@@ -1,0 +1,341 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700);
+
+*, 
+*::before,
+*::after {
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    line-height: 1em;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+body {
+    font-family: "Source Sans Pro";
+    background-color: #f0f2f5;
+}
+
+.page-title {
+    margin: 2em 0 .2em;
+    font-size: 20px;
+    text-transform: uppercase;
+    line-height: 1.4;
+    color: #434a54;
+}
+
+.page-description {
+    font-size: 13px;
+    font-weight: normal;
+    color: #aab2bd;
+}
+.page-description a {
+    color: #ec87c0;
+    text-decoration: none;
+}
+.page-description a:hover {
+    color: #d770ad;
+}
+
+
+.container {
+    width: 780px;
+    margin: 0 auto;
+}
+
+.palete {
+    border-radius: 5px;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 3px 0px 0px rgba(226, 228, 231, 0.75);
+    -moz-box-shadow:    0px 3px 0px 0px rgba(226, 228, 231, 0.75);
+    box-shadow:         0px 3px 0px 0px rgba(226, 228, 231, 0.75);
+}
+
+.palete-color {
+  position: relative;
+}
+.palete-color,
+.palete-color__square {
+    height: 50px;
+}
+
+.palete-color__square {
+    width: 50%;
+    float: left;
+}
+.palete-color__square:hover {
+  width: 100%;
+  position: absolute;
+}
+
+.palete-color__lighten {
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-top-left-radius: 5px;
+}
+.palete-color__square.palete-color__lighten:hover  {
+   -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-right-radius: 5px;
+}
+.palete-color__darken {
+    float: right;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-right-radius: 5px;
+}
+.palete-color__square.palete-color__darken:hover {
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-top-left-radius: 5px;
+}
+.palete-color__content {
+    padding: 10px;
+    color: #a9abab;
+}
+.palete-color__name {
+    font-size: 12px;
+    font-weight: medium;
+    text-transform: uppercase;
+    color: #444545;
+}
+.palete-color__code {
+    font-size: 11px;
+    line-height: .8em;
+    text-transform: uppercase;
+}
+
+/* ############
+   STYLES
+   ############ */
+
+/* Round */
+.palete--round {
+  border-radius: 50%;
+  text-align: center;
+}
+.palete--round .palete-color {
+  height: 50%;
+}
+.palete--round .palete-color__square {
+  height: 100%;
+}
+.palete--round .palete-color__lighten {
+  border-top-left-radius: 100%;
+}
+.palete--round .palete-color__square.palete-color__lighten:hover {
+  -webkit-border-radius: 1000px 1000px 0 0;
+  -moz-border-radius: 1000px 1000px 0 0;
+  border-radius: 1000px 1000px 0 0;
+  /* Border-radius Greater or equal to width*/
+}
+.palete--round .palete-color__darken {
+  border-top-right-radius: 100%;
+}
+.palete--round .palete-color__square.palete-color__darken:hover {
+  -webkit-border-radius: 1000px 1000px 0 0;
+  -moz-border-radius: 1000px 1000px 0 0;
+  border-radius: 1000px 1000px 0 0;
+  /* Border-radius Greater or equal to width*/
+}
+
+/* Square */
+.palete--square {} /* must set a height */
+.palete--square .palete-color {
+  height: 50%;
+}
+.palete--square .palete-color__square {
+  height: 100%;
+}
+.palete--square .palete-color__content {
+  padding-top: 18px;
+}
+.palete--square .palete-color__code {
+  line-height: 1.4;
+}
+.palete--square .palete-color__code:last-child {
+  display: block;
+}
+
+
+
+.list-palete {
+width: 340px;
+margin: 0 20px;
+float: left;
+}
+.list-palete > .palete {
+width: 45%;
+margin: 2.5%;
+float: left;
+}
+
+.list-palete > .palete--round,
+.list-palete > .palete--square{
+height: 153px;
+}
+
+
+/*
+Examples
+*/
+.examples { 
+float: left;
+width: 340px;
+margin: 0 20px;
+}
+
+.example {
+margin: 40px auto;
+}
+
+.example--rectangle {
+width: 200px;
+}
+
+.example--round {
+width: 200px;
+height: 200px;
+}
+
+.example--square {
+width: 200px;
+height: 200px;
+}
+
+
+
+
+/* ###########
+   THEME
+   ########### */
+
+/* 
+ * Grapefruit  
+ */
+.palete-color--grapefruit > .palete-color__lighten {
+    background-color: #ed5565;
+}
+.palete-color--grapefruit > .palete-color__darken {
+    background-color: #da4453;
+}
+
+/* 
+ * Bittersweet  
+ */
+.palete-color--bittersweet > .palete-color__lighten {
+    background-color: #fc6e51;
+}
+.palete-color--bittersweet > .palete-color__darken {
+    background-color: #e9573f;
+}
+
+
+/* 
+ * Sunflower  
+ */
+.palete-color--sunflower > .palete-color__lighten {
+    background-color: #ffce54;
+}
+.palete-color--sunflower > .palete-color__darken {
+    background-color: #fcbb42;
+}
+
+/* 
+ * Grass  
+ */
+.palete-color--grass > .palete-color__lighten {
+    background-color: #a0d468;
+}
+.palete-color--grass > .palete-color__darken {
+    background-color: #8cc152;
+}
+
+/* 
+ * Mint  
+ */
+.palete-color--mint > .palete-color__lighten {
+    background-color: #48cfad;
+}
+.palete-color--mint > .palete-color__darken {
+    background-color: #37bc9b;
+}
+
+/* 
+ * Aqua  
+ */
+.palete-color--aqua > .palete-color__lighten {
+    background-color: #4fc1e9;
+}
+.palete-color--aqua > .palete-color__darken {
+    background-color: #3bafda;
+}
+
+/* 
+ * Blue Jeans 
+ */
+.palete-color--blue-jeans > .palete-color__lighten {
+    background-color: #5d9cec;
+}
+.palete-color--blue-jeans > .palete-color__darken {
+    background-color: #4a89dc;
+}
+
+/* 
+ * Lavender  
+ */
+.palete-color--lavender > .palete-color__lighten {
+    background-color: #ac92ec;
+}
+.palete-color--lavender > .palete-color__darken {
+    background-color: #967adc;
+}
+
+/* 
+ * Pink Rose  
+ */
+.palete-color--pink-rose > .palete-color__lighten {
+    background-color: #ec87c0;
+}
+.palete-color--pink-rose > .palete-color__darken {
+    background-color: #d770ad;
+}
+
+/* 
+ * Light Gray  
+ */
+.palete-color--light-gray > .palete-color__lighten {
+    background-color: #f5f7fa;
+}
+.palete-color--light-gray > .palete-color__darken {
+    background-color: #e6e9ed;
+}
+
+/* 
+ * Medium Gray  
+ */
+.palete-color--medium-gray > .palete-color__lighten {
+    background-color: #ccd1d9;
+}
+.palete-color--medium-gray > .palete-color__darken {
+    background-color: #aab2bd;
+}
+
+/* 
+ * Dark Gray  
+ */
+.palete-color--dark-gray > .palete-color__lighten {
+    background-color: #656d78;
+}
+.palete-color--dark-gray > .palete-color__darken {
+    background-color: #434a54;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindfulness Breathing App</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #eefec7;
+            color: #333;
+        }
+
+        .app-container {
+            text-align: center;
+        }
+
+        .circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #87ceeb;
+            margin: 0 auto;
+            transition: transform 4s ease-in-out;
+        }
+
+        .text {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .small-text {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="circle" id="breathingCircle"></div>
+        <br>
+        <br>
+        <div class="text" id="breathingText">Breathe In</div>
+        <div class="small-text">Follow the circle for a calming experience</div>
+    </div>
+
+    <script>
+        const circle = document.getElementById('breathingCircle');
+        const text = document.getElementById('breathingText');
+        
+        const totalTime = 10000; // Total time for one cycle (12 seconds)
+        const breatheInTime = (totalTime / 6) * 2; // 4 seconds for inhale
+        const holdTime = totalTime / 6; // 2 seconds for hold
+        const breatheOutTime = (totalTime / 6) * 3; // 6 seconds for exhale
+
+        function breathAnimation() {
+            text.innerText = 'Breathe In';
+            circle.style.transform = 'scale(1.5)';
+            
+            setTimeout(() => {
+                text.innerText = 'Hold';
+                
+                setTimeout(() => {
+                    text.innerText = 'Breathe Out';
+                    circle.style.transform = 'scale(1)';
+                }, holdTime);
+            }, breatheInTime);
+        }
+
+        // Run the animation in a loop
+        setInterval(breathAnimation, totalTime);
+    </script>
+</body>
+</html>

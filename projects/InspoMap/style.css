@@ -8,6 +8,9 @@ body {
 h1 {
     color: #34495e;
 }
+[data-theme="dark"] h2{
+    color:black;
+}
 
 /* Map styling */
 .map {
