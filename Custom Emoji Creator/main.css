@@ -1,0 +1,1186 @@
+body {
+    font-family: "Lucida sans", sans-serif;
+    background: #f3f3f3;
+}
+.main-content {
+    margin: auto auto;
+    background: #f3f3f3;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.main-content *:before, .main-content *:after {
+    content: "";
+    position: absolute;
+}
+
+.emoji-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f3f3f3;
+    margin-bottom: 80px;
+    margin-top: 70px;
+}
+
+.emoji-face {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #fcc21b;
+    margin: auto;
+    position: relative;
+    display: inline-block;
+    font-size: 5px;
+}
+.emoji-face.skin-1 {
+    background: #fcc21b;
+}
+.emoji-face.skin-2 {
+    background: #ffd2b1;
+}
+.emoji-face.skin-3 {
+    background: #daae91;
+}
+.emoji-face.skin-4 {
+    background: #dca86e;
+}
+.emoji-face.skin-5 {
+    background: #8b4a22;
+}
+.emoji-face.skin-6 {
+    background: #452308;
+}
+.eyes {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+}
+.eyes .eye {
+    position: absolute;
+    border-radius: 50%;
+    background: #111;
+    top: 0;
+}
+.eyes .eye.left {
+    left: 50%;
+    margin-left: -40px;
+}
+.eyes .eye.right {
+    right: 50%;
+    margin-right: -40px;
+}
+.eyes .eye.default {
+    width: 25px;
+    height: 30px;
+}
+.eyes .eye.startled {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    top: -5px;
+}
+.eyes .eye.startled.left {
+    margin-left: -45px;
+}
+.eyes .eye.startled.right {
+    margin-right: -48px;
+}
+.eyes .eye.startled:before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: #111;
+    border-radius: 50%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 25%;
+}
+.eyes .eye.heart, .eyes .eye.star, .eyes .eye.fire, .eyes .eye.squeeze {
+    background: transparent;
+}
+.eyes .eye.heart:before, .eyes .eye.star:before, .eyes .eye.fire:before, .eyes .eye.squeeze:before {
+    content: "\2764";
+    color: #e10c0c;
+    font-size: 50px;
+    top: 0;
+}
+.eyes .eye.heart.left {
+    margin-left: -55px;
+    transform: rotate(-15deg);
+}
+.eyes .eye.heart.right {
+    margin-right: -10px;
+    transform: rotate(15deg);
+    margin-top: -12px;
+}
+.eyes .eye.star {
+    margin-top: -15px;
+}
+.eyes .eye.star:before {
+    content: "\2605";
+    font-size: 60px;
+}
+.eyes .eye.star.left {
+    margin-left: -50px;
+}
+.eyes .eye.star.right {
+    margin-right: -2px;
+}
+.eyes .eye.fire:before {
+    content: "\1F525";
+    font-size: 45px;
+}
+.eyes .eye.fire.left {
+    transform: rotate(-15deg) scaleX(-1);
+    margin-left: -8px;
+    margin-top: -20px;
+}
+.eyes .eye.fire.right {
+    transform: rotate(15deg);
+    margin-top: -20px;
+    margin-right: -10px;
+}
+.eyes .eye.squeeze:before {
+    content: ">";
+    color: #111;
+    font-size: 60px;
+    margin-top: -10px;
+    font-weight: 700;
+}
+.eyes .eye.squeeze.right {
+    transform: scaleX(-1);
+}
+.eyes .eye.closed-up, .eyes .eye.closed-down {
+    background: transparent;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transform: rotate(-135deg);
+    top: 20px;
+}
+.eyes .eye.closed-down {
+    transform: rotate(45deg);
+    top: -8px;
+}
+.eyes .eye.lined {
+    width: 30px;
+    height: 6px;
+    top: 20px;
+    border-radius: 6px;
+}
+.mouth {
+    height: 25%;
+    width: 58%;
+    background: #111;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 14%;
+    z-index: 4;
+}
+.mouth.default, .mouth.upside, .mouth.open, .mouth.tongue {
+    overflow: hidden;
+    border: 3px solid #111;
+    border-radius: 0 0 250px 250px;
+}
+.mouth.default:before, .mouth.upside:before, .mouth.open:before, .mouth.tongue:before {
+    height: 10px;
+    width: 100%;
+    background: #fff;
+    top: 0;
+    left: 0;
+}
+.mouth.upside {
+    width: 45%;
+    border-radius: 250px 250px 120px 120px;
+}
+
+.mouth.lined {
+    height: 10px;
+    width: 30%;
+    border-radius: 20px;
+    bottom: 25%;
+}
+.mouth.open {
+    border-radius: 40px;
+    width: 20%;
+    height: 20%;
+}
+.mouth.tongue {
+    overflow: visible;
+}
+.mouth.tongue:before {
+    background: #f55020;
+    height: 52px;
+    width: 45%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 20px 20px;
+}
+.mouth.tongue:after {
+    background: #e13b08;
+    width: 6px;
+    height: 80%;
+    border-radius: 6px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-top: 5px;
+}
+.mouth.frown, .mouth.smile {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border-radius: 50%;
+    transform: rotate(-135deg);
+}
+.mouth.smile {
+    transform: rotate(45deg);
+    margin-bottom: 20px;
+}
+.mouth.curse:before {
+    content: "#@%!";
+    color: #fff;
+    font-size: 20px;
+    padding: 8px 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+.mouth.grimace {
+    border-radius: 40px;
+    background: #fff;
+    height: 30px;
+    bottom: 30px;
+    border: 2px solid;
+    background-image: linear-gradient(to bottom, transparent 14px, #111 14px, #111 16px, transparent 16px), repeating-linear-gradient(to right, transparent, transparent 14px, #111 14px, #111 16px, transparent 16px);
+}
+.mouth.no-mouth {
+    background: transparent;
+}
+.hat {
+    position: absolute;
+    z-index: 8;
+}
+.hat.round-hat, .hat.wizard-hat, .hat.sorting-hat {
+    width: 180px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ffaec9;
+    top: 0px;
+    left: -15px;
+}
+
+.hat.round-hat:before, .hat.wizard-hat:before, .hat.sorting-hat:before {
+    width: 70%;
+    height: 50px;
+    border-radius: 180px 180px 60px 60px;
+    background: #ffaec9;
+    border-bottom: 10px solid #f55020;
+    right: 30px;
+    top: -40px;
+}
+.hat.wizard-hat, .hat.sorting-hat {
+    background: #444;
+}
+.hat.wizard-hat:before, .hat.sorting-hat:before {
+    background: #444;
+    border-bottom-color: #000;
+}
+.hat.wizard-hat:after, .hat.sorting-hat:after {
+    width: 0;
+    height: 0;
+    margin-top: -110px;
+    margin-left: 25px;
+    border-left: 70px solid transparent;
+    border-right: 53px solid transparent;
+    border-bottom: 100px solid #444;
+    border-radius: 20px;
+}
+.hat.sorting-hat {
+    background: #400000;
+}
+.hat.sorting-hat:before {
+    content: ":|";
+    color: #c27814;
+    padding: 36px 20px;
+    border-bottom: 0;
+    width: 10px;
+    font-size: 40px;
+    top: -75px;
+    right: 63px;
+    background: #400000;
+    border-radius: 180px 60px 60px 180px;
+    border-right: 10px solid #c27814;
+    transform: rotate(90deg);
+    z-index: 1;
+}
+.hat.sorting-hat:after {
+    border-bottom: 100px solid #400000;
+}
+.hat.top-hat {
+    width: 80%;
+    height: 15px;
+    margin: auto;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    top: -110px;
+    border-radius: 6px;
+    background: #006daf;
+}
+.hat.top-hat:before {
+    width: 80%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 80px;
+    border-radius: 10px 10px 0 0;
+    margin-top: -80px;
+    background: linear-gradient(to bottom, #006daf 0%, #006daf 80%, #0061a0 80%);
+}
+.hat.traffic-cone {
+    width: 70%;
+    height: 100px;
+    margin: auto;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    top: -222px;
+    background: linear-gradient(to right, transparent 40%, #f79003 40%, #f79003 60%, transparent 60%);
+    border-bottom: 15px solid #f79003;
+}
+.hat.traffic-cone:before {
+    bottom: -12px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: linear-gradient(100deg, transparent 20%, #f79003 20%, #f79003 50%, transparent 50%), linear-gradient(260deg, transparent 20%, #f79003 20%, #f79003 50%, transparent 50%);
+    width: 70%;
+    height: 112px;
+}
+.hat.traffic-cone:after {
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-bottom: 40px solid #fff;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    margin-top: 35px;
+    height: 0;
+    width: 47%;
+}
+.hat.cactus {
+    width: 80%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    top: -120px;
+    height: 15px;
+    border-radius: 8px;
+    background: #c27814;
+}
+.hat.cactus:before {
+    width: 40%;
+    background: linear-gradient(to top right, #8cbd18, #419e0b);
+    height: 100px;
+    border-radius: 100px 100px 0 0;
+    top: -99px;
+    right: 22px;
+}
+.hat.cactus:after {
+    width: 35%;
+    background: linear-gradient(to top right, #8cbd18, #c2f056);
+    height: 75px;
+    border-radius: 80px 80px 0 0;
+    top: -74px;
+    left: 20px;
+}
+.hat.mickey {
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 95%;
+    height: 80px;
+    top: -70px;
+    background: transparent;
+    border-top: 30px solid #111;
+    border-radius: 150px 150px 0 0;
+}
+.hat.mickey:before, .hat.mickey:after {
+    width: 80px;
+    height: 70px;
+    top: -75px;
+    left: -20px;
+    background: #111;
+    border-radius: 50%;
+}
+.hat.mickey:before {
+    transform: rotate(-25deg);
+}
+.hat.mickey:after {
+    transform: rotate(25deg);
+    right: -20px;
+    left: auto;
+}
+.eyebrow {
+    position: absolute;
+    top: 15px;
+    display: inline-block;
+}
+.eyebrow:before {
+    content: "(";
+    color: #d58c00;
+    font: 700 30px "Lucida sans", sans-serif;
+    text-shadow: 2px 0 0 #d58c00;
+    transform: rotate(90deg);
+    left: 0;
+}
+.eyebrow.left {
+    left: 42px;
+}
+.eyebrow.right {
+    right: 50px;
+}
+.eyebrow.downwards:before, .eyebrow.furrow:before, .eyebrow.furrow-far:before {
+    transform: rotate(270deg);
+}
+.eyebrow.furrow.left {
+    transform: rotate(40deg);
+    left: 60px;
+}
+.eyebrow.furrow.right {
+    transform: rotate(-40deg) scaleX(-1);
+    right: 62px;
+}
+.eyebrow.up-far {
+    top: 20px;
+}
+.eyebrow.up-far.left {
+    transform: rotate(-40deg);
+    left: 20px;
+}
+.eyebrow.up-far.right {
+    transform: rotate(40deg) scaleX(-1);
+    right: 18px;
+}
+.eyebrow.furrow-far {
+    top: 25px;
+}
+.eyebrow.furrow-far.left {
+    transform: rotate(-35deg);
+    left: 20px;
+}
+.eyebrow.furrow-far.right {
+    transform: rotate(35deg) scaleX(-1);
+    right: 17px;
+}
+.eyebrow.no-eyebrows:before {
+    content: none;
+}
+.face-extras {
+    position: absolute;
+}
+.face-extras.sweat {
+    width: 35px;
+    height: 35px;
+    border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+    background: #006daf;
+    transform: rotate(-45deg);
+    top: 20px;
+    right: -5px;
+}
+.face-extras.tears {
+    width: 30px;
+    height: 30px;
+    border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+    background: #006daf;
+    top: 70px;
+    left: 5px;
+}
+.face-extras.tears:before {
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background: #006daf;
+    transform: scaleX(-1);
+    margin-left: 110px;
+}
+.face-extras.geek-glasses {
+    width: 100%;
+    top: 50px;
+    height: 5px;
+    background: linear-gradient(to right, #111 15%, transparent 15%, transparent 85%, #111 85%);
+}
+.face-extras.geek-glasses:before, .face-extras.geek-glasses:after {
+    margin-top: -25px;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #111;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+}
+.face-extras.geek-glasses:before {
+    left: 20px;
+}
+.face-extras.geek-glasses:after {
+    right: 20px;
+}
+.face-extras.sunglasses {
+    width: 95%;
+    height: 6px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    top: -65px;
+    background: #111;
+}
+.face-extras.sunglasses:before, .face-extras.sunglasses:after {
+    background: inherit;
+    width: 70px;
+    height: 35px;
+    border-radius: 5px 5px 150px 150px;
+}
+.face-extras.sunglasses:before {
+    left: 5px;
+}
+.face-extras.sunglasses:after {
+    right: 5px;
+}
+.face-extras.crescent-glasses {
+    z-index: 4;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 3.5px;
+    width: 98%;
+    top: -25px;
+    background: linear-gradient(to right, #d4af37 20px, transparent 20px, transparent 60px, #d4af37 60px, #d4af37 80px, transparent 80px, transparent 130px, #d4af37 130px);
+}
+.face-extras.crescent-glasses:before, .face-extras.crescent-glasses:after {
+    width: 50px;
+    height: 24px;
+    border-radius: 4px 4px 50px 50px;
+    border: 2.5px solid #d4af37;
+    background: rgba(179, 219, 242, 0.9);
+    top: -8px;
+}
+.face-extras.crescent-glasses:before {
+    left: 15px;
+}
+.face-extras.crescent-glasses:after {
+    right: 15px;
+}
+.face-extras.blush {
+    width: 100%;
+}
+.face-extras.blush:before, .face-extras.blush:after {
+    width: 35px;
+    height: 35px;
+    background: rgba(245, 80, 32, 0.4);
+    border-radius: 50%;
+    top: 65px;
+}
+.face-extras.blush:before {
+    left: 10px;
+}
+.face-extras.blush:after {
+    right: 10px;
+}
+.face-extras.bandage {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: rotate(-30deg);
+    background: linear-gradient(to bottom, #fff 20%, #ddd 20%, #ddd 30%, transparent 30%);
+}
+.face-extras.scarf-gryf, .face-extras.scarf-huff, .face-extras.scarf-rave, .face-extras.scarf-slyt {
+    z-index: 10;
+    width: 40px;
+    height: 60px;
+    background: linear-gradient(#006400 30%, #006400 80%, transparent 80%), repeating-linear-gradient(to right, #006400, #006400 4px, transparent 4px, transparent 7px);
+    transform: rotate(14deg);
+    bottom: -60px;
+    right: 30px;
+}
+.face-extras.scarf-gryf:before, .face-extras.scarf-huff:before, .face-extras.scarf-rave:before, .face-extras.scarf-slyt:before {
+    width: 40px;
+    height: 80px;
+    background: linear-gradient(#006400 0%, #008000 40%, #ccc 40%, #ccc 45%, #008000 45%, #008000 55%, #ccc 55%, #ccc 60%, #008000 60%, #008000 80%, transparent 80%), repeating-linear-gradient(to right, #008000, #008000 4px, transparent 4px, transparent 7px);
+    transform: rotate(-45deg);
+    top: -20px;
+    right: -20px;
+}
+.face-extras.scarf-gryf:after, .face-extras.scarf-huff:after, .face-extras.scarf-rave:after, .face-extras.scarf-slyt:after {
+    width: 132px;
+    height: 40px;
+    background: repeating-linear-gradient(to right, #008000 16px, #ccc 16px, #ccc 20px, #008000 20px, #008000 28px, #ccc 28px, #ccc 32px, #008000 32px, #008000 60px);
+    transform: rotate(-14deg);
+    top: -30px;
+    left: -80px;
+    border-radius: 10px;
+    border-bottom-left-radius: 40px 100px;
+    border-bottom-right-radius: 40px 100px;
+}
+.face-extras.scarf-gryf {
+    background: linear-gradient(#982730 30%, #982730 80%, transparent 80%), repeating-linear-gradient(to right, #982730, #982730 4px, transparent 4px, transparent 7px);
+}
+.face-extras.scarf-gryf:before {
+    background: linear-gradient(#982730 0%, #ad343e 40%, #ffbf00 40%, #ffbf00 45%, #ad343e 45%, #ad343e 55%, #ffbf00 55%, #ffbf00 60%, #ad343e 60%, #ad343e 80%, transparent 80%), repeating-linear-gradient(to right, #ad343e, #ad343e 4px, transparent 4px, transparent 7px);
+}
+.face-extras.scarf-gryf:after {
+    background: repeating-linear-gradient(to right, #ad343e 16px, #ffbf00 16px, #ffbf00 20px, #ad343e 20px, #ad343e 28px, #ffbf00 28px, #ffbf00 32px, #ad343e 32px, #ad343e 60px);
+}
+.face-extras.scarf-huff {
+    background: linear-gradient(#ce9c04 30%, #ce9c04 80%, transparent 80%), repeating-linear-gradient(to right, #ce9c04, #ce9c04 4px, transparent 4px, transparent 7px);
+}
+.face-extras.scarf-huff:before {
+    background: linear-gradient(#ce9c04 0%, #eab000 40%, #111 40%, #111 45%, #eab000 45%, #eab000 55%, #111 55%, #111 60%, #eab000 60%, #eab000 80%, transparent 80%), repeating-linear-gradient(to right, #eab000, #eab000 4px, transparent 4px, transparent 7px);
+}
+.face-extras.scarf-huff:after {
+    background: repeating-linear-gradient(to right, #eab000 16px, #111 16px, #111 20px, #eab000 20px, #eab000 28px, #111 28px, #111 32px, #eab000 32px, #eab000 60px);
+}
+.face-extras.scarf-rave {
+    background: linear-gradient(#0061a0 30%, #0061a0 80%, transparent 80%), repeating-linear-gradient(to right, #0061a0, #0061a0 4px, transparent 4px, transparent 7px);
+}
+.face-extras.scarf-rave:before {
+    background: linear-gradient(#0061a0 0%, #006daf 40%, #c0d8e0 40%, #c0d8e0 45%, #006daf 45%, #006daf 55%, #c0d8e0 55%, #c0d8e0 60%, #006daf 60%, #006daf 80%, transparent 80%), repeating-linear-gradient(to right, #006daf, #006daf 4px, transparent 4px, transparent 7px);
+}
+.face-extras.scarf-rave:after {
+    background: repeating-linear-gradient(to right, #006daf 16px, #c0d8e0 16px, #c0d8e0 20px, #006daf 20px, #006daf 28px, #c0d8e0 28px, #c0d8e0 32px, #006daf 32px, #006daf 60px);
+}
+.item {
+    position: absolute;
+    z-index: 20;
+}
+.item.custom {
+    font-size: 6em;
+    bottom: -15px;
+    right: -20px;
+}
+.item.coffee {
+    right: -20px;
+    border-top: 75px solid #fff;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    height: 0;
+    width: 40px;
+    bottom: -20px;
+}
+.item.coffee:before {
+    margin: -55px 0 0 -9px;
+    border-top: 30px solid #c27814;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    height: 0;
+    width: calc(100% + 8px);
+}
+.item.coffee:after {
+    background: #333;
+    width: 70px;
+    height: 20px;
+    margin: -90px 0 0 -15px;
+    border-radius: 10px 10px 3px 3px;
+    background: linear-gradient(to bottom, transparent 8px, #555 8px), linear-gradient(to right, transparent 10%, #666 10%, #666 90%, transparent 90%);
+}
+.item.shield {
+    right: -25px;
+    bottom: -10px;
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(ellipse at center, #f55020 20%, #f55020 20%, #f55020 38%, #eee 38%, #eee 55%, #f55020 55%);
+    border-radius: 50%;
+}
+.item.shield:before {
+    content: "\2605";
+    color: #fff;
+    font-size: 30px;
+    border-radius: 50%;
+    background: #0061a0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-top: 30px;
+}
+.item.dango {
+    background: #c27814;
+    width: 5px;
+    height: 125px;
+    border-radius: 6px;
+    right: -25px;
+    bottom: 0;
+}
+.item.dango:before {
+    top: 60px;
+    left: -13px;
+    background: #8cbd18;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.item.wand {
+    top: 0;
+    right: -20px;
+    background: #d58c00;
+    width: 8px;
+    height: 80px;
+    border-radius: 50% 20px 0 0;
+}
+.item.wand:before {
+    background: #c27814;
+    width: 12px;
+    height: 50px;
+    left: -2px;
+    top: 70px;
+    z-index: 0;
+    border-radius: 4px 4px 0 0;
+}
+.item.wand:after {
+    width: 22px;
+    height: 50px;
+    border-radius: 10px 50px 10px 14px;
+    background: linear-gradient(to bottom, #400000 20%, transparent 20%, transparent 60%, #400000 60%), linear-gradient(to right, transparent 15%, #400000 15%, #400000 90%, transparent 90%);
+    top: 100px;
+    left: -6px;
+}
+.emoji-choices {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100%);
+    margin: 0 5px 0 0;
+}
+.emoji-choices__header {
+    background: linear-gradient(to right, rgba(53, 206, 160, 0.4), #f7f7f7);
+    padding: 15px;
+    border-left: 5px solid #35c4ce;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.emoji-choices__header small {
+    font-size: 70%;
+    margin-left: 5px;
+}
+.emoji-choices__group {
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+    display: grid;
+    grid-row-gap: 8px;
+    grid-column-gap: 14px;
+    grid-template-columns: repeat(3, 75px);
+    justify-content: center;
+}
+.emoji-choice__item {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: 75px;
+    background: #ebebeb;
+    background-image: url(spriteEmoji.jpg);
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    border: 3px solid #ebebeb;
+    font-size: 12px;
+}
+.emoji-choice__item:after {
+    content: "aaa";
+    width: calc(100% - 4px);
+    left: -2px;
+    margin-top: 10px;
+    background: #fff;
+    height: auto;
+    opacity: 0;
+    bottom: -20px;
+    font: 700 10px "Lucida sans", sans-serif;
+    transition: 0.2s ease;
+    text-align: center;
+    padding: 5px 5px 3px;
+    word-wrap: break-all;
+    text-transform: uppercase;
+}
+.emoji-choice__item:hover:after {
+    opacity: 1;
+    bottom: 0;
+}
+.emoji-choices__group--skin {
+    grid-template-columns: repeat(6, 40px);
+    padding: 20px 20px;
+}
+.emoji-choice__skin {
+    width: 35px;
+    height: 35px;
+    background: #fcc21b;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    cursor: pointer;
+}
+.emoji-choice__skin[data-name="skin-2"] {
+    background: #ffd2b1;
+}
+.emoji-choice__skin[data-name="skin-3"] {
+    background: #daae91;
+}
+.emoji-choice__skin[data-name="skin-4"] {
+    background: #dca86e;
+}
+.emoji-choice__skin[data-name="skin-5"] {
+    background: #8b4a22;
+}
+.emoji-choice__skin[data-name="skin-6"] {
+    background: #452308;
+}
+.emoji-choice__item[data-type="eyes"]:after {
+    content: "Normal";
+}
+.emoji-choice__item[data-type="eyes"][data-name="startled"] {
+    background-position: -75px 0;
+}
+.emoji-choice__item[data-type="eyes"][data-name="startled"]:after {
+    content: "Assustado";
+}
+.emoji-choice__item[data-type="eyes"][data-name="heart"] {
+    background-position: -150px 0;
+}
+.emoji-choice__item[data-type="eyes"][data-name="heart"]:after {
+    content: "Coração";
+}
+.emoji-choice__item[data-type="eyes"][data-name="star"] {
+    background-position: -225px 0;
+}
+.emoji-choice__item[data-type="eyes"][data-name="star"]:after {
+    content: "Estrela";
+}
+.emoji-choice__item[data-type="eyes"][data-name="fire"] {
+    background-position: -300px 0;
+}
+.emoji-choice__item[data-type="eyes"][data-name="fire"]:after {
+    content: "Fogo";
+}
+.emoji-choice__item[data-type="eyes"][data-name="squeeze"] {
+    background-position: -375px 0;
+}
+.emoji-choice__item[data-type="eyes"][data-name="squeeze"]:after {
+    content: "Oh não";
+}
+.emoji-choice__item[data-type="eyes"][data-name="closed-up"] {
+    background-position: -450px 0;
+}
+.emoji-choice__item[data-type="eyes"][data-name="closed-up"]:after {
+    content: "Alegre";
+}
+.emoji-choice__item[data-type="eyes"][data-name="closed-down"] {
+    background-position: -525px 0;
+}
+.emoji-choice__item[data-type="eyes"][data-name="closed-down"]:after {
+    content: "Contente";
+}
+.emoji-choice__item[data-type="eyes"][data-name="lined"] {
+    background-position: 0 -75px;
+}
+.emoji-choice__item[data-type="eyes"][data-name="lined"]:after {
+    content: "-__-";
+}
+.emoji-choice__item[data-type="mouth"][data-name="default"] {
+    background-position: -75px -75px;
+}
+.emoji-choice__item[data-type="mouth"][data-name="default"]:after {
+    content: "Grande Sorriso";
+}
+.emoji-choice__item[data-type="mouth"][data-name="upside"] {
+    background-position: -150px -75px;
+}
+.emoji-choice__item[data-type="mouth"][data-name="upside"]:after {
+    content: "O que?!";
+}
+.emoji-choice__item[data-type="mouth"][data-name="open"] {
+    background-position: -225px -75px;
+}
+.emoji-choice__item[data-type="mouth"][data-name="open"]:after {
+    content: "Chocado";
+}
+.emoji-choice__item[data-type="mouth"][data-name="tongue"] {
+    background-position: -300px -75px;
+}
+.emoji-choice__item[data-type="mouth"][data-name="tongue"]:after {
+    content: "Atrevido";
+}
+.emoji-choice__item[data-type="mouth"][data-name="lined"] {
+    background-position: -375px -75px;
+}
+.emoji-choice__item[data-type="mouth"][data-name="lined"]:after {
+    content: "Mmm...";
+}
+.emoji-choice__item[data-type="mouth"][data-name="frown"] {
+    background-position: -450px -75px;
+}
+.emoji-choice__item[data-type="mouth"][data-name="frown"]:after {
+    content: "Carranca";
+}
+.emoji-choice__item[data-type="mouth"][data-name="smile"] {
+    background-position: -525px -75px;
+}
+.emoji-choice__item[data-type="mouth"][data-name="smile"]:after {
+    content: "Sorriso";
+}
+.emoji-choice__item[data-type="mouth"][data-name="curse"] {
+    background-position: 0 -150px;
+}
+.emoji-choice__item[data-type="mouth"][data-name="curse"]:after {
+    content: "Wtf m8";
+}
+.emoji-choice__item[data-type="mouth"][data-name="grimace"] {
+    background-position: -75px -150px;
+}
+.emoji-choice__item[data-type="mouth"][data-name="grimace"]:after {
+    content: "Careta";
+}
+.emoji-choice__item[data-type="mouth"][data-name="no-mouth"]:after {
+    content: "Sem boca";
+}
+.emoji-choice__item[data-type="eyebrows"][data-name="no-eyebrows"]:after {
+    content: "Sem sobrancelhas";
+}
+.emoji-choice__item[data-type="eyebrows"][data-name="downwards"] {
+    background-position: -150px -150px;
+}
+.emoji-choice__item[data-type="eyebrows"][data-name="downwards"]:after {
+    content: "Curioso";
+}
+.emoji-choice__item[data-type="eyebrows"][data-name="furrow"] {
+    background-position: -225px -150px;
+}
+.emoji-choice__item[data-type="eyebrows"][data-name="furrow"]:after {
+    content: "Bravo";
+}
+.emoji-choice__item[data-type="eyebrows"][data-name="furrow-far"] {
+    background-position: -300px -150px;
+}
+.emoji-choice__item[data-type="eyebrows"][data-name="furrow-far"]:after {
+    content: "Preocupado";
+}
+.emoji-choice__item[data-type="eyebrows"][data-name="up-far"] {
+    background-position: -375px -150px;
+}
+.emoji-choice__item[data-type="eyebrows"][data-name="up-far"]:after {
+    content: "Feliz";
+}
+.emoji-choice__item[data-type="hat"][data-name="no-hat"]:after {
+    content: "Sem chapéu";
+}
+.emoji-choice__item[data-type="hat"][data-name="round-hat"] {
+    background-position: -450px -150px;
+}
+.emoji-choice__item[data-type="hat"][data-name="round-hat"]:after {
+    content: "Chapéu rosa";
+}
+.emoji-choice__item[data-type="hat"][data-name="wizard-hat"] {
+    background-position: -525px -150px;
+}
+.emoji-choice__item[data-type="hat"][data-name="wizard-hat"]:after {
+    content: "Chapéu de mago";
+}
+.emoji-choice__item[data-type="hat"][data-name="sorting-hat"] {
+    background-position: 0 -225px;
+}
+.emoji-choice__item[data-type="hat"][data-name="sorting-hat"]:after {
+    content: "Chapéu seletor";
+}
+.emoji-choice__item[data-type="hat"][data-name="top-hat"] {
+    background-position: -75px -225px;
+}
+.emoji-choice__item[data-type="hat"][data-name="top-hat"]:after {
+    content: "Cartola";
+}
+.emoji-choice__item[data-type="hat"][data-name="traffic-cone"] {
+    background-position: -150px -225px;
+}
+.emoji-choice__item[data-type="hat"][data-name="traffic-cone"]:after {
+    content: "Cone de tráfego";
+}
+.emoji-choice__item[data-type="hat"][data-name="cactus"] {
+    background-position: -225px -225px;
+}
+.emoji-choice__item[data-type="hat"][data-name="cactus"]:after {
+    content: "Chapéu de cacto";
+}
+.emoji-choice__item[data-type="hat"][data-name="mickey"] {
+    background-position: -300px -225px;
+}
+.emoji-choice__item[data-type="hat"][data-name="mickey"]:after {
+    content: "Chapéu de mickey";
+}
+.emoji-choice__item[data-type="face-extras"][data-name="sweat"] {
+    background-position: -375px -225px;
+}
+.emoji-choice__item[data-type="face-extras"][data-name="sweat"]:after {
+    content: "Suor";
+}
+.emoji-choice__item[data-type="face-extras"][data-name="tears"] {
+    background-position: -450px -225px;
+}
+.emoji-choice__item[data-type="face-extras"][data-name="tears"]:after {
+    content: "Lágrimas";
+}
+.emoji-choice__item[data-type="face-extras"][data-name="geek-glasses"] {
+    background-position: -525px -225px;
+}
+.emoji-choice__item[data-type="face-extras"][data-name="geek-glasses"]:after {
+    content: "Óculos nerds";
+}
+.emoji-choice__item[data-type="face-extras"][data-name="sunglasses"] {
+    background-position: 0 -300px;
+}
+.emoji-choice__item[data-type="face-extras"][data-name="sunglasses"]:after {
+    content: "Óculos de sol";
+}
+.emoji-choice__item[data-type="face-extras"][data-name="crescent-glasses"] {
+    background-position: -75px -300px;
+}
+.emoji-choice__item[data-type="face-extras"][data-name="crescent-glasses"]:after {
+    content: "Óculos crescentes";
+}
+.emoji-choice__item[data-type="face-extras"][data-name="blush"] {
+    background-position: -150px -300px;
+}
+.emoji-choice__item[data-type="face-extras"][data-name="blush"]:after {
+    content: "Blush";
+}
+.emoji-choice__item[data-type="face-extras"][data-name="bandage"] {
+    background-position: -225px -300px;
+}
+.emoji-choice__item[data-type="face-extras"][data-name="bandage"]:after {
+    content: "Bandagem";
+}
+.emoji-choice__item[data-type="face-extras"][data-name="scarf-gryf"] {
+    background-position: -300px -300px;
+}
+.emoji-choice__item[data-type="face-extras"][data-name="scarf-gryf"]:after {
+    content: "Cachecol Grifinória";
+}
+.emoji-choice__item[data-type="face-extras"][data-name="scarf-huff"] {
+    background-position: -375px -300px;
+}
+.emoji-choice__item[data-type="face-extras"][data-name="scarf-huff"]:after {
+    content: "Cachecol da Lufa-Lufa";
+}
+.emoji-choice__item[data-type="face-extras"][data-name="scarf-rave"] {
+    background-position: -450px -300px;
+}
+.emoji-choice__item[data-type="face-extras"][data-name="scarf-rave"]:after {
+    content: "Cachecol Corvinal";
+}
+.emoji-choice__item[data-type="face-extras"][data-name="scarf-slyt"] {
+    background-position: -525px -300px;
+}
+.emoji-choice__item[data-type="face-extras"][data-name="scarf-slyt"]:after {
+    content: "Cachecol da Sonserina";
+}
+.emoji-choice__item[data-type="item"][data-name="default"] {
+    background-image: none;
+}
+.emoji-choice__item[data-type="item"][data-name="default"]:after {
+    content: "Sem Item";
+}
+.emoji-choice__item[data-type="item"][data-name="coffee"] {
+    background-position: 0 -375px;
+}
+.emoji-choice__item[data-type="item"][data-name="coffee"]:after {
+    content: "Caffé";
+}
+.emoji-choice__item[data-type="item"][data-name="shield"] {
+    background-position: -75px -375px;
+}
+.emoji-choice__item[data-type="item"][data-name="shield"]:after {
+    content: "Escudo do Capitão América";
+}
+.emoji-choice__item[data-type="item"][data-name="dango"] {
+    background-position: -150px -375px;
+}
+.emoji-choice__item[data-type="item"][data-name="dango"]:after {
+    content: "Dango";
+}
+.emoji-choice__item[data-type="item"][data-name="wand"] {
+    background-position: -225px -375px;
+}
+.emoji-choice__item[data-type="item"][data-name="wand"]:after {
+    content: "Varinha";
+}
+.emoji-choice__item[data-name="no-mouth"], .emoji-choice__item[data-name="no-eyebrows"], .emoji-choice__item[data-name="no-hat"], .emoji-choice__item[data-type="item"][data-name="default"] {
+    background-image: none;
+}
+.emoji-choice__item[data-name="no-mouth"]:before, .emoji-choice__item[data-name="no-eyebrows"]:before, .emoji-choice__item[data-name="no-hat"]:before, .emoji-choice__item[data-type="item"][data-name="default"]:before {
+    content: "\29BB";
+    font-size: 40px;
+    color: #bbb;
+    margin: 15px 18px;
+}
+.emoji-choice__item-custom {
+    background: none;
+    grid-column: span 4;
+    margin: 10px 0;
+    text-transform: uppercase;
+    align-items: center;
+}
+
+.emoji-choice__item-custom input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 2px solid #ebebeb;
+    margin-right: 20px;
+    width: 100%;
+    font-size: 20px;
+}
+.emoji-choice__item-custom input:focus {
+    border-color: #35c4ce;
+    outline: none;
+}
+.selected {
+    border-color: #35c4ce;
+}
+.main-content ::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+}
+.main-content ::-webkit-scrollbar-track {
+    background: #f6f6f6;
+    margin: 5px;
+}
+.main-content ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #1ca504, #64ea88);
+    border-radius: 10px;
+}
+.main-content ::-webkit-scrollbar-thumb:hover {
+    background: #35c4ce;
+    border-radius: 10px;
+}

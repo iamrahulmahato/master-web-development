@@ -1,0 +1,43 @@
+name: "🌟 Feature Request"
+description: "Suggest a new feature to enhance our project."
+title: "FEATURE:"
+labels: ["Feature Request"]
+body:
+  - type: textarea
+    attributes:
+      label: "Feature Summary"
+      description: "Provide a brief summary of the feature you would like to see implemented. Try to keep it concise."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Description"
+      description: "Explain why this feature is needed. What problem does it solve, or what value does it add for users?"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Proposed Solution"
+      description: "Describe your proposed solution or how you envision the feature working. Include any relevant details such as user stories or use cases."
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: "Alternatives Considered"
+      description: "Have you considered any alternatives to this feature? If so, please describe them and why they might be less effective."
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: "Screenshots/Logs"
+      description: "If applicable, add screenshots or logs that can help us understand the issue better."
+    validations:
+      required: false
+  - type: checkboxes
+    attributes:
+      label: "Additional Information"
+      options:
+        - label: "I have searched for existing feature requests"
+          required: true
+        - label: "I am willing to help implement this feature"
+        - label: "I can provide more details or clarification if needed"

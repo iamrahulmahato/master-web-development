@@ -1,0 +1,227 @@
+body {
+    background-color: #b4c7e7;
+    font-family: sans-serif;
+}
+
+#background {
+    position: fixed;
+    bottom: 0;
+    width: 50%;
+    height: 88%;
+    z-index: -1;
+}
+
+#background.left {
+    left: 0;
+    border-radius: 12px;
+    background-color: #b4c7e7; 
+    transition: all ease 300ms;
+}
+
+#background.right {
+    right: 0;
+    border-radius: 12px;
+    background-color: #b4c7e7;
+    transition: all ease 300ms;
+}
+
+#progress {
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    left: 2.5%;
+    background-color: #5a86d1;
+    height: 20px;
+    transition: all 400ms ease;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+#attempts {
+    position: fixed;
+    top: 10px;
+    left: 50px;
+    font-size: 3em;
+}
+
+#best {
+    position: fixed;
+    top: 10px;
+    right: 50px;
+    font-size: 2em;
+}
+
+.red {
+    color: #9b0000;
+}
+
+.green {
+    color: #008000;
+}
+
+img {
+    width: 95px;
+    height: 95px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.flip {
+    -webkit-transform: scaleX(-1) translate(50%,-50%);
+    transform: scaleX(-1) translate(50%,-50%);
+}
+
+.card {
+    cursor: pointer;
+    transform: translate(-50%,-50%);
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .2s linear;
+  }
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .3s, opacity .3s linear;
+}
+
+.button {
+    display:inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background-color: #70ad47;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.button:hover {
+    background-color: #3e8e41
+}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.align {
+    padding-top: 50px;
+}
+
+.easy {
+    padding-top: 20px;
+}
+
+.align label, .easy label {
+    font-family: monospace;
+    font-size: large;
+}
+
+#snaptogrid, #easymode {
+    height: 20px;
+    width: 20px;
+}
+
+#playagain {
+    position: fixed;
+    top: 25px;
+    right: 350px;
+    font-size: 2em;
+}
+
+#menu {
+    position: fixed;
+    top: 25px;
+    left: 400px;
+    font-size: 2em;
+}
+
+.startbuttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.start {
+    margin-top: 30px;
+}
+
+#start2 {
+    margin-bottom: 10px;
+    background-color: #c14444;
+}
+
+#start2:hover {
+    background-color: #9e2f2f;
+}
+
+#start2:active {
+    background-color: #9e2f2f;
+}
+
+#start1v1 {
+    margin-bottom: 20px;
+    background-color: #3e6dd3;
+}
+
+#start1v1:hover {
+    background-color: #3156a7;
+}
+
+#start1v1:active {
+    background-color: #3156a7;
+}
+
+#easymodelabel {
+    position: fixed;
+    top: 15px;
+    right: 72px;
+    font-style: italic;
+}
+
+table {
+    border-collapse: collapse;
+    position: fixed;
+    top: 55px;
+    right: 50px;
+}
+
+table, th, td {
+    border: solid 1px black;
+    padding: 5px;
+}
+
+.gold {
+    background-color: gold;
+}
+.silver {
+    background-color: rgb(218, 218, 218);
+}
+.bronze {
+    background-color: rgb(190, 139, 10);
+}
+
+#leaderboardname {
+    width: 3em;
+    font-weight: bold;
+    font-size: 2em;
+    margin-left: 50px;
+}
+
+#label-leaderboardname {
+    font-size: 1.2em;
+    margin-left: 50px;
+}
