@@ -1,0 +1,187 @@
+@import url(https://fonts.googleapis.com/css?family=Germania+One|Roboto+Condensed:300,300italic);
+
+html {
+	font-size:16px;
+}
+body {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+h1,h2,h3,h4 {
+	font-family: 'Germania One', Arial,sans-serif;
+}
+#tap-container {
+  position:absolute;
+  top:0;
+  left:0;
+}
+#tap {
+  width:120px;
+  background: #ddd;
+  height:35px;
+  margin:140px 0 0 0;
+  position:relative;
+  border-top-left-radius:5px;
+  border-bottom-left-radius:5px;
+}
+#tap:after {
+  content:"";
+  display:block;
+  position:absolute;
+  border-top: 70px solid #ddd;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+  border-radius:0 0 40px 40px;
+	height: 0;
+	width: 20px;
+	top:10px;
+  right:10px;
+  transform:rotate(-20deg);
+  z-index:2;
+}
+#tap:before {
+	content:"";
+  display:block;
+  position:absolute;
+  width:70px;
+  height:60px;
+  background:grey;
+  left:-20px;
+  top:-15px;
+  border-radius: 0px 20px 20px 0px;
+}
+#handle {
+  border-top: 100px solid black;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+  width:20px;
+  position:absolute;
+  top:30px;
+  left:80px;
+  border-radius: 10px 10px 0 0;
+  z-index:3;
+}
+#handle:before {
+	content:"";
+  display:block;
+  width:30px;
+  height:30px;
+  background:lightgrey;
+  position:absolute;
+  bottom:-20px;
+  left:-5px;
+  border-radius:20px 20px 10px 10px
+}
+#handle:hover {
+  transform:rotate(6deg);
+  transform-origin: center bottom;
+}
+#handle:hover:before {
+  transform:rotate(0deg);
+}
+#pour {
+  position:absolute;
+  left:92px;
+  top:210px;
+  width:16px;
+  height:0px;
+  z-index:1;
+  background:rgba(229,197,57,1);
+  transition:0s;
+}
+#pour.pouring {
+  height:230px;
+  transition:800ms ease;
+}
+
+
+
+#mug-container {
+  position:absolute;
+  top:180px;
+}
+#mug {
+	margin:60px 0  0 40px;
+  border:20px solid #eee;
+  border-bottom-width:30px;
+  width:120px;
+  height:200px;
+  border-top:none;
+  border-radius: 0 0 10px 10px;
+  position:relative;	
+}
+#mug:before {
+	position:absolute;
+  content:"";
+  display:block;
+  bottom:-40px;
+  height:30px;
+  width:180px;
+  left:-30px;
+  background:#eee;
+}
+#mug:after {
+  position:absolute;
+  content:"";
+  display:block;
+  right:-80px;
+  top:30px;
+  width:40px;
+  height:110px;
+  border:25px solid #eee;
+  border-left:none;
+  border-radius:0 50px 150px 0;
+} 
+#beer {
+  width:100%;
+  height:0%;
+  max-height:100%;
+  background:
+    linear-gradient(
+       rgba(255,255,255,1) 0%,
+      rgba(255,255,255,1) 35%,
+      rgba(237,237,173,1) 43%,
+      rgba(229,197,57,1) 44%,
+      rgba(229,197,57,1) 100%    
+    );
+  background-repeat: repeat;
+  background-size:100% 200%;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+@keyframes beerFill {
+  5% {
+    height:0%;
+  }
+  100% {
+    height:100%;
+  }
+}
+#beer.fill {
+   animation-name:beerFill;
+  animation-duration:10s;
+  animation-fill-mode:forwards;
+  background-position:0% 70%;
+}
+h1 {
+	font-size:3rem;
+  text-align:center;
+	line-height:1em;
+	margin-bottom:10px;
+	margin-top:10px;
+}
+#percent-filled {
+  text-align:center;
+}
+#result {
+  text-align:center;
+}
+.helper.tap {
+	text-align:center;
+	margin-bottom:0;
+}
+.helper.mug {
+  margin-left:30px;
+  width:180px;
+  text-align:center;
+}

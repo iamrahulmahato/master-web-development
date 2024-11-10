@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Spider Solitaire</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- CSS Files Link-->
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/cards.css">
+	</head>
+	<body>
+		<div class = "home-screen">
+
+			<button id="start-btn">
+				<label>Start Game</label>
+			</button>
+
+			<button id = "high-score-btn">High Score</button>
+			
+			<div id = "scoreBoard" class = "score-board">	
+				<h2>Score Board</h2>
+				Rank    <span style="float:right;">Number of Moves</span>
+				<ol id = "high-scores">
+				</ol>				
+				<div class="faq-close" title="close" onclick="dealer.closeScoreBoard()"></div>
+			</div>
+		</div>
+
+		<form action = "index.html" name = "startGame" id = "startGame" class = "start-form">
+			<div class="title">Choose a Difficulty Level</div>
+			<label class="game-option">
+				<input type="radio" name="radioBtn" value = "1" checked>
+				<span class="suit one">One suit</span>
+			</label>
+			<label class="game-option">
+				<input type="radio" name="radioBtn" value = "2">
+				<span class="suit two">Two suits</span>
+			</label>
+			<label class="game-option">
+				<input type="radio" name="radioBtn" value = "4">
+				<span class="suit four">Four suits</span>
+			</label>
+			<input type="submit" value="Play">
+		</form>
+
+
+		<div class="congratulation">
+			<canvas id="canvas">ttt</canvas>
+		</div>
+
+		<div class="wrapper">
+			<div class="timer">
+				<label>Time</label>
+				<label id="minutes">00</label>:<label id="seconds">00</label>
+			</div>
+			<div class="score">
+				<label>Moves: </label>
+				<label id="score">0</label>
+			</div>
+
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+
+			<div class="offside">
+				<ul class="source" id="source"></ul>
+				<ul class="dropout" id="dropout"></ul>
+			</div>
+		</div>
+
+		<div class="control-panel opaque">
+			<button class="btn-hint">Hint</button>
+			<button class="btn-new">Restart Game</button>
+			<button class="btnFaq" onclick="dealer.showFaq()">FAQ</button>			
+		</div>
+
+		<div id="faq" class="faq">
+			<h1>Frequently Asked Questions</h1>
+
+			<h2>Purpose of the game</h2>
+			<p>Remove all 	cards from the playing field in the fewest moves.</p>
+
+			<h2>Rules of the game</h2>
+			<p>
+				For solitaire, 2 decks of 52 cards are required. Initially, 54 cards are evenly decomposed into 10 columns  and the remaining 50 are added to 5 heaps of 10. In each column, all but the upper ones are closed. You can move cards from a column to a column. Maps are moved according to the following rules:
+			</p>
+			<ol>
+				<li>On an empty space, you can move the top card of any column.</li>
+				<li>The top card of the column can be moved to the next highest card, regardless of its suit and color.</li>
+				<li>A stack of cards of the same suit, lying in order, can be moved as one card.</li>
+			</ol>
+			<p>
+				If the top closed card of any column is released, it automatically opens. As soon as a column appears from the cards of the same suit collected in order, this column is removed into the house. Permitted at any time, when there are no empty columns, take one of the piles stacked on 10 cards and scatter these cards one at a time in each column.
+			</p>
+			<p>
+				There are 3 levels of difficulty. On the first, all cards have the same suit - peaks (each card repeats 8 times); on the second, all cards have two different suits - peaks and hearts. At the last level of difficult	y, you will have to deal with two full decks with 4 suits.
+			</p>
+			<div class="faq-close" title="close" onclick="dealer.closeFaq()"></div>
+		</div>
+		<div class="faq-shadow"></div>
+
+
+
+		<ul class="drag-el" id="drag-el"></ul>
+
+
+		<script src="js/cardDeck.js"></script>
+		<script src="js/cardDealer.js"></script>
+		<script src="js/cardAnimation.js"></script>
+		<script src="js/timeCounter.js"></script>
+		<script src="js/dragEvent.js"></script>
+		<script src="js/sound.js"></script>
+
+		<script src="js/victoryAnimation.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>

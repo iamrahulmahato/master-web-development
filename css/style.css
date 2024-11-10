@@ -19,6 +19,7 @@
 html {
   scrollbar-width: thin;
   scrollbar-color: #08ecbb #3c0751;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -31,6 +32,82 @@ html {
     
     
 }
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: flex-start;
+  color: #35a8e2;
+  text-decoration: none;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-left: -161px;
+  margin-right: 182px;
+ justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-menu li {
+  display: inline;
+}
+
+.navbar-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-menu a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+      display: none;
+  }
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  height: 40px;         /* Adjust the size as needed */
+  width: auto;           /* Keep aspect ratio */
+  margin-right: 10px;    /* Add some space between logo and text */
+}
+
+/* .navbar-logo {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+} */
+
 #progress-container {
   position: fixed ;
   top: 0px;
@@ -75,7 +152,7 @@ html [data-theme="dark"] {
     --btn-text: #1e293b;
     --head: #fff;
     --card: #192333;
-    --p: #94A3B8;
+    --p: #2b1714;
 
     --input-bg: #2c3a4b;  /* Input background color */
     --input-border: #3b4a5a;  /* Input border color */
@@ -651,7 +728,7 @@ body {
     flex-grow: 1;
 }
 [data-theme="dark"] .card-description {
-  color: #cdd2d8;
+  color: #1e2c3c;
 }
 .counter-cover-color {
     background: rgba(255, 206, 0, 0.2);
@@ -1017,6 +1094,20 @@ body {
     margin: 20px auto; /* Centering the section */
     text-align: center; /* Center text */
 }
+.container [data-theme="dark"] {
+    --bg: #1e293b;
+    --btn-color: #fecdd3;
+    --btn-text: #1e293b;
+    --head: #fff;
+    --card: #192333;
+    --p: #94A3B8;
+
+    --input-bg: #2c3a4b;  /* Input background color */
+    --input-border: #3b4a5a;  /* Input border color */
+    --input-text: #ffffff;  /* Input text color */
+    --input-placeholder: #fffff0; /* Placeholder text color */
+}
+
 
 #feedback-section h1 {
     font-family: 'Arial', sans-serif; /* Font family */
@@ -1182,7 +1273,7 @@ input:focus {
 }
 
 footer{
-  background-color: #141d2b;
+  background-color: #2b1714;
   height: 20vh;
   width: 100vw;
 }
@@ -1214,3 +1305,42 @@ footer{
 .container a{
   color: rgb(213, 108, 108);
 }
+
+
+.profile-icon {
+
+  border-radius: 50%;
+  position: relative;
+  margin-left: 20px; 
+  Margin-top: 100px;
+
+}
+
+.dropdown-menu {
+
+  display: none;
+  position: absolute;
+  top: 35px; /* Adjust based on the height of your navbar */
+  right: 0;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 1;
+
+}
+
+.dropdown-menu a {
+
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+
+}
+
+.dropdown-menu a:hover {
+
+  background-color: #f1f1f1;
+
+}
+

@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Josefin+Sans:wght@100;300;500;700&family=Oxanium:wght@300;500;700&display=swap" rel="stylesheet">
     <link href="vlog.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>The Indian Traveller</title>
-</head>
-<body>
-    <header>
-        <nav id="navbar">
-            <ul>
-                <li class="item"><a href="home.html">Home</a></li>
-                <li class="item"><a href="vlog.html">Vlog</a></li>
-                <li class="item"><a href="about.html">About</a></li>
-                <li class="item"><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <style>
+        :root { /* Light theme colors */ --background-color: #ffffff; --text-color: #000000; --navbar-background: #f8f9fa; --navbar-text: #000000; --link-color: #1a73e8; --button-background: #008cba; --button-text: #ffffff; } [data-theme="dark"] { /* Dark theme colors */ --background-color: #121212; --text-color: #ffffff; --navbar-background: #333333; --navbar-text: #ffffff; --link-color: #bb86fc; --button-background: #3d3d3d; --button-text: #ffffff; } * { padding: 0; margin: 0; box-sizing: border-box; } body { font-family: "Poppins", sans-serif; background-color: var(--background-color); color: var(--text-color); } header { background-color: var(--navbar-background); } #navbar ul { list-style: none; padding: 0; } #navbar ul li { display: inline; margin-right: 10px; } #navbar ul li a { color: var(--navbar-text); text-decoration: none; } button 
+       { border: none;
+       display: inline-flex;
+       appearance: none;
+       align-items: center;
+       justify-content: center;
+       border-radius: 9999px;
+       padding: 8px;
+       align-items: center;
+       background-color: #f43f5e;
+       color: #ffffff;
+       cursor: pointer;
+   }
+         #theme-toggle { position: fixed; top: 10px; right: 10px; } </style> </head> <body data-theme="light"> <header> <nav id="navbar"> <ul> <li class="item"><a href="home.html">Home</a></li> <li class="item"><a href="vlog.html">Vlog</a></li> <li class="item"><a href="about.html">About</a></li> <li class="item"><a href="contact.html">Contact Us</a></li> <li class="item"><a href="feedback.html">Feedback</a></li> </ul> </nav> </header> <button id="theme-toggle"> <i class="fas fa-sun"></i> </button> <!-- Add your content here --> <section id="content"> <!-- Content will go here --> </section> <script> const toggleButton = document.getElementById('theme-toggle'); const body = document.body; toggleButton.addEventListener('click', () => { if (body.getAttribute('data-theme') === 'light') { body.setAttribute('data-theme', 'dark'); toggleButton.innerHTML = '<i class="fas fa-moon"></i>'; } else { body.setAttribute('data-theme', 'light'); toggleButton.innerHTML = '<i class="fas fa-sun"></i>'; } }); </script>
 
     <div id="main">
         <div id="page1">

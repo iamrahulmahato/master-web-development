@@ -1,0 +1,28 @@
+html, body, ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style-type: none;
+}
+
+button, 
+input[type="button"], 
+input[type="submit"] {
+	border: none;
+}
+
+
+.clear-fix:before, .clear-fix:after { 
+	content: "";  
+	display: table; 
+} 
+
+.clear-fix:after {  
+	clear: both;
+} 
+
+.clear-fix { 
+	zoom: 1; 
+}
