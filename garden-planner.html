@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Gardening Planner</title>
+  <style>
+    /* Basic styling for the layout */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: #2d6a4f;
+    }
+
+    .planner-container {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    /* Sidebar with garden items */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .sidebar-item {
+      padding: 10px;
+      background-color: #b7e4c7;
+      text-align: center;
+      border-radius: 5px;
+      cursor: grab;
+      user-select: none;
+    }
+
+    /* Garden grid */
+    .garden-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 60px);
+      grid-template-rows: repeat(8, 60px);
+      gap: 5px;
+      background-color: #d8f3dc;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .garden-cell {
+      width: 60px;
+      height: 60px;
+      border: 1px solid #95d5b2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f4ef;
+    }
+
+    /* Dragging styles */
+    .dragging {
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Virtual Gardening Planner</h1>
+<div class="planner-container">
+  <!-- Sidebar for garden elements -->
+  <div class="sidebar">
+    <div class="sidebar-item" draggable="true" id="plant">🌱 Plant</div>
+    <div class="sidebar-item" draggable="true" id="flower">🌸 Flower</div>
+    <div class="sidebar-item" draggable="true" id="tree">🌳 Tree</div>
+    <div class="sidebar-item" draggable="true" id="path">🪴 Path</div>
+  </div>
+
+  <!-- Garden grid where elements are placed -->
+  <div class="garden-grid" id="gardenGrid">
+    <!-- 8x8 grid of empty cells -->
+    <div class="garden-cell" data-index="0"></div>
+    <div class="garden-cell" data-index="1"></div>
+    <div class="garden-cell" data-index="2"></div>
+    <div class="garden-cell" data-index="3"></div>
+    <div class="garden-cell" data-index="4"></div>
+    <div class="garden-cell" data-index="5"></div>
+    <div class="garden-cell" data-index="6"></div>
+    <div class="garden-cell" data-index="7"></div>
+    <!-- Repeat cells for a full 8x8 grid -->
+    <!-- Generate cells dynamically for simplicity -->
+    <script>
+      const gardenGrid = document.getElementById('gardenGrid');
+      for (let i = 8; i < 64; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('garden-cell');
+        cell.dataset.index = i;
+        gardenGrid.appendChild(cell);
+      }
+    </script>
+  </div>
+</div>
+
+<script>
+  // Make sidebar items draggable
+  const sidebarItems = document.querySelectorAll('.sidebar-item');
+
+  sidebarItems.forEach(item => {
+    item.addEventListener('dragstart', (event) => {
+      event.dataTransfer.setData('text/plain', item.id);
+      item.classList.add('dragging');
+    });
+
+    item.addEventListener('dragend', () => {
+      item.classList.remove('dragging');
+    });
+  });
+
+  // Garden grid setup for dragging elements
+  const gardenCells = document.querySelectorAll('.garden-cell');
+
+  gardenCells.forEach(cell => {
+    // Prevent default to allow dropping
+    cell.addEventListener('dragover', (event) => {
+      event.preventDefault();
+    });
+
+    // Handle drop event for each cell
+    cell.addEventListener('drop', (event) => {
+      const itemId = event.dataTransfer.getData('text');
+      const itemElement = document.getElementById(itemId);
+
+      // Clone the dragged item and add it to the cell
+      const newItem = itemElement.cloneNode(true);
+      newItem.setAttribute('draggable', 'false'); // Remove draggable property from cloned item
+      cell.innerHTML = ''; // Clear cell before placing new item
+      cell.appendChild(newItem);
+    });
+  });
+</script>
+
+</body>
+</html>

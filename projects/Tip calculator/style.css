@@ -23,7 +23,17 @@
     width: 100%;
     transition: transform 0.3s ease-in-out;
   }
-  
+  /* dark theme */
+  [data-theme="dark"] 
+  .container {
+    background-color: #333333;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 1px 20px 8px #f0f4f859;
+    max-width: 400px;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+  }
   .container:hover {
     transform: scale(1.05);
   }
@@ -52,7 +62,14 @@
     color: #666;
     font-size: 1rem;
   }
-  
+   /* dark theme */
+   [data-theme="dark"] 
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #f0f4f8;
+    font-size: 1rem;
+}
   .input-group input {
     width: 100%;
     padding: 12px;
@@ -94,6 +111,13 @@
     font-size: 1.1rem;
     color: #00695c;
   }
+  /* dark theme */
+  [data-theme="dark"] 
+  .result-group p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #03ffe0;
+}
   
   .result-group span {
     font-weight: 700;

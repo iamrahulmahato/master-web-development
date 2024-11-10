@@ -1,0 +1,259 @@
+:root {
+    --primary-color: #6a5acd;
+    --secondary-color: #f4f4f4;
+    --text-color: #333;
+    --accent-color: #4CAF50;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container-fluid {
+    max-width: 1600px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background: linear-gradient(160deg, #ffffff 0%, #f0f4f8 100%);
+    border-radius: 15px 0 0 15px;
+    padding: 30px 20px;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-speed) ease;
+}
+
+.sidebar:hover {
+    box-shadow: -5px 0 40px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1 {
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Mood Tracker Styling */
+.mood-tracker {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.mood-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.mood-btn {
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    padding: 8px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    font-size: 16px;
+    transform: scale(1);
+}
+
+.mood-btn:hover {
+    transform: scale(1.1);
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.mood-btn.selected {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 5px 15px rgba(106, 90, 205, 0.4);
+}
+
+/* Main Content Styling */
+.main-content {
+    background: white;
+    border-radius: 0 15px 15px 0;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.journal-header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#entry-title {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    font-size: 18px;
+    transition: all var(--transition-speed) ease;
+}
+
+#entry-title:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.2);
+}
+
+#journal-text {
+    width: 100%;
+    min-height: 300px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 16px;
+    resize: vertical;
+    transition: all var(--transition-speed) ease;
+}
+
+#journal-text:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.2);
+}
+
+/* Tag System */
+.tag-section {
+    position: relative;
+}
+
+#tag-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    transition: all var(--transition-speed) ease;
+}
+
+#tag-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.tag {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.tag-close {
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Button Styling */
+.journal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#save-entry, #view-entries {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#save-entry {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#view-entries {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+#save-entry:hover, #view-entries:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Daily Prompt and Quote Styling */
+.daily-prompt, .quote-section {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    backdrop-filter: blur(10px);
+}
+
+#daily-quote {
+    font-style: italic;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar, .main-content {
+        border-radius: 0;
+    }
+}
+
+/* Modal Styling */
+.modal-content {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.entries-item {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px;
+     border-radius: 8px;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.entries-item:hover {
+    background-color: #e9ecef;
+}

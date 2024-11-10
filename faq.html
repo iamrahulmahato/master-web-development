@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="./faviconicon.png" type="image/x-icon">
+
     <title>FAQ Page</title>
     <style>
         body {
@@ -132,7 +135,12 @@
                 // Toggle active class and visibility of answer
                 question.classList.toggle('active');
                 const answer = question.nextElementSibling;
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+
+                answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+
+                // Toggle active class for rotation of the arrow
+                question.classList.toggle('active');
+
             });
         });
     </script>   

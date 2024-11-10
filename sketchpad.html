@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Sketchpad</title>
+    <style>
+        /* Basic reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #7fd8f8;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #canvas {
+            border: 2px solid #333;
+            background-color: #fff;
+            cursor: crosshair;
+        }
+
+        .controls {
+            margin: 20px 0;
+        }
+
+        .controls input[type="color"],
+        .controls input[type="range"],
+        .controls button {
+            margin-right: 10px;
+            padding: 5px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Digital Sketchpad</h1>
+        <div class="controls">
+            <label for="colorPicker">Color:</label>
+            <input type="color" id="colorPicker" value="#000000">
+            
+            <label for="brushSize">Brush Size:</label>
+            <input type="range" id="brushSize" min="1" max="30" value="5">
+            
+            <button id="clearCanvas">Clear</button>
+        </div>
+        <canvas id="canvas" width="600" height="400"></canvas>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        const colorPicker = document.getElementById('colorPicker');
+        const brushSize = document.getElementById('brushSize');
+        const clearCanvas = document.getElementById('clearCanvas');
+        
+        let painting = false;
+        let brushColor = colorPicker.value;
+        let brushWidth = brushSize.value;
+
+        // Event listeners for canvas drawing
+        canvas.addEventListener('mousedown', startPainting);
+        canvas.addEventListener('mouseup', stopPainting);
+        canvas.addEventListener('mousemove', draw);
+        
+        // Event listeners for color and brush size change
+        colorPicker.addEventListener('input', (e) => brushColor = e.target.value);
+        brushSize.addEventListener('input', (e) => brushWidth = e.target.value);
+
+        // Clear button event
+        clearCanvas.addEventListener('click', clearCanvasArea);
+
+        function startPainting(e) {
+            painting = true;
+            draw(e); // Draw the first dot immediately
+        }
+
+        function stopPainting() {
+            painting = false;
+            ctx.beginPath(); // Start a new path after stopping
+        }
+
+        function draw(e) {
+            if (!painting) return;
+
+            ctx.lineWidth = brushWidth;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = brushColor;
+
+            ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        }
+
+        function clearCanvasArea() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fc;  /* Light background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap; /* Ensure responsive layout */
+            background-color: #ffffff; /* White background for contact container */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container,
+        .map-container {
+            width: 48%; /* Adjusting to 48% width to place side by side */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;  /* Dark text color */
+        }
+
+        .input-field {
+            margin-bottom: 15px;
+        }
+
+        .input-field label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;  /* Slightly lighter color for labels */
+        }
+
+        .input-field input,
+        .input-field textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-field input:focus,
+        .input-field textarea:focus {
+            border-color: #6c63ff;  /* Highlighted border on focus */
+            outline: none;
+            box-shadow: 0 0 8px rgba(108, 99, 255, 0.2);
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .submit-btn {
+            background-color: #6c63ff;  /* Purple background for button */
+            color: #fff;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #5a54d8;  /* Darker purple on hover */
+        }
+
+        .map-container iframe {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container {
+            background-color: #f9f9f9;  /* Light background for the map */
+            padding: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Contact Section -->
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <div class="form-container">
+                <h2>Contact Us</h2>
+                <form action="#" method="post">
+                    <div class="input-field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Map Section inside Contact -->
+            <div class="map-container">
+                <h2>Our Location</h2>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31109.065519603888!2d77.594563!3d12.971599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670cc33f761%3A0x73d7e725a3dcebed!2sBangalore%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1699635202177!5m2!1sen!2sin" 
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

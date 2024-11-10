@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Splitter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Expense Splitter</h1>
+
+        <label for="numPeople">Number of People:</label>
+        <input type="number" id="numPeople" placeholder="Enter number of people">
+
+        <h2>Add Expense</h2>
+        <div class="expense-input">
+            <label for="expenseDesc">Description</label>
+            <input type="text" id="expenseDesc" placeholder="E.g., Car Rental">
+
+            <label for="expenseAmount">Amount (₹)</label>
+            <input type="number" id="expenseAmount" placeholder="Amount in ₹">
+
+            <label for="expenseDate">Date</label>
+            <input type="date" id="expenseDate">
+
+            <label for="expenseNote">Note</label>
+            <textarea id="expenseNote" placeholder="Optional note..."></textarea>
+
+            <button onclick="addExpense()">Add Expense</button>
+        </div>
+
+        <h3 id="expenseTitle" style="display: none;">Expenses</h3>
+        <ul id="expenseList"></ul>
+
+        <button id="calculateBtn" style="display: none;" onclick="calculateSplit()">Calculate Split</button>
+
+        <div class="result" style="display: none;"></div>
+        <div id="result" class="result" style="display: none;"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
