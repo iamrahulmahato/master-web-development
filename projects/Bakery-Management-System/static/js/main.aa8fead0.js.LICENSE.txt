@@ -194,7 +194,7 @@ object-assign
 
 /**
  * @license
- * jsPDF virtual FileSystem functionality
+ * jsPDF  FileSystem functionality
  *
  * Licensed under the MIT License.
  * http://opensource.org/licenses/mit-license
