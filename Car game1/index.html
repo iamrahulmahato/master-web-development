@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background: #333;
+            overflow: hidden;
+        }
+        #gameArea {
+            position: relative;
+            width: 400px;
+            height: 600px;
+            background: url('https://i.imgur.com/4d4SHVi.jpg') center/cover;
+            overflow: hidden;
+            border: 2px solid #fff;
+        }
+        .car {
+            position: absolute;
+            width: 50px;
+            height: 100px;
+            bottom: 20px;
+            left: 175px;
+            background: url('playerCar.png') center/cover; /* Player's car image */
+        }
+        .opponent {
+            position: absolute;
+            width: 50px;
+            height: 100px;
+            background: url('opponentCar.png') center/cover; /* Opponent car image */
+        }
+        #scoreboard {
+            color: #fff;
+            font-size: 1.5em;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        #gameOver {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: red;
+            font-size: 2em;
+            text-align: center;
+            background-color: #333;
+            padding: 20px;
+            border: 2px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameArea">
+        <div id="scoreboard">Score: 0</div>
+        <div id="gameOver">Game Over<br><span id="finalScore"></span></div>
+        <div class="car" id="playerCar"></div>
+    </div>
+
+    <script>
+        const gameArea = document.getElementById("gameArea");
+        const playerCar = document.getElementById("playerCar");
+        const scoreboard = document.getElementById("scoreboard");
+        const gameOverDisplay = document.getElementById("gameOver");
+        const finalScore = document.getElementById("finalScore");
+
+        let score = 0;
+        let gameOver = false;
+        let playerPosition = { x: 175, y: 500 }; // Starting position
+
+        function updateScore() {
+            score++;
+            scoreboard.textContent = "Score: " + score;
+        }
+
+        function createOpponent() {
+            const opponent = document.createElement("div");
+            opponent.classList.add("opponent");
+            opponent.style.left = Math.floor(Math.random() * 350) + "px";
+            opponent.style.top = "-150px"; // Starts off-screen
+            gameArea.appendChild(opponent);
+            moveOpponent(opponent);
+        }
+
+        function moveOpponent(opponent) {
+            let opponentInterval = setInterval(() => {
+                if (gameOver) {
+                    clearInterval(opponentInterval);
+                    return;
+                }
+                const opponentRect = opponent.getBoundingClientRect();
+                const playerRect = playerCar.getBoundingClientRect();
+
+                if (
+                    opponentRect.left < playerRect.right &&
+                    opponentRect.right > playerRect.left &&
+                    opponentRect.top < playerRect.bottom &&
+                    opponentRect.bottom > playerRect.top
+                ) {
+                    endGame();
+                    clearInterval(opponentInterval);
+                }
+
+                if (parseInt(opponent.style.top) > 600) {
+                    opponent.remove();
+                    updateScore();
+                    clearInterval(opponentInterval);
+                } else {
+                    opponent.style.top = parseInt(opponent.style.top) + 5 + "px";
+                }
+            }, 30);
+        }
+
+        function endGame() {
+            gameOver = true;
+            gameOverDisplay.style.display = "block";
+            finalScore.textContent = "Final Score: " + score;
+        }
+
+        function movePlayer(e) {
+            if (gameOver) return;
+
+            if (e.key === "ArrowLeft" && playerPosition.x > 0) {
+                playerPosition.x -= 15;
+            } else if (e.key === "ArrowRight" && playerPosition.x < 350) {
+                playerPosition.x += 15;
+            } else if (e.key === "ArrowUp" && playerPosition.y > 0) {
+                playerPosition.y -= 15;
+            } else if (e.key === "ArrowDown" && playerPosition.y < 500) {
+                playerPosition.y += 15;
+            }
+            playerCar.style.left = playerPosition.x + "px";
+            playerCar.style.top = playerPosition.y + "px";
+        }
+
+        document.addEventListener("keydown", movePlayer);
+
+        function gameLoop() {
+            if (!gameOver) {
+                createOpponent();
+                setTimeout(gameLoop, 1000);
+            }
+        }
+
+        gameLoop();
+    </script>
+</body>
+</html>
