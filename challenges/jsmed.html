@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Medium Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #08114c;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .quiz-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .option {
+            background-color: #e7f3fe;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .option:hover {
+            background-color: #d1e7fd;
+        }
+
+        .selected {
+            background-color: #b3e5fc;
+            border: 2px solid #007bff;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>JavaScript Medium Quiz</h1>
+        <div id="question-container"></div>
+        <button id="next-button" class="hidden" onclick="nextQuestion()">Next Question</button>
+        <button id="submit-button" class="hidden" onclick="submitAnswers()">Submit Answers</button>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "1) What is the output of 2 + '2' in JavaScript?",
+                options: [
+                    "4",
+                    "'22'",
+                    "22",
+                    "Error"
+                ],
+                answer: 1
+            },
+            {
+                question: "2) Which method is used to add an item at the end of an array?",
+                options: [
+                    "push()",
+                    "pop()",
+                    "shift()",
+                    "unshift()"
+                ],
+                answer: 0
+            },
+            {
+                question: "3) What does the 'this' keyword refer to in JavaScript?",
+                options: [
+                    "The current function",
+                    "The global object",
+                    "The calling object",
+                    "None of the above"
+                ],
+                answer: 2
+            },
+            {
+                question: "4) How do you define a function in JavaScript?",
+                options: [
+                    "function myFunction()",
+                    "def myFunction()",
+                    "func myFunction()",
+                    "function = myFunction()"
+                ],
+                answer: 0
+            },
+            {
+                question: "5) What is the default value of a variable declared with 'var' but not initialized?",
+                options: [
+                    "undefined",
+                    "null",
+                    "NaN",
+                    "false"
+                ],
+                answer: 0
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function showQuestion() {
+            const questionContainer = document.getElementById('question-container');
+            const question = questions[currentQuestionIndex];
+            questionContainer.innerHTML = `
+                <div class="question">
+                    <h3>${question.question}</h3>
+                    <ul class="options">
+                        ${question.options.map((option, i) => `
+                            <li class="option" onclick="selectOption(this, ${i})">${option}</li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+            document.getElementById('next-button').classList.add('hidden');
+            document.getElementById('submit-button').classList.add('hidden');
+        }
+
+        function selectOption(optionElement, selectedIndex) {
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => option.classList.remove('selected'));
+            optionElement.classList.add('selected');
+
+            const question = questions[currentQuestionIndex];
+            if (selectedIndex === question.answer) {
+                score++;
+            }
+
+            document.getElementById('next-button').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                document.getElementById('next-button').classList.add('hidden');
+                document.getElementById('submit-button').classList.remove('hidden');
+                document.getElementById('question-container').innerHTML = `<h3>Challenge Complete! Your score is ${score} out of ${questions.length}</h3>`;
+            }
+        }
+
+        function submitAnswers() {
+            alert(`You scored ${score} out of ${questions.length}`);
+            window.location.href = 'index.html'; // Redirect to main page after submitting
+        }
+
+        window.onload = showQuestion;
+    </script>
+</body>
+</html>
