@@ -28,8 +28,178 @@
         rel="stylesheet"
     />
 
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+
+
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E4405F;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 2rem;
+}
+
+/* Center the links by making the navbar-links container a flexbox */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    flex-grow: 1; /* Center by taking full width */
+    justify-content: center;
+}
+
+.navbar-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.navbar-links li a:hover {
+    text-decoration: underline;
+}
+
+
+#root {
+    flex: 1;
+}
+.follow-us {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    
+   
+   
+}
+
+.follow-us a {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 10px;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.follow-us a img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+.follow-us a:hover img {
+    filter: grayscale(0%);
+}
+
+/* Specific styles for each social media platform */
+.follow-us a.twitter {
+    background-color: #1DA1F2;
+    border-color: #1DA1F2;
+}
+
+.follow-us a.twitter:hover {
+    color: #1DA1F2;
+    background-color: #fff;
+}
+
+.follow-us a.facebook {
+    background-color: #1877F2;
+    border-color: #1877F2;
+}
+
+.follow-us a.facebook:hover {
+    color: #1877F2;
+    background-color: #fff;
+}
+
+.follow-us a.instagram {
+    background-color: #E4405F;
+    border-color: #E4405F;
+}
+
+.follow-us a.instagram:hover {
+    color: #E4405F;
+    background-color: #fff;
+}
+
+.follow-us a.linkedin {
+    background-color: #0077B5;
+    border-color: #0077B5;
+}
+
+.follow-us a.linkedin:hover {
+    color: #0077B5;
+    background-color: #fff;
+}
+
+</style>
+    <!-- Navbar Component with Centered Links and Title Update -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Web Development</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                Master-Web<br>
+                <span>Development</span>
+            </a>
+
+            <ul class="navbar-links">
+                <li><a href="./welcometestimonials.html">Testimonials</a></li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="./terms.html">Terms of Use</a></li>
+                <li><a href="#">Media Centre</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="./feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
+
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remix.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css">
+
 
 
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -47,6 +217,15 @@
 </main>
     <title>Master web development</title>
     <link rel="icon" href="./faviconicon.png" type="image/png">
+
+
+        .card {
+            animation: appear 5s linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+        }
+
+    </style>
 
 </head>
 
