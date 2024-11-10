@@ -39,6 +39,54 @@ body {
     min-height: 100vh;
     margin: 0;
 }
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E4405F;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 2rem;
+}
+
+/* Center the links by making the navbar-links container a flexbox */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    flex-grow: 1; /* Center by taking full width */
+    justify-content: center;
+}
+
+.navbar-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.navbar-links li a:hover {
+    text-decoration: underline;
+}
+
 
 #root {
     flex: 1;
@@ -117,6 +165,38 @@ body {
 }
 
 </style>
+    <!-- Navbar Component with Centered Links and Title Update -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Web Development</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                Master-Web<br>
+                <span>Development</span>
+            </a>
+
+            <ul class="navbar-links">
+                <li><a href="./welcometestimonials.html">Testimonials</a></li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="./terms.html">Terms of Use</a></li>
+                <li><a href="#">Media Centre</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="./feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
+
 
 
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -292,6 +372,7 @@ body {
             animation-timeline: view();
             animation-range: entry 0% cover 40%;
         }
+
     </style>
 </head>
 
