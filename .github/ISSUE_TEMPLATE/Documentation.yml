@@ -1,0 +1,37 @@
+name: "📝 Documentation Update"
+description: "Propose an update or correction to the documentation"
+title: "DOC UPDATE:"
+labels: ["Documentation"]
+body:
+  - type: textarea
+    attributes:
+      label: "Documentation Page"
+      description: "Which page or section of the documentation needs to be updated?"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Description of Changes"
+      description: "Describe the changes you propose for the documentation."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Reason for Update"
+      description: "Explain why these changes are necessary or beneficial."
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: "Screenshots/Logs"
+      description: "If applicable, add screenshots or logs that can help us understand the issue better."
+    validations:
+      required: false
+  - type: checkboxes
+    attributes:
+      label: "Additional Information"
+      options:
+        - label: "I have checked the documentation for accuracy"
+          required: true
+        - label: "I am willing to help with this update"
+        - label: "I can provide further clarification if needed"

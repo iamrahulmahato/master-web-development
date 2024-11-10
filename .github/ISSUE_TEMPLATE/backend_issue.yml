@@ -1,0 +1,72 @@
+name: "🔧 Backend Issue Report"
+description: "Create a detailed report to help us improve the backend services."
+title: "BACKEND ISSUE:"
+labels: ["Backend", "Bug"]
+body:
+  - type: checkboxes
+    attributes:
+      label: "Preliminary Checks"
+      description: "Please confirm the following before reporting a backend issue."
+      options:
+        - label: "I have checked the server logs"
+          required: true
+        - label: "I have searched the existing issues"
+          required: true
+  - type: dropdown
+    attributes:
+      label: "Environment"
+      description: "Where does this issue occur?"
+      options:
+        - Development
+        - Staging
+        - Production
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: "Backend Version/Commit"
+      description: "Specify the version or commit hash where this issue occurs"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Issue Summary"
+      description: "Provide a concise summary of the issue, including what you expected to happen and what actually happened."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Steps to Reproduce"
+      description: "List the steps to reproduce the issue. Include specific details, such as API endpoints, request parameters, etc."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Expected vs Actual Behavior"
+      description: |
+        Clearly describe:
+        1. What you expected to happen
+        2. What actually happened
+        3. Why you believe this is incorrect behavior
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Logs/Errors"
+      description: "If applicable, attach logs or error messages that can help us diagnose the issue."
+    validations:
+      required: false
+  - type: checkboxes
+    attributes:
+      label: "Additional Information"
+      options:
+        - label: "I agree to follow this project's Code of Conduct"
+          required: true
+        - label: "I can provide more details if needed"
+          required: true
+  - type: input
+    attributes:
+      label: "Contact Information"
+      description: "How can we reach you if we need more information? (email/Slack/etc.)"
+    validations:
+      required: true

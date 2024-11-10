@@ -1,0 +1,44 @@
+:root {
+  --color: #82fcf2a8;
+  --dark-color: #0ce4d2a8;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: cursive;
+  background-color: var(--dark-color);
+  margin: 0;
+}
+
+#container {
+  text-align: center;
+  background: var(--color);
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+span {
+  color: white;
+}
+button {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 1em;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+#jokeDisplay {
+  margin-top: 1em;
+  font-size: 1.1em;
+}

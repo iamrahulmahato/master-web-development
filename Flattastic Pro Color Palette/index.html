@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.scss" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r80/three.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/264161/OrbitControls.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <hgroup>
+                <h1 class="page-title">Flattastic Pro Color Palette</h1>
+            </hgroup>
+        </header>
+        <ul class="list-palete">
+            <li class="palete">
+                <div class="palete-color palete-color--grapefruit">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Grapefruit</h1>
+                    <span class="palete-color__code">#ed5565</span>,
+                    <span class="palete-color__code">#da4453</span>
+                </div>
+            </li>
+            <li class="palete">
+                <div class="palete-color palete-color--bittersweet">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Bittersweet</h1>
+                    <span class="palete-color__code">#fc6e51</span>,
+                    <span class="palete-color__code">#e9573f</span>
+                </div>
+            </li>
+            <li class="palete">
+                <div class="palete-color palete-color--sunflower">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Sunflower</h1>
+                    <span class="palete-color__code">#ffce54</span>,
+                    <span class="palete-color__code">#fcbb42</span>
+                </div>
+            </li>
+            <li class="palete">
+                <div class="palete-color palete-color--grass">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Grass</h1>
+                    <span class="palete-color__code">#a0d468</span>,
+                    <span class="palete-color__code">#8cc152</span>
+                </div>
+            </li>
+            <li class="palete">
+                <div class="palete-color palete-color--mint">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Mint</h1>
+                    <span class="palete-color__code">#48cfad</span>,
+                    <span class="palete-color__code">#37bc9b</span>
+                </div>
+            </li>
+            <li class="palete">
+                <div class="palete-color palete-color--aqua">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Aqua</h1>
+                    <span class="palete-color__code">#4fc1e9</span>,
+                    <span class="palete-color__code">#3bafda</span>
+                </div>
+            </li>
+            <li class="palete">
+                <div class="palete-color palete-color--blue-jeans">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Blue Jeans</h1>
+                    <span class="palete-color__code">#5d9cec</span>,
+                    <span class="palete-color__code">#4a89dc</span>
+                </div>
+            </li>
+            <li class="palete">
+                <div class="palete-color palete-color--lavender">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Lavender</h1>
+                    <span class="palete-color__code">#ac92ec</span>,
+                    <span class="palete-color__code">#967adc</span>
+                </div>
+            </li>
+            <li class="palete">
+                <div class="palete-color palete-color--pink-rose">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Pink Rose</h1>
+                    <span class="palete-color__code">#ec87c0</span>,
+                    <span class="palete-color__code">#d770ad</span>
+                </div>
+            </li>
+            <li class="palete">
+                <div class="palete-color palete-color--light-gray">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Light Gray</h1>
+                    <span class="palete-color__code">#f5f7fa</span>,
+                    <span class="palete-color__code">#e6e9ed</span>
+                </div>
+            </li>
+            <li class="palete">
+                <div class="palete-color palete-color--medium-gray">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Medium Gray</h1>
+                    <span class="palete-color__code">#ccd1d9</span>,
+                    <span class="palete-color__code">#aab2bd</span>
+                </div>
+            </li>
+            <li class="palete">
+                <div class="palete-color palete-color--dark-gray">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Dark Gray</h1>
+                    <span class="palete-color__code">#656d78</span>,
+                    <span class="palete-color__code">#434a54</span>
+                </div>
+            </li>
+            <!-- Round -->
+            <li class="palete palete--round">
+                <div class="palete-color palete-color--sunflower">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Sunflower</h1>
+                    <span class="palete-color__code">#ffce54</span>,
+                    <span class="palete-color__code">#fcbb42</span>
+                </div>
+            </li>
+            <li class="palete palete--round">
+                <div class="palete-color palete-color--grass">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Grass</h1>
+                    <span class="palete-color__code">#a0d468</span>,
+                    <span class="palete-color__code">#8cc152</span>
+                </div>
+            </li>
+            <!-- Square -->
+            <li class="palete palete--square">
+                <div class="palete-color palete-color--mint">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Mint</h1>
+                    <span class="palete-color__code">#48cfad</span>,
+                    <span class="palete-color__code">#37bc9b</span>
+                </div>
+            </li>
+            <li class="palete palete--square">
+                <div class="palete-color palete-color--aqua">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Aqua</h1>
+                    <span class="palete-color__code">#4fc1e9</span>,
+                    <span class="palete-color__code">#3bafda</span>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="list-palete">
+            <!-- Round -->
+            <li class="palete palete--round">
+                <div class="palete-color palete-color--sunflower">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Sunflower</h1>
+                    <span class="palete-color__code">#ffce54</span>,
+                    <span class="palete-color__code">#fcbb42</span>
+                </div>
+            </li>
+            <li class="palete palete--round">
+                <div class="palete-color palete-color--grass">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Grass</h1>
+                    <span class="palete-color__code">#a0d468</span>,
+                    <span class="palete-color__code">#8cc152</span>
+                </div>
+            </li>
+            <!-- Square -->
+            <li class="palete palete--square">
+                <div class="palete-color palete-color--mint">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Mint</h1>
+                    <span class="palete-color__code">#48cfad</span>,
+                    <span class="palete-color__code">#37bc9b</span>
+                </div>
+            </li>
+            <li class="palete palete--square">
+                <div class="palete-color palete-color--aqua">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Aqua</h1>
+                    <span class="palete-color__code">#4fc1e9</span>,
+                    <span class="palete-color__code">#3bafda</span>
+                </div>
+            </li>
+        </ul>
+
+
+        <div class="examples">
+            <div class="palete example example--rectangle">
+                <div class="palete-color palete-color--sunflower">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Sunflower</h1>
+                    <span class="palete-color__code">#ffce54</span>,
+                    <span class="palete-color__code">#fcbb42</span>
+                </div>
+            </div>
+            <div class="palete palete--round example example--round">
+                <div class="palete-color palete-color--sunflower">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Sunflower</h1>
+                    <span class="palete-color__code">#ffce54</span>,
+                    <span class="palete-color__code">#fcbb42</span>
+                </div>
+            </div>
+            <div class="palete palete--square example example--square">
+                <div class="palete-color palete-color--sunflower">
+                    <div class="palete-color__square palete-color__lighten"></div>
+                    <div class="palete-color__square palete-color__darken"></div>
+                </div>
+                <div class="palete-color__content">
+                    <h1 class="palete-color__name">Sunflower</h1>
+                    <span class="palete-color__code">#ffce54</span>,
+                    <span class="palete-color__code">#fcbb42</span>
+                </div>
+            </div>
+
+        </div> <!-- /.examples -->
+
+    </div>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
